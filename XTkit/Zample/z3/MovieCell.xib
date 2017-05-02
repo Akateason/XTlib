@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="143" id="dT1-De-6AN" customClass="MovieCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dT1-De-6AN" id="Xps-YI-3nU">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vUs-XW-fX4">
+                        <rect key="frame" x="8" y="8" width="126" height="126"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="126" id="FzC-dP-gQN"/>
+                            <constraint firstAttribute="height" constant="126" id="IN8-gW-G1d"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIL-Po-7Cr">
+                        <rect key="frame" x="151" y="8" width="29" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYF-Ee-kSA">
+                        <rect key="frame" x="151" y="66" width="33" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRa-1v-ipT">
+                        <rect key="frame" x="151" y="37" width="45" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wYF-Ee-kSA" firstAttribute="leading" secondItem="vUs-XW-fX4" secondAttribute="trailing" constant="17" id="5Gx-TM-JKe"/>
+                    <constraint firstItem="xIL-Po-7Cr" firstAttribute="leading" secondItem="vUs-XW-fX4" secondAttribute="trailing" constant="17" id="EKv-2Q-HjX"/>
+                    <constraint firstItem="sRa-1v-ipT" firstAttribute="leading" secondItem="vUs-XW-fX4" secondAttribute="trailing" constant="17" id="QhO-9b-Yrc"/>
+                    <constraint firstItem="wYF-Ee-kSA" firstAttribute="top" secondItem="sRa-1v-ipT" secondAttribute="bottom" constant="8" id="V61-Yw-le5"/>
+                    <constraint firstItem="vUs-XW-fX4" firstAttribute="leading" secondItem="Xps-YI-3nU" secondAttribute="leading" constant="8" id="cXp-T0-lhA"/>
+                    <constraint firstItem="xIL-Po-7Cr" firstAttribute="top" secondItem="Xps-YI-3nU" secondAttribute="top" constant="8" id="rUu-vl-4W1"/>
+                    <constraint firstItem="vUs-XW-fX4" firstAttribute="centerY" secondItem="Xps-YI-3nU" secondAttribute="centerY" id="wEY-Bc-dvu"/>
+                    <constraint firstItem="sRa-1v-ipT" firstAttribute="top" secondItem="xIL-Po-7Cr" secondAttribute="bottom" constant="8" id="wgj-Xq-0Gj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgView" destination="vUs-XW-fX4" id="cQv-27-gyJ"/>
+                <outlet property="lbRate" destination="sRa-1v-ipT" id="D7U-1L-3CP"/>
+                <outlet property="lbTitle" destination="xIL-Po-7Cr" id="zcQ-kh-VWd"/>
+                <outlet property="lbYear" destination="wYF-Ee-kSA" id="37M-tS-ms9"/>
+            </connections>
+            <point key="canvasLocation" x="-119.5" y="-8.5"/>
+        </tableViewCell>
+    </objects>
+</document>

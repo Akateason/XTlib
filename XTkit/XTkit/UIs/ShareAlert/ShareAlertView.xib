@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShareAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="245"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享到" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAU-E3-lu9">
+                    <rect key="frame" x="136" y="23" width="48" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="OCU-7x-zlR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Bgo-c0-MW8">
+                    <rect key="frame" x="8" y="51" width="304" height="107"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="107" id="tCf-ni-k2x"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="VMy-OP-CXK">
+                        <size key="itemSize" width="72" height="105"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAf-oV-4Ak">
+                    <rect key="frame" x="35" y="182" width="250" height="45"/>
+                    <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="acd-FE-TDF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="取 消">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="DRQ-5E-LTT"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="fAU-E3-lu9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="23" id="98n-VW-tZ5"/>
+                <constraint firstItem="qAf-oV-4Ak" firstAttribute="top" secondItem="Bgo-c0-MW8" secondAttribute="bottom" constant="24" id="TUM-9F-5r7"/>
+                <constraint firstAttribute="trailing" secondItem="Bgo-c0-MW8" secondAttribute="trailing" constant="8" id="bQp-Bc-eki"/>
+                <constraint firstAttribute="bottom" secondItem="qAf-oV-4Ak" secondAttribute="bottom" constant="18" id="cTM-Dn-twi"/>
+                <constraint firstItem="Bgo-c0-MW8" firstAttribute="top" secondItem="fAU-E3-lu9" secondAttribute="bottom" constant="7" id="dS3-aF-SVD"/>
+                <constraint firstItem="qAf-oV-4Ak" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="ep3-cf-DXR"/>
+                <constraint firstItem="fAU-E3-lu9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fXR-AM-x81"/>
+                <constraint firstAttribute="trailing" secondItem="qAf-oV-4Ak" secondAttribute="trailing" constant="35" id="pbf-fn-HFo"/>
+                <constraint firstItem="Bgo-c0-MW8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="rZT-W4-shp"/>
+                <constraint firstItem="Bgo-c0-MW8" firstAttribute="top" secondItem="fAU-E3-lu9" secondAttribute="bottom" constant="7" id="wih-37-gZn"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btCancel" destination="qAf-oV-4Ak" id="p9s-4P-u5n"/>
+                <outlet property="collectionView" destination="Bgo-c0-MW8" id="dkS-j4-Gwp"/>
+                <outlet property="titleLabel" destination="fAU-E3-lu9" id="WAQ-wa-WOw"/>
+            </connections>
+            <point key="canvasLocation" x="234" y="257.5"/>
+        </view>
+    </objects>
+</document>
