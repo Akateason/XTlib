@@ -49,4 +49,6 @@
 - (BOOL)hasPropertyForKey:(NSString*)key;
 - (BOOL)hasIvarForKey:(NSString*)key;
 
++ (NSString *)decodeType:(const char *)cString ;
+
 @end

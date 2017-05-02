@@ -252,7 +252,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
     }
     NSLog(@"urlstr : %@\nresponse : %@\n",urlstr,response) ;
     if (hud) [SVProgressHUD dismiss] ;
-    return [XTJson getJsonObj:response] ;
+    return [XTJson getJsonWithStr:response] ;
 }
 
 

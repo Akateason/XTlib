@@ -10,7 +10,8 @@
 
 @interface XTJson : NSObject
 
-+ (id)getJsonObj:(NSString *)jsonStr ;
-+ (NSString *)getJsonStr:(id)jsonObj ;
++ (id)getJsonWithStr:(NSString *)jsonStr ;
++ (NSString *)getStrWithJson:(id)jsonObj ;
++ (id)getJsonWithModel:(id)model ;
 
 @end

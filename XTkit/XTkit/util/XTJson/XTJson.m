@@ -7,10 +7,11 @@
 //
 
 #import "XTJson.h"
+#import "YYModel.h"
 
 @implementation XTJson
 
-+ (id)getJsonObj:(NSString *)jsonStr
++ (id)getJsonWithStr:(NSString *)jsonStr
 {
     NSError *error ;
     id jsonObj = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]
@@ -29,7 +30,7 @@
     }
 }
 
-+ (NSString *)getJsonStr:(id)jsonObj
++ (NSString *)getStrWithJson:(id)jsonObj
 {
     NSString *jsonStr ;
     if ([NSJSONSerialization isValidJSONObject:jsonObj])
@@ -58,5 +59,12 @@
         return nil ;
     }
 }
+
++ (id)getJsonWithModel:(id)model
+{
+    NSString *str = [model yy_modelToJSONString] ;
+    return [XTJson getJsonWithStr:str] ;
+}
+
 
 @end

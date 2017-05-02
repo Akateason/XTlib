@@ -23,6 +23,7 @@ static const float  TICK_S_OR_SS_2 = 1.0 ;
 
 @interface XTTickConvert : NSObject
 
++ (long long)getTickFromNow ;
 #pragma mark --
 //转tick
 + (long long)getTickWithDate:(NSDate *)_date;
@@ -34,6 +35,8 @@ static const float  TICK_S_OR_SS_2 = 1.0 ;
 + (NSDate *)getNSDateWithDateStr:(NSString *)dateStr AndWithFormat:(NSString *)format;
 //转nsdate变str
 + (NSString *)getStrWithNSDate:(NSDate *)date AndWithFormat:(NSString *)format;
+
+
 
 #pragma mark --
 //x分钟前/x小时前/昨天/x天前/x个月前/x年前

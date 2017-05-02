@@ -11,6 +11,11 @@
 
 @implementation XTTickConvert
 
++ (long long)getTickFromNow
+{
+    return [self getTickWithDate:[NSDate date]] ;
+}
+
 #pragma mark -- tick转换
 //转tick,转进
 + (long long)getTickWithDate:(NSDate *)_date

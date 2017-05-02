@@ -486,20 +486,20 @@
         return @"int";
     if (!strcmp(cString, @encode(short)))
         return @"short";
-    if (!strcmp(cString, @encode(long)))
-        return @"long";
     if (!strcmp(cString, @encode(long long)))
         return @"long long";
+    if (!strcmp(cString, @encode(long)))
+        return @"long";
     if (!strcmp(cString, @encode(unsigned char)))
         return @"unsigned char";
     if (!strcmp(cString, @encode(unsigned int)))
         return @"unsigned int";
     if (!strcmp(cString, @encode(unsigned short)))
         return @"unsigned short";
-    if (!strcmp(cString, @encode(unsigned long)))
-        return @"unsigned long";
     if (!strcmp(cString, @encode(unsigned long long)))
         return @"unsigned long long";
+    if (!strcmp(cString, @encode(unsigned long)))
+        return @"unsigned long";
     if (!strcmp(cString, @encode(float)))
         return @"float";
     if (!strcmp(cString, @encode(double)))
@@ -520,26 +520,7 @@
         return @"SEL";
     if (!strcmp(cString, @encode(BOOL)))
         return @"BOOL";
-    
-//    NSDictionary *typeDic = @{@"c":@"char",
-//                              @"i":@"int",
-//                              @"s":@"short",
-//                              @"l":@"long",
-//                              @"q":@"long long",
-//                              @"C":@"unsigned char",
-//                              @"I":@"unsigned int",
-//                              @"S":@"unsigned short",
-//                              @"L":@"unsigned long",
-//                              @"Q":@"unsigned long long",
-//                              @"f":@"float",
-//                              @"d":@"double",
-//                              @"B":@"BOOL",
-//                              @"v":@"void",
-//                              @"*":@"char *",
-//                              @"@":@"id",
-//                              @"#":@"Class",
-//                              @":":@"SEL",
-//                              };
+     
     
     //@TODO: do handle bitmasks
     NSString *result = [NSString stringWithCString:cString encoding:NSUTF8StringEncoding];

@@ -59,7 +59,7 @@ DEF_SINGLETON(XTColorFetcher)
 {
     NSString *jsonStr = [[XTColorFetcher sharedInstance].dicData objectForKey:key] ;
     if ([jsonStr containsString:@"["]) {
-        NSArray *colorValList = [XTJson getJsonObj:jsonStr] ;
+        NSArray *colorValList = [XTJson getJsonWithStr:jsonStr] ;
         if (colorValList.count == 3) {
             return [[XTColorFetcher class] getColorWithRed:[colorValList[0] floatValue]
                                                      green:[colorValList[1] floatValue]

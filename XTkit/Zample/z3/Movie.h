@@ -15,7 +15,7 @@
 @property (nonatomic,copy)      NSString     *title ;
 @property (nonatomic,copy)      NSString     *original_title ;
 @property (nonatomic,copy)      NSString     *year ;
-@property (nonatomic,copy)      NSString     *alt ; //url
+@property (nonatomic,copy)      NSString     *alt ;         //url
 @property (nonatomic,strong)    Rating       *rating ;
 @property (nonatomic,strong)    Images       *images ;
 
