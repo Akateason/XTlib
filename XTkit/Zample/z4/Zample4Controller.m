@@ -23,14 +23,14 @@
 @property (strong, nonatomic) UIButton *btDelete ;
 @property (strong, nonatomic) UIButton *btDrop ;
 
-@property (strong, nonatomic) UIButton *btTransaction ;
-@property (strong, nonatomic) UIButton *btQueue ;
+@property (strong, nonatomic) UIButton *btInsertList ;
+@property (strong, nonatomic) UIButton *btUpdateList ;
 
 @end
 
 @implementation Zample4Controller
 
-static float const kBtFlex = 20 ;
+static float const kBtFlex = 10 ;
 
 - (void)viewDidLoad
 {
@@ -155,7 +155,35 @@ static float const kBtFlex = 20 ;
         bt ;
     }) ;
     
+    self.btInsertList = ({
+        UIButton *bt = [UIButton new] ;
+        [bt setTitle:@"insertList" forState:0] ;
+        bt.backgroundColor = [UIColor grayColor] ;
+        bt.titleLabel.textColor = [UIColor whiteColor] ;
+        [bt addTarget:self action:@selector(btOnClick:) forControlEvents:UIControlEventTouchUpInside] ;
+        [self.view addSubview:bt] ;
+        [bt mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(200, 40)) ;
+            make.centerX.equalTo(self.view) ;
+            make.top.equalTo(self.btDrop.mas_bottom).offset(kBtFlex) ;
+        }] ;
+        bt ;
+    }) ;
     
+    self.btUpdateList = ({
+        UIButton *bt = [UIButton new] ;
+        [bt setTitle:@"updateList" forState:0] ;
+        bt.backgroundColor = [UIColor grayColor] ;
+        bt.titleLabel.textColor = [UIColor whiteColor] ;
+        [bt addTarget:self action:@selector(btOnClick:) forControlEvents:UIControlEventTouchUpInside] ;
+        [self.view addSubview:bt] ;
+        [bt mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(200, 40)) ;
+            make.centerX.equalTo(self.view) ;
+            make.top.equalTo(self.btInsertList.mas_bottom).offset(kBtFlex) ;
+        }] ;
+        bt ;
+    }) ;
     
 }
 
@@ -189,7 +217,7 @@ static float const kBtFlex = 20 ;
 - (void)selectWhereAction
 {
     NSLog(@"%s",__func__) ;
-    NSArray *list = [[XTFMDB sharedInstance] selectAllFrom:[Model1 class] where:@" WHERE title = 'jk4j3j43' "] ;
+    NSArray *list = [[XTFMDB sharedInstance] selectFrom:[Model1 class] where:@" WHERE title = 'jk4j3j43' "] ;
     NSLog(@"list : %@ \ncount:%@",list,@(list.count)) ;
 }
 
@@ -228,11 +256,42 @@ static float const kBtFlex = 20 ;
     BOOL b = [[XTFMDB sharedInstance] dropTable:[Model1 class]] ;
 }
 
+- (void)insertListAction
+{
+    NSMutableArray *list = [@[] mutableCopy] ;
+    for (int i = 0 ; i < 10; i++)
+    {
+        Model1 *m1 = [Model1 new] ; // 插入不需设置主键
+        m1.age = i + 1 ;
+        m1.floatVal = i + 0.3 ;
+        m1.tick = [XTTickConvert getTickFromNow] ;
+        m1.title = [NSString stringWithFormat:@"title%d",i] ;
+        
+        [list addObject:m1] ;
+    }
+    
+    [[XTFMDB sharedInstance] insertList:list
+                             completion:^(BOOL bSuccess) {
+                                 NSLog(@"complete : %d",bSuccess) ;
+                             }] ;
+}
 
-
-
-
-
+- (void)updateListAction
+{
+    NSArray *getlist = [[XTFMDB sharedInstance] selectFrom:[Model1 class] where:@"WHERE idModel >= 1 AND idModel <= 10"] ;
+    NSMutableArray *tmplist = [@[] mutableCopy] ;
+    for (int i = 0 ; i < 10 ; i++)
+    {
+        Model1 *model = getlist[i] ;
+        model.title = [model.title stringByAppendingString:[NSString stringWithFormat:@"%d",model.age]] ;
+        [tmplist addObject:model] ;
+    }
+    
+    [[XTFMDB sharedInstance] updateList:tmplist
+                             completion:^(BOOL bSuccess) {
+                                 NSLog(@"complete : %d",bSuccess) ;
+                             }] ;
+}
 
 
 

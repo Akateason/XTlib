@@ -50,7 +50,7 @@
     }
     free(ivars) ;
 
-    NSString *resultSql = [NSString stringWithFormat:@"CREATE TABLE %@ ( %@ )",
+    NSString *resultSql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ ( %@ )",
                            tableName,
                            [strProperties substringToIndex:strProperties.length - 1] ] ;
     NSLog(@"xt_db sql create : \n%@",resultSql) ;
@@ -60,6 +60,7 @@
 
 + (NSString *)sqlInsertWithModel:(id)model
 {
+    NSDictionary *dic = [XTJson getJsonWithModel:model] ;
     NSString *tableName = NSStringFromClass([model class]) ;
     
     unsigned int outCount ;
@@ -87,7 +88,7 @@
         // prop
         propertiesStr = [propertiesStr stringByAppendingString:[NSString stringWithFormat:@"%@ ,",name]] ;
         // question
-        questionStr = [questionStr stringByAppendingString:[NSString stringWithFormat:@":%@ ,",name]] ;
+        questionStr = [questionStr stringByAppendingString:[NSString stringWithFormat:@"'%@' ,",dic[name]]] ;
     }
     free(ivars) ;
     

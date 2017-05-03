@@ -14,12 +14,13 @@
 
 #define SQLITE_NAME( _name_ )   [name stringByAppendingString:@".sqlite"]
 
-#define DB                  self.database
-
+#define DB                  [XTFMDB sharedInstance].database
+#define QUEUE               [XTFMDB sharedInstance].queue
 
 @interface XTFMDB ()
 
-@property (nonatomic,strong) FMDatabase *database   ;
+@property (nonatomic,strong) FMDatabase         *database   ;
+@property (nonatomic,strong) FMDatabaseQueue    *queue      ;
 
 @end
 
@@ -38,7 +39,9 @@ DEF_SINGLETON(XTFMDB)
     NSLog(@"xt_db documentPath :\n%@", documentPath) ;
     NSLog(@"xt_db sqlName  : %@",name) ;
     NSString *path = [documentPath stringByAppendingPathComponent:SQLITE_NAME(name)] ;
-    self.database = [FMDatabase databaseWithPath:path] ;
+    DB = [FMDatabase databaseWithPath:path] ;
+    [DB open] ;
+    QUEUE = [FMDatabaseQueue databaseQueueWithPath:path] ;
 }
 
 
@@ -51,7 +54,7 @@ DEF_SINGLETON(XTFMDB)
     
     if (![self verify]) return ;
     
-    if(![DB tableExists:tableName])
+    if(![self isTableExist:tableName])
     {
         // create table
         NSString *sql = [[XTFMDB class] sqlCreateTableWithClass:cls
@@ -71,16 +74,10 @@ DEF_SINGLETON(XTFMDB)
 {
     NSString *tableName = NSStringFromClass([model class]) ;
     if (![self verify]) return -1 ;
-    if(![DB tableExists:tableName])
-    {
-        NSLog(@"xt_db table not created") ;
-        return -2 ;
-    }
+    if(![self isTableExist:tableName]) return -2 ;
     
-    NSDictionary *dic = [XTJson getJsonWithModel:model] ;
-    BOOL bSuccess = [DB executeUpdate:[[XTFMDB class] sqlInsertWithModel:model]
-              withParameterDictionary:dic] ;
-    
+    BOOL bSuccess = [DB executeUpdate:[[XTFMDB class] sqlInsertWithModel:model]] ;
+              
     if (bSuccess)
     {
         int lastID = (int)[DB lastInsertRowId] ;
@@ -94,17 +91,47 @@ DEF_SINGLETON(XTFMDB)
     return -3 ;
 }
 
+- (void)insertList:(NSArray *)modelList
+        completion:(void(^)(BOOL bSuccess))completion
+{
+    if (![self verify]) return ;
+    if (![self isTableExist:NSStringFromClass([[modelList firstObject] class])]) return ;
+    
+    [QUEUE inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        
+        for (int i = 0; i < [modelList count]; i++)
+        {
+            id model = [modelList objectAtIndex:i] ;
+            
+            BOOL bSuccess = [db executeUpdate:[[XTFMDB class] sqlInsertWithModel:model]] ;
+            
+            if (bSuccess)
+            {
+                NSLog(@"xt_db transaction insert Successfrom index :%d",i) ;
+            }
+            else
+            {
+                // error
+                NSLog(@"xt_db transaction insert Failure from index :%d",i) ;
+                *rollback = TRUE ;
+                if (completion) completion(FALSE) ;
+                return ;
+            }
+        }
+        NSLog(@"xt_db transaction insert all complete") ;
+        if (completion) completion(TRUE) ;
+    }] ;
+}
+
+
+
 #pragma mark --
 #pragma mark - update
 - (BOOL)update:(id)model
 {
     NSString *tableName = NSStringFromClass([model class]) ;
-    if (![self verify]) return -1 ;
-    if(![DB tableExists:tableName])
-    {
-        NSLog(@"xt_db table not created") ;
-        return FALSE ;
-    }
+    if (![self verify]) return FALSE ;
+    if (![self isTableExist:tableName]) return FALSE ;
     
     BOOL bSuccess = [DB executeUpdate:[[XTFMDB class] sqlUpdateWithModel:model]] ;
     
@@ -120,23 +147,51 @@ DEF_SINGLETON(XTFMDB)
     return FALSE ;
 }
 
+- (void)updateList:(NSArray *)modelList
+        completion:(void(^)(BOOL bSuccess))completion
+{
+    if (![self verify]) return ;
+    if (![self isTableExist:NSStringFromClass([[modelList firstObject] class])]) return ;
+    
+    [QUEUE inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        
+        for (int i = 0; i < [modelList count]; i++)
+        {
+            id model = [modelList objectAtIndex:i] ;
+            BOOL bSuccess = [db executeUpdate:[[XTFMDB class] sqlUpdateWithModel:model]] ;
+            
+            if (bSuccess)
+            {
+                NSLog(@"xt_db transaction update Successfrom index :%d",i) ;
+            }
+            else
+            {
+                // error
+                NSLog(@"xt_db transaction update Failure from index :%d",i) ;
+                *rollback = TRUE ;
+                if (completion) completion(FALSE) ;
+                break ;
+            }
+        }
+        NSLog(@"xt_db transaction update all complete") ;
+        if (completion) completion(TRUE) ;
+    }] ;
+}
+
 #pragma mark --
 #pragma mark - select
 - (NSArray *)selectAllFrom:(Class)cls
 {
-    return [self selectAllFrom:cls where:@""] ;
+    return [self selectFrom:cls where:@""] ;
 }
 
-- (NSArray *)selectAllFrom:(Class)cls
-                     where:(NSString *)strWhere
+- (NSArray *)selectFrom:(Class)cls
+                  where:(NSString *)strWhere
 {
     NSString *tableName = NSStringFromClass(cls) ;
     if (![self verify]) return nil ;
-    if(![DB tableExists:tableName])
-    {
-        NSLog(@"xt_db table not created") ;
-        return nil ;
-    }
+    if(![self isTableExist:tableName]) return nil ;
+
     
     NSMutableArray *resultList = [@[] mutableCopy] ;
     FMResultSet *rs = [DB executeQuery:[NSString stringWithFormat:@"SELECT * FROM %@ %@",tableName,strWhere]] ;
@@ -144,6 +199,7 @@ DEF_SINGLETON(XTFMDB)
     {
         [resultList addObject:[cls yy_modelWithDictionary:[rs resultDictionary]]] ;
     }
+    [rs close] ;
     return resultList ;
 }
 
@@ -153,13 +209,9 @@ DEF_SINGLETON(XTFMDB)
 - (BOOL)deleteFrom:(NSString *)tableName
              where:(NSString *)strWhere
 {
-    if (![self verify]) return -1 ;
-    if(![DB tableExists:tableName])
-    {
-        NSLog(@"xt_db table not created") ;
-        return FALSE ;
-    }
-    
+    if (![self verify]) return FALSE ;
+    if(![self isTableExist:tableName]) return FALSE ;
+
     BOOL bSuccess = [DB executeUpdate:[[XTFMDB class] sqlDeleteWithTableName:tableName where:strWhere]] ;
     
     if (bSuccess)
@@ -177,12 +229,8 @@ DEF_SINGLETON(XTFMDB)
 - (BOOL)dropTable:(Class)cls
 {
     NSString *tableName = NSStringFromClass(cls) ;
-    if (![self verify]) return -1 ;
-    if(![DB tableExists:tableName])
-    {
-        NSLog(@"xt_db table not created") ;
-        return FALSE ;
-    }
+    if (![self verify]) return FALSE ;
+    if(![self isTableExist:tableName]) return FALSE ;
     
     BOOL bSuccess = [DB executeUpdate:[[XTFMDB class] drop:tableName]] ;
     
@@ -214,5 +262,11 @@ DEF_SINGLETON(XTFMDB)
     return TRUE ;
 }
 
+- (BOOL)isTableExist:(NSString *)tableName
+{
+    BOOL bExist = [DB tableExists:tableName] ;
+    if (!bExist) NSLog(@"xt_db table not created") ;
+    return bExist ;
+}
 
 @end
