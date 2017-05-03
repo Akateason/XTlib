@@ -11,7 +11,7 @@
 // 2.增删改查. 脱离sql语句
 // 3.主键自增. 插入不需设主键
 // 4.Model满足. 无容器, 无嵌套. 且第一行必须是主键的model . **注意: model的第一个属性必须是数字主键.且命名中须包含'id'两个字.
-// 5.单条操作. 非线程安全
+// 5.任何操作. 线程安全
 // 6.批量操作支持实务. 支持回滚. 线程安全
 //
 
@@ -19,6 +19,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FastCodeHeader.h"
+
 
 @interface XTFMDB : NSObject
 
@@ -40,15 +41,15 @@ AS_SINGLETON(XTFMDB)
 #pragma mark - insert
 // return lastRowId .
 - (int)insert:(id)model ;
-- (void)insertList:(NSArray *)modelList
-        completion:(void(^)(BOOL bSuccess))completion ;
+- (BOOL)insertList:(NSArray *)modelList ;
+
 
 
 #pragma mark --
 #pragma mark - update
 - (BOOL)update:(id)model ;
-- (void)updateList:(NSArray *)modelList
-        completion:(void(^)(BOOL bSuccess))completion ;
+- (BOOL)updateList:(NSArray *)modelList ;
+
 
 
 #pragma mark --

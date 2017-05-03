@@ -270,10 +270,7 @@ static float const kBtFlex = 10 ;
         [list addObject:m1] ;
     }
     
-    [[XTFMDB sharedInstance] insertList:list
-                             completion:^(BOOL bSuccess) {
-                                 NSLog(@"complete : %d",bSuccess) ;
-                             }] ;
+    BOOL b = [[XTFMDB sharedInstance] insertList:list] ;
 }
 
 - (void)updateListAction
@@ -287,10 +284,7 @@ static float const kBtFlex = 10 ;
         [tmplist addObject:model] ;
     }
     
-    [[XTFMDB sharedInstance] updateList:tmplist
-                             completion:^(BOOL bSuccess) {
-                                 NSLog(@"complete : %d",bSuccess) ;
-                             }] ;
+    BOOL b = [[XTFMDB sharedInstance] updateList:tmplist] ;
 }
 
 

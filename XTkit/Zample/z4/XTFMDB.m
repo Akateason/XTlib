@@ -19,8 +19,8 @@
 
 @interface XTFMDB ()
 
-@property (nonatomic,strong) FMDatabase         *database   ;
-@property (nonatomic,strong) FMDatabaseQueue    *queue      ;
+@property (nonatomic,strong,readwrite) FMDatabase         *database   ;
+@property (nonatomic,strong,readwrite) FMDatabaseQueue    *queue      ;
 
 @end
 
@@ -56,12 +56,14 @@ DEF_SINGLETON(XTFMDB)
     
     if(![self isTableExist:tableName])
     {
-        // create table
-        NSString *sql = [[XTFMDB class] sqlCreateTableWithClass:cls
-                                                     primaryKey:pkName] ;
-        BOOL bSuccess = [DB executeUpdate:sql] ;
-        if (bSuccess) NSLog(@"xt_db create success") ;
-        else NSLog(@"xt_db create fail") ;
+        [QUEUE inDatabase:^(FMDatabase *db) {
+            // create table
+            NSString *sql = [[XTFMDB class] sqlCreateTableWithClass:cls
+                                                         primaryKey:pkName] ;
+            BOOL bSuccess = [db executeUpdate:sql] ;
+            if (bSuccess) NSLog(@"xt_db create success") ;
+            else NSLog(@"xt_db create fail") ;
+        }] ;
     }
     else
         NSLog(@"xt_db already exist") ;
@@ -76,51 +78,60 @@ DEF_SINGLETON(XTFMDB)
     if (![self verify]) return -1 ;
     if(![self isTableExist:tableName]) return -2 ;
     
-    BOOL bSuccess = [DB executeUpdate:[[XTFMDB class] sqlInsertWithModel:model]] ;
-              
-    if (bSuccess)
-    {
-        int lastID = (int)[DB lastInsertRowId] ;
-        NSLog(@"xt_db insert success lastRowID : %d",lastID) ;
-        return lastID ;
-    }
-    else
-    {
-        NSLog(@"xt_db insert fail") ;
-    }
-    return -3 ;
+    __block int lastRowId = 0 ;
+    
+    [QUEUE inDatabase:^(FMDatabase *db) {
+        BOOL bSuccess = [db executeUpdate:[[XTFMDB class] sqlInsertWithModel:model]] ;
+        if (bSuccess)
+        {
+            lastRowId = (int)[db lastInsertRowId] ;
+            NSLog(@"xt_db insert success lastRowID : %d",lastRowId) ;
+        }
+        else
+        {
+            NSLog(@"xt_db insert fail") ;
+            lastRowId = -3 ;
+        }
+    }] ;
+    
+    return lastRowId ;
 }
 
-- (void)insertList:(NSArray *)modelList
-        completion:(void(^)(BOOL bSuccess))completion
+- (BOOL)insertList:(NSArray *)modelList
 {
-    if (![self verify]) return ;
-    if (![self isTableExist:NSStringFromClass([[modelList firstObject] class])]) return ;
+    if (![self verify]) return FALSE ;
+    if (![self isTableExist:NSStringFromClass([[modelList firstObject] class])]) return FALSE ;
     
+    __block BOOL bAllSuccess = TRUE ;
     [QUEUE inTransaction:^(FMDatabase *db, BOOL *rollback) {
         
         for (int i = 0; i < [modelList count]; i++)
         {
             id model = [modelList objectAtIndex:i] ;
-            
             BOOL bSuccess = [db executeUpdate:[[XTFMDB class] sqlInsertWithModel:model]] ;
-            
             if (bSuccess)
             {
                 NSLog(@"xt_db transaction insert Successfrom index :%d",i) ;
             }
             else
-            {
-                // error
+            {  // error
                 NSLog(@"xt_db transaction insert Failure from index :%d",i) ;
                 *rollback = TRUE ;
-                if (completion) completion(FALSE) ;
-                return ;
+                bAllSuccess = FALSE ;
+                break ;
             }
         }
-        NSLog(@"xt_db transaction insert all complete") ;
-        if (completion) completion(TRUE) ;
+        
+        if (bAllSuccess) {
+            NSLog(@"xt_db transaction insert all complete") ;
+        }
+        else {
+            NSLog(@"xt_db transaction insert all fail") ;
+        }
+        
     }] ;
+    
+    return bAllSuccess ;
 }
 
 
@@ -133,33 +144,35 @@ DEF_SINGLETON(XTFMDB)
     if (![self verify]) return FALSE ;
     if (![self isTableExist:tableName]) return FALSE ;
     
-    BOOL bSuccess = [DB executeUpdate:[[XTFMDB class] sqlUpdateWithModel:model]] ;
+    __block BOOL bSuccess ;
+    [QUEUE inDatabase:^(FMDatabase *db) {
+        
+        bSuccess = [db executeUpdate:[[XTFMDB class] sqlUpdateWithModel:model]] ;
+        if (bSuccess)
+        {
+            NSLog(@"xt_db update success") ;
+        }
+        else
+        {
+            NSLog(@"xt_db update fail") ;
+        }
+    }] ;
     
-    if (bSuccess)
-    {
-        NSLog(@"xt_db update success") ;
-        return TRUE ;
-    }
-    else
-    {
-        NSLog(@"xt_db update fail") ;
-    }
-    return FALSE ;
+    return bSuccess ;
 }
 
-- (void)updateList:(NSArray *)modelList
-        completion:(void(^)(BOOL bSuccess))completion
+- (BOOL)updateList:(NSArray *)modelList
 {
-    if (![self verify]) return ;
-    if (![self isTableExist:NSStringFromClass([[modelList firstObject] class])]) return ;
+    if (![self verify]) return FALSE ;
+    if (![self isTableExist:NSStringFromClass([[modelList firstObject] class])]) return FALSE ;
     
+    __block BOOL bAllSuccess = TRUE ;
     [QUEUE inTransaction:^(FMDatabase *db, BOOL *rollback) {
         
         for (int i = 0; i < [modelList count]; i++)
         {
             id model = [modelList objectAtIndex:i] ;
             BOOL bSuccess = [db executeUpdate:[[XTFMDB class] sqlUpdateWithModel:model]] ;
-            
             if (bSuccess)
             {
                 NSLog(@"xt_db transaction update Successfrom index :%d",i) ;
@@ -169,13 +182,21 @@ DEF_SINGLETON(XTFMDB)
                 // error
                 NSLog(@"xt_db transaction update Failure from index :%d",i) ;
                 *rollback = TRUE ;
-                if (completion) completion(FALSE) ;
+                bAllSuccess = FALSE ;
                 break ;
             }
         }
-        NSLog(@"xt_db transaction update all complete") ;
-        if (completion) completion(TRUE) ;
+        
+        if (bAllSuccess) {
+            NSLog(@"xt_db transaction update all complete") ;
+        }
+        else {
+            NSLog(@"xt_db transaction update all fail") ;
+        }
+        
     }] ;
+    
+    return bAllSuccess ;
 }
 
 #pragma mark --
@@ -194,12 +215,16 @@ DEF_SINGLETON(XTFMDB)
 
     
     NSMutableArray *resultList = [@[] mutableCopy] ;
-    FMResultSet *rs = [DB executeQuery:[NSString stringWithFormat:@"SELECT * FROM %@ %@",tableName,strWhere]] ;
-    while ([rs next])
-    {
-        [resultList addObject:[cls yy_modelWithDictionary:[rs resultDictionary]]] ;
-    }
-    [rs close] ;
+    
+    [QUEUE inDatabase:^(FMDatabase *db) {
+        FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM %@ %@",tableName,strWhere]] ;
+        while ([rs next])
+        {
+            [resultList addObject:[cls yy_modelWithDictionary:[rs resultDictionary]]] ;
+        }
+        [rs close] ;
+    }] ;
+    
     return resultList ;
 }
 
@@ -212,18 +237,20 @@ DEF_SINGLETON(XTFMDB)
     if (![self verify]) return FALSE ;
     if(![self isTableExist:tableName]) return FALSE ;
 
-    BOOL bSuccess = [DB executeUpdate:[[XTFMDB class] sqlDeleteWithTableName:tableName where:strWhere]] ;
+    __block BOOL bSuccess = FALSE ;
+    [QUEUE inDatabase:^(FMDatabase *db) {
+        bSuccess = [DB executeUpdate:[[XTFMDB class] sqlDeleteWithTableName:tableName where:strWhere]] ;
+        if (bSuccess)
+        {
+            NSLog(@"xt_db delete model success") ;
+        }
+        else
+        {
+            NSLog(@"xt_db delete model fail") ;
+        }
+    }] ;
     
-    if (bSuccess)
-    {
-        NSLog(@"xt_db delete model success") ;
-        return TRUE ;
-    }
-    else
-    {
-        NSLog(@"xt_db delete model fail") ;
-    }
-    return FALSE ;
+    return bSuccess ;
 }
 
 - (BOOL)dropTable:(Class)cls
@@ -232,18 +259,20 @@ DEF_SINGLETON(XTFMDB)
     if (![self verify]) return FALSE ;
     if(![self isTableExist:tableName]) return FALSE ;
     
-    BOOL bSuccess = [DB executeUpdate:[[XTFMDB class] drop:tableName]] ;
+    __block BOOL bSuccess = FALSE ;
+    [QUEUE inDatabase:^(FMDatabase *db) {
+        bSuccess = [db executeUpdate:[[XTFMDB class] drop:tableName]] ;
+        if (bSuccess)
+        {
+            NSLog(@"xt_db drop success") ;
+        }
+        else
+        {
+            NSLog(@"xt_db drop fail") ;
+        }
+    }] ;
     
-    if (bSuccess)
-    {
-        NSLog(@"xt_db drop success") ;
-        return TRUE ;
-    }
-    else
-    {
-        NSLog(@"xt_db drop fail") ;
-    }
-    return FALSE ;
+    return bSuccess ;
 }
 
 #pragma mark --
