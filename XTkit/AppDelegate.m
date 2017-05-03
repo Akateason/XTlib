@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SVProgressHUD.h"
+#import "XTFMDB.h"
 
 @interface AppDelegate ()
 
@@ -19,9 +20,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // SVPHUD style
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark] ;
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear] ; //set mask to block usersTaps
     [SVProgressHUD setMaximumDismissTimeInterval:2.] ;
+    
+    // SQLite
+    [[XTFMDB sharedInstance] configureDB:@"teason"] ; // app did launch .
+    
+    
     
     return YES;
 }

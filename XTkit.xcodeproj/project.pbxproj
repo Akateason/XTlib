@@ -111,9 +111,10 @@
 		8FFD733D1EB30A5400148B83 /* Zample4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD733C1EB30A5400148B83 /* Zample4Controller.m */; };
 		8FFD73421EB320BA00148B83 /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73411EB320BA00148B83 /* ServerRequest.m */; };
 		8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73451EB321A900148B83 /* Zample5Controller.m */; };
-		8FFD734A1EB3283B00148B83 /* XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73491EB3283B00148B83 /* XTFMDB.m */; };
-		8FFD73501EB8451D00148B83 /* Model1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD734F1EB8451D00148B83 /* Model1.m */; };
-		8FFD73531EB8482300148B83 /* XTFMDB+autoSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73521EB8482300148B83 /* XTFMDB+autoSql.m */; };
+		8FFD73571EB9B3E400148B83 /* Zample6Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73561EB9B3E400148B83 /* Zample6Controller.m */; };
+		8FFD735D1EB9B48200148B83 /* XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD735A1EB9B48200148B83 /* XTFMDB.m */; };
+		8FFD735E1EB9B48200148B83 /* XTFMDB+autoSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD735C1EB9B48200148B83 /* XTFMDB+autoSql.m */; };
+		8FFD73611EB9B4C100148B83 /* Model1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73601EB9B4C100148B83 /* Model1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -349,12 +350,14 @@
 		8FFD73411EB320BA00148B83 /* ServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRequest.m; sourceTree = "<group>"; };
 		8FFD73441EB321A900148B83 /* Zample5Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zample5Controller.h; path = z5/Zample5Controller.h; sourceTree = "<group>"; };
 		8FFD73451EB321A900148B83 /* Zample5Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Zample5Controller.m; path = z5/Zample5Controller.m; sourceTree = "<group>"; };
-		8FFD73481EB3283B00148B83 /* XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTFMDB.h; path = z4/XTFMDB.h; sourceTree = "<group>"; };
-		8FFD73491EB3283B00148B83 /* XTFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTFMDB.m; path = z4/XTFMDB.m; sourceTree = "<group>"; };
-		8FFD734E1EB8451D00148B83 /* Model1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model1.h; path = z4/Model1.h; sourceTree = "<group>"; };
-		8FFD734F1EB8451D00148B83 /* Model1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model1.m; path = z4/Model1.m; sourceTree = "<group>"; };
-		8FFD73511EB8482300148B83 /* XTFMDB+autoSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XTFMDB+autoSql.h"; path = "z4/XTFMDB+autoSql.h"; sourceTree = "<group>"; };
-		8FFD73521EB8482300148B83 /* XTFMDB+autoSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XTFMDB+autoSql.m"; path = "z4/XTFMDB+autoSql.m"; sourceTree = "<group>"; };
+		8FFD73551EB9B3E400148B83 /* Zample6Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zample6Controller.h; path = z6/Zample6Controller.h; sourceTree = "<group>"; };
+		8FFD73561EB9B3E400148B83 /* Zample6Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Zample6Controller.m; path = z6/Zample6Controller.m; sourceTree = "<group>"; };
+		8FFD73591EB9B48200148B83 /* XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTFMDB.h; path = XTFMDB/XTFMDB.h; sourceTree = "<group>"; };
+		8FFD735A1EB9B48200148B83 /* XTFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTFMDB.m; path = XTFMDB/XTFMDB.m; sourceTree = "<group>"; };
+		8FFD735B1EB9B48200148B83 /* XTFMDB+autoSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XTFMDB+autoSql.h"; path = "XTFMDB/XTFMDB+autoSql.h"; sourceTree = "<group>"; };
+		8FFD735C1EB9B48200148B83 /* XTFMDB+autoSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XTFMDB+autoSql.m"; path = "XTFMDB/XTFMDB+autoSql.m"; sourceTree = "<group>"; };
+		8FFD735F1EB9B4C100148B83 /* Model1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model1.h; path = z5/Model1.h; sourceTree = "<group>"; };
+		8FFD73601EB9B4C100148B83 /* Model1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model1.m; path = z5/Model1.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -587,6 +590,7 @@
 				607E605A1EA9F85B00D05213 /* z3 */,
 				8FFD733A1EB30A3100148B83 /* z4 */,
 				8FFD73431EB3218C00148B83 /* z5 */,
+				8FFD73541EB9B3B400148B83 /* z6 */,
 			);
 			path = Zample;
 			sourceTree = "<group>";
@@ -973,6 +977,7 @@
 		60E238BD1E9622A1001235F2 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				8FFD73581EB9B47100148B83 /* XTFMDB */,
 				60E238BE1E9622A1001235F2 /* CommonFunc */,
 				60E238CA1E9622A1001235F2 /* ShareDigit */,
 				60E238CD1E9622A1001235F2 /* XTAnimation */,
@@ -1071,7 +1076,6 @@
 			children = (
 				8FFD733B1EB30A5400148B83 /* Zample4Controller.h */,
 				8FFD733C1EB30A5400148B83 /* Zample4Controller.m */,
-				8FFD73471EB327E900148B83 /* XTFMDB */,
 			);
 			name = z4;
 			sourceTree = "<group>";
@@ -1081,19 +1085,28 @@
 			children = (
 				8FFD73441EB321A900148B83 /* Zample5Controller.h */,
 				8FFD73451EB321A900148B83 /* Zample5Controller.m */,
+				8FFD735F1EB9B4C100148B83 /* Model1.h */,
+				8FFD73601EB9B4C100148B83 /* Model1.m */,
 			);
 			name = z5;
 			sourceTree = "<group>";
 		};
-		8FFD73471EB327E900148B83 /* XTFMDB */ = {
+		8FFD73541EB9B3B400148B83 /* z6 */ = {
 			isa = PBXGroup;
 			children = (
-				8FFD73481EB3283B00148B83 /* XTFMDB.h */,
-				8FFD73491EB3283B00148B83 /* XTFMDB.m */,
-				8FFD73511EB8482300148B83 /* XTFMDB+autoSql.h */,
-				8FFD73521EB8482300148B83 /* XTFMDB+autoSql.m */,
-				8FFD734E1EB8451D00148B83 /* Model1.h */,
-				8FFD734F1EB8451D00148B83 /* Model1.m */,
+				8FFD73551EB9B3E400148B83 /* Zample6Controller.h */,
+				8FFD73561EB9B3E400148B83 /* Zample6Controller.m */,
+			);
+			name = z6;
+			sourceTree = "<group>";
+		};
+		8FFD73581EB9B47100148B83 /* XTFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				8FFD73591EB9B48200148B83 /* XTFMDB.h */,
+				8FFD735A1EB9B48200148B83 /* XTFMDB.m */,
+				8FFD735B1EB9B48200148B83 /* XTFMDB+autoSql.h */,
+				8FFD735C1EB9B48200148B83 /* XTFMDB+autoSql.m */,
 			);
 			name = XTFMDB;
 			sourceTree = "<group>";
@@ -1324,7 +1337,6 @@
 				60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */,
 				607E605D1EA9F87C00D05213 /* Zample3Controller.m in Sources */,
 				60E239051E9622A1001235F2 /* NSTimer+Addition.m in Sources */,
-				8FFD73501EB8451D00148B83 /* Model1.m in Sources */,
 				607E603E1EA8740A00D05213 /* RootRefreshFooter.m in Sources */,
 				8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */,
 				60E238E11E9622A1001235F2 /* NSObject+Reflection.m in Sources */,
@@ -1340,12 +1352,12 @@
 				607E5FDB1EA7483100D05213 /* UserOnDevice.m in Sources */,
 				60E238E71E9622A1001235F2 /* UIView+Sizes.m in Sources */,
 				60E238F71E9622A1001235F2 /* GradientBGView.m in Sources */,
-				8FFD734A1EB3283B00148B83 /* XTFMDB.m in Sources */,
-				8FFD73531EB8482300148B83 /* XTFMDB+autoSql.m in Sources */,
 				60E239031E9622A1001235F2 /* XTBarrageView.m in Sources */,
+				8FFD735D1EB9B48200148B83 /* XTFMDB.m in Sources */,
 				607E603B1EA8714F00D05213 /* RootRefreshHeader.m in Sources */,
 				607E5FD81EA728F100D05213 /* ShareDigit.m in Sources */,
 				60E239141E9622A1001235F2 /* XTJson.m in Sources */,
+				8FFD73571EB9B3E400148B83 /* Zample6Controller.m in Sources */,
 				60E239011E9622A1001235F2 /* FlywordLabel.m in Sources */,
 				60E238EE1E9622A1001235F2 /* MyNavCtrller.m in Sources */,
 				607E5FCF1EA6FCBC00D05213 /* UIButton+Countdown.m in Sources */,
@@ -1359,6 +1371,7 @@
 				607E60661EA9FBC900D05213 /* Images.m in Sources */,
 				607E60601EA9FAE400D05213 /* Movie.m in Sources */,
 				607E60411EA8810B00D05213 /* RootTableCell.m in Sources */,
+				8FFD735E1EB9B48200148B83 /* XTFMDB+autoSql.m in Sources */,
 				607E602B1EA85BE100D05213 /* NSString+MD5.m in Sources */,
 				60E238E21E9622A1001235F2 /* NSString+Extend.m in Sources */,
 				607E60711EADA67100D05213 /* UIViewController+HowToUse.m in Sources */,
@@ -1376,6 +1389,7 @@
 				60E238FA1E9622A1001235F2 /* PlaceHolderTextView.m in Sources */,
 				607E5FC81EA6F8A900D05213 /* CenterTableView.m in Sources */,
 				60E2381B1E961D21001235F2 /* main.m in Sources */,
+				8FFD73611EB9B4C100148B83 /* Model1.m in Sources */,
 				60E238DF1E9622A1001235F2 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				60E238FB1E9622A1001235F2 /* AlertBackgroundView.m in Sources */,
 				607E60311EA85BE100D05213 /* KxMenu.m in Sources */,

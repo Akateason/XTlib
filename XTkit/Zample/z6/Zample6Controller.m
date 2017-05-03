@@ -1,44 +1,29 @@
 //
-//  Zample4Controller.m
+//  Zample6Controller.m
 //  XTkit
 //
-//  Created by teason23 on 2017/4/28.
+//  Created by teason23 on 2017/5/3.
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
-#import "Zample4Controller.h"
+#import "Zample6Controller.h"
 
-#import "UIColor+AllColors.h"
-#import "XTColorFetcher.h"
-
-@interface Zample4Controller ()
+@interface Zample6Controller ()
 
 @end
 
-@implementation Zample4Controller
-
-
+@implementation Zample6Controller
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"color" ;
-    
-    self.view.backgroundColor = [UIColor xt_mainColor] ;
+    self.title = @"request cache" ;
     
     
-    UIView *view2 = [UIView new] ;
-    [self.view addSubview:view2] ;
-    view2.backgroundColor = XTCOLOR(@"w_red") ;
-    [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.equalTo(self.view) ;
-        make.height.mas_equalTo(100) ;
-    }] ;
+    
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
