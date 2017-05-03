@@ -44,12 +44,10 @@ AS_SINGLETON(XTFMDB)
 - (BOOL)insertList:(NSArray *)modelList ;
 
 
-
 #pragma mark --
 #pragma mark - update
 - (BOOL)update:(id)model ;
 - (BOOL)updateList:(NSArray *)modelList ;
-
 
 
 #pragma mark --
@@ -57,7 +55,8 @@ AS_SINGLETON(XTFMDB)
 - (NSArray *)selectAllFrom:(Class)cls ;
 - (NSArray *)selectFrom:(Class)cls
                   where:(NSString *)strWhere ; //param e.g. @" WHERE ID = '1' "
-
+- (id)findFirst:(Class)cls
+          where:(NSString *)strWhere ;
 
 #pragma mark --
 #pragma mark - delete

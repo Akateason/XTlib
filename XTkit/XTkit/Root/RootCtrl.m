@@ -72,15 +72,6 @@
     }
 }
 
-#pragma mark --
-#pragma mark - load from storyboard
-+ (RootCtrl *)getCtrllerFromStory:(NSString *)storyboard
-             controllerIdentifier:(NSString *)identifier
-{
-    UIStoryboard *story = [UIStoryboard storyboardWithName:storyboard bundle:nil] ;
-    RootCtrl *ctrller = [story instantiateViewControllerWithIdentifier:identifier] ;
-    return ctrller ;
-}
 
 
 #pragma mark --

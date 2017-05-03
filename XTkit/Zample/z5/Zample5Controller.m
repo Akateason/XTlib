@@ -23,10 +23,9 @@
 @property (strong, nonatomic) UIButton *btUpdate ;
 @property (strong, nonatomic) UIButton *btDelete ;
 @property (strong, nonatomic) UIButton *btDrop ;
-
 @property (strong, nonatomic) UIButton *btInsertList ;
 @property (strong, nonatomic) UIButton *btUpdateList ;
-
+@property (strong, nonatomic) UIButton *btFindFirst ;
 @end
 
 @implementation Zample5Controller
@@ -34,7 +33,7 @@
 
 
 
-static float const kBtFlex = 10 ;
+static float const kBtFlex = 5 ;
 
 - (void)viewDidLoad
 {
@@ -184,6 +183,22 @@ static float const kBtFlex = 10 ;
         bt ;
     }) ;
     
+    self.btFindFirst = ({
+        UIButton *bt = [UIButton new] ;
+        [bt setTitle:@"findFirst" forState:0] ;
+        bt.backgroundColor = [UIColor grayColor] ;
+        bt.titleLabel.textColor = [UIColor whiteColor] ;
+        [bt addTarget:self action:@selector(btOnClick:) forControlEvents:UIControlEventTouchUpInside] ;
+        [self.view addSubview:bt] ;
+        [bt mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(200, 40)) ;
+            make.centerX.equalTo(self.view) ;
+            make.top.equalTo(self.btUpdateList.mas_bottom).offset(kBtFlex) ;
+        }] ;
+        bt ;
+    }) ;
+    
+    
 }
 
 - (void)btOnClick:(UIButton *)sender
@@ -286,7 +301,11 @@ static float const kBtFlex = 10 ;
     BOOL b = [[XTFMDB sharedInstance] updateList:tmplist] ;
 }
 
-
+- (void)findFirstAction
+{
+    Model1 *model = [[XTFMDB sharedInstance] findFirst:[Model1 class] where:@"WHERE idModel == 2"] ;
+    NSLog(@"m : %@",[XTJson getJsonWithModel:model]) ;
+}
 
 
 

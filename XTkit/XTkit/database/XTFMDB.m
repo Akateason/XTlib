@@ -212,10 +212,8 @@ DEF_SINGLETON(XTFMDB)
     NSString *tableName = NSStringFromClass(cls) ;
     if (![self verify]) return nil ;
     if(![self isTableExist:tableName]) return nil ;
-
     
-    NSMutableArray *resultList = [@[] mutableCopy] ;
-    
+    __block NSMutableArray *resultList = [@[] mutableCopy] ;
     [QUEUE inDatabase:^(FMDatabase *db) {
         FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM %@ %@",tableName,strWhere]] ;
         while ([rs next])
@@ -228,6 +226,26 @@ DEF_SINGLETON(XTFMDB)
     return resultList ;
 }
 
+- (id)findFirst:(Class)cls
+          where:(NSString *)strWhere
+{
+    NSString *tableName = NSStringFromClass(cls) ;
+    if (![self verify]) return nil ;
+    if(![self isTableExist:tableName]) return nil ;
+    
+    __block id result = nil ;
+    [QUEUE inDatabase:^(FMDatabase *db) {
+        NSMutableArray *tmpList = [@[] mutableCopy] ;
+        FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM %@ %@",tableName,strWhere]] ;
+        while ([rs next])
+        {
+            [tmpList addObject:[cls yy_modelWithDictionary:[rs resultDictionary]]] ;
+        }
+        [rs close] ;
+        result = [tmpList firstObject] ;
+    }] ;
+    return result ;
+}
 
 #pragma mark --
 #pragma mark - delete

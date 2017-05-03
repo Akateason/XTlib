@@ -20,13 +20,12 @@
 #import "RootTableView.h"
 #import "XTNetReloader.h"
 #import "XTAnimation.h"
+#import "XTJson.h"
 
 
 @interface RootCtrl : UIViewController
 
-#pragma mark - load from storyboard
-+ (RootCtrl *)getCtrllerFromStory:(NSString *)storyboard
-             controllerIdentifier:(NSString *)identifier ;
+
 
 #pragma mark - title for Umeng Anaylize .
 @property (nonatomic,copy) NSString *myTitle ;
