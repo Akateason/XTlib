@@ -13,8 +13,15 @@
 + (NSDictionary *)modelPropertiesSqliteKeywords
 {
     return @{
-             @"title" : @"UNIQUE"
+                @"title" : @"UNIQUE"
              } ;
+}
+
++ (NSArray *)ignoreProperties
+{
+    return @[
+                @"abcabc"
+             ] ;
 }
 
 @end

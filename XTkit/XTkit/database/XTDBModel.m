@@ -268,13 +268,24 @@
     return bSuccess ;
 }
 
-#pragma mark - props Keywords
+#pragma mark --
+#pragma mark -
 // rewrite in subClass if Needed .
 + (NSDictionary *)modelPropertiesSqliteKeywords
 {
     return nil ;
 }
 
-
+// ignore Properties
++ (NSArray *)ignoreProperties
+{
+    return nil ;
+}
 
 @end
+
+
+
+
+
+

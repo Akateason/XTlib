@@ -14,5 +14,6 @@
 @property (nonatomic)       float           floatVal    ;
 @property (nonatomic)       long long       tick        ;
 @property (nonatomic,copy)  NSString        *title      ;
+@property (nonatomic,copy)  NSString        *abcabc     ;
 
 @end

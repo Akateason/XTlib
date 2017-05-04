@@ -48,6 +48,9 @@
         NSString *type      = dic[@"type"] ;
         NSString *sqlType   = [self sqlTypeWithType:type] ;
         NSString *strTmp    = nil ;
+        // ignore prop
+        if ([self propIsIgnore:name class:cls]) continue ;
+        
         // default prop
         strTmp = [NSString stringWithFormat:@"%@ %@ NOT NULL %@ %@,",
                   name,
@@ -80,6 +83,8 @@
     {
         id dicTmp           = propInfoList[i] ;
         NSString *name      = dicTmp[@"name"] ;
+        // ignore prop
+        if ([self propIsIgnore:name class:[model class]]) continue ;
         // prop
         propertiesStr = [propertiesStr stringByAppendingString:[NSString stringWithFormat:@"%@ ,",name]] ;
         // question
@@ -108,6 +113,8 @@
     {
         id dicTmp           = propInfoList[i] ;
         NSString *name      = dicTmp[@"name"] ;
+        // ignore prop
+        if ([self propIsIgnore:name class:[model class]]) continue ;
         // setstr
         NSString *tmpStr = [NSString stringWithFormat:@"%@ = '%@' ,",name,dic[name]] ;
         setsStr = [setsStr stringByAppendingString:tmpStr] ;
@@ -162,7 +169,8 @@
 
 + (NSString *)defaultValWithSqlType:(NSString *)sqlType
 {
-    if ([sqlType containsString:@"TEXT"] || [sqlType containsString:@"char"]) {
+    if ([sqlType containsString:@"TEXT"] || [sqlType containsString:@"char"])
+    {
         return @" DEFAULT '' " ;
     }
     else return @" DEFAULT '0' " ;
@@ -171,11 +179,17 @@
 + (NSString *)keywordsWithName:(NSString *)name
                          class:(Class)cls
 {
-//    id dic = [((XTDBModel *)[[cls alloc] init]) valueForKey:@"dicPropertiesSqliteKeywords"] ;
     id dic = [cls modelPropertiesSqliteKeywords] ;
-    NSLog(@"dic : %@",dic) ;
     if ( !dic || !dic[name] ) return @"" ;
     return dic[name] ;
+}
+
++ (BOOL)propIsIgnore:(NSString *)name
+               class:(Class)cls
+{
+    id list = [cls ignoreProperties] ;
+    if (!list) return FALSE ;
+    return [list containsObject:name] ;
 }
 
 

@@ -115,9 +115,9 @@
 		8FFD73611EB9B4C100148B83 /* Model1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73601EB9B4C100148B83 /* Model1.m */; };
 		8FFD73641EB9D19800148B83 /* UIViewController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73631EB9D19800148B83 /* UIViewController+Storyboard.m */; };
 		8FFD736C1EB9D26100148B83 /* XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73691EB9D26100148B83 /* XTFMDB.m */; };
-		8FFD73731EBAB0C100148B83 /* ResponseCacheTB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73721EBAB0C100148B83 /* ResponseCacheTB.m */; };
 		8FFD73761EBAB45C00148B83 /* XTDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73751EBAB45C00148B83 /* XTDBModel.m */; };
 		8FFD73791EBAB8B500148B83 /* XTDBModel+autoSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73781EBAB8B500148B83 /* XTDBModel+autoSql.m */; };
+		8FFD73801EBAFAA600148B83 /* ResponseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD737F1EBAFAA600148B83 /* ResponseDBModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -361,12 +361,12 @@
 		8FFD73631EB9D19800148B83 /* UIViewController+Storyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Storyboard.m"; sourceTree = "<group>"; };
 		8FFD73681EB9D26100148B83 /* XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTFMDB.h; path = database/XTFMDB.h; sourceTree = "<group>"; };
 		8FFD73691EB9D26100148B83 /* XTFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTFMDB.m; path = database/XTFMDB.m; sourceTree = "<group>"; };
-		8FFD73711EBAB0C100148B83 /* ResponseCacheTB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseCacheTB.h; path = z6/ResponseCacheTB.h; sourceTree = "<group>"; };
-		8FFD73721EBAB0C100148B83 /* ResponseCacheTB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseCacheTB.m; path = z6/ResponseCacheTB.m; sourceTree = "<group>"; };
 		8FFD73741EBAB45C00148B83 /* XTDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTDBModel.h; path = database/XTDBModel.h; sourceTree = "<group>"; };
 		8FFD73751EBAB45C00148B83 /* XTDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTDBModel.m; path = database/XTDBModel.m; sourceTree = "<group>"; };
 		8FFD73771EBAB8B500148B83 /* XTDBModel+autoSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XTDBModel+autoSql.h"; path = "database/XTDBModel+autoSql.h"; sourceTree = "<group>"; };
 		8FFD73781EBAB8B500148B83 /* XTDBModel+autoSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XTDBModel+autoSql.m"; path = "database/XTDBModel+autoSql.m"; sourceTree = "<group>"; };
+		8FFD737E1EBAFAA600148B83 /* ResponseDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseDBModel.h; path = z6/ResponseDBModel.h; sourceTree = "<group>"; };
+		8FFD737F1EBAFAA600148B83 /* ResponseDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseDBModel.m; path = z6/ResponseDBModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1107,8 +1107,8 @@
 			children = (
 				8FFD73551EB9B3E400148B83 /* Zample6Controller.h */,
 				8FFD73561EB9B3E400148B83 /* Zample6Controller.m */,
-				8FFD73711EBAB0C100148B83 /* ResponseCacheTB.h */,
-				8FFD73721EBAB0C100148B83 /* ResponseCacheTB.m */,
+				8FFD737E1EBAFAA600148B83 /* ResponseDBModel.h */,
+				8FFD737F1EBAFAA600148B83 /* ResponseDBModel.m */,
 			);
 			name = z6;
 			sourceTree = "<group>";
@@ -1317,6 +1317,7 @@
 			files = (
 				607E60441EA883BB00D05213 /* UIView+CurrentController.m in Sources */,
 				607E604F1EA88B8100D05213 /* Z1CustomCell.m in Sources */,
+				8FFD73801EBAFAA600148B83 /* ResponseDBModel.m in Sources */,
 				60E239091E9622A1001235F2 /* XTNetReloader.m in Sources */,
 				60E238E41E9622A1001235F2 /* UIImage+AddFunction.m in Sources */,
 				60E238E01E9622A1001235F2 /* NSDate+Addition.m in Sources */,
@@ -1353,7 +1354,6 @@
 				607E5FD21EA6FDE500D05213 /* CommonFunc.m in Sources */,
 				607E60331EA85BE100D05213 /* SIAlertView.m in Sources */,
 				60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */,
-				8FFD73731EBAB0C100148B83 /* ResponseCacheTB.m in Sources */,
 				607E605D1EA9F87C00D05213 /* Zample3Controller.m in Sources */,
 				60E239051E9622A1001235F2 /* NSTimer+Addition.m in Sources */,
 				607E603E1EA8740A00D05213 /* RootRefreshFooter.m in Sources */,
