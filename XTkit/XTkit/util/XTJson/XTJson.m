@@ -62,8 +62,7 @@
 
 + (id)getJsonWithModel:(id)model
 {
-    NSString *str = [model yy_modelToJSONString] ;
-    return [XTJson getJsonWithStr:str] ;
+    return [model yy_modelToJSONObject] ;
 }
 
 
