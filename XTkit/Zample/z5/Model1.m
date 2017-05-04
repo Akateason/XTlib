@@ -8,7 +8,13 @@
 
 #import "Model1.h"
 
-
 @implementation Model1
+
++ (NSDictionary *)modelPropertiesSqliteKeywords
+{
+    return @{
+             @"title" : @"UNIQUE"
+             } ;
+}
 
 @end

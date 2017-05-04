@@ -1,17 +1,16 @@
 //
-//  XTFMDB+autoSql.h
+//  XTDBModel+autoSql.h
 //  XTkit
 //
-//  Created by teason23 on 2017/5/2.
+//  Created by teason23 on 2017/5/4.
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
-#import "XTFMDB.h"
+#import "XTDBModel.h"
 
-@interface XTFMDB (autoSql)
+@interface XTDBModel (autoSql)
 
-+ (NSString *)sqlCreateTableWithClass:(Class)cls
-                           primaryKey:(NSString *)primaryKey ;
++ (NSString *)sqlCreateTableWithClass:(Class)cls ;
 
 + (NSString *)sqlInsertWithModel:(id)model ;
 

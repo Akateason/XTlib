@@ -6,62 +6,27 @@
 //  Copyright © 2017年 teason. All rights reserved.
 //
 //
-// XTFMDB 特性
-// 1.Model直接存储.获取. 无需转换
-// 2.增删改查. 脱离sql语句
-// 3.主键自增. 插入不需设主键
-// 4.Model满足. 无容器, 无嵌套. 且第一行必须是主键的model . **注意: model的第一个属性必须是数字主键.且命名中须包含'id'两个字.
-// 5.任何操作. 线程安全
-// 6.批量操作支持实务. 支持回滚. 线程安全
-//
-
-
 
 #import <Foundation/Foundation.h>
 #import "FastCodeHeader.h"
+#import "FMDB.h"
 
+#define QUEUE                         [XTFMDB sharedInstance].queue
 
 @interface XTFMDB : NSObject
 
 AS_SINGLETON(XTFMDB)
 
+@property (nonatomic,strong,readonly) FMDatabase         *database   ;
+@property (nonatomic,strong)          FMDatabaseQueue    *queue      ;
+
 #pragma mark --
-#pragma mark - configure
-// App Did Launch .
+
+// config db in "- [(AppDelegate *) AppDidLaunchFinish]"
 - (void)configureDB:(NSString *)name ;
 
+- (BOOL)verify ;
 
-#pragma mark --
-#pragma mark - create
-- (void)createTable:(Class)cls
-         primarykey:(NSString *)pkName ;
-
-
-#pragma mark --
-#pragma mark - insert
-// return lastRowId .
-- (int)insert:(id)model ;
-- (BOOL)insertList:(NSArray *)modelList ;
-
-
-#pragma mark --
-#pragma mark - update
-- (BOOL)update:(id)model ;
-- (BOOL)updateList:(NSArray *)modelList ;
-
-
-#pragma mark --
-#pragma mark - select
-- (NSArray *)selectAllFrom:(Class)cls ;
-- (NSArray *)selectFrom:(Class)cls
-                  where:(NSString *)strWhere ; //param e.g. @" WHERE ID = '1' "
-- (id)findFirst:(Class)cls
-          where:(NSString *)strWhere ;
-
-#pragma mark --
-#pragma mark - delete
-- (BOOL)deleteFrom:(NSString *)tableName
-             where:(NSString *)strWhere ; //param e.g. @" WHERE ID = '1' "
-- (BOOL)dropTable:(Class)cls ;
+- (BOOL)isTableExist:(NSString *)tableName ;
 
 @end

@@ -1,55 +1,64 @@
 //
-//  XTFMDB+autoSql.m
+//  XTDBModel+autoSql.m
 //  XTkit
 //
-//  Created by teason23 on 2017/5/2.
+//  Created by teason23 on 2017/5/4.
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
-#import "XTFMDB+autoSql.h"
+#import "XTDBModel+autoSql.h"
 #import <objc/runtime.h>
 #import "NSObject+Reflection.h"
 #import "XTJson.h"
 
-@implementation XTFMDB (autoSql)
+
+@implementation XTDBModel (autoSql)
 
 + (NSString *)sqlCreateTableWithClass:(Class)cls
-                           primaryKey:(NSString *)primaryKey
 {
     NSString *tableName = NSStringFromClass(cls) ;
     NSMutableString *strProperties = [@"" mutableCopy] ;
     
-    unsigned int outCount ;
-    Ivar *ivars = class_copyIvarList(cls, &outCount) ;
-    if (!outCount) {
-        NSLog(@"xt_db model no instanceVal") ;
-        return nil ;
-    }
-    
-    for (int i = 0; i < outCount; i++)
+    // pk in super cls 主键在父类里
+    Class superCls = [cls superclass] ;
+    NSArray *superPropInfoList = [superCls propertiesInfo] ;
+    for (int i = 0; i < superPropInfoList.count; i++)
     {
-        NSString *name = [[NSString stringWithCString:ivar_getName(ivars[i])
-                                            encoding:NSUTF8StringEncoding]
-                          substringFromIndex:1];
-        NSString *type = [NSObject decodeType:ivar_getTypeEncoding(ivars[i])] ;
-        NSString *sqlType = [self sqlTypeWithType:type] ;
+        NSDictionary *dic   = superPropInfoList[i] ;
+        NSString *name      = dic[@"name"] ;
+        NSString *type      = dic[@"type"] ;
+        NSString *sqlType   = [self sqlTypeWithType:type] ;
         
-        
-        NSString *strTmp = nil ;
-        if ([name containsString:primaryKey])
+        NSString *strTmp    = nil ;
+        if ([name containsString:kPkid])
         {
             // pk AUTOINCREMENT .
             strTmp = [NSString stringWithFormat:@"%@ %@ PRIMARY KEY AUTOINCREMENT DEFAULT '1',",name,sqlType] ;
+            [strProperties appendString:strTmp] ;
         }
-        else
-        {
-            // default
-            strTmp = [NSString stringWithFormat:@"%@ %@ NOT NULL %@ ,",name,sqlType,[self defaultValWithSqlType:sqlType]] ;
-        }
+        else continue ;
+    }
+
+    // other props in sub cls
+    NSArray *propInfoList = [cls propertiesInfo] ;
+    for (int i = 0; i < propInfoList.count; i++)
+    {
+        NSDictionary *dic   = propInfoList[i] ;
+        NSString *name      = dic[@"name"] ;
+        NSString *type      = dic[@"type"] ;
+        NSString *sqlType   = [self sqlTypeWithType:type] ;
+        NSString *strTmp    = nil ;
+        // default prop
+        strTmp = [NSString stringWithFormat:@"%@ %@ NOT NULL %@ %@,",
+                  name,
+                  sqlType,
+                  [self defaultValWithSqlType:sqlType],
+                  [self keywordsWithName:name class:cls]
+                  ] ;
         [strProperties appendString:strTmp] ;
     }
-    free(ivars) ;
-
+    
+    
     NSString *resultSql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ ( %@ )",
                            tableName,
                            [strProperties substringToIndex:strProperties.length - 1] ] ;
@@ -60,37 +69,22 @@
 
 + (NSString *)sqlInsertWithModel:(id)model
 {
-    NSDictionary *dic = [XTJson getJsonWithModel:model] ;
+    NSDictionary *dicModel = [XTJson getJsonWithModel:model] ;
     NSString *tableName = NSStringFromClass([model class]) ;
-    
-    unsigned int outCount ;
-    Ivar *ivars = class_copyIvarList([model class], &outCount) ;
-    if (!outCount) {
-        NSLog(@"xt_db model no instanceVal") ;
-        return nil ;
-    }
     
     NSString *propertiesStr = @"" ;
     NSString *questionStr   = @"" ;
-    
-    for (int i = 0; i < outCount; i++)
+
+    NSArray *propInfoList = [[model class] propertiesInfo] ;
+    for (int i = 0; i < propInfoList.count; i++)
     {
-        NSString *name = [[NSString stringWithCString:ivar_getName(ivars[i])
-                                             encoding:NSUTF8StringEncoding]
-                          substringFromIndex:1] ;
-        
-        if (i == 0 && [name containsString:@"id"])
-        {
-            // 插入排除主键id (已经自增)
-            continue ;
-        }
-        
+        id dicTmp           = propInfoList[i] ;
+        NSString *name      = dicTmp[@"name"] ;
         // prop
         propertiesStr = [propertiesStr stringByAppendingString:[NSString stringWithFormat:@"%@ ,",name]] ;
         // question
-        questionStr = [questionStr stringByAppendingString:[NSString stringWithFormat:@"'%@' ,",dic[name]]] ;
+        questionStr = [questionStr stringByAppendingString:[NSString stringWithFormat:@"'%@' ,",dicModel[name]]] ;
     }
-    free(ivars) ;
     
     propertiesStr = [propertiesStr substringToIndex:propertiesStr.length - 1] ;
     questionStr = [questionStr substringToIndex:questionStr.length - 1] ;
@@ -105,38 +99,22 @@
 {
     NSString *tableName = NSStringFromClass([model class]) ;
     NSDictionary *dic = [XTJson getJsonWithModel:model] ;
-
-    unsigned int outCount ;
-    Ivar *ivars = class_copyIvarList([model class], &outCount) ;
-    if (!outCount) {
-        NSLog(@"xt_db model no instanceVal") ;
-        return nil ;
-    }
     
-    NSString *setsStr = @"" ;
-    NSString *whereStr = @"" ;
-    NSString *primaryKey = nil ;
+    NSString *setsStr       = @"" ;
+    NSString *whereStr      = @"" ;
     
-    for (int i = 0; i < outCount; i++)
+    NSArray *propInfoList = [[model class] propertiesInfo] ;
+    for (int i = 0; i < propInfoList.count; i++)
     {
-        NSString *name = [[NSString stringWithCString:ivar_getName(ivars[i])
-                                             encoding:NSUTF8StringEncoding]
-                          substringFromIndex:1] ;
-        
-        if (i == 0 && [name containsString:@"id"])
-        {
-            primaryKey = name ;
-            continue ;
-        }
-        
+        id dicTmp           = propInfoList[i] ;
+        NSString *name      = dicTmp[@"name"] ;
         // setstr
         NSString *tmpStr = [NSString stringWithFormat:@"%@ = '%@' ,",name,dic[name]] ;
         setsStr = [setsStr stringByAppendingString:tmpStr] ;
     }
-    free(ivars) ;
-
+    
     setsStr = [setsStr substringToIndex:setsStr.length - 1] ;
-    whereStr = [NSString stringWithFormat:@"%@ = %@",primaryKey,dic[primaryKey]] ;
+    whereStr = [NSString stringWithFormat:@"%@ = %@",kPkid,dic[kPkid]] ;
     
     NSString *strResult = [NSString stringWithFormat:@"UPDATE %@ SET %@ WHERE %@",tableName,setsStr,whereStr] ;
     NSLog(@"xt_db sql update : \n%@",strResult) ;
@@ -146,7 +124,7 @@
 + (NSString *)sqlDeleteWithTableName:(NSString *)tableName
                                where:(NSString *)strWhere
 {
-    return [NSString stringWithFormat:@"DELETE FROM %@ %@",tableName,strWhere] ;
+    return [NSString stringWithFormat:@"DELETE FROM %@ WHERE %@",tableName,strWhere] ;
 }
 
 
@@ -158,7 +136,8 @@
 
 
 
-
+#pragma mark -- 
+#pragma mark - private
 + (NSString *)sqlTypeWithType:(NSString *)strType
 {
     if ([strType containsString:@"int"] || [strType containsString:@"Integer"])
@@ -189,8 +168,15 @@
     else return @" DEFAULT '0' " ;
 }
 
-
-
++ (NSString *)keywordsWithName:(NSString *)name
+                         class:(Class)cls
+{
+//    id dic = [((XTDBModel *)[[cls alloc] init]) valueForKey:@"dicPropertiesSqliteKeywords"] ;
+    id dic = [cls modelPropertiesSqliteKeywords] ;
+    NSLog(@"dic : %@",dic) ;
+    if ( !dic || !dic[name] ) return @"" ;
+    return dic[name] ;
+}
 
 
 @end

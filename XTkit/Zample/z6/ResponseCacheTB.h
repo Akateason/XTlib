@@ -1,13 +1,13 @@
 //
-//  XTResponseCacheTB.h
+//  ResponseCacheTB.h
 //  XTkit
 //
-//  Created by teason23 on 2017/5/3.
+//  Created by teason23 on 2017/5/4.
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
 #import "XTFMDB.h"
 
-@interface XTResponseCacheTB : XTFMDB
+@interface ResponseCacheTB : XTFMDB
 
 @end

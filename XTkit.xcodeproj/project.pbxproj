@@ -115,8 +115,9 @@
 		8FFD73611EB9B4C100148B83 /* Model1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73601EB9B4C100148B83 /* Model1.m */; };
 		8FFD73641EB9D19800148B83 /* UIViewController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73631EB9D19800148B83 /* UIViewController+Storyboard.m */; };
 		8FFD736C1EB9D26100148B83 /* XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73691EB9D26100148B83 /* XTFMDB.m */; };
-		8FFD736D1EB9D26100148B83 /* XTFMDB+autoSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD736B1EB9D26100148B83 /* XTFMDB+autoSql.m */; };
-		8FFD73701EB9D39B00148B83 /* XTResponseCacheTB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD736F1EB9D39B00148B83 /* XTResponseCacheTB.m */; };
+		8FFD73731EBAB0C100148B83 /* ResponseCacheTB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73721EBAB0C100148B83 /* ResponseCacheTB.m */; };
+		8FFD73761EBAB45C00148B83 /* XTDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73751EBAB45C00148B83 /* XTDBModel.m */; };
+		8FFD73791EBAB8B500148B83 /* XTDBModel+autoSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73781EBAB8B500148B83 /* XTDBModel+autoSql.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -360,10 +361,12 @@
 		8FFD73631EB9D19800148B83 /* UIViewController+Storyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Storyboard.m"; sourceTree = "<group>"; };
 		8FFD73681EB9D26100148B83 /* XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTFMDB.h; path = database/XTFMDB.h; sourceTree = "<group>"; };
 		8FFD73691EB9D26100148B83 /* XTFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTFMDB.m; path = database/XTFMDB.m; sourceTree = "<group>"; };
-		8FFD736A1EB9D26100148B83 /* XTFMDB+autoSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XTFMDB+autoSql.h"; path = "database/XTFMDB+autoSql.h"; sourceTree = "<group>"; };
-		8FFD736B1EB9D26100148B83 /* XTFMDB+autoSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XTFMDB+autoSql.m"; path = "database/XTFMDB+autoSql.m"; sourceTree = "<group>"; };
-		8FFD736E1EB9D39B00148B83 /* XTResponseCacheTB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTResponseCacheTB.h; path = z6/XTResponseCacheTB.h; sourceTree = "<group>"; };
-		8FFD736F1EB9D39B00148B83 /* XTResponseCacheTB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTResponseCacheTB.m; path = z6/XTResponseCacheTB.m; sourceTree = "<group>"; };
+		8FFD73711EBAB0C100148B83 /* ResponseCacheTB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseCacheTB.h; path = z6/ResponseCacheTB.h; sourceTree = "<group>"; };
+		8FFD73721EBAB0C100148B83 /* ResponseCacheTB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseCacheTB.m; path = z6/ResponseCacheTB.m; sourceTree = "<group>"; };
+		8FFD73741EBAB45C00148B83 /* XTDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTDBModel.h; path = database/XTDBModel.h; sourceTree = "<group>"; };
+		8FFD73751EBAB45C00148B83 /* XTDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTDBModel.m; path = database/XTDBModel.m; sourceTree = "<group>"; };
+		8FFD73771EBAB8B500148B83 /* XTDBModel+autoSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XTDBModel+autoSql.h"; path = "database/XTDBModel+autoSql.h"; sourceTree = "<group>"; };
+		8FFD73781EBAB8B500148B83 /* XTDBModel+autoSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XTDBModel+autoSql.m"; path = "database/XTDBModel+autoSql.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1104,8 +1107,8 @@
 			children = (
 				8FFD73551EB9B3E400148B83 /* Zample6Controller.h */,
 				8FFD73561EB9B3E400148B83 /* Zample6Controller.m */,
-				8FFD736E1EB9D39B00148B83 /* XTResponseCacheTB.h */,
-				8FFD736F1EB9D39B00148B83 /* XTResponseCacheTB.m */,
+				8FFD73711EBAB0C100148B83 /* ResponseCacheTB.h */,
+				8FFD73721EBAB0C100148B83 /* ResponseCacheTB.m */,
 			);
 			name = z6;
 			sourceTree = "<group>";
@@ -1115,8 +1118,10 @@
 			children = (
 				8FFD73681EB9D26100148B83 /* XTFMDB.h */,
 				8FFD73691EB9D26100148B83 /* XTFMDB.m */,
-				8FFD736A1EB9D26100148B83 /* XTFMDB+autoSql.h */,
-				8FFD736B1EB9D26100148B83 /* XTFMDB+autoSql.m */,
+				8FFD73741EBAB45C00148B83 /* XTDBModel.h */,
+				8FFD73751EBAB45C00148B83 /* XTDBModel.m */,
+				8FFD73771EBAB8B500148B83 /* XTDBModel+autoSql.h */,
+				8FFD73781EBAB8B500148B83 /* XTDBModel+autoSql.m */,
 			);
 			name = database;
 			sourceTree = "<group>";
@@ -1333,6 +1338,7 @@
 				60E238F31E9622A1001235F2 /* MyTextView.m in Sources */,
 				60E238ED1E9622A1001235F2 /* XTRequest.m in Sources */,
 				607E604C1EA88B5700D05213 /* Zample1Controller.m in Sources */,
+				8FFD73791EBAB8B500148B83 /* XTDBModel+autoSql.m in Sources */,
 				607E5FCC1EA6F8E400D05213 /* XTZoomPicture.m in Sources */,
 				8FFD736C1EB9D26100148B83 /* XTFMDB.m in Sources */,
 				60E238FC1E9622A1001235F2 /* ShareAlertV.m in Sources */,
@@ -1347,19 +1353,19 @@
 				607E5FD21EA6FDE500D05213 /* CommonFunc.m in Sources */,
 				607E60331EA85BE100D05213 /* SIAlertView.m in Sources */,
 				60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */,
+				8FFD73731EBAB0C100148B83 /* ResponseCacheTB.m in Sources */,
 				607E605D1EA9F87C00D05213 /* Zample3Controller.m in Sources */,
 				60E239051E9622A1001235F2 /* NSTimer+Addition.m in Sources */,
 				607E603E1EA8740A00D05213 /* RootRefreshFooter.m in Sources */,
 				8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */,
 				60E238E11E9622A1001235F2 /* NSObject+Reflection.m in Sources */,
 				607E602A1EA85BE100D05213 /* Base64.m in Sources */,
-				8FFD73701EB9D39B00148B83 /* XTResponseCacheTB.m in Sources */,
 				60E2395E1E971C5E001235F2 /* ResultParsered.m in Sources */,
 				60E239021E9622A1001235F2 /* XTBarrageItemView.m in Sources */,
 				60E239121E9622A1001235F2 /* XTAnimation.m in Sources */,
 				607E60631EA9FB7100D05213 /* Rating.m in Sources */,
 				60E239161E9622A1001235F2 /* XTTickConvert.m in Sources */,
-				8FFD736D1EB9D26100148B83 /* XTFMDB+autoSql.m in Sources */,
+				8FFD73761EBAB45C00148B83 /* XTDBModel.m in Sources */,
 				60E238F91E9622A1001235F2 /* UIImage+ImageEffects.m in Sources */,
 				60E238E61E9622A1001235F2 /* UILabel+Badges.m in Sources */,
 				60E2381E1E961D21001235F2 /* AppDelegate.m in Sources */,

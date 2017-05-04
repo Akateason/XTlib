@@ -41,7 +41,6 @@ static float const kBtFlex = 5 ;
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout = UIRectEdgeNone ;
     self.title = @"XTFMDB" ;
-        
     
     [self layoutUI] ;
 }
@@ -215,23 +214,22 @@ static float const kBtFlex = 5 ;
 - (void)createAction
 {
     NSLog(@"%s",__func__) ;
-    [[XTFMDB sharedInstance] createTable:[Model1 class]
-                              primarykey:@"idModel"]    ;
+    [Model1 createTable] ;     
 }
 
 - (void)selectAction
 {
     NSLog(@"%s",__func__) ;
-    NSArray *list = [[XTFMDB sharedInstance] selectAllFrom:[Model1 class]] ;
+    NSArray *list = [Model1 selectAll] ;
     for (Model1 *model in list) {
-        NSLog(@"%d",model.idModel) ;
+        NSLog(@"%d",model.pkid) ;
     }
 }
 
 - (void)selectWhereAction
 {
     NSLog(@"%s",__func__) ;
-    NSArray *list = [[XTFMDB sharedInstance] selectFrom:[Model1 class] where:@" WHERE title = 'jk4j3j43' "] ;
+    NSArray *list = [Model1 selectWhere:@"title = 'jk4j3j43' "] ;
     NSLog(@"list : %@ \ncount:%@",list,@(list.count)) ;
 }
 
@@ -244,30 +242,29 @@ static float const kBtFlex = 5 ;
     m1.tick = [XTTickConvert getTickFromNow] ;
     m1.title = @"jk4j3j43" ;
     
-    bool bInsetSuccess = [[XTFMDB sharedInstance] insert:m1] ;
+    [m1 insert] ;
 }
 
 - (void)updateAction
 {
     Model1 *m1 = [Model1 new] ; // 不需设置主键
-    m1.idModel = 1 ;
+    m1.pkid = 1 ;
     m1.age = 4444444 ;
     m1.floatVal = 44.4444 ;
     m1.tick = [XTTickConvert getTickFromNow] ;
     m1.title = @"我就改你" ;
     
-    BOOL bSuccess = [[XTFMDB sharedInstance] update:m1] ;
+    [m1 update] ;
 }
 
 - (void)deleteAction
 {
-    BOOL b = [[XTFMDB sharedInstance] deleteFrom:@"Model1"
-                                           where:@"WHERE title = '我就改你' "] ;
+    [Model1 deleteModelWhere:@"title = '我就改你' "] ;
 }
 
 - (void)dropAction
 {
-    BOOL b = [[XTFMDB sharedInstance] dropTable:[Model1 class]] ;
+    [Model1 dropTable] ;
 }
 
 - (void)insertListAction
@@ -284,12 +281,12 @@ static float const kBtFlex = 5 ;
         [list addObject:m1] ;
     }
     
-    BOOL b = [[XTFMDB sharedInstance] insertList:list] ;
+    [Model1 insertList:list] ;
 }
 
 - (void)updateListAction
 {
-    NSArray *getlist = [[XTFMDB sharedInstance] selectFrom:[Model1 class] where:@"WHERE idModel >= 1 AND idModel <= 10"] ;
+    NSArray *getlist = [Model1 selectWhere:@"pkid >= 1 AND pkid <= 10"] ;
     NSMutableArray *tmplist = [@[] mutableCopy] ;
     for (int i = 0 ; i < 10 ; i++)
     {
@@ -298,12 +295,12 @@ static float const kBtFlex = 5 ;
         [tmplist addObject:model] ;
     }
     
-    BOOL b = [[XTFMDB sharedInstance] updateList:tmplist] ;
+    [Model1 updateList:tmplist] ;
 }
 
 - (void)findFirstAction
 {
-    Model1 *model = [[XTFMDB sharedInstance] findFirst:[Model1 class] where:@"WHERE idModel == 2"] ;
+    Model1 *model = [Model1 findFirstWhere:@"pkid == 2"] ;
     NSLog(@"m : %@",[XTJson getJsonWithModel:model]) ;
 }
 
