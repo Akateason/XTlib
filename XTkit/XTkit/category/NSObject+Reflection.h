@@ -2,8 +2,8 @@
 //  NSObject+Reflection.h
 //  NSObject-Reflection
 //
-//  Created by Jakey on 15/12/22.
-//  Copyright © 2015年 Jakey. All rights reserved.
+//  Created by teason on 15/12/22.
+//  Copyright © 2015年 teason. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

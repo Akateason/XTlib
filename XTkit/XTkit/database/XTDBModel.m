@@ -270,6 +270,7 @@
 
 #pragma mark --
 #pragma mark -
+// Properties Sql Keywords
 // rewrite in subClass if Needed .
 + (NSDictionary *)modelPropertiesSqliteKeywords
 {
@@ -277,6 +278,7 @@
 }
 
 // ignore Properties
+// rewrite in subClass if Needed .
 + (NSArray *)ignoreProperties
 {
     return nil ;

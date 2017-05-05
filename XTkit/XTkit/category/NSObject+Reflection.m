@@ -2,8 +2,8 @@
 //  NSObject+Reflection.m
 //  NSObject-Reflection
 //
-//  Created by Jakey on 15/12/22.
-//  Copyright © 2015年 Jakey. All rights reserved.
+//  Created by teason on 15/12/22.
+//  Copyright © 2015年 teason. All rights reserved.
 //
 
 #import "NSObject+Reflection.h"
@@ -62,7 +62,6 @@
     return [[self class] propertiesInfo];
 }
 /**
- *  @author Jakey, 15-12-22 11:12:38
  *
  *  属性列表与属性的各种信息
  *
@@ -221,7 +220,6 @@
 }
 
 /**
- *  @author Jakey, 15-12-22 12:12:17
  *
  *  <>协议列表信息
  *
