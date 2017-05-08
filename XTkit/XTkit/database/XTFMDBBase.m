@@ -1,29 +1,32 @@
 //
-//  XTFMDB.m
-//  XTkit
+//  XTFMDBBase.m
+//  demo_XTFMDB
 //
-//  Created by teason23 on 2017/4/28.
-//  Copyright © 2017年 teason. All rights reserved.
+//  Created by teason23 on 2017/5/8.
+//  Copyright © 2017年 teaason. All rights reserved.
 //
 
-#import "XTFMDB.h"
+#import "XTFMDBBase.h"
 
 #define SQLITE_NAME( _name_ )   [name stringByAppendingString:@".sqlite"]
 
-#define DB                  [XTFMDB sharedInstance].database
+#define DB                      [XTFMDBBase sharedInstance].database
 
-
-@interface XTFMDB ()
-
+@interface XTFMDBBase ()
 @property (nonatomic,strong,readwrite) FMDatabase         *database   ;
-
 @end
 
+@implementation XTFMDBBase
 
-
-@implementation XTFMDB
-
-DEF_SINGLETON(XTFMDB)
++ (XTFMDBBase *)sharedInstance
+{
+    static dispatch_once_t onceToken;
+    static XTFMDBBase *singleton ;
+    dispatch_once(&onceToken, ^{
+        singleton = [[XTFMDBBase alloc] init] ;
+    });
+    return singleton ;
+}
 
 #pragma mark --
 #pragma mark - configure

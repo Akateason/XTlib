@@ -7,9 +7,8 @@
 //
 
 #import "XTDBModel+autoSql.h"
-#import <objc/runtime.h>
 #import "NSObject+Reflection.h"
-#import "XTJson.h"
+#import "YYModel.h"
 
 
 @implementation XTDBModel (autoSql)
@@ -72,7 +71,7 @@
 
 + (NSString *)sqlInsertWithModel:(id)model
 {
-    NSDictionary *dicModel = [XTJson getJsonWithModel:model] ;
+    NSDictionary *dicModel = [model yy_modelToJSONObject] ;
     NSString *tableName = NSStringFromClass([model class]) ;
     
     NSString *propertiesStr = @"" ;
@@ -103,7 +102,7 @@
 + (NSString *)sqlUpdateWithModel:(id)model
 {
     NSString *tableName = NSStringFromClass([model class]) ;
-    NSDictionary *dic = [XTJson getJsonWithModel:model] ;
+    NSDictionary *dic = [model yy_modelToJSONObject] ;
     
     NSString *setsStr       = @"" ;
     NSString *whereStr      = @"" ;

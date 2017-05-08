@@ -27,7 +27,7 @@
     [SVProgressHUD setMaximumDismissTimeInterval:2.] ;
     
     // SQLite
-    [[XTFMDB sharedInstance] configureDB:@"teason"] ; // app did launch .
+    [[XTFMDBBase sharedInstance] configureDB:@"teason"] ; // app did launch .
     
     
     
