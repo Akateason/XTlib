@@ -9,7 +9,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface ServerRequest : NSObject
 
 + (void)zample2WithSuccess:(void (^)(id json))success

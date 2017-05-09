@@ -65,15 +65,22 @@
               forKey:@"start"] ;
     [param setObject:@(count)
               forKey:@"count"] ;
-    
+
     [XTCacheRequest cacheGET:@"https://api.douban.com/v2/movie/top250"
                   parameters:param
                          hud:YES
-                      policy:XTResponseCachePolicyTimeout
-               timeoutIfNeed:60 * 10
-                  completion:^(id json) {
-                      completion(json) ;
-                  }] ;
+                      policy:XTResponseCachePolicyAlwaysCache
+               timeoutIfNeed:0
+                  completion:completion] ;
+    
+//    [XTCacheRequest cacheGET:@"https://api.douban.com/v2/movie/top250"
+//                  parameters:param
+//                         hud:YES
+//                      policy:XTResponseCachePolicyTimeout
+//               timeoutIfNeed:60 * 10
+//                  completion:^(id json) {
+//                      completion(json) ;
+//                  }] ;
 }
 
 
