@@ -15,7 +15,7 @@
 #import "YYModel.h"
 #import "XTJson.h"
 #import "UrlRequestHeader.h"
-#import "ResultParsered.h"
+#import "XTReqResonse.h"
 
 
 static NSString *const kStringBadNetwork = @"网络状况差" ;
@@ -27,7 +27,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
 
 #pragma mark --
 #pragma mark - get URL with strPartOfUrl
-+ (NSString *)getFinalUrl:(NSString *)strPartOfUrl { return [G_IP_SERVER stringByAppendingString:strPartOfUrl] ; }
++ (NSString *)getFinalUrl:(NSString *)strPartOfUrl { return [kBaseURL stringByAppendingString:strPartOfUrl] ; }
 + (NSMutableDictionary *)getParameters { return [@{} mutableCopy] ; }
 
 
@@ -80,6 +80,21 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
            success:(void (^)(id json))success
               fail:(void (^)())fail
 {
+    [self GETWithUrl:url
+                 hud:hud
+          parameters:dict
+         taskSuccess:^(NSURLSessionDataTask *task, id json) {
+             success(json) ;
+         }
+                fail:fail] ;
+}
+
++ (void)GETWithUrl:(NSString *)url
+               hud:(BOOL)hud
+        parameters:(NSDictionary *)dict
+       taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+              fail:(void (^)())fail
+{
     if (hud) [SVProgressHUD show] ;
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager] ;
@@ -92,14 +107,13 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
       parameters:dict
         progress:nil //^(NSProgress * _Nonnull downloadProgress) {}
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            
+             
             if (success)
             {
                 if (hud) [SVProgressHUD dismiss] ;
                 NSLog(@"url : %@ \nparam : %@",url,dict) ;
                 NSLog(@"resp %@",responseObject) ;
-                success(responseObject) ;
-                
+                success(task,responseObject) ;
             }
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -132,12 +146,26 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
             success:(void (^)(id json))success
                fail:(void (^)())fail
 {
+    [self POSTWithUrl:url
+                  hud:hud
+           parameters:dict
+          taskSuccess:^(NSURLSessionDataTask *task, id json) {
+              success(json) ;
+          } fail:fail] ;
+}
+
++ (void)POSTWithUrl:(NSString *)url
+                hud:(BOOL)hud
+         parameters:(NSDictionary *)dict
+        taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+               fail:(void (^)())fail
+{
     if (hud) [SVProgressHUD show] ;
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager] ;
     manager.requestSerializer = [AFJSONRequestSerializer serializer] ;
     manager.responseSerializer = [AFJSONResponseSerializer serializer] ;
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil] ;
     manager.requestSerializer.timeoutInterval = kTIMEOUT ;
     
     [manager POST:url
@@ -151,7 +179,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
                   
                   NSLog(@"url : %@ \nparam : %@",url,dict) ;
                   NSLog(@"resp %@",responseObject) ;
-                  success(responseObject) ;
+                  success(task , responseObject) ;
               }
               
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -173,32 +201,32 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
 //  sync
 #pragma mark --
 #pragma mark - sync
-+ (ResultParsered *)getResultWithURLstr:(NSString *)urlstr
++ (XTReqResonse *)getResultWithURLstr:(NSString *)urlstr
                                   param:(NSDictionary *)dict
-                                   mode:(METHOD_REQUEST)mode
+                                   mode:(XTRequestMode)mode
 {
-    ResultParsered *result = [self getResultWithURLstr:urlstr
+    XTReqResonse *result = [self getResultWithURLstr:urlstr
                                                  param:dict
                                                   mode:mode
                                                    hud:TRUE] ;
     return result ;
 }
 
-+ (ResultParsered *)getResultWithURLstr:(NSString *)urlstr
++ (XTReqResonse *)getResultWithURLstr:(NSString *)urlstr
                                   param:(NSDictionary *)dict
-                                   mode:(METHOD_REQUEST)mode
+                                   mode:(XTRequestMode)mode
                                     hud:(BOOL)hud
 {
     id jsonObj = [self getJsonObjectWithURLstr:urlstr
                                          param:dict
                                           mode:mode
                                            hud:hud] ;
-    return [ResultParsered yy_modelWithJSON:jsonObj] ;
+    return [XTReqResonse yy_modelWithJSON:jsonObj] ;
 }
 
 + (id)getJsonObjectWithURLstr:(NSString *)urlstr
                         param:(NSDictionary *)dict
-                         mode:(METHOD_REQUEST)mode
+                         mode:(XTRequestMode)mode
 {
     return [self getJsonObjectWithURLstr:urlstr
                                    param:dict
@@ -208,12 +236,12 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
 
 + (id)getJsonObjectWithURLstr:(NSString *)urlstr
                         param:(NSDictionary *)dict
-                         mode:(METHOD_REQUEST)mode
+                         mode:(XTRequestMode)mode
                           hud:(BOOL)hud
 {
     if (hud) [SVProgressHUD show] ;
     NSString *response = nil ;
-    if (mode == GET_MODE)
+    if (mode == XTRequestMode_GET_MODE)
     {
         NSString *apStr = [self getUrlInGetModeWithDic:dict] ;
         urlstr = [urlstr stringByAppendingString:apStr] ;
@@ -229,7 +257,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
         }
         response = [request responseString] ;
     }
-    else if (mode == POST_MODE)
+    else if (mode == XTRequestMode_POST_MODE)
     {
         ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:urlstr]] ;
         request.timeOutSeconds = kTIMEOUT ;
@@ -284,7 +312,10 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
     return appendingStr ;
 }
 
-
++ (NSString *)fullUrl:(NSString *)url param:(NSDictionary *)param
+{
+    return [url stringByAppendingString:[self getUrlInGetModeWithDic:param]] ;
+}
 
 
 @end

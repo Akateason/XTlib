@@ -9,9 +9,9 @@
 
 #import <Foundation/Foundation.h>
 #import "XTRequest.h"
-#import "ResultParsered.h"
+#import "XTReqResonse.h"
 #import "PublicEnum.h"
-@class User , AFHTTPSessionManager ;
+
 
 @interface ServerRequest : XTRequest
 

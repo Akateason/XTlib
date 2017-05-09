@@ -7,26 +7,33 @@
 //
 
 #import <Foundation/Foundation.h>
+@class XTReqResonse , NSURLSessionDataTask ;
+
 
 // get PARAM
 #define XT_GET_PARAM                         NSMutableDictionary *param = [self getParameters] ;
-// global timeout
+// global request timeout
 static const float kTIMEOUT = 5.f ;
+// base URL
+static NSString *const kBaseURL = @"http://www.akateason.top" ;
+
 // method
-typedef NS_ENUM(NSInteger, METHOD_REQUEST) {
-    GET_MODE  ,
-    POST_MODE
+typedef NS_ENUM(NSInteger, XTRequestMode) {
+    XTRequestMode_GET_MODE      ,
+    XTRequestMode_POST_MODE
 } ;
 
 
 
-@class ResultParsered ;
+
 
 @interface XTRequest : NSObject
 
 // set URL string
 + (NSString *)getFinalUrl:(NSString *)strPartOfUrl ;
-
+// baseurl?param1&param2&param3...
++ (NSString *)fullUrl:(NSString *)url
+                param:(NSDictionary *)param ;
 // param
 + (NSMutableDictionary *)getParameters ;
 
@@ -46,6 +53,12 @@ typedef NS_ENUM(NSInteger, METHOD_REQUEST) {
            success:(void (^)(id json))success
               fail:(void (^)())fail ;
 
++ (void)GETWithUrl:(NSString *)url
+               hud:(BOOL)hud
+        parameters:(NSDictionary *)dict
+       taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+              fail:(void (^)())fail ;
+
 + (void)POSTWithUrl:(NSString *)url
          parameters:(NSDictionary *)dict
             success:(void (^)(id json))success
@@ -57,23 +70,29 @@ typedef NS_ENUM(NSInteger, METHOD_REQUEST) {
             success:(void (^)(id json))success
                fail:(void (^)())fail ;
 
-//  sync
-+ (ResultParsered *)getResultWithURLstr:(NSString *)urlstr
-                                  param:(NSDictionary *)dict
-                                   mode:(METHOD_REQUEST)mode ;
++ (void)POSTWithUrl:(NSString *)url
+                hud:(BOOL)hud
+         parameters:(NSDictionary *)dict
+        taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+               fail:(void (^)())fail ;
 
-+ (ResultParsered *)getResultWithURLstr:(NSString *)urlstr
+//  sync
++ (XTReqResonse *)getResultWithURLstr:(NSString *)urlstr
                                   param:(NSDictionary *)dict
-                                   mode:(METHOD_REQUEST)mode
+                                   mode:(XTRequestMode)mode ;
+
++ (XTReqResonse *)getResultWithURLstr:(NSString *)urlstr
+                                  param:(NSDictionary *)dict
+                                   mode:(XTRequestMode)mode
                                     hud:(BOOL)hud ;
 
 + (id)getJsonObjectWithURLstr:(NSString *)urlstr
                         param:(NSDictionary *)dict
-                         mode:(METHOD_REQUEST)mode ;
+                         mode:(XTRequestMode)mode ;
 
 + (id)getJsonObjectWithURLstr:(NSString *)urlstr
                         param:(NSDictionary *)dict
-                         mode:(METHOD_REQUEST)mode
+                         mode:(XTRequestMode)mode
                           hud:(BOOL)hud ;
 
 @end

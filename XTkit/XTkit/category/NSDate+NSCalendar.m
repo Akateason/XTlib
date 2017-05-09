@@ -1,14 +1,15 @@
 //
-//  NSDate+Addition.m
-//  SuBaoJiang
+//  NSDate+NSCalendar.m
+//  XTkit
 //
-//  Created by apple on 15/6/5.
-//  Copyright (c) 2015年 teason. All rights reserved.
+//  Created by teason23 on 2017/5/9.
+//  Copyright © 2017年 teason. All rights reserved.
 //
 
-#import "NSDate+Addition.h"
+#import "NSDate+NSCalendar.h"
 
-@implementation NSDate (Addition)
+@implementation NSDate (NSCalendar)
+
 
 - (NSDateComponents *)shareComps
 {
@@ -76,5 +77,6 @@
         return 28;
     return 29;
 }
+
 
 @end

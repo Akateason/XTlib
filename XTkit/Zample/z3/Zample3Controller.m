@@ -51,6 +51,7 @@ static const NSInteger kEveryCount = 10 ;
     
 }
 
+
 #pragma mark - RootTableViewDelegate
 - (void)loadNew:(void(^)(void))endRefresh
 {

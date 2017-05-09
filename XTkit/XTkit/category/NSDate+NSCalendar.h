@@ -1,16 +1,14 @@
 //
-//  NSDate+Addition.h
-//  SuBaoJiang
+//  NSDate+NSCalendar.h
+//  XTkit
 //
-//  Created by apple on 15/6/5.
-//  Copyright (c) 2015年 teason. All rights reserved.
+//  Created by teason23 on 2017/5/9.
+//  Copyright © 2017年 teason. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface NSDate (Addition)
-
-#pragma mark - NSCalendar
+@interface NSDate (NSCalendar)
 //拿 当前 年月日
 - (int)getYear;
 
@@ -26,5 +24,4 @@
 
 //当前月有多少天
 + (int)daysInMonth:(int)imonth year:(int)year ;
-
 @end

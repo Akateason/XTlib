@@ -15,7 +15,7 @@ typedef enum {
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "ResultParsered.h"
+
 
 @interface CommonFunc : NSObject
 

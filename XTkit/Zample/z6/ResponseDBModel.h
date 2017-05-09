@@ -1,42 +1,51 @@
 //
 //  ResponseDBModel.h
 //  XTkit
-//
+//   .
 //  Created by teason23 on 2017/5/4.
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 
-
-//  NSURLRequestUseProtocolCachePolicy // 默认的缓存策略（取决于协议）
-//  NSURLRequestReloadIgnoringLocalCacheData // 忽略缓存，重新请求
-//  NSURLRequestReturnCacheDataElseLoad// 有缓存就用缓存，没有缓存就重新请求
-//  NSURLRequestReturnCacheDataDontLoad// 有缓存就用缓存，没有缓存就不发请求，当做请求出错处理（用于离线模式）
-//
-//-------------
-//　　（1）经常更新：不能用缓存！比如股票、彩票数据
-//
-//　　（2）一成不变：果断用缓存
-//
-//　　（3）偶尔更新：可以定期更改缓存策略 或者 清除缓存
-
-
-#import "XTDBModel.h"
-
-typedef NS_ENUM(NSUInteger, XTResponseCacheType) {
-    XTResponseCacheTypeTypeNeverCache           , // default
-    XTResponseCacheTypeLoadCacheThenRequest     ,
+typedef NS_ENUM(NSUInteger, XTResponseCachePolicy) {
+    XTResponseCachePolicyNeverUseCache      , // DEFAULT
+    XTResponseCachePolicyAlwaysCache        ,
     
-    XTResponseCacheTypeTimeout          = 20    ,
+    XTResponseCachePolicyTimeout      = 20  ,
 } ;
 
-@interface ResponseDBModel : XTDBModel
+@interface ResponseDBModel : NSObject
 
-@property (nonatomic,copy) NSString     *requestUrl     ; // unique     KEY
-@property (nonatomic,copy) NSString     *response       ; //            VAL
-@property (nonatomic)      NSUInteger   cacheType       ; // XTResponseCacheType
+@property (nonatomic,copy) NSString     *requestUrl     ; // as UNIQUE KEY
+@property (nonatomic,copy) NSString     *response       ; // response string
+/*
+ *XTResponseCacheType
+ *  XTResponseCachePolicyNeverUseCache  从不缓存适合每次都实时的数据流.
+ *  XTResponseCachePolicyAlwaysCache    总是获取缓存的数据.不再更新.
+ *  XTResponseCachePolicyTimeout        规定时间内.返回缓存.超时则更新数据. 需设置timeout时间. timeout默认1小时
+ */
+@property (nonatomic)      NSUInteger   cachePolicy     ; // XTResponseCachePolicy
+@property (nonatomic)      int          timeout         ; // 超时时间(秒数)  默认1小时
 @property (nonatomic)      long long    createTime      ; // tick
 @property (nonatomic)      long long    updateTime      ;
-@property (nonatomic)      int          isDelete        ;
+
+// new a Default Model
++ (instancetype)newDefaultModelWithKey:(NSString *)urlStr
+                                   val:(NSString *)respStr;
+
++ (instancetype)newDefaultModelWithKey:(NSString *)urlStr
+                                   val:(NSString *)respStr
+                                policy:(int)policy
+                               timeout:(int)timeout ;
+// is timeout ?
+- (BOOL)isAlreadyTimeout ;
 
 @end
+
+
+
+
+
+
+

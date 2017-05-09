@@ -7,6 +7,7 @@
 //
 
 #import "ResponseDBModel.h"
+#import "NSDate+XTTick.h"
 
 @implementation ResponseDBModel
 
@@ -14,8 +15,48 @@
 + (NSDictionary *)modelPropertiesSqliteKeywords
 {
     return @{
-             @"requestUrl" : @"UNIQUE" ,
+                @"requestUrl" : @"UNIQUE" ,
              } ;
+}
+
+#pragma mark --
+#pragma mark - public 
+// new a Default Model
++ (instancetype)newDefaultModelWithKey:(NSString *)urlStr
+                                   val:(NSString *)respStr
+{
+    return [self newDefaultModelWithKey:urlStr
+                                    val:respStr
+                                 policy:0
+                                timeout:0] ;
+}
+
++ (instancetype)newDefaultModelWithKey:(NSString *)urlStr
+                                   val:(NSString *)respStr
+                                policy:(int)policy
+                               timeout:(int)timeout
+{
+    if (!policy) policy = XTResponseCachePolicyNeverUseCache ; // default policy
+    if (!timeout) timeout = 60 * 60 ; // 1hour default timeout
+    ResponseDBModel *dbModel = [[ResponseDBModel alloc] init] ;
+    dbModel.requestUrl = urlStr ;
+    dbModel.response = respStr ;
+    dbModel.cachePolicy = policy ;
+    dbModel.timeout = timeout ;
+    dbModel.createTime = [NSDate xt_getTickFromNow] ;
+    dbModel.updateTime = dbModel.createTime ;
+    return dbModel ;
+}
+
+
+- (BOOL)isAlreadyTimeout
+{
+    NSDate *now = [NSDate date] ;
+    NSDate *dateUpdate = [NSDate xt_getNSDateWithTick:self.updateTime] ;
+    NSDate *dateWillTimeout = [NSDate dateWithTimeInterval:self.timeout
+                                                 sinceDate:dateUpdate] ;
+    NSComparisonResult result = [dateWillTimeout compare:now] ;
+    return result == NSOrderedAscending ;
 }
 
 @end

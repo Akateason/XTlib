@@ -11,7 +11,7 @@
 #import <objc/runtime.h>
 #import "XTFMDB.h"
 #import "Model1.h"
-#import "XTTickConvert.h"
+#import "NSDate+XTTick.h"
 
 
 @interface Zample5Controller ()
@@ -197,7 +197,6 @@ static float const kBtFlex = 5 ;
         bt ;
     }) ;
     
-    
 }
 
 - (void)btOnClick:(UIButton *)sender
@@ -214,13 +213,13 @@ static float const kBtFlex = 5 ;
 - (void)createAction
 {
     NSLog(@"%s",__func__) ;
-    [Model1 createTable] ;     
+    [Model1 xt_createTable] ;
 }
 
 - (void)selectAction
 {
     NSLog(@"%s",__func__) ;
-    NSArray *list = [Model1 selectAll] ;
+    NSArray *list = [Model1 xt_selectAll] ;
     for (Model1 *model in list) {
         NSLog(@"%d",model.pkid) ;
     }
@@ -229,7 +228,7 @@ static float const kBtFlex = 5 ;
 - (void)selectWhereAction
 {
     NSLog(@"%s",__func__) ;
-    NSArray *list = [Model1 selectWhere:@"title = 'jk4j3j43' "] ;
+    NSArray *list = [Model1 xt_selectWhere:@"title = 'jk4j3j43' "] ;
     NSLog(@"list : %@ \ncount:%@",list,@(list.count)) ;
 }
 
@@ -239,10 +238,10 @@ static float const kBtFlex = 5 ;
     Model1 *m1 = [Model1 new] ; // 不需设置主键
     m1.age = arc4random() % 100 ;
     m1.floatVal = 3232.89f ;
-    m1.tick = [XTTickConvert getTickFromNow] ;
+    m1.tick = [NSDate xt_getTickFromNow] ;
     m1.title = @"jk4j3j43" ;
     
-    [m1 insert] ;
+    [m1 xt_insert] ;
 }
 
 - (void)updateAction
@@ -251,20 +250,20 @@ static float const kBtFlex = 5 ;
     m1.pkid = 1 ;
     m1.age = 4444444 ;
     m1.floatVal = 44.4444 ;
-    m1.tick = [XTTickConvert getTickFromNow] ;
+    m1.tick = [NSDate xt_getTickFromNow] ;
     m1.title = @"我就改你" ;
     
-    [m1 update] ;
+    [m1 xt_update] ;
 }
 
 - (void)deleteAction
 {
-    [Model1 deleteModelWhere:@"title = '我就改你' "] ;
+    [Model1 xt_deleteModelWhere:@"title = '我就改你' "] ;
 }
 
 - (void)dropAction
 {
-    [Model1 dropTable] ;
+    [Model1 xt_dropTable] ;
 }
 
 - (void)insertListAction
@@ -275,18 +274,18 @@ static float const kBtFlex = 5 ;
         Model1 *m1 = [Model1 new] ; // 插入不需设置主键
         m1.age = i + 1 ;
         m1.floatVal = i + 0.3 ;
-        m1.tick = [XTTickConvert getTickFromNow] ;
+        m1.tick = [NSDate xt_getTickFromNow] ;
         m1.title = [NSString stringWithFormat:@"title%d",i] ;
         
         [list addObject:m1] ;
     }
     
-    [Model1 insertList:list] ;
+    [Model1 xt_insertList:list] ;
 }
 
 - (void)updateListAction
 {
-    NSArray *getlist = [Model1 selectWhere:@"pkid >= 1 AND pkid <= 10"] ;
+    NSArray *getlist = [Model1 xt_selectWhere:@"pkid >= 1 AND pkid <= 10"] ;
     NSMutableArray *tmplist = [@[] mutableCopy] ;
     for (int i = 0 ; i < 10 ; i++)
     {
@@ -295,12 +294,12 @@ static float const kBtFlex = 5 ;
         [tmplist addObject:model] ;
     }
     
-    [Model1 updateList:tmplist] ;
+    [Model1 xt_updateList:tmplist] ;
 }
 
 - (void)findFirstAction
 {
-    Model1 *model = [Model1 findFirstWhere:@"pkid == 2"] ;
+    Model1 *model = [Model1 xt_findFirstWhere:@"pkid == 2"] ;
     NSLog(@"m : %@",[XTJson getJsonWithModel:model]) ;
 }
 

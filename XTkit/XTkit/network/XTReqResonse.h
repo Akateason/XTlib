@@ -1,14 +1,14 @@
 //
-//  ResultParsered.h
-//  SuBaoJiang
+//  XTReqResonse.h
+//  XTkit
 //
-//  Created by apple on 15/6/4.
-//  Copyright (c) 2015年 teason. All rights reserved.
+//  Created by teason23 on 2017/5/8.
+//  Copyright © 2017年 teason. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface ResultParsered : NSObject
+@interface XTReqResonse : NSObject
 
 @property (nonatomic)           NSInteger       errCode     ;
 @property (nonatomic,copy)      NSString        *message    ;
