@@ -11,13 +11,13 @@
 @implementation XTReqResonse
 
 //返回一个 Dict，将 Model 属性名对映射到 JSON 的 Key。
-+ (NSDictionary *)modelCustomPropertyMapper
-{
-    return @{
-             @"errCode" : @"returnCode" ,
-             @"message" : @"returnMsg"  ,
-             @"info"    : @"returnData"
-             } ;
-}
+//+ (NSDictionary *)modelCustomPropertyMapper
+//{
+//    return @{
+//             @"errorCode"   : @"returnCode" ,
+//             @"msg"         : @"returnMsg"  ,
+//             @"info"        : @"returnData"
+//             } ;
+//}
 
 @end

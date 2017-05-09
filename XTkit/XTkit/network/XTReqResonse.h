@@ -10,8 +10,8 @@
 
 @interface XTReqResonse : NSObject
 
-@property (nonatomic)           NSInteger       errCode     ;
-@property (nonatomic,copy)      NSString        *message    ;
+@property (nonatomic)           NSInteger       errorCode   ;
+@property (nonatomic,copy)      NSString        *msg        ;
 @property (nonatomic,strong)    NSDictionary    *info       ;
 
 @end

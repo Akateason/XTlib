@@ -15,7 +15,6 @@
 
 @implementation XTCacheRequest
 
-
 #pragma mark --
 + (void)cacheGET:(NSString *)url
       parameters:(NSDictionary *)param

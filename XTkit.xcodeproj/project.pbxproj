@@ -105,7 +105,6 @@
 		60E239141E9622A1001235F2 /* XTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D51E9622A1001235F2 /* XTJson.m */; };
 		60E239151E9622A1001235F2 /* XTSearchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D81E9622A1001235F2 /* XTSearchHandler.m */; };
 		60E239171E9622A1001235F2 /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238DE1E9622A1001235F2 /* XTVerification.m */; };
-		8F9916411EC066BE00BA8F0D /* XTCacheRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916401EC066BE00BA8F0D /* XTCacheRequest.m */; };
 		8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */; };
 		8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */; };
 		8F99164F1EC0754B00BA8F0D /* XTDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916481EC0754B00BA8F0D /* XTDBModel.m */; };
@@ -113,13 +112,14 @@
 		8F9916511EC0754B00BA8F0D /* XTFMDBBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99164D1EC0754B00BA8F0D /* XTFMDBBase.m */; };
 		8F9916541EC14D6B00BA8F0D /* NSDate+XTTick.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916531EC14D6B00BA8F0D /* NSDate+XTTick.m */; };
 		8F9916571EC150BF00BA8F0D /* NSDate+NSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */; };
+		8F99165C1EC1B6B400BA8F0D /* ResponseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916591EC1B6B400BA8F0D /* ResponseDBModel.m */; };
+		8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */; };
 		8FFD733D1EB30A5400148B83 /* Zample4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD733C1EB30A5400148B83 /* Zample4Controller.m */; };
 		8FFD73421EB320BA00148B83 /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73411EB320BA00148B83 /* ServerRequest.m */; };
 		8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73451EB321A900148B83 /* Zample5Controller.m */; };
 		8FFD73571EB9B3E400148B83 /* Zample6Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73561EB9B3E400148B83 /* Zample6Controller.m */; };
 		8FFD73611EB9B4C100148B83 /* Model1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73601EB9B4C100148B83 /* Model1.m */; };
 		8FFD73641EB9D19800148B83 /* UIViewController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73631EB9D19800148B83 /* UIViewController+Storyboard.m */; };
-		8FFD73801EBAFAA600148B83 /* ResponseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD737F1EBAFAA600148B83 /* ResponseDBModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -343,8 +343,6 @@
 		60E238DD1E9622A1001235F2 /* XTVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTVerification.h; sourceTree = "<group>"; };
 		60E238DE1E9622A1001235F2 /* XTVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTVerification.m; sourceTree = "<group>"; };
 		7CF43A032C3BF2386C1D5B60 /* Pods-XTkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-XTkit/Pods-XTkit.release.xcconfig"; sourceTree = "<group>"; };
-		8F99163F1EC066BE00BA8F0D /* XTCacheRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTCacheRequest.h; path = z6/XTCacheRequest.h; sourceTree = "<group>"; };
-		8F9916401EC066BE00BA8F0D /* XTCacheRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTCacheRequest.m; path = z6/XTCacheRequest.m; sourceTree = "<group>"; };
 		8F9916421EC06C4F00BA8F0D /* XTReqResonse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqResonse.h; sourceTree = "<group>"; };
 		8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqResonse.m; sourceTree = "<group>"; };
 		8F9916451EC0754B00BA8F0D /* NSObject+XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+XTFMDB.h"; path = "database/NSObject+XTFMDB.h"; sourceTree = "<group>"; };
@@ -360,6 +358,10 @@
 		8F9916531EC14D6B00BA8F0D /* NSDate+XTTick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+XTTick.m"; sourceTree = "<group>"; };
 		8F9916551EC150BF00BA8F0D /* NSDate+NSCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NSCalendar.h"; sourceTree = "<group>"; };
 		8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSCalendar.m"; sourceTree = "<group>"; };
+		8F9916581EC1B6B400BA8F0D /* ResponseDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseDBModel.h; sourceTree = "<group>"; };
+		8F9916591EC1B6B400BA8F0D /* ResponseDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseDBModel.m; sourceTree = "<group>"; };
+		8F99165A1EC1B6B400BA8F0D /* XTCacheRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCacheRequest.h; sourceTree = "<group>"; };
+		8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCacheRequest.m; sourceTree = "<group>"; };
 		8FFD733B1EB30A5400148B83 /* Zample4Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zample4Controller.h; path = z4/Zample4Controller.h; sourceTree = "<group>"; };
 		8FFD733C1EB30A5400148B83 /* Zample4Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Zample4Controller.m; path = z4/Zample4Controller.m; sourceTree = "<group>"; };
 		8FFD73401EB320BA00148B83 /* ServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRequest.h; sourceTree = "<group>"; };
@@ -372,8 +374,6 @@
 		8FFD73601EB9B4C100148B83 /* Model1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model1.m; path = z5/Model1.m; sourceTree = "<group>"; };
 		8FFD73621EB9D19800148B83 /* UIViewController+Storyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Storyboard.h"; sourceTree = "<group>"; };
 		8FFD73631EB9D19800148B83 /* UIViewController+Storyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Storyboard.m"; sourceTree = "<group>"; };
-		8FFD737E1EBAFAA600148B83 /* ResponseDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseDBModel.h; path = z6/ResponseDBModel.h; sourceTree = "<group>"; };
-		8FFD737F1EBAFAA600148B83 /* ResponseDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseDBModel.m; path = z6/ResponseDBModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -814,6 +814,10 @@
 				60E238741E9622A1001235F2 /* XTRequest.m */,
 				8F9916421EC06C4F00BA8F0D /* XTReqResonse.h */,
 				8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */,
+				8F9916581EC1B6B400BA8F0D /* ResponseDBModel.h */,
+				8F9916591EC1B6B400BA8F0D /* ResponseDBModel.m */,
+				8F99165A1EC1B6B400BA8F0D /* XTCacheRequest.h */,
+				8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -1106,10 +1110,6 @@
 			children = (
 				8FFD73551EB9B3E400148B83 /* Zample6Controller.h */,
 				8FFD73561EB9B3E400148B83 /* Zample6Controller.m */,
-				8FFD737E1EBAFAA600148B83 /* ResponseDBModel.h */,
-				8FFD737F1EBAFAA600148B83 /* ResponseDBModel.m */,
-				8F99163F1EC066BE00BA8F0D /* XTCacheRequest.h */,
-				8F9916401EC066BE00BA8F0D /* XTCacheRequest.m */,
 			);
 			name = z6;
 			sourceTree = "<group>";
@@ -1321,7 +1321,6 @@
 			files = (
 				607E60441EA883BB00D05213 /* UIView+CurrentController.m in Sources */,
 				607E604F1EA88B8100D05213 /* Z1CustomCell.m in Sources */,
-				8FFD73801EBAFAA600148B83 /* ResponseDBModel.m in Sources */,
 				60E239091E9622A1001235F2 /* XTNetReloader.m in Sources */,
 				8F9916511EC0754B00BA8F0D /* XTFMDBBase.m in Sources */,
 				60E238E41E9622A1001235F2 /* UIImage+AddFunction.m in Sources */,
@@ -1329,7 +1328,6 @@
 				607E602D1EA85BE100D05213 /* XHPathCover.m in Sources */,
 				60E238F11E9622A1001235F2 /* MyTabbarCtrller.m in Sources */,
 				60E238F61E9622A1001235F2 /* RootTableView.m in Sources */,
-				8F9916411EC066BE00BA8F0D /* XTCacheRequest.m in Sources */,
 				60E238F81E9622A1001235F2 /* ParallaxHeaderView.m in Sources */,
 				607E60321EA85BE100D05213 /* NSObject+MKBlockTimer.m in Sources */,
 				60E239061E9622A1001235F2 /* XTLoopScrollView.m in Sources */,
@@ -1361,6 +1359,7 @@
 				60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */,
 				607E605D1EA9F87C00D05213 /* Zample3Controller.m in Sources */,
 				60E239051E9622A1001235F2 /* NSTimer+Addition.m in Sources */,
+				8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */,
 				607E603E1EA8740A00D05213 /* RootRefreshFooter.m in Sources */,
 				8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */,
 				60E238E11E9622A1001235F2 /* NSObject+Reflection.m in Sources */,
@@ -1407,6 +1406,7 @@
 				607E60561EA9DB7100D05213 /* DoubanTags.m in Sources */,
 				60E238F41E9622A1001235F2 /* MyWebController.m in Sources */,
 				607E60241EA85BE100D05213 /* WPAttributedStyleAction.m in Sources */,
+				8F99165C1EC1B6B400BA8F0D /* ResponseDBModel.m in Sources */,
 				607E602C1EA85BE100D05213 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				607E60351EA85BE100D05213 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				607E60341EA85BE100D05213 /* UIAlternativeButton.m in Sources */,

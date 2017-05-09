@@ -29,9 +29,9 @@ typedef NS_ENUM(NSInteger, XTRequestMode) {
 
 @interface XTRequest : NSObject
 
-// set URL string
+// set URL string with base url
 + (NSString *)getFinalUrl:(NSString *)strPartOfUrl ;
-// baseurl?param1&param2&param3...
+// get url format baseurl?param1&param2&param3...
 + (NSString *)fullUrl:(NSString *)url
                 param:(NSDictionary *)param ;
 // param
