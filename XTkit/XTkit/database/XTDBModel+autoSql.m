@@ -7,9 +7,9 @@
 //
 
 #import "XTDBModel+autoSql.h"
+#import "NSObject+XTFMDB.h"
 #import "NSObject+Reflection.h"
 #import "YYModel.h"
-
 
 @implementation XTDBModel (autoSql)
 
@@ -87,7 +87,8 @@
         // prop
         propertiesStr = [propertiesStr stringByAppendingString:[NSString stringWithFormat:@"%@ ,",name]] ;
         // question
-        questionStr = [questionStr stringByAppendingString:[NSString stringWithFormat:@"'%@' ,",dicModel[name]]] ;
+        NSString *strVal = dicModel[name] ;
+        questionStr = [questionStr stringByAppendingString:[NSString stringWithFormat:@"'%@' ,",strVal]] ;
     }
     
     propertiesStr = [propertiesStr substringToIndex:propertiesStr.length - 1] ;
@@ -115,7 +116,8 @@
         // ignore prop
         if ([self propIsIgnore:name class:[model class]]) continue ;
         // setstr
-        NSString *tmpStr = [NSString stringWithFormat:@"%@ = '%@' ,",name,dic[name]] ;
+        NSString *strVal = dic[name] ;
+        NSString *tmpStr = [NSString stringWithFormat:@"%@ = '%@' ,",name,strVal] ;
         setsStr = [setsStr stringByAppendingString:tmpStr] ;
     }
     

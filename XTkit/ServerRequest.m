@@ -8,13 +8,11 @@
 
 
 #import "ServerRequest.h"
-#import "XTRequest.h"
+
 #import "UrlRequestHeader.h"
-#import "ShareDigit.h"
-#import "ASIFormDataRequest.h"
-#import "ASIHTTPRequest.h"
-#import "CommonFunc.h"
-#import "AFNetworking.h"
+#import "XTRequest.h"
+#import "XTCacheRequest.h"
+
 
 @implementation ServerRequest
 
@@ -24,17 +22,17 @@
 {
     int random = arc4random() % 100 ;
     NSString *urlStr = [NSString stringWithFormat:@"https://api.douban.com/v2/book/%@",@(1220562+random)] ;
-    [self GETWithUrl:urlStr
-          parameters:nil
-             success:^(id json) {
-                 if (success) {
-                     success(json) ;
-                 }
-             } fail:^{
-                 if (fail) {
-                     fail() ;
-                 }
-             }] ;
+    [XTRequest GETWithUrl:urlStr
+               parameters:nil
+                  success:^(id json) {
+                     if (success) {
+                         success(json) ;
+                     }
+                  } fail:^{
+                     if (fail) {
+                         fail() ;
+                     }
+                  }] ;
 }
 
 
@@ -49,16 +47,34 @@
     [param setObject:@(count)
               forKey:@"count"] ;
     
-    [self GETWithUrl:@"https://api.douban.com/v2/movie/top250"
-          parameters:param
-             success:^(id json) {
-                 if(success) success(json) ;
-             } fail:^{
-                 if(fail) fail() ;
-             }] ;
+    [XTRequest GETWithUrl:@"https://api.douban.com/v2/movie/top250"
+               parameters:param
+                  success:^(id json) {
+                      if(success) success(json) ;
+                  } fail:^{
+                      if(fail) fail() ;
+                  }] ;
 }
 
-
++ (void)zample6_GetMovieListWithStart:(NSInteger)start
+                                count:(NSInteger)count
+                           completion:(void (^)(id json))completion
+{
+    XT_GET_PARAM
+    [param setObject:@(start)
+              forKey:@"start"] ;
+    [param setObject:@(count)
+              forKey:@"count"] ;
+    
+    [XTCacheRequest cacheGET:@"https://api.douban.com/v2/movie/top250"
+                  parameters:param
+                         hud:YES
+                      policy:XTResponseCachePolicyTimeout
+               timeoutIfNeed:60 * 10
+                  completion:^(id json) {
+                      completion(json) ;
+                  }] ;
+}
 
 
 

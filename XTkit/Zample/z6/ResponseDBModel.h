@@ -6,7 +6,7 @@
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "XTDBModel.h"
 
 typedef NS_ENUM(NSUInteger, XTResponseCachePolicy) {
     XTResponseCachePolicyNeverUseCache      , // DEFAULT
@@ -15,7 +15,7 @@ typedef NS_ENUM(NSUInteger, XTResponseCachePolicy) {
     XTResponseCachePolicyTimeout      = 20  ,
 } ;
 
-@interface ResponseDBModel : NSObject
+@interface ResponseDBModel : XTDBModel
 
 @property (nonatomic,copy) NSString     *requestUrl     ; // as UNIQUE KEY
 @property (nonatomic,copy) NSString     *response       ; // response string
@@ -40,6 +40,9 @@ typedef NS_ENUM(NSUInteger, XTResponseCachePolicy) {
                                timeout:(int)timeout ;
 // is timeout ?
 - (BOOL)isAlreadyTimeout ;
+
+// decode Response
+- (NSString *)decodeResponse ; // 如果插入时经过单引号转义. 获取时用这个方法获得Response .
 
 @end
 

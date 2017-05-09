@@ -118,7 +118,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             
-            NSLog(@"xtfail Error:%@", error) ;
+            NSLog(@"xt_req fail Error:%@", error) ;
             if (fail)
             {
                 if (hud) [SVProgressHUD showErrorWithStatus:kStringBadNetwork] ;
@@ -184,7 +184,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
               
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              
-             NSLog(@"xtfail Error: %@", error) ;
+             NSLog(@"xt_req fail Error: %@", error) ;
              if (fail)
              {
                  if (hud) [SVProgressHUD showErrorWithStatus:kStringBadNetwork] ;
@@ -252,7 +252,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
         NSError *error = [request error] ;
         if (error)
         {
-            NSLog(@"error:%@",error) ;
+            NSLog(@"xt_req fail error:%@",error) ;
             return nil ;
         }
         response = [request responseString] ;
@@ -273,7 +273,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
         
         if (error)
         {
-            NSLog(@"xtError : %@",error) ;
+            NSLog(@"xt_req fail error : %@",error) ;
             return nil ;
         }
         response = [request responseString] ;

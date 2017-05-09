@@ -16,4 +16,9 @@
 // \n
 - (NSString *)minusReturnStr ;
 
+// 转义单引号  '  -> \'
+- (NSString *)encodeTransferredMeaningForSingleQuotes ;
+// 转义单引号  \' -> '
+- (NSString *)decodeTransferredMeaningForSingleQuotes ;
+
 @end

@@ -7,15 +7,41 @@
 //
 
 #import "XTCacheRequest.h"
-#import "ResponseDBModel.h"
 #import "XTFMDB.h"
+#import "XTJson.h"
 #import "YYModel.h"
 #import "NSDate+XTTick.h"
-
+#import "NSString+Extend.h"
 
 @implementation XTCacheRequest
 
+
 #pragma mark --
++ (void)cacheGET:(NSString *)url
+      parameters:(NSDictionary *)param
+          policy:(XTResponseCachePolicy)cachePolicy
+   timeoutIfNeed:(int)timeoutIfNeed
+      completion:(void (^)(id json))completion
+{
+    [self cacheGET:url
+        parameters:param
+               hud:YES
+            policy:cachePolicy
+     timeoutIfNeed:timeoutIfNeed
+        completion:completion] ;
+}
+
++ (void)cacheGET:(NSString *)url
+      parameters:(NSDictionary *)param
+      completion:(void (^)(id json))completion
+{
+    [self cacheGET:url
+        parameters:param
+               hud:YES
+            policy:XTResponseCachePolicyNeverUseCache
+     timeoutIfNeed:0
+        completion:completion] ;
+}
 
 + (void)cacheGET:(NSString *)url
       parameters:(NSDictionary *)param
@@ -60,7 +86,7 @@
                 break;
             case XTResponseCachePolicyAlwaysCache:
             {//总是获取缓存的数据.不再更新.
-                if (completion) completion([resModel.response yy_modelToJSONObject]) ; // return
+                if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
             }
                 break;
             case XTResponseCachePolicyTimeout:
@@ -78,7 +104,7 @@
                 }
                 else
                 { // return cache
-                    if (completion) completion([resModel.response yy_modelToJSONObject]) ; // return
+                    if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
                 }
             }
                 break;
@@ -88,6 +114,32 @@
     }
 }
 
+
++ (void)cachePOST:(NSString *)url
+       parameters:(NSDictionary *)param
+       completion:(void (^)(id json))completion
+{
+    [self cachePOST:url
+         parameters:param
+                hud:YES
+             policy:XTResponseCachePolicyNeverUseCache
+      timeoutIfNeed:0
+         completion:completion] ;
+}
+
++ (void)cachePOST:(NSString *)url
+       parameters:(NSDictionary *)param
+           policy:(XTResponseCachePolicy)cachePolicy
+    timeoutIfNeed:(int)timeoutIfNeed
+       completion:(void (^)(id json))completion
+{
+    [self cachePOST:url
+         parameters:param
+                hud:YES
+             policy:cachePolicy
+      timeoutIfNeed:timeoutIfNeed
+         completion:completion] ;
+}
 
 + (void)cachePOST:(NSString *)url
        parameters:(NSDictionary *)param
@@ -132,7 +184,7 @@
                 break;
             case XTResponseCachePolicyAlwaysCache:
             {//总是获取缓存的数据.不再更新.
-                if (completion) completion([resModel.response yy_modelToJSONObject]) ; // return
+                if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
             }
                 break;
             case XTResponseCachePolicyTimeout:
@@ -150,7 +202,7 @@
                 }
                 else
                 { // return cache
-                    if (completion) completion([resModel.response yy_modelToJSONObject]) ; // return
+                    if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
                 }
             }
                 break;
@@ -194,7 +246,7 @@
                      }
                  }
                     fail:^{
-                        if (completion) completion([resModel.response yy_modelToJSONObject]) ;
+                        if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
                     }] ;
     }
     else if (requestType == XTRequestMode_POST_MODE)
@@ -217,10 +269,13 @@
                       }
                   }
                      fail:^{
-                         if (completion) completion([resModel.response yy_modelToJSONObject]) ;
+                         if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
                      }] ;
     }
 }
+
+
+
 
 @end
 

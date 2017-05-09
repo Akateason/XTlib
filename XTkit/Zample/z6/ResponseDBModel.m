@@ -8,8 +8,10 @@
 
 #import "ResponseDBModel.h"
 #import "NSDate+XTTick.h"
+#import "NSString+Extend.h"
 
 @implementation ResponseDBModel
+@synthesize response = _response ;
 
 #pragma mark - props Sqlite Keywords
 + (NSDictionary *)modelPropertiesSqliteKeywords
@@ -18,6 +20,22 @@
                 @"requestUrl" : @"UNIQUE" ,
              } ;
 }
+
+
+#pragma mark --
+#pragma mark - setter
+- (void)setResponse:(NSString *)response
+{
+    if (!response) return ;
+    _response = [response encodeTransferredMeaningForSingleQuotes] ; // 去掉'号 转义
+}
+
+// get decode response
+- (NSString *)decodeResponse
+{
+    return [self.response decodeTransferredMeaningForSingleQuotes] ;
+}
+
 
 #pragma mark --
 #pragma mark - public 
@@ -48,7 +66,6 @@
     return dbModel ;
 }
 
-
 - (BOOL)isAlreadyTimeout
 {
     NSDate *now = [NSDate date] ;
@@ -58,5 +75,7 @@
     NSComparisonResult result = [dateWillTimeout compare:now] ;
     return result == NSOrderedAscending ;
 }
+
+
 
 @end

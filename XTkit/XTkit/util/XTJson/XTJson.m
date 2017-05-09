@@ -13,6 +13,7 @@
 
 + (id)getJsonWithStr:(NSString *)jsonStr
 {
+    if (!jsonStr) return nil ;
     NSError *error ;
     id jsonObj = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]
                                                  options:0
@@ -25,13 +26,13 @@
     else
     {
         //xtjson success
-    //    NSLog(@"jsonObj : %@",jsonObj) ;
         return jsonObj ;
     }
 }
 
 + (NSString *)getStrWithJson:(id)jsonObj
 {
+    if (!jsonObj) return nil ;
     NSString *jsonStr ;
     if ([NSJSONSerialization isValidJSONObject:jsonObj])
     {

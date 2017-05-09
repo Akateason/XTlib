@@ -11,7 +11,7 @@
 
 
 // get PARAM
-#define XT_GET_PARAM                         NSMutableDictionary *param = [self getParameters] ;
+#define XT_GET_PARAM                         NSMutableDictionary *param = [XTRequest getParameters] ;
 // global request timeout
 static const float kTIMEOUT = 5.f ;
 // base URL

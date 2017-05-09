@@ -13,6 +13,7 @@
 #import "MovieCell.h"
 
 @interface Zample6Controller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
+
 @property (nonatomic,strong) UITableView *table ;
 @property (nonatomic,strong) NSArray *list_datasource ;
 
@@ -45,7 +46,6 @@
     
     [self.table registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil]
      forCellReuseIdentifier:@"MovieCell"] ;
-
     
 }
 
@@ -53,36 +53,35 @@
 static const NSInteger kEveryCount = 10 ;
 
 #pragma mark - RootTableViewDelegate
+
 - (void)loadNew:(void(^)(void))endRefresh
 {
-    [ServerRequest zample3_GetMovieListWithStart:0
+    [ServerRequest zample6_GetMovieListWithStart:0
                                            count:kEveryCount
-                                         success:^(id json) {
-                                             
-                                             NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]] ;
-                                             self.list_datasource = tmplist ;
-                                             
-                                             endRefresh() ;
-                                         } fail:^{
-                                             endRefresh() ;
-                                         }] ;
+                                      completion:^(id json) {
+                                          
+                                          NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]] ;
+                                          self.list_datasource = tmplist ;
+                                          
+                                          endRefresh() ;
+                                          
+                                      }] ;
+    
 }
 
 - (void)loadMore:(void(^)(void))endRefresh
 {
-    [ServerRequest zample3_GetMovieListWithStart:self.list_datasource.count
+    [ServerRequest zample6_GetMovieListWithStart:self.list_datasource.count
                                            count:kEveryCount
-                                         success:^(id json) {
-                                             
-                                             NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]] ;
-                                             NSMutableArray *list = [self.list_datasource mutableCopy] ;
-                                             self.list_datasource = [list arrayByAddingObjectsFromArray:tmplist] ;
-                                             
-                                             endRefresh() ;
-                                             
-                                         } fail:^{
-                                             endRefresh() ;
-                                         }] ;
+                                      completion:^(id json) {
+                                          
+                                          NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]] ;
+                                          NSMutableArray *list = [self.list_datasource mutableCopy] ;
+                                          self.list_datasource = [list arrayByAddingObjectsFromArray:tmplist] ;
+                                          
+                                          endRefresh() ;
+
+                                      }] ;
     
 }
 

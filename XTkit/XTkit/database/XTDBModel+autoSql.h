@@ -21,5 +21,4 @@
 
 + (NSString *)drop:(NSString *)tableName ;
 
-
 @end

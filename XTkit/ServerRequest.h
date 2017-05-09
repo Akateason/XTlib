@@ -8,12 +8,9 @@
 
 
 #import <Foundation/Foundation.h>
-#import "XTRequest.h"
-#import "XTReqResonse.h"
-#import "PublicEnum.h"
 
 
-@interface ServerRequest : XTRequest
+@interface ServerRequest : NSObject
 
 + (void)zample2WithSuccess:(void (^)(id json))success
                       fail:(void (^)(void))fail ;
@@ -22,6 +19,11 @@
                                 count:(NSInteger)count
                               success:(void (^)(id json))success
                                  fail:(void (^)(void))fail ;
+
++ (void)zample6_GetMovieListWithStart:(NSInteger)start
+                                count:(NSInteger)count
+                           completion:(void (^)(id json))completion ;
+
 @end
 
 

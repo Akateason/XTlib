@@ -30,4 +30,24 @@
     return content ;
 }
 
+
+static NSString *const kSingleQuotes = @"&SingleQuotes&" ;
+
+// 转义单引号  '  -> \'
+- (NSString *)encodeTransferredMeaningForSingleQuotes
+{
+    NSString *content = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] ;
+    content = [content stringByReplacingOccurrencesOfString:@"\'" withString:kSingleQuotes] ;
+    NSLog(@"content : %@",content) ;
+    return content ;
+}
+
+// 转义单引号  \' -> '
+- (NSString *)decodeTransferredMeaningForSingleQuotes
+{
+    NSString *content = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] ;
+    content = [content stringByReplacingOccurrencesOfString:kSingleQuotes withString:@"\'"] ;
+    return content ;
+}
+
 @end

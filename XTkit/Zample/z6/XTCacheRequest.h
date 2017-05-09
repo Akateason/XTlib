@@ -13,16 +13,46 @@
 
 + (void)cacheGET:(NSString *)url
       parameters:(NSDictionary *)param
+      completion:(void (^)(id json))completion ;
+
++ (void)cacheGET:(NSString *)url
+      parameters:(NSDictionary *)param
+          policy:(XTResponseCachePolicy)cachePolicy
+   timeoutIfNeed:(int)timeoutIfNeed
+      completion:(void (^)(id json))completion ;
+
++ (void)cacheGET:(NSString *)url
+      parameters:(NSDictionary *)param
              hud:(BOOL)hud
           policy:(XTResponseCachePolicy)cachePolicy
    timeoutIfNeed:(int)timeoutIfNeed
       completion:(void (^)(id json))completion ;
+
+
++ (void)cachePOST:(NSString *)url
+       parameters:(NSDictionary *)param
+       completion:(void (^)(id json))completion ;
+
++ (void)cachePOST:(NSString *)url
+       parameters:(NSDictionary *)param
+           policy:(XTResponseCachePolicy)cachePolicy
+    timeoutIfNeed:(int)timeoutIfNeed
+       completion:(void (^)(id json))completion ;
 
 + (void)cachePOST:(NSString *)url
        parameters:(NSDictionary *)param
               hud:(BOOL)hud
            policy:(XTResponseCachePolicy)cachePolicy
     timeoutIfNeed:(int)timeoutIfNeed
-       completion:(void (^)(id json))completion;
+       completion:(void (^)(id json))completion ;
 
 @end
+
+
+
+
+
+
+
+
+
