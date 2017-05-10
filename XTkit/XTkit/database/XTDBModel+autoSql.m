@@ -7,9 +7,9 @@
 //
 
 #import "XTDBModel+autoSql.h"
-#import "NSObject+XTFMDB.h"
 #import "NSObject+Reflection.h"
 #import "YYModel.h"
+
 
 @implementation XTDBModel (autoSql)
 
@@ -18,7 +18,7 @@
     NSString *tableName = NSStringFromClass(cls) ;
     NSMutableString *strProperties = [@"" mutableCopy] ;
     
-    // pk in super cls 主键在父类里
+    // pk in super cls 主键在父类里 , 若用父类XTDBModel创建 .
     Class superCls = [cls superclass] ;
     NSArray *superPropInfoList = [superCls propertiesInfo] ;
     for (int i = 0; i < superPropInfoList.count; i++)
@@ -34,11 +34,11 @@
             // pk AUTOINCREMENT .
             strTmp = [NSString stringWithFormat:@"%@ %@ PRIMARY KEY AUTOINCREMENT DEFAULT '1',",name,sqlType] ;
             [strProperties appendString:strTmp] ;
+            break ;
         }
-        else continue ;
     }
-
-    // other props in sub cls
+    
+    // other props in sub cls 当前类
     NSArray *propInfoList = [cls propertiesInfo] ;
     for (int i = 0; i < propInfoList.count; i++)
     {
@@ -47,6 +47,8 @@
         NSString *type      = dic[@"type"] ;
         NSString *sqlType   = [self sqlTypeWithType:type] ;
         NSString *strTmp    = nil ;
+        // dont insert primary key . already insert in supercls
+        if ([name containsString:kPkid]) continue ;
         // ignore prop
         if ([self propIsIgnore:name class:cls]) continue ;
         
@@ -82,13 +84,14 @@
     {
         id dicTmp           = propInfoList[i] ;
         NSString *name      = dicTmp[@"name"] ;
+        // dont insert primary key
+        if ([name containsString:kPkid]) continue ;
         // ignore prop
         if ([self propIsIgnore:name class:[model class]]) continue ;
         // prop
         propertiesStr = [propertiesStr stringByAppendingString:[NSString stringWithFormat:@"%@ ,",name]] ;
         // question
-        NSString *strVal = dicModel[name] ;
-        questionStr = [questionStr stringByAppendingString:[NSString stringWithFormat:@"'%@' ,",strVal]] ;
+        questionStr = [questionStr stringByAppendingString:[NSString stringWithFormat:@"'%@' ,",dicModel[name]]] ;
     }
     
     propertiesStr = [propertiesStr substringToIndex:propertiesStr.length - 1] ;
@@ -103,7 +106,7 @@
 + (NSString *)sqlUpdateWithModel:(id)model
 {
     NSString *tableName = NSStringFromClass([model class]) ;
-    NSDictionary *dic = [model yy_modelToJSONObject] ;
+    NSMutableDictionary *dic = [[model yy_modelToJSONObject] mutableCopy] ;
     
     NSString *setsStr       = @"" ;
     NSString *whereStr      = @"" ;
@@ -113,11 +116,12 @@
     {
         id dicTmp           = propInfoList[i] ;
         NSString *name      = dicTmp[@"name"] ;
+        // dont update primary key
+        if ([name containsString:kPkid]) continue ;
         // ignore prop
         if ([self propIsIgnore:name class:[model class]]) continue ;
         // setstr
-        NSString *strVal = dic[name] ;
-        NSString *tmpStr = [NSString stringWithFormat:@"%@ = '%@' ,",name,strVal] ;
+        NSString *tmpStr = [NSString stringWithFormat:@"%@ = '%@' ,",name,dic[name]] ;
         setsStr = [setsStr stringByAppendingString:tmpStr] ;
     }
     

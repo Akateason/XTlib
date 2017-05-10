@@ -13,6 +13,7 @@
 #import "Model1.h"
 #import "NSDate+XTTick.h"
 
+#import "Z5DisplayController.h"
 
 @interface Zample5Controller ()
 
@@ -242,28 +243,38 @@ static float const kBtFlex = 5 ;
     m1.title = @"jk4j3j43" ;
     
     [m1 xt_insert] ;
+    
+    
+    [self display] ;
 }
 
 - (void)updateAction
 {
     Model1 *m1 = [Model1 new] ; // 不需设置主键
-    m1.pkid = 1 ;
+    m1.pkid = ((Model1 *)[[Model1 xt_selectAll] lastObject]).pkid ;
     m1.age = 4444444 ;
     m1.floatVal = 44.4444 ;
     m1.tick = [NSDate xt_getTickFromNow] ;
-    m1.title = @"我就改你" ;
+    m1.title = [NSString stringWithFormat:@"我就改你 r%d",arc4random()%99] ;
     
     [m1 xt_update] ;
+    
+    [self display] ;
 }
 
 - (void)deleteAction
 {
-    [Model1 xt_deleteModelWhere:@"title = '我就改你' "] ;
+    Model1 *lastModel = [[Model1 xt_selectAll] lastObject] ;
+    [Model1 xt_deleteModelWhere:[NSString stringWithFormat:@"title = '%@'",lastModel.title]] ;
+    
+    [self display] ;
 }
 
 - (void)dropAction
 {
     [Model1 xt_dropTable] ;
+    
+    [self display] ;
 }
 
 - (void)insertListAction
@@ -281,20 +292,25 @@ static float const kBtFlex = 5 ;
     }
     
     [Model1 xt_insertList:list] ;
+    
+    
+    [self display] ;
 }
 
 - (void)updateListAction
 {
-    NSArray *getlist = [Model1 xt_selectWhere:@"pkid >= 1 AND pkid <= 10"] ;
+    NSArray *getlist = [Model1 xt_selectWhere:@"age > 5"] ;
     NSMutableArray *tmplist = [@[] mutableCopy] ;
-    for (int i = 0 ; i < 10 ; i++)
+    for (int i = 0 ; i < getlist.count ; i++)
     {
         Model1 *model = getlist[i] ;
-        model.title = [model.title stringByAppendingString:[NSString stringWithFormat:@"%d",model.age]] ;
+        model.title = [model.title stringByAppendingString:[NSString stringWithFormat:@"+%d",model.age]] ;
         [tmplist addObject:model] ;
     }
     
     [Model1 xt_updateList:tmplist] ;
+    
+    [self display] ;
 }
 
 - (void)findFirstAction
@@ -306,7 +322,12 @@ static float const kBtFlex = 5 ;
 
 
 
-
+#pragma mark --
+- (void)display
+{
+    [self.navigationController pushViewController:[Z5DisplayController new]
+                                         animated:YES] ;
+}
 
 
 
