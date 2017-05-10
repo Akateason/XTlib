@@ -39,7 +39,7 @@
         view.showRefreshDetail  = TRUE  ;
         [self.view addSubview:view] ;
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0)) ;
+            make.edges.mas_equalTo(self.view) ;
         }] ;
         view ;
     }) ;

@@ -23,9 +23,7 @@
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-
-    [[SDImageCache sharedImageCache] clearMemory] ; // sd clear cache
+    [super didReceiveMemoryWarning] ;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil

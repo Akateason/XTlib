@@ -232,6 +232,13 @@
               parameters:param
                  success:^(id json) {
                      if (completion) completion(json) ; // return .
+                     // 请求为空 . 不做更新
+                     if (!json)
+                     {
+                         completion(json) ;
+                         return ;
+                     }
+                     
                      if (!resModel.response)
                      {
                          resModel.response = [json yy_modelToJSONString] ;
@@ -255,6 +262,13 @@
                parameters:param
                   success:^(id json) {
                       if (completion) completion(json) ; // return .
+                      // 请求为空 . 不做更新
+                      if (!json)
+                      {
+                          completion(json) ;
+                          return ;
+                      }
+                      
                       if (!resModel.response)
                       {
                           resModel.response = [json yy_modelToJSONString] ;
