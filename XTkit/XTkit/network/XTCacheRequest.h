@@ -7,7 +7,7 @@
 //
 
 #import "XTRequest.h"
-#import "ResponseDBModel.h"
+#import "XTResponseDBModel.h"
 
 @interface XTCacheRequest : XTRequest
 

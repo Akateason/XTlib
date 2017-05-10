@@ -1,8 +1,8 @@
 //
-//  ResponseDBModel.h
+//  XTResponseDBModel.h
 //  XTkit
-//   .
-//  Created by teason23 on 2017/5/4.
+//
+//  Created by teason23 on 2017/5/10.
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
@@ -15,7 +15,9 @@ typedef NS_ENUM(NSUInteger, XTResponseCachePolicy) {
     XTResponseCachePolicyTimeout      = 20  ,
 } ;
 
-@interface ResponseDBModel : XTDBModel
+
+
+@interface XTResponseDBModel : XTDBModel
 
 @property (nonatomic,copy) NSString     *requestUrl     ; // as UNIQUE KEY
 @property (nonatomic,copy) NSString     *response       ; // response string
@@ -45,7 +47,6 @@ typedef NS_ENUM(NSUInteger, XTResponseCachePolicy) {
 - (NSString *)decodeResponse ; // 如果插入时经过单引号转义. 获取时用这个方法获得Response .
 
 @end
-
 
 
 

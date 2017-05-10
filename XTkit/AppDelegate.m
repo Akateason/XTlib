@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "SVProgressHUD.h"
 #import "XTFMDB.h"
-#import "ResponseDBModel.h"
+#import "XTResponseDBModel.h"
 
 @interface AppDelegate ()
 
@@ -31,7 +31,7 @@
     [[XTFMDBBase sharedInstance] configureDB:@"teason"] ; // app did launch .
     
     // request cache TB
-    [ResponseDBModel xt_createTable] ;
+    [XTResponseDBModel xt_createTable] ;
     
     return YES;
 }

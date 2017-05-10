@@ -1,23 +1,23 @@
 //
-//  ResponseDBModel.m
+//  XTResponseDBModel.m
 //  XTkit
 //
-//  Created by teason23 on 2017/5/4.
+//  Created by teason23 on 2017/5/10.
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
-#import "ResponseDBModel.h"
+#import "XTResponseDBModel.h"
 #import "NSDate+XTTick.h"
 #import "NSString+Extend.h"
 
-@implementation ResponseDBModel
+@implementation XTResponseDBModel
 @synthesize response = _response ;
 
 #pragma mark - props Sqlite Keywords
 + (NSDictionary *)modelPropertiesSqliteKeywords
 {
     return @{
-                @"requestUrl" : @"UNIQUE" ,
+             @"requestUrl" : @"UNIQUE" ,
              } ;
 }
 
@@ -38,7 +38,7 @@
 
 
 #pragma mark --
-#pragma mark - public 
+#pragma mark - public
 // new a Default Model
 + (instancetype)newDefaultModelWithKey:(NSString *)urlStr
                                    val:(NSString *)respStr
@@ -56,7 +56,7 @@
 {
     if (!policy) policy = XTResponseCachePolicyNeverUseCache ; // default policy
     if (policy == XTResponseCachePolicyTimeout && !timeout) timeout = 60 * 60 ; // 1hour default timeout if need .
-    ResponseDBModel *dbModel = [[ResponseDBModel alloc] init] ;
+    XTResponseDBModel *dbModel = [[XTResponseDBModel alloc] init] ;
     dbModel.requestUrl = urlStr ;
     dbModel.response = respStr ;
     dbModel.cachePolicy = policy ;
@@ -75,7 +75,5 @@
     NSComparisonResult result = [dateWillTimeout compare:now] ;
     return result == NSOrderedAscending ;
 }
-
-
 
 @end

@@ -50,10 +50,10 @@
       completion:(void (^)(id json))completion
 {
     NSString *strUniqueKey = [self fullUrl:url param:param] ;
-    ResponseDBModel *resModel = [ResponseDBModel xt_findFirstWhere:[NSString stringWithFormat:@"requestUrl == '%@'",strUniqueKey]] ;
+    XTResponseDBModel *resModel = [XTResponseDBModel xt_findFirstWhere:[NSString stringWithFormat:@"requestUrl == '%@'",strUniqueKey]] ;
     if (!resModel)
     {// not cache
-        resModel = [ResponseDBModel newDefaultModelWithKey:strUniqueKey
+        resModel = [XTResponseDBModel newDefaultModelWithKey:strUniqueKey
                                                        val:nil                         // response is nil
                                                     policy:cachePolicy
                                                    timeout:timeoutIfNeed] ;
@@ -148,10 +148,10 @@
        completion:(void (^)(id json))completion
 {
     NSString *strUniqueKey = [self fullUrl:url param:param] ;
-    ResponseDBModel *resModel = [ResponseDBModel xt_findFirstWhere:[NSString stringWithFormat:@"requestUrl == '%@'",strUniqueKey]] ;
+    XTResponseDBModel *resModel = [XTResponseDBModel xt_findFirstWhere:[NSString stringWithFormat:@"requestUrl == '%@'",strUniqueKey]] ;
     if (!resModel)
     {// not cache
-        resModel = [ResponseDBModel newDefaultModelWithKey:strUniqueKey
+        resModel = [XTResponseDBModel newDefaultModelWithKey:strUniqueKey
                                                        val:nil                         // response is nil
                                                     policy:cachePolicy
                                                    timeout:timeoutIfNeed] ;
@@ -222,7 +222,7 @@
                           url:(NSString *)url
                           hud:(BOOL)hud
                         param:(NSDictionary *)param
-                responseModel:(ResponseDBModel *)resModel
+                responseModel:(XTResponseDBModel *)resModel
                    completion:(void (^)(id json))completion
 {
     if (requestType == XTRequestMode_GET_MODE)
