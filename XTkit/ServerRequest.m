@@ -10,8 +10,7 @@
 #import "ServerRequest.h"
 
 #import "UrlRequestHeader.h"
-#import "XTRequest.h"
-#import "XTCacheRequest.h"
+#import "XTReq.h"
 
 
 @implementation ServerRequest

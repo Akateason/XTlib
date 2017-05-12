@@ -373,6 +373,7 @@
 		8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCacheRequest.m; sourceTree = "<group>"; };
 		8FDE03161EC53DE600FFBADA /* XTReqSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqSessionManager.h; sourceTree = "<group>"; };
 		8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqSessionManager.m; sourceTree = "<group>"; };
+		8FDE03191EC5415C00FFBADA /* XTReq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTReq.h; sourceTree = "<group>"; };
 		8FFD733B1EB30A5400148B83 /* Zample4Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zample4Controller.h; path = z4/Zample4Controller.h; sourceTree = "<group>"; };
 		8FFD733C1EB30A5400148B83 /* Zample4Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Zample4Controller.m; path = z4/Zample4Controller.m; sourceTree = "<group>"; };
 		8FFD73401EB320BA00148B83 /* ServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRequest.h; sourceTree = "<group>"; };
@@ -821,13 +822,7 @@
 		60E238701E9622A1001235F2 /* network */ = {
 			isa = PBXGroup;
 			children = (
-				8F158C801EC2DA7100B0F551 /* model */,
-				60E238731E9622A1001235F2 /* XTRequest.h */,
-				60E238741E9622A1001235F2 /* XTRequest.m */,
-				8F99165A1EC1B6B400BA8F0D /* XTCacheRequest.h */,
-				8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */,
-				8FDE03161EC53DE600FFBADA /* XTReqSessionManager.h */,
-				8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */,
+				8FDE031B1EC541F100FFBADA /* XTReq */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -1095,15 +1090,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8F158C801EC2DA7100B0F551 /* model */ = {
+		8FDE031A1EC541E400FFBADA /* XTFMDB */ = {
 			isa = PBXGroup;
 			children = (
+				8F99164B1EC0754B00BA8F0D /* XTFMDB.h */,
+				8F9916451EC0754B00BA8F0D /* NSObject+XTFMDB.h */,
+				8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */,
+				8F9916471EC0754B00BA8F0D /* XTDBModel.h */,
+				8F9916481EC0754B00BA8F0D /* XTDBModel.m */,
+				8F9916491EC0754B00BA8F0D /* XTDBModel+autoSql.h */,
+				8F99164A1EC0754B00BA8F0D /* XTDBModel+autoSql.m */,
+				8F99164C1EC0754B00BA8F0D /* XTFMDBBase.h */,
+				8F99164D1EC0754B00BA8F0D /* XTFMDBBase.m */,
+			);
+			name = XTFMDB;
+			sourceTree = "<group>";
+		};
+		8FDE031B1EC541F100FFBADA /* XTReq */ = {
+			isa = PBXGroup;
+			children = (
+				8FDE03191EC5415C00FFBADA /* XTReq.h */,
+				60E238731E9622A1001235F2 /* XTRequest.h */,
+				60E238741E9622A1001235F2 /* XTRequest.m */,
+				8F99165A1EC1B6B400BA8F0D /* XTCacheRequest.h */,
+				8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */,
 				8F9916421EC06C4F00BA8F0D /* XTReqResonse.h */,
 				8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */,
 				8F158C811EC2DAD700B0F551 /* XTResponseDBModel.h */,
 				8F158C821EC2DAD700B0F551 /* XTResponseDBModel.m */,
+				8FDE03161EC53DE600FFBADA /* XTReqSessionManager.h */,
+				8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */,
 			);
-			name = model;
+			name = XTReq;
 			sourceTree = "<group>";
 		};
 		8FFD733A1EB30A3100148B83 /* z4 */ = {
@@ -1143,15 +1161,7 @@
 		8FFD73671EB9D25600148B83 /* database */ = {
 			isa = PBXGroup;
 			children = (
-				8F99164B1EC0754B00BA8F0D /* XTFMDB.h */,
-				8F9916451EC0754B00BA8F0D /* NSObject+XTFMDB.h */,
-				8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */,
-				8F9916471EC0754B00BA8F0D /* XTDBModel.h */,
-				8F9916481EC0754B00BA8F0D /* XTDBModel.m */,
-				8F9916491EC0754B00BA8F0D /* XTDBModel+autoSql.h */,
-				8F99164A1EC0754B00BA8F0D /* XTDBModel+autoSql.m */,
-				8F99164C1EC0754B00BA8F0D /* XTFMDBBase.h */,
-				8F99164D1EC0754B00BA8F0D /* XTFMDBBase.m */,
+				8FDE031A1EC541E400FFBADA /* XTFMDB */,
 			);
 			name = database;
 			sourceTree = "<group>";

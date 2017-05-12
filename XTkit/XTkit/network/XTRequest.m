@@ -1,5 +1,4 @@
 //
-//  AppDelegate.m
 //  XTRequest
 //
 //  Created by TuTu on 15/11/12.
@@ -7,14 +6,13 @@
 //
 
 #import "XTRequest.h"
+#import "UrlRequestHeader.h"
 #import "AFNetworking.h"
 #import "ASIFormDataRequest.h"
 #import "ASIHTTPRequest.h"
-#import "AppDelegate.h"
 #import "SVProgressHUD.h"
 #import "YYModel.h"
 #import "XTJson.h"
-#import "UrlRequestHeader.h"
 #import "XTReqResonse.h"
 #import "XTReqSessionManager.h"
 
@@ -98,11 +96,9 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
 {
     if (hud) [SVProgressHUD show] ;
     
-    XTReqSessionManager *manager = [XTReqSessionManager shareInstance] ;
-    
-    [manager GET:url
-      parameters:dict
-        progress:nil //^(NSProgress * _Nonnull downloadProgress) {}
+    [[XTReqSessionManager shareInstance] GET:url
+                                  parameters:dict
+                                    progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              
             if (success)
@@ -159,11 +155,9 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
 {
     if (hud) [SVProgressHUD show] ;
     
-    XTReqSessionManager *manager = [XTReqSessionManager shareInstance] ;
-    
-    [manager POST:url
-       parameters:dict
-         progress:nil //^(NSProgress * _Nonnull uploadProgress) {}
+    [[XTReqSessionManager shareInstance] POST:url
+                                   parameters:dict
+                                     progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              
               if (success)
