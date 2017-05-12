@@ -12,8 +12,7 @@
 
 // get PARAM
 #define XT_GET_PARAM                         NSMutableDictionary *param = [XTRequest getParameters] ;
-// global request timeout
-static const float kTIMEOUT = 15.f ;
+
 // base URL
 static NSString *const kBaseURL = @"http://www.akateason.top" ;
 

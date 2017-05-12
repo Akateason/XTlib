@@ -16,6 +16,7 @@
 #import "XTJson.h"
 #import "UrlRequestHeader.h"
 #import "XTReqResonse.h"
+#import "XTReqSessionManager.h"
 
 
 static NSString *const kStringBadNetwork = @"网络状况差" ;
@@ -97,11 +98,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
 {
     if (hud) [SVProgressHUD show] ;
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager] ;
-    manager.requestSerializer = [AFJSONRequestSerializer serializer] ;
-    manager.responseSerializer = [AFJSONResponseSerializer serializer] ;
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil] ;
-    manager.requestSerializer.timeoutInterval = kTIMEOUT ;
+    XTReqSessionManager *manager = [XTReqSessionManager shareInstance] ;
     
     [manager GET:url
       parameters:dict
@@ -162,11 +159,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
 {
     if (hud) [SVProgressHUD show] ;
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager] ;
-    manager.requestSerializer = [AFJSONRequestSerializer serializer] ;
-    manager.responseSerializer = [AFJSONResponseSerializer serializer] ;
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil] ;
-    manager.requestSerializer.timeoutInterval = kTIMEOUT ;
+    XTReqSessionManager *manager = [XTReqSessionManager shareInstance] ;
     
     [manager POST:url
        parameters:dict
@@ -319,3 +312,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
 
 
 @end
+
+
+
+

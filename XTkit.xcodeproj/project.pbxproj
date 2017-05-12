@@ -117,6 +117,7 @@
 		8F9916541EC14D6B00BA8F0D /* NSDate+XTTick.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916531EC14D6B00BA8F0D /* NSDate+XTTick.m */; };
 		8F9916571EC150BF00BA8F0D /* NSDate+NSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */; };
 		8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */; };
+		8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */; };
 		8FFD733D1EB30A5400148B83 /* Zample4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD733C1EB30A5400148B83 /* Zample4Controller.m */; };
 		8FFD73421EB320BA00148B83 /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73411EB320BA00148B83 /* ServerRequest.m */; };
 		8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73451EB321A900148B83 /* Zample5Controller.m */; };
@@ -370,6 +371,8 @@
 		8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSCalendar.m"; sourceTree = "<group>"; };
 		8F99165A1EC1B6B400BA8F0D /* XTCacheRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCacheRequest.h; sourceTree = "<group>"; };
 		8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCacheRequest.m; sourceTree = "<group>"; };
+		8FDE03161EC53DE600FFBADA /* XTReqSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqSessionManager.h; sourceTree = "<group>"; };
+		8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqSessionManager.m; sourceTree = "<group>"; };
 		8FFD733B1EB30A5400148B83 /* Zample4Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zample4Controller.h; path = z4/Zample4Controller.h; sourceTree = "<group>"; };
 		8FFD733C1EB30A5400148B83 /* Zample4Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Zample4Controller.m; path = z4/Zample4Controller.m; sourceTree = "<group>"; };
 		8FFD73401EB320BA00148B83 /* ServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRequest.h; sourceTree = "<group>"; };
@@ -823,6 +826,8 @@
 				60E238741E9622A1001235F2 /* XTRequest.m */,
 				8F99165A1EC1B6B400BA8F0D /* XTCacheRequest.h */,
 				8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */,
+				8FDE03161EC53DE600FFBADA /* XTReqSessionManager.h */,
+				8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -1396,6 +1401,7 @@
 				60E238F91E9622A1001235F2 /* UIImage+ImageEffects.m in Sources */,
 				60E238E61E9622A1001235F2 /* UILabel+Badges.m in Sources */,
 				60E2381E1E961D21001235F2 /* AppDelegate.m in Sources */,
+				8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */,
 				607E5FDB1EA7483100D05213 /* UserOnDevice.m in Sources */,
 				60E238E71E9622A1001235F2 /* UIView+Sizes.m in Sources */,
 				60E238F71E9622A1001235F2 /* GradientBGView.m in Sources */,
