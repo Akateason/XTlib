@@ -26,19 +26,24 @@
     dispatch_source_set_event_handler(_timer, ^{
         
         //倒计时结束，关闭
-        if (timeOut <= 0) {
+        if (timeOut <= 0)
+        {
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.backgroundColor = mColor;
-                [self setTitle:title forState:UIControlStateNormal];
+                [self setTitle:title
+                      forState:UIControlStateNormal];
                 self.userInteractionEnabled = YES;
             });
-        } else {
+        }
+        else
+        {
             int seconds = timeOut % 60;
             NSString *timeStr = [NSString stringWithFormat:@"%0.2d", seconds];
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.backgroundColor = color;
-                [self setTitle:[NSString stringWithFormat:@"%@%@",timeStr,subTitle] forState:UIControlStateNormal];
+                [self setTitle:[NSString stringWithFormat:@"%@%@",timeStr,subTitle]
+                      forState:UIControlStateNormal];
                 self.userInteractionEnabled = NO;
             });
             timeOut--;

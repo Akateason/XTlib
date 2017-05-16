@@ -182,9 +182,6 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
 }
 
 
-
-
-
 //  sync
 #pragma mark --
 #pragma mark - sync

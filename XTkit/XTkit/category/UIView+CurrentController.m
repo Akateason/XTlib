@@ -10,27 +10,27 @@
 
 @implementation UIView (CurrentController)
 
-- (UIViewController*)viewController
+- (UIViewController *)viewController
 {
-    for (UIView* next = [self superview]; next; next = next.superview)
+    for (UIView *next = [self superview] ; next ; next = next.superview)
     {
-        UIResponder* nextResponder = [next nextResponder] ;
+        UIResponder *nextResponder = [next nextResponder] ;
         if ([nextResponder isKindOfClass:[UIViewController class]])
         {
-            return (UIViewController*)nextResponder ;
+            return (UIViewController *)nextResponder ;
         }
     }
     return nil ;
 }
 
-- (UINavigationController*)navigationController
+- (UINavigationController *)navigationController
 {
-    for (UIView* next = [self superview]; next; next = next.superview)
+    for (UIView *next = [self superview] ; next ; next = next.superview)
     {
-        UIResponder* nextResponder = [next nextResponder] ;
+        UIResponder *nextResponder = [next nextResponder] ;
         if ([nextResponder isKindOfClass:[UINavigationController class]])
         {
-            return (UINavigationController*)nextResponder ;
+            return (UINavigationController *)nextResponder ;
         }
     }
     return nil ;

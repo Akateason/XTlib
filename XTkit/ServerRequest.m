@@ -55,6 +55,8 @@
                   }] ;
 }
 
+
+
 + (void)zample6_GetMovieListWithStart:(NSInteger)start
                                 count:(NSInteger)count
                            completion:(void (^)(id json))completion
@@ -82,6 +84,25 @@
 //                  }] ;
 }
 
+
++ (void)zample7_request:(int)bookID
+                success:(void (^)(id json))success
+                   fail:(void (^)(void))fail
+{
+    NSString *urlStr = [NSString stringWithFormat:@"https://api.douban.com/v2/book/%@",@(bookID)] ;
+    [XTRequest GETWithUrl:urlStr
+               parameters:nil
+                  success:^(id json) {
+                      if (success) {
+                          success(json) ;
+                      }
+                  } fail:^{
+                      if (fail) {
+                          fail() ;
+                      }
+                  }] ;
+
+}
 
 
 @end

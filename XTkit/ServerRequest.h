@@ -23,6 +23,10 @@
                                 count:(NSInteger)count
                            completion:(void (^)(id json))completion ;
 
++ (void)zample7_request:(int)bookID
+                success:(void (^)(id json))success
+                   fail:(void (^)(void))fail ;
+
 @end
 
 

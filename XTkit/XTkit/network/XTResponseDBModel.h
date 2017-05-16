@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, XTResponseCachePolicy) {
 @property (nonatomic,copy) NSString     *requestUrl     ; // as UNIQUE KEY
 @property (nonatomic,copy) NSString     *response       ; // response string
 /*
- *XTResponseCacheType
+ ***XTResponseCacheType***
  *  XTResponseCachePolicyNeverUseCache  从不缓存适合每次都实时的数据流.
  *  XTResponseCachePolicyAlwaysCache    总是获取缓存的数据.不再更新.
  *  XTResponseCachePolicyTimeout        规定时间内.返回缓存.超时则更新数据. 需设置timeout时间. timeout默认1小时
