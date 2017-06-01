@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 
 @implementation NSObject (Reflection)
+
 - (NSString *)className
 {
     return NSStringFromClass([self class]);
@@ -26,21 +27,25 @@
 {
     return NSStringFromClass([self superclass]);
 }
--(NSDictionary *)propertyDictionary
+
+- (NSDictionary *)propertyDictionary
 {
-    //创建可变字典
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    unsigned int outCount;
-    objc_property_t *props = class_copyPropertyList([self class], &outCount);
-    for(int i=0;i<outCount;i++){
-        objc_property_t prop = props[i];
-        NSString *propName = [[NSString alloc]initWithCString:property_getName(prop) encoding:NSUTF8StringEncoding];
-        id propValue = [self valueForKey:propName];
-        [dict setObject:propValue?:[NSNull null] forKey:propName];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary] ;
+    unsigned int outCount ;
+    objc_property_t *props = class_copyPropertyList([self class], &outCount) ;
+    for(int i = 0 ; i < outCount ; i++)
+    {
+        objc_property_t prop = props[i] ;
+        NSString *propName = [[NSString alloc] initWithCString:property_getName(prop)
+                                                      encoding:NSUTF8StringEncoding] ;
+        id propValue = [self valueForKey:propName] ; // KVC
+        [dict setObject:propValue ?: [NSNull null]
+                 forKey:propName] ;
     }
-    free(props);
-    return dict;
+    free(props) ;
+    return dict ;
 }
+
 - (NSArray*)propertyKeys
 {
     return [[self class] propertyKeys];
@@ -61,12 +66,8 @@
 {
     return [[self class] propertiesInfo];
 }
-/**
- *
- *  属性列表与属性的各种信息
- *
- *  @return <#return value description#>
- */
+
+// 属性列表与属性的各种信息
 + (NSArray *)propertiesInfo
 {
     NSMutableArray *propertieArray = [NSMutableArray array];
@@ -88,6 +89,7 @@
     
     return propertieArray;
 }
+
 + (NSArray *)propertiesWithCodeFormat
 {
     NSMutableArray *array = [NSMutableArray array];
@@ -134,6 +136,7 @@
     
     return array;
 }
+
 -(NSArray*)methodList{
     u_int               count;
     NSMutableArray *methodList = [NSMutableArray array];
@@ -147,7 +150,9 @@
     free(methods);
     return methodList;
 }
--(NSArray*)methodListInfo{
+
+-(NSArray*)methodListInfo
+{
     u_int               count;
     NSMutableArray *methodList = [NSMutableArray array];
     Method *methods= class_copyMethodList([self class], &count);
@@ -188,7 +193,9 @@
     free(methods);
     return methodList;
 }
-+(NSArray*)methodList{
+
++(NSArray*)methodList
+{
     u_int               count;
     NSMutableArray *methodList = [NSMutableArray array];
     Method * methods= class_copyMethodList([self class], &count);
@@ -202,6 +209,7 @@
 
     return methodList;
 }
+
 //创建并返回一个指向所有已注册类的指针列表
 + (NSArray *)registedClassList
 {
@@ -219,15 +227,12 @@
     return result;
 }
 
-/**
- *
- *  <>协议列表信息
- *
- *  @return 协议列表信息
- */
--(NSDictionary *)protocolList{
+//协议列表信息
+-(NSDictionary *)protocolList
+{
     return [[self class]protocolList];
 }
+
 + (NSDictionary *)protocolList
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
@@ -286,23 +291,23 @@
     objc_property_t property = class_getProperty([self class], [key UTF8String]);
     return (BOOL)property;
 }
+
 - (BOOL)hasIvarForKey:(NSString*)key
 {
     Ivar ivar = class_getInstanceVariable([self class], [key UTF8String]);
     return (BOOL)ivar;
 }
+
 #pragma mark -- help
 + (NSDictionary *)dictionaryWithProperty:(objc_property_t)property
 {
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     
     //name
-    
     NSString *propertyName = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
     [result setObject:propertyName forKey:@"name"];
     
     //attribute
-    
     NSMutableDictionary *attributeDictionary = ({
         
         NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
@@ -476,6 +481,7 @@
     
     return result;
 }
+
 + (NSString *)decodeType:(const char *)cString
 {
     if (!strcmp(cString, @encode(char)))
@@ -521,7 +527,7 @@
      
     
     //@TODO: do handle bitmasks
-    NSString *result = [NSString stringWithCString:cString encoding:NSUTF8StringEncoding];
+    NSString *result = [NSString stringWithCString:cString encoding:NSUTF8StringEncoding] ;
 //    if ([typeDic objectForKey:result]) {
 //        return [typeDic objectForKey:result];
 //    }
@@ -538,3 +544,6 @@
 }
 
 @end
+
+
+

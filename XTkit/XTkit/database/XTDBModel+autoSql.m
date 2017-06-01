@@ -8,7 +8,6 @@
 
 #import "XTDBModel+autoSql.h"
 #import "NSObject+Reflection.h"
-#import "YYModel.h"
 
 
 @implementation XTDBModel (autoSql)
@@ -73,7 +72,7 @@
 
 + (NSString *)sqlInsertWithModel:(id)model
 {
-    NSDictionary *dicModel = [model yy_modelToJSONObject] ;
+    NSDictionary *dicModel = [model propertyDictionary] ;
     NSString *tableName = NSStringFromClass([model class]) ;
     
     NSString *propertiesStr = @"" ;
@@ -109,7 +108,7 @@
 + (NSString *)sqlUpdateWithModel:(id)model
 {
     NSString *tableName = NSStringFromClass([model class]) ;
-    NSMutableDictionary *dic = [[model yy_modelToJSONObject] mutableCopy] ;
+    NSMutableDictionary *dic = [[model propertyDictionary] mutableCopy] ;
     
     NSString *setsStr       = @"" ;
     NSString *whereStr      = @"" ;
@@ -173,10 +172,10 @@
     {
         return @"TEXT" ;
     }
-    else if ([strType containsString:@"NSData"])
-    {
-        return @"BLOB" ;
-    }
+//    else if ([strType containsString:@"NSData"])
+//    {
+//        return @"blob" ;
+//    }
     NSLog(@"xt_db no type to transform !!") ;
     return nil ;
 }

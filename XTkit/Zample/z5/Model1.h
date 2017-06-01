@@ -17,5 +17,6 @@
 @property (nonatomic)       long long       tick        ;
 @property (nonatomic,copy)  NSString        *title      ;
 @property (nonatomic,copy)  NSString        *abcabc     ;
+@property (nonatomic,strong)NSData          *cover      ;
 
 @end

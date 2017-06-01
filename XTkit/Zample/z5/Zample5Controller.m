@@ -12,6 +12,8 @@
 #import "XTFMDB.h"
 #import "Model1.h"
 #import "NSDate+XTTick.h"
+#import "NSObject+Reflection.h"
+#import "UIImage+AddFunction.h"
 
 #import "Z5DisplayController.h"
 
@@ -44,6 +46,15 @@ static float const kBtFlex = 5 ;
     self.title = @"XTFMDB" ;
     
     [self layoutUI] ;
+    
+    UIImage *testImage = [UIImage imageNamed:@"kobe"] ;
+    NSData *dataImage = UIImagePNGRepresentation(testImage) ;
+    UIImage *imgDis = [UIImage imageWithData:dataImage] ;
+    
+    NSString *str = [dataImage base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength] ;
+    UIImage *imgDis2 = [UIImage imageWithData:[[NSData alloc] initWithBase64EncodedString:str
+                                                                                    options:NSDataBase64DecodingIgnoreUnknownCharacters]];
+    
 }
 
 - (void)layoutUI
@@ -224,6 +235,9 @@ static float const kBtFlex = 5 ;
     for (Model1 *model in list) {
         NSLog(@"%d",model.pkid) ;
     }
+    
+    [self display] ;
+
 }
 
 - (void)selectWhereAction
@@ -241,7 +255,9 @@ static float const kBtFlex = 5 ;
     m1.floatVal = 3232.89f ;
     m1.tick = [NSDate xt_getTickFromNow] ;
     m1.title = @"jk4j3j43" ;
-    
+    UIImage *image = [UIImage imageNamed:@"kobe"] ;
+    image = [UIImage thumbnailWithImage:image size:CGSizeMake(100, 100)] ;
+    m1.cover = UIImagePNGRepresentation(image) ;
     [m1 xt_insert] ;
     
     

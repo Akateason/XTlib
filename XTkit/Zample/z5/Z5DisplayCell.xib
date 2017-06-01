@@ -42,19 +42,29 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dkd-XU-sRs">
+                        <rect key="frame" x="232" y="15" width="122" height="91"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="122" id="l1t-k5-tYe"/>
+                            <constraint firstAttribute="height" constant="91" id="lZw-aW-dvC"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="kEV-zu-g9W" firstAttribute="top" secondItem="gE8-v7-AfL" secondAttribute="bottom" constant="5" id="09T-c9-AxT"/>
                     <constraint firstItem="tZb-g1-9gD" firstAttribute="leading" secondItem="lQI-XO-JTk" secondAttribute="leading" constant="8" id="8al-m8-mWN"/>
                     <constraint firstItem="kEV-zu-g9W" firstAttribute="leading" secondItem="lQI-XO-JTk" secondAttribute="leading" constant="8" id="9zl-vL-UXK"/>
                     <constraint firstItem="tZb-g1-9gD" firstAttribute="top" secondItem="lQI-XO-JTk" secondAttribute="top" constant="8" id="AN8-hD-rI4"/>
+                    <constraint firstAttribute="trailing" secondItem="Dkd-XU-sRs" secondAttribute="trailing" constant="21" id="DHc-Es-0Rg"/>
                     <constraint firstItem="lbq-dR-dl7" firstAttribute="leading" secondItem="lQI-XO-JTk" secondAttribute="leading" constant="8" id="G9I-4I-npX"/>
                     <constraint firstItem="gE8-v7-AfL" firstAttribute="top" secondItem="lbq-dR-dl7" secondAttribute="bottom" constant="8" id="Uik-OW-CW8"/>
                     <constraint firstItem="gE8-v7-AfL" firstAttribute="leading" secondItem="lQI-XO-JTk" secondAttribute="leading" constant="8" id="kUk-Ts-qbI"/>
+                    <constraint firstItem="Dkd-XU-sRs" firstAttribute="centerY" secondItem="lQI-XO-JTk" secondAttribute="centerY" id="u7c-Bu-1Qf"/>
                     <constraint firstItem="lbq-dR-dl7" firstAttribute="top" secondItem="tZb-g1-9gD" secondAttribute="bottom" constant="8" id="w7c-Oy-Qel"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imgView" destination="Dkd-XU-sRs" id="28Z-H2-1Ly"/>
                 <outlet property="lb1" destination="tZb-g1-9gD" id="ptH-8Q-kLB"/>
                 <outlet property="lb2" destination="lbq-dR-dl7" id="geU-ct-PXQ"/>
                 <outlet property="lb3" destination="gE8-v7-AfL" id="jge-bg-iJi"/>
