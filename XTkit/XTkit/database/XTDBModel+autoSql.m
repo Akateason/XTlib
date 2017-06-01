@@ -88,6 +88,9 @@
         if ([name containsString:kPkid]) continue ;
         // ignore prop
         if ([self propIsIgnore:name class:[model class]]) continue ;
+        // ignore nil prop
+        if (!dicModel[name]) continue ;
+        
         // prop
         propertiesStr = [propertiesStr stringByAppendingString:[NSString stringWithFormat:@"%@ ,",name]] ;
         // question
@@ -120,6 +123,8 @@
         if ([name containsString:kPkid]) continue ;
         // ignore prop
         if ([self propIsIgnore:name class:[model class]]) continue ;
+        // ignore nil prop
+        if (!dic[name]) continue ;
         // setstr
         NSString *tmpStr = [NSString stringWithFormat:@"%@ = '%@' ,",name,dic[name]] ;
         setsStr = [setsStr stringByAppendingString:tmpStr] ;
@@ -168,6 +173,10 @@
     {
         return @"TEXT" ;
     }
+    else if ([strType containsString:@"NSData"])
+    {
+        return @"BLOB" ;
+    }
     NSLog(@"xt_db no type to transform !!") ;
     return nil ;
 }
@@ -176,9 +185,13 @@
 {
     if ([sqlType containsString:@"TEXT"] || [sqlType containsString:@"char"])
     {
-        return @" DEFAULT '' " ;
+        return @" DEFAULT ''" ;
     }
-    else return @" DEFAULT '0' " ;
+    else if ([sqlType containsString:@"BLOB"])
+    {
+        return @" DEFAULT ''" ;
+    }
+    else return @" DEFAULT '0'" ;
 }
 
 + (NSString *)keywordsWithName:(NSString *)name
