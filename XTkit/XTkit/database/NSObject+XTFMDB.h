@@ -20,6 +20,7 @@
 + (BOOL)xt_createTable ;
 
 #pragma mark - insert
+// insert or replace
 - (int)xt_insert ; // return lastRowId .
 + (BOOL)xt_insertList:(NSArray *)modelList ;
 

@@ -99,7 +99,7 @@
     propertiesStr = [propertiesStr substringToIndex:propertiesStr.length - 1] ;
     questionStr = [questionStr substringToIndex:questionStr.length - 1] ;
     
-    NSString *strResult = [NSString stringWithFormat:@"INSERT INTO %@ ( %@ ) VALUES ( %@ )",tableName,propertiesStr,questionStr] ;
+    NSString *strResult = [NSString stringWithFormat:@"INSERT OR REPLACE INTO %@ ( %@ ) VALUES ( %@ )",tableName,propertiesStr,questionStr] ;
     NSLog(@"xt_db sql insert : \n%@",strResult) ;
     return strResult ;
 }

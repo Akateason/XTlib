@@ -30,6 +30,7 @@ static NSString *const kPkid = @"pkid" ;
 + (BOOL)createTable ;
 
 #pragma mark - insert
+// insert or replace
 - (int)insert ; // return lastRowId .
 + (BOOL)insertList:(NSArray *)modelList ;
 
