@@ -8,40 +8,53 @@
 
 #import <Foundation/Foundation.h>
 
-
-static NSString * const TIME_STR_FORMAT_1 =      @"yyyy 年 MM 月 dd 日" ;
-static NSString * const TIME_STR_FORMAT_2 =      @"yyyy年MM月dd日" ;
-static NSString * const TIME_STR_FORMAT_3 =      @"YYYY-MM-dd HH:mm:ss" ;
-static NSString * const TIME_STR_FORMAT_4 =      @"YYYYMMddHHmmss" ;
-static NSString * const TIME_STR_FORMAT_5 =      @"YYYY-MM-dd" ;
-static NSString * const TIME_STR_FORMAT_6 =      @"YYYY-MM-dd HH:mm" ;
-static NSString * const TIME_STR_FORMAT_7 =      @"MM-dd" ;
-static NSString * const TIME_STR_FORMAT_8 =      @"MM-dd HH:mm" ;
-static const float  TICK_S_OR_SS_1 = 1000.0 ;
-static const float  TICK_S_OR_SS_2 = 1.0 ;
-
+static NSString * const kTIME_STR_FORMAT_1   = @"YYYYMMddHHmmss"      ;
+static NSString * const kTIME_STR_FORMAT_2   = @"yyyy年MM月dd日"       ;
+static NSString * const kTIME_STR_FORMAT_3   = @"yyyy 年 MM 月 dd 日"  ;
+static NSString * const kTIME_STR_FORMAT_4   = @"YYYY-MM-dd HH:mm:ss" ;
+static NSString * const kTIME_STR_FORMAT_5   = @"YYYY-MM-dd HH:mm"    ;
+static NSString * const kTIME_STR_FORMAT_6   = @"YYYY-MM-dd"          ;
+static NSString * const kTIME_STR_FORMAT_7   = @"MM-dd HH:mm"         ;
+static NSString * const kTIME_STR_FORMAT_8   = @"MM-dd"               ;
+static const float  kMillisecond             = 1000.0   ;
+static const float  kSecond                  = 1.0      ;
+#define kUnitConversion                      kSecond
 
 @interface NSDate (XTTick)
 
-//now
-+ (long long)xt_getTickFromNow ;
-//转tick
-+ (long long)xt_getTickWithDate:(NSDate *)_date;
-//转tick,转出string
-+ (NSString *)xt_getDateWithTick:(long long)_tick AndWithFormart:(NSString *)formatStr;
-//转tick,转出NsDate
-+ (NSDate *)xt_getNSDateWithTick:(long long)_tick;
-//转str变NSdate
-+ (NSDate *)xt_getNSDateWithDateStr:(NSString *)dateStr AndWithFormat:(NSString *)format;
-//转nsdate变str
-+ (NSString *)xt_getStrWithNSDate:(NSDate *)date AndWithFormat:(NSString *)format;
+/**
+ get Tick
+ */
++ (long long)xt_getNowTick ;
+- (long long)xt_getTick ;
 
-//x分钟前/x小时前/昨天/x天前/x个月前/x年前
-+ (NSString *)xt_timeInfoWithDate:(NSDate *)date ;
-+ (NSString *)xt_getMMDDWithDate:(NSDate *)date ;
+/**
+ compare tick
+ */
++ (NSComparisonResult)xt_compareTick:(long long)tick1
+                                 and:(long long)tick2 ;
 
-// compare
-- (NSComparisonResult)xt_compareTick:(long long)tick1 and:(long long)tick2 ;
+/**
+ get time str
+ */
++ (NSString *)xt_getStrWithTick:(long long)tick
+                         format:(NSString *)format ;
+- (NSString *)xt_getStrWithFormat:(NSString *)format ;
+- (NSString *)xt_timeInfo ;
+- (NSString *)xt_getMMDD ;
+
+/**
+ get date
+ */
++ (NSDate *)xt_getDateWithTick:(long long)tick ;
++ (NSDate *)xt_getDateWithStr:(NSString *)dateStr
+                       format:(NSString *)format ;
 
 
 @end
+
+
+
+
+
+

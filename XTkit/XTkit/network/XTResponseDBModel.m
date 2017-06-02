@@ -61,7 +61,7 @@
     dbModel.response = respStr ;
     dbModel.cachePolicy = policy ;
     dbModel.timeout = timeout ;
-    dbModel.createTime = [NSDate xt_getTickFromNow] ;
+    dbModel.createTime = [NSDate xt_getNowTick] ;
     dbModel.updateTime = dbModel.createTime ;
     return dbModel ;
 }
@@ -69,7 +69,7 @@
 - (BOOL)isAlreadyTimeout
 {
     NSDate *now = [NSDate date] ;
-    NSDate *dateUpdate = [NSDate xt_getNSDateWithTick:self.updateTime] ;
+    NSDate *dateUpdate = [NSDate xt_getDateWithTick:self.updateTime] ;
     NSDate *dateWillTimeout = [NSDate dateWithTimeInterval:self.timeout
                                                  sinceDate:dateUpdate] ;
     NSComparisonResult result = [dateWillTimeout compare:now] ;

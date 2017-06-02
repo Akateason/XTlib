@@ -10,72 +10,65 @@
 
 @implementation NSDate (XTTick)
 
-
-+ (long long)xt_getTickFromNow
+/**
+ get Tick
+ */
++ (long long)xt_getNowTick
 {
-    return [self xt_getTickWithDate:[NSDate date]] ;
+    return [[NSDate date] xt_getTick] ;
 }
 
-#pragma mark -- tick转换
-//转tick,转进
-+ (long long)xt_getTickWithDate:(NSDate *)_date
+- (long long)xt_getTick
 {
-    NSTimeInterval timeInterval2 = [_date timeIntervalSince1970];
-    long long time = (long long)(timeInterval2 * TICK_S_OR_SS_2);
-    NSLog(@"tick :%lld",time);
-    return time;
+    NSTimeInterval timeInterval2 = [self timeIntervalSince1970] ;
+    long long time = (long long)(timeInterval2 * kUnitConversion) ;
+    NSLog(@"xt_tick :%lld",time) ;
+    return time ;
 }
 
-//转tick,转出String
-+ (NSString *)xt_getDateWithTick:(long long)_tick AndWithFormart:(NSString *)formatStr
+/**
+ compare tick
+ */
++ (NSComparisonResult)xt_compareTick:(long long)tick1
+                                 and:(long long)tick2
 {
-    NSTimeInterval timeInterval = _tick / TICK_S_OR_SS_2;
-    NSDate *date111 = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDate *date1 = [NSDate xt_getDateWithTick:tick1] ;
+    NSDate *date2 = [NSDate xt_getDateWithTick:tick2] ;
+    return [date1 compare:date2] ;
+}
+
+/**
+ get time str
+ */
++ (NSString *)xt_getStrWithTick:(long long)tick
+                         format:(NSString *)format
+{
+    NSTimeInterval timeInterval = tick / kUnitConversion ;
+    NSDate *theDate = [NSDate dateWithTimeIntervalSince1970:timeInterval] ;
     //    NSLog(@"date:%@",date111);
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterFullStyle];
-    [formatter setTimeStyle:NSDateFormatterFullStyle];
-    [formatter setDateFormat:formatStr];//@"yyyy年MM月dd日 HH:mm:ss"
-    [formatter setLocale:[NSLocale currentLocale]];
-    NSString* confromTimespStr = [formatter stringFromDate:date111];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateStyle:NSDateFormatterFullStyle] ;
+    [formatter setTimeStyle:NSDateFormatterFullStyle] ;
+    [formatter setDateFormat:format] ;
+    [formatter setLocale:[NSLocale currentLocale]] ;
+    NSString* confromTimespStr = [formatter stringFromDate:theDate] ;
     //    NSLog(@"str:%@",confromTimespStr);
-    return confromTimespStr;
+    return confromTimespStr ;
 }
 
-//转tick,转出NsDate
-+ (NSDate *)xt_getNSDateWithTick:(long long)_tick
+- (NSString *)xt_getStrWithFormat:(NSString *)format
 {
-    NSTimeInterval timeInterval = _tick / TICK_S_OR_SS_2;
-    return [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init] ;
+    [formatter setDateFormat:format] ;
+    NSString *string = [formatter stringFromDate:self] ;
+    return string ;
 }
 
-//转str变NSdate
-+ (NSDate *)xt_getNSDateWithDateStr:(NSString *)dateStr AndWithFormat:(NSString *)format
-{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]] ;
-    dateFormatter.dateFormat = format;
-    
-    return [dateFormatter dateFromString:dateStr] ;
-}
-
-//转nsdate变str
-+ (NSString *)xt_getStrWithNSDate:(NSDate *)date AndWithFormat:(NSString *)format
-{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:format];
-    NSString *string = [formatter stringFromDate:date];
-    
-    return string;
-}
-
-
-+ (NSString *)xt_timeInfoWithDate:(NSDate *)date
+- (NSString *)xt_timeInfo
 {
     // 把日期字符串格式化为日期对象
-    
-    NSDate *curDate = [NSDate date];
-    NSTimeInterval time = -[date timeIntervalSinceDate:curDate];
+    NSDate *curDate = [NSDate date] ;
+    NSTimeInterval time = - [self timeIntervalSinceDate:curDate] ;
     //    NSLog(@"[curDate getYear] : %d",[curDate getYear]) ;
     //    NSLog(@"[date getYear] : %d",[date getYear]) ;
     //    NSLog(@"[curDate getMonth] : %d",[curDate getMonth]) ;
@@ -117,12 +110,12 @@
     // 七天到一年
     else if ( time < (3600 * 24) * 365 )
     {
-        return [self xt_getMMDDWithDate:date] ;
+        return [self xt_getMMDD] ;
     }
     // 一年之后
     else
     {
-        return [self xt_getStrWithNSDate:date AndWithFormat:TIME_STR_FORMAT_5] ;
+        return [self xt_getStrWithFormat:kTIME_STR_FORMAT_5] ;
     }
     
     
@@ -185,22 +178,38 @@
     return @"";
 }
 
-+ (NSString *)xt_getMMDDWithDate:(NSDate *)date
+- (NSString *)xt_getMMDD
 {
-    return [self xt_getStrWithNSDate:date AndWithFormat:TIME_STR_FORMAT_7] ;
+    return [self xt_getStrWithFormat:kTIME_STR_FORMAT_8] ;
 }
 
 
-
-// compare
-- (NSComparisonResult)xt_compareTick:(long long)tick1 and:(long long)tick2
+/**
+ get date
+ */
++ (NSDate *)xt_getDateWithTick:(long long)tick
 {
-    NSDate *date1 = [NSDate xt_getNSDateWithTick:tick1] ;
-    NSDate *date2 = [NSDate xt_getNSDateWithTick:tick2] ;
-    return [date1 compare:date2] ;
+    NSTimeInterval timeInterval = tick / kUnitConversion ;
+    return [NSDate dateWithTimeIntervalSince1970:timeInterval] ;
 }
 
-
++ (NSDate *)xt_getDateWithStr:(NSString *)dateStr
+                       format:(NSString *)format
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init] ;
+//    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]] ;
+    dateFormatter.dateFormat = format ;
+    return [dateFormatter dateFromString:dateStr] ;
+}
 
 
 @end
+
+
+
+
+
+
+
+
+

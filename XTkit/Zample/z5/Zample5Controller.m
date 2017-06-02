@@ -253,7 +253,7 @@ static float const kBtFlex = 5 ;
     Model1 *m1 = [Model1 new] ; // 不需设置主键
     m1.age = arc4random() % 100 ;
     m1.floatVal = 3232.89f ;
-    m1.tick = [NSDate xt_getTickFromNow] ;
+    m1.tick = [NSDate xt_getNowTick] ;
     m1.title = @"jk4j3j43" ;
     UIImage *image = [UIImage imageNamed:@"kobe"] ;
     image = [UIImage thumbnailWithImage:image size:CGSizeMake(100, 100)] ;
@@ -270,7 +270,7 @@ static float const kBtFlex = 5 ;
     m1.pkid = ((Model1 *)[[Model1 xt_selectAll] lastObject]).pkid ;
     m1.age = 4444444 ;
     m1.floatVal = 44.4444 ;
-    m1.tick = [NSDate xt_getTickFromNow] ;
+    m1.tick = [NSDate xt_getNowTick] ;
     m1.title = [NSString stringWithFormat:@"我就改你 r%d",arc4random()%99] ;
     
     [m1 xt_update] ;
@@ -301,7 +301,7 @@ static float const kBtFlex = 5 ;
         Model1 *m1 = [Model1 new] ; // 插入不需设置主键
         m1.age = i + 1 ;
         m1.floatVal = i + 0.3 ;
-        m1.tick = [NSDate xt_getTickFromNow] ;
+        m1.tick = [NSDate xt_getNowTick] ;
         m1.title = [NSString stringWithFormat:@"title%d",i] ;
         
         [list addObject:m1] ;
