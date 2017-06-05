@@ -4,7 +4,8 @@ XTkit
 主要分几个模块
 # Root / Category / Header / Database / Color / Network / UIs / Util
 其中每个模块都能细分出很多枝节 . 
-如下.
+
+介绍如下.
 Root 基类层 主要对各种UIKit空间的封装的根类. 例如table.cell等等等等. 把原本复杂控件的集成抽象. 提高开发效率 .
 Category分类扩展层 .利用iOS的分类特性. 进行类的扩展.  
 Header头文件.  避免预编译时间太长. 杜绝在预编译中放入过多的运算和操作. 对各种公共类分类定义.
