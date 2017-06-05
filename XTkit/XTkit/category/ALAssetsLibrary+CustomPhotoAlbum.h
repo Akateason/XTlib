@@ -8,7 +8,6 @@
 
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <Foundation/Foundation.h>
-#import <AssetsLibrary/AssetsLibrary.h>
 #import <UIKit/UIKit.h>
 
 typedef void(^SaveImageCompletion)(NSError* error) ;

@@ -1249,7 +1249,7 @@
 				TargetAttributes = {
 					60E238151E961D21001235F2 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7AJSLG6ACW;
+						DevelopmentTeam = E3XZ878L8N;
 						ProvisioningStyle = Automatic;
 					};
 					60E2382E1E961D22001235F2 = {
@@ -1625,11 +1625,14 @@
 			baseConfigurationReference = 05A2C9A35C57ABA0987B7DC4 /* Pods-XTkit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7AJSLG6ACW;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = E3XZ878L8N;
 				INFOPLIST_FILE = XTkit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teason.XTkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT}";
 			};
 			name = Debug;
@@ -1639,11 +1642,14 @@
 			baseConfigurationReference = 7CF43A032C3BF2386C1D5B60 /* Pods-XTkit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7AJSLG6ACW;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = E3XZ878L8N;
 				INFOPLIST_FILE = XTkit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teason.XTkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "${SRCROOT}";
 			};
 			name = Release;
