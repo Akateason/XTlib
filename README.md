@@ -13,3 +13,20 @@ XTkit
 * Network网络层. 我封装得XTReq框架. 封装3层专门处理项目中用到的请求. 最外层只需要关注到业务处理. 业务独立开. 带缓存逻辑. 可按需求. 分配不同的缓存策略. 也可不缓存 . 
 * UIs 控件层. 许多非常规控件 .
 * Util 工具层 一些小工具. 
+
+
+依赖库
+```
+cocoapods
+pod 'ASIHTTPRequest'
+pod 'AFNetworking'
+pod 'Masonry'
+pod 'SDWebImage'
+pod 'SVProgressHUD'
+pod 'JKCategories'
+pod 'ReactiveObjC'
+pod 'UITableView+FDTemplateLayoutCell'
+pod ‘MJRefresh’
+pod ‘YYModel’
+pod ‘FMDB’
+```
