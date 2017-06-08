@@ -10,25 +10,48 @@
 #import "MJRefresh.h"
 
 @protocol RootTableViewDelegate <NSObject>
-@optional
+@required
 - (void)loadNew:(void(^)(void))endRefresh   ;
 - (void)loadMore:(void(^)(void))endRefresh  ;
 @end
 
 @interface RootTableView : UITableView
-
 @property (nonatomic,weak) id <RootTableViewDelegate> xt_Delegate ;
-// DEFAULT IS `NO`  -> ONLY GIF IMAGES , SHOW WORDS WHEN IT BECOMES `YES`
-@property (nonatomic) BOOL showRefreshDetail ;
-// DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
-@property (nonatomic) BOOL automaticallyLoadMore ;
-// DEFAULT IS `YES` -> EVERYTIME INITIAL WITH AUTO LOAD NEW . CHANGE IT TO `NO` IF NECESSARY .
-@property (nonatomic) BOOL automaticallyLoadNew ;
-
-// pull header
+/**
+ REFRESH STYLE: 
+ DEFAULT IS `NO`  -> ONLY GIF IMAGES , SHOW WORDS WHEN IT BECOMES `YES`
+ */
+@property (nonatomic) BOOL isShowRefreshDetail ;
+/**
+ is auto LOAD MORE:
+ DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
+ */
+@property (nonatomic) BOOL isAutomaticallyLoadMore ;
+/**
+ PULL DOWN HEADER
+ */
 - (void)pullDownRefreshHeader ;
-
-// prepareStyle . u can rewrite in subclass
+/**
+ PULL DOWN HEADER
+ @param isBackGround    pull header in backgound or not .
+ */
+- (void)pullDownRefreshHeaderInBackGround:(BOOL)isBackGround ;
+/**
+ prepareStyle
+ u can rewrite in subclass if needed
+ */
 - (void)prepareStyle ;
-
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+

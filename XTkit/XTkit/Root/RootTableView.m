@@ -21,7 +21,26 @@
 #pragma mark - Public
 - (void)pullDownRefreshHeader
 {
-    [self.mj_header beginRefreshing] ;
+    [self pullDownRefreshHeaderInBackGround:FALSE] ;
+}
+
+- (void)pullDownRefreshHeaderInBackGround:(BOOL)isBackGround ;
+{
+    if (isBackGround)
+    {
+        if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(loadNew:)])
+        {
+            __weak RootTableView *weakSelf = self ;
+            [self.xt_Delegate loadNew:^{
+                [weakSelf reloadTableInMainThread] ;
+                [weakSelf.mj_header endRefreshing] ;
+            }] ;
+        }
+    }
+    else
+    {
+        [self.mj_header beginRefreshing] ;
+    }
 }
 
 #pragma mark --
@@ -65,10 +84,10 @@
 - (void)prepareStyle
 {
     self.separatorStyle = UITableViewCellSeparatorStyleNone ;
-    [self MJRefreshConfigure] ;
+    [self configureMJRefresh] ;
 }
 
-- (void)MJRefreshConfigure
+- (void)configureMJRefresh
 {
     RootRefreshHeader *header = [RootRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
     self.mj_header = header;
@@ -79,27 +98,26 @@
 
 - (void)setDefaultPublicAPIs
 {
-    self.showRefreshDetail = NO ;
-    self.automaticallyLoadMore = NO ;
-    self.automaticallyLoadNew = YES ;
+    self.isShowRefreshDetail        = NO ;
+    self.isAutomaticallyLoadMore    = NO ;
 }
 
 #pragma mark --
 #pragma mark - Public Properties
-- (void)setShowRefreshDetail:(BOOL)showRefreshDetail
+- (void)setIsShowRefreshDetail:(BOOL)isShowRefreshDetail
 {
-    _showRefreshDetail = showRefreshDetail ;
+    _isShowRefreshDetail = isShowRefreshDetail ;
     
-    ((RootRefreshHeader *)self.mj_header).lastUpdatedTimeLabel.hidden = !self.showRefreshDetail;
-    ((RootRefreshHeader *)self.mj_header).stateLabel.hidden = !self.showRefreshDetail ;
-    ((RootRefreshFooter *)self.mj_footer).stateLabel.hidden = !self.showRefreshDetail ;
+    ((RootRefreshHeader *)self.mj_header).lastUpdatedTimeLabel.hidden = !self.isShowRefreshDetail;
+    ((RootRefreshHeader *)self.mj_header).stateLabel.hidden = !self.isShowRefreshDetail ;
+    ((RootRefreshFooter *)self.mj_footer).stateLabel.hidden = !self.isShowRefreshDetail ;
 }
 
-- (void)setAutomaticallyLoadMore:(BOOL)automaticallyLoadMore
+- (void)setIsAutomaticallyLoadMore:(BOOL)isAutomaticallyLoadMore
 {
-    _automaticallyLoadMore = automaticallyLoadMore ;
+    _isAutomaticallyLoadMore = isAutomaticallyLoadMore ;
     
-    if (_automaticallyLoadMore)
+    if (isAutomaticallyLoadMore)
     {
         self.mj_footer = nil ;
         MJRefreshAutoFooter *autofooter = [MJRefreshAutoFooter footerWithRefreshingTarget:self
@@ -109,24 +127,14 @@
     }
 }
 
-- (void)setAutomaticallyLoadNew:(BOOL)automaticallyLoadNew
-{
-    _automaticallyLoadNew = automaticallyLoadNew ;
-    
-    if (_automaticallyLoadNew) {
-        [self.mj_header beginRefreshing] ;
-    } else {
-        [self.mj_header endRefreshing] ;
-    }
-}
-
 
 #pragma mark --
 #pragma mark - loading methods
 
 - (void)loadNewDataSelector
 {
-    if (!self.delegate || ![self.delegate respondsToSelector:@selector(loadNew:)]) {
+    if (!self.xt_Delegate || ![self.xt_Delegate respondsToSelector:@selector(loadNew:)])
+    {
         [self.mj_header endRefreshing] ;
         return ;
     }
@@ -141,7 +149,7 @@
 
 - (void)loadMoreDataSelector
 {
-    if (!self.delegate || ![self.delegate respondsToSelector:@selector(loadMore:)])
+    if (!self.xt_Delegate || ![self.xt_Delegate respondsToSelector:@selector(loadMore:)])
     {
         [self.mj_footer endRefreshing] ;
         return ;
@@ -149,7 +157,7 @@
     
     // do request
     __weak RootTableView *weakSelf = self ;
-    if (_automaticallyLoadMore)
+    if (self.isAutomaticallyLoadMore)
     {
         dispatch_async(dispatch_queue_create("refreshAutoFooter", NULL), ^
         {

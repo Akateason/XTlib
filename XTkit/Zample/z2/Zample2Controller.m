@@ -38,13 +38,15 @@
         view.delegate       = self  ;
         view.dataSource     = self  ;
         view.xt_Delegate    = self  ;
-        view.showRefreshDetail = TRUE ;
+        view.isShowRefreshDetail = TRUE ;
         [self.view addSubview:view] ;
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0)) ;
         }] ;
         view ;
     }) ;
+    
+    [self.table pullDownRefreshHeaderInBackGround:TRUE] ;
 }
 
 #pragma mark - RootTableViewDelegate

@@ -14,7 +14,7 @@
 
 @interface Zample6Controller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
 
-@property (nonatomic,strong) UITableView *table ;
+@property (nonatomic,strong) RootTableView *table ;
 @property (nonatomic,strong) NSArray *list_datasource ;
 
 @end
@@ -36,7 +36,7 @@
         view.delegate           = self  ;
         view.dataSource         = self  ;
         view.xt_Delegate        = self  ;
-        view.showRefreshDetail  = TRUE  ;
+        view.isShowRefreshDetail  = TRUE  ;
         [self.view addSubview:view] ;
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(self.view) ;
@@ -46,7 +46,7 @@
     
     [self.table registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil]
      forCellReuseIdentifier:@"MovieCell"] ;
-    
+    [self.table pullDownRefreshHeaderInBackGround:TRUE] ;
 }
 
 

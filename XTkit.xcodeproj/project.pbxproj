@@ -109,6 +109,7 @@
 		8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C7C1EC2A8B300B0F551 /* Z5DisplayCell.m */; };
 		8F158C7F1EC2A8E900B0F551 /* Z5DisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F158C7E1EC2A8E900B0F551 /* Z5DisplayCell.xib */; };
 		8F158C831EC2DAD700B0F551 /* XTResponseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C821EC2DAD700B0F551 /* XTResponseDBModel.m */; };
+		8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25F8DE1EE656D70052A21D /* Zample8Controller.m */; };
 		8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */; };
 		8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */; };
 		8F99164F1EC0754B00BA8F0D /* XTDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916481EC0754B00BA8F0D /* XTDBModel.m */; };
@@ -355,6 +356,8 @@
 		8F158C7E1EC2A8E900B0F551 /* Z5DisplayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Z5DisplayCell.xib; path = z5/Z5DisplayCell.xib; sourceTree = "<group>"; };
 		8F158C811EC2DAD700B0F551 /* XTResponseDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTResponseDBModel.h; sourceTree = "<group>"; };
 		8F158C821EC2DAD700B0F551 /* XTResponseDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTResponseDBModel.m; sourceTree = "<group>"; };
+		8F25F8DD1EE656D70052A21D /* Zample8Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zample8Controller.h; sourceTree = "<group>"; };
+		8F25F8DE1EE656D70052A21D /* Zample8Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample8Controller.m; sourceTree = "<group>"; };
 		8F9916421EC06C4F00BA8F0D /* XTReqResonse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqResonse.h; sourceTree = "<group>"; };
 		8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqResonse.m; sourceTree = "<group>"; };
 		8F9916451EC0754B00BA8F0D /* NSObject+XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+XTFMDB.h"; path = "database/NSObject+XTFMDB.h"; sourceTree = "<group>"; };
@@ -623,6 +626,7 @@
 				8FFD73431EB3218C00148B83 /* z5 */,
 				8FFD73541EB9B3B400148B83 /* z6 */,
 				8FDE031C1EC5AF0500FFBADA /* z7 */,
+				8F25F8DC1EE656BB0052A21D /* z8 */,
 			);
 			path = Zample;
 			sourceTree = "<group>";
@@ -1094,6 +1098,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8F25F8DC1EE656BB0052A21D /* z8 */ = {
+			isa = PBXGroup;
+			children = (
+				8F25F8DD1EE656D70052A21D /* Zample8Controller.h */,
+				8F25F8DE1EE656D70052A21D /* Zample8Controller.m */,
+			);
+			path = z8;
+			sourceTree = "<group>";
+		};
 		8FDE031A1EC541E400FFBADA /* XTFMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -1412,6 +1425,7 @@
 				607E605D1EA9F87C00D05213 /* Zample3Controller.m in Sources */,
 				60E239051E9622A1001235F2 /* NSTimer+Addition.m in Sources */,
 				8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */,
+				8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */,
 				607E603E1EA8740A00D05213 /* RootRefreshFooter.m in Sources */,
 				8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */,
 				60E238E11E9622A1001235F2 /* NSObject+Reflection.m in Sources */,

@@ -16,7 +16,7 @@
 static const NSInteger kEveryCount = 10 ;
 
 @interface Zample3Controller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
-@property (nonatomic,strong) UITableView *table ;
+@property (nonatomic,strong) RootTableView *table ;
 @property (nonatomic,strong) NSArray *list_datasource ;
 @end
 
@@ -38,7 +38,7 @@ static const NSInteger kEveryCount = 10 ;
         view.delegate           = self  ;
         view.dataSource         = self  ;
         view.xt_Delegate        = self  ;
-        view.showRefreshDetail  = TRUE  ;
+        view.isShowRefreshDetail  = TRUE  ;
         [self.view addSubview:view] ;
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0)) ;
@@ -48,7 +48,7 @@ static const NSInteger kEveryCount = 10 ;
     
     [self.table registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil]
      forCellReuseIdentifier:@"MovieCell"] ;
-    
+    [self.table pullDownRefreshHeaderInBackGround:TRUE] ;
 }
 
 
@@ -62,9 +62,11 @@ static const NSInteger kEveryCount = 10 ;
                                              NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]] ;
                                              self.list_datasource = tmplist ;
                                              
-                                             endRefresh() ;
+//                                             if (endRefresh)
+                                                 endRefresh() ;
                                          } fail:^{                                             
-                                             endRefresh() ;
+//                                             if (endRefresh)
+                                                 endRefresh() ;
                                          }] ;
 }
 
@@ -78,10 +80,10 @@ static const NSInteger kEveryCount = 10 ;
                                              NSMutableArray *list = [self.list_datasource mutableCopy] ;
                                              self.list_datasource = [list arrayByAddingObjectsFromArray:tmplist] ;
                                              
-                                             endRefresh() ;
+                                             if (endRefresh) endRefresh() ;
                                              
                                          } fail:^{
-                                             endRefresh() ;
+                                             if (endRefresh) endRefresh() ;
                                          }] ;
     
 }

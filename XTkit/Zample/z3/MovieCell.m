@@ -26,7 +26,20 @@
 {
     self.imgView.contentMode = UIViewContentModeScaleAspectFit ;
     self.lbYear.textColor = [UIColor grayColor] ;
+    
+    self.imgView.layer.shadowOffset = CGSizeMake(0, 15);
+    self.imgView.layer.shadowOpacity = 0.75;
+    self.clipsToBounds = YES;
+    
+    self.lbTitle.backgroundColor = [UIColor clearColor];
+    self.lbTitle.layer.shadowOffset = CGSizeMake(0, 2);
+    self.lbTitle.layer.shadowOpacity = 0.5;
+    //rasterize
+    self.layer.shouldRasterize = YES;
+    self.layer.rasterizationScale = [UIScreen mainScreen].scale;
+//我们可以使用shouldRasterize来缓存图层内容。这将会让图层离屏之后渲染一次然后把结果保存起来，直到下次利用的时候去更新（见清单12.2）。
 }
+
 // set model
 - (void)configure:(id)model ;
 {
@@ -38,6 +51,7 @@
     self.lbYear.text = movie.year ;
     self.lbRate.text = [NSString stringWithFormat:@"评分 : %@",@(movie.rating.average)] ;
 }
+
 // height
 + (CGFloat)cellHeight ;
 {
