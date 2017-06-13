@@ -8,8 +8,8 @@
 
 #import "RootRefreshHeader.h"
 
-NSString *const kTABLE_HEADER_IMAGES            =   @"pull" ;
-float const     kTABLE_HEADER_IMAGES_COUNT      =   16      ;
+NSString *const kTABLE_HEADER_IMAGES            =   @"refresh" ;
+float const     kTABLE_HEADER_IMAGES_COUNT      =   5      ;
 
 @interface RootRefreshHeader ()
 @property (nonatomic,strong) NSArray *gifImageList ;
