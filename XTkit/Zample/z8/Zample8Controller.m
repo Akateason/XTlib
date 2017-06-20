@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"hook" ;
     
     UIButton *button = [UIButton new] ;
     [button setTitle:@"dddd" forState:0] ;
@@ -28,7 +29,7 @@
     button.center = self.view.center ;
     [self.view addSubview:button] ;
     [button addTarget:self action:@selector(btAction) forControlEvents:UIControlEventTouchUpInside] ;
-    
+    //
     button.touchExtendInset = UIEdgeInsetsMake(-50, -50, -50, -50) ;
 }
 
