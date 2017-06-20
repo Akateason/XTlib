@@ -8,23 +8,40 @@
 
 #import "Zample8Controller.h"
 
+#import "UIButton+ExtendTouchRect.h"
+
 @interface Zample8Controller ()
 
 @end
 
 @implementation Zample8Controller
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    UIButton *button = [UIButton new] ;
+    [button setTitle:@"dddd" forState:0] ;
+    button.backgroundColor = [UIColor redColor] ;
+    button.frame = CGRectMake(0, 0, 50, 30) ;
+    button.center = self.view.center ;
+    [self.view addSubview:button] ;
+    [button addTarget:self action:@selector(btAction) forControlEvents:UIControlEventTouchUpInside] ;
     
+    button.touchExtendInset = UIEdgeInsetsMake(-50, -50, -50, -50) ;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)btAction
+{
+    NSLog(@"dd") ;
+}
+
 
 /*
 #pragma mark - Navigation

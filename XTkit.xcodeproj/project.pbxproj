@@ -110,6 +110,7 @@
 		8F158C7F1EC2A8E900B0F551 /* Z5DisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F158C7E1EC2A8E900B0F551 /* Z5DisplayCell.xib */; };
 		8F158C831EC2DAD700B0F551 /* XTResponseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C821EC2DAD700B0F551 /* XTResponseDBModel.m */; };
 		8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25F8DE1EE656D70052A21D /* Zample8Controller.m */; };
+		8F37C0081EF8F20B00EE713F /* UIButton+ExtendTouchRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */; };
 		8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */; };
 		8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */; };
 		8F99164F1EC0754B00BA8F0D /* XTDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916481EC0754B00BA8F0D /* XTDBModel.m */; };
@@ -358,6 +359,8 @@
 		8F158C821EC2DAD700B0F551 /* XTResponseDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTResponseDBModel.m; sourceTree = "<group>"; };
 		8F25F8DD1EE656D70052A21D /* Zample8Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zample8Controller.h; sourceTree = "<group>"; };
 		8F25F8DE1EE656D70052A21D /* Zample8Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample8Controller.m; sourceTree = "<group>"; };
+		8F37C0061EF8F20B00EE713F /* UIButton+ExtendTouchRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ExtendTouchRect.h"; sourceTree = "<group>"; };
+		8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ExtendTouchRect.m"; sourceTree = "<group>"; };
 		8F9916421EC06C4F00BA8F0D /* XTReqResonse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqResonse.h; sourceTree = "<group>"; };
 		8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqResonse.m; sourceTree = "<group>"; };
 		8F9916451EC0754B00BA8F0D /* NSObject+XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+XTFMDB.h"; path = "database/NSObject+XTFMDB.h"; sourceTree = "<group>"; };
@@ -776,6 +779,8 @@
 				60E238571E9622A1001235F2 /* UIButton+Badges.m */,
 				607E5FCD1EA6FCBC00D05213 /* UIButton+Countdown.h */,
 				607E5FCE1EA6FCBC00D05213 /* UIButton+Countdown.m */,
+				8F37C0061EF8F20B00EE713F /* UIButton+ExtendTouchRect.h */,
+				8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */,
 				60E238581E9622A1001235F2 /* UIImage+AddFunction.h */,
 				60E238591E9622A1001235F2 /* UIImage+AddFunction.m */,
 				60E2385A1E9622A1001235F2 /* UIImageView+QNExtention.h */,
@@ -1383,6 +1388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607E60441EA883BB00D05213 /* UIView+CurrentController.m in Sources */,
+				8F37C0081EF8F20B00EE713F /* UIButton+ExtendTouchRect.m in Sources */,
 				607E604F1EA88B8100D05213 /* Z1CustomCell.m in Sources */,
 				60E239091E9622A1001235F2 /* XTNetReloader.m in Sources */,
 				8F9916511EC0754B00BA8F0D /* XTFMDBBase.m in Sources */,
