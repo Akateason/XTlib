@@ -8,8 +8,6 @@
 #import "XTRequest.h"
 #import "UrlRequestHeader.h"
 #import "AFNetworking.h"
-#import "ASIFormDataRequest.h"
-#import "ASIHTTPRequest.h"
 #import "SVProgressHUD.h"
 #import "YYModel.h"
 #import "XTJson.h"
@@ -181,91 +179,6 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
          }] ;
 }
 
-
-//  sync
-#pragma mark --
-#pragma mark - sync
-+ (XTReqResonse *)getResultWithURLstr:(NSString *)urlstr
-                                  param:(NSDictionary *)dict
-                                   mode:(XTRequestMode)mode
-{
-    XTReqResonse *result = [self getResultWithURLstr:urlstr
-                                                 param:dict
-                                                  mode:mode
-                                                   hud:TRUE] ;
-    return result ;
-}
-
-+ (XTReqResonse *)getResultWithURLstr:(NSString *)urlstr
-                                  param:(NSDictionary *)dict
-                                   mode:(XTRequestMode)mode
-                                    hud:(BOOL)hud
-{
-    id jsonObj = [self getJsonObjectWithURLstr:urlstr
-                                         param:dict
-                                          mode:mode
-                                           hud:hud] ;
-    return [XTReqResonse yy_modelWithJSON:jsonObj] ;
-}
-
-+ (id)getJsonObjectWithURLstr:(NSString *)urlstr
-                        param:(NSDictionary *)dict
-                         mode:(XTRequestMode)mode
-{
-    return [self getJsonObjectWithURLstr:urlstr
-                                   param:dict
-                                    mode:mode
-                                     hud:TRUE] ;
-}
-
-+ (id)getJsonObjectWithURLstr:(NSString *)urlstr
-                        param:(NSDictionary *)dict
-                         mode:(XTRequestMode)mode
-                          hud:(BOOL)hud
-{
-    if (hud) [SVProgressHUD show] ;
-    NSString *response = nil ;
-    if (mode == XTRequestMode_GET_MODE)
-    {
-        NSString *apStr = [self getUrlInGetModeWithDic:dict] ;
-        urlstr = [urlstr stringByAppendingString:apStr] ;
-        
-        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlstr]];
-        request.timeOutSeconds = kTIMEOUT ;
-        [request startSynchronous] ;
-        NSError *error = [request error] ;
-        if (error)
-        {
-            NSLog(@"xt_req fail error:%@",error) ;
-            return nil ;
-        }
-        response = [request responseString] ;
-    }
-    else if (mode == XTRequestMode_POST_MODE)
-    {
-        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:urlstr]] ;
-        request.timeOutSeconds = kTIMEOUT ;
-        
-        NSArray *allKeys = [dict allKeys] ;
-        for (NSString *key in allKeys)
-        {
-            NSString *val = [dict objectForKey:key] ;
-            [request setPostValue:val forKey:key] ;
-        }
-        [request startSynchronous] ;
-        NSError *error = [request error] ;
-        
-        if (error)
-        {
-            NSLog(@"xt_req fail error : %@",error) ;
-            return nil ;
-        }
-        response = [request responseString] ;
-    }
-    NSLog(@"urlstr : %@\nresponse : %@\n",urlstr,response) ;
-    if (hud) [SVProgressHUD dismiss] ;
-    return [XTJson getJsonWithStr:response] ;
-}
 
 
 

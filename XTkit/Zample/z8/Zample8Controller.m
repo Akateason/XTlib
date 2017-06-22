@@ -7,6 +7,7 @@
 //
 
 #import "Zample8Controller.h"
+#import "SVProgressHUD.h"
 
 #import "UIButton+ExtendTouchRect.h"
 
@@ -41,6 +42,7 @@
 - (void)btAction
 {
     NSLog(@"dd") ;
+    [SVProgressHUD showInfoWithStatus:@"点到了"] ;
 }
 
 

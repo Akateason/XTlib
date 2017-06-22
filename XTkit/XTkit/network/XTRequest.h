@@ -75,23 +75,5 @@ typedef NS_ENUM(NSInteger, XTRequestMode) {
         taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
                fail:(void (^)())fail ;
 
-//  sync
-+ (XTReqResonse *)getResultWithURLstr:(NSString *)urlstr
-                                  param:(NSDictionary *)dict
-                                   mode:(XTRequestMode)mode ;
-
-+ (XTReqResonse *)getResultWithURLstr:(NSString *)urlstr
-                                  param:(NSDictionary *)dict
-                                   mode:(XTRequestMode)mode
-                                    hud:(BOOL)hud ;
-
-+ (id)getJsonObjectWithURLstr:(NSString *)urlstr
-                        param:(NSDictionary *)dict
-                         mode:(XTRequestMode)mode ;
-
-+ (id)getJsonObjectWithURLstr:(NSString *)urlstr
-                        param:(NSDictionary *)dict
-                         mode:(XTRequestMode)mode
-                          hud:(BOOL)hud ;
 
 @end
