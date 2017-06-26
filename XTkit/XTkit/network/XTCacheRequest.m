@@ -8,10 +8,9 @@
 
 #import "XTCacheRequest.h"
 #import "XTFMDB.h"
-#import "XTJson.h"
 #import "YYModel.h"
 #import "NSDate+XTTick.h"
-#import "NSString+Extend.h"
+//#import "NSString+Extend.h"
 
 @implementation XTCacheRequest
 
@@ -85,7 +84,7 @@
                 break;
             case XTResponseCachePolicyAlwaysCache:
             {//总是获取缓存的数据.不再更新.
-                if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
+                if (completion) completion([resModel.response yy_modelToJSONObject]) ;
             }
                 break;
             case XTResponseCachePolicyTimeout:
@@ -103,7 +102,7 @@
                 }
                 else
                 { // return cache
-                    if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
+                    if (completion) completion([resModel.response yy_modelToJSONObject]) ;
                 }
             }
                 break;
@@ -183,7 +182,7 @@
                 break;
             case XTResponseCachePolicyAlwaysCache:
             {//总是获取缓存的数据.不再更新.
-                if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
+                if (completion) completion([resModel.response yy_modelToJSONObject]) ;
             }
                 break;
             case XTResponseCachePolicyTimeout:
@@ -201,7 +200,7 @@
                 }
                 else
                 { // return cache
-                    if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
+                    if (completion) completion([resModel.response yy_modelToJSONObject]) ;
                 }
             }
                 break;
@@ -252,7 +251,7 @@
                      }
                  }
                     fail:^{
-                        if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
+                        if (completion) completion([resModel.response yy_modelToJSONObject]) ;
                     }] ;
     }
     else if (requestType == XTRequestMode_POST_MODE)
@@ -282,7 +281,7 @@
                       }
                   }
                      fail:^{
-                         if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
+                         if (completion) completion([resModel.response yy_modelToJSONObject]) ;
                      }] ;
     }
 }

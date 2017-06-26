@@ -19,10 +19,6 @@ typedef enum {
 
 @interface CommonFunc : NSObject
 
-#pragma mark --
-#pragma mark - get current VC
-+ (UIViewController *)getCurrentVC ;
-
 #pragma mark - save images to library
 + (void)saveImageToLibrary:(UIImage *)savedImage
                  albumName:(NSString *)name ;

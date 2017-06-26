@@ -16,11 +16,6 @@
 // base URL
 static NSString *const kBaseURL = @"http://www.akateason.top" ;
 
-// method
-typedef NS_ENUM(NSInteger, XTRequestMode) {
-    XTRequestMode_GET_MODE      ,
-    XTRequestMode_POST_MODE
-} ;
 
 
 
@@ -40,7 +35,10 @@ typedef NS_ENUM(NSInteger, XTRequestMode) {
 + (void)netWorkStatus ;
 + (void)netWorkStatus:(void (^)(NSInteger status))block ;
 
-// async
+
+/**
+ async
+ */
 + (void)GETWithUrl:(NSString *)url
         parameters:(NSDictionary *)dict
            success:(void (^)(id json))success
@@ -76,4 +74,13 @@ typedef NS_ENUM(NSInteger, XTRequestMode) {
                fail:(void (^)())fail ;
 
 
+/**
+ sync
+ Must be in the asynchronous thread , or the main thread will getting stuck .
+ */
++ (id)syncGetWithUrl:(NSString *)url
+          parameters:(NSDictionary *)dict ;
+
++ (id)syncPostWithUrl:(NSString *)url
+           parameters:(NSDictionary *)dict ;
 @end

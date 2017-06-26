@@ -30,36 +30,6 @@ extern NSString * APPSTORE_APPID ;
 
 @implementation CommonFunc
 
-#pragma mark -- get current VC
-+ (UIViewController *)getCurrentVC
-{
-    UIViewController *result = nil ;
-    
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow] ;
-    if (window.windowLevel != UIWindowLevelNormal)
-    {
-        NSArray *windows = [[UIApplication sharedApplication] windows] ;
-        for(UIWindow * tmpWin in windows)
-        {
-            if (tmpWin.windowLevel == UIWindowLevelNormal)
-            {
-                window = tmpWin ;
-                break;
-            }
-        }
-    }
-    
-    UIView *frontView = [[window subviews] firstObject];
-    id nextResponder = [frontView nextResponder];
-    
-    if ([nextResponder isKindOfClass:[UIViewController class]])
-        result = nextResponder;
-    else
-        result = window.rootViewController;
-    
-    return result;
-}
-
 #pragma mark -- save images to library
 + (void)saveImageToLibrary:(UIImage *)savedImage albumName:(NSString *)name
 {

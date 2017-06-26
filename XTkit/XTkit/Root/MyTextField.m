@@ -37,21 +37,15 @@
     {
         
         self.borderStyle        = UITextBorderStyleNone ;
-        
 //        CGColorRef cgColor      = COLOR_LIGHT_GRAY.CGColor ;
         float      width        = 1.0f ;
 //        self.layer.borderColor  = cgColor ;
         self.layer.borderWidth  = width ;
         self.layer.cornerRadius = CORNER_RADIUS_ALL  ;
-        
         self.autocorrectionType = UITextAutocorrectionTypeNo;
-        
         self.adjustsFontSizeToFitWidth = YES;
-        
         self.minimumFontSize    = 12.0f;
-        
         self.font = [UIFont systemFontOfSize:12.0f] ;
-        
     }
     
     return self;
@@ -80,26 +74,20 @@
 
 - (CGRect)textRectForBounds:(CGRect)bounds
 {
-    
     CGRect tempRect = CGRectMake(FLEX_WIDTHS, 0, bounds.size.width - FLEX_WIDTHS, bounds.size.height) ;
-    
     return tempRect ;
 }
 
 
 - (CGRect)placeholderRectForBounds:(CGRect)bounds
 {
-    
     CGRect tempRect = CGRectMake(FLEX_WIDTHS, 0, bounds.size.width - FLEX_WIDTHS, bounds.size.height) ;
-    
     return tempRect ;
 }
 
 - (CGRect)editingRectForBounds:(CGRect)bounds
 {
-    
     CGRect tempRect = CGRectMake(FLEX_WIDTHS, 0, bounds.size.width - FLEX_WIDTHS, bounds.size.height) ;
-    
     return tempRect ;
 }
 

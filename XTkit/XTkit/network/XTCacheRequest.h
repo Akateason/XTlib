@@ -9,6 +9,11 @@
 #import "XTRequest.h"
 #import "XTResponseDBModel.h"
 
+typedef NS_ENUM(NSInteger, XTRequestMode) {
+    XTRequestMode_GET_MODE      ,
+    XTRequestMode_POST_MODE
+} ;
+
 @interface XTCacheRequest : XTRequest
 
 + (void)cacheGET:(NSString *)url

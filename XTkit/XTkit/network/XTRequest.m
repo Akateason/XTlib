@@ -6,11 +6,11 @@
 //
 
 #import "XTRequest.h"
-#import "UrlRequestHeader.h"
+//#import "UrlRequestHeader.h"
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
 #import "YYModel.h"
-#import "XTJson.h"
+//#import "XTJson.h"
 #import "XTReqResonse.h"
 #import "XTReqSessionManager.h"
 
@@ -179,7 +179,42 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
          }] ;
 }
 
+// sync
++ (id)syncGetWithUrl:(NSString *)url
+          parameters:(NSDictionary *)dict
+{
+    __block id result = nil ;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0) ;
+    [self GETWithUrl:url
+                 hud:NO
+          parameters:dict
+         taskSuccess:^(NSURLSessionDataTask *task, id json) {
+             result = json ;
+             dispatch_semaphore_signal(semaphore) ;
+         } fail:^{
+             dispatch_semaphore_signal(semaphore) ;
+         }] ;
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) ;
+    return result ;
+}
 
++ (id)syncPostWithUrl:(NSString *)url
+           parameters:(NSDictionary *)dict
+{
+    __block id result = nil ;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0) ;
+    [self POSTWithUrl:url
+                  hud:NO
+           parameters:dict
+          taskSuccess:^(NSURLSessionDataTask *task, id json) {
+              result = json ;
+              dispatch_semaphore_signal(semaphore) ;
+          } fail:^{
+              dispatch_semaphore_signal(semaphore) ;
+          }] ;
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) ;
+    return result ;
+}
 
 
 #pragma mark --

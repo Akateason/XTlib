@@ -25,8 +25,6 @@
 
 @interface RootCtrl : UIViewController
 
-
-
 #pragma mark - title for Umeng Anaylize .
 @property (nonatomic,copy) NSString *myTitle ;
 
