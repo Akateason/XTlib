@@ -151,32 +151,57 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
         taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
                fail:(void (^)())fail
 {
+    [self POSTWithUrl:url
+               header:nil
+                  hud:hud
+           parameters:dict
+          taskSuccess:success
+                 fail:fail] ;
+}
+
++ (void)POSTWithUrl:(NSString *)url
+             header:(NSDictionary *)header
+                hud:(BOOL)hud
+         parameters:(NSDictionary *)dict
+        taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+               fail:(void (^)())fail
+{
     if (hud) [SVProgressHUD show] ;
+    
+    if (header)
+    {
+        for (NSString *key in header)
+        {
+            NSString *value = header[key] ;
+            [[XTReqSessionManager shareInstance].requestSerializer setValue:value
+                                                         forHTTPHeaderField:key] ;
+        }
+    }
     
     [[XTReqSessionManager shareInstance] POST:url
                                    parameters:dict
                                      progress:nil
-          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-             
-              if (success)
-              {
-                  if (hud) [SVProgressHUD dismiss] ;
-                  
-                  NSLog(@"url : %@ \nparam : %@",url,dict) ;
-                  NSLog(@"resp %@",responseObject) ;
-                  success(task , responseObject) ;
-              }
-              
-         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-             
-             NSLog(@"xt_req fail Error: %@", error) ;
-             if (fail)
-             {
-                 if (hud) [SVProgressHUD showErrorWithStatus:kStringBadNetwork] ;
-                 fail() ;
-             }
-             
-         }] ;
+                                      success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                          
+                                          if (success)
+                                          {
+                                              if (hud) [SVProgressHUD dismiss] ;
+                                              
+                                              NSLog(@"url : %@ \nparam : %@",url,dict) ;
+                                              NSLog(@"resp %@",responseObject) ;
+                                              success(task , responseObject) ;
+                                          }
+                                          
+                                      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                          
+                                          NSLog(@"xt_req fail Error: %@", error) ;
+                                          if (fail)
+                                          {
+                                              if (hud) [SVProgressHUD showErrorWithStatus:kStringBadNetwork] ;
+                                              fail() ;
+                                          }
+                                          
+                                      }] ;
 }
 
 // sync

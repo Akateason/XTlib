@@ -73,7 +73,12 @@ static NSString *const kBaseURL = @"http://www.akateason.top" ;
         taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
                fail:(void (^)())fail ;
 
-
++ (void)POSTWithUrl:(NSString *)url
+             header:(NSDictionary *)header
+                hud:(BOOL)hud
+         parameters:(NSDictionary *)dict
+        taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+               fail:(void (^)())fail ;
 /**
  sync
  Must be in the asynchronous thread , or the main thread will getting stuck .
