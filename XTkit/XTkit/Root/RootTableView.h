@@ -12,6 +12,7 @@
 @protocol RootTableViewDelegate <NSObject>
 @required
 - (void)loadNew:(void(^)(void))endRefresh   ;
+@optional
 - (void)loadMore:(void(^)(void))endRefresh  ;
 @end
 
