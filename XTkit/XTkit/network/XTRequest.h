@@ -17,10 +17,6 @@
 static NSString *const kBaseURL = @"http://www.akateason.top" ;
 
 
-
-
-
-
 @interface XTRequest : NSObject
 
 // set URL string with base url
