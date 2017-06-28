@@ -18,7 +18,6 @@ XTkit
 依赖库
 cocoapods
 ```
-pod 'ASIHTTPRequest'
 pod 'AFNetworking'
 pod 'Masonry'
 pod 'SDWebImage'
