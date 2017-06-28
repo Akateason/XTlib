@@ -21,7 +21,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedClient = [[XTReqSessionManager alloc] initWithBaseURL:nil] ;
-        _sharedClient.requestSerializer = [AFJSONRequestSerializer serializer] ;
+        _sharedClient.requestSerializer = [AFHTTPRequestSerializer serializer] ;
         _sharedClient.responseSerializer = [AFJSONResponseSerializer serializer] ;
         _sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil] ;
         _sharedClient.requestSerializer.timeoutInterval = kTIMEOUT ;
