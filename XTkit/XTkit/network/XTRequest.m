@@ -6,11 +6,9 @@
 //
 
 #import "XTRequest.h"
-//#import "UrlRequestHeader.h"
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
 #import "YYModel.h"
-//#import "XTJson.h"
 #import "XTReqResonse.h"
 #import "XTReqSessionManager.h"
 
@@ -204,6 +202,7 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
                                       }] ;
 }
 
+
 // sync
 + (id)syncGetWithUrl:(NSString *)url
           parameters:(NSDictionary *)dict
@@ -249,27 +248,24 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
     NSArray *allKeys = [dict allKeys] ;
     BOOL bFirst = YES ;
     NSString *appendingStr = @"" ;
-    for (NSString *key in allKeys)
-    {
+    for (NSString *key in allKeys) {
         NSString *val = [dict objectForKey:key] ;
         NSString *item = @"";
-        if (bFirst)
-        {
+        if (bFirst) {
             bFirst = NO ;
             item = [NSString stringWithFormat:@"?%@=%@",key,val] ;
         }
-        else
-        {
+        else {
             item = [NSString stringWithFormat:@"&%@=%@",key,val] ;
         }
-        
         appendingStr = [appendingStr stringByAppendingString:item] ;
     }
     
     return appendingStr ;
 }
 
-+ (NSString *)fullUrl:(NSString *)url param:(NSDictionary *)param
++ (NSString *)fullUrl:(NSString *)url
+                param:(NSDictionary *)param
 {
     return [url stringByAppendingString:[self getUrlInGetModeWithDic:param]] ;
 }

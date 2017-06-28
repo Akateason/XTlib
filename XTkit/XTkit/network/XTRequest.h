@@ -6,9 +6,8 @@
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "XTReqSessionManager.h"
 @class XTReqResonse , NSURLSessionDataTask ;
-
 
 // get PARAM
 #define XT_GET_PARAM                         NSMutableDictionary *param = [XTRequest getParameters] ;
@@ -16,8 +15,7 @@
 // base URL
 static NSString *const kBaseURL = @"http://www.akateason.top" ;
 
-
-@interface XTRequest : NSObject
+@interface XTRequest : XTReqSessionManager
 
 // set URL string with base url
 + (NSString *)getFinalUrl:(NSString *)strPartOfUrl ;
@@ -30,7 +28,6 @@ static NSString *const kBaseURL = @"http://www.akateason.top" ;
 // status
 + (void)netWorkStatus ;
 + (void)netWorkStatus:(void (^)(NSInteger status))block ;
-
 
 /**
  async
@@ -75,6 +72,7 @@ static NSString *const kBaseURL = @"http://www.akateason.top" ;
          parameters:(NSDictionary *)dict
         taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
                fail:(void (^)())fail ;
+
 /**
  sync
  Must be in the asynchronous thread , or the main thread will getting stuck .
@@ -85,3 +83,8 @@ static NSString *const kBaseURL = @"http://www.akateason.top" ;
 + (id)syncPostWithUrl:(NSString *)url
            parameters:(NSDictionary *)dict ;
 @end
+
+
+
+
+
