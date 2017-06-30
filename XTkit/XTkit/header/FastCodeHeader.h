@@ -33,5 +33,7 @@ return __singleton__;                                               \
 }
 
 
+// string format
+#define FORMAT(format, ...) [NSString stringWithFormat:(format), ##__VA_ARGS__]
 
 #endif /* FastCodeHeader_h */
