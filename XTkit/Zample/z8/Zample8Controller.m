@@ -10,6 +10,7 @@
 #import "SVProgressHUD.h"
 
 #import "UIButton+ExtendTouchRect.h"
+#import "UIViewController+Navigation.h"
 
 @interface Zample8Controller ()
 
@@ -32,6 +33,10 @@
     [button addTarget:self action:@selector(btAction) forControlEvents:UIControlEventTouchUpInside] ;
     //
     button.touchExtendInset = UIEdgeInsetsMake(-50, -50, -50, -50) ;
+    
+    self.navigationDidClickBackButton = ^{
+        NSLog(@"i pop") ;
+    } ;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -111,6 +111,8 @@
 		8F158C831EC2DAD700B0F551 /* XTResponseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C821EC2DAD700B0F551 /* XTResponseDBModel.m */; };
 		8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25F8DE1EE656D70052A21D /* Zample8Controller.m */; };
 		8F37C0081EF8F20B00EE713F /* UIButton+ExtendTouchRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */; };
+		8F37C0E41F0C94C700EE713F /* UIViewController+Stat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0E31F0C94C700EE713F /* UIViewController+Stat.m */; };
+		8F37C0E71F0CAA7000EE713F /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */; };
 		8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */; };
 		8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */; };
 		8F99164F1EC0754B00BA8F0D /* XTDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916481EC0754B00BA8F0D /* XTDBModel.m */; };
@@ -361,6 +363,10 @@
 		8F25F8DE1EE656D70052A21D /* Zample8Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample8Controller.m; sourceTree = "<group>"; };
 		8F37C0061EF8F20B00EE713F /* UIButton+ExtendTouchRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ExtendTouchRect.h"; sourceTree = "<group>"; };
 		8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ExtendTouchRect.m"; sourceTree = "<group>"; };
+		8F37C0E21F0C94C700EE713F /* UIViewController+Stat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Stat.h"; sourceTree = "<group>"; };
+		8F37C0E31F0C94C700EE713F /* UIViewController+Stat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Stat.m"; sourceTree = "<group>"; };
+		8F37C0E51F0CAA7000EE713F /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
+		8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
 		8F9916421EC06C4F00BA8F0D /* XTReqResonse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqResonse.h; sourceTree = "<group>"; };
 		8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqResonse.m; sourceTree = "<group>"; };
 		8F9916451EC0754B00BA8F0D /* NSObject+XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+XTFMDB.h"; path = "database/NSObject+XTFMDB.h"; sourceTree = "<group>"; };
@@ -750,6 +756,7 @@
 		60E2384C1E9622A1001235F2 /* XTkit */ = {
 			isa = PBXGroup;
 			children = (
+				8F37C0E11F0C94C700EE713F /* Stat */,
 				60E238751E9622A1001235F2 /* Root */,
 				60E2384D1E9622A1001235F2 /* category */,
 				60E238681E9622A1001235F2 /* header */,
@@ -797,6 +804,8 @@
 				607E60731EADBE6500D05213 /* UIViewController+TabbarHidden.m */,
 				8FFD73621EB9D19800148B83 /* UIViewController+Storyboard.h */,
 				8FFD73631EB9D19800148B83 /* UIViewController+Storyboard.m */,
+				8F37C0E51F0CAA7000EE713F /* UIViewController+Navigation.h */,
+				8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -1110,6 +1119,15 @@
 				8F25F8DE1EE656D70052A21D /* Zample8Controller.m */,
 			);
 			path = z8;
+			sourceTree = "<group>";
+		};
+		8F37C0E11F0C94C700EE713F /* Stat */ = {
+			isa = PBXGroup;
+			children = (
+				8F37C0E21F0C94C700EE713F /* UIViewController+Stat.h */,
+				8F37C0E31F0C94C700EE713F /* UIViewController+Stat.m */,
+			);
+			path = Stat;
 			sourceTree = "<group>";
 		};
 		8FDE031A1EC541E400FFBADA /* XTFMDB */ = {
@@ -1451,7 +1469,9 @@
 				60E239031E9622A1001235F2 /* XTBarrageView.m in Sources */,
 				607E603B1EA8714F00D05213 /* RootRefreshHeader.m in Sources */,
 				607E5FD81EA728F100D05213 /* ShareDigit.m in Sources */,
+				8F37C0E41F0C94C700EE713F /* UIViewController+Stat.m in Sources */,
 				60E239141E9622A1001235F2 /* XTJson.m in Sources */,
+				8F37C0E71F0CAA7000EE713F /* UIViewController+Navigation.m in Sources */,
 				8FFD73571EB9B3E400148B83 /* Zample6Controller.m in Sources */,
 				60E239011E9622A1001235F2 /* FlywordLabel.m in Sources */,
 				60E238EE1E9622A1001235F2 /* MyNavCtrller.m in Sources */,
@@ -1648,7 +1668,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = E3XZ878L8N;
 				INFOPLIST_FILE = XTkit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teason.XTkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1665,7 +1685,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = E3XZ878L8N;
 				INFOPLIST_FILE = XTkit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teason.XTkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
