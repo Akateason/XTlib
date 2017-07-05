@@ -19,7 +19,16 @@
 #pragma mark --
 #pragma mark - Life
 
-- (void)dealloc {}
+- (void)dealloc
+{
+    NSString *title = self.navigationItem.title;
+    if (title) {
+        NSLog(@"%@\n%@\ndealloc",self.description,title) ;
+    }
+    else {
+        NSLog(@"%@\ndealloc",self.description) ;
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
