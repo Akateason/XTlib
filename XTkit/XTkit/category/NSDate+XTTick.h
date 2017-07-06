@@ -26,6 +26,7 @@ static const float  kSecond                  = 1.0      ;
  get Tick
  */
 + (long long)xt_getNowTick ;
+
 - (long long)xt_getTick ;
 
 /**
@@ -36,17 +37,29 @@ static const float  kSecond                  = 1.0      ;
 
 /**
  get time str
+ @p fomat default is kTIME_STR_FORMAT_1
  */
++ (NSString *)xt_getStrWithTick:(long long)tick ;
+
 + (NSString *)xt_getStrWithTick:(long long)tick
                          format:(NSString *)format ;
+
+- (NSString *)xt_getStr ;
+
 - (NSString *)xt_getStrWithFormat:(NSString *)format ;
+
 - (NSString *)xt_timeInfo ;
+
 - (NSString *)xt_getMMDD ;
 
 /**
  get date
+ @p fomat default is kTIME_STR_FORMAT_1
  */
 + (NSDate *)xt_getDateWithTick:(long long)tick ;
+
++ (NSDate *)xt_getDateWithStr:(NSString *)dateStr ;
+
 + (NSDate *)xt_getDateWithStr:(NSString *)dateStr
                        format:(NSString *)format ;
 

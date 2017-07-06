@@ -41,25 +41,31 @@
  get time str
  */
 + (NSString *)xt_getStrWithTick:(long long)tick
+{
+    return [self xt_getStrWithTick:tick
+                            format:kTIME_STR_FORMAT_1] ;
+}
+
++ (NSString *)xt_getStrWithTick:(long long)tick
                          format:(NSString *)format
 {
     NSTimeInterval timeInterval = tick / kUnitConversion ;
     NSDate *theDate = [NSDate dateWithTimeIntervalSince1970:timeInterval] ;
-    //    NSLog(@"date:%@",date111);
+    return [theDate xt_getStrWithFormat:format] ;
+}
+
+- (NSString *)xt_getStr
+{
+    return [self xt_getStrWithFormat:kTIME_STR_FORMAT_1] ;
+}
+
+- (NSString *)xt_getStrWithFormat:(NSString *)format
+{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
     [formatter setDateStyle:NSDateFormatterFullStyle] ;
     [formatter setTimeStyle:NSDateFormatterFullStyle] ;
     [formatter setDateFormat:format] ;
     [formatter setLocale:[NSLocale currentLocale]] ;
-    NSString* confromTimespStr = [formatter stringFromDate:theDate] ;
-    //    NSLog(@"str:%@",confromTimespStr);
-    return confromTimespStr ;
-}
-
-- (NSString *)xt_getStrWithFormat:(NSString *)format
-{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc]init] ;
-    [formatter setDateFormat:format] ;
     NSString *string = [formatter stringFromDate:self] ;
     return string ;
 }
@@ -192,6 +198,13 @@
     NSTimeInterval timeInterval = tick / kUnitConversion ;
     return [NSDate dateWithTimeIntervalSince1970:timeInterval] ;
 }
+
++ (NSDate *)xt_getDateWithStr:(NSString *)dateStr
+{
+    return [self xt_getDateWithStr:dateStr
+                            format:kTIME_STR_FORMAT_1] ;
+}
+
 
 + (NSDate *)xt_getDateWithStr:(NSString *)dateStr
                        format:(NSString *)format

@@ -10,8 +10,8 @@
 #define FastCodeHeader_h
 //
 //// WEAK STRONG SELF
-//#define WEAK_SELF       __weak typeof(self) weakSelf = self
-//#define STRONG_SELF     __strong typeof(weakSelf) self = weakSelf
+#define WEAK_SELF       __weak typeof(self) weakSelf = self
+#define STRONG_SELF     __strong typeof(weakSelf) self = weakSelf
 //
 
 
