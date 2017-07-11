@@ -36,4 +36,27 @@
     return nil ;
 }
 
+
+static NSString *const kSeperateLine = @"/" ;
+/**
+ view chainInfo
+ @return string  @"subview/superview/currentController"
+ */
+- (NSString *)chainInfo
+
+{
+    NSMutableString *tmpString = [@"" mutableCopy] ;
+    for (UIView *next = self ; next ; next = next.superview)
+    {
+        [tmpString appendFormat:@"%@%@",NSStringFromClass(next.class),kSeperateLine] ;
+        UIResponder *nextResponder = [next nextResponder] ;
+        if ([nextResponder isKindOfClass:[UIViewController class]])
+        {
+            [tmpString appendFormat:@"%@%@",NSStringFromClass(nextResponder.class),kSeperateLine] ;
+            break ;
+        }
+    }
+    return tmpString ;
+}
+
 @end

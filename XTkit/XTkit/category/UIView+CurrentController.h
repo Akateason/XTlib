@@ -14,4 +14,6 @@
 
 - (UINavigationController*)navigationController ;
 
+- (NSString *)chainInfo ;
+
 @end

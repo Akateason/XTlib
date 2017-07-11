@@ -22,7 +22,7 @@
 {
     NSTimeInterval timeInterval2 = [self timeIntervalSince1970] ;
     long long time = (long long)(timeInterval2 * kUnitConversion) ;
-    NSLog(@"xt_tick :%lld",time) ;
+//    NSLog(@"xt_tick :%lld",time) ;
     return time ;
 }
 

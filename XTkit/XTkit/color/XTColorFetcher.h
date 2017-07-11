@@ -7,16 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FastCodeHeader.h"
 
 
-#define XTCOLOR( _colorInPlist_ )     [[XTColorFetcher sharedInstance] xt_colorWithKey:_colorInPlist_]
-
+#define XTCOLOR                         return [[XTColorFetcher sharedInstance] xt_colorWithKey:NSStringFromSelector(_cmd)] ;
 
 @interface XTColorFetcher : NSObject
-
-AS_SINGLETON(XTColorFetcher)
-
++ (instancetype)sharedInstance ;
+- (void)configurePlist:(NSString *)plist ;
 - (UIColor *)xt_colorWithKey:(NSString *)key ;
-
 @end

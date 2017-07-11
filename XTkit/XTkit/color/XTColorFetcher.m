@@ -11,12 +11,27 @@
 #import "UIColor+HexString.h"
 
 @interface XTColorFetcher ()
-@property (nonatomic,strong) NSDictionary *dicData ;
+@property (nonatomic,strong) NSDictionary *dicData   ;
+@property (nonatomic,copy)   NSString     *plistName ;
 @end
 
 @implementation XTColorFetcher
 
-DEF_SINGLETON(XTColorFetcher)
++ (instancetype)sharedInstance
+{
+    static dispatch_once_t onceToken;
+    static XTColorFetcher *instance ;
+    dispatch_once(&onceToken, ^{
+        instance = [[XTColorFetcher alloc] init] ;
+        [instance configurePlist:nil] ;
+    });
+    return instance ;
+}
+
+- (void)configurePlist:(NSString *)plist
+{
+    self.plistName = plist ?: @"xtAllColorsList" ;
+}
 
 - (NSDictionary *)dicData
 {
@@ -26,12 +41,11 @@ DEF_SINGLETON(XTColorFetcher)
     return _dicData ;
 }
 
-
 - (NSDictionary *)fromPlist
 {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"xtAllColorsList" ofType:@"plist"] ;
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath] ;
-    return data ;
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:self.plistName
+                                                          ofType:@"plist"] ;
+    return [[NSDictionary alloc] initWithContentsOfFile:plistPath] ;
 }
 
 - (UIColor *)getColorWithRed:(float)fRed
@@ -49,9 +63,9 @@ DEF_SINGLETON(XTColorFetcher)
                         Blue:(float)fBlue
                        alpha:(float)alpha
 {
-    return [UIColor colorWithRed:((float) fRed / 255.0f)
+    return [UIColor colorWithRed:((float) fRed   / 255.0f)
                            green:((float) fGreen / 255.0f)
-                            blue:((float) fBlue / 255.0f)
+                            blue:((float) fBlue  / 255.0f)
                            alpha:alpha] ;
 }
 
@@ -74,7 +88,6 @@ DEF_SINGLETON(XTColorFetcher)
     else {
         return [UIColor colorWithHexString:jsonStr] ;
     }
-    
     return nil ;
 }
 

@@ -15,7 +15,6 @@
 #import "YYModel.h"
 #import "SVProgressHUD.h"
 
-#import "UIColor+AllColors.h"
 #import "ShareDigit.h"
 #import "ServerRequest.h"
 #import "RootTableView.h"

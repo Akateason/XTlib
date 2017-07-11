@@ -10,6 +10,7 @@
 #import "SVProgressHUD.h"
 #import "XTFMDB.h"
 #import "XTResponseDBModel.h"
+#import "XTStat.h"
 
 @interface AppDelegate ()
 
@@ -29,9 +30,11 @@
     
     // SQLite
     [[XTFMDBBase sharedInstance] configureDB:@"teason"] ; // app did launch .
-    
     // request cache TB
     [XTResponseDBModel xt_createTable] ;
+    
+    // stat
+    [[XTStat new] prepare] ;
     
     return YES;
 }

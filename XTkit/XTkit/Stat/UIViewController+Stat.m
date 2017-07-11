@@ -8,48 +8,78 @@
 
 #import "UIViewController+Stat.h"
 #import <objc/runtime.h>
+#import "CtrllerEvent.h"
 
 @implementation UIViewController (Stat)
 
 + (void)load
 {
     [super load] ;
+    
     static dispatch_once_t onceToken ;
     dispatch_once(&onceToken, ^{
-        SEL originalSelector = @selector(viewDidAppear:) ;
-        SEL swizzledSelector = @selector(xt_viewDidAppear:) ;
-        Method originalMethod = class_getInstanceMethod(self.class, originalSelector) ;
-        Method swizzledMethod = class_getInstanceMethod(self.class, swizzledSelector) ;
-        BOOL didAddMethod = class_addMethod(self.class,
-                                            originalSelector,
-                                            method_getImplementation(swizzledMethod),
-                                            method_getTypeEncoding(swizzledMethod)) ;
-        if (didAddMethod) {
-            class_replaceMethod(self.class,
-                                swizzledSelector,
-                                method_getImplementation(originalMethod),
-                                method_getTypeEncoding(originalMethod)) ;
-        }
-        else {
-            method_exchangeImplementations(originalMethod, swizzledMethod) ;
-        }
+        [self swizzledOrigin:@selector(viewDidLoad)
+                         new:@selector(xt_viewDidLoad)] ;
+        [self swizzledOrigin:@selector(viewWillAppear:)
+                         new:@selector(xt_viewWillAppear:)] ;
+        [self swizzledOrigin:@selector(viewWillDisappear:)
+                         new:@selector(xt_viewWillDisappear:)] ;
+        [self swizzledOrigin:NSSelectorFromString(@"dealloc")
+                         new:@selector(xt_dealloc)] ;
     }) ;
 }
 
-- (void)xt_viewDidAppear:(BOOL)animated
++ (void)swizzledOrigin:(SEL)originalSelector
+                   new:(SEL)swizzledSelector
 {
-    [self xt_viewDidAppear:animated] ;
-    
+    Method originalMethod = class_getInstanceMethod(self.class, originalSelector) ;
+    Method swizzledMethod = class_getInstanceMethod(self.class, swizzledSelector) ;
+    method_exchangeImplementations(originalMethod, swizzledMethod) ;
+}
+
+- (void)xt_viewDidLoad
+{
+    [self collectStatInfo:@"viewDidLoad"] ;
+    [self xt_viewDidLoad] ;
+}
+
+- (void)xt_viewWillAppear:(BOOL)animated
+{
+    [self collectStatInfo:@"viewWillAppear"] ;
+    [self xt_viewWillAppear:animated] ;
+}
+
+- (void)xt_viewWillDisappear:(BOOL)animated
+{
+    [self collectStatInfo:@"viewWillDisappear"] ;
+    [self xt_viewWillDisappear:animated] ;
+}
+
+- (void)xt_dealloc
+{
+    [self collectStatInfo:@"dealloc"] ;
+    [self xt_dealloc] ;
+}
+
+- (void)collectStatInfo:(NSString *)funcName
+{
     NSArray *filter = @[@"UINavigationController",@"UITabBarController",@"MyNavCtrller"] ;
     NSString *className = NSStringFromClass(self.class) ;
     if ([filter containsObject:className]) return ;
     if (!self.statTitle || !self.statTitle.length) return ;
-    
-    // update stat .
-#pragma mark - TODO
-    NSLog(@"will update stat : %@",self.statTitle) ;
-#pragma mark - TODO
+//    NSLog(@"%@ : %@",funcName,self.statTitle) ;
+    CtrllerEvent *cEvent = [[CtrllerEvent alloc] initWithName:NSStringFromClass(self.class)
+                                                        title:self.statTitle
+                                                       action:funcName
+                                                      ctrller:self] ;
+    [cEvent insert] ;
 }
+
+
+
+
+
+
 
 static const void * kStatTitle ;
 - (void)setStatTitle:(NSString *)statTitle

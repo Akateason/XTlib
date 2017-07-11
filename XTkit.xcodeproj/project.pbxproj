@@ -65,7 +65,6 @@
 		60E238E51E9622A1001235F2 /* UIImageView+QNExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2385B1E9622A1001235F2 /* UIImageView+QNExtention.m */; };
 		60E238E61E9622A1001235F2 /* UILabel+Badges.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2385D1E9622A1001235F2 /* UILabel+Badges.m */; };
 		60E238E71E9622A1001235F2 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2385F1E9622A1001235F2 /* UIView+Sizes.m */; };
-		60E238E81E9622A1001235F2 /* UIColor+AllColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238621E9622A1001235F2 /* UIColor+AllColors.m */; };
 		60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238641E9622A1001235F2 /* UIColor+HexString.m */; };
 		60E238EA1E9622A1001235F2 /* xtAllColorsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60E238651E9622A1001235F2 /* xtAllColorsList.plist */; };
 		60E238EB1E9622A1001235F2 /* XTColorFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238671E9622A1001235F2 /* XTColorFetcher.m */; };
@@ -105,14 +104,23 @@
 		60E239141E9622A1001235F2 /* XTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D51E9622A1001235F2 /* XTJson.m */; };
 		60E239151E9622A1001235F2 /* XTSearchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D81E9622A1001235F2 /* XTSearchHandler.m */; };
 		60E239171E9622A1001235F2 /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238DE1E9622A1001235F2 /* XTVerification.m */; };
+		8F0BDBB11F13AF3300DBED71 /* XTColorFetcher+Dynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0BDBB01F13AF3300DBED71 /* XTColorFetcher+Dynamic.m */; };
 		8F158C7A1EC2A79200B0F551 /* Z5DisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C791EC2A79200B0F551 /* Z5DisplayController.m */; };
 		8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C7C1EC2A8B300B0F551 /* Z5DisplayCell.m */; };
 		8F158C7F1EC2A8E900B0F551 /* Z5DisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F158C7E1EC2A8E900B0F551 /* Z5DisplayCell.xib */; };
 		8F158C831EC2DAD700B0F551 /* XTResponseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C821EC2DAD700B0F551 /* XTResponseDBModel.m */; };
 		8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25F8DE1EE656D70052A21D /* Zample8Controller.m */; };
 		8F37C0081EF8F20B00EE713F /* UIButton+ExtendTouchRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */; };
-		8F37C0E41F0C94C700EE713F /* UIViewController+Stat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0E31F0C94C700EE713F /* UIViewController+Stat.m */; };
 		8F37C0E71F0CAA7000EE713F /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */; };
+		8F7F95BA1F0F615F00236286 /* ApplicationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95AF1F0F615F00236286 /* ApplicationEvent.m */; };
+		8F7F95BB1F0F615F00236286 /* CtrllerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95B11F0F615F00236286 /* CtrllerEvent.m */; };
+		8F7F95BC1F0F615F00236286 /* ListEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95B31F0F615F00236286 /* ListEvent.m */; };
+		8F7F95BD1F0F615F00236286 /* UIApplication+Stat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95B51F0F615F00236286 /* UIApplication+Stat.m */; };
+		8F7F95BE1F0F615F00236286 /* UITableView+Stat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95B71F0F615F00236286 /* UITableView+Stat.m */; };
+		8F7F95BF1F0F615F00236286 /* UIViewController+Stat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95B91F0F615F00236286 /* UIViewController+Stat.m */; };
+		8F7F95C21F10B43100236286 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95C11F10B43100236286 /* NSObject+Runtime.m */; };
+		8F7F95C61F10C54200236286 /* StatSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95C51F10C54200236286 /* StatSender.m */; };
+		8F7F95C91F10D56700236286 /* XTStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95C81F10D56700236286 /* XTStat.m */; };
 		8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */; };
 		8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */; };
 		8F99164F1EC0754B00BA8F0D /* XTDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916481EC0754B00BA8F0D /* XTDBModel.m */; };
@@ -267,8 +275,6 @@
 		60E2385D1E9622A1001235F2 /* UILabel+Badges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Badges.m"; sourceTree = "<group>"; };
 		60E2385E1E9622A1001235F2 /* UIView+Sizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Sizes.h"; sourceTree = "<group>"; };
 		60E2385F1E9622A1001235F2 /* UIView+Sizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Sizes.m"; sourceTree = "<group>"; };
-		60E238611E9622A1001235F2 /* UIColor+AllColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AllColors.h"; sourceTree = "<group>"; };
-		60E238621E9622A1001235F2 /* UIColor+AllColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AllColors.m"; sourceTree = "<group>"; };
 		60E238631E9622A1001235F2 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
 		60E238641E9622A1001235F2 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		60E238651E9622A1001235F2 /* xtAllColorsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xtAllColorsList.plist; sourceTree = "<group>"; };
@@ -352,6 +358,9 @@
 		60E238DD1E9622A1001235F2 /* XTVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTVerification.h; sourceTree = "<group>"; };
 		60E238DE1E9622A1001235F2 /* XTVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTVerification.m; sourceTree = "<group>"; };
 		7CF43A032C3BF2386C1D5B60 /* Pods-XTkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-XTkit/Pods-XTkit.release.xcconfig"; sourceTree = "<group>"; };
+		8F0BDBAF1F13AF3300DBED71 /* XTColorFetcher+Dynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XTColorFetcher+Dynamic.h"; sourceTree = "<group>"; };
+		8F0BDBB01F13AF3300DBED71 /* XTColorFetcher+Dynamic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XTColorFetcher+Dynamic.m"; sourceTree = "<group>"; };
+		8F0BDBB21F145F3400DBED71 /* XTColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTColor.h; sourceTree = "<group>"; };
 		8F158C781EC2A79200B0F551 /* Z5DisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Z5DisplayController.h; path = z5/Z5DisplayController.h; sourceTree = "<group>"; };
 		8F158C791EC2A79200B0F551 /* Z5DisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Z5DisplayController.m; path = z5/Z5DisplayController.m; sourceTree = "<group>"; };
 		8F158C7B1EC2A8B300B0F551 /* Z5DisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Z5DisplayCell.h; path = z5/Z5DisplayCell.h; sourceTree = "<group>"; };
@@ -363,10 +372,26 @@
 		8F25F8DE1EE656D70052A21D /* Zample8Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample8Controller.m; sourceTree = "<group>"; };
 		8F37C0061EF8F20B00EE713F /* UIButton+ExtendTouchRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ExtendTouchRect.h"; sourceTree = "<group>"; };
 		8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ExtendTouchRect.m"; sourceTree = "<group>"; };
-		8F37C0E21F0C94C700EE713F /* UIViewController+Stat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Stat.h"; sourceTree = "<group>"; };
-		8F37C0E31F0C94C700EE713F /* UIViewController+Stat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Stat.m"; sourceTree = "<group>"; };
 		8F37C0E51F0CAA7000EE713F /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		8F7F95AE1F0F615F00236286 /* ApplicationEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationEvent.h; sourceTree = "<group>"; };
+		8F7F95AF1F0F615F00236286 /* ApplicationEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationEvent.m; sourceTree = "<group>"; };
+		8F7F95B01F0F615F00236286 /* CtrllerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtrllerEvent.h; sourceTree = "<group>"; };
+		8F7F95B11F0F615F00236286 /* CtrllerEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtrllerEvent.m; sourceTree = "<group>"; };
+		8F7F95B21F0F615F00236286 /* ListEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListEvent.h; sourceTree = "<group>"; };
+		8F7F95B31F0F615F00236286 /* ListEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListEvent.m; sourceTree = "<group>"; };
+		8F7F95B41F0F615F00236286 /* UIApplication+Stat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Stat.h"; sourceTree = "<group>"; };
+		8F7F95B51F0F615F00236286 /* UIApplication+Stat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Stat.m"; sourceTree = "<group>"; };
+		8F7F95B61F0F615F00236286 /* UITableView+Stat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Stat.h"; sourceTree = "<group>"; };
+		8F7F95B71F0F615F00236286 /* UITableView+Stat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Stat.m"; sourceTree = "<group>"; };
+		8F7F95B81F0F615F00236286 /* UIViewController+Stat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Stat.h"; sourceTree = "<group>"; };
+		8F7F95B91F0F615F00236286 /* UIViewController+Stat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Stat.m"; sourceTree = "<group>"; };
+		8F7F95C01F10B43100236286 /* NSObject+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
+		8F7F95C11F10B43100236286 /* NSObject+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
+		8F7F95C41F10C54200236286 /* StatSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatSender.h; sourceTree = "<group>"; };
+		8F7F95C51F10C54200236286 /* StatSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatSender.m; sourceTree = "<group>"; };
+		8F7F95C71F10D56700236286 /* XTStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTStat.h; sourceTree = "<group>"; };
+		8F7F95C81F10D56700236286 /* XTStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTStat.m; sourceTree = "<group>"; };
 		8F9916421EC06C4F00BA8F0D /* XTReqResonse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqResonse.h; sourceTree = "<group>"; };
 		8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqResonse.m; sourceTree = "<group>"; };
 		8F9916451EC0754B00BA8F0D /* NSObject+XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+XTFMDB.h"; path = "database/NSObject+XTFMDB.h"; sourceTree = "<group>"; };
@@ -779,6 +804,8 @@
 				8F9916551EC150BF00BA8F0D /* NSDate+NSCalendar.h */,
 				8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */,
 				60E238521E9622A1001235F2 /* NSObject+Reflection.h */,
+				8F7F95C01F10B43100236286 /* NSObject+Runtime.h */,
+				8F7F95C11F10B43100236286 /* NSObject+Runtime.m */,
 				60E238531E9622A1001235F2 /* NSObject+Reflection.m */,
 				60E238541E9622A1001235F2 /* NSString+Extend.h */,
 				60E238551E9622A1001235F2 /* NSString+Extend.m */,
@@ -813,13 +840,14 @@
 		60E238601E9622A1001235F2 /* color */ = {
 			isa = PBXGroup;
 			children = (
-				60E238611E9622A1001235F2 /* UIColor+AllColors.h */,
-				60E238621E9622A1001235F2 /* UIColor+AllColors.m */,
 				60E238631E9622A1001235F2 /* UIColor+HexString.h */,
 				60E238641E9622A1001235F2 /* UIColor+HexString.m */,
 				60E238651E9622A1001235F2 /* xtAllColorsList.plist */,
 				60E238661E9622A1001235F2 /* XTColorFetcher.h */,
 				60E238671E9622A1001235F2 /* XTColorFetcher.m */,
+				8F0BDBAF1F13AF3300DBED71 /* XTColorFetcher+Dynamic.h */,
+				8F0BDBB01F13AF3300DBED71 /* XTColorFetcher+Dynamic.m */,
+				8F0BDBB21F145F3400DBED71 /* XTColor.h */,
 			);
 			path = color;
 			sourceTree = "<group>";
@@ -1124,10 +1152,40 @@
 		8F37C0E11F0C94C700EE713F /* Stat */ = {
 			isa = PBXGroup;
 			children = (
-				8F37C0E21F0C94C700EE713F /* UIViewController+Stat.h */,
-				8F37C0E31F0C94C700EE713F /* UIViewController+Stat.m */,
+				8F7F95C31F10C4E900236286 /* Module */,
+				8F7F95AD1F0F615F00236286 /* Model */,
+				8F7F95B41F0F615F00236286 /* UIApplication+Stat.h */,
+				8F7F95B51F0F615F00236286 /* UIApplication+Stat.m */,
+				8F7F95B61F0F615F00236286 /* UITableView+Stat.h */,
+				8F7F95B71F0F615F00236286 /* UITableView+Stat.m */,
+				8F7F95B81F0F615F00236286 /* UIViewController+Stat.h */,
+				8F7F95B91F0F615F00236286 /* UIViewController+Stat.m */,
 			);
 			path = Stat;
+			sourceTree = "<group>";
+		};
+		8F7F95AD1F0F615F00236286 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F7F95AE1F0F615F00236286 /* ApplicationEvent.h */,
+				8F7F95AF1F0F615F00236286 /* ApplicationEvent.m */,
+				8F7F95B01F0F615F00236286 /* CtrllerEvent.h */,
+				8F7F95B11F0F615F00236286 /* CtrllerEvent.m */,
+				8F7F95B21F0F615F00236286 /* ListEvent.h */,
+				8F7F95B31F0F615F00236286 /* ListEvent.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F7F95C31F10C4E900236286 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				8F7F95C41F10C54200236286 /* StatSender.h */,
+				8F7F95C51F10C54200236286 /* StatSender.m */,
+				8F7F95C71F10D56700236286 /* XTStat.h */,
+				8F7F95C81F10D56700236286 /* XTStat.m */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 		8FDE031A1EC541E400FFBADA /* XTFMDB */ = {
@@ -1408,12 +1466,14 @@
 				607E60441EA883BB00D05213 /* UIView+CurrentController.m in Sources */,
 				8F37C0081EF8F20B00EE713F /* UIButton+ExtendTouchRect.m in Sources */,
 				607E604F1EA88B8100D05213 /* Z1CustomCell.m in Sources */,
+				8F7F95BB1F0F615F00236286 /* CtrllerEvent.m in Sources */,
 				60E239091E9622A1001235F2 /* XTNetReloader.m in Sources */,
 				8F9916511EC0754B00BA8F0D /* XTFMDBBase.m in Sources */,
 				60E238E41E9622A1001235F2 /* UIImage+AddFunction.m in Sources */,
 				607E60261EA85BE100D05213 /* WPTappableLabel.m in Sources */,
 				607E602D1EA85BE100D05213 /* XHPathCover.m in Sources */,
 				60E238F11E9622A1001235F2 /* MyTabbarCtrller.m in Sources */,
+				8F7F95BD1F0F615F00236286 /* UIApplication+Stat.m in Sources */,
 				60E238F61E9622A1001235F2 /* RootTableView.m in Sources */,
 				60E238F81E9622A1001235F2 /* ParallaxHeaderView.m in Sources */,
 				607E60321EA85BE100D05213 /* NSObject+MKBlockTimer.m in Sources */,
@@ -1432,7 +1492,10 @@
 				607E604C1EA88B5700D05213 /* Zample1Controller.m in Sources */,
 				607E5FCC1EA6F8E400D05213 /* XTZoomPicture.m in Sources */,
 				60E238FC1E9622A1001235F2 /* ShareAlertV.m in Sources */,
+				8F7F95C21F10B43100236286 /* NSObject+Runtime.m in Sources */,
 				60E238E51E9622A1001235F2 /* UIImageView+QNExtention.m in Sources */,
+				8F7F95BF1F0F615F00236286 /* UIViewController+Stat.m in Sources */,
+				8F7F95C61F10C54200236286 /* StatSender.m in Sources */,
 				8FFD73421EB320BA00148B83 /* ServerRequest.m in Sources */,
 				60E238F21E9622A1001235F2 /* MyTextField.m in Sources */,
 				8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */,
@@ -1455,21 +1518,23 @@
 				60E238E11E9622A1001235F2 /* NSObject+Reflection.m in Sources */,
 				607E602A1EA85BE100D05213 /* Base64.m in Sources */,
 				60E239021E9622A1001235F2 /* XTBarrageItemView.m in Sources */,
+				8F0BDBB11F13AF3300DBED71 /* XTColorFetcher+Dynamic.m in Sources */,
 				60E239121E9622A1001235F2 /* XTAnimation.m in Sources */,
 				607E60631EA9FB7100D05213 /* Rating.m in Sources */,
 				8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */,
 				8F99164F1EC0754B00BA8F0D /* XTDBModel.m in Sources */,
 				60E238F91E9622A1001235F2 /* UIImage+ImageEffects.m in Sources */,
 				60E238E61E9622A1001235F2 /* UILabel+Badges.m in Sources */,
+				8F7F95BE1F0F615F00236286 /* UITableView+Stat.m in Sources */,
 				60E2381E1E961D21001235F2 /* AppDelegate.m in Sources */,
 				8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */,
 				607E5FDB1EA7483100D05213 /* UserOnDevice.m in Sources */,
 				60E238E71E9622A1001235F2 /* UIView+Sizes.m in Sources */,
 				60E238F71E9622A1001235F2 /* GradientBGView.m in Sources */,
+				8F7F95BC1F0F615F00236286 /* ListEvent.m in Sources */,
 				60E239031E9622A1001235F2 /* XTBarrageView.m in Sources */,
 				607E603B1EA8714F00D05213 /* RootRefreshHeader.m in Sources */,
 				607E5FD81EA728F100D05213 /* ShareDigit.m in Sources */,
-				8F37C0E41F0C94C700EE713F /* UIViewController+Stat.m in Sources */,
 				60E239141E9622A1001235F2 /* XTJson.m in Sources */,
 				8F37C0E71F0CAA7000EE713F /* UIViewController+Navigation.m in Sources */,
 				8FFD73571EB9B3E400148B83 /* Zample6Controller.m in Sources */,
@@ -1492,7 +1557,6 @@
 				607E60711EADA67100D05213 /* UIViewController+HowToUse.m in Sources */,
 				60E238FD1E9622A1001235F2 /* ShareAlertView.m in Sources */,
 				607E60591EA9DEF300D05213 /* DoubanTagsCell.m in Sources */,
-				60E238E81E9622A1001235F2 /* UIColor+AllColors.m in Sources */,
 				8F9916541EC14D6B00BA8F0D /* NSDate+XTTick.m in Sources */,
 				8F9916571EC150BF00BA8F0D /* NSDate+NSCalendar.m in Sources */,
 				607E60251EA85BE100D05213 /* WPHotspotLabel.m in Sources */,
@@ -1501,8 +1565,10 @@
 				60E238F41E9622A1001235F2 /* MyWebController.m in Sources */,
 				607E60241EA85BE100D05213 /* WPAttributedStyleAction.m in Sources */,
 				607E602C1EA85BE100D05213 /* CHTCollectionViewWaterfallLayout.m in Sources */,
+				8F7F95BA1F0F615F00236286 /* ApplicationEvent.m in Sources */,
 				607E60351EA85BE100D05213 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				607E60341EA85BE100D05213 /* UIAlternativeButton.m in Sources */,
+				8F7F95C91F10D56700236286 /* XTStat.m in Sources */,
 				60E238FA1E9622A1001235F2 /* PlaceHolderTextView.m in Sources */,
 				8F158C831EC2DAD700B0F551 /* XTResponseDBModel.m in Sources */,
 				607E5FC81EA6F8A900D05213 /* CenterTableView.m in Sources */,
