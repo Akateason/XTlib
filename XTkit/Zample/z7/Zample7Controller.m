@@ -68,6 +68,11 @@
     }] ;
     
 
+    //
+    [[self.button1 rac_signalForControlEvents:UIControlEventTouchUpInside]
+                                subscribeNext:^(__kindof UIControl * _Nullable x) {
+                                    NSLog(@"click") ;
+     }] ;
     
 }
 
