@@ -54,8 +54,8 @@ extern NSString * APPSTORE_APPID ;
 }
 
 + (UIImage *)getSuBaoJiangWaterMask:(UIImage *)orgImage
-{
-    orgImage = [orgImage imageCompressForWidth:orgImage targetWidth:640] ;
+{    
+    orgImage = [orgImage imageCompressWithTargetWidth:640] ;
 
     CGRect rect = CGRectMake(18, orgImage.size.height - 66 - 8, 44, 66) ;
     orgImage = [orgImage imageWithWaterMask:[UIImage imageNamed:@"waterMask"] inRect:rect] ;
