@@ -6,12 +6,17 @@
 //  Copyright © 2017年 teason. All rights reserved.
 //
 // global request timeout
-static const float kTIMEOUT = 15.f ;
+
+
 
 #import <AFNetworking/AFNetworking.h>
+
+extern const float kTIMEOUT ;
 
 @interface XTReqSessionManager : AFHTTPSessionManager
 
 + (instancetype)shareInstance ;
+
+- (void)reset ;
 
 @end

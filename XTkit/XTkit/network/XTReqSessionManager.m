@@ -7,27 +7,35 @@
 //
 
 #define ACCEPTABLE_CONTENT_TYPES                    @"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain"
-
-
+static const float kTIMEOUT = 15.f ;
 
 #import "XTReqSessionManager.h"
 
 @implementation XTReqSessionManager
 
-+ (instancetype)shareInstance
-{
++ (instancetype)shareInstance {
     static XTReqSessionManager *_sharedClient = nil;
-
-    static dispatch_once_t onceToken;
+    static dispatch_once_t onceToken ;
     dispatch_once(&onceToken, ^{
         _sharedClient = [[XTReqSessionManager alloc] initWithBaseURL:nil] ;
-        _sharedClient.requestSerializer = [AFHTTPRequestSerializer serializer] ;
+        _sharedClient.requestSerializer  = [AFHTTPRequestSerializer serializer] ;
         _sharedClient.responseSerializer = [AFJSONResponseSerializer serializer] ;
         _sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil] ;
         _sharedClient.requestSerializer.timeoutInterval = kTIMEOUT ;
-    });
-    
+        _sharedClient.completionQueue = NULL ;
+    }) ;
     return _sharedClient ;
 }
 
+- (void)reset {
+    self.requestSerializer  = [AFHTTPRequestSerializer serializer] ;
+    self.responseSerializer = [AFJSONResponseSerializer serializer] ;
+    self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:ACCEPTABLE_CONTENT_TYPES,nil] ;
+    self.requestSerializer.timeoutInterval = kTIMEOUT ;
+    self.completionQueue = NULL ;
+}
+
 @end
+
+
+

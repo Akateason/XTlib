@@ -12,11 +12,7 @@
 #import "XTReqResonse.h"
 #import "XTReqSessionManager.h"
 
-
-static NSString *const kStringBadNetwork = @"网络状况差" ;
-
-#define ACCEPTABLE_CONTENT_TYPES                    @"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain"
-
+NSString *const kStringBadNetwork = @"网络状况差" ;
 
 @implementation XTRequest
 
@@ -117,6 +113,44 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
         }] ;
 }
 
++ (void)GETWithUrl:(NSString *)url
+            header:(NSDictionary *)header
+               hud:(BOOL)hud
+        parameters:(NSDictionary *)dict
+       taskSuccess:(void (^)(NSURLSessionDataTask *, id))success
+              fail:(void (^)())fail
+{
+    if (hud) [SVProgressHUD show] ;
+    
+    if (header) {
+        for (NSString *key in header) {
+            NSString *value = header[key] ;
+            [[XTReqSessionManager shareInstance].requestSerializer setValue:value
+                                                         forHTTPHeaderField:key] ;
+        }
+    }
+    
+    [[XTReqSessionManager shareInstance] GET:url
+                                  parameters:dict
+                                    progress:nil
+                                     success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                         if (success) {
+                                             if (hud) [SVProgressHUD dismiss] ;
+                                             NSLog(@"url : %@ \nparam : %@",url,dict) ;
+                                             NSLog(@"resp %@",responseObject) ;
+                                             [[XTReqSessionManager shareInstance] reset] ;
+                                             success(task,responseObject) ;
+                                         }
+                                     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                         NSLog(@"xt_req fail Error:%@", error) ;
+                                         [[XTReqSessionManager shareInstance] reset] ;
+                                         if (fail) {
+                                             if (hud) [SVProgressHUD showErrorWithStatus:kStringBadNetwork] ;
+                                             fail() ;
+                                         }
+                                     }] ;
+}
+
 + (void)POSTWithUrl:(NSString *)url
          parameters:(NSDictionary *)dict
             success:(void (^)(id json))success
@@ -187,12 +221,14 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
                                               
                                               NSLog(@"url : %@ \nparam : %@",url,dict) ;
                                               NSLog(@"resp %@",responseObject) ;
+                                              [[XTReqSessionManager shareInstance] reset] ;
                                               success(task , responseObject) ;
                                           }
                                           
                                       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                                           
                                           NSLog(@"xt_req fail Error: %@", error) ;
+                                          [[XTReqSessionManager shareInstance] reset] ;
                                           if (fail)
                                           {
                                               if (hud) [SVProgressHUD showErrorWithStatus:kStringBadNetwork] ;
@@ -203,46 +239,69 @@ static NSString *const kStringBadNetwork = @"网络状况差" ;
 }
 
 
+
+static inline dispatch_queue_t xt_getCompletionQueue() { return dispatch_queue_create("xt_ForAFnetworkingSync", NULL) ; }
+
 // sync
-+ (id)syncGetWithUrl:(NSString *)url
++ (id)syncWithReqMode:(XTRequestMode)mode
+                  url:(NSString *)url
+              header:(NSDictionary *)header
           parameters:(NSDictionary *)dict
 {
     __block id result = nil ;
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0) ;
-    [self GETWithUrl:url
-                 hud:NO
-          parameters:dict
-         taskSuccess:^(NSURLSessionDataTask *task, id json) {
-             result = json ;
-             dispatch_semaphore_signal(semaphore) ;
-         } fail:^{
-             dispatch_semaphore_signal(semaphore) ;
-         }] ;
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) ;
-    return result ;
+    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        AFHTTPSessionManager *manager = [XTReqSessionManager shareInstance] ;
+        manager.completionQueue = xt_getCompletionQueue() ;
+        if (header) {
+            for (NSString *key in header) {
+                [manager.requestSerializer setValue:header[key]
+                                 forHTTPHeaderField:key] ;
+            }
+        }
+        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0) ;
+        switch (mode) {
+            case XTRequestMode_GET_MODE:
+            {
+                [manager GET:url
+                  parameters:dict
+                    progress:nil
+                     success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                         result = responseObject ;
+                         dispatch_semaphore_signal(semaphore) ;
+                     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                         dispatch_semaphore_signal(semaphore) ;
+                     }] ;
+            }
+                break ;
+            case XTRequestMode_POST_MODE:
+            {
+                [manager POST:url
+                   parameters:dict
+                     progress:nil
+                      success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                          result = responseObject ;
+                          dispatch_semaphore_signal(semaphore) ;
+                      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                          dispatch_semaphore_signal(semaphore) ;
+                      }] ;
+            }
+                break ;
+        }
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) ;
+    }] ;
+    [operation start] ;
+    [operation waitUntilFinished] ;
+    [[XTReqSessionManager shareInstance] reset] ;
+    return result ;    
 }
 
-+ (id)syncPostWithUrl:(NSString *)url
-           parameters:(NSDictionary *)dict
-{
-    __block id result = nil ;
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0) ;
-    [self POSTWithUrl:url
-                  hud:NO
-           parameters:dict
-          taskSuccess:^(NSURLSessionDataTask *task, id json) {
-              result = json ;
-              dispatch_semaphore_signal(semaphore) ;
-          } fail:^{
-              dispatch_semaphore_signal(semaphore) ;
-          }] ;
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) ;
-    return result ;
-}
+
+
 
 
 #pragma mark --
 #pragma mark - private
+
 + (NSString *)getUrlInGetModeWithDic:(NSDictionary *)dict
 {
     NSArray *allKeys = [dict allKeys] ;
