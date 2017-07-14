@@ -8,7 +8,6 @@
 
 #import "XTColorFetcher+Dynamic.h"
 #import <objc/runtime.h>
-#import "NSObject+Runtime.h"
 
 @implementation XTColorFetcher (Dynamic)
 

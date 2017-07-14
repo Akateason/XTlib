@@ -2,37 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>editor_w</key>
-	<string>e8e8e8</string>
-	<key>editor_bg</key>
-	<string>272829</string>
-	<key>editor_bar</key>
-	<string>111213</string>
-	<key>xt_mainColor</key>
-	<string>382174</string>
-	<key>tabbar_red</key>
-	<string>c60c30</string>
-	<key>collection_background</key>
-	<string>f2f2f2</string>
-	<key>w_dark</key>
-	<string>333333</string>
-	<key>w_light</key>
-	<string>999999</string>
-	<key>seperate</key>
+	<key>mainBlue</key>
+	<string>405eeb</string>
+	<key>inputText1</key>
+	<string>909090</string>
+	<key>inputText2</key>
+	<string>5c5c5c</string>
+	<key>borderGray</key>
+	<string>[219,219,219]</string>
+	<key>grayBg</key>
 	<string>f5f5f5</string>
-	<key>w_desc</key>
-	<string>b3b3b3</string>
-	<key>w_gray</key>
-	<string>808080</string>
-	<key>w_content</key>
-	<string>666666</string>
-	<key>w_comment</key>
-	<string>4d4d4d</string>
-	<key>w_find_ad_white</key>
-	<string>fff8e6</string>
-	<key>w_red</key>
-	<string>c72c32</string>
-	<key>w_desc2</key>
-	<string>b4b4b4</string>
 </dict>
 </plist>

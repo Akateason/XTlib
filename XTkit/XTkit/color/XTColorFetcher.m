@@ -74,22 +74,30 @@
     NSString *jsonStr = [[XTColorFetcher sharedInstance].dicData objectForKey:key] ;
     if ([jsonStr containsString:@"["]) {
         NSArray *colorValList = [XTJson getJsonWithStr:jsonStr] ;
-        if (colorValList.count == 3) {
-            return [[XTColorFetcher class] getColorWithRed:[colorValList[0] floatValue]
-                                                     green:[colorValList[1] floatValue]
-                                                      Blue:[colorValList[2] floatValue]] ;
-        } else if (colorValList.count == 4) {
-            return [[XTColorFetcher class] getColorWithRed:[colorValList[0] floatValue]
-                                                     green:[colorValList[1] floatValue]
-                                                      Blue:[colorValList[2] floatValue]
-                                                     alpha:[colorValList[3] floatValue]] ;
-        }
+        return [self colorRGB:colorValList] ;
     }
     else {
         return [UIColor colorWithHexString:jsonStr] ;
     }
     return nil ;
 }
+
+- (UIColor *)colorRGB:(NSArray *)colorValList
+{
+    if (colorValList.count == 3) {
+        return [[XTColorFetcher sharedInstance] getColorWithRed:[colorValList[0] floatValue]
+                                                 green:[colorValList[1] floatValue]
+                                                  Blue:[colorValList[2] floatValue]] ;
+    } else if (colorValList.count == 4) {
+        return [[XTColorFetcher sharedInstance] getColorWithRed:[colorValList[0] floatValue]
+                                                 green:[colorValList[1] floatValue]
+                                                  Blue:[colorValList[2] floatValue]
+                                                 alpha:[colorValList[3] floatValue]] ;
+    }
+    return nil ;
+}
+
+
 
 
 @end
