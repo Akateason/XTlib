@@ -10,10 +10,10 @@
 #import "ScreenHeader.h"
 #import "DeviceSysHeader.h"
 #import "ShareDigit.h"
-#import "ServerRequest.h"
+//#import "ServerRequest.h"
 #import "SDImageCache.h"
 #import "XTFileManager.h"
-#import "SIAlertView.h"
+//#import "SIAlertView.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
 #import "UIImage+AddFunction.h"
 #import "NotificationCenterHeader.h"
@@ -54,7 +54,7 @@ extern NSString * APPSTORE_APPID ;
 }
 
 + (UIImage *)getSuBaoJiangWaterMask:(UIImage *)orgImage
-{    
+{
     orgImage = [orgImage imageCompressWithTargetWidth:640] ;
 
     CGRect rect = CGRectMake(18, orgImage.size.height - 66 - 8, 44, 66) ;
@@ -179,56 +179,6 @@ extern NSString * APPSTORE_APPID ;
     return @0 ;
 }
 
-#pragma mark -- isFirstLaunch
-
-#define LAST_RUN_VERSION_KEY        @"last_run_version_of_application"
-+ (BOOL)isFirstLoad
-{
-    return [self userDefaultsInCurrentVersionForKey:LAST_RUN_VERSION_KEY] ;
-}
-
-#define LAST_HOME_PAGE_KEY          @"LAST_HOME_PAGE_KEY"
-+ (BOOL)isFirstHomePage
-{
-    return [self userDefaultsInCurrentVersionForKey:LAST_HOME_PAGE_KEY] ;
-}
-
-#define LAST_DETAIL_PAGE_KEY        @"LAST_DETAIL_PAGE_KEY"
-+ (BOOL)isFirstDetailPage
-{
-    return [self userDefaultsInCurrentVersionForKey:LAST_DETAIL_PAGE_KEY] ;
-}
-
-#define LAST_POST_SINGLE_PAGE_KEY   @"LAST_POST_SINGLE_PAGE_KEY"
-+ (BOOL)isFirstPostSinglePage
-{
-    return [self userDefaultsInCurrentVersionForKey:LAST_POST_SINGLE_PAGE_KEY] ;
-}
-
-#define LAST_MULTY_EDIT_PAGE_KEY    @"LAST_MULTY_EDIT_PAGE_KEY"
-+ (BOOL)isFirstMultyEditPage
-{
-    return [self userDefaultsInCurrentVersionForKey:LAST_MULTY_EDIT_PAGE_KEY] ;
-}
-
-+ (BOOL)userDefaultsInCurrentVersionForKey:(NSString *)key
-{
-    NSString *currentVersion = [CommonFunc getVersionStrOfMyAPP] ;
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *lastRunVersion = [defaults objectForKey:key];
-    
-    if (!lastRunVersion) {
-        [defaults setObject:currentVersion forKey:key];
-        return YES;
-    }
-    else if (![lastRunVersion isEqualToString:currentVersion]) {
-        [defaults setObject:currentVersion forKey:key];
-        return YES;
-    }
-    
-    return NO;
-}
-
 #pragma mark --
 #pragma mark - CLLocation  get current location
 + (CLLocationCoordinate2D)getLocation
@@ -276,59 +226,6 @@ extern NSString * APPSTORE_APPID ;
     return num ;
 }
 
-#pragma mark -- 数组切换字符串
-+ (NSString *)getCommaStringWithArray:(NSArray *)array
-{
-    NSString *strResult = @"" ;
-    
-    for (int i = 0; i < array.count; i++)
-    {
-        if (i == array.count - 1)
-        {
-            NSString *tempStr = [NSString stringWithFormat:@"%@",array[i]] ;
-            strResult = [strResult stringByAppendingString:tempStr];
-        }
-        else
-        {
-            NSString *tempStr = [NSString stringWithFormat:@"%@,",array[i]] ;
-            strResult = [strResult stringByAppendingString:tempStr];
-        }
-    }
-    
-    return strResult ;
-}
-
-+ (NSArray *)getArrayFromCommaString:(NSString *)commaStr
-{
-     return [commaStr componentsSeparatedByString:@","] ;
-}
-
-#pragma mark -- 去掉小数点后面的0
-+ (NSString *)changeFloat:(NSString *)stringFloat
-{
-    const char *floatChars = [stringFloat UTF8String] ;
-    NSUInteger length = [stringFloat length] ;
-    NSUInteger zeroLength = 0 ;
-    NSInteger i = length - 1 ;
-    for(; i>=0; i--)
-    {
-        if(floatChars[i] == '0'/*0x30*/)
-        {
-            zeroLength++;
-        } else {
-            if(floatChars[i] == '.')
-                i--;
-            break;
-        }
-    }
-    NSString *returnString;
-    if(i == -1) {
-        returnString = @"0" ;
-    } else {
-        returnString = [stringFloat substringToIndex:i+1] ;
-    }
-    return returnString;
-}
 
 #pragma mark -- 关闭应用
 + (void)shutDownAppWithCtrller:(UIViewController *)ctrller
@@ -341,61 +238,10 @@ extern NSString * APPSTORE_APPID ;
     }];
 }
 
-
-
-/**
- *  获取屏幕高比例
- *
- *  @return 屏幕高比例
- */
-+(CGFloat)getScreenHightscale
-{
-    CGFloat scaleY;
-    float standard = 667.0;
-    
-    if (iphone6)
-    {
-        scaleY = 667 / standard;
-    }
-    else if (iphone6plus)
-    {
-        scaleY = 736 / standard;
-    }
-    else  if (iphone5)
-    {
-        scaleY = 568 / standard;
-    }
-    else if(iphone4)
-    {
-        scaleY = 480 / standard;
-    }
-    return scaleY;
-}
-
-/**
- *  获取屏幕宽比例
- *
- *  @return 屏幕宽比例
- */
-+(CGFloat)getScreenWidthscale
-{
-    CGFloat scaleX;
-    float standard = 375.0;
-    
-    if (iphone6)
-    {
-        scaleX = 375 / standard;
-    }
-    else if (iphone6plus)
-    {
-        scaleX = 414 / standard;
-    }
-    else if (iphone5 || iphone4)
-    {
-        scaleX = 320 / standard;
-    }
-    return scaleX;
-}
-
-
 @end
+
+
+
+
+
+

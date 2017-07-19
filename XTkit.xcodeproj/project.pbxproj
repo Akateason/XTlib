@@ -112,6 +112,8 @@
 		8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25F8DE1EE656D70052A21D /* Zample8Controller.m */; };
 		8F37C0081EF8F20B00EE713F /* UIButton+ExtendTouchRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */; };
 		8F37C0E71F0CAA7000EE713F /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */; };
+		8F7E65241F1F38E00028217B /* IsFirstTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E65231F1F38E00028217B /* IsFirstTime.m */; };
+		8F7E65281F1F39840028217B /* ScreenFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E65271F1F39840028217B /* ScreenFit.m */; };
 		8F7F95BA1F0F615F00236286 /* ApplicationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95AF1F0F615F00236286 /* ApplicationEvent.m */; };
 		8F7F95BB1F0F615F00236286 /* CtrllerEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95B11F0F615F00236286 /* CtrllerEvent.m */; };
 		8F7F95BC1F0F615F00236286 /* ListEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95B31F0F615F00236286 /* ListEvent.m */; };
@@ -374,6 +376,10 @@
 		8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ExtendTouchRect.m"; sourceTree = "<group>"; };
 		8F37C0E51F0CAA7000EE713F /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		8F7E65221F1F38E00028217B /* IsFirstTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsFirstTime.h; sourceTree = "<group>"; };
+		8F7E65231F1F38E00028217B /* IsFirstTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsFirstTime.m; sourceTree = "<group>"; };
+		8F7E65261F1F39840028217B /* ScreenFit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenFit.h; sourceTree = "<group>"; };
+		8F7E65271F1F39840028217B /* ScreenFit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenFit.m; sourceTree = "<group>"; };
 		8F7F95AE1F0F615F00236286 /* ApplicationEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationEvent.h; sourceTree = "<group>"; };
 		8F7F95AF1F0F615F00236286 /* ApplicationEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationEvent.m; sourceTree = "<group>"; };
 		8F7F95B01F0F615F00236286 /* CtrllerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtrllerEvent.h; sourceTree = "<group>"; };
@@ -1057,6 +1063,8 @@
 		60E238BD1E9622A1001235F2 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				8F7E65251F1F39790028217B /* ScreenFit */,
+				8F7E65211F1F38E00028217B /* IsFirstTime */,
 				60E238BE1E9622A1001235F2 /* CommonFunc */,
 				60E238CA1E9622A1001235F2 /* ShareDigit */,
 				60E238CD1E9622A1001235F2 /* XTAnimation */,
@@ -1162,6 +1170,24 @@
 				8F7F95B91F0F615F00236286 /* UIViewController+Stat.m */,
 			);
 			path = Stat;
+			sourceTree = "<group>";
+		};
+		8F7E65211F1F38E00028217B /* IsFirstTime */ = {
+			isa = PBXGroup;
+			children = (
+				8F7E65221F1F38E00028217B /* IsFirstTime.h */,
+				8F7E65231F1F38E00028217B /* IsFirstTime.m */,
+			);
+			path = IsFirstTime;
+			sourceTree = "<group>";
+		};
+		8F7E65251F1F39790028217B /* ScreenFit */ = {
+			isa = PBXGroup;
+			children = (
+				8F7E65261F1F39840028217B /* ScreenFit.h */,
+				8F7E65271F1F39840028217B /* ScreenFit.m */,
+			);
+			path = ScreenFit;
 			sourceTree = "<group>";
 		};
 		8F7F95AD1F0F615F00236286 /* Model */ = {
@@ -1482,6 +1508,7 @@
 				60E238EF1E9622A1001235F2 /* MySearchBar.m in Sources */,
 				60E238F01E9622A1001235F2 /* MyTabbar.m in Sources */,
 				60E239131E9622A1001235F2 /* XTFileManager.m in Sources */,
+				8F7E65241F1F38E00028217B /* IsFirstTime.m in Sources */,
 				60E239071E9622A1001235F2 /* XTTableViewRootHandler.m in Sources */,
 				607E60271EA85BE100D05213 /* NSMutableString+TagReplace.m in Sources */,
 				60E238FF1E9622A1001235F2 /* ShareCollectionCell.m in Sources */,
@@ -1505,6 +1532,7 @@
 				607E602E1EA85BE100D05213 /* KICropImageView.m in Sources */,
 				8F158C7A1EC2A79200B0F551 /* Z5DisplayController.m in Sources */,
 				60E239171E9622A1001235F2 /* XTVerification.m in Sources */,
+				8F7E65281F1F39840028217B /* ScreenFit.m in Sources */,
 				60E238211E961D21001235F2 /* ViewController.m in Sources */,
 				607E5FD21EA6FDE500D05213 /* CommonFunc.m in Sources */,
 				607E60331EA85BE100D05213 /* SIAlertView.m in Sources */,

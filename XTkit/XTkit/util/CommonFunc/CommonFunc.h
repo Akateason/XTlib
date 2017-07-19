@@ -39,29 +39,12 @@ typedef enum {
 #pragma mark - give app a Score
 + (void)scoringMyApp ;
 
-#pragma mark --
-#pragma mark - save and login
-//+ (void)logSussessedWithResult:(ResultParsered *)result
-//             AndWithController:(UIViewController *)contoller ;
-//+ (void)exitLog ;
-
 #pragma mark - bind
 // bind save
 + (void)bindWithBindMode:(MODE_bind)bindMode ;
 
 // bind get , Default is @0, bind nothing .
 + (NSNumber *)getBindMode ;
-
-#pragma mark --
-#pragma mark - is First Load in page .
-+ (BOOL)isFirstLoad ;
-+ (BOOL)isFirstHomePage ;
-+ (BOOL)isFirstDetailPage ;
-+ (BOOL)isFirstPostSinglePage ;
-+ (BOOL)isFirstMultyEditPage ;
-
-//write obj in userDefaults
-+ (BOOL)userDefaultsInCurrentVersionForKey:(NSString *)key ;
 
 #pragma mark --
 #pragma mark - CLLocation  get current location
@@ -73,30 +56,11 @@ typedef enum {
 + (NSString *)boyGirlNum2Str:(int)num ;
 + (int)boyGirlStr2Num:(NSString *)str ;
 
-#pragma mark - 数组切换字符串(逗号分隔)
-+ (NSString *)getCommaStringWithArray:(NSArray *)array ;
-+ (NSArray *)getArrayFromCommaString:(NSString *)commaStr ;
-
-#pragma mark - 去掉小数点后面的0
-+ (NSString *)changeFloat:(NSString *)stringFloat ;
-
 #pragma mark --
 #pragma mark - 关闭应用
 + (void)shutDownAppWithCtrller:(UIViewController *)ctrller ;
 
 
-/**
- *  获取屏幕高比例
- *
- *  @return 屏幕高比例
- */
-+ (CGFloat)getScreenHightscale ;
 
-/**
- *  获取屏幕宽比例
- *
- *  @return 屏幕宽比例
- */
-+ (CGFloat)getScreenWidthscale ;
 
 @end

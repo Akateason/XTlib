@@ -50,4 +50,59 @@ static NSString *const kSingleQuotes = @"&SingleQuotes&" ;
     return content ;
 }
 
+// 去掉小数点后面的0
++ (NSString *)changeFloat:(NSString *)stringFloat
+{
+    const char *floatChars = [stringFloat UTF8String] ;
+    NSUInteger length = [stringFloat length] ;
+    NSUInteger zeroLength = 0 ;
+    NSInteger i = length - 1 ;
+    for(; i>=0; i--)
+    {
+        if(floatChars[i] == '0'/*0x30*/)
+        {
+            zeroLength++;
+        } else {
+            if(floatChars[i] == '.')
+                i--;
+            break;
+        }
+    }
+    NSString *returnString;
+    if(i == -1) {
+        returnString = @"0" ;
+    } else {
+        returnString = [stringFloat substringToIndex:i+1] ;
+    }
+    return returnString;
+}
+
+// 数组切换','字符串
++ (NSString *)getCommaStringWithArray:(NSArray *)array
+{
+    NSString *strResult = @"" ;
+    
+    for (int i = 0; i < array.count; i++)
+    {
+        if (i == array.count - 1)
+        {
+            NSString *tempStr = [NSString stringWithFormat:@"%@",array[i]] ;
+            strResult = [strResult stringByAppendingString:tempStr];
+        }
+        else
+        {
+            NSString *tempStr = [NSString stringWithFormat:@"%@,",array[i]] ;
+            strResult = [strResult stringByAppendingString:tempStr];
+        }
+    }
+    
+    return strResult ;
+}
+
++ (NSArray *)getArrayFromCommaString:(NSString *)commaStr
+{
+    return [commaStr componentsSeparatedByString:@","] ;
+}
+
+
 @end
