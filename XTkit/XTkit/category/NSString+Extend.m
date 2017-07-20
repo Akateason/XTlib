@@ -7,6 +7,8 @@
 //
 
 #import "NSString+Extend.h"
+#import "NSDate+XTTick.h"
+#import "FastCodeHeader.h"
 
 @implementation NSString (Extend)
 
@@ -104,5 +106,29 @@ static NSString *const kSingleQuotes = @"&SingleQuotes&" ;
     return [commaStr componentsSeparatedByString:@","] ;
 }
 
+// 随机字符串
++ (NSString *)getUniqueString
+{
+    return [self getUniqueStringWithLength:10] ;
+}
+
++ (NSString *)getUniqueStringWithLength:(int)length
+{
+    NSString *str = STR_FORMAT(@"%@%lld",[self getRandomStrWithLength:length],[NSDate xt_getNowTick]) ;
+    return str ;
+}
+
++ (NSString *)getRandomStrWithLength:(int)length
+{
+    NSString * strAll = @"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
+    NSString * result = [[NSMutableString alloc] initWithCapacity:length] ;
+    for (int i = 0; i < length; i++) {
+        NSInteger index = arc4random() % (strAll.length - 1) ;
+        char tempStr = [strAll characterAtIndex:index] ;
+        result = (NSMutableString *)[result stringByAppendingString:[NSString stringWithFormat:@"%c",tempStr]] ;
+    }
+    
+    return result;
+}
 
 @end

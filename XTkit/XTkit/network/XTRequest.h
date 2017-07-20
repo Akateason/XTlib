@@ -44,6 +44,7 @@ static NSString *const kBaseURL = @"http://top.akateason.top" ;
 /**
  async
  */
+// get
 + (void)GETWithUrl:(NSString *)url
         parameters:(NSDictionary *)dict
            success:(void (^)(id json))success
@@ -68,6 +69,7 @@ static NSString *const kBaseURL = @"http://top.akateason.top" ;
        taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
               fail:(void (^)())fail ;
 
+// post
 + (void)POSTWithUrl:(NSString *)url
          parameters:(NSDictionary *)dict
             success:(void (^)(id json))success
@@ -90,6 +92,15 @@ static NSString *const kBaseURL = @"http://top.akateason.top" ;
                 hud:(BOOL)hud
          parameters:(NSDictionary *)dict
         taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+               fail:(void (^)())fail ;
+
+// post body raw
++ (void)POSTWithURL:(NSString *)url
+             header:(NSDictionary *)header
+              param:(NSDictionary *)param
+            rawBody:(NSString *)rawBody
+                hud:(BOOL)hud
+            success:(void (^)(id json))success
                fail:(void (^)())fail ;
 
 /**

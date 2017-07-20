@@ -22,5 +22,9 @@
 // 数组切换','字符串(逗号分隔)
 + (NSString *)getCommaStringWithArray:(NSArray *)array ;
 + (NSArray *)getArrayFromCommaString:(NSString *)commaStr ;
+// 随机字符串
++ (NSString *)getUniqueString ;
++ (NSString *)getUniqueStringWithLength:(int)length ;
++ (NSString *)getRandomStrWithLength:(int)length ;
 
 @end

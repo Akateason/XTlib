@@ -238,6 +238,51 @@ NSString *const kStringBadNetwork = @"网络状况差" ;
                                       }] ;
 }
 
+// post body raw
++ (void)POSTWithURL:(NSString *)url
+             header:(NSDictionary *)header
+              param:(NSDictionary *)param
+            rawBody:(NSString *)rawBody
+                hud:(BOOL)hud
+            success:(void (^)(id json))success
+               fail:(void (^)())fail
+{
+    if (hud) [SVProgressHUD show] ;
+
+    NSData *data = [rawBody dataUsingEncoding:NSUTF8StringEncoding] ;
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"POST"
+                                                                                 URLString:url
+                                                                                parameters:param
+                                                                                     error:nil] ;
+    request.timeoutInterval = 15 ;
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"] ;
+    if (header) {
+        for (NSString *key in header) {
+            [request setValue:header[key] forHTTPHeaderField:key] ;
+        }
+    }
+    
+    [request setHTTPBody:data] ;
+    
+    [[[XTReqSessionManager shareInstance] dataTaskWithRequest:request
+                                            completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                                                if (hud) [SVProgressHUD dismiss] ;
+
+                                                NSLog(@"url : %@ \nparam : %@",url,param) ;
+                                                NSLog(@"resp %@",responseObject) ;
+                                                if (!error) {
+                                                    [[XTReqSessionManager shareInstance] reset] ;
+                                                    success(responseObject) ;
+                                                } else {
+                                                    [[XTReqSessionManager shareInstance] reset] ;
+                                                    fail();
+                                                    if (hud) [SVProgressHUD showErrorWithStatus:kStringBadNetwork] ;
+                                                }
+                                            }] resume] ;
+}
+
+
 
 
 static inline dispatch_queue_t xt_getCompletionQueue() { return dispatch_queue_create("xt_ForAFnetworkingSync", NULL) ; }
