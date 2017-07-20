@@ -9,19 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDate (NSCalendar)
-//拿 当前 年月日
+
 - (int)getYear;
-
 - (int)getMonth;
-
 - (int)getDay;
-
 - (int)getHour;
-
 - (int)getMinute;
-
 - (int)getSecond;
++ (int)daysInMonth:(int)imonth
+              year:(int)year ;
 
-//当前月有多少天
-+ (int)daysInMonth:(int)imonth year:(int)year ;
 @end
