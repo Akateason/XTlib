@@ -10,6 +10,8 @@
 
 @interface ApplicationEvent : XTDBModel
 
+@property (nonatomic,copy)      NSString     *kindOfKey     ;
+
 @property (nonatomic,copy)      NSString     *action        ; // SEL
 @property (nonatomic,copy)      NSString     *target        ; // to
 @property (nonatomic,copy)      NSString     *sender        ; // from

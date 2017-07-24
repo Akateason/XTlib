@@ -6,11 +6,12 @@
 //  Copyright © 2017年 teaason. All rights reserved.
 //
 
+
+
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
 
 #define QUEUE                         [XTFMDBBase sharedInstance].queue
-
 
 @interface XTFMDBBase : NSObject
 + (XTFMDBBase *)sharedInstance ;

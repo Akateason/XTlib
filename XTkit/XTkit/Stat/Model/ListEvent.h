@@ -9,6 +9,9 @@
 #import "XTDBModel.h"
 
 @interface ListEvent : XTDBModel
+
+@property (nonatomic,copy)      NSString     *kindOfKey     ;
+
 @property (nonatomic)           int          row            ; // selected row
 @property (nonatomic)           int          section        ; // selected section
 @property (nonatomic,copy)      NSString     *fromDelegate  ; // delegate

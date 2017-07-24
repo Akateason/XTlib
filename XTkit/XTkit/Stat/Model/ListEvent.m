@@ -8,6 +8,7 @@
 
 #import "ListEvent.h"
 #import "NSDate+XTTick.h"
+#import "UniqueKeyMaker.h"
 
 @implementation ListEvent
 
@@ -25,6 +26,7 @@
         self.time = [now xt_getTick] ;
         self.dateStr = [now xt_getStr] ;
         self.uploaded = 0 ;
+        self.kindOfKey = [UniqueKeyMaker makeUniqueKey:@[@(self.row),@(self.section),self.fromDelegate]] ;
     }
     return self;
 }

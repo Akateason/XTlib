@@ -12,6 +12,8 @@
 #import "UIButton+ExtendTouchRect.h"
 #import "UIViewController+Navigation.h"
 
+#import "Z8CollectionViewController.h"
+
 @interface Zample8Controller ()
 
 @end
@@ -48,6 +50,9 @@
 {
     NSLog(@"dd") ;
     [SVProgressHUD showInfoWithStatus:@"点到了"] ;
+    
+    Z8CollectionViewController *vc = [Z8CollectionViewController new] ;
+    [self.navigationController pushViewController:vc animated:YES] ;
 }
 
 

@@ -9,7 +9,7 @@
 #import "ApplicationEvent.h"
 #import <UIKit/UIKit.h>
 #import "NSDate+XTTick.h"
-
+#import "UniqueKeyMaker.h"
 #import "UIView+CurrentController.h"
 
 @implementation ApplicationEvent
@@ -34,6 +34,7 @@
         }
         
         self.uploaded = 0 ;
+        self.kindOfKey = [UniqueKeyMaker makeUniqueKey:@[self.action,self.target,self.sender,self.event]] ;
         
     }
     return self;

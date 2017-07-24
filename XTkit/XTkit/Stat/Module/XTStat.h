@@ -6,6 +6,11 @@
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
+#define XTSTAT_ENABLE_NSLOG             YES
+//#define XTSTAT_ENABLE_NSLOG             YES
+
+
+
 #import <Foundation/Foundation.h>
 
 @interface XTStat : NSObject

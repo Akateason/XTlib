@@ -12,6 +12,8 @@
 
 @interface CtrllerEvent : XTDBModel
 
+@property (nonatomic,copy)      NSString     *kindOfKey     ;
+
 @property (nonatomic,copy)      NSString     *name          ; // class name
 @property (nonatomic,copy)      NSString     *title         ; // nav title
 @property (nonatomic,copy)      NSString     *action        ; // viewDidLoad,viewWillAppear,viewWillDisappear,dealloc
