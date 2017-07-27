@@ -82,7 +82,8 @@
     NSLog(@"%@ didSelectRowAtIndexPath:%ld:%ld",NSStringFromClass([self class]),(long)indexPath.section,(long)indexPath.row) ;
     ListEvent *lEvent = [[ListEvent alloc] initWithRow:(int)(indexPath.row)
                                                section:(int)(indexPath.section)
-                                                  from:NSStringFromClass([self class])] ;
+                                                  from:NSStringFromClass([self class])
+                                              listType:@"table"] ;
     [lEvent insert] ;
     
     SEL sel = GET_CLASS_CUSTOM_SEL(@selector(tableView:didSelectRowAtIndexPath:) , [self class]) ;

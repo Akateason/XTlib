@@ -11,7 +11,7 @@
 @class UIViewController ;
 
 @interface CtrllerEvent : XTDBModel
-
+@property (nonatomic,copy)      NSString     *UUID          ;
 @property (nonatomic,copy)      NSString     *kindOfKey     ;
 
 @property (nonatomic,copy)      NSString     *name          ; // class name

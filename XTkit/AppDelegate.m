@@ -11,6 +11,10 @@
 #import "XTFMDB.h"
 #import "XTResponseDBModel.h"
 #import "XTStat.h"
+#import "CommonFunc.h"
+
+#import "ValetManager.h"
+
 
 @interface AppDelegate ()
 
@@ -21,7 +25,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    NSLog(@"%@",[CommonFunc getDocumentsPath]) ;
+
     
     // SVPHUD style
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark] ;
@@ -30,13 +36,29 @@
     
     // SQLite
     [[XTFMDBBase sharedInstance] configureDB:@"teason"] ; // app did launch .
+    
     // request cache TB
     [XTResponseDBModel xt_createTable] ;
     
     // stat
     [[XTStat new] prepare] ;
+
+    // valetManager
+    [[ValetManager sharedInstance] prepareUUID] ;
     
+    //
+    [self testFunc] ;
+    
+
     return YES;
+}
+
+- (void)testFunc {
+//    NSString *str = [[ValetManager sharedInstance] getPwdWithUname:@"xtc"] ;
+//    [[ValetManager sharedInstance] saveUserName:@"xtc" pwd:@"324234daaa"] ;
+//    [[ValetManager sharedInstance] UUID] ;
+    
+    
 }
 
 

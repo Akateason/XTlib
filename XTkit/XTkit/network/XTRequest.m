@@ -289,13 +289,15 @@ static inline dispatch_queue_t xt_getCompletionQueue() { return dispatch_queue_c
 
 // sync
 + (id)syncWithReqMode:(XTRequestMode)mode
+              timeout:(int)timeout
                   url:(NSString *)url
-              header:(NSDictionary *)header
-          parameters:(NSDictionary *)dict
+               header:(NSDictionary *)header
+           parameters:(NSDictionary *)dict
 {
     __block id result = nil ;
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
         AFHTTPSessionManager *manager = [XTReqSessionManager shareInstance] ;
+        manager.requestSerializer.timeoutInterval = timeout ;
         manager.completionQueue = xt_getCompletionQueue() ;
         if (header) {
             for (NSString *key in header) {
@@ -337,7 +339,19 @@ static inline dispatch_queue_t xt_getCompletionQueue() { return dispatch_queue_c
     [operation start] ;
     [operation waitUntilFinished] ;
     [[XTReqSessionManager shareInstance] reset] ;
-    return result ;    
+    return result ;
+}
+
++ (id)syncWithReqMode:(XTRequestMode)mode
+                  url:(NSString *)url
+              header:(NSDictionary *)header
+          parameters:(NSDictionary *)dict
+{
+    return [self syncWithReqMode:mode
+                         timeout:kTIMEOUT
+                             url:url
+                          header:header
+                      parameters:dict] ;
 }
 
 

@@ -11,7 +11,6 @@
 
 #import "UIButton+ExtendTouchRect.h"
 #import "UIViewController+Navigation.h"
-
 #import "Z8CollectionViewController.h"
 
 @interface Zample8Controller ()
@@ -32,8 +31,10 @@
     button.frame = CGRectMake(0, 0, 50, 30) ;
     button.center = self.view.center ;
     [self.view addSubview:button] ;
-    [button addTarget:self action:@selector(btAction) forControlEvents:UIControlEventTouchUpInside] ;
-    //
+    [button addTarget:self
+               action:@selector(btAction)
+     forControlEvents:UIControlEventTouchUpInside] ;
+    
     button.touchExtendInset = UIEdgeInsetsMake(-50, -50, -50, -50) ;
     
     self.navigationDidClickBackButton = ^{
@@ -47,10 +48,7 @@
 }
 
 - (void)btAction
-{
-    NSLog(@"dd") ;
-    [SVProgressHUD showInfoWithStatus:@"点到了"] ;
-    
+{    
     Z8CollectionViewController *vc = [Z8CollectionViewController new] ;
     [self.navigationController pushViewController:vc animated:YES] ;
 }

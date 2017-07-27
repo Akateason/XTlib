@@ -15,4 +15,5 @@
  it will be class name if not reset it .
  */
 @property (nonatomic,copy) NSString *statTitle ;
+
 @end

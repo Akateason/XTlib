@@ -10,6 +10,7 @@
 #import "NSDate+XTTick.h"
 #import "UIView+CurrentController.h"
 #import "UniqueKeyMaker.h"
+#import "ValetManager.h"
 
 @implementation CtrllerEvent
 
@@ -29,6 +30,7 @@
         self.tree = [ctrller.view chainInfo] ;
         self.uploaded = 0 ;
         self.kindOfKey = [UniqueKeyMaker makeUniqueKey:@[self.name,self.title,self.action]] ;
+        self.UUID = [[ValetManager sharedInstance] UUID] ;
     }
     return self;
 }

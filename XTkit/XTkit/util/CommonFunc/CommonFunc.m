@@ -31,8 +31,7 @@ extern NSString * APPSTORE_APPID ;
 @implementation CommonFunc
 
 #pragma mark -- save images to library
-+ (void)saveImageToLibrary:(UIImage *)savedImage albumName:(NSString *)name
-{
++ (void)saveImageToLibrary:(UIImage *)savedImage albumName:(NSString *)name {
     __block UIImage *imgSave = savedImage ;
     
     dispatch_queue_t queue = dispatch_queue_create("pictureSaveInAlbum", NULL) ;
@@ -53,8 +52,7 @@ extern NSString * APPSTORE_APPID ;
 
 }
 
-+ (UIImage *)getSuBaoJiangWaterMask:(UIImage *)orgImage
-{
++ (UIImage *)getSuBaoJiangWaterMask:(UIImage *)orgImage {
     orgImage = [orgImage imageCompressWithTargetWidth:640] ;
 
     CGRect rect = CGRectMake(18, orgImage.size.height - 66 - 8, 44, 66) ;
@@ -65,26 +63,29 @@ extern NSString * APPSTORE_APPID ;
 
 
 #pragma mark -- sandbox
-+ (NSString *)getSandBoxPath
-{
-    NSString *paths = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSLog(@"paths : %@",paths)  ;
-    
-    return paths ;
++ (NSString *)getDocumentsPath {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] ;
+}
+
++ (NSString *)getLibraryPath {
+    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] ;
 }
 
 #pragma mark -- version
-+ (NSString *)getVersionStrOfMyAPP
-{
++ (NSString *)getVersionStrOfMyAPP {
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]  ;
     NSLog(@"version : %@",version) ;
     return version ;
 }
 
++ (NSString *)getAppName {
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary] ;
+    return [infoDictionary objectForKey:@"CFBundleDisplayName"] ;
+}
+
 #pragma mark --
 #pragma mark - 自动更新版本
-+ (void)updateLatestVersion
-{
++ (void)updateLatestVersion {
 //    if (!G_BOOL_OPEN_APPSTORE) return ;
     
     dispatch_queue_t queue = dispatch_queue_create("versionQueue", NULL) ;
@@ -93,8 +94,7 @@ extern NSString * APPSTORE_APPID ;
     }) ;
 }
 
-+ (void)checkVersionRequest
-{
++ (void)checkVersionRequest {
     NSString *versionString = [self getVersionStrOfMyAPP] ;
     
     NSString *strUrl = @"http://itunes.apple.com/lookup?id=999705868";
@@ -149,40 +149,15 @@ extern NSString * APPSTORE_APPID ;
 }
 
 #pragma mark - give app a Score
-+ (void)scoringMyApp
-{
++ (void)scoringMyApp {
 //    NSString *str = IS_IOS_VERSION(7.0) ? [NSString stringWithFormat:SCORE_STR_HIGH,APPSTORE_APPID] : [NSString stringWithFormat:SCORE_STR_LOW,APPSTORE_APPID] ;
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
 
-
-+ (void)bindWithBindMode:(MODE_bind)bindMode
-{
-    NSNumber *num = [NSNumber numberWithInt:bindMode] ;
-    
-    NSString *homePath = NSHomeDirectory() ;
-    NSString *path = [homePath stringByAppendingPathComponent:PATH_BIND_SAVE] ;
-    [XTFileManager archiveTheObject:num AndPath:path] ;
-}
-
-+ (NSNumber *)getBindMode
-{
-    NSString *homePath = NSHomeDirectory() ;
-    NSString *path = [homePath stringByAppendingPathComponent:PATH_BIND_SAVE] ;
-
-    if ([XTFileManager is_file_exist:path]) {
-        NSNumber *num = [XTFileManager getObjUnarchivePath:path] ;
-        return num ;
-    }
-    
-    return @0 ;
-}
-
 #pragma mark --
 #pragma mark - CLLocation  get current location
-+ (CLLocationCoordinate2D)getLocation
-{
++ (CLLocationCoordinate2D)getLocation {
     CLLocationManager *lm = [[CLLocationManager alloc] init];
     [lm setDesiredAccuracy:kCLLocationAccuracyBest];
     lm.distanceFilter = 1000.0f;
@@ -196,40 +171,8 @@ extern NSString * APPSTORE_APPID ;
     return orgCoordinate;
 }
 
-#pragma mark -- 男女切换  0无, 1 男 , 2 女
-+ (NSString *)boyGirlNum2Str:(int)num
-{
-    NSString *result = @"" ;
-    switch (num) {
-        case 1:
-            result = @"男" ;
-            break;
-        case 2:
-            result = @"女" ;
-            break;
-        default:
-            break;
-    }
-    
-    return result ;
-}
-
-+ (int)boyGirlStr2Num:(NSString *)str
-{
-    int num = 0;
-    if ([str isEqualToString:@"男"]) {
-        num = 1 ;
-    }else if ([str isEqualToString:@"女"]) {
-        num = 2 ;
-    }
-    
-    return num ;
-}
-
-
 #pragma mark -- 关闭应用
-+ (void)shutDownAppWithCtrller:(UIViewController *)ctrller
-{
++ (void)shutDownAppWithCtrller:(UIViewController *)ctrller {
     [UIView animateWithDuration:0.65f animations:^{
         ctrller.view.window.alpha = 0;
         ctrller.view.window.frame = CGRectMake(0, 0, 0, 0);

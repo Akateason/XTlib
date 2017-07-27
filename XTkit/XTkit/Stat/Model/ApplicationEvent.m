@@ -11,6 +11,7 @@
 #import "NSDate+XTTick.h"
 #import "UniqueKeyMaker.h"
 #import "UIView+CurrentController.h"
+#import "ValetManager.h"
 
 @implementation ApplicationEvent
 
@@ -35,7 +36,7 @@
         
         self.uploaded = 0 ;
         self.kindOfKey = [UniqueKeyMaker makeUniqueKey:@[self.action,self.target,self.sender,self.event]] ;
-        
+        self.UUID = [[ValetManager sharedInstance] UUID] ;
     }
     return self;
 }

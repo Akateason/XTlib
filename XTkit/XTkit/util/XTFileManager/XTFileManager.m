@@ -12,75 +12,49 @@
 
 
 @interface XTFileManager (Private)
-+ (long long) _folderSizeAtPath: (const char*)folderPath;
++ (long long)_folderSizeAtPath:(const char *)folderPath ;
 @end
 
 
 @implementation XTFileManager
-
-#pragma mark --
 //创建文件夹
-+ (void)createFileBoxesWithPath:(NSString *)pathStr
-{
-    NSString *filePath = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/%@",pathStr];
-    BOOL isDir = NO;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    BOOL existed = [fileManager fileExistsAtPath:filePath isDirectory:&isDir];
-    if ( !(isDir == YES && existed == YES) )
-    {
-        [fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
++ (void)createFileBoxesWithPath:(NSString *)pathStr {
+    NSString *filePath = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/%@",pathStr] ;
+    BOOL isDir = NO ;
+    NSFileManager *fileManager = [NSFileManager defaultManager] ;
+    BOOL existed = [fileManager fileExistsAtPath:filePath
+                                     isDirectory:&isDir] ;
+    if ( !(isDir == YES && existed == YES) ) {
+        [fileManager createDirectoryAtPath:filePath
+               withIntermediateDirectories:YES
+                                attributes:nil
+                                     error:nil] ;
     }
 }
 
 //判断文件名存在吗
-+ (BOOL)is_file_exist:(NSString *)path
-{
-    NSFileManager *file_manager = [NSFileManager defaultManager];
-    return [file_manager fileExistsAtPath:path];
++ (BOOL)isFileExist:(NSString *)path {
+    NSFileManager *file_manager = [NSFileManager defaultManager] ;
+    return [file_manager fileExistsAtPath:path] ;
 }
 
 //单个文件的大小
-+ (long long) fileSizeAtPath:(NSString*) filePath
-{
-    NSFileManager* manager = [NSFileManager defaultManager];
-    
-    if ([manager fileExistsAtPath:filePath]){
-        
-        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
-    }
-    
++ (long long)getSize:(NSString*) filePath {
+    NSFileManager* manager = [NSFileManager defaultManager] ;
+    if ([manager fileExistsAtPath:filePath]) return [[manager attributesOfItemAtPath:filePath error:nil] fileSize] ;
     return 0;
 }
 
 //删除文件
-+ (BOOL)deleteFileWithFileName:(NSString *)fileName
-{
++ (BOOL)deleteFile:(NSString *)fileName {
     NSFileManager *fm = [NSFileManager defaultManager];
     BOOL bREsult = [fm removeItemAtPath:fileName error:nil] ;
-    NSLog(@"fileName : %@ \n delete : %d",fileName,bREsult) ;
+    //NSLog(@"fileName : %@ \n delete : %d",fileName,bREsult) ;
     return bREsult ;
 }
 
-//归档对象
-+ (void)archiveTheObject:(id)obj AndPath:(NSString *)path
-{
-    BOOL success = [NSKeyedArchiver archiveRootObject:obj toFile:path];
-    if (success) {
-        NSLog(@"Archive success");
-    }
-}
-
-//解归档
-+ (id)getObjUnarchivePath:(NSString *)path
-{
-    id obj = [NSKeyedUnarchiver unarchiveObjectWithFile:path];//因为知道是数组,所以用数组接受
-    
-    return obj;
-}
-
 //保存图片
-+ (void)savingPicture:(UIImage *)picture path:(NSString *)path
-{
++ (void)savingPicture:(UIImage *)picture path:(NSString *)path {
     NSData *data = UIImageJPEGRepresentation(picture,1) ;
     [[NSFileManager defaultManager] createFileAtPath:path
                                             contents:data
@@ -88,7 +62,7 @@
 }
 
 // 方法1：使用NSFileManager来实现获取文件大小
-+ (long long) fileSizeAtPath1:(NSString*) filePath{
++ (long long)fileSizeAtPath1:(NSString*) filePath {
     NSFileManager* manager = [NSFileManager defaultManager];
     if ([manager fileExistsAtPath:filePath]){
         return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
@@ -97,7 +71,7 @@
 }
 
 // 方法1：使用unix c函数来实现获取文件大小
-+ (long long) fileSizeAtPath2:(NSString*) filePath{
++ (long long)fileSizeAtPath2:(NSString*) filePath {
     struct stat st;
     if(lstat([filePath cStringUsingEncoding:NSUTF8StringEncoding], &st) == 0){
         return st.st_size;
@@ -108,9 +82,8 @@
 
 #pragma mark 获取目录大小
 
-
 // 方法1：循环调用fileSizeAtPath1
-+ (long long) folderSizeAtPath1:(NSString*) folderPath{
++ (long long)folderSizeAtPath1:(NSString*) folderPath {
     NSFileManager* manager = [NSFileManager defaultManager];
     if (![manager fileExistsAtPath:folderPath]) return 0;
     NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];
@@ -128,9 +101,8 @@
     return folderSize;
 }
 
-
 // 方法2：循环调用fileSizeAtPath2
-+ (long long) folderSizeAtPath2:(NSString*) folderPath{
++ (long long)folderSizeAtPath2:(NSString*) folderPath {
     NSFileManager* manager = [NSFileManager defaultManager];
     if (![manager fileExistsAtPath:folderPath]) return 0;
     NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];
@@ -143,13 +115,10 @@
     return folderSize;
 }
 
-
 // 方法3：完全使用unix c函数
-+ (long long) folderSizeAtPath3:(NSString*) folderPath{
++ (long long)folderSizeAtPath3:(NSString*) folderPath {
     return [self _folderSizeAtPath:[folderPath cStringUsingEncoding:NSUTF8StringEncoding]];
 }
-
-
 
 @end
 
@@ -157,7 +126,8 @@
 
 
 @implementation XTFileManager(Private)
-+ (long long) _folderSizeAtPath: (const char*)folderPath{
+
++ (long long)_folderSizeAtPath:(const char*)folderPath {
     long long folderSize = 0;
     DIR* dir = opendir(folderPath);
     if (dir == NULL) return 0;
@@ -168,7 +138,7 @@
                                         (child->d_name[0] == '.' && child->d_name[1] == '.' && child->d_name[2] == 0) // 忽略目录 ..
                                         )) continue;
         
-        int folderPathLength = strlen(folderPath);
+        unsigned long folderPathLength = strlen(folderPath) ;
         char childPath[1024]; // 子文件的路径地址
         stpcpy(childPath, folderPath);
         if (folderPath[folderPathLength-1] != '/'){
@@ -189,4 +159,6 @@
     }
     return folderSize;
 }
+
 @end
+

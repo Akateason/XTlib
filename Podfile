@@ -16,5 +16,7 @@ pod 'UITableView+FDTemplateLayoutCell'
 pod 'MJRefresh'
 pod 'YYModel'
 pod 'FMDB'
+pod 'SSZipArchive'
+pod 'Valet'
 
 end

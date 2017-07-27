@@ -11,7 +11,7 @@
 
 #import <AFNetworking/AFNetworking.h>
 
-extern const float kTIMEOUT ;
+static const float kTIMEOUT = 15.f ;
 
 @interface XTReqSessionManager : AFHTTPSessionManager
 

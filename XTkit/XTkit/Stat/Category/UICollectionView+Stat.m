@@ -74,7 +74,8 @@
     
     ListEvent *lEvent = [[ListEvent alloc] initWithRow:(int)(indexPath.row)
                                                section:(int)(indexPath.section)
-                                                  from:NSStringFromClass([self class])] ;
+                                                  from:NSStringFromClass([self class])
+                                              listType:@"collection"] ;
     [lEvent insert] ;
     SEL sel = GET_CLASS_CUSTOM_SEL(@selector(collectionView:didSelectItemAtIndexPath:) , [self class]) ;
     if ([self respondsToSelector:sel])

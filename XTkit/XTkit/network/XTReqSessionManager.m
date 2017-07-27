@@ -7,7 +7,6 @@
 //
 
 #define ACCEPTABLE_CONTENT_TYPES                    @"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain"
-static const float kTIMEOUT = 15.f ;
 
 #import "XTReqSessionManager.h"
 
@@ -36,6 +35,3 @@ static const float kTIMEOUT = 15.f ;
 }
 
 @end
-
-
-

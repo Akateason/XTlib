@@ -21,7 +21,7 @@
 #import "XTNetReloader.h"
 #import "XTAnimation.h"
 #import "XTJson.h"
-
+#import "CommonFunc.h"
 
 @interface RootCtrl : UIViewController
 

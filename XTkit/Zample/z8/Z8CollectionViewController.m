@@ -17,7 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [SVProgressHUD showInfoWithStatus:@"点到了"] ;
+
     self.view.backgroundColor = [UIColor whiteColor] ;
     
     self.collectionView = ({

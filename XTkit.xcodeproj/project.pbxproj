@@ -120,6 +120,10 @@
 		8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25F8DE1EE656D70052A21D /* Zample8Controller.m */; };
 		8F37C0081EF8F20B00EE713F /* UIButton+ExtendTouchRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */; };
 		8F37C0E71F0CAA7000EE713F /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */; };
+		8F454C801F27306E0068DD43 /* XTArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C7F1F27306E0068DD43 /* XTArchive.m */; };
+		8F454C861F2863610068DD43 /* ValetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C851F2863610068DD43 /* ValetManager.m */; };
+		8F454C8A1F296E990068DD43 /* Zample9Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C891F296E990068DD43 /* Zample9Controller.m */; };
+		8F454C8D1F296F4D0068DD43 /* TCase1.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C8C1F296F4D0068DD43 /* TCase1.m */; };
 		8F7E65241F1F38E00028217B /* IsFirstTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E65231F1F38E00028217B /* IsFirstTime.m */; };
 		8F7E65281F1F39840028217B /* ScreenFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E65271F1F39840028217B /* ScreenFit.m */; };
 		8F7F95BA1F0F615F00236286 /* ApplicationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95AF1F0F615F00236286 /* ApplicationEvent.m */; };
@@ -398,6 +402,14 @@
 		8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ExtendTouchRect.m"; sourceTree = "<group>"; };
 		8F37C0E51F0CAA7000EE713F /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		8F454C7E1F27306E0068DD43 /* XTArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTArchive.h; sourceTree = "<group>"; };
+		8F454C7F1F27306E0068DD43 /* XTArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTArchive.m; sourceTree = "<group>"; };
+		8F454C841F2863610068DD43 /* ValetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValetManager.h; sourceTree = "<group>"; };
+		8F454C851F2863610068DD43 /* ValetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValetManager.m; sourceTree = "<group>"; };
+		8F454C881F296E990068DD43 /* Zample9Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zample9Controller.h; sourceTree = "<group>"; };
+		8F454C891F296E990068DD43 /* Zample9Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample9Controller.m; sourceTree = "<group>"; };
+		8F454C8B1F296F4D0068DD43 /* TCase1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCase1.h; sourceTree = "<group>"; };
+		8F454C8C1F296F4D0068DD43 /* TCase1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCase1.m; sourceTree = "<group>"; };
 		8F7E65221F1F38E00028217B /* IsFirstTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsFirstTime.h; sourceTree = "<group>"; };
 		8F7E65231F1F38E00028217B /* IsFirstTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsFirstTime.m; sourceTree = "<group>"; };
 		8F7E65261F1F39840028217B /* ScreenFit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenFit.h; sourceTree = "<group>"; };
@@ -683,6 +695,7 @@
 				8FFD73541EB9B3B400148B83 /* z6 */,
 				8FDE031C1EC5AF0500FFBADA /* z7 */,
 				8F25F8DC1EE656BB0052A21D /* z8 */,
+				8F454C871F296E860068DD43 /* z9 */,
 			);
 			path = Zample;
 			sourceTree = "<group>";
@@ -1124,6 +1137,10 @@
 			children = (
 				60E238D11E9622A1001235F2 /* XTFileManager.h */,
 				60E238D21E9622A1001235F2 /* XTFileManager.m */,
+				8F454C7E1F27306E0068DD43 /* XTArchive.h */,
+				8F454C7F1F27306E0068DD43 /* XTArchive.m */,
+				8F454C841F2863610068DD43 /* ValetManager.h */,
+				8F454C851F2863610068DD43 /* ValetManager.m */,
 			);
 			path = XTFileManager;
 			sourceTree = "<group>";
@@ -1211,6 +1228,17 @@
 				8F7F95AD1F0F615F00236286 /* Model */,
 			);
 			path = Stat;
+			sourceTree = "<group>";
+		};
+		8F454C871F296E860068DD43 /* z9 */ = {
+			isa = PBXGroup;
+			children = (
+				8F454C881F296E990068DD43 /* Zample9Controller.h */,
+				8F454C891F296E990068DD43 /* Zample9Controller.m */,
+				8F454C8B1F296F4D0068DD43 /* TCase1.h */,
+				8F454C8C1F296F4D0068DD43 /* TCase1.m */,
+			);
+			path = z9;
 			sourceTree = "<group>";
 		};
 		8F7E65211F1F38E00028217B /* IsFirstTime */ = {
@@ -1545,6 +1573,7 @@
 				60E238F11E9622A1001235F2 /* MyTabbarCtrller.m in Sources */,
 				60E238F61E9622A1001235F2 /* RootTableView.m in Sources */,
 				60E238F81E9622A1001235F2 /* ParallaxHeaderView.m in Sources */,
+				8F454C8D1F296F4D0068DD43 /* TCase1.m in Sources */,
 				607E60321EA85BE100D05213 /* NSObject+MKBlockTimer.m in Sources */,
 				60E239061E9622A1001235F2 /* XTLoopScrollView.m in Sources */,
 				8F16B99E1F25D4630049CEE1 /* UICollectionView+Stat.m in Sources */,
@@ -1621,6 +1650,7 @@
 				8FDE031F1EC5AF2E00FFBADA /* Zample7Controller.m in Sources */,
 				607E60281EA85BE100D05213 /* NSString+WPAttributedMarkup.m in Sources */,
 				607E60291EA85BE100D05213 /* UIBarButtonItem+Badge.m in Sources */,
+				8F454C861F2863610068DD43 /* ValetManager.m in Sources */,
 				607E60661EA9FBC900D05213 /* Images.m in Sources */,
 				607E60601EA9FAE400D05213 /* Movie.m in Sources */,
 				607E60411EA8810B00D05213 /* RootTableCell.m in Sources */,
@@ -1647,6 +1677,8 @@
 				8F7F95C91F10D56700236286 /* XTStat.m in Sources */,
 				60E238FA1E9622A1001235F2 /* PlaceHolderTextView.m in Sources */,
 				8F158C831EC2DAD700B0F551 /* XTResponseDBModel.m in Sources */,
+				8F454C801F27306E0068DD43 /* XTArchive.m in Sources */,
+				8F454C8A1F296E990068DD43 /* Zample9Controller.m in Sources */,
 				607E5FC81EA6F8A900D05213 /* CenterTableView.m in Sources */,
 				60E2381B1E961D21001235F2 /* main.m in Sources */,
 				8FFD73611EB9B4C100148B83 /* Model1.m in Sources */,

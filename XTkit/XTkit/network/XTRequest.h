@@ -107,6 +107,12 @@ static NSString *const kBaseURL = @"http://top.akateason.top" ;
  sync
  */
 + (id)syncWithReqMode:(XTRequestMode)mode
+              timeout:(int)timeout
+                  url:(NSString *)url
+               header:(NSDictionary *)header
+           parameters:(NSDictionary *)dict ;
+
++ (id)syncWithReqMode:(XTRequestMode)mode
                   url:(NSString *)url
                header:(NSDictionary *)header
            parameters:(NSDictionary *)dict ;

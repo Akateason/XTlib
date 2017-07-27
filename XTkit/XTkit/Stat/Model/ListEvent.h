@@ -9,12 +9,13 @@
 #import "XTDBModel.h"
 
 @interface ListEvent : XTDBModel
-
+@property (nonatomic,copy)      NSString     *UUID          ;
 @property (nonatomic,copy)      NSString     *kindOfKey     ;
 
 @property (nonatomic)           int          row            ; // selected row
 @property (nonatomic)           int          section        ; // selected section
 @property (nonatomic,copy)      NSString     *fromDelegate  ; // delegate
+@property (nonatomic,copy)      NSString     *listType      ; // @"table" or @"collection"
 
 @property (nonatomic)           long long    time           ; // occur time
 @property (nonatomic,copy)      NSString     *dateStr       ; // occut time str
@@ -22,7 +23,8 @@
 
 - (instancetype)initWithRow:(int)row
                     section:(int)section
-                       from:(NSString *)delegate ;
+                       from:(NSString *)delegate
+                   listType:(NSString *)listType ;
 
 @end
 

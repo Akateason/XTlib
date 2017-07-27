@@ -1,15 +1,13 @@
 //
-//  XTStat.h
+//  TCase1.h
 //  XTkit
 //
-//  Created by teason23 on 2017/7/8.
+//  Created by teason23 on 2017/7/27.
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface XTStat : NSObject
-
-- (void)prepare ;
+@interface TCase1 : NSObject
 
 @end

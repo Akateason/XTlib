@@ -11,7 +11,7 @@
 #import "ApplicationEvent.h"
 #import "CtrllerEvent.h"
 #import "ListEvent.h"
-
+#import "ValetManager.h"
 
 @implementation XTStat
 
@@ -20,6 +20,8 @@
     [ApplicationEvent xt_createTable] ;
     [CtrllerEvent     xt_createTable] ;
     [ListEvent        xt_createTable] ;
+    // uuid
+    [[ValetManager sharedInstance] prepareUUID] ;
 }
 
 @end

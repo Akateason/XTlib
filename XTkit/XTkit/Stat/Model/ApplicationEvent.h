@@ -9,7 +9,7 @@
 @class UIEvent ;
 
 @interface ApplicationEvent : XTDBModel
-
+@property (nonatomic,copy)      NSString     *UUID          ;    
 @property (nonatomic,copy)      NSString     *kindOfKey     ;
 
 @property (nonatomic,copy)      NSString     *action        ; // SEL
