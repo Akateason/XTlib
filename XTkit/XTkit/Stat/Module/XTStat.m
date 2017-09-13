@@ -12,16 +12,22 @@
 #import "CtrllerEvent.h"
 #import "ListEvent.h"
 #import "ValetManager.h"
+#import "DevInfo.h"
 
 @implementation XTStat
 
-- (void)prepare
-{
+- (void)prepare {
     [ApplicationEvent xt_createTable] ;
     [CtrllerEvent     xt_createTable] ;
     [ListEvent        xt_createTable] ;
     // uuid
     [[ValetManager sharedInstance] prepareUUID] ;
+}
+
+- (void)UploadFirstTimeDeviceInfoIfNeeded {
+    DevInfo *devInfo = [DevInfo new] ;
+    devInfo.UUID = [[ValetManager sharedInstance] UUID] ;
+//    devInfo.
 }
 
 @end

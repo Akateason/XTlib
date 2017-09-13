@@ -5,6 +5,8 @@
 //  Created by teason23 on 2017/7/8.
 //  Copyright © 2017年 teason. All rights reserved.
 //
+// 发射器. 设计首包, 无埋点的上传 .
+
 
 #import "StatSender.h"
 #import <SSZipArchive/SSZipArchive.h>

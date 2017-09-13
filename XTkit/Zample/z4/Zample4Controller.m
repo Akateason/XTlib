@@ -26,11 +26,11 @@
     
     self.title = @"color" ;
     
-    self.view.backgroundColor = UIColorWithKey(@"xt_mainColor") ;
+    self.view.backgroundColor = UIColorWithKey(@"inputText1") ;
     
     UIView *view2 = [UIView new] ;
     [self.view addSubview:view2] ;
-    view2.backgroundColor = UIColorWithKey(@"w_gray") ;
+    view2.backgroundColor = UIColorWithKey(@"mainBlue") ;
     [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.left.right.equalTo(self.view) ;
         make.height.mas_equalTo(100) ;
@@ -42,7 +42,7 @@
 - (void)test
 {
     UIView *view = [UIView new] ;
-    view.backgroundColor = UIColorWithKey(@"tabbar_red") ;
+    view.backgroundColor = UIColorWithKey(@"inputText2") ;
     view.frame = CGRectMake(100, 200, 79, 79) ;
     [self.view addSubview:view] ;
 }

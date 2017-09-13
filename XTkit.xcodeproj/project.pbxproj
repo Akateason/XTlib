@@ -140,6 +140,8 @@
 		8F9916541EC14D6B00BA8F0D /* NSDate+XTTick.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916531EC14D6B00BA8F0D /* NSDate+XTTick.m */; };
 		8F9916571EC150BF00BA8F0D /* NSDate+NSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */; };
 		8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */; };
+		8FD763591F2F224D0085F56D /* TCase2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD763581F2F224D0085F56D /* TCase2.m */; };
+		8FD763D01F31A9450085F56D /* DevInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD763CF1F31A9450085F56D /* DevInfo.m */; };
 		8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */; };
 		8FDE031F1EC5AF2E00FFBADA /* Zample7Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE031E1EC5AF2E00FFBADA /* Zample7Controller.m */; };
 		8FFD733D1EB30A5400148B83 /* Zample4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD733C1EB30A5400148B83 /* Zample4Controller.m */; };
@@ -443,6 +445,10 @@
 		8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSCalendar.m"; sourceTree = "<group>"; };
 		8F99165A1EC1B6B400BA8F0D /* XTCacheRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCacheRequest.h; sourceTree = "<group>"; };
 		8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCacheRequest.m; sourceTree = "<group>"; };
+		8FD763571F2F224D0085F56D /* TCase2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCase2.h; sourceTree = "<group>"; };
+		8FD763581F2F224D0085F56D /* TCase2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCase2.m; sourceTree = "<group>"; };
+		8FD763CE1F31A9450085F56D /* DevInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevInfo.h; sourceTree = "<group>"; };
+		8FD763CF1F31A9450085F56D /* DevInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevInfo.m; sourceTree = "<group>"; };
 		8FDE03161EC53DE600FFBADA /* XTReqSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqSessionManager.h; sourceTree = "<group>"; };
 		8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqSessionManager.m; sourceTree = "<group>"; };
 		8FDE03191EC5415C00FFBADA /* XTReq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTReq.h; sourceTree = "<group>"; };
@@ -1237,6 +1243,8 @@
 				8F454C891F296E990068DD43 /* Zample9Controller.m */,
 				8F454C8B1F296F4D0068DD43 /* TCase1.h */,
 				8F454C8C1F296F4D0068DD43 /* TCase1.m */,
+				8FD763571F2F224D0085F56D /* TCase2.h */,
+				8FD763581F2F224D0085F56D /* TCase2.m */,
 			);
 			path = z9;
 			sourceTree = "<group>";
@@ -1268,6 +1276,8 @@
 				8F7F95B11F0F615F00236286 /* CtrllerEvent.m */,
 				8F7F95B21F0F615F00236286 /* ListEvent.h */,
 				8F7F95B31F0F615F00236286 /* ListEvent.m */,
+				8FD763CE1F31A9450085F56D /* DevInfo.h */,
+				8FD763CF1F31A9450085F56D /* DevInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1603,6 +1613,7 @@
 				8FFD73641EB9D19800148B83 /* UIViewController+Storyboard.m in Sources */,
 				8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */,
 				607E602E1EA85BE100D05213 /* KICropImageView.m in Sources */,
+				8FD763D01F31A9450085F56D /* DevInfo.m in Sources */,
 				8F158C7A1EC2A79200B0F551 /* Z5DisplayController.m in Sources */,
 				60E239171E9622A1001235F2 /* XTVerification.m in Sources */,
 				8F7E65281F1F39840028217B /* ScreenFit.m in Sources */,
@@ -1618,6 +1629,7 @@
 				8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */,
 				60E238E11E9622A1001235F2 /* NSObject+Reflection.m in Sources */,
 				607E602A1EA85BE100D05213 /* Base64.m in Sources */,
+				8FD763591F2F224D0085F56D /* TCase2.m in Sources */,
 				60E239021E9622A1001235F2 /* XTBarrageItemView.m in Sources */,
 				8F0BDBB11F13AF3300DBED71 /* XTColorFetcher+Dynamic.m in Sources */,
 				60E239121E9622A1001235F2 /* XTAnimation.m in Sources */,

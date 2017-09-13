@@ -21,7 +21,7 @@
 - (long long)xt_getTick
 {
     NSTimeInterval timeInterval2 = [self timeIntervalSince1970] ;
-    long long time = (long long)(timeInterval2 * kUnitConversion) ;
+    long long time = (long long)((double)timeInterval2 * kUnitConversion) ;
 //    NSLog(@"xt_tick :%lld",time) ;
     return time ;
 }
@@ -49,7 +49,7 @@
 + (NSString *)xt_getStrWithTick:(long long)tick
                          format:(NSString *)format
 {
-    NSTimeInterval timeInterval = tick / kUnitConversion ;
+    NSTimeInterval timeInterval = (double)tick / kUnitConversion ;
     NSDate *theDate = [NSDate dateWithTimeIntervalSince1970:timeInterval] ;
     return [theDate xt_getStrWithFormat:format] ;
 }
@@ -195,7 +195,7 @@
  */
 + (NSDate *)xt_getDateWithTick:(long long)tick
 {
-    NSTimeInterval timeInterval = tick / kUnitConversion ;
+    NSTimeInterval timeInterval = (double)tick / kUnitConversion ;
     return [NSDate dateWithTimeIntervalSince1970:timeInterval] ;
 }
 

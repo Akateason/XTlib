@@ -38,8 +38,15 @@ static NSString *const kBaseURL = @"http://top.akateason.top" ;
 + (NSMutableDictionary *)getParameters ;
 
 // status
-+ (void)netWorkStatus ;
-+ (void)netWorkStatus:(void (^)(NSInteger status))block ;
++ (void)startMonitor ;
+
++ (void)stopMonitor  ;
+
++ (NSString *)netWorkStatus ;
+
++ (BOOL)isWifi ;
+
++ (BOOL)isReachable ;
 
 /**
  async

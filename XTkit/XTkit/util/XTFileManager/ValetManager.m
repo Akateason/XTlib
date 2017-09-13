@@ -23,7 +23,7 @@ DEF_SINGLETON(ValetManager)
     self = [super init] ;
     if (self) {
         NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary] ;
-        NSString *appName = [infoDictionary objectForKey:@"CFBundleDisplayName"] ;
+        NSString *appName = [infoDictionary objectForKey:@"CFBundleName"] ;
         self.myValet = [[VALValet alloc] initWithIdentifier:appName
                                               accessibility:VALAccessibilityWhenUnlocked] ;
     }
@@ -52,10 +52,9 @@ DEF_SINGLETON(ValetManager)
  @return bool success
  */
 - (BOOL)prepareUUID {
-    if ([self UUID] && [[self UUID] length]) return YES ;
-    
+    if ([self.myValet containsObjectForKey:@"UUID"]) return YES ;
     NSString *uuid = [UIDevice currentDevice].identifierForVendor.UUIDString ;
-    NSLog(@"%@",uuid) ;
+//    NSLog(@"%@",uuid) ;
     return [self.myValet setString:uuid forKey:@"UUID"] ;
 }
 

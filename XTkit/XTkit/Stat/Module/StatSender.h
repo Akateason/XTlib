@@ -10,12 +10,5 @@
 
 @interface StatSender : NSObject
 
-- (NSString *)writeToFile:(NSArray *)list ;
-
-- (BOOL)archiveZip:(NSString *)zipPath withDirectory:(NSString *)filePath ;
-
-- (NSData *)unarchiveZip:(NSString *)zipPath ;
-
-- (NSArray *)readFromFile:(NSString *)filePath ;
 
 @end

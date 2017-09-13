@@ -8,18 +8,48 @@
 
 #import "Zample9Controller.h"
 #import "TCase1.h"
+#import "TCase2.h"
 
 @interface Zample9Controller ()
 @property (strong,nonatomic) TCase1 *tcase1 ;
+@property (strong,nonatomic) TCase2 *tcase2 ;
 @end
 
 @implementation Zample9Controller
+
+__weak id reference = nil ;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tcase1 = [[TCase1 alloc] init] ;
+//    self.tcase1 = [[TCase1 alloc] init] ;
+//    self.tcase2 = [[TCase2 alloc] init] ;
+    
+//    @autoreleasepool {
+        NSString *str = [NSString stringWithFormat:@"xtc"] ;
+        reference = str ;
+//    }
+//    NSLog(@"%@",reference) ;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    NSLog(@"ref : %@",reference) ;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated] ;
+    NSLog(@"ref : %@",reference) ;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated] ;
+//    [self.tcase1.timer1 invalidate] ;
+//    [self.tcase2.timer invalidate] ;
 }
 
 - (void)didReceiveMemoryWarning {

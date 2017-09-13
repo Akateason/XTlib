@@ -35,7 +35,7 @@
         }
         
         self.uploaded = 0 ;
-        self.kindOfKey = [UniqueKeyMaker makeUniqueKey:@[self.action,self.target,self.sender,self.event]] ;
+        self.kindOfKey = [UniqueKeyMaker makeUniqueKey:@[self.action?:@"",self.target?:@"",self.sender?:@"",self.event?:@""]] ;
         self.UUID = [[ValetManager sharedInstance] UUID] ;
     }
     return self;

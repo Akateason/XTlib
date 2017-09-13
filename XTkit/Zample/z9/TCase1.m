@@ -10,7 +10,6 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @interface TCase1 ()
-@property (nonatomic,strong) NSTimer *timer1 ;
 @end
 
 @implementation TCase1

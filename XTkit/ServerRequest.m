@@ -68,6 +68,7 @@
               forKey:@"count"] ;
 
     [XTCacheRequest cacheGET:@"https://api.douban.com/v2/movie/top250"
+                      header:nil
                   parameters:param
                          hud:YES
                       policy:XTResponseCachePolicyAlwaysCache

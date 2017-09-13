@@ -6,12 +6,11 @@
 //  Copyright © 2017年 teaason. All rights reserved.
 //
 
-
-
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
 
 #define QUEUE                         [XTFMDBBase sharedInstance].queue
+
 
 @interface XTFMDBBase : NSObject
 + (XTFMDBBase *)sharedInstance ;
@@ -22,6 +21,8 @@
 
 // config db in "- [(AppDelegate *) AppDidLaunchFinish]"
 - (void)configureDB:(NSString *)name ;
+- (void)configureDB:(NSString *)name
+               path:(NSString *)path ;
 
 - (BOOL)verify ;
 

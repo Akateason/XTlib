@@ -12,7 +12,8 @@
 #import "XTReqResonse.h"
 #import "XTReqSessionManager.h"
 
-NSString *const kStringBadNetwork = @"网络状况差" ;
+NSString *const kStringBadNetwork = @"网络请求失败" ;
+NSString *const kStringNetworkNotConnect = @"网络连接不可用" ;
 
 @implementation XTRequest
 
@@ -27,26 +28,25 @@ NSString *const kStringBadNetwork = @"网络状况差" ;
 #pragma mark --
 #pragma mark - status
 
-+ (void)netWorkStatus
-{
-    [self netWorkStatus:nil] ;
-}
-
-+ (void)netWorkStatus:(void (^)(NSInteger status))block
-{
-    /**
-     AFNetworkReachabilityStatusUnknown          = -1,  // 未知
-     AFNetworkReachabilityStatusNotReachable     = 0,   // 无连接
-     AFNetworkReachabilityStatusReachableViaWWAN = 1,   // 3G 花钱
-     AFNetworkReachabilityStatusReachableViaWiFi = 2,   // WiFi
-     */
-    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        NSLog(@"网络状态 : %@", @(status)) ;
-        block(status) ;
-    }] ;
++ (void)startMonitor {
     [[AFNetworkReachabilityManager sharedManager] startMonitoring] ;
 }
 
++ (void)stopMonitor {
+    [[AFNetworkReachabilityManager sharedManager] stopMonitoring] ;
+}
+
++ (NSString *)netWorkStatus {
+    return [[AFNetworkReachabilityManager sharedManager] localizedNetworkReachabilityStatusString] ;
+}
+
++ (BOOL)isWifi {
+    return [[AFNetworkReachabilityManager sharedManager] isReachableViaWiFi] ;
+}
+
++ (BOOL)isReachable {
+    return [[AFNetworkReachabilityManager sharedManager] isReachable] ;
+}
 
 
 //  async
@@ -93,8 +93,8 @@ NSString *const kStringBadNetwork = @"网络状况差" ;
                                     progress:nil
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
              
-            if (success)
-            {
+            [[XTReqSessionManager shareInstance] reset] ;
+            if (success) {
                 if (hud) [SVProgressHUD dismiss] ;
                 NSLog(@"url : %@ \nparam : %@",url,dict) ;
                 NSLog(@"resp %@",responseObject) ;
@@ -102,11 +102,10 @@ NSString *const kStringBadNetwork = @"网络状况差" ;
             }
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            
-            NSLog(@"xt_req fail Error:%@", error) ;
-            if (fail)
-            {
+            [[XTReqSessionManager shareInstance] reset] ;
+            if (fail) {
                 if (hud) [SVProgressHUD showErrorWithStatus:kStringBadNetwork] ;
+                NSLog(@"xt_req fail Error:%@", error) ;
                 fail() ;
             }
 
@@ -134,11 +133,11 @@ NSString *const kStringBadNetwork = @"网络状况差" ;
                                   parameters:dict
                                     progress:nil
                                      success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                         [[XTReqSessionManager shareInstance] reset] ;
                                          if (success) {
                                              if (hud) [SVProgressHUD dismiss] ;
                                              NSLog(@"url : %@ \nparam : %@",url,dict) ;
                                              NSLog(@"resp %@",responseObject) ;
-                                             [[XTReqSessionManager shareInstance] reset] ;
                                              success(task,responseObject) ;
                                          }
                                      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -215,13 +214,12 @@ NSString *const kStringBadNetwork = @"网络状况差" ;
                                      progress:nil
                                       success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                                           
-                                          if (success)
-                                          {
+                                          [[XTReqSessionManager shareInstance] reset] ;
+                                          if (success) {
                                               if (hud) [SVProgressHUD dismiss] ;
                                               
                                               NSLog(@"url : %@ \nparam : %@",url,dict) ;
                                               NSLog(@"resp %@",responseObject) ;
-                                              [[XTReqSessionManager shareInstance] reset] ;
                                               success(task , responseObject) ;
                                           }
                                           
@@ -229,8 +227,7 @@ NSString *const kStringBadNetwork = @"网络状况差" ;
                                           
                                           NSLog(@"xt_req fail Error: %@", error) ;
                                           [[XTReqSessionManager shareInstance] reset] ;
-                                          if (fail)
-                                          {
+                                          if (fail) {
                                               if (hud) [SVProgressHUD showErrorWithStatus:kStringBadNetwork] ;
                                               fail() ;
                                           }
@@ -271,11 +268,10 @@ NSString *const kStringBadNetwork = @"网络状况差" ;
 
                                                 NSLog(@"url : %@ \nparam : %@",url,param) ;
                                                 NSLog(@"resp %@",responseObject) ;
+                                                [[XTReqSessionManager shareInstance] reset] ;
                                                 if (!error) {
-                                                    [[XTReqSessionManager shareInstance] reset] ;
                                                     success(responseObject) ;
                                                 } else {
-                                                    [[XTReqSessionManager shareInstance] reset] ;
                                                     fail();
                                                     if (hud) [SVProgressHUD showErrorWithStatus:kStringBadNetwork] ;
                                                 }
@@ -296,7 +292,10 @@ static inline dispatch_queue_t xt_getCompletionQueue() { return dispatch_queue_c
 {
     __block id result = nil ;
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        AFHTTPSessionManager *manager = [XTReqSessionManager shareInstance] ;
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init] ;
+        manager.requestSerializer  = [AFHTTPRequestSerializer serializer] ;
+        manager.responseSerializer = [AFJSONResponseSerializer serializer] ;
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain",nil] ;
         manager.requestSerializer.timeoutInterval = timeout ;
         manager.completionQueue = xt_getCompletionQueue() ;
         if (header) {
@@ -338,7 +337,7 @@ static inline dispatch_queue_t xt_getCompletionQueue() { return dispatch_queue_c
     }] ;
     [operation start] ;
     [operation waitUntilFinished] ;
-    [[XTReqSessionManager shareInstance] reset] ;
+    
     return result ;
 }
 

@@ -16,38 +16,82 @@
 @implementation XTCacheRequest
 
 #pragma mark --
+
 + (void)cacheGET:(NSString *)url
       parameters:(NSDictionary *)param
-          policy:(XTResponseCachePolicy)cachePolicy
-   timeoutIfNeed:(int)timeoutIfNeed
-      completion:(void (^)(id json))completion
+      completion:(void(^)(id json))completion
 {
     [self cacheGET:url
+            header:nil
         parameters:param
-               hud:YES
-            policy:cachePolicy
-     timeoutIfNeed:timeoutIfNeed
         completion:completion] ;
 }
 
 + (void)cacheGET:(NSString *)url
       parameters:(NSDictionary *)param
-      completion:(void (^)(id json))completion
+     judgeResult:(BOOL(^)(id json))completion
 {
     [self cacheGET:url
+            header:nil
         parameters:param
-               hud:YES
+       judgeResult:completion] ;
+}
+
++ (void)cacheGET:(NSString *)url
+          header:(NSDictionary *)header
+      parameters:(NSDictionary *)param
+      completion:(void(^)(id json))completion
+{
+    [self cacheGET:url
+            header:header
+        parameters:param
+               hud:NO
             policy:XTResponseCachePolicyNeverUseCache
      timeoutIfNeed:0
         completion:completion] ;
 }
 
 + (void)cacheGET:(NSString *)url
+          header:(NSDictionary *)header
+      parameters:(NSDictionary *)param
+     judgeResult:(BOOL (^)(id json))completion
+{
+    [self cacheGET:url
+            header:header
+        parameters:param
+               hud:NO
+            policy:XTResponseCachePolicyNeverUseCache
+     timeoutIfNeed:0
+       judgeResult:completion] ;
+}
+
++ (void)cacheGET:(NSString *)url
+          header:(NSDictionary *)header
       parameters:(NSDictionary *)param
              hud:(BOOL)hud
           policy:(XTResponseCachePolicy)cachePolicy
    timeoutIfNeed:(int)timeoutIfNeed
-      completion:(void (^)(id json))completion
+      completion:(void(^)(id json))completion
+{
+    [self cacheGET:url
+            header:header
+        parameters:param
+               hud:hud
+            policy:cachePolicy
+     timeoutIfNeed:timeoutIfNeed
+       judgeResult:^BOOL(id json) {
+           if (completion) completion(json) ;
+           return FALSE ;
+       }] ;
+}
+
++ (void)cacheGET:(NSString *)url
+          header:(NSDictionary *)header
+      parameters:(NSDictionary *)param
+             hud:(BOOL)hud
+          policy:(XTResponseCachePolicy)cachePolicy
+   timeoutIfNeed:(int)timeoutIfNeed
+     judgeResult:(BOOL (^)(id json))completion
 {
     NSString *strUniqueKey = [self fullUrl:url param:param] ;
     XTResponseDBModel *resModel = [XTResponseDBModel xt_findFirstWhere:[NSString stringWithFormat:@"requestUrl == '%@'",strUniqueKey]] ;
@@ -61,10 +105,12 @@
         [self updateRequestWithType:XTRequestMode_GET_MODE
                                 url:url
                                 hud:hud
+                             header:header
                               param:param
                       responseModel:resModel
-                         completion:^(id json) {
-                             if (completion) completion(json) ; // return
+                         completion:^BOOL (id json) {
+                             if (completion) return completion(json) ; // return
+                             return FALSE ;
                          }] ;
     }
     else
@@ -76,10 +122,12 @@
                 [self updateRequestWithType:XTRequestMode_GET_MODE
                                         url:url
                                         hud:hud
+                                     header:header
                                       param:param
                               responseModel:resModel
-                                 completion:^(id json) {
-                                     if (completion) completion(json) ; // return
+                                 completion:^BOOL (id json) {
+                                     if (completion) return completion(json) ; // return
+                                     return FALSE ;
                                  }] ;
             }
                 break;
@@ -95,10 +143,12 @@
                     [self updateRequestWithType:XTRequestMode_GET_MODE
                                             url:url
                                             hud:hud
+                                         header:header
                                           param:param
                                   responseModel:resModel
-                                     completion:^(id json) {
-                                         if (completion) completion(json) ; // return
+                                     completion:^BOOL (id json) {
+                                         if (completion) return completion(json) ; // return
+                                         return FALSE ;
                                      }] ;
                 }
                 else
@@ -113,39 +163,82 @@
     }
 }
 
+#pragma mark - 
 
 + (void)cachePOST:(NSString *)url
        parameters:(NSDictionary *)param
-       completion:(void (^)(id json))completion
+       completion:(void(^)(id json))completion
 {
     [self cachePOST:url
          parameters:param
-                hud:YES
+         completion:completion] ;
+}
+
++ (void)cachePOST:(NSString *)url
+       parameters:(NSDictionary *)param
+      judgeResult:(BOOL (^)(id json))completion
+{
+    [self cachePOST:url
+             header:nil
+         parameters:param
+        judgeResult:completion] ;
+}
+
++ (void)cachePOST:(NSString *)url
+           header:(NSDictionary *)header
+       parameters:(NSDictionary *)param
+       completion:(void(^)(id json))completion
+{
+    [self cachePOST:url
+             header:header
+         parameters:param
+                hud:NO
              policy:XTResponseCachePolicyNeverUseCache
       timeoutIfNeed:0
          completion:completion] ;
 }
 
 + (void)cachePOST:(NSString *)url
+           header:(NSDictionary *)header
        parameters:(NSDictionary *)param
-           policy:(XTResponseCachePolicy)cachePolicy
-    timeoutIfNeed:(int)timeoutIfNeed
-       completion:(void (^)(id json))completion
+      judgeResult:(BOOL (^)(id json))completion
 {
     [self cachePOST:url
+             header:header
          parameters:param
-                hud:YES
-             policy:cachePolicy
-      timeoutIfNeed:timeoutIfNeed
-         completion:completion] ;
+                hud:NO
+             policy:XTResponseCachePolicyNeverUseCache
+      timeoutIfNeed:0
+        judgeResult:completion] ;
 }
 
 + (void)cachePOST:(NSString *)url
+           header:(NSDictionary *)header
        parameters:(NSDictionary *)param
               hud:(BOOL)hud
            policy:(XTResponseCachePolicy)cachePolicy
     timeoutIfNeed:(int)timeoutIfNeed
-       completion:(void (^)(id json))completion
+       completion:(void(^)(id json))completion
+{
+    [self cachePOST:url
+             header:header
+         parameters:param
+                hud:YES
+             policy:cachePolicy
+      timeoutIfNeed:timeoutIfNeed
+        judgeResult:^BOOL(id json) {
+            if (completion) completion(json) ;
+            return FALSE ;
+         }] ;
+}
+
++ (void)cachePOST:(NSString *)url
+           header:(NSDictionary *)header
+       parameters:(NSDictionary *)param
+              hud:(BOOL)hud
+           policy:(XTResponseCachePolicy)cachePolicy
+    timeoutIfNeed:(int)timeoutIfNeed
+      judgeResult:(BOOL(^)(id json))completion
 {
     NSString *strUniqueKey = [self fullUrl:url param:param] ;
     XTResponseDBModel *resModel = [XTResponseDBModel xt_findFirstWhere:[NSString stringWithFormat:@"requestUrl == '%@'",strUniqueKey]] ;
@@ -159,10 +252,12 @@
         [self updateRequestWithType:XTRequestMode_POST_MODE
                                 url:url
                                 hud:hud
+                             header:header
                               param:param
                       responseModel:resModel
-                         completion:^(id json) {
-                             if (completion) completion(json) ; // return
+                         completion:^BOOL (id json) {
+                             if (completion) return completion(json) ; // return
+                             return FALSE ;
                          }] ;
     }
     else
@@ -174,10 +269,12 @@
                 [self updateRequestWithType:XTRequestMode_POST_MODE
                                         url:url
                                         hud:hud
+                                     header:header
                                       param:param
                               responseModel:resModel
-                                 completion:^(id json) {
-                                     if (completion) completion(json) ; // return
+                                 completion:^BOOL (id json) {
+                                     if (completion) return completion(json) ; // return
+                                     return FALSE ;
                                  }] ;
             }
                 break;
@@ -193,10 +290,12 @@
                     [self updateRequestWithType:XTRequestMode_POST_MODE
                                             url:url
                                             hud:hud
+                                         header:header
                                           param:param
                                   responseModel:resModel
-                                     completion:^(id json) {
-                                         if (completion) completion(json) ; // return
+                                     completion:^BOOL (id json) {
+                                         if (completion) return completion(json) ; // return
+                                         return FALSE ;
                                      }] ;
                 }
                 else
@@ -221,36 +320,36 @@
 + (void)updateRequestWithType:(XTRequestMode)requestType
                           url:(NSString *)url
                           hud:(BOOL)hud
+                       header:(NSDictionary *)header
                         param:(NSDictionary *)param
                 responseModel:(XTResponseDBModel *)resModel
-                   completion:(void (^)(id json))completion
+                   completion:(BOOL(^)(id json))completion
 {
     if (requestType == XTRequestMode_GET_MODE)
     {
         [self GETWithUrl:url
+                  header:header
                      hud:hud
               parameters:param
-                 success:^(id json) {
-                     if (completion) completion(json) ; // return .
-                     // 请求为空 . 不做更新
-                     if (!json)
-                     {
-                         completion(json) ;
-                         return ;
-                     }
-                     
-                     if (!resModel.response)
-                     {
-                         resModel.response = [json yy_modelToJSONString] ;
-                         [resModel xt_insert] ; // db insert
-                     }
-                     else
-                     {
-                         resModel.response = [json yy_modelToJSONString] ;
-                         resModel.updateTime = [NSDate xt_getNowTick] ;
-                         [resModel xt_update] ; // db update
-                     }
+             taskSuccess:^(NSURLSessionDataTask *task, id json) {
+                 
+                 BOOL bDisableCache = FALSE ;
+                 if (completion) bDisableCache = completion(json) ; // return .
+                 // 请求为空 . 不做更新
+                 if (!json) return ;
+                 // 外部禁止了缓存
+                 if (bDisableCache) return ;
+                 // db
+                 if (!resModel.response) {
+                     resModel.response = [json yy_modelToJSONString] ;
+                     [resModel xt_insert] ; // db insert
                  }
+                 else {
+                     resModel.response = [json yy_modelToJSONString] ;
+                     resModel.updateTime = [NSDate xt_getNowTick] ;
+                     [resModel xt_update] ; // db update
+                 }
+             }
                     fail:^{
                         if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
                     }] ;
@@ -258,32 +357,31 @@
     else if (requestType == XTRequestMode_POST_MODE)
     {
         [self POSTWithUrl:url
+                   header:header
                       hud:hud
                parameters:param
-                  success:^(id json) {
-                      if (completion) completion(json) ; // return .
-                      // 请求为空 . 不做更新
-                      if (!json)
-                      {
-                          completion(json) ;
-                          return ;
-                      }
-                      
-                      if (!resModel.response)
-                      {
-                          resModel.response = [json yy_modelToJSONString] ;
-                          [resModel xt_insert] ; // db insert
-                      }
-                      else
-                      {
-                          resModel.response = [json yy_modelToJSONString] ;
-                          resModel.updateTime = [NSDate xt_getNowTick] ;
-                          [resModel xt_update] ; // db update
-                      }
+              taskSuccess:^(NSURLSessionDataTask *task, id json) {
+                  
+                  BOOL bDisableCache = FALSE ;
+                  if (completion) bDisableCache = completion(json) ; // return .
+                  // 请求为空 . 不做更新
+                  if (!json) return ;
+                  // 外部禁止了缓存
+                  if (bDisableCache) return ;
+                  // db
+                  if (!resModel.response) {
+                      resModel.response = [json yy_modelToJSONString] ;
+                      [resModel xt_insert] ; // db insert
                   }
+                  else {
+                      resModel.response = [json yy_modelToJSONString] ;
+                      resModel.updateTime = [NSDate xt_getNowTick] ;
+                      [resModel xt_update] ; // db update
+                  }
+              }
                      fail:^{
                          if (completion) completion([XTJson getJsonWithStr:resModel.response]) ;
-                     }] ;
+              }] ;
     }
 }
 

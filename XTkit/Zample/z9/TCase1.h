@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface TCase1 : NSObject
+@property (nonatomic,strong) NSTimer *timer1 ;
 
 @end

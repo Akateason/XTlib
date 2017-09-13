@@ -42,9 +42,6 @@
     
     // stat
     [[XTStat new] prepare] ;
-
-    // valetManager
-    [[ValetManager sharedInstance] prepareUUID] ;
     
     //
     [self testFunc] ;
