@@ -31,7 +31,9 @@ extern float const kTABLE_HEADER_IMAGES_COUNT   ;
         for (int i = 1; i <= kTABLE_HEADER_IMAGES_COUNT; i++)
         {
             UIImage *imgTemp = [UIImage imageNamed:[NSString stringWithFormat:@"%@%d",kTABLE_HEADER_IMAGES,i]] ;
-            [tempList addObject:imgTemp] ; // DEFAULT MODE IS THIS GIF IMAGES .
+            if (imgTemp) {
+                [tempList addObject:imgTemp] ; // DEFAULT MODE IS THIS GIF IMAGES .
+            }
         }
         _gifImageList = [NSArray arrayWithArray:tempList] ;
     }
@@ -46,7 +48,7 @@ extern float const kTABLE_HEADER_IMAGES_COUNT   ;
 {
     [super prepare];
     
-    NSArray *idleImages = @[[self.gifImageList firstObject]] ;
+    NSArray *idleImages = self.gifImageList.count ? @[[self.gifImageList firstObject]] : @[] ;
     NSArray *pullingImages = self.gifImageList ;
     NSArray *refreshingImages = self.gifImageList ;
     [self setImages:idleImages forState:MJRefreshStateIdle];

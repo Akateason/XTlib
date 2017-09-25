@@ -9,7 +9,7 @@
 #import "RootRefreshHeader.h"
 
 NSString *const kTABLE_HEADER_IMAGES            =   @"refresh" ;
-float const     kTABLE_HEADER_IMAGES_COUNT      =   5      ;
+float const     kTABLE_HEADER_IMAGES_COUNT      =   5          ;
 
 @interface RootRefreshHeader ()
 @property (nonatomic,strong) NSArray *gifImageList ;
@@ -26,8 +26,10 @@ float const     kTABLE_HEADER_IMAGES_COUNT      =   5      ;
         NSMutableArray *tempList = [NSMutableArray array] ;
         for (int i = 1; i <= kTABLE_HEADER_IMAGES_COUNT; i++)
         {
-            UIImage *imgTemp = [UIImage imageNamed:[NSString stringWithFormat:@"%@%d",kTABLE_HEADER_IMAGES,i]] ;
-            [tempList addObject:imgTemp] ; // DEFAULT MODE IS THIS GIF IMAGES .
+            if ([UIImage imageNamed:[NSString stringWithFormat:@"%@%d",kTABLE_HEADER_IMAGES,i]]) {
+                UIImage *imgTemp = [UIImage imageNamed:[NSString stringWithFormat:@"%@%d",kTABLE_HEADER_IMAGES,i]] ;
+                [tempList addObject:imgTemp] ; // DEFAULT MODE IS THIS GIF IMAGES .
+            }
         }
         _gifImageList = [NSArray arrayWithArray:tempList] ;
     }
@@ -42,7 +44,7 @@ float const     kTABLE_HEADER_IMAGES_COUNT      =   5      ;
 {
     [super prepare] ;
     
-    NSArray *idleImages         = @[[self.gifImageList firstObject]] ;
+    NSArray *idleImages         = self.gifImageList.count ? @[[self.gifImageList firstObject]] : @[] ;
     NSArray *pullingImages      = self.gifImageList ;
     NSArray *refreshingImages   = self.gifImageList ;
     

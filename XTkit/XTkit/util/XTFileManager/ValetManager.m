@@ -54,7 +54,7 @@ DEF_SINGLETON(ValetManager)
 - (BOOL)prepareUUID {
     if ([self.myValet containsObjectForKey:@"UUID"]) return YES ;
     NSString *uuid = [UIDevice currentDevice].identifierForVendor.UUIDString ;
-//    NSLog(@"%@",uuid) ;
+    NSLog(@"uuid : %@",uuid) ;
     return [self.myValet setString:uuid forKey:@"UUID"] ;
 }
 
