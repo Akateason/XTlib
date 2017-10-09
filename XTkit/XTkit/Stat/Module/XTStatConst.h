@@ -16,6 +16,7 @@
 #   define NSLog(...)
 #endif
 
+#define xt_Run_Stat    0
 
 
 #endif /* XTStatConst_h */

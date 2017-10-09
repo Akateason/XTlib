@@ -41,7 +41,7 @@
     [XTResponseDBModel xt_createTable] ;
     
     // stat
-    [[XTStat new] prepare] ;
+//    [[XTStat new] prepare] ;
     
     //
     [self testFunc] ;

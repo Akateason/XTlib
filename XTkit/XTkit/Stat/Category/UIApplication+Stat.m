@@ -16,6 +16,7 @@
 + (void)load
 {
     [super load] ;
+    
     static dispatch_once_t onceToken ;
     dispatch_once(&onceToken, ^{
         SEL originalSelector = @selector(sendAction:to:from:forEvent:) ;
@@ -31,6 +32,11 @@
                  from:(nullable id)sender
              forEvent:(nullable UIEvent *)event
 {
+    if (!xt_Run_Stat) return [self xt_sendAction:action
+                                              to:target
+                                            from:sender
+                                        forEvent:event] ;
+
     NSLog(@"\naction:%@\ntarget:%@\nsender:%@\nevent:%@",NSStringFromSelector(action),target,sender,event) ;
     ApplicationEvent *aEvent = [[ApplicationEvent alloc] initWithSEL:action
                                                                   to:target

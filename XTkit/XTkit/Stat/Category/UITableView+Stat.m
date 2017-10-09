@@ -18,8 +18,9 @@
 
 + (void)load {
     [super load] ;
+    
     static dispatch_once_t onceToken ;
-    dispatch_once(&onceToken, ^{
+    dispatch_once(&onceToken, ^{                
         SEL originalSelector = @selector(setDelegate:) ;
         SEL swizzledSelector = @selector(xt_setDelegate:) ;
         [self swizzledOrigin:originalSelector
@@ -40,6 +41,8 @@
 - (void)xt_setDelegate:(id)delegate
 {
     [self xt_setDelegate:delegate] ;
+    
+    if (!xt_Run_Stat) return ;
     
     if (![self isContainSEL:GET_CLASS_CUSTOM_SEL(@selector(tableView:didSelectRowAtIndexPath:), [delegate class])
                     inClass:[delegate class]])
@@ -69,9 +72,6 @@
     [self exchangeSEL1:sel
                   SEL2:GET_CLASS_CUSTOM_SEL(sel, [object class])
              withClass:[object class]] ;
-    
-//    [self logMethodList:[object class]] ;
-//    [self logMethodList:[self class]] ;
 }
 
 /**

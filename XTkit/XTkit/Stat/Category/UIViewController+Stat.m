@@ -18,7 +18,7 @@
     [super load] ;
     
     static dispatch_once_t onceToken ;
-    dispatch_once(&onceToken, ^{
+    dispatch_once(&onceToken, ^{        
         [self swizzledOrigin:@selector(viewDidLoad)
                          new:@selector(xt_viewDidLoad)] ;
         [self swizzledOrigin:@selector(viewWillAppear:)
@@ -64,6 +64,8 @@
 
 - (void)collectStatInfo:(NSString *)funcName
 {
+    if (!xt_Run_Stat) return ;
+    
     NSArray *filter = @[@"UINavigationController",@"UITabBarController",@"MyNavCtrller"] ;
     NSString *className = NSStringFromClass(self.class) ;
     if ([filter containsObject:className]) return ;

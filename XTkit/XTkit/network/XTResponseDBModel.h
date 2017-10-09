@@ -29,8 +29,8 @@ typedef NS_ENUM(NSUInteger, XTResponseCachePolicy) {
  */
 @property (nonatomic)      NSUInteger   cachePolicy     ; // XTResponseCachePolicy
 @property (nonatomic)      int          timeout         ; // 超时时间(秒数)  默认1小时
-@property (nonatomic)      long long    createTime      ; // tick
-@property (nonatomic)      long long    updateTime      ;
+//@property (nonatomic)      long long    createTime      ; // tick
+//@property (nonatomic)      long long    updateTime      ;
 
 // new a Default Model
 + (instancetype)newDefaultModelWithKey:(NSString *)urlStr

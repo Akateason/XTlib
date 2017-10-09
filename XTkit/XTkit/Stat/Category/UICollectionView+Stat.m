@@ -19,6 +19,7 @@
 
 + (void)load {
     [super load] ;
+    
     static dispatch_once_t onceToken ;
     dispatch_once(&onceToken, ^{
         SEL originalSelector = @selector(setDelegate:) ;
@@ -41,9 +42,10 @@
 - (void)xt_setDelegate:(id)delegate {
     [self xt_setDelegate:delegate] ;
     
+    if (!xt_Run_Stat) return ;
+    
     if (![self isContainSEL:GET_CLASS_CUSTOM_SEL(@selector(collectionView:didSelectItemAtIndexPath:), [delegate class])
-                    inClass:[delegate class]])
-    {
+                    inClass:[delegate class]]) {
         [(UICollectionView *)self swizzling_collectionViewDidSelectRowAtIndexPathInClass:delegate] ;
     }
 }
@@ -70,7 +72,7 @@
 
 - (void)xt_imp_collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@ didSelectRowAtIndexPath:%ld:%ld",NSStringFromClass([self class]),(long)indexPath.section,(long)indexPath.row) ;
+    NSLog(@"%@ didSelectRowAtIndexPath: %ld :%ld",NSStringFromClass([self class]),(long)indexPath.section,(long)indexPath.row) ;
     
     ListEvent *lEvent = [[ListEvent alloc] initWithRow:(int)(indexPath.row)
                                                section:(int)(indexPath.section)
@@ -78,14 +80,11 @@
                                               listType:@"collection"] ;
     [lEvent insert] ;
     SEL sel = GET_CLASS_CUSTOM_SEL(@selector(collectionView:didSelectItemAtIndexPath:) , [self class]) ;
-    if ([self respondsToSelector:sel])
-    {
+    if ([self respondsToSelector:sel]) {
         IMP imp = [self methodForSelector:sel] ;
         void (*func)(id,SEL,id,id) = (void *)imp ;
         func(self,sel,collectionView,indexPath) ;
     }
-
 }
-
 
 @end

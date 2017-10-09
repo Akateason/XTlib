@@ -258,7 +258,8 @@ static float const kBtFlex = 5 ;
     UIImage *image = [UIImage imageNamed:@"kobe"] ;
     image = [UIImage thumbnailWithImage:image size:CGSizeMake(100, 100)] ;
     m1.cover = UIImagePNGRepresentation(image) ;
-    [m1 xt_insert] ;
+//    [m1 xt_insert] ;
+    [m1 insert] ;
     
     
     [self display] ;
@@ -273,7 +274,8 @@ static float const kBtFlex = 5 ;
     m1.tick = [NSDate xt_getNowTick] ;
     m1.title = [NSString stringWithFormat:@"我就改你 r%d",arc4random()%99] ;
     
-    [m1 xt_update] ;
+//    [m1 xt_update] ;
+    [m1 update] ;
     
     [self display] ;
 }
@@ -307,8 +309,8 @@ static float const kBtFlex = 5 ;
         [list addObject:m1] ;
     }
     
-    [Model1 xt_insertList:list] ;
-    
+//    [Model1 xt_insertList:list] ;
+    [Model1 insertList:list] ;
     
     [self display] ;
 }
@@ -324,7 +326,8 @@ static float const kBtFlex = 5 ;
         [tmplist addObject:model] ;
     }
     
-    [Model1 xt_updateList:tmplist] ;
+//    [Model1 xt_updateList:tmplist] ;
+    [Model1 updateList:tmplist] ;
     
     [self display] ;
 }
