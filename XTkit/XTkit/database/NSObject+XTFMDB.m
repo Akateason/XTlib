@@ -303,8 +303,8 @@ static void *key_pkid = &key_pkid;
 
 #pragma mark - alter
 
-+ (BOOL)alterAddColumn:(NSString *)name
-                  type:(NSString *)type
++ (BOOL)xt_alterAddColumn:(NSString *)name
+                     type:(NSString *)type
 {
     NSString *tableName = NSStringFromClass([self class]) ;
     if (![[XTFMDBBase sharedInstance] verify]) return FALSE ;

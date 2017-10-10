@@ -338,8 +338,12 @@ static float const kBtFlex = 5 ;
     NSLog(@"m : %@",[XTJson getJsonWithModel:model]) ;
 }
 
+- (void)AlterAddAction
+{
+    [Model1 alterAddColumn:@"adddddddddd"
+                      type:@"INTEGER default 0 NOT NULL"] ;
 
-
+}
 
 #pragma mark --
 - (void)display
