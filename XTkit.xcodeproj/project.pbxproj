@@ -118,6 +118,10 @@
 		8F16B9AA1F25D9280049CEE1 /* Z8CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F16B9A81F25D9280049CEE1 /* Z8CollectionViewCell.m */; };
 		8F16B9AB1F25D9280049CEE1 /* Z8CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F16B9A91F25D9280049CEE1 /* Z8CollectionViewCell.xib */; };
 		8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25F8DE1EE656D70052A21D /* Zample8Controller.m */; };
+		8F2C584F1F9E17F600E10A55 /* NSNumber+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C584E1F9E17F500E10A55 /* NSNumber+Round.m */; };
+		8F2C58521F9E188400E10A55 /* UIResponder+ChainHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C58511F9E188400E10A55 /* UIResponder+ChainHandler.m */; };
+		8F2C58581F9E1C3B00E10A55 /* UIFont+FontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C58541F9E1C3900E10A55 /* UIFont+FontAdapter.m */; };
+		8F2C58591F9E1C3B00E10A55 /* UILabel+FontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C58551F9E1C3900E10A55 /* UILabel+FontAdapter.m */; };
 		8F37C0081EF8F20B00EE713F /* UIButton+ExtendTouchRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */; };
 		8F37C0E71F0CAA7000EE713F /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */; };
 		8F454C801F27306E0068DD43 /* XTArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C7F1F27306E0068DD43 /* XTArchive.m */; };
@@ -400,6 +404,14 @@
 		8F16B9AF1F25EF2E0049CEE1 /* XTStatConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTStatConst.h; sourceTree = "<group>"; };
 		8F25F8DD1EE656D70052A21D /* Zample8Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zample8Controller.h; sourceTree = "<group>"; };
 		8F25F8DE1EE656D70052A21D /* Zample8Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample8Controller.m; sourceTree = "<group>"; };
+		8F2C584D1F9E17F400E10A55 /* NSNumber+Round.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Round.h"; sourceTree = "<group>"; };
+		8F2C584E1F9E17F500E10A55 /* NSNumber+Round.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Round.m"; sourceTree = "<group>"; };
+		8F2C58501F9E188400E10A55 /* UIResponder+ChainHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+ChainHandler.h"; sourceTree = "<group>"; };
+		8F2C58511F9E188400E10A55 /* UIResponder+ChainHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+ChainHandler.m"; sourceTree = "<group>"; };
+		8F2C58541F9E1C3900E10A55 /* UIFont+FontAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontAdapter.m"; sourceTree = "<group>"; };
+		8F2C58551F9E1C3900E10A55 /* UILabel+FontAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FontAdapter.m"; sourceTree = "<group>"; };
+		8F2C58561F9E1C3A00E10A55 /* UIFont+FontAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontAdapter.h"; sourceTree = "<group>"; };
+		8F2C58571F9E1C3A00E10A55 /* UILabel+FontAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+FontAdapter.h"; sourceTree = "<group>"; };
 		8F37C0061EF8F20B00EE713F /* UIButton+ExtendTouchRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ExtendTouchRect.h"; sourceTree = "<group>"; };
 		8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ExtendTouchRect.m"; sourceTree = "<group>"; };
 		8F37C0E51F0CAA7000EE713F /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
@@ -838,6 +850,12 @@
 		60E2384D1E9622A1001235F2 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				8F2C58561F9E1C3A00E10A55 /* UIFont+FontAdapter.h */,
+				8F2C58541F9E1C3900E10A55 /* UIFont+FontAdapter.m */,
+				8F2C58571F9E1C3A00E10A55 /* UILabel+FontAdapter.h */,
+				8F2C58551F9E1C3900E10A55 /* UILabel+FontAdapter.m */,
+				8F2C584D1F9E17F400E10A55 /* NSNumber+Round.h */,
+				8F2C584E1F9E17F500E10A55 /* NSNumber+Round.m */,
 				60E2384E1E9622A1001235F2 /* ALAssetsLibrary+CustomPhotoAlbum.h */,
 				60E2384F1E9622A1001235F2 /* ALAssetsLibrary+CustomPhotoAlbum.m */,
 				8F9916521EC14D6B00BA8F0D /* NSDate+XTTick.h */,
@@ -874,6 +892,8 @@
 				8FFD73631EB9D19800148B83 /* UIViewController+Storyboard.m */,
 				8F37C0E51F0CAA7000EE713F /* UIViewController+Navigation.h */,
 				8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */,
+				8F2C58501F9E188400E10A55 /* UIResponder+ChainHandler.h */,
+				8F2C58511F9E188400E10A55 /* UIResponder+ChainHandler.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -1606,6 +1626,7 @@
 				8F7F95C21F10B43100236286 /* NSObject+Runtime.m in Sources */,
 				60E238E51E9622A1001235F2 /* UIImageView+QNExtention.m in Sources */,
 				8F7F95C61F10C54200236286 /* StatSender.m in Sources */,
+				8F2C58581F9E1C3B00E10A55 /* UIFont+FontAdapter.m in Sources */,
 				8FFD73421EB320BA00148B83 /* ServerRequest.m in Sources */,
 				60E238F21E9622A1001235F2 /* MyTextField.m in Sources */,
 				8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */,
@@ -1622,11 +1643,13 @@
 				607E60331EA85BE100D05213 /* SIAlertView.m in Sources */,
 				60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */,
 				607E605D1EA9F87C00D05213 /* Zample3Controller.m in Sources */,
+				8F2C58591F9E1C3B00E10A55 /* UILabel+FontAdapter.m in Sources */,
 				60E239051E9622A1001235F2 /* NSTimer+Addition.m in Sources */,
 				8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */,
 				8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */,
 				607E603E1EA8740A00D05213 /* RootRefreshFooter.m in Sources */,
 				8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */,
+				8F2C584F1F9E17F600E10A55 /* NSNumber+Round.m in Sources */,
 				60E238E11E9622A1001235F2 /* NSObject+Reflection.m in Sources */,
 				607E602A1EA85BE100D05213 /* Base64.m in Sources */,
 				8FD763591F2F224D0085F56D /* TCase2.m in Sources */,
@@ -1639,6 +1662,7 @@
 				60E238F91E9622A1001235F2 /* UIImage+ImageEffects.m in Sources */,
 				60E238E61E9622A1001235F2 /* UILabel+Badges.m in Sources */,
 				60E2381E1E961D21001235F2 /* AppDelegate.m in Sources */,
+				8F2C58521F9E188400E10A55 /* UIResponder+ChainHandler.m in Sources */,
 				8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */,
 				607E5FDB1EA7483100D05213 /* UserOnDevice.m in Sources */,
 				60E238E71E9622A1001235F2 /* UIView+Sizes.m in Sources */,
