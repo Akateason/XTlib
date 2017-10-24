@@ -7,51 +7,81 @@
 //
 
 #import "Zample4Controller.h"
+#import "XTColorFetcher.h"
+#import "UIColor+AllColors.h"
+#import "RootTableView.h"
+#import "XTColorCell.h"
 
-#import "XTColor.h"
-//#import "NSObject+Runtime.h"
-
-@interface Zample4Controller ()
-
+@interface Zample4Controller () <UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) RootTableView *table ;
+@property (nonatomic,strong) NSArray *list_datasource ;
 @end
 
 @implementation Zample4Controller
-
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.title = @"color" ;
     
-    self.view.backgroundColor = UIColorWithKey(@"inputText1") ;
+    self.list_datasource = @[
+                             [UIColor mainBlue] ,
+                             [UIColor text1] ,
+                             [UIColor lightYellow] ,
+                             [UIColor borderGray] ,
+                             [UIColor grayBg] ,
+                             [UIColor purple] ,
+                             [UIColor weixinGreen]
+                             ] ;
     
-    UIView *view2 = [UIView new] ;
-    [self.view addSubview:view2] ;
-    view2.backgroundColor = UIColorWithKey(@"mainBlue") ;
-    [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.left.right.equalTo(self.view) ;
-        make.height.mas_equalTo(100) ;
-    }] ;
+    self.table = ({
+        RootTableView *view = [[RootTableView alloc] initWithFrame:APPFRAME
+                                                             style:0] ;
+        view.delegate           = self  ;
+        view.dataSource         = self  ;
+        view.isShowRefreshDetail  = TRUE  ;
+        [self.view addSubview:view] ;
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0)) ;
+        }] ;
+        view ;
+    }) ;
     
-    [self test] ;
+    [self.table registerClass:[XTColorCell class] forCellReuseIdentifier:@"XTColorCell"] ;
 }
-
-- (void)test
-{
-    UIView *view = [UIView new] ;
-    view.backgroundColor = UIColorWithKey(@"inputText2") ;
-    view.frame = CGRectMake(100, 200, 79, 79) ;
-    [self.view addSubview:view] ;
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - UITableView
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 99 ;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XTColorCell *cell = [XTColorCell cellWithTable:tableView] ;
+    [cell configure:self.list_datasource[indexPath.row % self.list_datasource.count]] ;
+    return cell ;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [XTColorCell cellHeight] ;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+
 
 /*
 #pragma mark - Navigation

@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#define UIColorWithKey(__name__)        [[XTColorFetcher sharedInstance] xt_colorWithKey:(__name__)]
 
-#define XTCOLOR                         return [[XTColorFetcher sharedInstance] xt_colorWithKey:NSStringFromSelector(_cmd)] ;
 
 @interface XTColorFetcher : NSObject
 + (instancetype)sharedInstance ;
+@property (nonatomic,strong,readonly) NSDictionary *dicData   ;
 - (void)configurePlist:(NSString *)plist ;
 - (UIColor *)xt_colorWithKey:(NSString *)key ;
 @end

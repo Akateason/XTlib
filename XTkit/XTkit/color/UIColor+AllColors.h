@@ -11,9 +11,11 @@
 @interface UIColor (AllColors)
 
 + (UIColor *)mainBlue ;
-+ (UIColor *)inputText1 ;
-+ (UIColor *)inputText2 ;
++ (UIColor *)text1 ;
++ (UIColor *)lightYellow ;
 + (UIColor *)borderGray ;
 + (UIColor *)grayBg ;
++ (UIColor *)purple ;
++ (UIColor *)weixinGreen ;
 
 @end

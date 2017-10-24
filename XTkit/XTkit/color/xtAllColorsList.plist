@@ -3,14 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>mainBlue</key>
-	<string>405eeb</string>
-	<key>inputText1</key>
+	<string>405eeb,</string>
+	<key>text1</key>
 	<string>909090</string>
-	<key>inputText2</key>
-	<string>5c5c5c</string>
+	<key>lightYellow</key>
+	<string>e7e666,.8</string>
 	<key>borderGray</key>
 	<string>[219,219,219]</string>
 	<key>grayBg</key>
-	<string>f5f5f5</string>
+	<string>218,77,70,1</string>
+	<key>purple</key>
+	<string>185 74 221 0.5</string>
+	<key>weixinGreen</key>
+	<string>153,215,93</string>
 </dict>
 </plist>

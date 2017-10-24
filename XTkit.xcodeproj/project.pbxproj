@@ -104,7 +104,6 @@
 		60E239141E9622A1001235F2 /* XTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D51E9622A1001235F2 /* XTJson.m */; };
 		60E239151E9622A1001235F2 /* XTSearchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D81E9622A1001235F2 /* XTSearchHandler.m */; };
 		60E239171E9622A1001235F2 /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238DE1E9622A1001235F2 /* XTVerification.m */; };
-		8F0BDBB11F13AF3300DBED71 /* XTColorFetcher+Dynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0BDBB01F13AF3300DBED71 /* XTColorFetcher+Dynamic.m */; };
 		8F158C7A1EC2A79200B0F551 /* Z5DisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C791EC2A79200B0F551 /* Z5DisplayController.m */; };
 		8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C7C1EC2A8B300B0F551 /* Z5DisplayCell.m */; };
 		8F158C7F1EC2A8E900B0F551 /* Z5DisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F158C7E1EC2A8E900B0F551 /* Z5DisplayCell.xib */; };
@@ -144,6 +143,8 @@
 		8F9916541EC14D6B00BA8F0D /* NSDate+XTTick.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916531EC14D6B00BA8F0D /* NSDate+XTTick.m */; };
 		8F9916571EC150BF00BA8F0D /* NSDate+NSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */; };
 		8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */; };
+		8FA4DE721F9F0997009F7928 /* UIColor+AllColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE711F9F0997009F7928 /* UIColor+AllColors.m */; };
+		8FA4DE751F9F0DB0009F7928 /* XTColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE741F9F0DB0009F7928 /* XTColorCell.m */; };
 		8FD763591F2F224D0085F56D /* TCase2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD763581F2F224D0085F56D /* TCase2.m */; };
 		8FD763D01F31A9450085F56D /* DevInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD763CF1F31A9450085F56D /* DevInfo.m */; };
 		8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */; };
@@ -375,9 +376,6 @@
 		60E238DD1E9622A1001235F2 /* XTVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTVerification.h; sourceTree = "<group>"; };
 		60E238DE1E9622A1001235F2 /* XTVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTVerification.m; sourceTree = "<group>"; };
 		7CF43A032C3BF2386C1D5B60 /* Pods-XTkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-XTkit/Pods-XTkit.release.xcconfig"; sourceTree = "<group>"; };
-		8F0BDBAF1F13AF3300DBED71 /* XTColorFetcher+Dynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XTColorFetcher+Dynamic.h"; sourceTree = "<group>"; };
-		8F0BDBB01F13AF3300DBED71 /* XTColorFetcher+Dynamic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XTColorFetcher+Dynamic.m"; sourceTree = "<group>"; };
-		8F0BDBB21F145F3400DBED71 /* XTColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTColor.h; sourceTree = "<group>"; };
 		8F158C781EC2A79200B0F551 /* Z5DisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Z5DisplayController.h; path = z5/Z5DisplayController.h; sourceTree = "<group>"; };
 		8F158C791EC2A79200B0F551 /* Z5DisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Z5DisplayController.m; path = z5/Z5DisplayController.m; sourceTree = "<group>"; };
 		8F158C7B1EC2A8B300B0F551 /* Z5DisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Z5DisplayCell.h; path = z5/Z5DisplayCell.h; sourceTree = "<group>"; };
@@ -457,6 +455,10 @@
 		8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSCalendar.m"; sourceTree = "<group>"; };
 		8F99165A1EC1B6B400BA8F0D /* XTCacheRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCacheRequest.h; sourceTree = "<group>"; };
 		8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCacheRequest.m; sourceTree = "<group>"; };
+		8FA4DE701F9F0997009F7928 /* UIColor+AllColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AllColors.h"; sourceTree = "<group>"; };
+		8FA4DE711F9F0997009F7928 /* UIColor+AllColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AllColors.m"; sourceTree = "<group>"; };
+		8FA4DE731F9F0DB0009F7928 /* XTColorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTColorCell.h; sourceTree = "<group>"; };
+		8FA4DE741F9F0DB0009F7928 /* XTColorCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTColorCell.m; sourceTree = "<group>"; };
 		8FD763571F2F224D0085F56D /* TCase2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCase2.h; sourceTree = "<group>"; };
 		8FD763581F2F224D0085F56D /* TCase2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCase2.m; sourceTree = "<group>"; };
 		8FD763CE1F31A9450085F56D /* DevInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevInfo.h; sourceTree = "<group>"; };
@@ -901,14 +903,13 @@
 		60E238601E9622A1001235F2 /* color */ = {
 			isa = PBXGroup;
 			children = (
-				60E238631E9622A1001235F2 /* UIColor+HexString.h */,
-				60E238641E9622A1001235F2 /* UIColor+HexString.m */,
 				60E238651E9622A1001235F2 /* xtAllColorsList.plist */,
+				8FA4DE701F9F0997009F7928 /* UIColor+AllColors.h */,
+				8FA4DE711F9F0997009F7928 /* UIColor+AllColors.m */,
 				60E238661E9622A1001235F2 /* XTColorFetcher.h */,
 				60E238671E9622A1001235F2 /* XTColorFetcher.m */,
-				8F0BDBAF1F13AF3300DBED71 /* XTColorFetcher+Dynamic.h */,
-				8F0BDBB01F13AF3300DBED71 /* XTColorFetcher+Dynamic.m */,
-				8F0BDBB21F145F3400DBED71 /* XTColor.h */,
+				60E238631E9622A1001235F2 /* UIColor+HexString.h */,
+				60E238641E9622A1001235F2 /* UIColor+HexString.m */,
 			);
 			path = color;
 			sourceTree = "<group>";
@@ -1363,6 +1364,8 @@
 			children = (
 				8FFD733B1EB30A5400148B83 /* Zample4Controller.h */,
 				8FFD733C1EB30A5400148B83 /* Zample4Controller.m */,
+				8FA4DE731F9F0DB0009F7928 /* XTColorCell.h */,
+				8FA4DE741F9F0DB0009F7928 /* XTColorCell.m */,
 			);
 			name = z4;
 			sourceTree = "<group>";
@@ -1631,6 +1634,7 @@
 				60E238F21E9622A1001235F2 /* MyTextField.m in Sources */,
 				8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */,
 				607E606C1EAD86A000D05213 /* MovieCell.m in Sources */,
+				8FA4DE721F9F0997009F7928 /* UIColor+AllColors.m in Sources */,
 				8FFD73641EB9D19800148B83 /* UIViewController+Storyboard.m in Sources */,
 				8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */,
 				607E602E1EA85BE100D05213 /* KICropImageView.m in Sources */,
@@ -1654,7 +1658,6 @@
 				607E602A1EA85BE100D05213 /* Base64.m in Sources */,
 				8FD763591F2F224D0085F56D /* TCase2.m in Sources */,
 				60E239021E9622A1001235F2 /* XTBarrageItemView.m in Sources */,
-				8F0BDBB11F13AF3300DBED71 /* XTColorFetcher+Dynamic.m in Sources */,
 				60E239121E9622A1001235F2 /* XTAnimation.m in Sources */,
 				607E60631EA9FB7100D05213 /* Rating.m in Sources */,
 				8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */,
@@ -1690,6 +1693,7 @@
 				607E60661EA9FBC900D05213 /* Images.m in Sources */,
 				607E60601EA9FAE400D05213 /* Movie.m in Sources */,
 				607E60411EA8810B00D05213 /* RootTableCell.m in Sources */,
+				8FA4DE751F9F0DB0009F7928 /* XTColorCell.m in Sources */,
 				8F16B99D1F25D4630049CEE1 /* UIApplication+Stat.m in Sources */,
 				607E602B1EA85BE100D05213 /* NSString+MD5.m in Sources */,
 				60E238E21E9622A1001235F2 /* NSString+Extend.m in Sources */,
