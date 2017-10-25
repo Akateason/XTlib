@@ -9,9 +9,11 @@
 #import "ViewController.h"
 #import "RootTableView.h"
 #import "RootTableCell.h"
+#import "PlistUtil.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table ;
+@property (strong,nonatomic) NSArray *names ;
 @end
 
 @implementation ViewController
@@ -23,6 +25,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.table.dataSource   = self ;
     self.table.delegate     = self ;
+    self.names = ({
+        NSArray *list = [PlistUtil arrayWithPlist:@"viewControllers"] ;
+        list ;
+    }) ;
 }
 
 
@@ -30,13 +36,14 @@
 #pragma mark - UITableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 9 ; //
+    return self.names.count ; //
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RootTableCell *cell = [RootTableCell cellWithTable:tableView] ;
-    cell.textLabel.text = [NSString stringWithFormat:@"Zample%ld",indexPath.row + 1] ;
+    cell.textLabel.text = self.names[indexPath.row] ;
+    // [NSString stringWithFormat:@"Zample%ld",indexPath.row + 1] ;
     return cell ;
 }
 

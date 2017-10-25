@@ -145,6 +145,8 @@
 		8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */; };
 		8FA4DE721F9F0997009F7928 /* UIColor+AllColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE711F9F0997009F7928 /* UIColor+AllColors.m */; };
 		8FA4DE751F9F0DB0009F7928 /* XTColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE741F9F0DB0009F7928 /* XTColorCell.m */; };
+		8FA4DE7A1FA0224A009F7928 /* PlistUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE791FA0224A009F7928 /* PlistUtil.m */; };
+		8FA4DE7C1FA02608009F7928 /* viewControllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FA4DE7B1FA02608009F7928 /* viewControllers.plist */; };
 		8FD763591F2F224D0085F56D /* TCase2.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD763581F2F224D0085F56D /* TCase2.m */; };
 		8FD763D01F31A9450085F56D /* DevInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD763CF1F31A9450085F56D /* DevInfo.m */; };
 		8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */; };
@@ -459,6 +461,9 @@
 		8FA4DE711F9F0997009F7928 /* UIColor+AllColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AllColors.m"; sourceTree = "<group>"; };
 		8FA4DE731F9F0DB0009F7928 /* XTColorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTColorCell.h; sourceTree = "<group>"; };
 		8FA4DE741F9F0DB0009F7928 /* XTColorCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTColorCell.m; sourceTree = "<group>"; };
+		8FA4DE781FA0224A009F7928 /* PlistUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlistUtil.h; sourceTree = "<group>"; };
+		8FA4DE791FA0224A009F7928 /* PlistUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlistUtil.m; sourceTree = "<group>"; };
+		8FA4DE7B1FA02608009F7928 /* viewControllers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = viewControllers.plist; sourceTree = "<group>"; };
 		8FD763571F2F224D0085F56D /* TCase2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCase2.h; sourceTree = "<group>"; };
 		8FD763581F2F224D0085F56D /* TCase2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCase2.m; sourceTree = "<group>"; };
 		8FD763CE1F31A9450085F56D /* DevInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevInfo.h; sourceTree = "<group>"; };
@@ -793,6 +798,7 @@
 				607E5FDA1EA7483100D05213 /* UserOnDevice.m */,
 				60E2381F1E961D21001235F2 /* ViewController.h */,
 				60E238201E961D21001235F2 /* ViewController.m */,
+				8FA4DE7B1FA02608009F7928 /* viewControllers.plist */,
 				8FFD73401EB320BA00148B83 /* ServerRequest.h */,
 				8FFD73411EB320BA00148B83 /* ServerRequest.m */,
 				60E238221E961D21001235F2 /* Main.storyboard */,
@@ -1119,6 +1125,7 @@
 		60E238BD1E9622A1001235F2 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				8FA4DE771FA0222B009F7928 /* PlistUtil */,
 				8F7E65251F1F39790028217B /* ScreenFit */,
 				8F7E65211F1F38E00028217B /* IsFirstTime */,
 				60E238BE1E9622A1001235F2 /* CommonFunc */,
@@ -1313,6 +1320,15 @@
 				8F16B9AF1F25EF2E0049CEE1 /* XTStatConst.h */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		8FA4DE771FA0222B009F7928 /* PlistUtil */ = {
+			isa = PBXGroup;
+			children = (
+				8FA4DE781FA0224A009F7928 /* PlistUtil.h */,
+				8FA4DE791FA0224A009F7928 /* PlistUtil.m */,
+			);
+			path = PlistUtil;
 			sourceTree = "<group>";
 		};
 		8FDE031A1EC541E400FFBADA /* XTFMDB */ = {
@@ -1518,6 +1534,7 @@
 				60E239001E9622A1001235F2 /* ShareCollectionCell.xib in Resources */,
 				60E238FE1E9622A1001235F2 /* ShareAlertView.xib in Resources */,
 				60E238261E961D21001235F2 /* Assets.xcassets in Resources */,
+				8FA4DE7C1FA02608009F7928 /* viewControllers.plist in Resources */,
 				60E238EA1E9622A1001235F2 /* xtAllColorsList.plist in Resources */,
 				8F16B9AB1F25D9280049CEE1 /* Z8CollectionViewCell.xib in Resources */,
 				60E238241E961D21001235F2 /* Main.storyboard in Resources */,
@@ -1671,6 +1688,7 @@
 				60E238E71E9622A1001235F2 /* UIView+Sizes.m in Sources */,
 				60E238F71E9622A1001235F2 /* GradientBGView.m in Sources */,
 				8F7F95BC1F0F615F00236286 /* ListEvent.m in Sources */,
+				8FA4DE7A1FA0224A009F7928 /* PlistUtil.m in Sources */,
 				60E239031E9622A1001235F2 /* XTBarrageView.m in Sources */,
 				607E603B1EA8714F00D05213 /* RootRefreshHeader.m in Sources */,
 				607E5FD81EA728F100D05213 /* ShareDigit.m in Sources */,

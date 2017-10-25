@@ -33,7 +33,7 @@ static const NSInteger kEveryCount = 10 ;
     self.list_datasource = @[] ;
     
     self.table = ({
-        RootTableView *view = [[RootTableView alloc] initWithFrame:APPFRAME
+        RootTableView *view = [[RootTableView alloc] initWithFrame:self.view.bounds
                                                              style:0] ;
         view.delegate           = self  ;
         view.dataSource         = self  ;
@@ -62,10 +62,8 @@ static const NSInteger kEveryCount = 10 ;
                                              NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]] ;
                                              self.list_datasource = tmplist ;
                                              
-//                                             if (endRefresh)
                                                  endRefresh() ;
                                          } fail:^{                                             
-//                                             if (endRefresh)
                                                  endRefresh() ;
                                          }] ;
 }

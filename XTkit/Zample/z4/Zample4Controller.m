@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"color" ;
+    self.title = @"XTColorFetcher" ;
     
     self.list_datasource = @[
                              [UIColor mainBlue] ,

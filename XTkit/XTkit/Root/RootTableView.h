@@ -42,6 +42,11 @@
  u can rewrite in subclass if needed
  */
 - (void)prepareStyle ;
+
+/**
+ endRefresh header and footer if needed .
+ */
+- (void)endRefresh ;
 @end
 
 

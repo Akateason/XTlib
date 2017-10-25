@@ -183,6 +183,12 @@
     }) ;
 }
 
+- (void)endRefresh {
+    [self reloadTableInMainThread] ;
+    if (self.mj_header.isRefreshing) [self.mj_header endRefreshing] ;
+    if (self.mj_footer.isRefreshing) [self.mj_footer endRefreshing] ;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

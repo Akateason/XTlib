@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>inherit &apos;RootTableCell&apos;</string>
+	<string>RootTableView and Request</string>
+	<string>cell from NIB</string>
+	<string>XTColorFetcher</string>
+	<string>XTFMDB</string>
+	<string>XTReq</string>
+	<string>rac 1</string>
+	<string>hook</string>
+	<string>testing</string>
+</array>
+</plist>
