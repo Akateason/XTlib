@@ -68,7 +68,7 @@
              hud:(BOOL)hud
           policy:(XTResponseCachePolicy)cachePolicy
    timeoutIfNeed:(int)timeoutIfNeed
-     judgeResult:(BOOL(^)(id json))completion ;
+     judgeResult:(BOOL (^)(id json))completion ;
 
 
 

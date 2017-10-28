@@ -59,7 +59,7 @@
 
 + (void)zample6_GetMovieListWithStart:(NSInteger)start
                                 count:(NSInteger)count
-                           completion:(void (^)(id json))completion
+                           completion:(BOOL (^)(id json))completion
 {
     XT_GET_PARAM
     [param setObject:@(start)
@@ -73,16 +73,7 @@
                          hud:YES
                       policy:XTResponseCachePolicyAlwaysCache
                timeoutIfNeed:0
-                  completion:completion] ;
-    
-//    [XTCacheRequest cacheGET:@"https://api.douban.com/v2/movie/top250"
-//                  parameters:param
-//                         hud:YES
-//                      policy:XTResponseCachePolicyTimeout
-//               timeoutIfNeed:60 * 10
-//                  completion:^(id json) {
-//                      completion(json) ;
-//                  }] ;
+                  judgeResult:completion] ;
 }
 
 

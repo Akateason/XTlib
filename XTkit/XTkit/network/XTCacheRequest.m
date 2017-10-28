@@ -98,9 +98,9 @@
     if (!resModel)
     {// not cache
         resModel = [XTResponseDBModel newDefaultModelWithKey:strUniqueKey
-                                                       val:nil                         // response is nil
-                                                    policy:cachePolicy
-                                                   timeout:timeoutIfNeed] ;
+                                                         val:nil                         // response is nil
+                                                      policy:cachePolicy
+                                                     timeout:timeoutIfNeed] ;
         
         [self updateRequestWithType:XTRequestMode_GET_MODE
                                 url:url

@@ -21,7 +21,7 @@
 
 + (void)zample6_GetMovieListWithStart:(NSInteger)start
                                 count:(NSInteger)count
-                           completion:(void (^)(id json))completion ;
+                           completion:(BOOL (^)(id json))completion ;
 
 + (void)zample7_request:(int)bookID
                 success:(void (^)(id json))success

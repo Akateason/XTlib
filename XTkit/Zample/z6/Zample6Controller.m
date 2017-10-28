@@ -58,13 +58,12 @@ static const NSInteger kEveryCount = 10 ;
 {
     [ServerRequest zample6_GetMovieListWithStart:0
                                            count:kEveryCount
-                                      completion:^(id json) {
-                                          
+                                      completion:^BOOL(id json) {
                                           NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]] ;
+                                          if (!tmplist) return YES ;
                                           self.list_datasource = tmplist ;
-                                          
                                           endRefresh() ;
-                                          
+                                          return NO ;
                                       }] ;
     
 }
@@ -73,14 +72,13 @@ static const NSInteger kEveryCount = 10 ;
 {
     [ServerRequest zample6_GetMovieListWithStart:self.list_datasource.count
                                            count:kEveryCount
-                                      completion:^(id json) {
-                                          
+                                      completion:^BOOL(id json) {
                                           NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]] ;
+                                          if (!tmplist) return YES ;
                                           NSMutableArray *list = [self.list_datasource mutableCopy] ;
                                           self.list_datasource = [list arrayByAddingObjectsFromArray:tmplist] ;
-                                          
                                           endRefresh() ;
-
+                                          return NO ;
                                       }] ;
     
 }
