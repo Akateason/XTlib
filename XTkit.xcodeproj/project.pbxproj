@@ -1259,6 +1259,7 @@
 		8F37C0E11F0C94C700EE713F /* Stat */ = {
 			isa = PBXGroup;
 			children = (
+				8F16B9AF1F25EF2E0049CEE1 /* XTStatConst.h */,
 				8F16B9941F25D4630049CEE1 /* Category */,
 				8F16B9901F25D1C70049CEE1 /* util */,
 				8F7F95C31F10C4E900236286 /* Module */,
@@ -1322,7 +1323,6 @@
 				8F7F95C51F10C54200236286 /* StatSender.m */,
 				8F7F95C71F10D56700236286 /* XTStat.h */,
 				8F7F95C81F10D56700236286 /* XTStat.m */,
-				8F16B9AF1F25EF2E0049CEE1 /* XTStatConst.h */,
 			);
 			path = Module;
 			sourceTree = "<group>";
