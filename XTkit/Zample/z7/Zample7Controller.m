@@ -24,7 +24,7 @@
     [super viewDidLoad] ;
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout = UIRectEdgeNone ;
-    self.title = @"rac 1" ;
+//    self.title = @"rac 1" ;
     
     [self setupUIsLayout] ;
     

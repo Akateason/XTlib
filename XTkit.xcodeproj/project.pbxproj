@@ -715,20 +715,20 @@
 		607E60451EA8895B00D05213 /* Zample */ = {
 			isa = PBXGroup;
 			children = (
-				607E60491EA88B5700D05213 /* z1 */,
-				607E60501EA8A3DF00D05213 /* z2 */,
-				607E605A1EA9F85B00D05213 /* z3 */,
-				8FFD733A1EB30A3100148B83 /* z4 */,
-				8FFD73431EB3218C00148B83 /* z5 */,
-				8FFD73541EB9B3B400148B83 /* z6 */,
-				8FDE031C1EC5AF0500FFBADA /* z7 */,
-				8F25F8DC1EE656BB0052A21D /* z8 */,
-				8F454C871F296E860068DD43 /* z9 */,
+				607E60491EA88B5700D05213 /* z1_code_rootTableCell */,
+				607E60501EA8A3DF00D05213 /* z2_rootTable_+_Req */,
+				607E605A1EA9F85B00D05213 /* z3_nib_rootTablecell */,
+				8FFD733A1EB30A3100148B83 /* z4_xtcolorfetcher */,
+				8FFD73431EB3218C00148B83 /* z5_xtfmdb */,
+				8FFD73541EB9B3B400148B83 /* z6_xtreq */,
+				8FDE031C1EC5AF0500FFBADA /* z7_rac_demo */,
+				8F25F8DC1EE656BB0052A21D /* z8_bt */,
+				8F454C871F296E860068DD43 /* z9_proxy */,
 			);
 			path = Zample;
 			sourceTree = "<group>";
 		};
-		607E60491EA88B5700D05213 /* z1 */ = {
+		607E60491EA88B5700D05213 /* z1_code_rootTableCell */ = {
 			isa = PBXGroup;
 			children = (
 				607E604A1EA88B5700D05213 /* Zample1Controller.h */,
@@ -736,10 +736,10 @@
 				607E604D1EA88B8100D05213 /* Z1CustomCell.h */,
 				607E604E1EA88B8100D05213 /* Z1CustomCell.m */,
 			);
-			path = z1;
+			path = z1_code_rootTableCell;
 			sourceTree = "<group>";
 		};
-		607E60501EA8A3DF00D05213 /* z2 */ = {
+		607E60501EA8A3DF00D05213 /* z2_rootTable_+_Req */ = {
 			isa = PBXGroup;
 			children = (
 				607E60511EA8A3F600D05213 /* Zample2Controller.h */,
@@ -749,10 +749,10 @@
 				607E60571EA9DEF300D05213 /* DoubanTagsCell.h */,
 				607E60581EA9DEF300D05213 /* DoubanTagsCell.m */,
 			);
-			path = z2;
+			path = "z2_rootTable_+_Req";
 			sourceTree = "<group>";
 		};
-		607E605A1EA9F85B00D05213 /* z3 */ = {
+		607E605A1EA9F85B00D05213 /* z3_nib_rootTablecell */ = {
 			isa = PBXGroup;
 			children = (
 				607E605B1EA9F87C00D05213 /* Zample3Controller.h */,
@@ -767,7 +767,7 @@
 				607E60641EA9FBC900D05213 /* Images.h */,
 				607E60651EA9FBC900D05213 /* Images.m */,
 			);
-			path = z3;
+			path = z3_nib_rootTablecell;
 			sourceTree = "<group>";
 		};
 		60E2380D1E961D21001235F2 = {
@@ -1242,7 +1242,7 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		8F25F8DC1EE656BB0052A21D /* z8 */ = {
+		8F25F8DC1EE656BB0052A21D /* z8_bt */ = {
 			isa = PBXGroup;
 			children = (
 				8F25F8DD1EE656D70052A21D /* Zample8Controller.h */,
@@ -1253,7 +1253,7 @@
 				8F16B9A81F25D9280049CEE1 /* Z8CollectionViewCell.m */,
 				8F16B9A91F25D9280049CEE1 /* Z8CollectionViewCell.xib */,
 			);
-			path = z8;
+			path = z8_bt;
 			sourceTree = "<group>";
 		};
 		8F37C0E11F0C94C700EE713F /* Stat */ = {
@@ -1268,7 +1268,7 @@
 			path = Stat;
 			sourceTree = "<group>";
 		};
-		8F454C871F296E860068DD43 /* z9 */ = {
+		8F454C871F296E860068DD43 /* z9_proxy */ = {
 			isa = PBXGroup;
 			children = (
 				8F454C881F296E990068DD43 /* Zample9Controller.h */,
@@ -1280,7 +1280,7 @@
 				8FA4DE831FA03227009F7928 /* MySon.h */,
 				8FA4DE841FA03227009F7928 /* MySon.m */,
 			);
-			path = z9;
+			path = z9_proxy;
 			sourceTree = "<group>";
 		};
 		8F7E65211F1F38E00028217B /* IsFirstTime */ = {
@@ -1371,16 +1371,16 @@
 			name = XTReq;
 			sourceTree = "<group>";
 		};
-		8FDE031C1EC5AF0500FFBADA /* z7 */ = {
+		8FDE031C1EC5AF0500FFBADA /* z7_rac_demo */ = {
 			isa = PBXGroup;
 			children = (
 				8FDE031D1EC5AF2E00FFBADA /* Zample7Controller.h */,
 				8FDE031E1EC5AF2E00FFBADA /* Zample7Controller.m */,
 			);
-			name = z7;
+			name = z7_rac_demo;
 			sourceTree = "<group>";
 		};
-		8FFD733A1EB30A3100148B83 /* z4 */ = {
+		8FFD733A1EB30A3100148B83 /* z4_xtcolorfetcher */ = {
 			isa = PBXGroup;
 			children = (
 				8FFD733B1EB30A5400148B83 /* Zample4Controller.h */,
@@ -1388,10 +1388,10 @@
 				8FA4DE731F9F0DB0009F7928 /* XTColorCell.h */,
 				8FA4DE741F9F0DB0009F7928 /* XTColorCell.m */,
 			);
-			name = z4;
+			name = z4_xtcolorfetcher;
 			sourceTree = "<group>";
 		};
-		8FFD73431EB3218C00148B83 /* z5 */ = {
+		8FFD73431EB3218C00148B83 /* z5_xtfmdb */ = {
 			isa = PBXGroup;
 			children = (
 				8FFD73441EB321A900148B83 /* Zample5Controller.h */,
@@ -1404,16 +1404,16 @@
 				8F158C7C1EC2A8B300B0F551 /* Z5DisplayCell.m */,
 				8F158C7E1EC2A8E900B0F551 /* Z5DisplayCell.xib */,
 			);
-			name = z5;
+			name = z5_xtfmdb;
 			sourceTree = "<group>";
 		};
-		8FFD73541EB9B3B400148B83 /* z6 */ = {
+		8FFD73541EB9B3B400148B83 /* z6_xtreq */ = {
 			isa = PBXGroup;
 			children = (
 				8FFD73551EB9B3E400148B83 /* Zample6Controller.h */,
 				8FFD73561EB9B3E400148B83 /* Zample6Controller.m */,
 			);
-			name = z6;
+			name = z6_xtreq;
 			sourceTree = "<group>";
 		};
 		8FFD73671EB9D25600148B83 /* database */ = {

@@ -10,10 +10,12 @@
 #import "RootTableView.h"
 #import "RootTableCell.h"
 #import "PlistUtil.h"
+#import "ScreenHeader.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table ;
-@property (strong,nonatomic) NSArray *names ;
+@property (strong,nonatomic) NSArray *dataSource ;
+@property (strong,nonatomic) NSArray *sectionKeys ;
 @end
 
 @implementation ViewController
@@ -25,38 +27,65 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.table.dataSource   = self ;
     self.table.delegate     = self ;
-    self.names = ({
+    self.dataSource = ({
         NSArray *list = [PlistUtil arrayWithPlist:@"viewControllers"] ;
         list ;
+    }) ;
+    self.sectionKeys = ({
+        NSMutableArray *tmplist = [@[] mutableCopy] ;
+        [_dataSource enumerateObjectsUsingBlock:^(NSDictionary *dic, NSUInteger idx, BOOL * _Nonnull stop) {
+            [tmplist addObject:[[dic allKeys] firstObject]] ;
+        }] ;
+        tmplist ;
     }) ;
 }
 
 
 
 #pragma mark - UITableView
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.dataSource.count ;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.names.count ; //
+    
+    return (int)((NSArray *)(self.dataSource[section])[self.sectionKeys[section]]).count ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RootTableCell *cell = [RootTableCell cellWithTable:tableView] ;
-    cell.textLabel.text = self.names[indexPath.row] ;
-    // [NSString stringWithFormat:@"Zample%ld",indexPath.row + 1] ;
+    NSDictionary *dic = [((NSArray *)(self.dataSource[indexPath.section])[self.sectionKeys[indexPath.section]]) objectAtIndex:indexPath.row] ;
+    cell.textLabel.text = dic[@"title"] ;
     return cell ;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *clsName = [NSString stringWithFormat:@"Zample%dController",(int)indexPath.row + 1] ;
+    NSDictionary *dic = [(NSArray *)(self.dataSource[indexPath.section])[self.sectionKeys[indexPath.section]] objectAtIndex:indexPath.row] ;
+    NSString *clsName = dic[@"cname"] ;
     Class ctrllerCls = objc_getRequiredClass([clsName UTF8String]) ;
     UIViewController *ctrller = [[ctrllerCls alloc] init] ;
     ctrller.title = clsName ;
     [self.navigationController pushViewController:ctrller animated:YES] ;
 }
 
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UITableViewHeaderFooterView *head = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:@"head"] ;
+    if (!head) {
+        head = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, 44)] ;
+    }
+    head.textLabel.text = self.sectionKeys[section] ;
+    return head ;
+}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44 ;
+}
 
 
 

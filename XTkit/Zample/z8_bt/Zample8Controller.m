@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"hook" ;
+//    self.title = @"hook" ;
     
     UIButton *button = [UIButton new] ;
     [button setTitle:@"dddd" forState:0] ;

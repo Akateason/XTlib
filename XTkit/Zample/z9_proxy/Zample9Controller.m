@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"NSProxy" ;
+//    self.title = @"NSProxy" ;
     MySon *son = [MySon sonProxy] ;
     [son playBasketballLike:@"jordan"] ;
     [son buyClothesWithSize:ClothesSizeLarge] ;

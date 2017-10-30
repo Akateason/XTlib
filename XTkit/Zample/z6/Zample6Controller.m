@@ -65,7 +65,6 @@ static const NSInteger kEveryCount = 10 ;
                                           endRefresh() ;
                                           return XTReqSaveJudgment_willSave ;
                                       }] ;
-    
 }
 
 - (void)loadMore:(void(^)(void))endRefresh
@@ -80,7 +79,6 @@ static const NSInteger kEveryCount = 10 ;
                                           endRefresh() ;
                                           return XTReqSaveJudgment_willSave ;
                                       }] ;
-    
 }
 
 
