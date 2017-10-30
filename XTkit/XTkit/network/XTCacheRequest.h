@@ -9,6 +9,10 @@
 #import "XTRequest.h"
 #import "XTResponseDBModel.h"
 
+typedef enum : NSUInteger {
+    XTReqSaveJudgment_willSave      = 0 ,
+    XTReqSaveJudgment_NotSave       = 1 ,
+} XTReqSaveJudgment ;
 
 @interface XTCacheRequest : XTRequest
 
@@ -20,7 +24,7 @@
 
 + (void)cacheGET:(NSString *)url
       parameters:(NSDictionary *)param
-     judgeResult:(BOOL(^)(id json))completion ;
+     judgeResult:(XTReqSaveJudgment(^)(id json))completion ;
 
 + (void)cacheGET:(NSString *)url
           header:(NSDictionary *)header
@@ -30,7 +34,7 @@
 + (void)cacheGET:(NSString *)url
           header:(NSDictionary *)header
       parameters:(NSDictionary *)param
-     judgeResult:(BOOL(^)(id json))completion ;
+     judgeResult:(XTReqSaveJudgment(^)(id json))completion ;
 
 /**
  cacheGET completion
@@ -68,7 +72,7 @@
              hud:(BOOL)hud
           policy:(XTResponseCachePolicy)cachePolicy
    timeoutIfNeed:(int)timeoutIfNeed
-     judgeResult:(BOOL (^)(id json))completion ;
+     judgeResult:(XTReqSaveJudgment (^)(id json))completion ;
 
 
 
@@ -80,7 +84,7 @@
 
 + (void)cachePOST:(NSString *)url
        parameters:(NSDictionary *)param
-      judgeResult:(BOOL(^)(id json))completion ;
+      judgeResult:(XTReqSaveJudgment(^)(id json))completion ;
 
 + (void)cachePOST:(NSString *)url
            header:(NSDictionary *)header
@@ -90,7 +94,7 @@
 + (void)cachePOST:(NSString *)url
            header:(NSDictionary *)header
        parameters:(NSDictionary *)param
-      judgeResult:(BOOL(^)(id json))completion ;
+      judgeResult:(XTReqSaveJudgment(^)(id json))completion ;
 
 
 /**
@@ -129,7 +133,7 @@
               hud:(BOOL)hud
            policy:(XTResponseCachePolicy)cachePolicy
     timeoutIfNeed:(int)timeoutIfNeed
-      judgeResult:(BOOL(^)(id json))completion;
+      judgeResult:(XTReqSaveJudgment(^)(id json))completion;
 
 @end
 

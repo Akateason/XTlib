@@ -10,7 +10,7 @@
 #import "ServerRequest.h"
 
 #import "UrlRequestHeader.h"
-#import "XTReq.h"
+
 
 
 @implementation ServerRequest
@@ -59,7 +59,7 @@
 
 + (void)zample6_GetMovieListWithStart:(NSInteger)start
                                 count:(NSInteger)count
-                           completion:(BOOL (^)(id json))completion
+                           completion:(XTReqSaveJudgment (^)(id json))completion
 {
     XT_GET_PARAM
     [param setObject:@(start)

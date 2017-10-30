@@ -8,6 +8,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import "XTReq.h"
 
 @interface ServerRequest : NSObject
 
@@ -21,7 +22,7 @@
 
 + (void)zample6_GetMovieListWithStart:(NSInteger)start
                                 count:(NSInteger)count
-                           completion:(BOOL (^)(id json))completion ;
+                           completion:(XTReqSaveJudgment (^)(id json))completion ;
 
 + (void)zample7_request:(int)bookID
                 success:(void (^)(id json))success

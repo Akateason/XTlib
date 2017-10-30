@@ -27,7 +27,6 @@
 {
     
     NSLog(@"%@",[CommonFunc getDocumentsPath]) ;
-
     
     // SVPHUD style
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark] ;

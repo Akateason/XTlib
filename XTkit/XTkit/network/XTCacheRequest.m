@@ -29,7 +29,7 @@
 
 + (void)cacheGET:(NSString *)url
       parameters:(NSDictionary *)param
-     judgeResult:(BOOL(^)(id json))completion
+     judgeResult:(XTReqSaveJudgment(^)(id json))completion
 {
     [self cacheGET:url
             header:nil
@@ -54,7 +54,7 @@
 + (void)cacheGET:(NSString *)url
           header:(NSDictionary *)header
       parameters:(NSDictionary *)param
-     judgeResult:(BOOL (^)(id json))completion
+     judgeResult:(XTReqSaveJudgment (^)(id json))completion
 {
     [self cacheGET:url
             header:header
@@ -79,7 +79,7 @@
                hud:hud
             policy:cachePolicy
      timeoutIfNeed:timeoutIfNeed
-       judgeResult:^BOOL(id json) {
+       judgeResult:^XTReqSaveJudgment(id json) {
            if (completion) completion(json) ;
            return FALSE ;
        }] ;
@@ -91,7 +91,7 @@
              hud:(BOOL)hud
           policy:(XTResponseCachePolicy)cachePolicy
    timeoutIfNeed:(int)timeoutIfNeed
-     judgeResult:(BOOL (^)(id json))completion
+     judgeResult:(XTReqSaveJudgment (^)(id json))completion
 {
     NSString *strUniqueKey = [self fullUrl:url param:param] ;
     XTResponseDBModel *resModel = [XTResponseDBModel xt_findFirstWhere:[NSString stringWithFormat:@"requestUrl == '%@'",strUniqueKey]] ;
@@ -108,7 +108,7 @@
                              header:header
                               param:param
                       responseModel:resModel
-                         completion:^BOOL (id json) {
+                         completion:^XTReqSaveJudgment (id json) {
                              if (completion) return completion(json) ; // return
                              return FALSE ;
                          }] ;
@@ -125,7 +125,7 @@
                                      header:header
                                       param:param
                               responseModel:resModel
-                                 completion:^BOOL (id json) {
+                                 completion:^XTReqSaveJudgment (id json) {
                                      if (completion) return completion(json) ; // return
                                      return FALSE ;
                                  }] ;
@@ -146,7 +146,7 @@
                                          header:header
                                           param:param
                                   responseModel:resModel
-                                     completion:^BOOL (id json) {
+                                     completion:^XTReqSaveJudgment (id json) {
                                          if (completion) return completion(json) ; // return
                                          return FALSE ;
                                      }] ;
@@ -176,7 +176,7 @@
 
 + (void)cachePOST:(NSString *)url
        parameters:(NSDictionary *)param
-      judgeResult:(BOOL (^)(id json))completion
+      judgeResult:(XTReqSaveJudgment (^)(id json))completion
 {
     [self cachePOST:url
              header:nil
@@ -201,7 +201,7 @@
 + (void)cachePOST:(NSString *)url
            header:(NSDictionary *)header
        parameters:(NSDictionary *)param
-      judgeResult:(BOOL (^)(id json))completion
+      judgeResult:(XTReqSaveJudgment (^)(id json))completion
 {
     [self cachePOST:url
              header:header
@@ -226,7 +226,7 @@
                 hud:YES
              policy:cachePolicy
       timeoutIfNeed:timeoutIfNeed
-        judgeResult:^BOOL(id json) {
+        judgeResult:^XTReqSaveJudgment(id json) {
             if (completion) completion(json) ;
             return FALSE ;
          }] ;
@@ -238,7 +238,7 @@
               hud:(BOOL)hud
            policy:(XTResponseCachePolicy)cachePolicy
     timeoutIfNeed:(int)timeoutIfNeed
-      judgeResult:(BOOL(^)(id json))completion
+      judgeResult:(XTReqSaveJudgment(^)(id json))completion
 {
     NSString *strUniqueKey = [self fullUrl:url param:param] ;
     XTResponseDBModel *resModel = [XTResponseDBModel xt_findFirstWhere:[NSString stringWithFormat:@"requestUrl == '%@'",strUniqueKey]] ;
@@ -255,7 +255,7 @@
                              header:header
                               param:param
                       responseModel:resModel
-                         completion:^BOOL (id json) {
+                         completion:^XTReqSaveJudgment (id json) {
                              if (completion) return completion(json) ; // return
                              return FALSE ;
                          }] ;
@@ -272,7 +272,7 @@
                                      header:header
                                       param:param
                               responseModel:resModel
-                                 completion:^BOOL (id json) {
+                                 completion:^XTReqSaveJudgment (id json) {
                                      if (completion) return completion(json) ; // return
                                      return FALSE ;
                                  }] ;
@@ -293,7 +293,7 @@
                                          header:header
                                           param:param
                                   responseModel:resModel
-                                     completion:^BOOL (id json) {
+                                     completion:^XTReqSaveJudgment (id json) {
                                          if (completion) return completion(json) ; // return
                                          return FALSE ;
                                      }] ;
@@ -323,7 +323,7 @@
                        header:(NSDictionary *)header
                         param:(NSDictionary *)param
                 responseModel:(XTResponseDBModel *)resModel
-                   completion:(BOOL(^)(id json))completion
+                   completion:(XTReqSaveJudgment(^)(id json))completion
 {
     if (requestType == XTRequestMode_GET_MODE)
     {
@@ -333,12 +333,12 @@
               parameters:param
              taskSuccess:^(NSURLSessionDataTask *task, id json) {
                  
-                 BOOL bDisableCache = FALSE ;
-                 if (completion) bDisableCache = completion(json) ; // return .
+                 XTReqSaveJudgment flag = -1 ;
+                 if (completion) flag = completion(json) ; // return .
                  // 请求为空 . 不做更新
                  if (!json) return ;
                  // 外部禁止了缓存
-                 if (bDisableCache) return ;
+                 if (flag == XTReqSaveJudgment_NotSave) return ;
                  // db
                  if (!resModel.response) {
                      resModel.response = [json yy_modelToJSONString] ;
@@ -362,12 +362,12 @@
                parameters:param
               taskSuccess:^(NSURLSessionDataTask *task, id json) {
                   
-                  BOOL bDisableCache = FALSE ;
-                  if (completion) bDisableCache = completion(json) ; // return .
+                  XTReqSaveJudgment flag = -1 ;
+                  if (completion) flag = completion(json) ; // return .
                   // 请求为空 . 不做更新
                   if (!json) return ;
                   // 外部禁止了缓存
-                  if (bDisableCache) return ;
+                  if (flag == XTReqSaveJudgment_NotSave) return ;
                   // db
                   if (!resModel.response) {
                       resModel.response = [json yy_modelToJSONString] ;
