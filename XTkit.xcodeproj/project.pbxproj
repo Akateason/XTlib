@@ -134,6 +134,7 @@
 		8F7F95C21F10B43100236286 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95C11F10B43100236286 /* NSObject+Runtime.m */; };
 		8F7F95C61F10C54200236286 /* StatSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95C51F10C54200236286 /* StatSender.m */; };
 		8F7F95C91F10D56700236286 /* XTStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95C81F10D56700236286 /* XTStat.m */; };
+		8F80E8F91FAD99090069F971 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F80E8F81FAD99090069F971 /* Algorithm.m */; };
 		8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */; };
 		8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */; };
 		8F99164F1EC0754B00BA8F0D /* XTDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916481EC0754B00BA8F0D /* XTDBModel.m */; };
@@ -439,6 +440,8 @@
 		8F7F95C51F10C54200236286 /* StatSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatSender.m; sourceTree = "<group>"; };
 		8F7F95C71F10D56700236286 /* XTStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTStat.h; sourceTree = "<group>"; };
 		8F7F95C81F10D56700236286 /* XTStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTStat.m; sourceTree = "<group>"; };
+		8F80E8F71FAD99090069F971 /* Algorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
+		8F80E8F81FAD99090069F971 /* Algorithm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Algorithm.m; sourceTree = "<group>"; };
 		8F9916421EC06C4F00BA8F0D /* XTReqResonse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqResonse.h; sourceTree = "<group>"; };
 		8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqResonse.m; sourceTree = "<group>"; };
 		8F9916451EC0754B00BA8F0D /* NSObject+XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+XTFMDB.h"; path = "database/NSObject+XTFMDB.h"; sourceTree = "<group>"; };
@@ -1128,6 +1131,7 @@
 		60E238BD1E9622A1001235F2 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				8F80E8F61FAD98FA0069F971 /* Algorithm */,
 				8FA4DE771FA0222B009F7928 /* PlistUtil */,
 				8F7E65251F1F39790028217B /* ScreenFit */,
 				8F7E65211F1F38E00028217B /* IsFirstTime */,
@@ -1325,6 +1329,15 @@
 				8F7F95C81F10D56700236286 /* XTStat.m */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		8F80E8F61FAD98FA0069F971 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				8F80E8F71FAD99090069F971 /* Algorithm.h */,
+				8F80E8F81FAD99090069F971 /* Algorithm.m */,
+			);
+			path = Algorithm;
 			sourceTree = "<group>";
 		};
 		8FA4DE771FA0222B009F7928 /* PlistUtil */ = {
@@ -1667,6 +1680,7 @@
 				60E238211E961D21001235F2 /* ViewController.m in Sources */,
 				607E5FD21EA6FDE500D05213 /* CommonFunc.m in Sources */,
 				607E60331EA85BE100D05213 /* SIAlertView.m in Sources */,
+				8F80E8F91FAD99090069F971 /* Algorithm.m in Sources */,
 				60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */,
 				607E605D1EA9F87C00D05213 /* Zample3Controller.m in Sources */,
 				8F2C58591F9E1C3B00E10A55 /* UILabel+FontAdapter.m in Sources */,

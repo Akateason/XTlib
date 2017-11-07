@@ -29,6 +29,7 @@
 @property (strong, nonatomic) UIButton *btInsertList ;
 @property (strong, nonatomic) UIButton *btUpdateList ;
 @property (strong, nonatomic) UIButton *btFindFirst ;
+
 @end
 
 @implementation Zample5Controller
@@ -47,13 +48,11 @@ static float const kBtFlex = 5 ;
     
     [self layoutUI] ;
     
-    UIImage *testImage = [UIImage imageNamed:@"kobe"] ;
-    NSData *dataImage = UIImagePNGRepresentation(testImage) ;
-    UIImage *imgDis = [UIImage imageWithData:dataImage] ;
-    
-    NSString *str = [dataImage base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength] ;
-    UIImage *imgDis2 = [UIImage imageWithData:[[NSData alloc] initWithBase64EncodedString:str
-                                                                                    options:NSDataBase64DecodingIgnoreUnknownCharacters]];
+    id res = [Model1 anyFuncWithSql:@"SELECT count(*) FROM Model1"] ;
+    int count = [Model1 count] ;
+    double max = [Model1 maxOf:@"floatVal"] ;
+    double min = [Model1 minOf:@"age"] ;
+    double sum = [Model1 sumOf:@"age"] ;
     
 }
 
@@ -217,8 +216,6 @@ static float const kBtFlex = 5 ;
     SEL methodSel = NSSelectorFromString(strButtonName) ;
     ((void (*)(id, SEL, id))objc_msgSend)(self, methodSel, nil) ;
 }
-
-
 
 #pragma mark --
 #pragma mark - actions
