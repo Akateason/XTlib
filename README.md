@@ -15,17 +15,4 @@ XTkit
 * Util 工具层 项目中会用到的一些工具. 
 
 
-依赖库
-cocoapods
-```
-pod 'AFNetworking'
-pod 'Masonry'
-pod 'SDWebImage'
-pod 'SVProgressHUD'
-pod 'JKCategories'
-pod 'ReactiveObjC'
-pod 'UITableView+FDTemplateLayoutCell'
-pod ‘MJRefresh’
-pod ‘YYModel’
-pod ‘FMDB’
-```
+
