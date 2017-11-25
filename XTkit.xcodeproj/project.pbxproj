@@ -116,6 +116,7 @@
 		8F16B9A31F25D7E90049CEE1 /* Z8CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F16B9A21F25D7E90049CEE1 /* Z8CollectionViewController.m */; };
 		8F16B9AA1F25D9280049CEE1 /* Z8CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F16B9A81F25D9280049CEE1 /* Z8CollectionViewCell.m */; };
 		8F16B9AB1F25D9280049CEE1 /* Z8CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F16B9A91F25D9280049CEE1 /* Z8CollectionViewCell.xib */; };
+		8F22B5701FC93B4800B1EC0E /* XTDBVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F22B56F1FC93B4800B1EC0E /* XTDBVersion.m */; };
 		8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25F8DE1EE656D70052A21D /* Zample8Controller.m */; };
 		8F2C584F1F9E17F600E10A55 /* NSNumber+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C584E1F9E17F500E10A55 /* NSNumber+Round.m */; };
 		8F2C58521F9E188400E10A55 /* UIResponder+ChainHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C58511F9E188400E10A55 /* UIResponder+ChainHandler.m */; };
@@ -404,6 +405,8 @@
 		8F16B9A91F25D9280049CEE1 /* Z8CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Z8CollectionViewCell.xib; sourceTree = "<group>"; };
 		8F16B9AD1F25EE370049CEE1 /* XTFMDBConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XTFMDBConst.h; path = database/XTFMDBConst.h; sourceTree = "<group>"; };
 		8F16B9AF1F25EF2E0049CEE1 /* XTStatConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTStatConst.h; sourceTree = "<group>"; };
+		8F22B56E1FC93B4800B1EC0E /* XTDBVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XTDBVersion.h; path = database/XTDBVersion.h; sourceTree = "<group>"; };
+		8F22B56F1FC93B4800B1EC0E /* XTDBVersion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = XTDBVersion.m; path = database/XTDBVersion.m; sourceTree = "<group>"; };
 		8F25F8DD1EE656D70052A21D /* Zample8Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zample8Controller.h; sourceTree = "<group>"; };
 		8F25F8DE1EE656D70052A21D /* Zample8Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample8Controller.m; sourceTree = "<group>"; };
 		8F2C584D1F9E17F400E10A55 /* NSNumber+Round.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Round.h"; sourceTree = "<group>"; };
@@ -1362,6 +1365,8 @@
 				8F99164A1EC0754B00BA8F0D /* XTDBModel+autoSql.m */,
 				8F99164C1EC0754B00BA8F0D /* XTFMDBBase.h */,
 				8F99164D1EC0754B00BA8F0D /* XTFMDBBase.m */,
+				8F22B56E1FC93B4800B1EC0E /* XTDBVersion.h */,
+				8F22B56F1FC93B4800B1EC0E /* XTDBVersion.m */,
 			);
 			name = XTFMDB;
 			sourceTree = "<group>";
@@ -1761,6 +1766,7 @@
 				8F16B99D1F25D4630049CEE1 /* UIApplication+Stat.m in Sources */,
 				607E602B1EA85BE100D05213 /* NSString+MD5.m in Sources */,
 				8FA4DE7F1FA03087009F7928 /* Father.m in Sources */,
+				8F22B5701FC93B4800B1EC0E /* XTDBVersion.m in Sources */,
 				60E238E21E9622A1001235F2 /* NSString+Extend.m in Sources */,
 				607E60711EADA67100D05213 /* UIViewController+HowToUse.m in Sources */,
 				60E238FD1E9622A1001235F2 /* ShareAlertView.m in Sources */,

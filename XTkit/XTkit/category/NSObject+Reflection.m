@@ -15,14 +15,17 @@
 {
     return NSStringFromClass([self class]);
 }
+
 - (NSString *)superClassName
 {
     return NSStringFromClass([self superclass]);
 }
+
 + (NSString *)className
 {
     return NSStringFromClass([self class]);
 }
+
 + (NSString *)superClassName
 {
     return NSStringFromClass([self superclass]);
@@ -54,11 +57,11 @@
     return dict ;
 }
 
-
 - (NSArray*)propertyKeys
 {
     return [[self class] propertyKeys];
 }
+
 + (NSArray *)propertyKeys {
     unsigned int propertyCount = 0;
     objc_property_t * properties = class_copyPropertyList(self, &propertyCount);
@@ -71,6 +74,7 @@
     free(properties);
     return propertyNames;
 }
+
 - (NSArray *)propertiesInfo
 {
     return [[self class] propertiesInfo];
@@ -80,10 +84,8 @@
 + (NSArray *)propertiesInfo
 {
     NSMutableArray *propertieArray = [NSMutableArray array];
-    
     unsigned int propertyCount;
     objc_property_t *properties = class_copyPropertyList([self class], &propertyCount);
-    
     for (int i = 0; i < propertyCount; i++)
     {
         [propertieArray addObject:({
@@ -95,8 +97,24 @@
     }
     
     free(properties);
-    
     return propertieArray;
+}
+
++ (NSDictionary *)propertiesInfoDict {
+    NSMutableDictionary *propertieDic = [NSMutableDictionary dictionary] ;
+    unsigned int propertyCount;
+    objc_property_t *properties = class_copyPropertyList([self class], &propertyCount);
+    for (int i = 0; i < propertyCount; i++) {
+        NSDictionary *tmpDic = [self dictionaryWithProperty:properties[i]] ;
+        [propertieDic setObject:tmpDic
+                         forKey:tmpDic[@"name"]] ;
+    }
+    free(properties);
+    return propertieDic;
+}
+
++ (NSString *)iosTypeWithPropName:(NSString *)name {
+    return [self propertiesInfoDict][name][@"type"] ;
 }
 
 + (NSArray *)propertiesWithCodeFormat
@@ -146,12 +164,11 @@
     return array;
 }
 
--(NSArray*)methodList{
-    u_int               count;
+- (NSArray*)methodList {
+    u_int count;
     NSMutableArray *methodList = [NSMutableArray array];
     Method *methods= class_copyMethodList([self class], &count);
-    for (int i = 0; i < count ; i++)
-    {
+    for (int i = 0; i < count ; i++) {
         SEL name = method_getName(methods[i]);
         NSString *strName = [NSString stringWithCString:sel_getName(name) encoding:NSUTF8StringEncoding];
         [methodList addObject:strName];
@@ -160,7 +177,7 @@
     return methodList;
 }
 
--(NSArray*)methodListInfo
+- (NSArray*)methodListInfo
 {
     u_int               count;
     NSMutableArray *methodList = [NSMutableArray array];
@@ -203,9 +220,8 @@
     return methodList;
 }
 
-+(NSArray*)methodList
-{
-    u_int               count;
++ (NSArray*)methodList {
+    u_int count;
     NSMutableArray *methodList = [NSMutableArray array];
     Method * methods= class_copyMethodList([self class], &count);
     for (int i = 0; i < count ; i++)
@@ -237,7 +253,7 @@
 }
 
 //协议列表信息
--(NSDictionary *)protocolList
+- (NSDictionary *)protocolList
 {
     return [[self class]protocolList];
 }

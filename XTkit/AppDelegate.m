@@ -12,7 +12,7 @@
 #import "XTResponseDBModel.h"
 #import "XTStat.h"
 #import "CommonFunc.h"
-
+#import "Model1.h"
 #import "ValetManager.h"
 
 
@@ -35,6 +35,14 @@
     
     // SQLite
     [[XTFMDBBase sharedInstance] configureDB:@"teason"] ; // app did launch .
+    [[XTFMDBBase sharedInstance] dbUpgradeTable:Model1.class
+                                      paramsAdd:@[@"a1",@"a2",@"a3"]
+                                        version:2] ;
+    
+    [[XTFMDBBase sharedInstance] dbUpgradeTable:Model1.class
+                                      paramsAdd:@[@"b1",@"b2",@"b3"]
+                                        version:3] ;
+    
     
     // request cache TB
     [XTResponseDBModel xt_createTable] ;

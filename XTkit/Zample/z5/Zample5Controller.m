@@ -29,7 +29,7 @@
 @property (strong, nonatomic) UIButton *btInsertList ;
 @property (strong, nonatomic) UIButton *btUpdateList ;
 @property (strong, nonatomic) UIButton *btFindFirst ;
-
+@property (strong, nonatomic) UIButton *btAlterAddAction ;
 @end
 
 @implementation Zample5Controller
@@ -54,6 +54,7 @@ static float const kBtFlex = 5 ;
     double min = [Model1 minOf:@"age"] ;
     double sum = [Model1 sumOf:@"age"] ;
     
+
 }
 
 - (void)layoutUI
@@ -208,6 +209,21 @@ static float const kBtFlex = 5 ;
         bt ;
     }) ;
     
+    self.btAlterAddAction = ({
+        UIButton *bt = [UIButton new] ;
+        [bt setTitle:@"AlterAdd" forState:0] ;
+        bt.backgroundColor = [UIColor grayColor] ;
+        bt.titleLabel.textColor = [UIColor whiteColor] ;
+        [bt addTarget:self action:@selector(btOnClick:) forControlEvents:UIControlEventTouchUpInside] ;
+        [self.view addSubview:bt] ;
+        [bt mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(200, 40)) ;
+            make.centerX.equalTo(self.view) ;
+            make.top.equalTo(self.btFindFirst.mas_bottom).offset(kBtFlex) ;
+        }] ;
+        bt ;
+
+    }) ;
 }
 
 - (void)btOnClick:(UIButton *)sender

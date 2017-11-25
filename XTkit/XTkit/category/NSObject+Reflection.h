@@ -23,6 +23,8 @@
 
 - (NSArray *)propertiesInfo;
 + (NSArray *)propertiesInfo;
++ (NSDictionary *)propertiesInfoDict ;
++ (NSString *)iosTypeWithPropName:(NSString *)name ;
 
 + (NSArray *)propertiesWithCodeFormat;
 

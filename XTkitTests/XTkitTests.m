@@ -12,7 +12,10 @@
 //#import "XTArchive.h"
 //#import "CommonFunc.h"
 //#import "XTJson.h"
-#import "Algorithm.h"
+//#import "Algorithm.h"
+#import "XTDBModel.h"
+#import "Model1.h"
+#import "NSObject+Reflection.h"
 
 @interface XTkitTests : XCTestCase
 
@@ -35,14 +38,19 @@
 }
 
 - (void)testExample {
+    Model1 *model = [Model1 new] ;
+    
+    NSLog(@"%@",[model propertiesInfo]) ;
+    
+    
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    NSArray *arr = @[@(1),@(4),@(3),@(9),@(7)] ;
-    [Algorithm bubbleSortWithArray:[arr mutableCopy]
-                           andSort:^BOOL(int x, int y) {
-                               return x < y ;
-                           }] ;
-    NSLog(@"bubble : %@",arr) ;
+//    NSArray *arr = @[@(1),@(4),@(3),@(9),@(7)] ;
+//    [Algorithm bubbleSortWithArray:[arr mutableCopy]
+//                           andSort:^BOOL(int x, int y) {
+//                               return x < y ;
+//                           }] ;
+//    NSLog(@"bubble : %@",arr) ;
 
 }
 
