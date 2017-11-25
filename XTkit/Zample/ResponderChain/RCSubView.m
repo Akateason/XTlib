@@ -35,7 +35,7 @@
 
 - (void)btAction {
     NSLog(@"tap") ;
-    [self sendChainHandler:@"a" sender:self info:[@(arc4random()%100) stringValue]] ;
+    [self sendChainHandler:@"a" info:[@(arc4random()%100) stringValue] sender:self] ;
 }
 
 

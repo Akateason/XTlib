@@ -18,8 +18,8 @@
 @implementation RespoderChainViewController
 
 - (BOOL)receiveHandleChain:(NSString *)identifier
-                    sender:(id)sender
                       info:(id)info
+                    sender:(id)sender
 {
     if ([identifier isEqualToString:@"a"]) {
         self.title = info ;
