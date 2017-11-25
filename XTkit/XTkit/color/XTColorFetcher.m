@@ -118,4 +118,10 @@
     return nil ;
 }
 
+- (UIColor *)randomColor {
+    return [self getColorWithRed:arc4random() % 256
+                           green:arc4random() % 256
+                            Blue:arc4random() % 256] ;
+}
+
 @end

@@ -12,8 +12,10 @@
 
 
 @interface XTColorFetcher : NSObject
-+ (instancetype)sharedInstance ;
 @property (nonatomic,strong,readonly) NSDictionary *dicData   ;
+
++ (instancetype)sharedInstance ;
 - (void)configurePlist:(NSString *)plist ;
 - (UIColor *)xt_colorWithKey:(NSString *)key ;
+- (UIColor *)randomColor ;
 @end

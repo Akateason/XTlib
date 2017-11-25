@@ -41,6 +41,12 @@
 				<key>title</key>
 				<string>XTReq</string>
 			</dict>
+			<dict>
+				<key>cname</key>
+				<string>RespoderChainViewController</string>
+				<key>title</key>
+				<string>RespoderChain</string>
+			</dict>
 		</array>
 	</dict>
 	<dict>

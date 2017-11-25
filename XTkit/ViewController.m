@@ -69,7 +69,7 @@
     NSString *clsName = dic[@"cname"] ;
     Class ctrllerCls = objc_getRequiredClass([clsName UTF8String]) ;
     UIViewController *ctrller = [[ctrllerCls alloc] init] ;
-    ctrller.title = clsName ;
+    ctrller.title = dic[@"title"] ;
     [self.navigationController pushViewController:ctrller animated:YES] ;
 }
 

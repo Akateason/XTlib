@@ -11,10 +11,14 @@
 @implementation UIResponder (ChainHandler)
 
 - (void)sendChainHandler:(NSString *)identifier sender:(id)sender {
-    if ([self receiveHandleChain:identifier sender:sender] && self.nextResponder) [self.nextResponder sendChainHandler:identifier sender:sender] ;
+    if ([self receiveHandleChain:identifier sender:sender info:nil] && self.nextResponder) [self.nextResponder sendChainHandler:identifier sender:sender info:nil] ;
 }
 
-- (BOOL)receiveHandleChain:(NSString *)identifier sender:(id)sender {
+- (void)sendChainHandler:(NSString *)identifier sender:(id)sender info:(id)info {
+    if ([self receiveHandleChain:identifier sender:sender info:info] && self.nextResponder) [self.nextResponder sendChainHandler:identifier sender:sender info:info] ;
+}
+
+- (BOOL)receiveHandleChain:(NSString *)identifier sender:(id)sender info:(id)info {
     return YES ;
 }
 

@@ -154,6 +154,8 @@
 		8FD763D01F31A9450085F56D /* DevInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD763CF1F31A9450085F56D /* DevInfo.m */; };
 		8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */; };
 		8FDE031F1EC5AF2E00FFBADA /* Zample7Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE031E1EC5AF2E00FFBADA /* Zample7Controller.m */; };
+		8FE80E4D1FC983D300FA8E53 /* RespoderChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE80E4C1FC983D300FA8E53 /* RespoderChainViewController.m */; };
+		8FE80E531FC9898600FA8E53 /* RCSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE80E521FC9898600FA8E53 /* RCSubView.m */; };
 		8FFD733D1EB30A5400148B83 /* Zample4Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD733C1EB30A5400148B83 /* Zample4Controller.m */; };
 		8FFD73421EB320BA00148B83 /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73411EB320BA00148B83 /* ServerRequest.m */; };
 		8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD73451EB321A900148B83 /* Zample5Controller.m */; };
@@ -482,6 +484,10 @@
 		8FDE03191EC5415C00FFBADA /* XTReq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTReq.h; sourceTree = "<group>"; };
 		8FDE031D1EC5AF2E00FFBADA /* Zample7Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zample7Controller.h; path = z7/Zample7Controller.h; sourceTree = "<group>"; };
 		8FDE031E1EC5AF2E00FFBADA /* Zample7Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Zample7Controller.m; path = z7/Zample7Controller.m; sourceTree = "<group>"; };
+		8FE80E4B1FC983D300FA8E53 /* RespoderChainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RespoderChainViewController.h; sourceTree = "<group>"; };
+		8FE80E4C1FC983D300FA8E53 /* RespoderChainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RespoderChainViewController.m; sourceTree = "<group>"; };
+		8FE80E511FC9898600FA8E53 /* RCSubView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCSubView.h; sourceTree = "<group>"; };
+		8FE80E521FC9898600FA8E53 /* RCSubView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCSubView.m; sourceTree = "<group>"; };
 		8FFD733B1EB30A5400148B83 /* Zample4Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zample4Controller.h; path = z4/Zample4Controller.h; sourceTree = "<group>"; };
 		8FFD733C1EB30A5400148B83 /* Zample4Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Zample4Controller.m; path = z4/Zample4Controller.m; sourceTree = "<group>"; };
 		8FFD73401EB320BA00148B83 /* ServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRequest.h; sourceTree = "<group>"; };
@@ -730,6 +736,7 @@
 				8FDE031C1EC5AF0500FFBADA /* z7_rac_demo */,
 				8F25F8DC1EE656BB0052A21D /* z8_bt */,
 				8F454C871F296E860068DD43 /* z9_proxy */,
+				8FE80E4A1FC983A000FA8E53 /* ResponderChain */,
 			);
 			path = Zample;
 			sourceTree = "<group>";
@@ -1398,6 +1405,17 @@
 			name = z7_rac_demo;
 			sourceTree = "<group>";
 		};
+		8FE80E4A1FC983A000FA8E53 /* ResponderChain */ = {
+			isa = PBXGroup;
+			children = (
+				8FE80E4B1FC983D300FA8E53 /* RespoderChainViewController.h */,
+				8FE80E4C1FC983D300FA8E53 /* RespoderChainViewController.m */,
+				8FE80E511FC9898600FA8E53 /* RCSubView.h */,
+				8FE80E521FC9898600FA8E53 /* RCSubView.m */,
+			);
+			path = ResponderChain;
+			sourceTree = "<group>";
+		};
 		8FFD733A1EB30A3100148B83 /* z4_xtcolorfetcher */ = {
 			isa = PBXGroup;
 			children = (
@@ -1704,6 +1722,7 @@
 				607E606C1EAD86A000D05213 /* MovieCell.m in Sources */,
 				8FA4DE721F9F0997009F7928 /* UIColor+AllColors.m in Sources */,
 				8FFD73641EB9D19800148B83 /* UIViewController+Storyboard.m in Sources */,
+				8FE80E531FC9898600FA8E53 /* RCSubView.m in Sources */,
 				8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */,
 				607E602E1EA85BE100D05213 /* KICropImageView.m in Sources */,
 				8FD763D01F31A9450085F56D /* DevInfo.m in Sources */,
@@ -1770,6 +1789,7 @@
 				60E238E21E9622A1001235F2 /* NSString+Extend.m in Sources */,
 				607E60711EADA67100D05213 /* UIViewController+HowToUse.m in Sources */,
 				60E238FD1E9622A1001235F2 /* ShareAlertView.m in Sources */,
+				8FE80E4D1FC983D300FA8E53 /* RespoderChainViewController.m in Sources */,
 				607E60591EA9DEF300D05213 /* DoubanTagsCell.m in Sources */,
 				8F16B99F1F25D4630049CEE1 /* UITableView+Stat.m in Sources */,
 				8FA4DE851FA03227009F7928 /* MySon.m in Sources */,
