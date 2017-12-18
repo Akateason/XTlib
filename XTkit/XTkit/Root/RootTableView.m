@@ -77,6 +77,9 @@
 
 - (void)setup
 {
+    self.estimatedRowHeight = 0 ;
+    self.estimatedSectionHeaderHeight = 0 ;
+    self.estimatedSectionFooterHeight = 0 ;
     [self prepareStyle]         ;
     [self setDefaultPublicAPIs] ;
 }
