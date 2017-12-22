@@ -127,6 +127,8 @@
 		8F454C801F27306E0068DD43 /* XTArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C7F1F27306E0068DD43 /* XTArchive.m */; };
 		8F454C861F2863610068DD43 /* ValetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C851F2863610068DD43 /* ValetManager.m */; };
 		8F454C8A1F296E990068DD43 /* Zample9Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C891F296E990068DD43 /* Zample9Controller.m */; };
+		8F560AF61FEC900200E726F9 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F560AF21FEC900200E726F9 /* NSString+MD5.m */; };
+		8F560AF71FEC900200E726F9 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F560AF51FEC900200E726F9 /* Base64.m */; };
 		8F7E65241F1F38E00028217B /* IsFirstTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E65231F1F38E00028217B /* IsFirstTime.m */; };
 		8F7E65281F1F39840028217B /* ScreenFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E65271F1F39840028217B /* ScreenFit.m */; };
 		8F7F95BA1F0F615F00236286 /* ApplicationEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95AF1F0F615F00236286 /* ApplicationEvent.m */; };
@@ -429,6 +431,10 @@
 		8F454C851F2863610068DD43 /* ValetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValetManager.m; sourceTree = "<group>"; };
 		8F454C881F296E990068DD43 /* Zample9Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zample9Controller.h; sourceTree = "<group>"; };
 		8F454C891F296E990068DD43 /* Zample9Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample9Controller.m; sourceTree = "<group>"; };
+		8F560AF11FEC900200E726F9 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		8F560AF21FEC900200E726F9 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		8F560AF41FEC900200E726F9 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		8F560AF51FEC900200E726F9 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		8F7E65221F1F38E00028217B /* IsFirstTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsFirstTime.h; sourceTree = "<group>"; };
 		8F7E65231F1F38E00028217B /* IsFirstTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsFirstTime.m; sourceTree = "<group>"; };
 		8F7E65261F1F39840028217B /* ScreenFit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenFit.h; sourceTree = "<group>"; };
@@ -1141,6 +1147,7 @@
 		60E238BD1E9622A1001235F2 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				8F560AEF1FEC900200E726F9 /* Base64+MD5 */,
 				8F80E8F61FAD98FA0069F971 /* Algorithm */,
 				8FA4DE771FA0222B009F7928 /* PlistUtil */,
 				8F7E65251F1F39790028217B /* ScreenFit */,
@@ -1295,6 +1302,33 @@
 				8FA4DE841FA03227009F7928 /* MySon.m */,
 			);
 			path = z9_proxy;
+			sourceTree = "<group>";
+		};
+		8F560AEF1FEC900200E726F9 /* Base64+MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				8F560AF01FEC900200E726F9 /* MD5 */,
+				8F560AF31FEC900200E726F9 /* Base64 */,
+			);
+			path = "Base64+MD5";
+			sourceTree = "<group>";
+		};
+		8F560AF01FEC900200E726F9 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				8F560AF11FEC900200E726F9 /* NSString+MD5.h */,
+				8F560AF21FEC900200E726F9 /* NSString+MD5.m */,
+			);
+			path = MD5;
+			sourceTree = "<group>";
+		};
+		8F560AF31FEC900200E726F9 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				8F560AF41FEC900200E726F9 /* Base64.h */,
+				8F560AF51FEC900200E726F9 /* Base64.m */,
+			);
+			path = Base64;
 			sourceTree = "<group>";
 		};
 		8F7E65211F1F38E00028217B /* IsFirstTime */ = {
@@ -1739,6 +1773,7 @@
 				60E239051E9622A1001235F2 /* NSTimer+Addition.m in Sources */,
 				8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */,
 				8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */,
+				8F560AF61FEC900200E726F9 /* NSString+MD5.m in Sources */,
 				607E603E1EA8740A00D05213 /* RootRefreshFooter.m in Sources */,
 				8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */,
 				8F2C584F1F9E17F600E10A55 /* NSNumber+Round.m in Sources */,
@@ -1767,6 +1802,7 @@
 				8FFD73571EB9B3E400148B83 /* Zample6Controller.m in Sources */,
 				60E239011E9622A1001235F2 /* FlywordLabel.m in Sources */,
 				60E238EE1E9622A1001235F2 /* MyNavCtrller.m in Sources */,
+				8F560AF71FEC900200E726F9 /* Base64.m in Sources */,
 				607E5FCF1EA6FCBC00D05213 /* UIButton+Countdown.m in Sources */,
 				60E239151E9622A1001235F2 /* XTSearchHandler.m in Sources */,
 				60E2390A1E9622A1001235F2 /* XTSegment.m in Sources */,
