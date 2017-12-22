@@ -46,8 +46,10 @@
 + (UIImage *)fixOrientation:(UIImage *)aImage;
 
 //6.颜色变图片
-+ (UIImage *)imageWithColor:(UIColor *)color
-                       size:(CGSize)size;
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size ;
+- (UIImage *) imageWithTintColor:(UIColor *)tintColor ;
+- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor ;
+- (UIImage *) imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode ;
 
 //7.将UIView转成UIImage
 + (UIImage *)getImageFromView:(UIView *)theView ;
