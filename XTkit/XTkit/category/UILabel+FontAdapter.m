@@ -40,7 +40,8 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
         // 部分不像改变字体的 把tag值设置成333跳过
         if (self.tag != 333){
             CGFloat fontSize = self.font.pointSize;
-            self.font = [UIFont adjustFont:fontSize];
+//            self.font = [UIFont adjustFont:fontSize];
+            [self.font adjustFont:fontSize] ;
         }
     }
     return self;

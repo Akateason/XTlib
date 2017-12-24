@@ -11,6 +11,7 @@
 #import "RootTableCell.h"
 #import "PlistUtil.h"
 #import "ScreenHeader.h"
+#import "UIViewController+Storyboard.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table ;
@@ -68,7 +69,13 @@
     NSDictionary *dic = [(NSArray *)(self.dataSource[indexPath.section])[self.sectionKeys[indexPath.section]] objectAtIndex:indexPath.row] ;
     NSString *clsName = dic[@"cname"] ;
     Class ctrllerCls = objc_getRequiredClass([clsName UTF8String]) ;
-    UIViewController *ctrller = [[ctrllerCls alloc] init] ;
+    UIViewController *ctrller ;
+    if ([dic[@"isStory"] boolValue] == YES) {
+        ctrller = [self.class getCtrllerFromStory:@"Main" controllerIdentifier:clsName] ;
+    }
+    else {
+        ctrller = [[ctrllerCls alloc] init] ;
+    }
     ctrller.title = dic[@"title"] ;
     [self.navigationController pushViewController:ctrller animated:YES] ;
 }

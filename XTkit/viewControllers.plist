@@ -70,6 +70,14 @@
 				<key>title</key>
 				<string>NSProxy</string>
 			</dict>
+			<dict>
+				<key>isStory</key>
+				<true/>
+				<key>title</key>
+				<string>FontAdapt</string>
+				<key>cname</key>
+				<string>FontAdaptVC</string>
+			</dict>
 		</array>
 	</dict>
 </array>

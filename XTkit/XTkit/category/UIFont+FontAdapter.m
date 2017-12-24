@@ -9,28 +9,29 @@
 // 这里设置iPhone6Plus放大的字号数（现在是放大3号，也就是iPhone4s和iPhone5上字体为15时，iPhone6上字号为18）
 
 #define IPHONE6PLUS_INCREMENT 0
-
 #define IPHONE6BLOW_REDUCE 2
 
 @implementation UIFont (FontAdapter)
 
-+ (UIFont *)adjustFont:(CGFloat)fontSize {
-    UIFont *newFont = nil ;
+- (void)adjustFont:(CGFloat)fontSize {
+    float tmpSize = 0. ;
     if (IS_IPHONE_6) {
-        newFont = [UIFont systemFontOfSize:fontSize];
+        tmpSize = fontSize ;
     }
     else if (IS_IPHONE_6_PLUS){
-        newFont = [UIFont systemFontOfSize:fontSize + IPHONE6PLUS_INCREMENT];
+        tmpSize = fontSize + IPHONE6PLUS_INCREMENT ;
     }
     else {
         if (fontSize <= 12) {
-            newFont = [UIFont systemFontOfSize:fontSize];
+            tmpSize = fontSize ;
         }
         else {
-            newFont = [UIFont systemFontOfSize:fontSize - IPHONE6BLOW_REDUCE];
+            tmpSize = fontSize - IPHONE6BLOW_REDUCE ;
         }
     }
-    return newFont;
+    [self fontWithSize:tmpSize] ;
 }
 
 @end
+
+

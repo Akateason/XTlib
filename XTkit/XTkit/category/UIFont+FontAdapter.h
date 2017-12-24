@@ -3,6 +3,6 @@
 
 @interface UIFont (FontAdapter)
 
-+ (UIFont *)adjustFont:(CGFloat)fontSize ;
+- (void)adjustFont:(CGFloat)fontSize ;
 
 @end

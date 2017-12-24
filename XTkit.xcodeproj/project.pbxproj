@@ -153,6 +153,7 @@
 		8FA4DE7F1FA03087009F7928 /* Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE7E1FA03087009F7928 /* Father.m */; };
 		8FA4DE821FA03093009F7928 /* Mother.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE811FA03093009F7928 /* Mother.m */; };
 		8FA4DE851FA03227009F7928 /* MySon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE841FA03227009F7928 /* MySon.m */; };
+		8FC14CF81FEFE2DF0024F86E /* FontAdaptVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC14CF71FEFE2DF0024F86E /* FontAdaptVC.m */; };
 		8FD763D01F31A9450085F56D /* DevInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD763CF1F31A9450085F56D /* DevInfo.m */; };
 		8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */; };
 		8FDE031F1EC5AF2E00FFBADA /* Zample7Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE031E1EC5AF2E00FFBADA /* Zample7Controller.m */; };
@@ -483,6 +484,8 @@
 		8FA4DE811FA03093009F7928 /* Mother.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mother.m; sourceTree = "<group>"; };
 		8FA4DE831FA03227009F7928 /* MySon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySon.h; sourceTree = "<group>"; };
 		8FA4DE841FA03227009F7928 /* MySon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySon.m; sourceTree = "<group>"; };
+		8FC14CF61FEFE2DF0024F86E /* FontAdaptVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontAdaptVC.h; sourceTree = "<group>"; };
+		8FC14CF71FEFE2DF0024F86E /* FontAdaptVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontAdaptVC.m; sourceTree = "<group>"; };
 		8FD763CE1F31A9450085F56D /* DevInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevInfo.h; sourceTree = "<group>"; };
 		8FD763CF1F31A9450085F56D /* DevInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevInfo.m; sourceTree = "<group>"; };
 		8FDE03161EC53DE600FFBADA /* XTReqSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqSessionManager.h; sourceTree = "<group>"; };
@@ -733,6 +736,7 @@
 		607E60451EA8895B00D05213 /* Zample */ = {
 			isa = PBXGroup;
 			children = (
+				8FC14CF51FEFE1F70024F86E /* FontAdapt */,
 				607E60491EA88B5700D05213 /* z1_code_rootTableCell */,
 				607E60501EA8A3DF00D05213 /* z2_rootTable_+_Req */,
 				607E605A1EA9F85B00D05213 /* z3_nib_rootTablecell */,
@@ -1393,6 +1397,15 @@
 			path = PlistUtil;
 			sourceTree = "<group>";
 		};
+		8FC14CF51FEFE1F70024F86E /* FontAdapt */ = {
+			isa = PBXGroup;
+			children = (
+				8FC14CF61FEFE2DF0024F86E /* FontAdaptVC.h */,
+				8FC14CF71FEFE2DF0024F86E /* FontAdaptVC.m */,
+			);
+			path = FontAdapt;
+			sourceTree = "<group>";
+		};
 		8FDE031A1EC541E400FFBADA /* XTFMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -1838,6 +1851,7 @@
 				607E60561EA9DB7100D05213 /* DoubanTags.m in Sources */,
 				60E238F41E9622A1001235F2 /* MyWebController.m in Sources */,
 				607E60241EA85BE100D05213 /* WPAttributedStyleAction.m in Sources */,
+				8FC14CF81FEFE2DF0024F86E /* FontAdaptVC.m in Sources */,
 				607E602C1EA85BE100D05213 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				8F7F95BA1F0F615F00236286 /* ApplicationEvent.m in Sources */,
 				607E60351EA85BE100D05213 /* UICollectionViewLeftAlignedLayout.m in Sources */,
