@@ -1,4 +1,10 @@
-
+//
+//  UILabel+FontAdapter.h
+//  XTkit
+//
+//  Created by teason23 on 2017/8/23.
+//  Copyright © 2017年 teason. All rights reserved.
+//  FontAdapt  ( UILabel + UIButton + UITextField )
 
 #import "UILabel+FontAdapter.h"
 #import <objc/runtime.h>
@@ -40,7 +46,6 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
         // 部分不像改变字体的 把tag值设置成333跳过
         if (self.tag != 333){
             CGFloat fontSize = self.font.pointSize;
-//            self.font = [UIFont adjustFont:fontSize];
             [self.font adjustFont:fontSize] ;
         }
     }
@@ -65,7 +70,7 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
         //部分不想改变字体的 把tag值设置成333跳过
         if(self.tag != 333){
             CGFloat fontSize = self.titleLabel.font.pointSize;
-            self.titleLabel.font = [UIFont adjustFont:fontSize];
+            [self.titleLabel.font adjustFont:fontSize] ;
         }
     }
     return self;
@@ -87,9 +92,9 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
     [self myInitWithCoder:aDecode];
     if (self) {
         //部分不想改变字体的 把tag值设置成333跳过
-        if(self.tag != 333){
-            CGFloat fontSize = self.font.pointSize;
-            self.font = [UIFont adjustFont:fontSize];
+        if (self.tag != 333) {
+            CGFloat fontSize = self.font.pointSize ;
+            [self.font adjustFont:fontSize] ;
         }
     }
     return self;
