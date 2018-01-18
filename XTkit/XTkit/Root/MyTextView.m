@@ -26,7 +26,7 @@
     {
         float      width        = 1.0f ;
         self.layer.borderWidth  = width ;
-        self.layer.cornerRadius = CORNER_RADIUS_ALL  ;
+        self.layer.cornerRadius = G_CORNER_RADIUS  ;
         self.autocorrectionType = UITextAutocorrectionTypeNo;
         self.font = [UIFont systemFontOfSize:12.0f] ;
     }

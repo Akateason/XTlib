@@ -12,43 +12,43 @@
 
 @implementation ScreenFit
 
-DEF_SINGLETON(ScreenFit)
+XT_SINGLETON_M(ScreenFit)
 
-- (int)getScreenHeightscale {
-    int scaleY = 1 ;
-    int standard = 667 ;
+- (float)getScreenHeightscale {
+    float scaleY = 1. ;
+    float standard = 667. ;
     if (iphone6) {
-        scaleY = 667 / standard ;
+        scaleY = 667. / standard ;
     }
     else if (iphone6plus) {
-        scaleY = 736 / standard ;
+        scaleY = 736. / standard ;
     }
     else  if (iphone5) {
-        scaleY = 568 / standard ;
+        scaleY = 568. / standard ;
     }
     else if(iphone4) {
-        scaleY = 480 / standard ;
+        scaleY = 480. / standard ;
     }
     else {
-        return 1 ;
+        return 1. ;
     }
     return scaleY;
 }
 
-- (int)getScreenWidthscale {
-    int scaleX = 1 ;
-    int standard = 375 ;
+- (float)getScreenWidthscale {
+    float scaleX = 1. ;
+    float standard = 375. ;
     if (iphone6) {
-        scaleX = 375 / standard ;
+        scaleX = 375. / standard ;
     }
     else if (iphone6plus) {
-        scaleX = 414 / standard ;
+        scaleX = 414. / standard ;
     }
     else if (iphone5 || iphone4) {
-        scaleX = 320 / standard ;
+        scaleX = 320. / standard ;
     }
     else {
-        scaleX = 1 ;
+        scaleX = 1. ;
     }
     return scaleX ;
 }

@@ -1,15 +1,7 @@
-//
-//  WordsHeader.h
-//  JGB
-//
-//  所有HUD文字
-//  Created by JGBMACMINI01 on 15-2-4.
-//  Copyright (c) 2015年 JGBMACMINI01. All rights reserved.
-//
 
 
-#ifndef JGB_WordsHeader_h
-#define JGB_WordsHeader_h
+#ifndef WordsHeader_h
+#define WordsHeader_h
 
 /*
  *  Place holder

@@ -9,12 +9,6 @@
 #ifndef DeviceSysHeader_h
 #define DeviceSysHeader_h
 
-
-
-//  SCALE
-#define WIDTH_SCALE            [CommonFunc getScreenWidthscale]
-#define HEIGHT_SCALE           [CommonFunc getScreenHightscale]
-
 /*
  * >= VERSION ?
  * X -> float
@@ -34,6 +28,9 @@
 
 
 
+/**
+ * iphone device type
+ */
 #define iphone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
 
 #define iphone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -41,10 +38,6 @@
 #define iphone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
 
 #define iphone6plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
-
-
-
-
 
 
 

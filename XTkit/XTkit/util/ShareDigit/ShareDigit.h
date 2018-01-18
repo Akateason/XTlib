@@ -11,6 +11,6 @@
 
 @interface ShareDigit : NSObject
 
-AS_SINGLETON(ShareDigit)
+XT_SINGLETON_H(ShareDigit)
 
 @end

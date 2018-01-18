@@ -8,12 +8,16 @@
 
 #ifndef FastCodeHeader_h
 #define FastCodeHeader_h
+
+
 //-----------------------------------------------------------------------------//
 //
 // WEAK STRONG SELF
 //
 #define WEAK_SELF       __weak      typeof(self) weakSelf = self        ;
 #define STRONG_SELF     __strong    typeof(weakSelf) self = weakSelf    ;
+
+
 //
 //-----------------------------------------------------------------------------//
 //
@@ -67,5 +71,6 @@ static __class *__singleton__ = nil ;                                       \
 //
 #define STR_FORMAT(format, ...)         [NSString stringWithFormat:(format), ##__VA_ARGS__]
 //-----------------------------------------------------------------------------//
+
 
 #endif /* FastCodeHeader_h */

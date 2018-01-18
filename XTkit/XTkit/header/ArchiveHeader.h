@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 teason. All rights reserved.
 //
 
-#ifndef SuBaoJiang_ArchiveHeader_h
-#define SuBaoJiang_ArchiveHeader_h
+#ifndef ArchiveHeader_h
+#define ArchiveHeader_h
 /*
  * SAVE token FILE
  **/

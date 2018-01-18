@@ -16,18 +16,14 @@
 
 @implementation ValetManager
 
-DEF_SINGLETON(ValetManager)
+XT_SINGLETON_M(ValetManager)
 
-- (instancetype)init
-{
-    self = [super init] ;
-    if (self) {
-        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary] ;
-        NSString *appName = [infoDictionary objectForKey:@"CFBundleName"] ;
-        self.myValet = [[VALValet alloc] initWithIdentifier:appName
-                                              accessibility:VALAccessibilityWhenUnlocked] ;
-    }
-    return self;
+// configure
+- (void)setup {
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary] ;
+    NSString *appName = [infoDictionary objectForKey:@"CFBundleName"] ;
+    self.myValet = [[VALValet alloc] initWithIdentifier:appName
+                                          accessibility:VALAccessibilityWhenUnlocked] ;
 }
 
 /**

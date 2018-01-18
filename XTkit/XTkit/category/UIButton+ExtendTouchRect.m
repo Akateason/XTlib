@@ -22,13 +22,11 @@ void Swizzle(Class c, SEL orig, SEL new)
     }
 }
 
-+ (void)load
-{
++ (void)load {
     Swizzle(self, @selector(pointInside:withEvent:), @selector(myPointInside:withEvent:));
 }
 
-- (BOOL)myPointInside:(CGPoint)point withEvent:(UIEvent *)event
-{
+- (BOOL)myPointInside:(CGPoint)point withEvent:(UIEvent *)event {
     if (UIEdgeInsetsEqualToEdgeInsets(self.touchExtendInset, UIEdgeInsetsZero) || self.hidden ||
         ([self isKindOfClass:UIControl.class] && !((UIControl *)self).enabled))
     {
@@ -41,17 +39,20 @@ void Swizzle(Class c, SEL orig, SEL new)
     return CGRectContainsPoint(hitFrame, point);
 }
 
-static char touchExtendInsetKey;
-- (void)setTouchExtendInset:(UIEdgeInsets)touchExtendInset
-{
+static char touchExtendInsetKey ;
+- (void)setTouchExtendInset:(UIEdgeInsets)touchExtendInset {
     objc_setAssociatedObject(self, &touchExtendInsetKey, [NSValue valueWithUIEdgeInsets:touchExtendInset],
                              OBJC_ASSOCIATION_RETAIN) ;
 }
 
-- (UIEdgeInsets)touchExtendInset
-{
+- (UIEdgeInsets)touchExtendInset {
     return [objc_getAssociatedObject(self, &touchExtendInsetKey) UIEdgeInsetsValue] ;
 }
 
+
+// enlarge e.g. UIEdgeInsetsMake(-15, -15, -15, -15) ;
+- (void)xt_enlargeButtonsTouchArea {
+    self.touchExtendInset = UIEdgeInsetsMake(-kDefaultEnlargeFlex, -kDefaultEnlargeFlex, -kDefaultEnlargeFlex, -kDefaultEnlargeFlex) ;
+}
 
 @end

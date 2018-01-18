@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 teason. All rights reserved.
 //
 
-#ifndef SuBaoJiang_UrlRequestHeader_h
-#define SuBaoJiang_UrlRequestHeader_h
+#ifndef UrlRequestHeader_h
+#define UrlRequestHeader_h
 
 //  服务器ip地址切换
 static NSString *const G_IP_SERVER              = @"http://cms.subaojiang.com/" ;

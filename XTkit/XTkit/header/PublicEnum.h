@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 teason. All rights reserved.
 //
 
-#ifndef subao_PublicEnum_h
-#define subao_PublicEnum_h
+#ifndef PublicEnum_h
+#define PublicEnum_h
 
 /*
  页面跳转. (系统通知,首页banner)

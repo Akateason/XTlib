@@ -59,6 +59,7 @@
 
 - (void)testFunc {
 //    NSString *str = [[ValetManager sharedInstance] getPwdWithUname:@"xtc"] ;
+//    [[ValetManager sharedInstance] setup] ;
 //    [[ValetManager sharedInstance] saveUserName:@"xtc" pwd:@"324234daaa"] ;
 //    [[ValetManager sharedInstance] UUID] ;
     

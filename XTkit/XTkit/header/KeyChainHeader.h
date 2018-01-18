@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 teason. All rights reserved.
 //
 
-#ifndef SuBaoJiang_KeyChainHeader_h
-#define SuBaoJiang_KeyChainHeader_h
+#ifndef KeyChainHeader_h
+#define KeyChainHeader_h
 
 //友盟APP_KEY
 extern NSString *const UM_APPKEY ;

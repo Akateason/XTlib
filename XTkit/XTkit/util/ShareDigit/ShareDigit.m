@@ -10,6 +10,6 @@
 
 @implementation ShareDigit
 
-DEF_SINGLETON(ShareDigit)
+XT_SINGLETON_M(ShareDigit)
 
 @end

@@ -1,13 +1,12 @@
 //
 //  PictureHeader.h
-//  SuBaoJiang
 //
 //  Created by apple on 15/7/13.
 //  Copyright (c) 2015年 teason. All rights reserved.
 //
 
-#ifndef SuBaoJiang_PictureHeader_h
-#define SuBaoJiang_PictureHeader_h
+#ifndef PictureHeader_h
+#define PictureHeader_h
 
 // Global Images
 #define IMG_NOPIC               [UIImage imageNamed:@"nopic"]

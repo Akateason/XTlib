@@ -23,7 +23,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.title = @"hook" ;
     
     UIButton *button = [UIButton new] ;
     [button setTitle:@"dddd" forState:0] ;
@@ -35,7 +34,8 @@
                action:@selector(btAction)
      forControlEvents:UIControlEventTouchUpInside] ;
     
-    button.touchExtendInset = UIEdgeInsetsMake(-50, -50, -50, -50) ;
+//    button.touchExtendInset = UIEdgeInsetsMake(-50, -50, -50, -50) ;
+    [button xt_enlargeButtonsTouchArea] ;
     
     self.navigationDidClickBackButton = ^{
         NSLog(@"i pop") ;
@@ -47,8 +47,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)btAction
-{    
+- (void)btAction {
     Z8CollectionViewController *vc = [Z8CollectionViewController new] ;
     [self.navigationController pushViewController:vc animated:YES] ;
 }

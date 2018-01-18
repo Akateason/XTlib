@@ -10,8 +10,7 @@
 #import "FastCodeHeader.h"
 
 @interface ScreenFit : NSObject
-AS_SINGLETON(ScreenFit)
-- (int)getScreenHeightscale ;
-- (int)getScreenWidthscale  ;
-
+XT_SINGLETON_H(ScreenFit)
+- (float)getScreenHeightscale ;
+- (float)getScreenWidthscale  ;
 @end

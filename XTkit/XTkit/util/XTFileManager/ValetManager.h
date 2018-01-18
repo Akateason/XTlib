@@ -13,7 +13,10 @@
 
 @interface ValetManager : NSObject
 
-AS_SINGLETON(ValetManager)
+XT_SINGLETON_H(ValetManager)
+
+// configure first time in app launch
+- (void)setup ;
 
 /**
  uname and pwd
@@ -28,6 +31,7 @@ AS_SINGLETON(ValetManager)
  @return bool success
  */
 - (BOOL)prepareUUID ;
+
 /**
  get unique UUID
  */
