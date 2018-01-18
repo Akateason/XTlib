@@ -1,6 +1,6 @@
 # XTkit
 iOS快速开发框架
-XTkit
+XTkit   v0.0.96
 主要分几个模块
 # Root / Category / Header / Database / Color / Network / UIs / Util
 
