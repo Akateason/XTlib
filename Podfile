@@ -18,5 +18,6 @@ pod 'YYModel'
 pod 'FMDB'
 pod 'SSZipArchive'
 pod 'Valet'
+pod 'IQKeyboardManager'
 
 end

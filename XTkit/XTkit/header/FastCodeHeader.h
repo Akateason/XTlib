@@ -8,32 +8,64 @@
 
 #ifndef FastCodeHeader_h
 #define FastCodeHeader_h
+//-----------------------------------------------------------------------------//
 //
-//// WEAK STRONG SELF
-#define WEAK_SELF       __weak typeof(self) weakSelf = self
-#define STRONG_SELF     __strong typeof(weakSelf) self = weakSelf
+// WEAK STRONG SELF
 //
-
-
+#define WEAK_SELF       __weak      typeof(self) weakSelf = self        ;
+#define STRONG_SELF     __strong    typeof(weakSelf) self = weakSelf    ;
+//
+//-----------------------------------------------------------------------------//
+//
 // SINGLETON
+//
 // .h
-#undef AS_SINGLETON
-#define AS_SINGLETON(__class)                                               \
-+(__class *)sharedInstance;
+//
+#undef  XT_SINGLETON_H
+#define XT_SINGLETON_H(__class)                                             \
++ (__class *)sharedInstance ;                                               \
 
 // .m
-#undef DEF_SINGLETON
-#define DEF_SINGLETON(__class)                                              \
-+(__class *)sharedInstance                                                  \
-{                                                                           \
-static dispatch_once_t once;                                                \
-static __class *__singleton__;                                              \
-dispatch_once(&once, ^{ __singleton__ = [[__class alloc] init]; });         \
-return __singleton__;                                                       \
-}
+//
+#undef  XT_SINGLETON_M
+#define XT_SINGLETON_M(__class)                                             \
+static __class *__singleton__ = nil ;                                       \
++ (__class *)sharedInstance {                                               \
+    static dispatch_once_t once;                                            \
+    dispatch_once(&once, ^{ __singleton__ = [[__class alloc] init]; });     \
+    return __singleton__;                                                   \
+}                                                                           \
++ (instancetype)allocWithZone:(struct _NSZone *)zone {                      \
+    static dispatch_once_t once ;                                           \
+    dispatch_once(&once, ^{ __singleton__ = [super allocWithZone:zone];});  \
+    return __singleton__;                                                   \
+}                                                                           \
+- (instancetype)init {                                                      \
+    static dispatch_once_t onceToken;                                       \
+    dispatch_once(&onceToken, ^{                                            \
+        __singleton__ = [super init];                                       \
+    });                                                                     \
+    return __singleton__;                                                   \
+}                                                                           \
+- (id)copyWithZone:(NSZone *)zone {                                         \
+    return  __singleton__;                                                  \
+}                                                                           \
++ (id)copyWithZone:(struct _NSZone *)zone {                                 \
+    return  __singleton__;                                                  \
+}                                                                           \
++ (id)mutableCopyWithZone:(struct _NSZone *)zone {                          \
+    return __singleton__;                                                   \
+}                                                                           \
+- (id)mutableCopyWithZone:(NSZone *)zone {                                  \
+    return __singleton__;                                                   \
+}                                                                           \
 
 
+//-----------------------------------------------------------------------------//
+//
 // string format
+//
 #define STR_FORMAT(format, ...)         [NSString stringWithFormat:(format), ##__VA_ARGS__]
+//-----------------------------------------------------------------------------//
 
 #endif /* FastCodeHeader_h */
