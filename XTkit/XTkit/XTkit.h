@@ -58,6 +58,7 @@
 #import "UIViewController+Storyboard.h"
 #import "UIViewController+Navigation.h"
 #import "UIResponder+ChainHandler.h"
+#import "NSTimer+Addition.h"
 
 // DataBase
 #import "XTFMDB.h"

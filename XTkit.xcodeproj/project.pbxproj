@@ -910,6 +910,8 @@
 				8FFD73631EB9D19800148B83 /* UIViewController+Storyboard.m */,
 				8F37C0E51F0CAA7000EE713F /* UIViewController+Navigation.h */,
 				8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */,
+				60E238AA1E9622A1001235F2 /* NSTimer+Addition.h */,
+				60E238AB1E9622A1001235F2 /* NSTimer+Addition.m */,
 				8F2C58501F9E188400E10A55 /* UIResponder+ChainHandler.h */,
 				8F2C58511F9E188400E10A55 /* UIResponder+ChainHandler.m */,
 			);
@@ -1058,8 +1060,6 @@
 		60E238A91E9622A1001235F2 /* XTLoopScroll */ = {
 			isa = PBXGroup;
 			children = (
-				60E238AA1E9622A1001235F2 /* NSTimer+Addition.h */,
-				60E238AB1E9622A1001235F2 /* NSTimer+Addition.m */,
 				60E238AC1E9622A1001235F2 /* XTLoopScrollView.h */,
 				60E238AD1E9622A1001235F2 /* XTLoopScrollView.m */,
 			);

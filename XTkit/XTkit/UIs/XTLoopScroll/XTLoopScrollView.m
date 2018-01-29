@@ -292,7 +292,7 @@ static int IMAGEVIEW_COUNT = 3 ;
 
 - (void)resumeTimerWithDelay
 {
-    [_timerLoop pause] ;
+    [_timerLoop xt_pause] ;
 
     if (!bOpenTimer)
     {
@@ -319,7 +319,7 @@ static int IMAGEVIEW_COUNT = 3 ;
     
     if (bOpenTimer)
     {
-        [_timerLoop resume] ;
+        [_timerLoop xt_resume] ;
         bOpenTimer = NO ;
         
         [_timerOverflow invalidate] ;
