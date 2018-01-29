@@ -17,73 +17,91 @@
 #pragma mark --
 #pragma mark - Life
 
-- (void)dealloc
-{
+- (void)dealloc {
     NSString *title = self.navigationItem.title;
     if (title) {
-        NSLog(@"%@\n%@\ndealloc",self.description,title) ;
+        NSLog(@"xt_dealloc desc : %@\ntitle : %@\n -----",self.description,title) ;
     }
     else {
-        NSLog(@"%@\ndealloc",self.description) ;
+        NSLog(@"xt_dealloc title : %@\n -----",self.description) ;
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning] ;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil
-               bundle:(NSBundle *)nibBundleOrNil
-{
+               bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil
                            bundle:nibBundleOrNil] ;
     if (self) {
-        
+        [self prepare] ;
     }
     return self ;
 }
 
-- (instancetype)init
+- (instancetype)initWithCoder:(NSCoder *)coder
 {
-    self = [super init];
+    self = [super initWithCoder:coder];
     if (self) {
-        
+        [self prepare] ;
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self prepare] ;
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
     [super viewDidLoad] ;
-    // Do any additional setup after loading the view.
+    [self myStatTitle] ;
     [self prepareUI] ;
 }
 
-- (void)prepareUI
-{
+- (void)prepare {
+    // prepare when initial
+}
+
+- (void)prepareUI {
+    // prepare UI
     self.view.backgroundColor = [UIColor whiteColor] ;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)loadView {
+    [super loadView] ;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated] ;
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated] ;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated] ;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated] ;
+}
+
+#pragma mark --
+#pragma mark - prop
+
+- (NSString *)myStatTitle {
+    if (!_myStatTitle) _myStatTitle = self.title ;
+    return _myStatTitle ;
+}
 
 @end
-
-
-
-
-
-
-
 
 
 

@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 teason. All rights reserved.
 //
 
-#ifndef NoticicationCenterHeader_h
-#define NoticicationCenterHeader_h
+#ifndef NotificationCenterHeader_h
+#define NotificationCenterHeader_h
 
 //后台获取
 static NSString *const NOTIFICATION_EG      = @"NOTIFICATION_EG" ;

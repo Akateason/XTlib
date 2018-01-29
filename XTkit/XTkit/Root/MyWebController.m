@@ -1,15 +1,5 @@
-//
-//  MyWebController.m
-//  JGB
-//
-//  Created by JGBMACMINI01 on 14-9-10.
-//  Copyright (c) 2014年 JGBMACMINI01. All rights reserved.
-//
 
 #import "MyWebController.h"
-#import "WordsHeader.h"
-#import "SVProgressHUD.h"
-
 
 @interface MyWebController () <UIWebViewDelegate>
 

@@ -8,27 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ScreenHeader.h"
-#import "DeviceSysHeader.h"
-
 #import "Masonry.h"
 #import "YYModel.h"
 #import "SVProgressHUD.h"
+#import "XTkit.h"
 
-#import "ShareDigit.h"
 #import "ServerRequest.h"
-#import "RootTableView.h"
-#import "XTNetReloader.h"
-#import "XTAnimation.h"
-#import "XTJson.h"
-#import "CommonFunc.h"
 
 @interface RootCtrl : UIViewController
 
+@property (copy, nonatomic) NSString *myStatTitle ; // title for stat if needed.
+
+- (void)prepare ;
+- (void)prepareUI ;
+
 @end
-
-
-
-
-
-

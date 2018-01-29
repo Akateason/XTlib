@@ -82,12 +82,6 @@
 		60E238F81E9622A1001235F2 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2388E1E9622A1001235F2 /* ParallaxHeaderView.m */; };
 		60E238F91E9622A1001235F2 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238901E9622A1001235F2 /* UIImage+ImageEffects.m */; };
 		60E238FA1E9622A1001235F2 /* PlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238931E9622A1001235F2 /* PlaceHolderTextView.m */; };
-		60E238FB1E9622A1001235F2 /* AlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238961E9622A1001235F2 /* AlertBackgroundView.m */; };
-		60E238FC1E9622A1001235F2 /* ShareAlertV.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238981E9622A1001235F2 /* ShareAlertV.m */; };
-		60E238FD1E9622A1001235F2 /* ShareAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2389A1E9622A1001235F2 /* ShareAlertView.m */; };
-		60E238FE1E9622A1001235F2 /* ShareAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E2389B1E9622A1001235F2 /* ShareAlertView.xib */; };
-		60E238FF1E9622A1001235F2 /* ShareCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2389D1E9622A1001235F2 /* ShareCollectionCell.m */; };
-		60E239001E9622A1001235F2 /* ShareCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E2389E1E9622A1001235F2 /* ShareCollectionCell.xib */; };
 		60E239011E9622A1001235F2 /* FlywordLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238A11E9622A1001235F2 /* FlywordLabel.m */; };
 		60E239021E9622A1001235F2 /* XTBarrageItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238A31E9622A1001235F2 /* XTBarrageItemView.m */; };
 		60E239031E9622A1001235F2 /* XTBarrageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238A51E9622A1001235F2 /* XTBarrageView.m */; };
@@ -102,7 +96,6 @@
 		60E239121E9622A1001235F2 /* XTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238CF1E9622A1001235F2 /* XTAnimation.m */; };
 		60E239131E9622A1001235F2 /* XTFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D21E9622A1001235F2 /* XTFileManager.m */; };
 		60E239141E9622A1001235F2 /* XTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D51E9622A1001235F2 /* XTJson.m */; };
-		60E239151E9622A1001235F2 /* XTSearchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D81E9622A1001235F2 /* XTSearchHandler.m */; };
 		60E239171E9622A1001235F2 /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238DE1E9622A1001235F2 /* XTVerification.m */; };
 		8F158C7A1EC2A79200B0F551 /* Z5DisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C791EC2A79200B0F551 /* Z5DisplayController.m */; };
 		8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C7C1EC2A8B300B0F551 /* Z5DisplayCell.m */; };
@@ -343,16 +336,6 @@
 		60E238901E9622A1001235F2 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		60E238921E9622A1001235F2 /* PlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceHolderTextView.h; sourceTree = "<group>"; };
 		60E238931E9622A1001235F2 /* PlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceHolderTextView.m; sourceTree = "<group>"; };
-		60E238951E9622A1001235F2 /* AlertBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertBackgroundView.h; sourceTree = "<group>"; };
-		60E238961E9622A1001235F2 /* AlertBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertBackgroundView.m; sourceTree = "<group>"; };
-		60E238971E9622A1001235F2 /* ShareAlertV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareAlertV.h; sourceTree = "<group>"; };
-		60E238981E9622A1001235F2 /* ShareAlertV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareAlertV.m; sourceTree = "<group>"; };
-		60E238991E9622A1001235F2 /* ShareAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareAlertView.h; sourceTree = "<group>"; };
-		60E2389A1E9622A1001235F2 /* ShareAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareAlertView.m; sourceTree = "<group>"; };
-		60E2389B1E9622A1001235F2 /* ShareAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareAlertView.xib; sourceTree = "<group>"; };
-		60E2389C1E9622A1001235F2 /* ShareCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareCollectionCell.h; sourceTree = "<group>"; };
-		60E2389D1E9622A1001235F2 /* ShareCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareCollectionCell.m; sourceTree = "<group>"; };
-		60E2389E1E9622A1001235F2 /* ShareCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareCollectionCell.xib; sourceTree = "<group>"; };
 		60E238A01E9622A1001235F2 /* FlywordLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlywordLabel.h; sourceTree = "<group>"; };
 		60E238A11E9622A1001235F2 /* FlywordLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlywordLabel.m; sourceTree = "<group>"; };
 		60E238A21E9622A1001235F2 /* XTBarrageItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTBarrageItemView.h; sourceTree = "<group>"; };
@@ -381,11 +364,10 @@
 		60E238D21E9622A1001235F2 /* XTFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTFileManager.m; sourceTree = "<group>"; };
 		60E238D41E9622A1001235F2 /* XTJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTJson.h; sourceTree = "<group>"; };
 		60E238D51E9622A1001235F2 /* XTJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTJson.m; sourceTree = "<group>"; };
-		60E238D71E9622A1001235F2 /* XTSearchHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTSearchHandler.h; sourceTree = "<group>"; };
-		60E238D81E9622A1001235F2 /* XTSearchHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTSearchHandler.m; sourceTree = "<group>"; };
 		60E238DD1E9622A1001235F2 /* XTVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTVerification.h; sourceTree = "<group>"; };
 		60E238DE1E9622A1001235F2 /* XTVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTVerification.m; sourceTree = "<group>"; };
 		7CF43A032C3BF2386C1D5B60 /* Pods-XTkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-XTkit/Pods-XTkit.release.xcconfig"; sourceTree = "<group>"; };
+		7DD6E383201EEE5F0049EA1F /* XTkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTkit.h; sourceTree = "<group>"; };
 		8F158C781EC2A79200B0F551 /* Z5DisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Z5DisplayController.h; path = z5/Z5DisplayController.h; sourceTree = "<group>"; };
 		8F158C791EC2A79200B0F551 /* Z5DisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Z5DisplayController.m; path = z5/Z5DisplayController.m; sourceTree = "<group>"; };
 		8F158C7B1EC2A8B300B0F551 /* Z5DisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Z5DisplayCell.h; path = z5/Z5DisplayCell.h; sourceTree = "<group>"; };
@@ -825,6 +807,7 @@
 				60E2381F1E961D21001235F2 /* ViewController.h */,
 				60E238201E961D21001235F2 /* ViewController.m */,
 				8FA4DE7B1FA02608009F7928 /* viewControllers.plist */,
+				8F80E8F61FAD98FA0069F971 /* Algorithm */,
 				8FFD73401EB320BA00148B83 /* ServerRequest.h */,
 				8FFD73411EB320BA00148B83 /* ServerRequest.m */,
 				60E238221E961D21001235F2 /* Main.storyboard */,
@@ -868,6 +851,7 @@
 		60E2384C1E9622A1001235F2 /* XTkit */ = {
 			isa = PBXGroup;
 			children = (
+				7DD6E383201EEE5F0049EA1F /* XTkit.h */,
 				8F37C0E11F0C94C700EE713F /* Stat */,
 				60E238751E9622A1001235F2 /* Root */,
 				60E2384D1E9622A1001235F2 /* category */,
@@ -976,6 +960,12 @@
 			children = (
 				60E238841E9622A1001235F2 /* RootCtrl.h */,
 				60E238851E9622A1001235F2 /* RootCtrl.m */,
+				60E2387C1E9622A1001235F2 /* MyTabbarCtrller.h */,
+				60E2387D1E9622A1001235F2 /* MyTabbarCtrller.m */,
+				60E238761E9622A1001235F2 /* MyNavCtrller.h */,
+				60E238771E9622A1001235F2 /* MyNavCtrller.m */,
+				60E238821E9622A1001235F2 /* MyWebController.h */,
+				60E238831E9622A1001235F2 /* MyWebController.m */,
 				60E238861E9622A1001235F2 /* RootTableView.h */,
 				60E238871E9622A1001235F2 /* RootTableView.m */,
 				607E603F1EA8810B00D05213 /* RootTableCell.h */,
@@ -984,20 +974,14 @@
 				607E603A1EA8714F00D05213 /* RootRefreshHeader.m */,
 				607E603C1EA8740A00D05213 /* RootRefreshFooter.h */,
 				607E603D1EA8740A00D05213 /* RootRefreshFooter.m */,
-				60E238761E9622A1001235F2 /* MyNavCtrller.h */,
-				60E238771E9622A1001235F2 /* MyNavCtrller.m */,
 				60E238781E9622A1001235F2 /* MySearchBar.h */,
 				60E238791E9622A1001235F2 /* MySearchBar.m */,
 				60E2387A1E9622A1001235F2 /* MyTabbar.h */,
 				60E2387B1E9622A1001235F2 /* MyTabbar.m */,
-				60E2387C1E9622A1001235F2 /* MyTabbarCtrller.h */,
-				60E2387D1E9622A1001235F2 /* MyTabbarCtrller.m */,
 				60E2387E1E9622A1001235F2 /* MyTextField.h */,
 				60E2387F1E9622A1001235F2 /* MyTextField.m */,
 				60E238801E9622A1001235F2 /* MyTextView.h */,
 				60E238811E9622A1001235F2 /* MyTextView.m */,
-				60E238821E9622A1001235F2 /* MyWebController.h */,
-				60E238831E9622A1001235F2 /* MyWebController.m */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -1009,7 +993,6 @@
 				60E238891E9622A1001235F2 /* GradientBGView */,
 				60E2388C1E9622A1001235F2 /* ParallaxHeaderView */,
 				60E238911E9622A1001235F2 /* PlaceHolderTextView */,
-				60E238941E9622A1001235F2 /* ShareAlert */,
 				60E2389F1E9622A1001235F2 /* XTBarrageView */,
 				60E238A61E9622A1001235F2 /* XTLineSpaceLabel */,
 				60E238A91E9622A1001235F2 /* XTLoopScroll */,
@@ -1048,23 +1031,6 @@
 				60E238931E9622A1001235F2 /* PlaceHolderTextView.m */,
 			);
 			path = PlaceHolderTextView;
-			sourceTree = "<group>";
-		};
-		60E238941E9622A1001235F2 /* ShareAlert */ = {
-			isa = PBXGroup;
-			children = (
-				60E238951E9622A1001235F2 /* AlertBackgroundView.h */,
-				60E238961E9622A1001235F2 /* AlertBackgroundView.m */,
-				60E238971E9622A1001235F2 /* ShareAlertV.h */,
-				60E238981E9622A1001235F2 /* ShareAlertV.m */,
-				60E238991E9622A1001235F2 /* ShareAlertView.h */,
-				60E2389A1E9622A1001235F2 /* ShareAlertView.m */,
-				60E2389B1E9622A1001235F2 /* ShareAlertView.xib */,
-				60E2389C1E9622A1001235F2 /* ShareCollectionCell.h */,
-				60E2389D1E9622A1001235F2 /* ShareCollectionCell.m */,
-				60E2389E1E9622A1001235F2 /* ShareCollectionCell.xib */,
-			);
-			path = ShareAlert;
 			sourceTree = "<group>";
 		};
 		60E2389F1E9622A1001235F2 /* XTBarrageView */ = {
@@ -1152,7 +1118,6 @@
 			isa = PBXGroup;
 			children = (
 				8F560AEF1FEC900200E726F9 /* Base64+MD5 */,
-				8F80E8F61FAD98FA0069F971 /* Algorithm */,
 				8FA4DE771FA0222B009F7928 /* PlistUtil */,
 				8F7E65251F1F39790028217B /* ScreenFit */,
 				8F7E65211F1F38E00028217B /* IsFirstTime */,
@@ -1161,7 +1126,6 @@
 				60E238CD1E9622A1001235F2 /* XTAnimation */,
 				60E238D01E9622A1001235F2 /* XTFileManager */,
 				60E238D31E9622A1001235F2 /* XTJson */,
-				60E238D61E9622A1001235F2 /* XTSearchHandler */,
 				60E238DC1E9622A1001235F2 /* XTVerification */,
 			);
 			path = util;
@@ -1214,15 +1178,6 @@
 				60E238D51E9622A1001235F2 /* XTJson.m */,
 			);
 			path = XTJson;
-			sourceTree = "<group>";
-		};
-		60E238D61E9622A1001235F2 /* XTSearchHandler */ = {
-			isa = PBXGroup;
-			children = (
-				60E238D71E9622A1001235F2 /* XTSearchHandler.h */,
-				60E238D81E9622A1001235F2 /* XTSearchHandler.m */,
-			);
-			path = XTSearchHandler;
 			sourceTree = "<group>";
 		};
 		60E238DC1E9622A1001235F2 /* XTVerification */ = {
@@ -1619,8 +1574,6 @@
 			files = (
 				60E238291E961D21001235F2 /* LaunchScreen.storyboard in Resources */,
 				607E606E1EAD86D100D05213 /* MovieCell.xib in Resources */,
-				60E239001E9622A1001235F2 /* ShareCollectionCell.xib in Resources */,
-				60E238FE1E9622A1001235F2 /* ShareAlertView.xib in Resources */,
 				60E238261E961D21001235F2 /* Assets.xcassets in Resources */,
 				8FA4DE7C1FA02608009F7928 /* viewControllers.plist in Resources */,
 				60E238EA1E9622A1001235F2 /* xtAllColorsList.plist in Resources */,
@@ -1753,14 +1706,12 @@
 				8F7E65241F1F38E00028217B /* IsFirstTime.m in Sources */,
 				60E239071E9622A1001235F2 /* XTTableViewRootHandler.m in Sources */,
 				607E60271EA85BE100D05213 /* NSMutableString+TagReplace.m in Sources */,
-				60E238FF1E9622A1001235F2 /* ShareCollectionCell.m in Sources */,
 				8FFD733D1EB30A5400148B83 /* Zample4Controller.m in Sources */,
 				60E238F31E9622A1001235F2 /* MyTextView.m in Sources */,
 				8F9916501EC0754B00BA8F0D /* XTDBModel+autoSql.m in Sources */,
 				60E238ED1E9622A1001235F2 /* XTRequest.m in Sources */,
 				607E604C1EA88B5700D05213 /* Zample1Controller.m in Sources */,
 				607E5FCC1EA6F8E400D05213 /* XTZoomPicture.m in Sources */,
-				60E238FC1E9622A1001235F2 /* ShareAlertV.m in Sources */,
 				8F7F95C21F10B43100236286 /* NSObject+Runtime.m in Sources */,
 				60E238E51E9622A1001235F2 /* UIImageView+QNExtention.m in Sources */,
 				8F7F95C61F10C54200236286 /* StatSender.m in Sources */,
@@ -1819,7 +1770,6 @@
 				60E238EE1E9622A1001235F2 /* MyNavCtrller.m in Sources */,
 				8F560AF71FEC900200E726F9 /* Base64.m in Sources */,
 				607E5FCF1EA6FCBC00D05213 /* UIButton+Countdown.m in Sources */,
-				60E239151E9622A1001235F2 /* XTSearchHandler.m in Sources */,
 				60E2390A1E9622A1001235F2 /* XTSegment.m in Sources */,
 				607E60741EADBE6500D05213 /* UIViewController+TabbarHidden.m in Sources */,
 				8F16B9AA1F25D9280049CEE1 /* Z8CollectionViewCell.m in Sources */,
@@ -1839,7 +1789,6 @@
 				8F22B5701FC93B4800B1EC0E /* XTDBVersion.m in Sources */,
 				60E238E21E9622A1001235F2 /* NSString+Extend.m in Sources */,
 				607E60711EADA67100D05213 /* UIViewController+HowToUse.m in Sources */,
-				60E238FD1E9622A1001235F2 /* ShareAlertView.m in Sources */,
 				8FE80E4D1FC983D300FA8E53 /* RespoderChainViewController.m in Sources */,
 				607E60591EA9DEF300D05213 /* DoubanTagsCell.m in Sources */,
 				8F16B99F1F25D4630049CEE1 /* UITableView+Stat.m in Sources */,
@@ -1867,7 +1816,6 @@
 				60E2381B1E961D21001235F2 /* main.m in Sources */,
 				8FFD73611EB9B4C100148B83 /* Model1.m in Sources */,
 				60E238DF1E9622A1001235F2 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
-				60E238FB1E9622A1001235F2 /* AlertBackgroundView.m in Sources */,
 				607E60311EA85BE100D05213 /* KxMenu.m in Sources */,
 				60E238E31E9622A1001235F2 /* UIButton+Badges.m in Sources */,
 				60E238F51E9622A1001235F2 /* RootCtrl.m in Sources */,

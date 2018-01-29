@@ -11,7 +11,7 @@
 
 #import "XTRequest.h"
 #import "XTCacheRequest.h"
-
+#import "XTReqResonse.h"
 
 
 #endif /* XTReq_h */
