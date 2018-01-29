@@ -19,5 +19,9 @@ pod 'FMDB'
 pod 'SSZipArchive'
 pod 'Valet'
 pod 'IQKeyboardManager'
+pod 'LxDBAnything'
+# pod 'BlocksKit'
+# pod 'Bugly'
+
 
 end
