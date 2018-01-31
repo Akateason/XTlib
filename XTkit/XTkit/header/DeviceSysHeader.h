@@ -10,6 +10,17 @@
 #define DeviceSysHeader_h
 
 /*
+ * is iphone
+ * ios 11
+ * iphone X
+ */
+#define XT_IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
+#define XT_IS_IOS_11  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.f)
+
+#define XT_IS_IPHONE_X (XT_IS_IOS_11 && XT_IS_IPHONE && (MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) == 375 && MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) == 812))
+
+/*
  * >= VERSION ?
  * X -> float
  */

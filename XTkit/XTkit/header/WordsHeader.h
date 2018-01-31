@@ -14,7 +14,7 @@ static NSString *const WD_NONE_SPACE          = @" " ;
  */
 static NSString *const WD_HUD_NOMORE            = @"没有更多了" ;
 static NSString *const WD_HUD_OPERATE_SUCCESS   = @"操作已成功" ;
-static NSString *const WD_HUD_FAIL_RETRY        = @"网络不通畅,请重试" ;
+static NSString *const WD_HUD_FAIL_RETRY        = @"网络不通畅" ;
 
 /*
  *  Input Output
@@ -57,6 +57,5 @@ static NSString *const WD_CANCEL                = @"取 消" ;
 #define WD_REPORT_ARTICLE           @"我要举报该作品"
 #define WD_REPORT_USER              @"我要举报该用户"
 
-#define WD_HUD_REPORT_FINISHED      @"感谢您的帮助,速报酱的小\n管家将尽快核实并处理"
 
 #endif
