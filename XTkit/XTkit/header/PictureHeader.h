@@ -13,6 +13,8 @@
 #define IMG_HEAD_NO             [UIImage imageNamed:@"headNo"]
 #define IMG_PHONE_WID(STR,W)    [STR stringByAppendingString:[NSString stringWithFormat:@"?imageView/2/w/%@",@(W)]]
 
+#define IMAGE_SIZE_SCALE2(_size_)        CGSizeMake(_size_.width * 2., _size_.height * 2.)
+
 // Qiniu url
 extern NSString *const URL_QINIU_HEAD ;
 
