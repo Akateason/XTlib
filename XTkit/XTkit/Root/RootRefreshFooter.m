@@ -51,9 +51,7 @@ extern float const kTABLE_HEADER_DURATION       ;
     NSArray *idleImages = self.gifImageList.count ? @[[self.gifImageList firstObject]] : @[] ;
     NSArray *pullingImages = self.gifImageList ;
     NSArray *refreshingImages = self.gifImageList ;
-    
-    float duration = .7 ;
-    
+        
     [self setImages:idleImages
            duration:kTABLE_HEADER_DURATION
            forState:MJRefreshStateIdle] ;
