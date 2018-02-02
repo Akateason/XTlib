@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MJRefresh.h"
+@class RootTableView ;
 
 @protocol RootTableViewDelegate <NSObject>
 @required
-- (void)loadNew:(void(^)(void))endRefresh   ;
+- (void)tableView:(RootTableView *)table loadNew:(void(^)(void))endRefresh   ;
 @optional
-- (void)loadMore:(void(^)(void))endRefresh  ;
+- (void)tableView:(RootTableView *)table loadMore:(void(^)(void))endRefresh  ;
 @end
 
 @interface RootTableView : UITableView
@@ -31,12 +32,12 @@
 /**
  PULL DOWN HEADER
  */
-- (void)pullDownRefreshHeader ;
+- (void)loadNewInfo ;
 /**
  PULL DOWN HEADER
  @param isBackGround    pull header in backgound or not .
  */
-- (void)pullDownRefreshHeaderInBackGround:(BOOL)isBackGround ;
+- (void)loadNewInfoInBackGround:(BOOL)isBackGround ;
 /**
  prepareStyle
  u can rewrite in subclass if needed

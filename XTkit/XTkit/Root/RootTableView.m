@@ -19,19 +19,20 @@
 
 #pragma mark --
 #pragma mark - Public
-- (void)pullDownRefreshHeader
+- (void)loadNewInfo
 {
-    [self pullDownRefreshHeaderInBackGround:FALSE] ;
+    [self loadNewInfoInBackGround:FALSE] ;
 }
 
-- (void)pullDownRefreshHeaderInBackGround:(BOOL)isBackGround ;
+- (void)loadNewInfoInBackGround:(BOOL)isBackGround ;
 {
     if (isBackGround)
     {
-        if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(loadNew:)])
+        if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(tableView:loadNew:)])
         {
             __weak RootTableView *weakSelf = self ;
-            [self.xt_Delegate loadNew:^{
+            [self.xt_Delegate tableView:self
+                                loadNew:^{
                 [weakSelf reloadTableInMainThread] ;
                 [weakSelf.mj_header endRefreshing] ;
             }] ;
@@ -136,7 +137,7 @@
 
 - (void)loadNewDataSelector
 {
-    if (!self.xt_Delegate || ![self.xt_Delegate respondsToSelector:@selector(loadNew:)])
+    if (!self.xt_Delegate || ![self.xt_Delegate respondsToSelector:@selector(tableView:loadNew:)])
     {
         [self.mj_header endRefreshing] ;
         return ;
@@ -144,7 +145,8 @@
     
     // do request
     __weak RootTableView *weakSelf = self ;
-    [weakSelf.xt_Delegate loadNew:^{
+    [weakSelf.xt_Delegate tableView:self
+                            loadNew:^{
         [weakSelf reloadTableInMainThread] ;
         [weakSelf.mj_header endRefreshing] ;
     }] ;
@@ -152,7 +154,7 @@
 
 - (void)loadMoreDataSelector
 {
-    if (!self.xt_Delegate || ![self.xt_Delegate respondsToSelector:@selector(loadMore:)])
+    if (!self.xt_Delegate || ![self.xt_Delegate respondsToSelector:@selector(tableView:loadMore:)])
     {
         [self.mj_footer endRefreshing] ;
         return ;
@@ -164,7 +166,8 @@
     {
         dispatch_async(dispatch_queue_create("refreshAutoFooter", NULL), ^
         {
-            [weakSelf.xt_Delegate loadMore:^{
+            [weakSelf.xt_Delegate tableView:self
+                                   loadMore:^{
                 [weakSelf reloadTableInMainThread] ;
                 [weakSelf.mj_footer endRefreshing] ;
             }] ;
@@ -172,7 +175,8 @@
     }
     else
     {
-        [weakSelf.xt_Delegate loadMore:^{
+        [weakSelf.xt_Delegate tableView:self
+                               loadMore:^{
             [weakSelf reloadTableInMainThread] ;
             [weakSelf.mj_footer endRefreshing] ;
         }] ;
