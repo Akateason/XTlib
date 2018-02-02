@@ -17,6 +17,7 @@ PODS:
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
+  - iCarousel (1.8.3)
   - IQKeyboardManager (5.0.7)
   - JKCategories (1.6)
   - LxDBAnything (1.1.0)
@@ -35,6 +36,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - FMDB
+  - iCarousel
   - IQKeyboardManager
   - JKCategories
   - LxDBAnything
@@ -51,6 +53,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   JKCategories: dab1bd3f7500836c5066d09052b85c12a963db12
   LxDBAnything: 154a2ad1ae32e70355d886b5443260543bb60c71
@@ -64,6 +67,6 @@ SPEC CHECKSUMS:
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 77b852d8135527d323f9be0a5d6e3ab9a8740de3
+PODFILE CHECKSUM: fd7d0ea3ce9fb97d1a7b532f5f094503248366a2
 
 COCOAPODS: 1.4.0.rc.1

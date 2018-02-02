@@ -97,6 +97,7 @@
 		60E239131E9622A1001235F2 /* XTFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D21E9622A1001235F2 /* XTFileManager.m */; };
 		60E239141E9622A1001235F2 /* XTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D51E9622A1001235F2 /* XTJson.m */; };
 		60E239171E9622A1001235F2 /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238DE1E9622A1001235F2 /* XTVerification.m */; };
+		7DBF8FDE20247DE00030C3D5 /* XTDrawerFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF8FDD20247DE00030C3D5 /* XTDrawerFlowLayout.m */; };
 		8F158C7A1EC2A79200B0F551 /* Z5DisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C791EC2A79200B0F551 /* Z5DisplayController.m */; };
 		8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C7C1EC2A8B300B0F551 /* Z5DisplayCell.m */; };
 		8F158C7F1EC2A8E900B0F551 /* Z5DisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F158C7E1EC2A8E900B0F551 /* Z5DisplayCell.xib */; };
@@ -367,6 +368,8 @@
 		60E238DD1E9622A1001235F2 /* XTVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTVerification.h; sourceTree = "<group>"; };
 		60E238DE1E9622A1001235F2 /* XTVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTVerification.m; sourceTree = "<group>"; };
 		7CF43A032C3BF2386C1D5B60 /* Pods-XTkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-XTkit/Pods-XTkit.release.xcconfig"; sourceTree = "<group>"; };
+		7DBF8FDC20247DE00030C3D5 /* XTDrawerFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTDrawerFlowLayout.h; sourceTree = "<group>"; };
+		7DBF8FDD20247DE00030C3D5 /* XTDrawerFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTDrawerFlowLayout.m; sourceTree = "<group>"; };
 		7DD6E383201EEE5F0049EA1F /* XTkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTkit.h; sourceTree = "<group>"; };
 		8F158C781EC2A79200B0F551 /* Z5DisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Z5DisplayController.h; path = z5/Z5DisplayController.h; sourceTree = "<group>"; };
 		8F158C791EC2A79200B0F551 /* Z5DisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Z5DisplayController.m; path = z5/Z5DisplayController.m; sourceTree = "<group>"; };
@@ -991,6 +994,7 @@
 		60E238881E9622A1001235F2 /* UIs */ = {
 			isa = PBXGroup;
 			children = (
+				7DBF8FDB20247DE00030C3D5 /* XTDrawerFlowLayout */,
 				607E5FC91EA6F8E400D05213 /* XTZoomPicture */,
 				60E238891E9622A1001235F2 /* GradientBGView */,
 				60E2388C1E9622A1001235F2 /* ParallaxHeaderView */,
@@ -1196,6 +1200,15 @@
 				7CF43A032C3BF2386C1D5B60 /* Pods-XTkit.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DBF8FDB20247DE00030C3D5 /* XTDrawerFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				7DBF8FDC20247DE00030C3D5 /* XTDrawerFlowLayout.h */,
+				7DBF8FDD20247DE00030C3D5 /* XTDrawerFlowLayout.m */,
+			);
+			path = XTDrawerFlowLayout;
 			sourceTree = "<group>";
 		};
 		8F16B9901F25D1C70049CEE1 /* util */ = {
@@ -1635,6 +1648,7 @@
 				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1651,6 +1665,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1734,6 +1749,7 @@
 				607E60331EA85BE100D05213 /* SIAlertView.m in Sources */,
 				8F80E8F91FAD99090069F971 /* Algorithm.m in Sources */,
 				60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */,
+				7DBF8FDE20247DE00030C3D5 /* XTDrawerFlowLayout.m in Sources */,
 				607E605D1EA9F87C00D05213 /* Zample3Controller.m in Sources */,
 				8F2C58591F9E1C3B00E10A55 /* UILabel+FontAdapter.m in Sources */,
 				60E239051E9622A1001235F2 /* NSTimer+Addition.m in Sources */,
