@@ -20,6 +20,7 @@ pod 'SSZipArchive'
 pod 'Valet'
 pod 'IQKeyboardManager'
 pod 'LxDBAnything'
+pod 'iCarousel'
 # pod 'BlocksKit'
 # pod 'Bugly'
 
