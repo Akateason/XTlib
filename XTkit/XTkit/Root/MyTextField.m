@@ -38,9 +38,9 @@
         
         self.borderStyle        = UITextBorderStyleNone ;
 //        CGColorRef cgColor      = COLOR_LIGHT_GRAY.CGColor ;
-        float      width        = 1.0f ;
+//        float      width        = 1.0f ;
 //        self.layer.borderColor  = cgColor ;
-        self.layer.borderWidth  = width ;
+//        self.layer.borderWidth  = width ;
         self.layer.cornerRadius = G_CORNER_RADIUS  ;
         self.autocorrectionType = UITextAutocorrectionTypeNo;
         self.adjustsFontSizeToFitWidth = YES;
