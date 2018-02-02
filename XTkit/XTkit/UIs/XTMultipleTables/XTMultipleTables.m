@@ -40,7 +40,7 @@ static int IMAGEVIEW_COUNT = 3 ;
 {
     XTTableViewRootHandler *handlerCenter = (XTTableViewRootHandler *)_list_handlers[_currentIndex] ;
 //    if ( ![handlerCenter hasDataSource] ) {
-        [_centerTable pullDownRefreshHeader] ;
+        [_centerTable loadNewInfo] ;
 //    }
 }
 

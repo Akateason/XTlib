@@ -46,11 +46,11 @@
         view ;
     }) ;
     
-    [self.table pullDownRefreshHeaderInBackGround:TRUE] ;
+    [self.table loadNewInfoInBackGround:TRUE] ;
 }
 
 #pragma mark - RootTableViewDelegate
-- (void)loadNew:(void(^)(void))endRefresh
+- (void)tableView:(RootTableView *)table loadNew:(void (^)(void))endRefresh
 {
     [ServerRequest zample2WithSuccess:^(id json) {
         
@@ -70,7 +70,7 @@
     }] ;
 }
 
-- (void)loadMore:(void(^)(void))endRefresh
+- (void)tableView:(RootTableView *)table loadMore:(void (^)(void))endRefresh
 {
     [ServerRequest zample2WithSuccess:^(id json) {
         

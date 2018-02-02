@@ -46,7 +46,7 @@
     
     [self.table registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil]
      forCellReuseIdentifier:@"MovieCell"] ;
-    [self.table pullDownRefreshHeaderInBackGround:TRUE] ;
+    [self.table loadNewInfoInBackGround:TRUE] ;
 }
 
 
@@ -54,7 +54,7 @@ static const NSInteger kEveryCount = 10 ;
 
 #pragma mark - RootTableViewDelegate
 
-- (void)loadNew:(void(^)(void))endRefresh
+- (void)tableView:(RootTableView *)table loadNew:(void (^)(void))endRefresh
 {
     [ServerRequest zample6_GetMovieListWithStart:0
                                            count:kEveryCount
@@ -67,7 +67,7 @@ static const NSInteger kEveryCount = 10 ;
                                       }] ;
 }
 
-- (void)loadMore:(void(^)(void))endRefresh
+- (void)tableView:(RootTableView *)table loadMore:(void (^)(void))endRefresh
 {
     [ServerRequest zample6_GetMovieListWithStart:self.list_datasource.count
                                            count:kEveryCount

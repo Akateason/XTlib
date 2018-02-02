@@ -47,7 +47,8 @@
 /**
  endRefresh header and footer if needed .
  */
-- (void)endRefresh ;
+- (void)endHeaderAndFooterRefresh ;
+
 @end
 
 

@@ -190,7 +190,7 @@
     }) ;
 }
 
-- (void)endRefresh {
+- (void)endHeaderAndFooterRefresh {
     [self reloadTableInMainThread] ;
     if (self.mj_header.isRefreshing) [self.mj_header endRefreshing] ;
     if (self.mj_footer.isRefreshing) [self.mj_footer endRefreshing] ;
