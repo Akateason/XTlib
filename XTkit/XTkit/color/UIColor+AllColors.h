@@ -10,12 +10,9 @@
 
 @interface UIColor (AllColors)
 
-+ (UIColor *)mainBlue ;
-+ (UIColor *)text1 ;
-+ (UIColor *)lightYellow ;
-+ (UIColor *)borderGray ;
-+ (UIColor *)grayBg ;
-+ (UIColor *)purple ;
-+ (UIColor *)weixinGreen ;
++ (UIColor *)xt_main ;
++ (UIColor *)xt_bg ;
++ (UIColor *)xt_text_dark ;
++ (UIColor *)xt_text_light ;
 
 @end

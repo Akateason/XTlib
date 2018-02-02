@@ -24,7 +24,7 @@
 #define APP_STATUSBAR_HEIGHT            ( XT_IS_IPHONE_X ? APP_SAFEAREA_STATUSBAR_FLEX + 20. : 20. )
 #define APP_TABBAR_HEIGHT               ( XT_IS_IPHONE_X ? 49.f + APP_SAFEAREA_TABBAR_FLEX : 49.f )
 #define APP_SAFEAREA_STATUSBAR_FLEX     24.
-#define APP_SAFEAREA_TABBAR_FLEX        43.
+#define APP_SAFEAREA_TABBAR_FLEX        ( XT_IS_IPHONE_X ? 43. : 0 )
 
 // screen
 #define G_ONE_PIXEL                     0.5f
