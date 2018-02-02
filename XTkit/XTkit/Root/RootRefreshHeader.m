@@ -8,8 +8,9 @@
 
 #import "RootRefreshHeader.h"
 
-NSString *const kTABLE_HEADER_IMAGES            =   @"refresh" ;
-float const     kTABLE_HEADER_IMAGES_COUNT      =   5          ;
+NSString *const kTABLE_HEADER_IMAGES            =   @"refresh"  ;
+float const     kTABLE_HEADER_IMAGES_COUNT      =   49          ;
+float const     kTABLE_HEADER_DURATION          =   .65         ;
 
 @interface RootRefreshHeader ()
 @property (nonatomic,strong) NSArray *gifImageList ;
@@ -24,7 +25,7 @@ float const     kTABLE_HEADER_IMAGES_COUNT      =   5          ;
     if (!_gifImageList)
     {
         NSMutableArray *tempList = [NSMutableArray array] ;
-        for (int i = 1; i <= kTABLE_HEADER_IMAGES_COUNT; i++)
+        for (int i = 0; i <= kTABLE_HEADER_IMAGES_COUNT; i++)
         {
             if ([UIImage imageNamed:[NSString stringWithFormat:@"%@%d",kTABLE_HEADER_IMAGES,i]]) {
                 UIImage *imgTemp = [UIImage imageNamed:[NSString stringWithFormat:@"%@%d",kTABLE_HEADER_IMAGES,i]] ;
@@ -48,9 +49,15 @@ float const     kTABLE_HEADER_IMAGES_COUNT      =   5          ;
     NSArray *pullingImages      = self.gifImageList ;
     NSArray *refreshingImages   = self.gifImageList ;
     
-    [self setImages:idleImages forState:MJRefreshStateIdle] ;
-    [self setImages:pullingImages forState:MJRefreshStatePulling] ;
-    [self setImages:refreshingImages forState:MJRefreshStateRefreshing] ;
+    [self setImages:idleImages
+           duration:kTABLE_HEADER_DURATION
+           forState:MJRefreshStateIdle] ;
+    [self setImages:pullingImages
+           duration:kTABLE_HEADER_DURATION
+           forState:MJRefreshStatePulling] ;
+    [self setImages:refreshingImages
+           duration:kTABLE_HEADER_DURATION
+           forState:MJRefreshStateRefreshing] ;
 
     
 //    // 设置控件的高度
