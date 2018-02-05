@@ -35,7 +35,6 @@
 		607E603B1EA8714F00D05213 /* RootRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E603A1EA8714F00D05213 /* RootRefreshHeader.m */; };
 		607E603E1EA8740A00D05213 /* RootRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E603D1EA8740A00D05213 /* RootRefreshFooter.m */; };
 		607E60411EA8810B00D05213 /* RootTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60401EA8810B00D05213 /* RootTableCell.m */; };
-		607E60441EA883BB00D05213 /* UIView+CurrentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60431EA883BB00D05213 /* UIView+CurrentController.m */; };
 		607E604C1EA88B5700D05213 /* Zample1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E604B1EA88B5700D05213 /* Zample1Controller.m */; };
 		607E604F1EA88B8100D05213 /* Z1CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E604E1EA88B8100D05213 /* Z1CustomCell.m */; };
 		607E60531EA8A3F600D05213 /* Zample2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60521EA8A3F600D05213 /* Zample2Controller.m */; };
@@ -97,6 +96,7 @@
 		60E239131E9622A1001235F2 /* XTFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D21E9622A1001235F2 /* XTFileManager.m */; };
 		60E239141E9622A1001235F2 /* XTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238D51E9622A1001235F2 /* XTJson.m */; };
 		60E239171E9622A1001235F2 /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238DE1E9622A1001235F2 /* XTVerification.m */; };
+		7D4B27B720283850001CA91B /* UIView+XTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B27B620283850001CA91B /* UIView+XTAddition.m */; };
 		7DBF8FDE20247DE00030C3D5 /* XTDrawerFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF8FDD20247DE00030C3D5 /* XTDrawerFlowLayout.m */; };
 		8F158C7A1EC2A79200B0F551 /* Z5DisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C791EC2A79200B0F551 /* Z5DisplayController.m */; };
 		8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C7C1EC2A8B300B0F551 /* Z5DisplayCell.m */; };
@@ -115,7 +115,6 @@
 		8F2C584F1F9E17F600E10A55 /* NSNumber+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C584E1F9E17F500E10A55 /* NSNumber+Round.m */; };
 		8F2C58521F9E188400E10A55 /* UIResponder+ChainHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C58511F9E188400E10A55 /* UIResponder+ChainHandler.m */; };
 		8F2C58581F9E1C3B00E10A55 /* UIFont+FontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C58541F9E1C3900E10A55 /* UIFont+FontAdapter.m */; };
-		8F2C58591F9E1C3B00E10A55 /* UILabel+FontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C58551F9E1C3900E10A55 /* UILabel+FontAdapter.m */; };
 		8F37C0081EF8F20B00EE713F /* UIButton+ExtendTouchRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */; };
 		8F37C0E71F0CAA7000EE713F /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F37C0E61F0CAA7000EE713F /* UIViewController+Navigation.m */; };
 		8F454C801F27306E0068DD43 /* XTArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C7F1F27306E0068DD43 /* XTArchive.m */; };
@@ -238,8 +237,6 @@
 		607E603D1EA8740A00D05213 /* RootRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootRefreshFooter.m; sourceTree = "<group>"; };
 		607E603F1EA8810B00D05213 /* RootTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTableCell.h; sourceTree = "<group>"; };
 		607E60401EA8810B00D05213 /* RootTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableCell.m; sourceTree = "<group>"; };
-		607E60421EA883BB00D05213 /* UIView+CurrentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CurrentController.h"; sourceTree = "<group>"; };
-		607E60431EA883BB00D05213 /* UIView+CurrentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CurrentController.m"; sourceTree = "<group>"; };
 		607E604A1EA88B5700D05213 /* Zample1Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zample1Controller.h; sourceTree = "<group>"; };
 		607E604B1EA88B5700D05213 /* Zample1Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample1Controller.m; sourceTree = "<group>"; };
 		607E604D1EA88B8100D05213 /* Z1CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Z1CustomCell.h; sourceTree = "<group>"; };
@@ -368,6 +365,8 @@
 		60E238DD1E9622A1001235F2 /* XTVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTVerification.h; sourceTree = "<group>"; };
 		60E238DE1E9622A1001235F2 /* XTVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTVerification.m; sourceTree = "<group>"; };
 		7CF43A032C3BF2386C1D5B60 /* Pods-XTkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-XTkit/Pods-XTkit.release.xcconfig"; sourceTree = "<group>"; };
+		7D4B27B520283850001CA91B /* UIView+XTAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XTAddition.h"; sourceTree = "<group>"; };
+		7D4B27B620283850001CA91B /* UIView+XTAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XTAddition.m"; sourceTree = "<group>"; };
 		7DBF8FDC20247DE00030C3D5 /* XTDrawerFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTDrawerFlowLayout.h; sourceTree = "<group>"; };
 		7DBF8FDD20247DE00030C3D5 /* XTDrawerFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTDrawerFlowLayout.m; sourceTree = "<group>"; };
 		7DD6E383201EEE5F0049EA1F /* XTkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTkit.h; sourceTree = "<group>"; };
@@ -404,9 +403,7 @@
 		8F2C58501F9E188400E10A55 /* UIResponder+ChainHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+ChainHandler.h"; sourceTree = "<group>"; };
 		8F2C58511F9E188400E10A55 /* UIResponder+ChainHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+ChainHandler.m"; sourceTree = "<group>"; };
 		8F2C58541F9E1C3900E10A55 /* UIFont+FontAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontAdapter.m"; sourceTree = "<group>"; };
-		8F2C58551F9E1C3900E10A55 /* UILabel+FontAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+FontAdapter.m"; sourceTree = "<group>"; };
 		8F2C58561F9E1C3A00E10A55 /* UIFont+FontAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontAdapter.h"; sourceTree = "<group>"; };
-		8F2C58571F9E1C3A00E10A55 /* UILabel+FontAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+FontAdapter.h"; sourceTree = "<group>"; };
 		8F37C0061EF8F20B00EE713F /* UIButton+ExtendTouchRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ExtendTouchRect.h"; sourceTree = "<group>"; };
 		8F37C0071EF8F20B00EE713F /* UIButton+ExtendTouchRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ExtendTouchRect.m"; sourceTree = "<group>"; };
 		8F37C0E51F0CAA7000EE713F /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
@@ -873,8 +870,6 @@
 			children = (
 				8F2C58561F9E1C3A00E10A55 /* UIFont+FontAdapter.h */,
 				8F2C58541F9E1C3900E10A55 /* UIFont+FontAdapter.m */,
-				8F2C58571F9E1C3A00E10A55 /* UILabel+FontAdapter.h */,
-				8F2C58551F9E1C3900E10A55 /* UILabel+FontAdapter.m */,
 				8F2C584D1F9E17F400E10A55 /* NSNumber+Round.h */,
 				8F2C584E1F9E17F500E10A55 /* NSNumber+Round.m */,
 				60E2384E1E9622A1001235F2 /* ALAssetsLibrary+CustomPhotoAlbum.h */,
@@ -901,10 +896,10 @@
 				60E2385B1E9622A1001235F2 /* UIImageView+QNExtention.m */,
 				60E2385C1E9622A1001235F2 /* UILabel+Badges.h */,
 				60E2385D1E9622A1001235F2 /* UILabel+Badges.m */,
+				7D4B27B520283850001CA91B /* UIView+XTAddition.h */,
+				7D4B27B620283850001CA91B /* UIView+XTAddition.m */,
 				60E2385E1E9622A1001235F2 /* UIView+Sizes.h */,
 				60E2385F1E9622A1001235F2 /* UIView+Sizes.m */,
-				607E60421EA883BB00D05213 /* UIView+CurrentController.h */,
-				607E60431EA883BB00D05213 /* UIView+CurrentController.m */,
 				607E606F1EADA67100D05213 /* UIViewController+HowToUse.h */,
 				607E60701EADA67100D05213 /* UIViewController+HowToUse.m */,
 				607E60721EADBE6500D05213 /* UIViewController+TabbarHidden.h */,
@@ -1697,7 +1692,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607E60441EA883BB00D05213 /* UIView+CurrentController.m in Sources */,
 				8F37C0081EF8F20B00EE713F /* UIButton+ExtendTouchRect.m in Sources */,
 				607E604F1EA88B8100D05213 /* Z1CustomCell.m in Sources */,
 				8F7F95BB1F0F615F00236286 /* CtrllerEvent.m in Sources */,
@@ -1715,6 +1709,7 @@
 				607E60301EA85BE100D05213 /* KeyBoardTopBar.m in Sources */,
 				8F16B9A31F25D7E90049CEE1 /* Z8CollectionViewController.m in Sources */,
 				8FA4DE821FA03093009F7928 /* Mother.m in Sources */,
+				7D4B27B720283850001CA91B /* UIView+XTAddition.m in Sources */,
 				60E238EF1E9622A1001235F2 /* MySearchBar.m in Sources */,
 				60E238F01E9622A1001235F2 /* MyTabbar.m in Sources */,
 				60E239131E9622A1001235F2 /* XTFileManager.m in Sources */,
@@ -1751,7 +1746,6 @@
 				60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */,
 				7DBF8FDE20247DE00030C3D5 /* XTDrawerFlowLayout.m in Sources */,
 				607E605D1EA9F87C00D05213 /* Zample3Controller.m in Sources */,
-				8F2C58591F9E1C3B00E10A55 /* UILabel+FontAdapter.m in Sources */,
 				60E239051E9622A1001235F2 /* NSTimer+Addition.m in Sources */,
 				8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */,
 				8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */,

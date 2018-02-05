@@ -37,7 +37,6 @@
 
 // Category
 #import "UIFont+FontAdapter.h"
-#import "UILabel+FontAdapter.h"
 #import "NSNumber+Round.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
 #import "NSDate+XTTick.h"
@@ -52,7 +51,7 @@
 #import "UIImageView+QNExtention.h"
 #import "UILabel+Badges.h"
 #import "UIView+Sizes.h"
-#import "UIView+CurrentController.h"
+#import "UIView+XTAddition.h"
 #import "UIViewController+HowToUse.h"
 #import "UIViewController+TabbarHidden.h"
 #import "UIViewController+Storyboard.h"

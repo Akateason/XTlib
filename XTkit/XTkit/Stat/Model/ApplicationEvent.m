@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "NSDate+XTTick.h"
 #import "UniqueKeyMaker.h"
-#import "UIView+CurrentController.h"
+#import "UIView+XTAddition.h"
 #import "ValetManager.h"
 
 @implementation ApplicationEvent

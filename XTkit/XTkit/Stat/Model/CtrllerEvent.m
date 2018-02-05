@@ -8,7 +8,7 @@
 
 #import "CtrllerEvent.h"
 #import "NSDate+XTTick.h"
-#import "UIView+CurrentController.h"
+#import "UIView+XTAddition.h"
 #import "UniqueKeyMaker.h"
 #import "ValetManager.h"
 

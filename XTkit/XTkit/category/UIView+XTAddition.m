@@ -1,12 +1,27 @@
 //
-//  UIView+CurrentController.m
+//  UIView+XTAddition.m
 //  XTkit
 //
-//  Created by teason on 2017/4/20.
-//  Copyright © 2017年 teason. All rights reserved.
+//  Created by xtc on 2018/2/5.
+//  Copyright © 2018年 teason. All rights reserved.
 //
 
-#import "UIView+CurrentController.h"
+#import "UIView+XTAddition.h"
+#import <ReactiveObjC/ReactiveObjC.h>
+
+@implementation UIView (XTAddition)
+
+- (void)resignAllResponderWhenTapThis {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init] ;
+    [[tap rac_gestureSignal] subscribeNext:^(id x) {
+        [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil] ;
+    }] ;
+    [self addGestureRecognizer:tap] ;
+}
+
+@end
+
+
 
 @implementation UIView (CurrentController)
 
