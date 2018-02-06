@@ -9,52 +9,49 @@
 #import "RootTableCell.h"
 #import <objc/runtime.h>
 
+@interface RootTableCell ()
+@property (strong, nonatomic, readwrite) id model ;
+@end
+
 @implementation RootTableCell
 
 #pragma mark --
 #pragma mark - initialization
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style
               reuseIdentifier:(nullable NSString *)reuseIdentifier
 {
-    self = [super initWithStyle:style
-                reuseIdentifier:reuseIdentifier] ;
-    if (self)
-    {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier] ;
+    if (self) {
         [self prepare] ;
     }
     return self;
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib] ;
-    
     [self prepare] ;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     
 }
 
 #pragma mark --
 #pragma mark - get cell
-+ (instancetype)cellWithTable:(UITableView *)tableView
-{
-    @autoreleasepool
-    {
+
++ (instancetype)cellWithTable:(UITableView *)tableView {
+    @autoreleasepool {
         const char *charClsName = object_getClassName(self) ;
         NSString *strClsName = [NSString stringWithUTF8String:charClsName] ;
         Class cellCls = objc_getRequiredClass(charClsName) ;
         //  polymorphic
         RootTableCell *cell = [tableView dequeueReusableCellWithIdentifier:strClsName] ;
-        if (!cell)
-        {
+        if (!cell) {
             cell = [[cellCls alloc] initWithStyle:UITableViewCellStyleDefault
                                   reuseIdentifier:strClsName] ; // use cls name as reuseIdentifier
         }
@@ -64,27 +61,22 @@
 
 #pragma mark --
 #pragma mark - prepare UI
-- (void)prepare
-{
+
+- (void)prepare {
     self.selectionStyle = UITableViewCellSelectionStyleNone ;
 }
 
-
-
 #pragma mark --
 #pragma mark - configure
-- (void)configure:(id)model
-{
+
+- (void)configure:(id)model {
+    _model = model ;
     // rewrite in subclass
 }
 
-
 #pragma mark --
 #pragma mark - height
-+ (CGFloat)cellHeight
-{
-    return 44. ;
-}
 
++ (CGFloat)cellHeight { return 44. ; }
 
 @end

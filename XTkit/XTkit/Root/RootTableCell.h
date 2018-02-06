@@ -11,6 +11,8 @@
 
 @interface RootTableCell : UITableViewCell
 
+@property (strong, nonatomic, readonly) id model ;
+
 // initial without Xib or Storyborad
 + (instancetype)cellWithTable:(UITableView *)tableView ;
 
