@@ -68,10 +68,17 @@
 
 #pragma mark --
 #pragma mark - configure
-
+// rewrite in subclass
 - (void)configure:(id)model {
+    [self configure:model
+          indexPath:nil] ;
+}
+
+- (void)configure:(id)model
+        indexPath:(NSIndexPath *)indexPath
+{
     _model = model ;
-    // rewrite in subclass
+    _indexPath = indexPath ;
 }
 
 #pragma mark --
