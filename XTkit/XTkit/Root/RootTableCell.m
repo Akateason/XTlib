@@ -37,9 +37,7 @@
     [super setSelected:selected animated:animated];
 }
 
-- (void)dealloc {
-    
-}
+- (void)dealloc {}
 
 #pragma mark --
 #pragma mark - get cell
