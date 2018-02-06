@@ -2,7 +2,7 @@
 //  RootTableView.m
 //  Demo_MjRefresh
 //
-//  Created by TuTu on 15/12/3.
+//  Created by teason on 15/12/3.
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
@@ -19,27 +19,24 @@
 
 #pragma mark --
 #pragma mark - Public
-- (void)loadNewInfo
-{
+
+- (void)loadNewInfo {
     [self loadNewInfoInBackGround:FALSE] ;
 }
 
-- (void)loadNewInfoInBackGround:(BOOL)isBackGround ;
+- (void)loadNewInfoInBackGround:(BOOL)isBackGround
 {
-    if (isBackGround)
-    {
-        if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(tableView:loadNew:)])
-        {
+    if (isBackGround) {
+        if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(tableView:loadNew:)]) {
             __weak RootTableView *weakSelf = self ;
             [self.xt_Delegate tableView:self
                                 loadNew:^{
-                [weakSelf reloadTableInMainThread] ;
-                [weakSelf.mj_header endRefreshing] ;
-            }] ;
+                                    [weakSelf reloadTableInMainThread] ;
+                                    [weakSelf.mj_header endRefreshing] ;
+                                }] ;
         }
     }
-    else
-    {
+    else {
         [self.mj_header beginRefreshing] ;
     }
 }
@@ -58,8 +55,7 @@
     return self ;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
         [self setup] ;
@@ -67,8 +63,7 @@
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self setup] ;
@@ -76,8 +71,7 @@
     return self;
 }
 
-- (void)setup
-{
+- (void)setup {
     self.estimatedRowHeight = 0 ;
     self.estimatedSectionHeaderHeight = 0 ;
     self.estimatedSectionFooterHeight = 0 ;
@@ -85,14 +79,12 @@
     [self setDefaultPublicAPIs] ;
 }
 
-- (void)prepareStyle
-{
+- (void)prepareStyle {
     self.separatorStyle = UITableViewCellSeparatorStyleNone ;
     [self configureMJRefresh] ;
 }
 
-- (void)configureMJRefresh
-{
+- (void)configureMJRefresh {
     RootRefreshHeader *header = [RootRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
     self.mj_header = header;
     
@@ -100,16 +92,15 @@
     self.mj_footer = footer;
 }
 
-- (void)setDefaultPublicAPIs
-{
+- (void)setDefaultPublicAPIs {
     self.isShowRefreshDetail        = NO ;
     self.isAutomaticallyLoadMore    = NO ;
 }
 
 #pragma mark --
 #pragma mark - Public Properties
-- (void)setIsShowRefreshDetail:(BOOL)isShowRefreshDetail
-{
+
+- (void)setIsShowRefreshDetail:(BOOL)isShowRefreshDetail {
     _isShowRefreshDetail = isShowRefreshDetail ;
     
     ((RootRefreshHeader *)self.mj_header).lastUpdatedTimeLabel.hidden = !self.isShowRefreshDetail;
@@ -117,12 +108,9 @@
     ((RootRefreshFooter *)self.mj_footer).stateLabel.hidden = !self.isShowRefreshDetail ;
 }
 
-- (void)setIsAutomaticallyLoadMore:(BOOL)isAutomaticallyLoadMore
-{
+- (void)setIsAutomaticallyLoadMore:(BOOL)isAutomaticallyLoadMore {
     _isAutomaticallyLoadMore = isAutomaticallyLoadMore ;
-    
-    if (isAutomaticallyLoadMore)
-    {
+    if (isAutomaticallyLoadMore) {
         self.mj_footer = nil ;
         MJRefreshAutoFooter *autofooter = [MJRefreshAutoFooter footerWithRefreshingTarget:self
                                                                          refreshingAction:@selector(loadMoreDataSelector)] ;
@@ -135,10 +123,8 @@
 #pragma mark --
 #pragma mark - loading methods
 
-- (void)loadNewDataSelector
-{
-    if (!self.xt_Delegate || ![self.xt_Delegate respondsToSelector:@selector(tableView:loadNew:)])
-    {
+- (void)loadNewDataSelector {
+    if (!self.xt_Delegate || ![self.xt_Delegate respondsToSelector:@selector(tableView:loadNew:)]) {
         [self.mj_header endRefreshing] ;
         return ;
     }
@@ -147,44 +133,39 @@
     __weak RootTableView *weakSelf = self ;
     [weakSelf.xt_Delegate tableView:self
                             loadNew:^{
-        [weakSelf reloadTableInMainThread] ;
-        [weakSelf.mj_header endRefreshing] ;
-    }] ;
+                                [weakSelf reloadTableInMainThread] ;
+                                [weakSelf.mj_header endRefreshing] ;
+                            }] ;
 }
 
-- (void)loadMoreDataSelector
-{
-    if (!self.xt_Delegate || ![self.xt_Delegate respondsToSelector:@selector(tableView:loadMore:)])
-    {
+- (void)loadMoreDataSelector {
+    if (!self.xt_Delegate || ![self.xt_Delegate respondsToSelector:@selector(tableView:loadMore:)]) {
         [self.mj_footer endRefreshing] ;
         return ;
     }
     
     // do request
     __weak RootTableView *weakSelf = self ;
-    if (self.isAutomaticallyLoadMore)
-    {
+    if (self.isAutomaticallyLoadMore) {
         dispatch_async(dispatch_queue_create("refreshAutoFooter", NULL), ^
-        {
-            [weakSelf.xt_Delegate tableView:self
-                                   loadMore:^{
-                [weakSelf reloadTableInMainThread] ;
-                [weakSelf.mj_footer endRefreshing] ;
-            }] ;
-        }) ;
+                       {
+                           [weakSelf.xt_Delegate tableView:self
+                                                  loadMore:^{
+                                                      [weakSelf reloadTableInMainThread] ;
+                                                      [weakSelf.mj_footer endRefreshing] ;
+                                                  }] ;
+                       }) ;
     }
-    else
-    {
+    else {
         [weakSelf.xt_Delegate tableView:self
                                loadMore:^{
-            [weakSelf reloadTableInMainThread] ;
-            [weakSelf.mj_footer endRefreshing] ;
-        }] ;
+                                   [weakSelf reloadTableInMainThread] ;
+                                   [weakSelf.mj_footer endRefreshing] ;
+                               }] ;
     }
 }
 
-- (void)reloadTableInMainThread
-{
+- (void)reloadTableInMainThread {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self reloadData] ;
     }) ;
@@ -197,11 +178,11 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

@@ -1,8 +1,8 @@
 //
 //  RootTableView.h
-//  带上下拉刷新的tableView基类. 只需关注处理数据 .
+//  带上下拉刷新的tableView基类. 继承后带默认集成. 只需关注处理数据 .
 //
-//  Created by TuTu on 15/12/3.
+//  Created by teason on 15/12/3.
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
@@ -17,7 +17,10 @@
 - (void)tableView:(RootTableView *)table loadMore:(void(^)(void))endRefresh  ;
 @end
 
+
+
 @interface RootTableView : UITableView
+// refresh delegate
 @property (nonatomic,weak) id <RootTableViewDelegate> xt_Delegate ;
 /**
  REFRESH STYLE: 
@@ -43,7 +46,6 @@
  u can rewrite in subclass if needed
  */
 - (void)prepareStyle ;
-
 /**
  endRefresh header and footer if needed .
  */
