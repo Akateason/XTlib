@@ -40,6 +40,13 @@
     }
 }
 
+- (NSIndexPath *)currentIndexPath {
+    CGRect visibleRect = (CGRect){.origin = self.collection.contentOffset, .size = self.collection.bounds.size} ;
+    CGPoint visiblePoint = CGPointMake(CGRectGetMidX(visibleRect), CGRectGetMidY(visibleRect)) ;
+    NSIndexPath *visibleIndexPath = [self.collection indexPathForItemAtPoint:visiblePoint] ;
+    return visibleIndexPath ;
+}
+
 #pragma mark --
 #pragma mark - Initialization
 

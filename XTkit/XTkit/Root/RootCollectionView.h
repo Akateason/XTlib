@@ -48,5 +48,9 @@
  endRefresh header and footer if needed .
  */
 - (void)endHeaderAndFooterRefresh ;
+/**
+ get current IndexPath in center .
+ */
+- (NSIndexPath *)currentIndexPath ;
 
 @end
