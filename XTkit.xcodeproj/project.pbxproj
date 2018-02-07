@@ -98,6 +98,7 @@
 		60E239171E9622A1001235F2 /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238DE1E9622A1001235F2 /* XTVerification.m */; };
 		7D4B27B720283850001CA91B /* UIView+XTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B27B620283850001CA91B /* UIView+XTAddition.m */; };
 		7DBF8FDE20247DE00030C3D5 /* XTDrawerFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF8FDD20247DE00030C3D5 /* XTDrawerFlowLayout.m */; };
+		7DD1B004202ACEDB0031E7EF /* RootCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD1B003202ACEDB0031E7EF /* RootCollectionView.m */; };
 		8F158C7A1EC2A79200B0F551 /* Z5DisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C791EC2A79200B0F551 /* Z5DisplayController.m */; };
 		8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C7C1EC2A8B300B0F551 /* Z5DisplayCell.m */; };
 		8F158C7F1EC2A8E900B0F551 /* Z5DisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F158C7E1EC2A8E900B0F551 /* Z5DisplayCell.xib */; };
@@ -369,6 +370,8 @@
 		7D4B27B620283850001CA91B /* UIView+XTAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XTAddition.m"; sourceTree = "<group>"; };
 		7DBF8FDC20247DE00030C3D5 /* XTDrawerFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTDrawerFlowLayout.h; sourceTree = "<group>"; };
 		7DBF8FDD20247DE00030C3D5 /* XTDrawerFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTDrawerFlowLayout.m; sourceTree = "<group>"; };
+		7DD1B002202ACEDB0031E7EF /* RootCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootCollectionView.h; sourceTree = "<group>"; };
+		7DD1B003202ACEDB0031E7EF /* RootCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootCollectionView.m; sourceTree = "<group>"; };
 		7DD6E383201EEE5F0049EA1F /* XTkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTkit.h; sourceTree = "<group>"; };
 		8F158C781EC2A79200B0F551 /* Z5DisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Z5DisplayController.h; path = z5/Z5DisplayController.h; sourceTree = "<group>"; };
 		8F158C791EC2A79200B0F551 /* Z5DisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Z5DisplayController.m; path = z5/Z5DisplayController.m; sourceTree = "<group>"; };
@@ -970,6 +973,8 @@
 				60E238871E9622A1001235F2 /* RootTableView.m */,
 				607E603F1EA8810B00D05213 /* RootTableCell.h */,
 				607E60401EA8810B00D05213 /* RootTableCell.m */,
+				7DD1B002202ACEDB0031E7EF /* RootCollectionView.h */,
+				7DD1B003202ACEDB0031E7EF /* RootCollectionView.m */,
 				607E60391EA8714F00D05213 /* RootRefreshHeader.h */,
 				607E603A1EA8714F00D05213 /* RootRefreshHeader.m */,
 				607E603C1EA8740A00D05213 /* RootRefreshFooter.h */,
@@ -1764,6 +1769,7 @@
 				60E238E61E9622A1001235F2 /* UILabel+Badges.m in Sources */,
 				60E2381E1E961D21001235F2 /* AppDelegate.m in Sources */,
 				8F2C58521F9E188400E10A55 /* UIResponder+ChainHandler.m in Sources */,
+				7DD1B004202ACEDB0031E7EF /* RootCollectionView.m in Sources */,
 				8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */,
 				607E5FDB1EA7483100D05213 /* UserOnDevice.m in Sources */,
 				60E238E71E9622A1001235F2 /* UIView+Sizes.m in Sources */,
