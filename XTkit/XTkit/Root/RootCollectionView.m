@@ -41,9 +41,9 @@
 }
 
 - (NSIndexPath *)currentIndexPath {
-    CGRect visibleRect = (CGRect){.origin = self.collection.contentOffset, .size = self.collection.bounds.size} ;
+    CGRect visibleRect = (CGRect){.origin = self.contentOffset, .size = self.bounds.size} ;
     CGPoint visiblePoint = CGPointMake(CGRectGetMidX(visibleRect), CGRectGetMidY(visibleRect)) ;
-    NSIndexPath *visibleIndexPath = [self.collection indexPathForItemAtPoint:visiblePoint] ;
+    NSIndexPath *visibleIndexPath = [self indexPathForItemAtPoint:visiblePoint] ;
     return visibleIndexPath ;
 }
 
