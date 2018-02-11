@@ -59,10 +59,8 @@
 		60E238DF1E9622A1001235F2 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2384F1E9622A1001235F2 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		60E238E11E9622A1001235F2 /* NSObject+Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238531E9622A1001235F2 /* NSObject+Reflection.m */; };
 		60E238E21E9622A1001235F2 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238551E9622A1001235F2 /* NSString+Extend.m */; };
-		60E238E31E9622A1001235F2 /* UIButton+Badges.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238571E9622A1001235F2 /* UIButton+Badges.m */; };
 		60E238E41E9622A1001235F2 /* UIImage+AddFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238591E9622A1001235F2 /* UIImage+AddFunction.m */; };
 		60E238E51E9622A1001235F2 /* UIImageView+QNExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2385B1E9622A1001235F2 /* UIImageView+QNExtention.m */; };
-		60E238E61E9622A1001235F2 /* UILabel+Badges.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2385D1E9622A1001235F2 /* UILabel+Badges.m */; };
 		60E238E71E9622A1001235F2 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2385F1E9622A1001235F2 /* UIView+Sizes.m */; };
 		60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238641E9622A1001235F2 /* UIColor+HexString.m */; };
 		60E238EA1E9622A1001235F2 /* xtAllColorsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60E238651E9622A1001235F2 /* xtAllColorsList.plist */; };
@@ -285,14 +283,10 @@
 		60E238531E9622A1001235F2 /* NSObject+Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Reflection.m"; sourceTree = "<group>"; };
 		60E238541E9622A1001235F2 /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
 		60E238551E9622A1001235F2 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
-		60E238561E9622A1001235F2 /* UIButton+Badges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Badges.h"; sourceTree = "<group>"; };
-		60E238571E9622A1001235F2 /* UIButton+Badges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Badges.m"; sourceTree = "<group>"; };
 		60E238581E9622A1001235F2 /* UIImage+AddFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AddFunction.h"; sourceTree = "<group>"; };
 		60E238591E9622A1001235F2 /* UIImage+AddFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AddFunction.m"; sourceTree = "<group>"; };
 		60E2385A1E9622A1001235F2 /* UIImageView+QNExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+QNExtention.h"; sourceTree = "<group>"; };
 		60E2385B1E9622A1001235F2 /* UIImageView+QNExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+QNExtention.m"; sourceTree = "<group>"; };
-		60E2385C1E9622A1001235F2 /* UILabel+Badges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Badges.h"; sourceTree = "<group>"; };
-		60E2385D1E9622A1001235F2 /* UILabel+Badges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Badges.m"; sourceTree = "<group>"; };
 		60E2385E1E9622A1001235F2 /* UIView+Sizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Sizes.h"; sourceTree = "<group>"; };
 		60E2385F1E9622A1001235F2 /* UIView+Sizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Sizes.m"; sourceTree = "<group>"; };
 		60E238631E9622A1001235F2 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
@@ -887,8 +881,6 @@
 				8F7F95C11F10B43100236286 /* NSObject+Runtime.m */,
 				60E238541E9622A1001235F2 /* NSString+Extend.h */,
 				60E238551E9622A1001235F2 /* NSString+Extend.m */,
-				60E238561E9622A1001235F2 /* UIButton+Badges.h */,
-				60E238571E9622A1001235F2 /* UIButton+Badges.m */,
 				607E5FCD1EA6FCBC00D05213 /* UIButton+Countdown.h */,
 				607E5FCE1EA6FCBC00D05213 /* UIButton+Countdown.m */,
 				8F37C0061EF8F20B00EE713F /* UIButton+ExtendTouchRect.h */,
@@ -897,8 +889,6 @@
 				60E238591E9622A1001235F2 /* UIImage+AddFunction.m */,
 				60E2385A1E9622A1001235F2 /* UIImageView+QNExtention.h */,
 				60E2385B1E9622A1001235F2 /* UIImageView+QNExtention.m */,
-				60E2385C1E9622A1001235F2 /* UILabel+Badges.h */,
-				60E2385D1E9622A1001235F2 /* UILabel+Badges.m */,
 				7D4B27B520283850001CA91B /* UIView+XTAddition.h */,
 				7D4B27B620283850001CA91B /* UIView+XTAddition.m */,
 				60E2385E1E9622A1001235F2 /* UIView+Sizes.h */,
@@ -1766,7 +1756,6 @@
 				8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */,
 				8F99164F1EC0754B00BA8F0D /* XTDBModel.m in Sources */,
 				60E238F91E9622A1001235F2 /* UIImage+ImageEffects.m in Sources */,
-				60E238E61E9622A1001235F2 /* UILabel+Badges.m in Sources */,
 				60E2381E1E961D21001235F2 /* AppDelegate.m in Sources */,
 				8F2C58521F9E188400E10A55 /* UIResponder+ChainHandler.m in Sources */,
 				7DD1B004202ACEDB0031E7EF /* RootCollectionView.m in Sources */,
@@ -1833,7 +1822,6 @@
 				8FFD73611EB9B4C100148B83 /* Model1.m in Sources */,
 				60E238DF1E9622A1001235F2 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				607E60311EA85BE100D05213 /* KxMenu.m in Sources */,
-				60E238E31E9622A1001235F2 /* UIButton+Badges.m in Sources */,
 				60E238F51E9622A1001235F2 /* RootCtrl.m in Sources */,
 				60E239081E9622A1001235F2 /* XTMultipleTables.m in Sources */,
 				607E60531EA8A3F600D05213 /* Zample2Controller.m in Sources */,
