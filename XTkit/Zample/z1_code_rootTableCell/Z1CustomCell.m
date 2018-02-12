@@ -16,7 +16,7 @@
 
 @implementation Z1CustomCell
 
-- (void)prepare
+- (void)prepareUI
 {
     self.v1 = ({
         UIView *view = [UIView new] ;

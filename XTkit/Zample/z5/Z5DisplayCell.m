@@ -10,11 +10,8 @@
 #import "Model1.h"
 
 @implementation Z5DisplayCell
-// UI and Layout
-//- (void)prepare
-//{
-//    
-//}
+
+
 
 // set model
 - (void)configure:(id)model

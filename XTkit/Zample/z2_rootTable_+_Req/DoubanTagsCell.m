@@ -21,9 +21,9 @@
 
 #pragma mark - rewrite in sub cls
 // UI and Layout
-- (void)prepare
+- (void)prepareUI
 {
-    [super prepare] ;
+    [super prepareUI] ;
     
     self.labelTitle = ({
         UILabel *label = [UILabel new] ;

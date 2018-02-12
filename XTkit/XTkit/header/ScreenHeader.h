@@ -40,6 +40,10 @@
 #define Font(F)                         [UIFont systemFontOfSize:(F)]
 #define boldFont(F)                     [UIFont boldSystemFontOfSize:(F)]
 
+// NSIndexPath
+#define XT_GET_INDEXPATH_(ROW,SECTION)          [NSIndexPath indexPathForRow:ROW inSection:SECTION]
+
+
 #endif /* ScreenHeader_h */
 
 

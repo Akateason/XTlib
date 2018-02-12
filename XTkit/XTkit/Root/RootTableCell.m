@@ -23,14 +23,14 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier] ;
     if (self) {
-        [self prepare] ;
+        [self prepareUI] ;
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib] ;
-    [self prepare] ;
+    [self prepareUI] ;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -60,13 +60,13 @@
 #pragma mark --
 #pragma mark - prepare UI
 
-- (void)prepare {
+- (void)prepareUI {
     self.selectionStyle = UITableViewCellSelectionStyleNone ;
 }
 
 #pragma mark --
 #pragma mark - configure
-// rewrite in subclass
+
 - (void)configure:(id)model {
     [self configure:model
           indexPath:nil] ;
@@ -83,5 +83,6 @@
 #pragma mark - height
 
 + (CGFloat)cellHeight { return 44. ; }
+- (CGFloat)cellHeight { return 44. ; }
 
 @end

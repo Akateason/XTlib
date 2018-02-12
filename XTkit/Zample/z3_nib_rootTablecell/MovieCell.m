@@ -22,7 +22,7 @@
 @implementation MovieCell
 
 // UI and Layout
-- (void)prepare ;
+- (void)prepareUI
 {
     self.imgView.contentMode = UIViewContentModeScaleAspectFit ;
     self.lbYear.textColor = [UIColor grayColor] ;
