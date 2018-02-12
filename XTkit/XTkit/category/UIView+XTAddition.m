@@ -8,15 +8,35 @@
 
 #import "UIView+XTAddition.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import <Masonry/Masonry.h>
+#import "ScreenHeader.h"
 
 @implementation UIView (XTAddition)
 
-- (void)resignAllResponderWhenTapThis {
+
+/**
+ 清楚所有键盘等
+ */
+- (void)xt_resignAllResponderWhenTapThis {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init] ;
     [[tap rac_gestureSignal] subscribeNext:^(id x) {
         [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil] ;
     }] ;
     [self addGestureRecognizer:tap] ;
+}
+
+/**
+ *  获取最顶层window
+ */
++ (UIWindow *)xt_topWindow {
+    NSArray *windows = [UIApplication sharedApplication].windows;
+    for (UIWindow *window in [windows reverseObjectEnumerator]) {
+        
+        if ([window isKindOfClass:[UIWindow class]] &&
+            CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds))
+            return window;
+    }
+    return nil;
 }
 
 @end
@@ -72,6 +92,37 @@ static NSString *const kSeperateLine = @"/" ;
         }
     }
     return tmpString ;
+}
+
+@end
+
+
+@implementation UIView (MakeScollView)
+
+- (UIScrollView *)xt_wrapperWithScrollView {
+    UIScrollView* scroll = [[UIScrollView alloc] init];
+    scroll.showsHorizontalScrollIndicator = NO;
+    scroll.showsVerticalScrollIndicator = NO;
+    scroll.bounces = YES;
+    
+    [scroll addSubview:self];
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.width.bottom.equalTo(scroll);
+    }];
+    return scroll;
+}
+
+- (UIScrollView *)xt_wrapperWithHorizontalScrollView {
+    UIScrollView* scroll = [[UIScrollView alloc] init];
+    scroll.showsHorizontalScrollIndicator = NO;
+    scroll.showsVerticalScrollIndicator = NO;
+    scroll.bounces = YES;
+    
+    [scroll addSubview:self];
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.height.right.equalTo(scroll);
+    }];
+    return scroll;
 }
 
 @end

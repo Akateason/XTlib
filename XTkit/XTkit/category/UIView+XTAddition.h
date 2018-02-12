@@ -11,7 +11,9 @@
 @interface UIView (XTAddition)
 
 // tap self to hide keyboard
-- (void)resignAllResponderWhenTapThis ;
+- (void)xt_resignAllResponderWhenTapThis ;
+
++ (UIWindow *)xt_topWindow ;
 
 @end
 
@@ -23,5 +25,14 @@
 - (UINavigationController*)navigationController ;
 
 - (NSString *)chainInfo ;
+
+@end
+
+
+
+@interface UIView (MakeScollView)
+
+- (UIScrollView *)xt_wrapperWithScrollView ;
+- (UIScrollView *)xt_wrapperWithHorizontalScrollView ;
 
 @end

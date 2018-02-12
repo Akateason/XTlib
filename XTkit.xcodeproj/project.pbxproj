@@ -119,6 +119,7 @@
 		8F454C801F27306E0068DD43 /* XTArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C7F1F27306E0068DD43 /* XTArchive.m */; };
 		8F454C861F2863610068DD43 /* ValetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C851F2863610068DD43 /* ValetManager.m */; };
 		8F454C8A1F296E990068DD43 /* Zample9Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F454C891F296E990068DD43 /* Zample9Controller.m */; };
+		8F547C80203049BE00313A7B /* Z7LongView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F547C7F203049BE00313A7B /* Z7LongView.xib */; };
 		8F560AF61FEC900200E726F9 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F560AF21FEC900200E726F9 /* NSString+MD5.m */; };
 		8F560AF71FEC900200E726F9 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F560AF51FEC900200E726F9 /* Base64.m */; };
 		8F7E65241F1F38E00028217B /* IsFirstTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E65231F1F38E00028217B /* IsFirstTime.m */; };
@@ -411,6 +412,7 @@
 		8F454C851F2863610068DD43 /* ValetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValetManager.m; sourceTree = "<group>"; };
 		8F454C881F296E990068DD43 /* Zample9Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zample9Controller.h; sourceTree = "<group>"; };
 		8F454C891F296E990068DD43 /* Zample9Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample9Controller.m; sourceTree = "<group>"; };
+		8F547C7F203049BE00313A7B /* Z7LongView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Z7LongView.xib; path = z7/Z7LongView.xib; sourceTree = "<group>"; };
 		8F560AF11FEC900200E726F9 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		8F560AF21FEC900200E726F9 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		8F560AF41FEC900200E726F9 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
@@ -722,7 +724,7 @@
 				8FFD733A1EB30A3100148B83 /* z4_xtcolorfetcher */,
 				8FFD73431EB3218C00148B83 /* z5_xtfmdb */,
 				8FFD73541EB9B3B400148B83 /* z6_xtreq */,
-				8FDE031C1EC5AF0500FFBADA /* z7_rac_demo */,
+				8FDE031C1EC5AF0500FFBADA /* z7_wraper_demo */,
 				8F25F8DC1EE656BB0052A21D /* z8_bt */,
 				8F454C871F296E860068DD43 /* z9_proxy */,
 				8FE80E4A1FC983A000FA8E53 /* ResponderChain */,
@@ -1401,13 +1403,14 @@
 			name = XTReq;
 			sourceTree = "<group>";
 		};
-		8FDE031C1EC5AF0500FFBADA /* z7_rac_demo */ = {
+		8FDE031C1EC5AF0500FFBADA /* z7_wraper_demo */ = {
 			isa = PBXGroup;
 			children = (
 				8FDE031D1EC5AF2E00FFBADA /* Zample7Controller.h */,
 				8FDE031E1EC5AF2E00FFBADA /* Zample7Controller.m */,
+				8F547C7F203049BE00313A7B /* Z7LongView.xib */,
 			);
-			name = z7_rac_demo;
+			name = z7_wraper_demo;
 			sourceTree = "<group>";
 		};
 		8FE80E4A1FC983A000FA8E53 /* ResponderChain */ = {
@@ -1583,6 +1586,7 @@
 				8F16B9AB1F25D9280049CEE1 /* Z8CollectionViewCell.xib in Resources */,
 				60E238241E961D21001235F2 /* Main.storyboard in Resources */,
 				8F158C7F1EC2A8E900B0F551 /* Z5DisplayCell.xib in Resources */,
+				8F547C80203049BE00313A7B /* Z7LongView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1978,7 +1982,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 83SLLMU85B;
 				INFOPLIST_FILE = XTkit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teason.XTkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1995,7 +1999,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 83SLLMU85B;
 				INFOPLIST_FILE = XTkit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teason.XTkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
