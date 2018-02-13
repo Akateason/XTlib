@@ -83,6 +83,5 @@
 #pragma mark - height
 
 + (CGFloat)cellHeight { return 44. ; }
-- (CGFloat)cellHeight { return 44. ; }
 
 @end

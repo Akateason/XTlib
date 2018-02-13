@@ -37,6 +37,5 @@
 
 // height
 + (CGFloat)cellHeight ;
-- (CGFloat)cellHeight ;
 
 @end
