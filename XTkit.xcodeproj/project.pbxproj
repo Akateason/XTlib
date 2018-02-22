@@ -25,7 +25,6 @@
 		607E602C1EA85BE100D05213 /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60011EA85BE100D05213 /* CHTCollectionViewWaterfallLayout.m */; };
 		607E602D1EA85BE100D05213 /* XHPathCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60041EA85BE100D05213 /* XHPathCover.m */; };
 		607E602E1EA85BE100D05213 /* KICropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60071EA85BE100D05213 /* KICropImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		607E602F1EA85BE100D05213 /* HWWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E600A1EA85BE100D05213 /* HWWeakTimer.m */; };
 		607E60301EA85BE100D05213 /* KeyBoardTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E600D1EA85BE100D05213 /* KeyBoardTopBar.m */; };
 		607E60311EA85BE100D05213 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60101EA85BE100D05213 /* KxMenu.m */; };
 		607E60321EA85BE100D05213 /* NSObject+MKBlockTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60131EA85BE100D05213 /* NSObject+MKBlockTimer.m */; };
@@ -65,7 +64,6 @@
 		60E238E91E9622A1001235F2 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238641E9622A1001235F2 /* UIColor+HexString.m */; };
 		60E238EA1E9622A1001235F2 /* xtAllColorsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60E238651E9622A1001235F2 /* xtAllColorsList.plist */; };
 		60E238EB1E9622A1001235F2 /* XTColorFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238671E9622A1001235F2 /* XTColorFetcher.m */; };
-		60E238ED1E9622A1001235F2 /* XTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238741E9622A1001235F2 /* XTRequest.m */; };
 		60E238EE1E9622A1001235F2 /* MyNavCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238771E9622A1001235F2 /* MyNavCtrller.m */; };
 		60E238EF1E9622A1001235F2 /* MySearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E238791E9622A1001235F2 /* MySearchBar.m */; };
 		60E238F01E9622A1001235F2 /* MyTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E2387B1E9622A1001235F2 /* MyTabbar.m */; };
@@ -100,7 +98,6 @@
 		8F158C7A1EC2A79200B0F551 /* Z5DisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C791EC2A79200B0F551 /* Z5DisplayController.m */; };
 		8F158C7D1EC2A8B300B0F551 /* Z5DisplayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C7C1EC2A8B300B0F551 /* Z5DisplayCell.m */; };
 		8F158C7F1EC2A8E900B0F551 /* Z5DisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F158C7E1EC2A8E900B0F551 /* Z5DisplayCell.xib */; };
-		8F158C831EC2DAD700B0F551 /* XTResponseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F158C821EC2DAD700B0F551 /* XTResponseDBModel.m */; };
 		8F16B9931F25D1F40049CEE1 /* UniqueKeyMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F16B9921F25D1F40049CEE1 /* UniqueKeyMaker.m */; };
 		8F16B99D1F25D4630049CEE1 /* UIApplication+Stat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F16B9961F25D4630049CEE1 /* UIApplication+Stat.m */; };
 		8F16B99E1F25D4630049CEE1 /* UICollectionView+Stat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F16B9981F25D4630049CEE1 /* UICollectionView+Stat.m */; };
@@ -109,7 +106,6 @@
 		8F16B9A31F25D7E90049CEE1 /* Z8CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F16B9A21F25D7E90049CEE1 /* Z8CollectionViewController.m */; };
 		8F16B9AA1F25D9280049CEE1 /* Z8CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F16B9A81F25D9280049CEE1 /* Z8CollectionViewCell.m */; };
 		8F16B9AB1F25D9280049CEE1 /* Z8CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F16B9A91F25D9280049CEE1 /* Z8CollectionViewCell.xib */; };
-		8F22B5701FC93B4800B1EC0E /* XTDBVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F22B56F1FC93B4800B1EC0E /* XTDBVersion.m */; };
 		8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F25F8DE1EE656D70052A21D /* Zample8Controller.m */; };
 		8F2C584F1F9E17F600E10A55 /* NSNumber+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C584E1F9E17F500E10A55 /* NSNumber+Round.m */; };
 		8F2C58521F9E188400E10A55 /* UIResponder+ChainHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2C58511F9E188400E10A55 /* UIResponder+ChainHandler.m */; };
@@ -131,14 +127,8 @@
 		8F7F95C61F10C54200236286 /* StatSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95C51F10C54200236286 /* StatSender.m */; };
 		8F7F95C91F10D56700236286 /* XTStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F95C81F10D56700236286 /* XTStat.m */; };
 		8F80E8F91FAD99090069F971 /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F80E8F81FAD99090069F971 /* Algorithm.m */; };
-		8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */; };
-		8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */; };
-		8F99164F1EC0754B00BA8F0D /* XTDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916481EC0754B00BA8F0D /* XTDBModel.m */; };
-		8F9916501EC0754B00BA8F0D /* XTDBModel+autoSql.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99164A1EC0754B00BA8F0D /* XTDBModel+autoSql.m */; };
-		8F9916511EC0754B00BA8F0D /* XTFMDBBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99164D1EC0754B00BA8F0D /* XTFMDBBase.m */; };
 		8F9916541EC14D6B00BA8F0D /* NSDate+XTTick.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916531EC14D6B00BA8F0D /* NSDate+XTTick.m */; };
 		8F9916571EC150BF00BA8F0D /* NSDate+NSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */; };
-		8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */; };
 		8FA4DE721F9F0997009F7928 /* UIColor+AllColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE711F9F0997009F7928 /* UIColor+AllColors.m */; };
 		8FA4DE751F9F0DB0009F7928 /* XTColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE741F9F0DB0009F7928 /* XTColorCell.m */; };
 		8FA4DE7A1FA0224A009F7928 /* PlistUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE791FA0224A009F7928 /* PlistUtil.m */; };
@@ -148,7 +138,6 @@
 		8FA4DE851FA03227009F7928 /* MySon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4DE841FA03227009F7928 /* MySon.m */; };
 		8FC14CF81FEFE2DF0024F86E /* FontAdaptVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC14CF71FEFE2DF0024F86E /* FontAdaptVC.m */; };
 		8FD763D01F31A9450085F56D /* DevInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD763CF1F31A9450085F56D /* DevInfo.m */; };
-		8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */; };
 		8FDE031F1EC5AF2E00FFBADA /* Zample7Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE031E1EC5AF2E00FFBADA /* Zample7Controller.m */; };
 		8FE80E4D1FC983D300FA8E53 /* RespoderChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE80E4C1FC983D300FA8E53 /* RespoderChainViewController.m */; };
 		8FE80E531FC9898600FA8E53 /* RCSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE80E521FC9898600FA8E53 /* RCSubView.m */; };
@@ -217,8 +206,6 @@
 		607E60041EA85BE100D05213 /* XHPathCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPathCover.m; sourceTree = "<group>"; };
 		607E60061EA85BE100D05213 /* KICropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KICropImageView.h; sourceTree = "<group>"; };
 		607E60071EA85BE100D05213 /* KICropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KICropImageView.m; sourceTree = "<group>"; };
-		607E60091EA85BE100D05213 /* HWWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWWeakTimer.h; sourceTree = "<group>"; };
-		607E600A1EA85BE100D05213 /* HWWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWWeakTimer.m; sourceTree = "<group>"; };
 		607E600C1EA85BE100D05213 /* KeyBoardTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyBoardTopBar.h; sourceTree = "<group>"; };
 		607E600D1EA85BE100D05213 /* KeyBoardTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardTopBar.m; sourceTree = "<group>"; };
 		607E600F1EA85BE100D05213 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
@@ -302,8 +289,6 @@
 		60E2386D1E9622A1001235F2 /* PublicEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicEnum.h; sourceTree = "<group>"; };
 		60E2386E1E9622A1001235F2 /* UrlRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlRequestHeader.h; sourceTree = "<group>"; };
 		60E2386F1E9622A1001235F2 /* WordsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsHeader.h; sourceTree = "<group>"; };
-		60E238731E9622A1001235F2 /* XTRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRequest.h; sourceTree = "<group>"; };
-		60E238741E9622A1001235F2 /* XTRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRequest.m; sourceTree = "<group>"; };
 		60E238761E9622A1001235F2 /* MyNavCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavCtrller.h; sourceTree = "<group>"; };
 		60E238771E9622A1001235F2 /* MyNavCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavCtrller.m; sourceTree = "<group>"; };
 		60E238781E9622A1001235F2 /* MySearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchBar.h; sourceTree = "<group>"; };
@@ -373,8 +358,6 @@
 		8F158C7B1EC2A8B300B0F551 /* Z5DisplayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Z5DisplayCell.h; path = z5/Z5DisplayCell.h; sourceTree = "<group>"; };
 		8F158C7C1EC2A8B300B0F551 /* Z5DisplayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Z5DisplayCell.m; path = z5/Z5DisplayCell.m; sourceTree = "<group>"; };
 		8F158C7E1EC2A8E900B0F551 /* Z5DisplayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Z5DisplayCell.xib; path = z5/Z5DisplayCell.xib; sourceTree = "<group>"; };
-		8F158C811EC2DAD700B0F551 /* XTResponseDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTResponseDBModel.h; sourceTree = "<group>"; };
-		8F158C821EC2DAD700B0F551 /* XTResponseDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTResponseDBModel.m; sourceTree = "<group>"; };
 		8F16B9911F25D1F40049CEE1 /* UniqueKeyMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UniqueKeyMaker.h; path = Util/UniqueKeyMaker.h; sourceTree = "<group>"; };
 		8F16B9921F25D1F40049CEE1 /* UniqueKeyMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UniqueKeyMaker.m; path = Util/UniqueKeyMaker.m; sourceTree = "<group>"; };
 		8F16B9951F25D4630049CEE1 /* UIApplication+Stat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Stat.h"; sourceTree = "<group>"; };
@@ -390,10 +373,7 @@
 		8F16B9A71F25D9280049CEE1 /* Z8CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Z8CollectionViewCell.h; sourceTree = "<group>"; };
 		8F16B9A81F25D9280049CEE1 /* Z8CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Z8CollectionViewCell.m; sourceTree = "<group>"; };
 		8F16B9A91F25D9280049CEE1 /* Z8CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Z8CollectionViewCell.xib; sourceTree = "<group>"; };
-		8F16B9AD1F25EE370049CEE1 /* XTFMDBConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XTFMDBConst.h; path = database/XTFMDBConst.h; sourceTree = "<group>"; };
 		8F16B9AF1F25EF2E0049CEE1 /* XTStatConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTStatConst.h; sourceTree = "<group>"; };
-		8F22B56E1FC93B4800B1EC0E /* XTDBVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = XTDBVersion.h; path = database/XTDBVersion.h; sourceTree = "<group>"; };
-		8F22B56F1FC93B4800B1EC0E /* XTDBVersion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = XTDBVersion.m; path = database/XTDBVersion.m; sourceTree = "<group>"; };
 		8F25F8DD1EE656D70052A21D /* Zample8Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zample8Controller.h; sourceTree = "<group>"; };
 		8F25F8DE1EE656D70052A21D /* Zample8Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zample8Controller.m; sourceTree = "<group>"; };
 		8F2C584D1F9E17F400E10A55 /* NSNumber+Round.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Round.h"; sourceTree = "<group>"; };
@@ -435,23 +415,10 @@
 		8F7F95C81F10D56700236286 /* XTStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTStat.m; sourceTree = "<group>"; };
 		8F80E8F71FAD99090069F971 /* Algorithm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
 		8F80E8F81FAD99090069F971 /* Algorithm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Algorithm.m; sourceTree = "<group>"; };
-		8F9916421EC06C4F00BA8F0D /* XTReqResonse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqResonse.h; sourceTree = "<group>"; };
-		8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqResonse.m; sourceTree = "<group>"; };
-		8F9916451EC0754B00BA8F0D /* NSObject+XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+XTFMDB.h"; path = "database/NSObject+XTFMDB.h"; sourceTree = "<group>"; };
-		8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+XTFMDB.m"; path = "database/NSObject+XTFMDB.m"; sourceTree = "<group>"; };
-		8F9916471EC0754B00BA8F0D /* XTDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTDBModel.h; path = database/XTDBModel.h; sourceTree = "<group>"; };
-		8F9916481EC0754B00BA8F0D /* XTDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTDBModel.m; path = database/XTDBModel.m; sourceTree = "<group>"; };
-		8F9916491EC0754B00BA8F0D /* XTDBModel+autoSql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XTDBModel+autoSql.h"; path = "database/XTDBModel+autoSql.h"; sourceTree = "<group>"; };
-		8F99164A1EC0754B00BA8F0D /* XTDBModel+autoSql.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XTDBModel+autoSql.m"; path = "database/XTDBModel+autoSql.m"; sourceTree = "<group>"; };
-		8F99164B1EC0754B00BA8F0D /* XTFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTFMDB.h; path = database/XTFMDB.h; sourceTree = "<group>"; };
-		8F99164C1EC0754B00BA8F0D /* XTFMDBBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTFMDBBase.h; path = database/XTFMDBBase.h; sourceTree = "<group>"; };
-		8F99164D1EC0754B00BA8F0D /* XTFMDBBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTFMDBBase.m; path = database/XTFMDBBase.m; sourceTree = "<group>"; };
 		8F9916521EC14D6B00BA8F0D /* NSDate+XTTick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+XTTick.h"; sourceTree = "<group>"; };
 		8F9916531EC14D6B00BA8F0D /* NSDate+XTTick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+XTTick.m"; sourceTree = "<group>"; };
 		8F9916551EC150BF00BA8F0D /* NSDate+NSCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+NSCalendar.h"; sourceTree = "<group>"; };
 		8F9916561EC150BF00BA8F0D /* NSDate+NSCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+NSCalendar.m"; sourceTree = "<group>"; };
-		8F99165A1EC1B6B400BA8F0D /* XTCacheRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTCacheRequest.h; sourceTree = "<group>"; };
-		8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTCacheRequest.m; sourceTree = "<group>"; };
 		8FA4DE701F9F0997009F7928 /* UIColor+AllColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AllColors.h"; sourceTree = "<group>"; };
 		8FA4DE711F9F0997009F7928 /* UIColor+AllColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AllColors.m"; sourceTree = "<group>"; };
 		8FA4DE731F9F0DB0009F7928 /* XTColorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTColorCell.h; sourceTree = "<group>"; };
@@ -469,9 +436,6 @@
 		8FC14CF71FEFE2DF0024F86E /* FontAdaptVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontAdaptVC.m; sourceTree = "<group>"; };
 		8FD763CE1F31A9450085F56D /* DevInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevInfo.h; sourceTree = "<group>"; };
 		8FD763CF1F31A9450085F56D /* DevInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevInfo.m; sourceTree = "<group>"; };
-		8FDE03161EC53DE600FFBADA /* XTReqSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTReqSessionManager.h; sourceTree = "<group>"; };
-		8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTReqSessionManager.m; sourceTree = "<group>"; };
-		8FDE03191EC5415C00FFBADA /* XTReq.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTReq.h; sourceTree = "<group>"; };
 		8FDE031D1EC5AF2E00FFBADA /* Zample7Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Zample7Controller.h; path = z7/Zample7Controller.h; sourceTree = "<group>"; };
 		8FDE031E1EC5AF2E00FFBADA /* Zample7Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Zample7Controller.m; path = z7/Zample7Controller.m; sourceTree = "<group>"; };
 		8FE80E4B1FC983D300FA8E53 /* RespoderChainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RespoderChainViewController.h; sourceTree = "<group>"; };
@@ -544,7 +508,6 @@
 				607E5FFF1EA85BE100D05213 /* CHTCollectionViewWaterfallLayout */,
 				607E60021EA85BE100D05213 /* Cover */,
 				607E60051EA85BE100D05213 /* CropImageView */,
-				607E60081EA85BE100D05213 /* HWWeakerTimer */,
 				607E600B1EA85BE100D05213 /* KeyBoardTopBar */,
 				607E600E1EA85BE100D05213 /* KxMenu */,
 				607E60111EA85BE100D05213 /* MKBlockTimer */,
@@ -649,15 +612,6 @@
 				607E60071EA85BE100D05213 /* KICropImageView.m */,
 			);
 			path = CropImageView;
-			sourceTree = "<group>";
-		};
-		607E60081EA85BE100D05213 /* HWWeakerTimer */ = {
-			isa = PBXGroup;
-			children = (
-				607E60091EA85BE100D05213 /* HWWeakTimer.h */,
-				607E600A1EA85BE100D05213 /* HWWeakTimer.m */,
-			);
-			path = HWWeakerTimer;
 			sourceTree = "<group>";
 		};
 		607E600B1EA85BE100D05213 /* KeyBoardTopBar */ = {
@@ -855,9 +809,7 @@
 				60E238751E9622A1001235F2 /* Root */,
 				60E2384D1E9622A1001235F2 /* category */,
 				60E238681E9622A1001235F2 /* header */,
-				8FFD73671EB9D25600148B83 /* database */,
 				60E238601E9622A1001235F2 /* color */,
-				60E238701E9622A1001235F2 /* network */,
 				60E238881E9622A1001235F2 /* UIs */,
 				60E238BD1E9622A1001235F2 /* util */,
 			);
@@ -940,14 +892,6 @@
 				607E5FD51EA700D700D05213 /* FastCodeHeader.h */,
 			);
 			path = header;
-			sourceTree = "<group>";
-		};
-		60E238701E9622A1001235F2 /* network */ = {
-			isa = PBXGroup;
-			children = (
-				8FDE031B1EC541F100FFBADA /* XTReq */,
-			);
-			path = network;
 			sourceTree = "<group>";
 		};
 		60E238751E9622A1001235F2 /* Root */ = {
@@ -1366,43 +1310,6 @@
 			path = FontAdapt;
 			sourceTree = "<group>";
 		};
-		8FDE031A1EC541E400FFBADA /* XTFMDB */ = {
-			isa = PBXGroup;
-			children = (
-				8F16B9AD1F25EE370049CEE1 /* XTFMDBConst.h */,
-				8F99164B1EC0754B00BA8F0D /* XTFMDB.h */,
-				8F9916451EC0754B00BA8F0D /* NSObject+XTFMDB.h */,
-				8F9916461EC0754B00BA8F0D /* NSObject+XTFMDB.m */,
-				8F9916471EC0754B00BA8F0D /* XTDBModel.h */,
-				8F9916481EC0754B00BA8F0D /* XTDBModel.m */,
-				8F9916491EC0754B00BA8F0D /* XTDBModel+autoSql.h */,
-				8F99164A1EC0754B00BA8F0D /* XTDBModel+autoSql.m */,
-				8F99164C1EC0754B00BA8F0D /* XTFMDBBase.h */,
-				8F99164D1EC0754B00BA8F0D /* XTFMDBBase.m */,
-				8F22B56E1FC93B4800B1EC0E /* XTDBVersion.h */,
-				8F22B56F1FC93B4800B1EC0E /* XTDBVersion.m */,
-			);
-			name = XTFMDB;
-			sourceTree = "<group>";
-		};
-		8FDE031B1EC541F100FFBADA /* XTReq */ = {
-			isa = PBXGroup;
-			children = (
-				8FDE03191EC5415C00FFBADA /* XTReq.h */,
-				60E238731E9622A1001235F2 /* XTRequest.h */,
-				60E238741E9622A1001235F2 /* XTRequest.m */,
-				8F99165A1EC1B6B400BA8F0D /* XTCacheRequest.h */,
-				8F99165B1EC1B6B400BA8F0D /* XTCacheRequest.m */,
-				8F9916421EC06C4F00BA8F0D /* XTReqResonse.h */,
-				8F9916431EC06C4F00BA8F0D /* XTReqResonse.m */,
-				8F158C811EC2DAD700B0F551 /* XTResponseDBModel.h */,
-				8F158C821EC2DAD700B0F551 /* XTResponseDBModel.m */,
-				8FDE03161EC53DE600FFBADA /* XTReqSessionManager.h */,
-				8FDE03171EC53DE600FFBADA /* XTReqSessionManager.m */,
-			);
-			name = XTReq;
-			sourceTree = "<group>";
-		};
 		8FDE031C1EC5AF0500FFBADA /* z7_wraper_demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1458,14 +1365,6 @@
 				8FFD73561EB9B3E400148B83 /* Zample6Controller.m */,
 			);
 			name = z6_xtreq;
-			sourceTree = "<group>";
-		};
-		8FFD73671EB9D25600148B83 /* database */ = {
-			isa = PBXGroup;
-			children = (
-				8FDE031A1EC541E400FFBADA /* XTFMDB */,
-			);
-			name = database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1641,8 +1540,9 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
+				"${BUILT_PRODUCTS_DIR}/XTFMDB/XTFMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/XTReq/XTReq.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
-				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1658,8 +1558,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTFMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTReq.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1695,7 +1596,6 @@
 				607E604F1EA88B8100D05213 /* Z1CustomCell.m in Sources */,
 				8F7F95BB1F0F615F00236286 /* CtrllerEvent.m in Sources */,
 				60E239091E9622A1001235F2 /* XTNetReloader.m in Sources */,
-				8F9916511EC0754B00BA8F0D /* XTFMDBBase.m in Sources */,
 				60E238E41E9622A1001235F2 /* UIImage+AddFunction.m in Sources */,
 				607E60261EA85BE100D05213 /* WPTappableLabel.m in Sources */,
 				607E602D1EA85BE100D05213 /* XHPathCover.m in Sources */,
@@ -1717,8 +1617,6 @@
 				607E60271EA85BE100D05213 /* NSMutableString+TagReplace.m in Sources */,
 				8FFD733D1EB30A5400148B83 /* Zample4Controller.m in Sources */,
 				60E238F31E9622A1001235F2 /* MyTextView.m in Sources */,
-				8F9916501EC0754B00BA8F0D /* XTDBModel+autoSql.m in Sources */,
-				60E238ED1E9622A1001235F2 /* XTRequest.m in Sources */,
 				607E604C1EA88B5700D05213 /* Zample1Controller.m in Sources */,
 				607E5FCC1EA6F8E400D05213 /* XTZoomPicture.m in Sources */,
 				8F7F95C21F10B43100236286 /* NSObject+Runtime.m in Sources */,
@@ -1727,7 +1625,6 @@
 				8F2C58581F9E1C3B00E10A55 /* UIFont+FontAdapter.m in Sources */,
 				8FFD73421EB320BA00148B83 /* ServerRequest.m in Sources */,
 				60E238F21E9622A1001235F2 /* MyTextField.m in Sources */,
-				8F9916441EC06C4F00BA8F0D /* XTReqResonse.m in Sources */,
 				607E606C1EAD86A000D05213 /* MovieCell.m in Sources */,
 				8FA4DE721F9F0997009F7928 /* UIColor+AllColors.m in Sources */,
 				8FFD73641EB9D19800148B83 /* UIViewController+Storyboard.m in Sources */,
@@ -1746,7 +1643,6 @@
 				7DBF8FDE20247DE00030C3D5 /* XTDrawerFlowLayout.m in Sources */,
 				607E605D1EA9F87C00D05213 /* Zample3Controller.m in Sources */,
 				60E239051E9622A1001235F2 /* NSTimer+Addition.m in Sources */,
-				8F99165D1EC1B6B400BA8F0D /* XTCacheRequest.m in Sources */,
 				8F25F8DF1EE656D70052A21D /* Zample8Controller.m in Sources */,
 				8F560AF61FEC900200E726F9 /* NSString+MD5.m in Sources */,
 				607E603E1EA8740A00D05213 /* RootRefreshFooter.m in Sources */,
@@ -1757,13 +1653,10 @@
 				60E239021E9622A1001235F2 /* XTBarrageItemView.m in Sources */,
 				60E239121E9622A1001235F2 /* XTAnimation.m in Sources */,
 				607E60631EA9FB7100D05213 /* Rating.m in Sources */,
-				8F99164E1EC0754B00BA8F0D /* NSObject+XTFMDB.m in Sources */,
-				8F99164F1EC0754B00BA8F0D /* XTDBModel.m in Sources */,
 				60E238F91E9622A1001235F2 /* UIImage+ImageEffects.m in Sources */,
 				60E2381E1E961D21001235F2 /* AppDelegate.m in Sources */,
 				8F2C58521F9E188400E10A55 /* UIResponder+ChainHandler.m in Sources */,
 				7DD1B004202ACEDB0031E7EF /* RootCollectionView.m in Sources */,
-				8FDE03181EC53DE600FFBADA /* XTReqSessionManager.m in Sources */,
 				607E5FDB1EA7483100D05213 /* UserOnDevice.m in Sources */,
 				60E238E71E9622A1001235F2 /* UIView+Sizes.m in Sources */,
 				60E238F71E9622A1001235F2 /* GradientBGView.m in Sources */,
@@ -1783,7 +1676,6 @@
 				607E60741EADBE6500D05213 /* UIViewController+TabbarHidden.m in Sources */,
 				8F16B9AA1F25D9280049CEE1 /* Z8CollectionViewCell.m in Sources */,
 				60E2390B1E9622A1001235F2 /* XTStretchSegment.m in Sources */,
-				607E602F1EA85BE100D05213 /* HWWeakTimer.m in Sources */,
 				8FDE031F1EC5AF2E00FFBADA /* Zample7Controller.m in Sources */,
 				607E60281EA85BE100D05213 /* NSString+WPAttributedMarkup.m in Sources */,
 				607E60291EA85BE100D05213 /* UIBarButtonItem+Badge.m in Sources */,
@@ -1795,7 +1687,6 @@
 				8F16B99D1F25D4630049CEE1 /* UIApplication+Stat.m in Sources */,
 				607E602B1EA85BE100D05213 /* NSString+MD5.m in Sources */,
 				8FA4DE7F1FA03087009F7928 /* Father.m in Sources */,
-				8F22B5701FC93B4800B1EC0E /* XTDBVersion.m in Sources */,
 				60E238E21E9622A1001235F2 /* NSString+Extend.m in Sources */,
 				607E60711EADA67100D05213 /* UIViewController+HowToUse.m in Sources */,
 				8FE80E4D1FC983D300FA8E53 /* RespoderChainViewController.m in Sources */,
@@ -1818,7 +1709,6 @@
 				607E60341EA85BE100D05213 /* UIAlternativeButton.m in Sources */,
 				8F7F95C91F10D56700236286 /* XTStat.m in Sources */,
 				60E238FA1E9622A1001235F2 /* PlaceHolderTextView.m in Sources */,
-				8F158C831EC2DAD700B0F551 /* XTResponseDBModel.m in Sources */,
 				8F454C801F27306E0068DD43 /* XTArchive.m in Sources */,
 				8F454C8A1F296E990068DD43 /* Zample9Controller.m in Sources */,
 				607E5FC81EA6F8A900D05213 /* CenterTableView.m in Sources */,

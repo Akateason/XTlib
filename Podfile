@@ -6,23 +6,25 @@ inhibit_all_warnings!
 
 target 'XTkit' do
 
+pod 'XTFMDB'
+pod 'XTReq'
+
 pod 'AFNetworking'
+pod 'YYModel'
+pod 'ReactiveObjC'
+pod 'FMDB'
 pod 'Masonry'
 pod 'SDWebImage'
 pod 'SVProgressHUD'
 pod 'JKCategories'
-pod 'ReactiveObjC'
-pod 'UITableView+FDTemplateLayoutCell'
 pod 'MJRefresh'
-pod 'YYModel'
-pod 'FMDB'
 pod 'SSZipArchive'
 pod 'Valet'
 pod 'IQKeyboardManager'
 pod 'LxDBAnything'
-pod 'iCarousel'
+pod 'UITableView+FDTemplateLayoutCell'
+# pod 'iCarousel'
 # pod 'BlocksKit'
 # pod 'Bugly'
-
 
 end

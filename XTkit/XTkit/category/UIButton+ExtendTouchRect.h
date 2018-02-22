@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-static const float kDefaultEnlargeFlex = 15. ;
+static const float kDefaultEnlargeFlex = 25. ;
 
 @interface UIButton (ExtendTouchRect)
 @property (assign, nonatomic) UIEdgeInsets touchExtendInset ;
