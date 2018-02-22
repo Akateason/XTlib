@@ -20,8 +20,6 @@
 		607E60271EA85BE100D05213 /* NSMutableString+TagReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E5FF21EA85BE100D05213 /* NSMutableString+TagReplace.m */; };
 		607E60281EA85BE100D05213 /* NSString+WPAttributedMarkup.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E5FF41EA85BE100D05213 /* NSString+WPAttributedMarkup.m */; };
 		607E60291EA85BE100D05213 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E5FF71EA85BE100D05213 /* UIBarButtonItem+Badge.m */; };
-		607E602A1EA85BE100D05213 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E5FFB1EA85BE100D05213 /* Base64.m */; };
-		607E602B1EA85BE100D05213 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E5FFE1EA85BE100D05213 /* NSString+MD5.m */; };
 		607E602C1EA85BE100D05213 /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60011EA85BE100D05213 /* CHTCollectionViewWaterfallLayout.m */; };
 		607E602D1EA85BE100D05213 /* XHPathCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60041EA85BE100D05213 /* XHPathCover.m */; };
 		607E602E1EA85BE100D05213 /* KICropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 607E60071EA85BE100D05213 /* KICropImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -196,10 +194,6 @@
 		607E5FF41EA85BE100D05213 /* NSString+WPAttributedMarkup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WPAttributedMarkup.m"; sourceTree = "<group>"; };
 		607E5FF61EA85BE100D05213 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		607E5FF71EA85BE100D05213 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
-		607E5FFA1EA85BE100D05213 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		607E5FFB1EA85BE100D05213 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
-		607E5FFD1EA85BE100D05213 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
-		607E5FFE1EA85BE100D05213 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		607E60001EA85BE100D05213 /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
 		607E60011EA85BE100D05213 /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
 		607E60031EA85BE100D05213 /* XHPathCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPathCover.h; sourceTree = "<group>"; };
@@ -504,7 +498,6 @@
 			children = (
 				607E5FE81EA85BE100D05213 /* AttibutedLabel */,
 				607E5FF51EA85BE100D05213 /* BarButton+badge */,
-				607E5FF81EA85BE100D05213 /* Base64+MD5 */,
 				607E5FFF1EA85BE100D05213 /* CHTCollectionViewWaterfallLayout */,
 				607E60021EA85BE100D05213 /* Cover */,
 				607E60051EA85BE100D05213 /* CropImageView */,
@@ -558,33 +551,6 @@
 				607E5FF71EA85BE100D05213 /* UIBarButtonItem+Badge.m */,
 			);
 			path = "BarButton+badge";
-			sourceTree = "<group>";
-		};
-		607E5FF81EA85BE100D05213 /* Base64+MD5 */ = {
-			isa = PBXGroup;
-			children = (
-				607E5FF91EA85BE100D05213 /* Base64 */,
-				607E5FFC1EA85BE100D05213 /* MD5 */,
-			);
-			path = "Base64+MD5";
-			sourceTree = "<group>";
-		};
-		607E5FF91EA85BE100D05213 /* Base64 */ = {
-			isa = PBXGroup;
-			children = (
-				607E5FFA1EA85BE100D05213 /* Base64.h */,
-				607E5FFB1EA85BE100D05213 /* Base64.m */,
-			);
-			path = Base64;
-			sourceTree = "<group>";
-		};
-		607E5FFC1EA85BE100D05213 /* MD5 */ = {
-			isa = PBXGroup;
-			children = (
-				607E5FFD1EA85BE100D05213 /* NSString+MD5.h */,
-				607E5FFE1EA85BE100D05213 /* NSString+MD5.m */,
-			);
-			path = MD5;
 			sourceTree = "<group>";
 		};
 		607E5FFF1EA85BE100D05213 /* CHTCollectionViewWaterfallLayout */ = {
@@ -1649,7 +1615,6 @@
 				8FFD73461EB321A900148B83 /* Zample5Controller.m in Sources */,
 				8F2C584F1F9E17F600E10A55 /* NSNumber+Round.m in Sources */,
 				60E238E11E9622A1001235F2 /* NSObject+Reflection.m in Sources */,
-				607E602A1EA85BE100D05213 /* Base64.m in Sources */,
 				60E239021E9622A1001235F2 /* XTBarrageItemView.m in Sources */,
 				60E239121E9622A1001235F2 /* XTAnimation.m in Sources */,
 				607E60631EA9FB7100D05213 /* Rating.m in Sources */,
@@ -1685,7 +1650,6 @@
 				607E60411EA8810B00D05213 /* RootTableCell.m in Sources */,
 				8FA4DE751F9F0DB0009F7928 /* XTColorCell.m in Sources */,
 				8F16B99D1F25D4630049CEE1 /* UIApplication+Stat.m in Sources */,
-				607E602B1EA85BE100D05213 /* NSString+MD5.m in Sources */,
 				8FA4DE7F1FA03087009F7928 /* Father.m in Sources */,
 				60E238E21E9622A1001235F2 /* NSString+Extend.m in Sources */,
 				607E60711EADA67100D05213 /* UIViewController+HowToUse.m in Sources */,
