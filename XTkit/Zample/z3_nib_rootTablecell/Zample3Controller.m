@@ -13,6 +13,8 @@
 #import "MovieCell.h"
 #import "MyWebController.h"
 
+#import "ServerRequest.h"
+
 static const NSInteger kEveryCount = 10 ;
 
 @interface Zample3Controller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>

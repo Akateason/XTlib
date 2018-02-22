@@ -12,6 +12,9 @@
 #import "DoubanTags.h"
 #import "DoubanTagsCell.h"
 
+#import "ServerRequest.h"
+
+
 @interface Zample2Controller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
 @property (nonatomic,strong) RootTableView *table ;
 @property (nonatomic,strong) NSArray *list_datasource ;

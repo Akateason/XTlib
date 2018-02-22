@@ -12,6 +12,9 @@
 #import "Images.h"
 #import "MovieCell.h"
 
+#import "ServerRequest.h"
+
+
 @interface Zample6Controller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
 
 @property (nonatomic,strong) RootTableView *table ;
