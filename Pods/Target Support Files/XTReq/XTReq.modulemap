@@ -1,0 +1,6 @@
+framework module XTReq {
+  umbrella header "XTReq-umbrella.h"
+
+  export *
+  module * { export * }
+}

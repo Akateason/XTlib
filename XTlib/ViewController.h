@@ -1,9 +1,9 @@
 //
 //  ViewController.h
-//  XTlib
+//  XTkit
 //
-//  Created by teason23 on 2018/2/22.
-//  Copyright © 2018年 teason23. All rights reserved.
+//  Created by teason on 2017/4/6.
+//  Copyright © 2017年 teason. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

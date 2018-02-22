@@ -7,7 +7,25 @@
 		<key>XTlib.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>16</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8F2BFDC3203ED6AB0013394D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8F2BFDDB203ED6AB0013394D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8F2BFDE6203ED6AB0013394D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

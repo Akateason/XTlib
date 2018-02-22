@@ -1,0 +1,6 @@
+framework module XTFMDB {
+  umbrella header "XTFMDB-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "SVProgressHUD.h"
+#import "XTFMDB.h"
+#import "XTResponseDBModel.h"
+#import "XTStat.h"
+#import "CommonFunc.h"
+#import "Model1.h"
+#import "ValetManager.h"
+#import "XTReq.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +25,44 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSLog(@"%@",[CommonFunc getDocumentsPath]) ;
+    
+    // SVPHUD style
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark] ;
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear] ; //set mask to block usersTaps
+    [SVProgressHUD setMaximumDismissTimeInterval:2.] ;
+    
+    // SQLite
+    [[XTFMDBBase sharedInstance] configureDB:@"teason"] ; // app did launch .
+    [[XTFMDBBase sharedInstance] dbUpgradeTable:Model1.class
+                                      paramsAdd:@[@"a1",@"a2",@"a3"]
+                                        version:2] ;
+    
+    [[XTFMDBBase sharedInstance] dbUpgradeTable:Model1.class
+                                      paramsAdd:@[@"b1",@"b2",@"b3"]
+                                        version:3] ;
+    
+    
+    // request cache TB
+    [XTCacheRequest configXTCacheReqWhenAppDidLaunchWithDBName:@"teason"] ;
+    
+    // stat
+    //    [[XTStat new] prepare] ;
+    
+    //
+    [self testFunc] ;
+
     return YES;
+}
+
+- (void)testFunc {
+    //    NSString *str = [[ValetManager sharedInstance] getPwdWithUname:@"xtc"] ;
+    //    [[ValetManager sharedInstance] setup] ;
+    //    [[ValetManager sharedInstance] saveUserName:@"xtc" pwd:@"324234daaa"] ;
+    //    [[ValetManager sharedInstance] UUID] ;
+    
+    
 }
 
 

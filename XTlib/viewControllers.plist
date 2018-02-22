@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>1. kit</key>
+		<array>
+			<dict>
+				<key>cname</key>
+				<string>Zample1Controller</string>
+				<key>title</key>
+				<string>code_rootTableCell</string>
+			</dict>
+			<dict>
+				<key>cname</key>
+				<string>Zample2Controller</string>
+				<key>title</key>
+				<string>RootTableView and Request</string>
+			</dict>
+			<dict>
+				<key>cname</key>
+				<string>Zample3Controller</string>
+				<key>title</key>
+				<string>cell from NIB</string>
+			</dict>
+			<dict>
+				<key>cname</key>
+				<string>Zample4Controller</string>
+				<key>title</key>
+				<string>XTColorFetcher</string>
+			</dict>
+			<dict>
+				<key>cname</key>
+				<string>Zample5Controller</string>
+				<key>title</key>
+				<string>XTFMDB</string>
+			</dict>
+			<dict>
+				<key>cname</key>
+				<string>Zample6Controller</string>
+				<key>title</key>
+				<string>XTReq</string>
+			</dict>
+			<dict>
+				<key>cname</key>
+				<string>RespoderChainViewController</string>
+				<key>title</key>
+				<string>RespoderChain</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>2. test</key>
+		<array>
+			<dict>
+				<key>cname</key>
+				<string>Zample7Controller</string>
+				<key>title</key>
+				<string>wraper scroll test</string>
+			</dict>
+			<dict>
+				<key>cname</key>
+				<string>Zample8Controller</string>
+				<key>title</key>
+				<string>button hit rect</string>
+			</dict>
+			<dict>
+				<key>cname</key>
+				<string>Zample9Controller</string>
+				<key>title</key>
+				<string>NSProxy</string>
+			</dict>
+			<dict>
+				<key>isStory</key>
+				<true/>
+				<key>title</key>
+				<string>FontAdapt</string>
+				<key>cname</key>
+				<string>FontAdaptVC</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>
