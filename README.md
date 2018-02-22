@@ -1,7 +1,12 @@
-# XTkit
-iOS快速开发框架
-XTkit   
-主要分几个模块
+# XTlib
+## Cocoapod
+
+pod 'XTlib'
+
+
+iOS Objective-C快速开发框架
+
+
 # Root / Category / Header / Database / Color / Network / UIs / Util
 
 介绍如下.
