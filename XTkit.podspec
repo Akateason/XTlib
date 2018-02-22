@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTkit"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "XTkit"
 
   # This description is used to generate tags and improve search results.
@@ -137,7 +137,7 @@ Pod::Spec.new do |s|
   s.dependency "ReactiveObjC"
   s.dependency "Masonry"
   s.dependency "SDWebImage"
-  s.dependency "JKCategories"
+  s.dependency "SSZipArchive"
   s.dependency "MJRefresh"
   s.dependency "Valet"
   
