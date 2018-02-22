@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTkit"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "XTkit"
 
   # This description is used to generate tags and improve search results.
@@ -92,7 +92,7 @@ Pod::Spec.new do |s|
   s.source_files  = "XTkit/XTkit","XTkit/XTkit/**/*.{h,m}","XTkit/XTkit/**/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
-  s.public_header_files = "XTkit/XTkit/*.h","XTkit/XTkit/header/*.h" 
+  s.public_header_files = "XTkit/XTkit/*.h","XTkit/XTkit/header/*.h","XTkit/XTkit/**/**/*.h" 
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
