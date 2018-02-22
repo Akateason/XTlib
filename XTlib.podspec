@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint XTkit.podspec' to ensure this is a
+#  Be sure to run `pod spec lint XTlib.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -17,14 +17,14 @@ Pod::Spec.new do |s|
 
   s.name         = "XTlib"
   s.version      = "0.0.9"
-  s.summary      = "XTlib"
+  s.summary      = "XTlib."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "XTkit is an O.O.P API for iOS Objective-C development.  Root / Category / Header / Database / Color / Network / UIs / Util"
+  s.description  = "XTlib is an O.O.P API for iOS Objective-C development.  Root / Category / Header / Database / Color / Network / UIs / Util"
 
   s.homepage     = "https://github.com/Akateason/XTlib"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
