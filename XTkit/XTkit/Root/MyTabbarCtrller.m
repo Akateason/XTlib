@@ -7,7 +7,7 @@
 //
 
 #import "MyTabbarCtrller.h"
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
 
 
 
