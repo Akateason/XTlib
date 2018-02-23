@@ -9,11 +9,11 @@
 #ifndef XTStatConst_h
 #define XTStatConst_h
 
-#define xt_DEBUG    1
-#if xt_DEBUG
-#   define NSLog(...) NSLog(__VA_ARGS__)
+#define xtstat_DEBUG    1
+#if xtstat_DEBUG
+#   define XTSTATLog(...)           NSLog(__VA_ARGS__)
 #else
-#   define NSLog(...)
+#   define XTSTATLog(...)
 #endif
 
 #define xt_Run_Stat    0

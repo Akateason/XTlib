@@ -79,7 +79,7 @@
  */
 - (void)xt_imp_tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@ didSelectRowAtIndexPath:%ld:%ld",NSStringFromClass([self class]),(long)indexPath.section,(long)indexPath.row) ;
+    XTSTATLog(@"%@ didSelectRowAtIndexPath:%ld:%ld",NSStringFromClass([self class]),(long)indexPath.section,(long)indexPath.row) ;
     ListEvent *lEvent = [[ListEvent alloc] initWithRow:(int)(indexPath.row)
                                                section:(int)(indexPath.section)
                                                   from:NSStringFromClass([self class])

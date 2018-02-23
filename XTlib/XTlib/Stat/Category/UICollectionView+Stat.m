@@ -72,7 +72,7 @@
 
 - (void)xt_imp_collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@ didSelectRowAtIndexPath: %ld :%ld",NSStringFromClass([self class]),(long)indexPath.section,(long)indexPath.row) ;
+    XTSTATLog(@"%@ didSelectRowAtIndexPath: %ld :%ld",NSStringFromClass([self class]),(long)indexPath.section,(long)indexPath.row) ;
     
     ListEvent *lEvent = [[ListEvent alloc] initWithRow:(int)(indexPath.row)
                                                section:(int)(indexPath.section)

@@ -37,7 +37,7 @@
                                             from:sender
                                         forEvent:event] ;
 
-    NSLog(@"\naction:%@\ntarget:%@\nsender:%@\nevent:%@",NSStringFromSelector(action),target,sender,event) ;
+    XTSTATLog(@"\naction:%@\ntarget:%@\nsender:%@\nevent:%@",NSStringFromSelector(action),target,sender,event) ;
     ApplicationEvent *aEvent = [[ApplicationEvent alloc] initWithSEL:action
                                                                   to:target
                                                                 from:sender

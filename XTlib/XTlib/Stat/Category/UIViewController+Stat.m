@@ -70,7 +70,7 @@
     NSString *className = NSStringFromClass(self.class) ;
     if ([filter containsObject:className]) return ;
     if (!self.statTitle || !self.statTitle.length) return ;
-    NSLog(@"%@ : %@",funcName,self.statTitle) ;
+    XTSTATLog(@"%@ : %@",funcName,self.statTitle) ;
     CtrllerEvent *cEvent = [[CtrllerEvent alloc] initWithName:NSStringFromClass(self.class)
                                                         title:self.statTitle
                                                        action:funcName
