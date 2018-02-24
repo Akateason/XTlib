@@ -146,12 +146,12 @@ Pod::Spec.new do |s|
   #  
   s.subspec 'category' do |ss|
     ss.source_files = 'XTlib/XTlib/category/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/category/*.h'
+    ss.public_header_files = 'XTlib/XTlib/category/*.h',"XTlib/XTlib/header/*.h"
   end
 
   s.subspec 'color' do |ss|
     ss.source_files = 'XTlib/XTlib/color/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/color/*.h'
+    ss.public_header_files = 'XTlib/XTlib/color/*.h',"XTlib/XTlib/header/*.h"
     ss.resources = 'XTlib/XTlib/color/*.plist'
   end
 
@@ -162,22 +162,22 @@ Pod::Spec.new do |s|
 
   s.subspec 'Root' do |ss|
     ss.source_files = 'XTlib/XTlib/Root/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/Root/*.h'
+    ss.public_header_files = 'XTlib/XTlib/Root/*.h',"XTlib/XTlib/header/*.h"
   end
 
   s.subspec 'Stat' do |ss|
     ss.source_files = 'XTlib/XTlib/Stat/*.{h,m}','XTlib/XTlib/Stat/**/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/Stat/*.h','XTlib/XTlib/Stat/**/*.h'
+    ss.public_header_files = 'XTlib/XTlib/Stat/*.h','XTlib/XTlib/Stat/**/*.h',"XTlib/XTlib/header/*.h"
   end
 
   s.subspec 'UIs' do |ss|
     ss.source_files = 'XTlib/XTlib/UIs/*.{h,m}','XTlib/XTlib/UIs/**/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/UIs/*.h','XTlib/XTlib/UIs/**/*.h'
+    ss.public_header_files = 'XTlib/XTlib/UIs/*.h','XTlib/XTlib/UIs/**/*.h',"XTlib/XTlib/header/*.h"
   end
 
   s.subspec 'util' do |ss|
     ss.source_files = 'XTlib/XTlib/util/**/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/util/**/*.h'
+    ss.public_header_files = 'XTlib/XTlib/util/**/*.h',"XTlib/XTlib/header/*.h"
   end
 
 
