@@ -37,8 +37,8 @@
 }
 
 - (NSDictionary *)fromPlist {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:self.plistName
-                                                          ofType:@"plist"] ;
+//    NSString *plistPath = [[NSBundle mainBundle] pathForResource:self.plistName ofType:@"plist"] ;  // deprecated, will cause a crash in pods. canot found resource .
+    NSString *plistPath = [[NSBundle bundleForClass:XTColorFetcher.class] pathForResource:self.plistName ofType:@"plist"] ;
     return [[NSDictionary alloc] initWithContentsOfFile:plistPath] ;
 }
 
