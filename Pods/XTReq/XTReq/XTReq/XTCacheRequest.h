@@ -1,10 +1,13 @@
 //
 //  XTCacheRequest.h
-//  XTkit
+//  XTlib
 //
 //  Created by teason23 on 2017/5/8.
 //  Copyright © 2017年 teason. All rights reserved.
-//
+// XTCacheRequest
+//  1. Persistent save the response of requests .
+//  2. three policy for how you save requests .
+//  3. can control save or not when server crashed or bug .
 
 #import "XTRequest.h"
 #import "XTResponseDBModel.h"

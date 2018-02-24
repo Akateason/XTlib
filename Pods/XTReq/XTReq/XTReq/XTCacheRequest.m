@@ -1,6 +1,6 @@
 //
 //  XTCacheRequest.m
-//  XTkit
+//  XTlib
 //
 //  Created by teason23 on 2017/5/8.
 //  Copyright © 2017年 teason. All rights reserved.
@@ -11,6 +11,7 @@
 #import "YYModel.h"
 #import "NSDate+XTFMDB_Tick.h"
 #import "NSString+XTReq_Extend.h"
+#import "XTRequest+UrlString.h"
 
 @implementation XTCacheRequest
 
@@ -100,10 +101,9 @@
    timeoutIfNeed:(int)timeoutIfNeed
      judgeResult:(XTReqSaveJudgment (^)(id json))completion
 {
-    NSString *strUniqueKey = [self fullUrl:url param:param] ;
+    NSString *strUniqueKey = [self getFinalUrlWithBaseUrl:url param:param] ;
     XTResponseDBModel *resModel = [XTResponseDBModel xt_findFirstWhere:[NSString stringWithFormat:@"requestUrl == '%@'",strUniqueKey]] ;
-    if (!resModel)
-    {// not cache
+    if (!resModel) {// not cache
         resModel = [XTResponseDBModel newDefaultModelWithKey:strUniqueKey
                                                          val:nil                         // response is nil
                                                       policy:cachePolicy
@@ -120,8 +120,7 @@
                              return FALSE ;
                          }] ;
     }
-    else
-    {// has cache
+    else {// has cache
         switch (resModel.cachePolicy)
         {
             case XTResponseCachePolicyNeverUseCache:
@@ -146,8 +145,7 @@
                 break;
             case XTResponseCachePolicyTimeout:
             {//规定时间内.返回缓存.超时则更新数据. 需设置timeout时间. timeout默认1小时
-                if ([resModel isAlreadyTimeout])
-                { // timeout . update request
+                if ([resModel isAlreadyTimeout]) { // timeout . update request
                     [self updateRequestWithType:XTRequestMode_GET_MODE
                                             url:url
                                             hud:hud
@@ -159,8 +157,7 @@
                                          return FALSE ;
                                      }] ;
                 }
-                else
-                { // return cache
+                else { // return cache
                     if (completion) completion([self.class getJsonWithStr:resModel.response]) ;
                 }
             }
@@ -248,10 +245,9 @@
     timeoutIfNeed:(int)timeoutIfNeed
       judgeResult:(XTReqSaveJudgment(^)(id json))completion
 {
-    NSString *strUniqueKey = [self fullUrl:url param:param] ;
+    NSString *strUniqueKey = [self getFinalUrlWithBaseUrl:url param:param] ;
     XTResponseDBModel *resModel = [XTResponseDBModel xt_findFirstWhere:[NSString stringWithFormat:@"requestUrl == '%@'",strUniqueKey]] ;
-    if (!resModel)
-    {// not cache
+    if (!resModel) {// not cache
         resModel = [XTResponseDBModel newDefaultModelWithKey:strUniqueKey
                                                        val:nil                         // response is nil
                                                     policy:cachePolicy
@@ -268,8 +264,7 @@
                              return FALSE ;
                          }] ;
     }
-    else
-    {// has cache
+    else {// has cache
         switch (resModel.cachePolicy)
         {
             case XTResponseCachePolicyNeverUseCache:
@@ -293,8 +288,7 @@
                 break;
             case XTResponseCachePolicyTimeout:
             {//规定时间内.返回缓存.超时则更新数据. 需设置timeout时间. timeout默认1小时
-                if ([resModel isAlreadyTimeout])
-                { // timeout . update request
+                if ([resModel isAlreadyTimeout]) { // timeout . update request
                     [self updateRequestWithType:XTRequestMode_POST_MODE
                                             url:url
                                             hud:hud
@@ -306,8 +300,7 @@
                                          return FALSE ;
                                      }] ;
                 }
-                else
-                { // return cache
+                else { // return cache
                     if (completion) completion([self.class getJsonWithStr:resModel.response]) ;
                 }
             }
@@ -333,8 +326,7 @@
                 responseModel:(XTResponseDBModel *)resModel
                    completion:(XTReqSaveJudgment(^)(id json))completion
 {
-    if (requestType == XTRequestMode_GET_MODE)
-    {
+    if (requestType == XTRequestMode_GET_MODE) {
         [self GETWithUrl:url
                   header:header
                      hud:hud
@@ -362,8 +354,7 @@
                         if (completion) completion([self.class getJsonWithStr:resModel.response]) ;
                     }] ;
     }
-    else if (requestType == XTRequestMode_POST_MODE)
-    {
+    else if (requestType == XTRequestMode_POST_MODE) {
         [self POSTWithUrl:url
                    header:header
                       hud:hud
@@ -404,9 +395,8 @@
         NSLog(@"error : %@",error) ;
         return nil ;
     }
-    else {
+    else
         return jsonObj ;
-    }
 }
 
 @end

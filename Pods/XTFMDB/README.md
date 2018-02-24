@@ -1,6 +1,7 @@
 
 
-#XTFMDB
+# XTFMDB
+pod 'XTFMDB'
 
 ### 特性
 1. Model直接存储.获取. 无需再转换
@@ -19,6 +20,8 @@
 14. 常规运算, 求和,最值等
 
 ## 使用方法
+## CocoaPod
+pod 'XTFMDB'
  
 导入 XTFMDB.h
 
@@ -261,7 +264,4 @@ type:(NSString *)type ;
 ```
 
 
-
-你的star是我的动力
-
-有任何疑问或建议. 欢迎在github或博客里issue我. 
+有任何疑问或建议. 请issue于我.

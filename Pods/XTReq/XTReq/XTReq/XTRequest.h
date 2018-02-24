@@ -4,104 +4,100 @@
 //
 //  Created by teason on 15/11/12.
 //  Copyright © 2015年 teason. All rights reserved.
-//
+// XTRequest
+// 1. share one manager .
+// 2. async and sync .
+// 3. Get/Post/Put , fast append HTTP header / formdata / rawbody
+// 4. log success or failure
+// 5. show hud
+// 6. cancel req
+
 
 #import "XTReqSessionManager.h"
-@class XTReqResonse , NSURLSessionDataTask ;
+@class NSURLSessionDataTask ;
 
 extern NSString *const kStringBadNetwork ;
 
 // req mode
 typedef NS_ENUM(NSInteger, XTRequestMode) {
-    XTRequestMode_GET_MODE      ,
-    XTRequestMode_POST_MODE
+    XTRequestMode_GET_MODE  ,
+    XTRequestMode_POST_MODE ,
+    XTRequestMode_PUT_MODE  ,
 } ;
 
 // base URL
-static NSString *const kBaseURL = @"http://top.akateason.top" ;
+static NSString *const kBaseURL = @"http://yourbaseAPI.com" ;
 
 // get PARAM
 #define XT_GET_PARAM                         NSMutableDictionary *param = [XTRequest getParameters] ;
 
 
-
-
-
 @interface XTRequest : XTReqSessionManager
 
-// set URL string with base url
-+ (NSString *)getFinalUrl:(NSString *)strPartOfUrl ;
-// get url format baseurl?param1&param2&param3...
-+ (NSString *)fullUrl:(NSString *)url
-                param:(NSDictionary *)param ;
 // param
 + (NSMutableDictionary *)getParameters ;
 
-// status
+// reachability
 + (void)startMonitor ;
-
 + (void)stopMonitor  ;
-
-+ (NSString *)netWorkStatus ; // reachability
-
++ (NSString *)netWorkStatus ;
 + (BOOL)isWifi ;
-
 + (BOOL)isReachable ;
 
 /**
- async
+ async req
  */
-// get
-+ (void)GETWithUrl:(NSString *)url
-        parameters:(NSDictionary *)dict
-           success:(void (^)(id json))success
-              fail:(void (^)())fail ;
 
-+ (void)GETWithUrl:(NSString *)url
-               hud:(BOOL)hud
-        parameters:(NSDictionary *)dict
-           success:(void (^)(id json))success
-              fail:(void (^)())fail ;
+// GET
++ (NSURLSessionDataTask *)GETWithUrl:(NSString *)url
+                          parameters:(NSDictionary *)dict
+                             success:(void (^)(id json))success
+                                fail:(void (^)())fail ;
 
-+ (void)GETWithUrl:(NSString *)url
-               hud:(BOOL)hud
-        parameters:(NSDictionary *)dict
-       taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
-              fail:(void (^)())fail ;
++ (NSURLSessionDataTask *)GETWithUrl:(NSString *)url
+                                 hud:(BOOL)hud
+                          parameters:(NSDictionary *)dict
+                             success:(void (^)(id json))success
+                                fail:(void (^)())fail ;
 
-+ (void)GETWithUrl:(NSString *)url
-            header:(NSDictionary *)header
-               hud:(BOOL)hud
-        parameters:(NSDictionary *)dict
-       taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
-              fail:(void (^)())fail ;
++ (NSURLSessionDataTask *)GETWithUrl:(NSString *)url
+                                 hud:(BOOL)hud
+                          parameters:(NSDictionary *)dict
+                         taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+                                fail:(void (^)())fail ;
 
-// post
-+ (void)POSTWithUrl:(NSString *)url
-         parameters:(NSDictionary *)dict
-            success:(void (^)(id json))success
-               fail:(void (^)())fail ;
++ (NSURLSessionDataTask *)GETWithUrl:(NSString *)url
+                              header:(NSDictionary *)header
+                                 hud:(BOOL)hud
+                          parameters:(NSDictionary *)dict
+                         taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+                                fail:(void (^)())fail ;
 
-+ (void)POSTWithUrl:(NSString *)url
-                hud:(BOOL)hud
-         parameters:(NSDictionary *)dict
-            success:(void (^)(id json))success
-               fail:(void (^)())fail ;
+// POST
++ (NSURLSessionDataTask *)POSTWithUrl:(NSString *)url
+                           parameters:(NSDictionary *)dict
+                              success:(void (^)(id json))success
+                                 fail:(void (^)())fail ;
 
-+ (void)POSTWithUrl:(NSString *)url
-                hud:(BOOL)hud
-         parameters:(NSDictionary *)dict
-        taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
-               fail:(void (^)())fail ;
++ (NSURLSessionDataTask *)POSTWithUrl:(NSString *)url
+                                  hud:(BOOL)hud
+                           parameters:(NSDictionary *)dict
+                              success:(void (^)(id json))success
+                                 fail:(void (^)())fail ;
 
-+ (void)POSTWithUrl:(NSString *)url
-             header:(NSDictionary *)header
-                hud:(BOOL)hud
-         parameters:(NSDictionary *)dict
-        taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
-               fail:(void (^)())fail ;
++ (NSURLSessionDataTask *)POSTWithUrl:(NSString *)url
+                                  hud:(BOOL)hud
+                           parameters:(NSDictionary *)dict
+                          taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+                                 fail:(void (^)())fail ;
 
-// post body raw
++ (NSURLSessionDataTask *)POSTWithUrl:(NSString *)url
+                               header:(NSDictionary *)header
+                                  hud:(BOOL)hud
+                           parameters:(NSDictionary *)dict
+                          taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+                                 fail:(void (^)())fail ;
+
 + (void)POSTWithURL:(NSString *)url
              header:(NSDictionary *)header
               param:(NSDictionary *)param
@@ -110,9 +106,19 @@ static NSString *const kBaseURL = @"http://top.akateason.top" ;
             success:(void (^)(id json))success
                fail:(void (^)())fail ;
 
+// PUT
++ (NSURLSessionDataTask *)PUTWithUrl:(NSString *)url
+                              header:(NSDictionary *)header
+                                 hud:(BOOL)hud
+                          parameters:(NSDictionary *)dict
+                         taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
+                                fail:(void (^)())fail ;
+
+
 /**
- sync
+ sync req
  */
+
 + (id)syncWithReqMode:(XTRequestMode)mode
               timeout:(int)timeout
                   url:(NSString *)url
@@ -123,6 +129,12 @@ static NSString *const kBaseURL = @"http://top.akateason.top" ;
                   url:(NSString *)url
                header:(NSDictionary *)header
            parameters:(NSDictionary *)dict ;
+
+/**
+ cancel all req
+ */
+
++ (void)cancelAllRequest ;
 
 @end
 

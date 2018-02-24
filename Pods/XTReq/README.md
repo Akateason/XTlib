@@ -1,8 +1,13 @@
-# XTReq 
-* GET/POST
-* 异步/同步
-* 缓存自带三种策略
-* 可手动控制是否缓存(防止服务器出错的情况)
+# XTReq
+* 基于AFNetworking代码最少的请求框架.
+* 无内存泄露
+* 同步异步
+* GET / POST / PUT , header , formData , rawbody
+* 带progessHUD
+* 取消
+* 持久化保存
+* 指定三种不同的保存策略
+* 可手动保存可控
 
 
 cocoapods 
@@ -10,216 +15,120 @@ cocoapods
 pod 'XTReq'
 ```
 
-* 使用方式
+```
 #import "XTReq.h"
-* 若需要缓存. 需要在APPdelegate配置
+```
+
+# XTRequest
+1.  share one manager .
+2.  async and sync .
+3.  GET / POST / PUT , fast append HTTP header / formdata / rawbody
+4.  log result
+5.  show hud
+6. cancel all req
+
+#  XTCacheRequest
+1.  Persistent save the response of requests .
+2.  three policy for how you save requests .
+3.  can control save or not when server crashed or bug .
+
+---
+
+* 使用示例 供参考
+
+## XTRequest
+### async
+```
+[XTRequest GETWithUrl:kURLstr
+            header:nil
+            hud:YES
+            parameters:nil
+            taskSuccess:^(NSURLSessionDataTask *task, id json) {
+
+        } fail:^{
+
+    }] ;
+```
+
+### raw body
+```
+[XTRequest POSTWithURL:url
+                header:
+                param:
+                rawBody:
+                hud:
+                success:
+                fail: ] ;
+```
+
+### sync
+```
+id json = [XTRequest syncWithReqMode:
+                                 url:
+                              header:
+                              parameters:] ;
+```
+
+
+---
+
+## XTCacheRequest
+
+#### 若需要缓存. 需在APPdelegate配置, 传入你的数据库名, 如果有的话.
 ```
 [XTCacheRequest configXTCacheReqWhenAppDidLaunchWithDBName:@"yourDB"] ;
 
 ```
 
-XTRequest
+
+### 最通常的情况, 一行调用
+```
+[XTCacheRequest cacheGET:
+                parameters:
+                completion:^(id json) {
+
+}] ;
 ```
 
-@interface XTRequest : NSObject
-
-// set URL string with base url
-+ (NSString *)getFinalUrl:(NSString *)strPartOfUrl ;
-// get url format baseurl?param1&param2&param3...
-+ (NSString *)fullUrl:(NSString *)url
-                param:(NSDictionary *)param ;
-// param
-+ (NSMutableDictionary *)getParameters ;
-
-// status
-+ (void)netWorkStatus ;
-+ (void)netWorkStatus:(void (^)(NSInteger status))block ;
-
-// async
-+ (void)GETWithUrl:(NSString *)url
-        parameters:(NSDictionary *)dict
-           success:(void (^)(id json))success
-              fail:(void (^)())fail ;
-
-+ (void)GETWithUrl:(NSString *)url
-               hud:(BOOL)hud
-        parameters:(NSDictionary *)dict
-           success:(void (^)(id json))success
-              fail:(void (^)())fail ;
-
-+ (void)GETWithUrl:(NSString *)url
-               hud:(BOOL)hud
-        parameters:(NSDictionary *)dict
-       taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
-              fail:(void (^)())fail ;
-
-+ (void)POSTWithUrl:(NSString *)url
-         parameters:(NSDictionary *)dict
-            success:(void (^)(id json))success
-               fail:(void (^)())fail ;
-
-+ (void)POSTWithUrl:(NSString *)url
-                hud:(BOOL)hud
-         parameters:(NSDictionary *)dict
-            success:(void (^)(id json))success
-               fail:(void (^)())fail ;
-
-+ (void)POSTWithUrl:(NSString *)url
-                hud:(BOOL)hud
-         parameters:(NSDictionary *)dict
-        taskSuccess:(void (^)(NSURLSessionDataTask * task ,id json))success
-               fail:(void (^)())fail ;
-
-/**
-sync
-*/
-+ (id)syncWithReqMode:(XTRequestMode)mode
-                  url:(NSString *)url
-               header:(NSDictionary *)header
-           parameters:(NSDictionary *)dict ;
-
-
-@end
-
+### 缓存策略
+```
+***XTResponseCacheType***
+*  XTResponseCachePolicyNeverUseCache  从不缓存适合每次都实时的数据流.
+*  XTResponseCachePolicyAlwaysCache    总是获取缓存的数据.不再更新.
+*  XTResponseCachePolicyTimeout        规定时间内.返回缓存.超时则更新数据. 需设置timeout时间. timeout默认1小时
 ```
 
+### 你也可指定三种不同的保存策略 以定时为例.设计定时超出时间.s为单位.
+### XTResponseCachePolicy
+```
+[XTCacheRequest cacheGET:kURLstr
+                header:nil
+                parameters:nil
+                hud:YES
+                policy:XTResponseCachePolicyTimeout
+                timeoutIfNeed:10 * 60
+                completion:^(id json) {
 
-XTCacheRequest
+}] ;
 ```
 
-typedef enum : NSUInteger {
-XTReqSaveJudgment_willSave      = 0 ,
-XTReqSaveJudgment_NotSave       = 1 ,
-} XTReqSaveJudgment ;
+### 防止服务器出bug或者崩溃的处理方法
+### 控制是否保存
+* XTReqSaveJudgment_willSave
+* XTReqSaveJudgment_NotSave
 
-@interface XTCacheRequest : XTRequest
-
-#pragma mark - config
-
-+ (void)configXTCacheReqWhenAppDidLaunchWithDBName:(NSString *)dbName ;
-
-#pragma mark - get
-
-+ (void)cacheGET:(NSString *)url
-parameters:(NSDictionary *)param
-completion:(void(^)(id json))completion ;
-
-+ (void)cacheGET:(NSString *)url
-parameters:(NSDictionary *)param
-judgeResult:(XTReqSaveJudgment(^)(id json))completion ;
-
-+ (void)cacheGET:(NSString *)url
-header:(NSDictionary *)header
-parameters:(NSDictionary *)param
-completion:(void(^)(id json))completion ;
-
-+ (void)cacheGET:(NSString *)url
-header:(NSDictionary *)header
-parameters:(NSDictionary *)param
-judgeResult:(XTReqSaveJudgment(^)(id json))completion ;
-
-/**
-cacheGET completion
-
-@param url             NSString
-@param header          NSDictionary
-@param param           NSDictionary
-@param hud             BOOL
-@param cachePolicy     XTResponseCachePolicy
-@param timeoutIfNeed   int
-@param completion      void(^)(id json)            RESPONSE WILL BE SAVED IN ANY CASE .
-*/
-+ (void)cacheGET:(NSString *)url
-header:(NSDictionary *)header
-parameters:(NSDictionary *)param
-hud:(BOOL)hud
-policy:(XTResponseCachePolicy)cachePolicy
-timeoutIfNeed:(int)timeoutIfNeed
-completion:(void(^)(id json))completion ;
-
-/**
-cacheGET judgeResult
-
-@param url             NSString
-@param header          NSDictionary
-@param param           NSDictionary
-@param hud             BOOL
-@param cachePolicy     XTResponseCachePolicy
-@param timeoutIfNeed   int
-@param completion      XTReqSaveJudgment(^)(id json)            JUDGE RESPONSE RESULT ;  RETURN 'XTReqSaveJudgment_NotSave' IF RESULT NEEDN'T CACHE . RETURN 'XTReqSaveJudgment_willSave' IF WILL SAVE .
-*/
-+ (void)cacheGET:(NSString *)url
-header:(NSDictionary *)header
-parameters:(NSDictionary *)param
-hud:(BOOL)hud
-policy:(XTResponseCachePolicy)cachePolicy
-timeoutIfNeed:(int)timeoutIfNeed
-judgeResult:(XTReqSaveJudgment (^)(id json))completion ;
-
-
-
-#pragma mark - post
-
-+ (void)cachePOST:(NSString *)url
-parameters:(NSDictionary *)param
-completion:(void(^)(id json))completion ;
-
-+ (void)cachePOST:(NSString *)url
-parameters:(NSDictionary *)param
-judgeResult:(XTReqSaveJudgment(^)(id json))completion ;
-
-+ (void)cachePOST:(NSString *)url
-header:(NSDictionary *)header
-parameters:(NSDictionary *)param
-completion:(void(^)(id json))completion ;
-
-+ (void)cachePOST:(NSString *)url
-header:(NSDictionary *)header
-parameters:(NSDictionary *)param
-judgeResult:(XTReqSaveJudgment(^)(id json))completion ;
-
-
-/**
-cachePOST completion
-
-@param url             NSString
-@param header          NSDictionary
-@param param           NSDictionary
-@param hud             BOOL
-@param cachePolicy     XTResponseCachePolicy
-@param timeoutIfNeed   int
-@param completion      void(^)(id json)            RESULT WILL BE CACHED IN ANY CASE .
-*/
-+ (void)cachePOST:(NSString *)url
-header:(NSDictionary *)header
-parameters:(NSDictionary *)param
-hud:(BOOL)hud
-policy:(XTResponseCachePolicy)cachePolicy
-timeoutIfNeed:(int)timeoutIfNeed
-completion:(void(^)(id json))completion;
-
-/**
-cachePOST judgeResult
-
-@param url             NSString
-@param header          NSDictionary
-@param param           NSDictionary
-@param hud             BOOL
-@param cachePolicy     XTResponseCachePolicy
-@param timeoutIfNeed   int
-@param completion      XTReqSaveJudgment(^)(id json)            JUDGE RESPONSE RESULT ;  RETURN 'XTReqSaveJudgment_NotSave' IF RESULT NEEDN'T CACHE . RETURN 'XTReqSaveJudgment_willSave' IF WILL SAVE .
-*/
-+ (void)cachePOST:(NSString *)url
-header:(NSDictionary *)header
-parameters:(NSDictionary *)param
-hud:(BOOL)hud
-policy:(XTResponseCachePolicy)cachePolicy
-timeoutIfNeed:(int)timeoutIfNeed
-judgeResult:(XTReqSaveJudgment(^)(id json))completion;
-
-@end
-
-
+```
+[XTCacheRequest cacheGET:kURLstr
+                parameters:nil
+                judgeResult:^XTReqSaveJudgment(id json) {
+                    if (!json) {
+                        return XTReqSaveJudgment_NotSave ; // 数据格式不对. 则不保存的情况.
+                    }
+                    else {
+                        [self showInfoInAlert:[json yy_modelToJSONString]] ;
+                        return XTReqSaveJudgment_willSave ;
+                    }
+}] ;
 ```
 
 

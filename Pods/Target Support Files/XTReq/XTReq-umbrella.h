@@ -13,8 +13,8 @@
 #import "NSString+XTReq_Extend.h"
 #import "XTCacheRequest.h"
 #import "XTReq.h"
-#import "XTReqResonse.h"
 #import "XTReqSessionManager.h"
+#import "XTRequest+UrlString.h"
 #import "XTRequest.h"
 #import "XTResponseDBModel.h"
 
