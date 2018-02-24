@@ -14,7 +14,7 @@
 @property (nonatomic,strong,readonly) NSDictionary *dicData   ;
 
 + (instancetype)sharedInstance ;
-- (void)configurePlist:(NSString *)plist ;
+- (void)configureCustomPlistWithFilePath:(NSString *)filePath ;
 - (UIColor *)xt_colorWithKey:(NSString *)key ;
 - (UIColor *)randomColor ;
 @end

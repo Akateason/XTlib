@@ -20,5 +20,6 @@
 + (UIColor *)xt_bg ;
 + (UIColor *)xt_text_dark ;
 + (UIColor *)xt_text_light ;
+//+ (UIColor *)aabbccc ;
 
 @end

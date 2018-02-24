@@ -8,25 +8,60 @@
 #import "XTColorFetcher.h"
 #import "UIColor+HexString.h"
 
+static NSString *const kOriginalColorSourceName = @"XTColors" ;
+
 @interface XTColorFetcher ()
 @property (nonatomic,strong,readwrite) NSDictionary *dicData   ;
-@property (nonatomic,copy)   NSString     *plistName ;
+@property (nonatomic,copy)             NSString     *plistName ;
 @end
 
 @implementation XTColorFetcher
 
-+ (instancetype)sharedInstance {
+static XTColorFetcher *_instance ;
+
+- (instancetype)init {
     static dispatch_once_t onceToken;
-    static XTColorFetcher *instance ;
     dispatch_once(&onceToken, ^{
-        instance = [[XTColorFetcher alloc] init] ;
-        [instance configurePlist:nil] ;
+        _instance = [super init] ;
     });
-    return instance ;
+    return _instance;
 }
 
-- (void)configurePlist:(NSString *)plist {
-    self.plistName = plist ?: @"XTColors" ;
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    return _instance;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    return  _instance;
+}
+
++ (id)copyWithZone:(struct _NSZone *)zone {
+    return  _instance;
+}
+
++ (id)mutableCopyWithZone:(struct _NSZone *)zone {
+    return _instance;
+}
+
+- (id)mutableCopyWithZone:(NSZone *)zone {
+    return _instance;
+}
+
++ (instancetype)sharedInstance {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[XTColorFetcher alloc] init] ;
+        _instance.plistName = kOriginalColorSourceName ; // in pod bundle .
+    });
+    return _instance ;
+}
+
+- (void)configureCustomPlistWithFilePath:(NSString *)filePath {
+    self.plistName = filePath ;
 }
 
 - (NSDictionary *)dicData {
@@ -38,8 +73,15 @@
 
 - (NSDictionary *)fromPlist {
 //    NSString *plistPath = [[NSBundle mainBundle] pathForResource:self.plistName ofType:@"plist"] ;  // deprecated, will cause a crash in pods. canot found resource .
-    NSString *plistPath = [[NSBundle bundleForClass:XTColorFetcher.class] pathForResource:self.plistName ofType:@"plist"] ;
-    return [[NSDictionary alloc] initWithContentsOfFile:plistPath] ;
+    if (![self.plistName isEqualToString:kOriginalColorSourceName]) {
+        // custom
+        return [[NSDictionary alloc] initWithContentsOfFile:self.plistName] ;
+    }
+    else {
+        // in pod bundle .
+        NSString *plistPath = [[NSBundle bundleForClass:XTColorFetcher.class] pathForResource:self.plistName ofType:@"plist"] ;
+        return [[NSDictionary alloc] initWithContentsOfFile:plistPath] ;
+    }
 }
 
 - (UIColor *)getColorWithRed:(float)fRed
@@ -122,21 +164,17 @@
                             Blue:arc4random() % 256] ;
 }
 
-+ (id)getJsonWithStr:(NSString *)jsonStr
-{
++ (id)getJsonWithStr:(NSString *)jsonStr {
     if (!jsonStr) return nil ;
     NSError *error ;
     id jsonObj = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]
                                                  options:0
                                                    error:&error] ;
-    if (!jsonObj)
-    {
+    if (!jsonObj) {
         NSLog(@"error : %@",error) ;
         return nil ;
     }
-    else
-    {
-        //xtjson success
+    else {
         return jsonObj ;
     }
 }
