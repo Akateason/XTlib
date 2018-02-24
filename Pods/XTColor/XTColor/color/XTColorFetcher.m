@@ -1,13 +1,11 @@
 //
 //  XTColorFetcher.m
-//  pro
 //
-//  Created by TuTu on 16/8/16.
+//  Created by teason on 16/8/16.
 //  Copyright © 2016年 teason. All rights reserved.
 //
 
 #import "XTColorFetcher.h"
-#import "XTJson.h"
 #import "UIColor+HexString.h"
 
 @interface XTColorFetcher ()
@@ -28,7 +26,7 @@
 }
 
 - (void)configurePlist:(NSString *)plist {
-    self.plistName = plist ?: @"xtAllColorsList" ;
+    self.plistName = plist ?: @"XTColors" ;
 }
 
 - (NSDictionary *)dicData {
@@ -81,7 +79,7 @@
     jsonStr = [self dealString:jsonStr] ;
     
     if ([jsonStr containsString:@"["]) {
-        NSArray *colorValList = [XTJson getJsonWithStr:jsonStr] ;
+        NSArray *colorValList = [self.class getJsonWithStr:jsonStr] ;
         return [self colorRGB:colorValList] ;
     }
     else if ([jsonStr containsString:@","]) {
@@ -122,6 +120,25 @@
     return [self getColorWithRed:arc4random() % 256
                            green:arc4random() % 256
                             Blue:arc4random() % 256] ;
+}
+
++ (id)getJsonWithStr:(NSString *)jsonStr
+{
+    if (!jsonStr) return nil ;
+    NSError *error ;
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]
+                                                 options:0
+                                                   error:&error] ;
+    if (!jsonObj)
+    {
+        NSLog(@"error : %@",error) ;
+        return nil ;
+    }
+    else
+    {
+        //xtjson success
+        return jsonObj ;
+    }
 }
 
 @end

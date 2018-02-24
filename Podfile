@@ -8,6 +8,7 @@ target 'XTlib' do
 
 pod 'XTFMDB'
 pod 'XTReq'
+pod 'XTColor'
 
 pod 'AFNetworking'
 pod 'YYModel'

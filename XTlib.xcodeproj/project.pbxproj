@@ -86,10 +86,6 @@
 		8F2BFF8B203ED7390013394D /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEB1203ED7380013394D /* UIViewController+Navigation.m */; };
 		8F2BFF8C203ED7390013394D /* UIViewController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEB3203ED7380013394D /* UIViewController+Storyboard.m */; };
 		8F2BFF8D203ED7390013394D /* UIViewController+TabbarHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEB5203ED7380013394D /* UIViewController+TabbarHidden.m */; };
-		8F2BFF8E203ED7390013394D /* UIColor+AllColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEB8203ED7380013394D /* UIColor+AllColors.m */; };
-		8F2BFF8F203ED7390013394D /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEBA203ED7380013394D /* UIColor+HexString.m */; };
-		8F2BFF90203ED7390013394D /* xtAllColorsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F2BFEBB203ED7380013394D /* xtAllColorsList.plist */; };
-		8F2BFF91203ED7390013394D /* XTColorFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEBD203ED7380013394D /* XTColorFetcher.m */; };
 		8F2BFF92203ED7390013394D /* MyNavCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFECD203ED7380013394D /* MyNavCtrller.m */; };
 		8F2BFF93203ED7390013394D /* MySearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFECF203ED7380013394D /* MySearchBar.m */; };
 		8F2BFF94203ED7390013394D /* MyTabbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFED1203ED7380013394D /* MyTabbar.m */; };
@@ -320,13 +316,6 @@
 		8F2BFEB3203ED7380013394D /* UIViewController+Storyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Storyboard.m"; sourceTree = "<group>"; };
 		8F2BFEB4203ED7380013394D /* UIViewController+TabbarHidden.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TabbarHidden.h"; sourceTree = "<group>"; };
 		8F2BFEB5203ED7380013394D /* UIViewController+TabbarHidden.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TabbarHidden.m"; sourceTree = "<group>"; };
-		8F2BFEB7203ED7380013394D /* UIColor+AllColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AllColors.h"; sourceTree = "<group>"; };
-		8F2BFEB8203ED7380013394D /* UIColor+AllColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AllColors.m"; sourceTree = "<group>"; };
-		8F2BFEB9203ED7380013394D /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
-		8F2BFEBA203ED7380013394D /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
-		8F2BFEBB203ED7380013394D /* xtAllColorsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xtAllColorsList.plist; sourceTree = "<group>"; };
-		8F2BFEBC203ED7380013394D /* XTColorFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTColorFetcher.h; sourceTree = "<group>"; };
-		8F2BFEBD203ED7380013394D /* XTColorFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTColorFetcher.m; sourceTree = "<group>"; };
 		8F2BFEC0203ED7380013394D /* ArchiveHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveHeader.h; sourceTree = "<group>"; };
 		8F2BFEC1203ED7380013394D /* DeviceSysHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSysHeader.h; sourceTree = "<group>"; };
 		8F2BFEC2203ED7380013394D /* FastCodeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastCodeHeader.h; sourceTree = "<group>"; };
@@ -899,7 +888,6 @@
 			isa = PBXGroup;
 			children = (
 				8F2BFE8D203ED7380013394D /* category */,
-				8F2BFEB6203ED7380013394D /* color */,
 				8F2BFEBF203ED7380013394D /* header */,
 				8F2BFECB203ED7380013394D /* Root */,
 				8F2BFEE6203ED7380013394D /* Stat */,
@@ -955,20 +943,6 @@
 				8F2BFEB5203ED7380013394D /* UIViewController+TabbarHidden.m */,
 			);
 			path = category;
-			sourceTree = "<group>";
-		};
-		8F2BFEB6203ED7380013394D /* color */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFEB7203ED7380013394D /* UIColor+AllColors.h */,
-				8F2BFEB8203ED7380013394D /* UIColor+AllColors.m */,
-				8F2BFEB9203ED7380013394D /* UIColor+HexString.h */,
-				8F2BFEBA203ED7380013394D /* UIColor+HexString.m */,
-				8F2BFEBB203ED7380013394D /* xtAllColorsList.plist */,
-				8F2BFEBC203ED7380013394D /* XTColorFetcher.h */,
-				8F2BFEBD203ED7380013394D /* XTColorFetcher.m */,
-			);
-			path = color;
 			sourceTree = "<group>";
 		};
 		8F2BFEBF203ED7380013394D /* header */ = {
@@ -1471,7 +1445,6 @@
 				8F2BFF73203ED7390013394D /* Z8CollectionViewCell.xib in Resources */,
 				8F2BFDD1203ED6AB0013394D /* Assets.xcassets in Resources */,
 				8F2BFF6C203ED7390013394D /* Z5DisplayCell.xib in Resources */,
-				8F2BFF90203ED7390013394D /* xtAllColorsList.plist in Resources */,
 				8F2BFF70203ED7390013394D /* Z7LongView.xib in Resources */,
 				8F2BFDCF203ED6AB0013394D /* Main.storyboard in Resources */,
 				8F2BFF66203ED7390013394D /* MovieCell.xib in Resources */,
@@ -1514,6 +1487,7 @@
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
 				"${BUILT_PRODUCTS_DIR}/Valet/Valet.framework",
+				"${BUILT_PRODUCTS_DIR}/XTColor/XTColor.framework",
 				"${BUILT_PRODUCTS_DIR}/XTFMDB/XTFMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/XTReq/XTReq.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
@@ -1532,6 +1506,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Valet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTFMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTReq.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
@@ -1611,7 +1586,6 @@
 				8F2BFFB4203ED7390013394D /* CenterTableView.m in Sources */,
 				8F2BFFB2203ED7390013394D /* XTlineSpaceLabel.m in Sources */,
 				8F2BFF86203ED7390013394D /* UIImageView+QNExtention.m in Sources */,
-				8F2BFF8E203ED7390013394D /* UIColor+AllColors.m in Sources */,
 				8F2BFFBB203ED7390013394D /* Base64.m in Sources */,
 				8F2BFE33203ED7270013394D /* WPAttributedStyleAction.m in Sources */,
 				8F2BFFA9203ED7390013394D /* UniqueKeyMaker.m in Sources */,
@@ -1661,7 +1635,6 @@
 				8F2BFFAC203ED7390013394D /* UIImage+ImageEffects.m in Sources */,
 				8F2BFF67203ED7390013394D /* Rating.m in Sources */,
 				8F2BFF93203ED7390013394D /* MySearchBar.m in Sources */,
-				8F2BFF8F203ED7390013394D /* UIColor+HexString.m in Sources */,
 				8F2BFFC2203ED7390013394D /* XTAnimation.m in Sources */,
 				8F2BFE39203ED7270013394D /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				8F2BFF80203ED7390013394D /* NSString+Extend.m in Sources */,
@@ -1706,7 +1679,6 @@
 				8F2BFF77203ED7390013394D /* Mother.m in Sources */,
 				8F2BFF85203ED7390013394D /* UIImage+AddFunction.m in Sources */,
 				8F2BFF87203ED7390013394D /* UIResponder+ChainHandler.m in Sources */,
-				8F2BFF91203ED7390013394D /* XTColorFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

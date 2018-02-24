@@ -1,8 +1,7 @@
 //
 //  XTColorFetcher.h
-//  pro
 //
-//  Created by TuTu on 16/8/16.
+//  Created by teason on 16/8/16.
 //  Copyright © 2016年 teason. All rights reserved.
 //
 

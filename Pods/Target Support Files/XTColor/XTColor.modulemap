@@ -1,0 +1,6 @@
+framework module XTColor {
+  umbrella header "XTColor-umbrella.h"
+
+  export *
+  module * { export * }
+}

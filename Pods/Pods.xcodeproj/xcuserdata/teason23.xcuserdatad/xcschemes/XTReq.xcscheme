@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEDD15A152FBB645CC9FA9705CD6D1B0"
+               BlueprintIdentifier = "3359EC5CB5BB1404C2F4FD68F38A47AA"
                BlueprintName = "XTReq"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "XTReq.framework">
