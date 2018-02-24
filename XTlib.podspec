@@ -88,11 +88,11 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files = 'XTlib/XTlib/XTlib.h'
-  s.public_header_files = 'XTlib/XTlib/XTlib.h',"XTlib/XTlib/header/*.h"
+ #  s.source_files = 'XTlib/XTlib/XTlib.h'
+ #  s.public_header_files = 'XTlib/XTlib/XTlib.h',"XTlib/XTlib/header/*.h"
 
-  # s.source_files  = "XTlib/XTlib","XTlib/XTlib/**/*.{h,m}","XTlib/XTlib/**/**/*.{h,m}"
-  # s.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h" 
+   s.source_files  = "XTlib/XTlib","XTlib/XTlib/**/*.{h,m}","XTlib/XTlib/**/**/*.{h,m}"
+   s.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h" 
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
