@@ -88,8 +88,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
- #  s.source_files = 'XTlib/XTlib/XTlib.h'
- #  s.public_header_files = 'XTlib/XTlib/XTlib.h',"XTlib/XTlib/header/*.h"
+#  s.source_files = 'XTlib/XTlib/XTlib.h'
+#  s.public_header_files = 'XTlib/XTlib/XTlib.h',"XTlib/XTlib/header/*.h"
 
    s.source_files  = "XTlib/XTlib","XTlib/XTlib/**/*.{h,m}","XTlib/XTlib/**/**/*.{h,m}"
    s.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h" 
@@ -144,41 +144,41 @@ Pod::Spec.new do |s|
   # ---------- subpec setting ----------- #
   #
   #  
-  s.subspec 'category' do |ss|
-    ss.source_files = 'XTlib/XTlib/category/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/category/*.h',"XTlib/XTlib/header/*.h"
-  end
+#  s.subspec 'category' do |ss|
+#    ss.source_files = 'XTlib/XTlib/category/*.{h,m}'
+#    ss.public_header_files = 'XTlib/XTlib/category/*.h',"XTlib/XTlib/header/*.h"
+#  end
 
-  s.subspec 'color' do |ss|
-    ss.source_files = 'XTlib/XTlib/color/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/color/*.h',"XTlib/XTlib/header/*.h"
-    ss.resources = 'XTlib/XTlib/color/*.plist'
-  end
+#  s.subspec 'color' do |ss|
+#    ss.source_files = 'XTlib/XTlib/color/*.{h,m}'
+#    ss.public_header_files = 'XTlib/XTlib/color/*.h',"XTlib/XTlib/header/*.h"
+#    ss.resources = 'XTlib/XTlib/color/*.plist'
+#  end
 
-  s.subspec 'header' do |ss|
-    ss.source_files = 'XTlib/XTlib/header/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/header/*.h' 
-  end
+#  s.subspec 'header' do |ss|
+#    ss.source_files = 'XTlib/XTlib/header/*.{h,m}'
+#    ss.public_header_files = 'XTlib/XTlib/header/*.h' 
+#  end
 
-  s.subspec 'Root' do |ss|
-    ss.source_files = 'XTlib/XTlib/Root/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/Root/*.h',"XTlib/XTlib/header/*.h"
-  end
+#  s.subspec 'Root' do |ss|
+#    ss.source_files = 'XTlib/XTlib/Root/*.{h,m}'
+#    ss.public_header_files = 'XTlib/XTlib/Root/*.h',"XTlib/XTlib/header/*.h"
+#  end
 
-  s.subspec 'Stat' do |ss|
-    ss.source_files = 'XTlib/XTlib/Stat/*.{h,m}','XTlib/XTlib/Stat/**/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/Stat/*.h','XTlib/XTlib/Stat/**/*.h',"XTlib/XTlib/header/*.h"
-  end
+#  s.subspec 'Stat' do |ss|
+#    ss.source_files = 'XTlib/XTlib/Stat/*.{h,m}','XTlib/XTlib/Stat/**/*.{h,m}'
+#    ss.public_header_files = 'XTlib/XTlib/Stat/*.h','XTlib/XTlib/Stat/**/*.h',"XTlib/XTlib/header/*.h"
+#  end
 
-  s.subspec 'UIs' do |ss|
-    ss.source_files = 'XTlib/XTlib/UIs/*.{h,m}','XTlib/XTlib/UIs/**/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/UIs/*.h','XTlib/XTlib/UIs/**/*.h',"XTlib/XTlib/header/*.h"
-  end
+#  s.subspec 'UIs' do |ss|
+#    ss.source_files = 'XTlib/XTlib/UIs/*.{h,m}','XTlib/XTlib/UIs/**/*.{h,m}'
+#    ss.public_header_files = 'XTlib/XTlib/UIs/*.h','XTlib/XTlib/UIs/**/*.h',"XTlib/XTlib/header/*.h"
+#  end
 
-  s.subspec 'util' do |ss|
-    ss.source_files = 'XTlib/XTlib/util/**/*.{h,m}'
-    ss.public_header_files = 'XTlib/XTlib/util/**/*.h',"XTlib/XTlib/header/*.h"
-  end
+#  s.subspec 'util' do |ss|
+#    ss.source_files = 'XTlib/XTlib/util/**/*.{h,m}'
+#    ss.public_header_files = 'XTlib/XTlib/util/**/*.h',"XTlib/XTlib/header/*.h"
+#  end
 
 
 
