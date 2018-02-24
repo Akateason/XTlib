@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTlib"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "XTlib,teason's lib"
 
   # This description is used to generate tags and improve search results.
@@ -134,6 +134,7 @@ Pod::Spec.new do |s|
   
   s.dependency "XTFMDB"
   s.dependency "XTReq"
+  s.dependency "XTColor"
   s.dependency "ReactiveObjC"
   s.dependency "Masonry"
   s.dependency "SDWebImage"
