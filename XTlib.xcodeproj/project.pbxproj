@@ -900,9 +900,7 @@
 			children = (
 				8F2BFE8D203ED7380013394D /* category */,
 				8F2BFEB6203ED7380013394D /* color */,
-				8F2BFEBE203ED7380013394D /* database */,
 				8F2BFEBF203ED7380013394D /* header */,
-				8F2BFECA203ED7380013394D /* network */,
 				8F2BFECB203ED7380013394D /* Root */,
 				8F2BFEE6203ED7380013394D /* Stat */,
 				8F2BFF02203ED7380013394D /* UIs */,
@@ -973,13 +971,6 @@
 			path = color;
 			sourceTree = "<group>";
 		};
-		8F2BFEBE203ED7380013394D /* database */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = database;
-			sourceTree = "<group>";
-		};
 		8F2BFEBF203ED7380013394D /* header */ = {
 			isa = PBXGroup;
 			children = (
@@ -995,13 +986,6 @@
 				8F2BFEC9203ED7380013394D /* WordsHeader.h */,
 			);
 			path = header;
-			sourceTree = "<group>";
-		};
-		8F2BFECA203ED7380013394D /* network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = network;
 			sourceTree = "<group>";
 		};
 		8F2BFECB203ED7380013394D /* Root */ = {

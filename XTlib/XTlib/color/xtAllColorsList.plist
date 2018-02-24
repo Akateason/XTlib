@@ -16,5 +16,13 @@
 	<string>185 74 221 0.5</string>
 	<key>weixinGreen</key>
 	<string>153,215,93</string>
+    <key>xt_main</key>
+    <string>68aad9</string>
+    <key>xt_bg</key>
+    <string>f2f0f3</string>
+    <key>xt_text_dark</key>
+    <string>697577</string>
+    <key>xt_text_light</key>
+    <string>b3b9bf</string>
 </dict>
 </plist>
