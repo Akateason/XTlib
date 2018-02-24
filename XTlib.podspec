@@ -1,4 +1,3 @@
-#
 #  Be sure to run `pod spec lint XTlib.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
@@ -16,8 +15,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTlib"
-  s.version      = "1.0.0"
-  s.summary      = "XTlib."
+  s.version      = "1.0.1"
+  s.summary      = "XTlib,teason's lib"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -51,7 +50,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "teason" => "teason.xie@cootek.cn" }
+  s.author             = { "teason" => "akateason@qq.com" }
   # Or just: s.author    = "teason"
   # s.authors            = { "teason" => "teason.xie@cootek.cn" }
   # s.social_media_url   = "http://twitter.com/teason"
@@ -89,10 +88,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "XTlib/XTlib","XTlib/XTlib/**/*.{h,m}","XTlib/XTlib/**/**/*.{h,m}"
-  # s.exclude_files = "Classes/Exclude"
-
-  s.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h" 
+  s.source_files = 'XTlib/XTlib/XTlib.h'
+  s.public_header_files = 'XTlib/XTlib/XTlib.h'
+  # s.source_files  = "XTlib/XTlib","XTlib/XTlib/**/*.{h,m}","XTlib/XTlib/**/**/*.{h,m}"
+  # s.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h" 
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -141,6 +140,45 @@ Pod::Spec.new do |s|
   s.dependency "MJRefresh"
   s.dependency "Valet"
   
+  # ---------- subpec setting ----------- #
+  #
+  #  
+  s.subspec 'category' do |ss|
+    ss.source_files = 'XTlib/XTlib/category/*.{h,m}'
+    ss.public_header_files = 'XTlib/XTlib/category/*.h'
+  end
+
+  s.subspec 'color' do |ss|
+    ss.source_files = 'XTlib/XTlib/color/*.{h,m}'
+    ss.public_header_files = 'XTlib/XTlib/color/*.h'
+    ss.resources = 'XTlib/XTlib/color/*.plist'
+  end
+
+  s.subspec 'header' do |ss|
+    ss.source_files = 'XTlib/XTlib/header/*.{h,m}'
+    ss.public_header_files = 'XTlib/XTlib/header/*.h' 
+  end
+
+  s.subspec 'Root' do |ss|
+    ss.source_files = 'XTlib/XTlib/Root/*.{h,m}'
+    ss.public_header_files = 'XTlib/XTlib/Root/*.h'
+  end
+
+  s.subspec 'Stat' do |ss|
+    ss.source_files = 'XTlib/XTlib/Stat/*.{h,m}','XTlib/XTlib/Stat/**/*.{h,m}'
+    ss.public_header_files = 'XTlib/XTlib/Stat/*.h','XTlib/XTlib/Stat/**/*.h'
+  end
+
+  s.subspec 'UIs' do |ss|
+    ss.source_files = 'XTlib/XTlib/UIs/*.{h,m}','XTlib/XTlib/UIs/**/*.{h,m}'
+    ss.public_header_files = 'XTlib/XTlib/UIs/*.h','XTlib/XTlib/UIs/**/*.h'
+  end
+
+  s.subspec 'util' do |ss|
+    ss.source_files = 'XTlib/XTlib/util/**/*.{h,m}'
+    ss.public_header_files = 'XTlib/XTlib/util/**/*.h'
+  end
+
 
 
 end
