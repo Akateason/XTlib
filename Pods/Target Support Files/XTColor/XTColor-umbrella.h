@@ -12,6 +12,7 @@
 
 #import "UIColor+AllColors.h"
 #import "UIColor+HexString.h"
+#import "XTColor.h"
 #import "XTColorFetcher.h"
 
 FOUNDATION_EXPORT double XTColorVersionNumber;

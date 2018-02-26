@@ -76,7 +76,7 @@ fprintf(stderr, "🏀🏀🏀🏀🏀\n");                                      
 #import "XTFMDB.h"
 
 // Color
-#import "UIColor+AllColors.h"
+#import "XTColor.h"
 
 // Request
 #import "XTReq.h"

@@ -23,14 +23,14 @@ PODS:
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
   - ReactiveObjC (3.1.0)
-  - SDWebImage (4.3.0):
-    - SDWebImage/Core (= 4.3.0)
-  - SDWebImage/Core (4.3.0)
+  - SDWebImage (4.3.1):
+    - SDWebImage/Core (= 4.3.1)
+  - SDWebImage/Core (4.3.1)
   - SSZipArchive (2.1.1)
   - SVProgressHUD (2.2.5)
   - UITableView+FDTemplateLayoutCell (1.6)
   - Valet (2.4.2)
-  - XTColor (0.0.3)
+  - XTColor (0.0.5)
   - XTFMDB (1.2.1):
     - FMDB
     - YYModel
@@ -69,12 +69,12 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
-  SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
+  SDWebImage: 09808bac78357b39f8db4ea360c7b5534d785ef4
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTColor: 788bdd237aa4ff27d6a02ea6551ec7adf6ec3889
+  XTColor: fd530b3a3e841db4050b73b445fe2ba311ea4464
   XTFMDB: f8d4e7df36a087c56d2e3baec32ebd140178d96f
   XTReq: 46cd00566afbb3794efa6c69b1adf850dd20c3f6
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
