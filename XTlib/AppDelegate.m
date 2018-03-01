@@ -7,14 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "SVProgressHUD.h"
-#import "XTFMDB.h"
-#import "XTResponseDBModel.h"
-#import "XTStat.h"
-#import "CommonFunc.h"
 #import "Model1.h"
-#import "ValetManager.h"
-#import "XTReq.h"
+#import "XTlib.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface AppDelegate ()
 
@@ -26,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    NSLog(@"%@",[CommonFunc getDocumentsPath]) ;
+    
     
     // SVPHUD style
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark] ;

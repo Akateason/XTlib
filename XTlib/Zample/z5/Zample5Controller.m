@@ -348,7 +348,7 @@ static float const kBtFlex = 5 ;
 - (void)findFirstAction
 {
     Model1 *model = [Model1 xt_findFirstWhere:@"pkid == 2"] ;
-    NSLog(@"m : %@",[XTJson getJsonWithModel:model]) ;
+    NSLog(@"m : %@",[model yy_modelToJSONObject]) ;
 }
 
 - (void)AlterAddAction

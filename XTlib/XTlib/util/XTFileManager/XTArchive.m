@@ -10,16 +10,53 @@
 
 @implementation XTArchive
 
-+ (void)archiveTheObject:(id)obj andPath:(NSString *)path {
-    BOOL success = [NSKeyedArchiver archiveRootObject:obj toFile:path];
++ (void)archiveSomething:(id)something
+                    path:(NSString *)path
+{
+    BOOL success = [NSKeyedArchiver archiveRootObject:something toFile:path] ;
     if (success) {
-        NSLog(@"xtArchive : %@\n success in path : %@",obj,path) ;
+        NSLog(@"xtArchive : %@\n success in path : %@",something,path) ;
     }
 }
 
-+ (id)getObjUnarchivePath:(NSString *)path {
-    id obj = [NSKeyedUnarchiver unarchiveObjectWithFile:path] ;
-    return obj;
++ (id)unarchiveSomething:(NSString *)path {
+    return [NSKeyedUnarchiver unarchiveObjectWithFile:path] ;
+}
+
+#pragma mark - get path
+
++ (NSString *)getDocumentsPath {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] ;
+}
+
++ (NSString *)getTmpPath {
+    return NSTemporaryDirectory() ;
+}
+
++ (NSString *)getLibraryPath {
+    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] ;
+}
+
++ (NSString *)getCachesPath {
+    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] ;
+}
+
++ (NSString *)getPreferencesPath {
+    return [NSSearchPathForDirectoriesInDomains(NSPreferencePanesDirectory, NSUserDomainMask, YES) lastObject] ;
+}
+
++ (NSString *)getApplicationResourcePath {
+    return [NSBundle mainBundle].resourcePath ;
+}
+
+
+@end
+
+
+@implementation NSString (XTGetFilePath)
+
+- (NSString *)xt_pathAppendByTrailName:(NSString *)trail {
+    return [[self stringByAppendingString:@"/"] stringByAppendingString:trail] ;
 }
 
 @end

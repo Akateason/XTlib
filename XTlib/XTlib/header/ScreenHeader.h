@@ -9,7 +9,6 @@
 #define ScreenHeader_h
 
 #import "ScreenFit.h"
-#import "UIColor+HexString.h"
 #import "DeviceSysHeader.h"
 
 // rate

@@ -12,6 +12,5 @@
 
 + (id)getJsonWithStr:(NSString *)jsonStr ;
 + (NSString *)getStrWithJson:(id)jsonObj ;
-+ (id)getJsonWithModel:(id)model ;
 
 @end

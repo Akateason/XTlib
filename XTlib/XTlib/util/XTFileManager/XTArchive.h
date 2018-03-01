@@ -8,10 +8,39 @@
 
 #import <Foundation/Foundation.h>
 
+#define XT_DOCUMENTS_PATH_TRAIL_(__X__)          [[XTArchive getDocumentsPath] xt_pathAppendByTrailName:__X__]
+#define XT_LIBRARY_PATH_TRAIL_(__X__)            [[XTArchive getLibraryPath] xt_pathAppendByTrailName:__X__]
+
 @interface XTArchive : NSObject
 
-+ (void)archiveTheObject:(id)obj andPath:(NSString *)path ;
+#pragma mark - archiver
 
-+ (id)getObjUnarchivePath:(NSString *)path ;
++ (void)archiveSomething:(id)something
+                    path:(NSString *)path ;
 
++ (id)unarchiveSomething:(NSString *)path ;
+
+#pragma mark - get path
+// Documents
++ (NSString *)getDocumentsPath ;
+// tmp
++ (NSString *)getTmpPath ;
+// Library
++ (NSString *)getLibraryPath ;
+// Library/Caches
++ (NSString *)getCachesPath ;
+// Library/Preferences
++ (NSString *)getPreferencesPath ;
+// application
++ (NSString *)getApplicationResourcePath ;
 @end
+
+
+
+@interface NSString (XTGetFilePath)
+- (NSString *)xt_pathAppendByTrailName:(NSString *)trail ;
+@end
+
+
+
+
