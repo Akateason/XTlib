@@ -46,7 +46,10 @@
     }
 }
 
-
-
++ (void)moveFileFromPath:(NSString *)fromPath
+                  toPath:(NSString *)toPath
+{
+    [[NSFileManager defaultManager] moveItemAtPath:fromPath toPath:toPath error:nil] ;
+}
 
 @end

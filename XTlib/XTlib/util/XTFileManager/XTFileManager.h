@@ -13,6 +13,7 @@
 
 + (BOOL)isFileExist:(NSString *)filePath ;
 
+// file or folder size
 + (long long)getFileSize:(NSString *)filePath ;
 
 + (BOOL)deleteFile:(NSString *)filePath ;
@@ -21,5 +22,8 @@
              atPath:(NSString *)filePath ;
 
 + (void)createFolder:(NSString *)folderPath ;
+
++ (void)moveFileFromPath:(NSString *)fromPath
+                  toPath:(NSString *)toPath ;
 
 @end
