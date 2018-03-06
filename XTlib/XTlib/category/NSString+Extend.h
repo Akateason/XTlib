@@ -9,9 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Extend)
+/**
+ *  URLEncode Decode
+ */
+- (NSString *)URLEncodedString ;
+- (NSString *)URLDecodedString ;
+
 // 去除空格.
 - (NSString *)minusSpaceStr ;
-// \n
+// 去掉换行
 - (NSString *)minusReturnStr ;
 // 转义单引号  '  -> \'
 - (NSString *)encodeTransferredMeaningForSingleQuotes ;

@@ -12,6 +12,38 @@
 
 @implementation NSString (Extend)
 
+
+/**
+ *  URLEncode
+ */
+- (NSString *)URLEncodedString {
+    // CharactersToBeEscaped = @":/?&=;+!@#$()~',*";
+    // CharactersToLeaveUnescaped = @"[].";
+    
+    NSString *unencodedString = self;
+    NSString *encodedString = (NSString *)
+    CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                              (CFStringRef)unencodedString,
+                                                              NULL,
+                                                              (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                              kCFStringEncodingUTF8));
+    
+    return encodedString;
+}
+
+- (NSString *)URLDecodedString {
+    //NSString *decodedString = [encodedString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding ];
+    
+    NSString *encodedString = self;
+    NSString *decodedString  = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
+                                                                                                                     (__bridge CFStringRef)encodedString,
+                                                                                                                     CFSTR(""),
+                                                                                                                     CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+    return decodedString;
+}
+
+
+// 去掉空格
 - (NSString *)minusSpaceStr
 {
     NSCharacterSet *whitespaces = [NSCharacterSet whitespaceCharacterSet] ;
@@ -23,6 +55,7 @@
     return [filteredArray componentsJoinedByString:@" "] ;
 }
 
+// 去掉换行
 - (NSString *)minusReturnStr
 {
     NSString *content = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] ;
