@@ -83,5 +83,6 @@
 #pragma mark - height
 
 + (CGFloat)cellHeight { return 44. ; }
++ (CGFloat)cellHeightForModel:(id)model { return 44. ; }
 
 @end

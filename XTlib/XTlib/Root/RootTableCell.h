@@ -23,7 +23,10 @@
 
 /**
  * set model rewrite in subclass
+ @param model           any viewModel
+ @param indexPath       indexPath for Cell
  *
+ * USAGE
  *    - (void)configure:(id)model {
  *          [super configure: model] ;
  *
@@ -31,11 +34,11 @@
  *    }
  *
  */
+- (void)configure:(id)model indexPath:(NSIndexPath *)indexPath ;
 - (void)configure:(id)model ;
-- (void)configure:(id)model
-        indexPath:(NSIndexPath *)indexPath ;
 
 // height
 + (CGFloat)cellHeight ;
++ (CGFloat)cellHeightForModel:(id)model ;
 
 @end
