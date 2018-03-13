@@ -12,6 +12,7 @@
 #import "PlistUtil.h"
 #import "ScreenHeader.h"
 #import "UIViewController+Storyboard.h"
+#import "SIAlertView.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table ;
@@ -24,6 +25,19 @@
 #pragma mark -
 - (void)viewDidLoad
 {
+    SIAlertView *alert = [[SIAlertView alloc] initWithTitle:@"" andMessage:@"dafafafaf"] ;
+    [alert addButtonWithTitle:@"yes"
+                         type:SIAlertViewButtonTypeDefault
+                      handler:nil] ;
+    [alert addButtonWithTitle:@"no"
+                         type:SIAlertViewButtonTypeDestructive
+                      handler:nil] ;
+//    alert.transitionStyle = SIAlertViewTransitionStyleFade ;
+//    [alert addButtonWithTitle:@"addd"
+//                         type:SIAlertViewButtonTypeCancel
+//                      handler:nil] ;
+    [alert show] ;
+    
     [super viewDidLoad] ;
     // Do any additional setup after loading the view, typically from a nib.
     self.table.dataSource   = self ;

@@ -734,8 +734,6 @@
 			children = (
 				8F2BFE45203ED7380013394D /* FontAdapt */,
 				8F2BFE48203ED7380013394D /* ResponderChain */,
-				8F2BFE4D203ED7380013394D /* XTColorCell.h */,
-				8F2BFE4E203ED7380013394D /* XTColorCell.m */,
 				8F2BFE4F203ED7380013394D /* z1_code_rootTableCell */,
 				8F2BFE54203ED7380013394D /* z2_rootTable_+_Req */,
 				8F2BFE5B203ED7380013394D /* z3_nib_rootTablecell */,
@@ -814,6 +812,8 @@
 		8F2BFE67203ED7380013394D /* z4 */ = {
 			isa = PBXGroup;
 			children = (
+				8F2BFE4D203ED7380013394D /* XTColorCell.h */,
+				8F2BFE4E203ED7380013394D /* XTColorCell.m */,
 				8F2BFE68203ED7380013394D /* Zample4Controller.h */,
 				8F2BFE69203ED7380013394D /* Zample4Controller.m */,
 			);

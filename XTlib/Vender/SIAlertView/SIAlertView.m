@@ -1,10 +1,4 @@
-//
-//  SIAlertView.m
-//  SIAlertView
-//
-//  Created by Kevin Cao on 13-4-29.
-//  Copyright (c) 2013年 Sumi Interactive. All rights reserved.
-//
+
 
 #import "SIAlertView.h"
 #import <QuartzCore/QuartzCore.h>
@@ -211,6 +205,8 @@ static SIAlertView *__si_alert_current_view;
 // ADD BY TEASON @20151013 BEGIN
 - (void)tapSelf:(UITapGestureRecognizer *)tap
 {
+    if (self.items.count <= 2) return ;
+    
     NSLog(@"tap self click hidden ") ;
     [self dismissAnimated:YES] ;
 }
@@ -292,31 +288,6 @@ static SIAlertView *__si_alert_current_view;
     [self invaliadateLayout];
 }
 
-- (UIColor *)colorCancel
-{
-    if (!_colorCancel) {
-//        _colorCancel = COLOR_FW_BLUE ;
-//        _colorCancel = [UIColor xt_seperate] ;
-    }
-    return _colorCancel ;
-}
-
-- (UIColor *)colorDefault
-{
-    if (!_colorDefault) {
-//        _colorDefault = [UIColor xt_seperate] ;
-//        _colorDefault = [UIColor whiteColor] ;
-    }
-    return _colorDefault ;
-}
-
-- (UIColor *)colorDestructive
-{
-    if (!_colorDestructive) {
-//        _colorDestructive = [UIColor xt_tabbarRedColor] ;
-    }
-    return _colorDestructive ;
-}
 
 #pragma mark - Public
 
@@ -918,24 +889,27 @@ static SIAlertView *__si_alert_current_view;
 		case SIAlertViewButtonTypeCancel:
 //			normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-cancel"];
 //			highlightedImage = [UIImage imageNamed:@"SIAlertView.bundle/button-cancel-d"];
-            color = self.colorCancel ;
-			[button setTitleColor:[UIColor colorWithWhite:0.3 alpha:1] forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor colorWithWhite:0.3 alpha:0.8] forState:UIControlStateHighlighted];
+            color = kColorCancelBt ;
+            [button setTitleColor:kTitleColorCancelBt forState:UIControlStateNormal] ;
+//            [button setTitleColor:[UIColor colorWithWhite:0.3 alpha:1] forState:UIControlStateNormal];
+//            [button setTitleColor:[UIColor colorWithWhite:0.3 alpha:0.8] forState:UIControlStateHighlighted];
 			break;
 		case SIAlertViewButtonTypeDestructive:
 //			normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-destructive"];
 //			highlightedImage = [UIImage imageNamed:@"SIAlertView.bundle/button-destructive-d"];
-            color = self.colorDestructive ;
-            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.8] forState:UIControlStateHighlighted];
+            color = kColorDestructiveBt ;
+            [button setTitleColor:kTitleColorDestructiveBt forState:UIControlStateNormal] ;
+//            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//            [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.8] forState:UIControlStateHighlighted];
 			break;
 		case SIAlertViewButtonTypeDefault:
 		default:
 //			normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-default"];
 //			highlightedImage = [UIImage imageNamed:@"SIAlertView.bundle/button-default-d"];
-            color = self.colorDefault ;
-			[button setTitleColor:[UIColor colorWithWhite:0.4 alpha:1] forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor colorWithWhite:0.4 alpha:0.8] forState:UIControlStateHighlighted];
+            color = kColorDefaultBt ;
+            [button setTitleColor:kTitleColorDefaultBt forState:UIControlStateNormal] ;
+//            [button setTitleColor:[UIColor colorWithWhite:0.4 alpha:1] forState:UIControlStateNormal];
+//            [button setTitleColor:[UIColor colorWithWhite:0.4 alpha:0.8] forState:UIControlStateHighlighted];
 			break;
 	}
 //	CGFloat hInset = floorf(normalImage.size.width / 2);

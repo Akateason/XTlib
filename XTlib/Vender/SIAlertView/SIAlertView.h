@@ -1,12 +1,14 @@
-//
-//  SIAlertView.h
-//  SIAlertView
-//
-//  Created by Kevin Cao on 13-4-29.
-//  Copyright (c) 2013年 Sumi Interactive. All rights reserved.
-//
+
 
 #import <UIKit/UIKit.h>
+
+#define kColorDefaultBt           [UIColor lightGrayColor]
+#define kColorDestructiveBt       [UIColor blueColor]
+#define kColorCancelBt            [UIColor redColor]
+
+#define kTitleColorDefaultBt           [UIColor whiteColor]
+#define kTitleColorDestructiveBt       [UIColor whiteColor]
+#define kTitleColorCancelBt            [UIColor whiteColor]
 
 extern NSString *const SIAlertViewWillShowNotification;
 extern NSString *const SIAlertViewDidShowNotification;
@@ -41,10 +43,6 @@ typedef NS_ENUM(NSInteger, SIAlertPositionStyle) {
 typedef void(^SIAlertViewHandler)(SIAlertView *alertView);
 
 @interface SIAlertView : UIView
-
-@property (nonatomic, strong) UIColor *colorCancel ;
-@property (nonatomic, strong) UIColor *colorDestructive ;
-@property (nonatomic, strong) UIColor *colorDefault ;
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *message;
