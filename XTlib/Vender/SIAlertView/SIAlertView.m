@@ -2,6 +2,7 @@
 
 #import "SIAlertView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIColor+TPDExtension.h"
 
 NSString *const SIAlertViewWillShowNotification = @"SIAlertViewWillShowNotification";
 NSString *const SIAlertViewDidShowNotification = @"SIAlertViewDidShowNotification";
@@ -10,15 +11,17 @@ NSString *const SIAlertViewDidDismissNotification = @"SIAlertViewDidDismissNotif
 
 #define DEBUG_LAYOUT 0
 
-#define MESSAGE_MIN_LINE_COUNT 3
+#define MESSAGE_MIN_LINE_COUNT 1
 #define MESSAGE_MAX_LINE_COUNT 5
 #define GAP 10
 #define CANCEL_BUTTON_PADDING_TOP 5
 #define CONTENT_PADDING_LEFT 10
-#define CONTENT_PADDING_TOP 12
+#define CONTENT_PADDING_TOP 15
 #define CONTENT_PADDING_BOTTOM 10
 #define BUTTON_HEIGHT 44
 #define CONTAINER_WIDTH 300
+#define kMY_CONTENT_PADDING_LEFT        ( (self.positionStyle == SIALertViewPositionBottom) ? 25.0f : CONTENT_PADDING_LEFT )
+
 
 const UIWindowLevel UIWindowLevelSIAlert = 1999.0;  // don't overlap system's alert
 const UIWindowLevel UIWindowLevelSIAlertBackground = 1998.0; // below the alert window
@@ -171,12 +174,12 @@ static SIAlertView *__si_alert_current_view;
     if (self != [SIAlertView class])
         return;
     
-    SIAlertView *appearance = [self appearance];
-    appearance.viewBackgroundColor = [UIColor whiteColor];
-    appearance.titleColor = [UIColor blackColor];
-    appearance.messageColor = [UIColor darkGrayColor];
-    appearance.titleFont = [UIFont boldSystemFontOfSize:20];
-    appearance.messageFont = [UIFont systemFontOfSize:16];
+    SIAlertView *appearance = [self appearance] ;
+    appearance.viewBackgroundColor = [UIColor whiteColor] ;
+    appearance.titleColor = kMainSubTitleColor ;
+    appearance.messageColor = kMainSubTitleColor ;
+    appearance.titleFont = kMainTitleFont ;
+    appearance.messageFont = kSubTitleFont ;
     appearance.buttonFont = [UIFont systemFontOfSize:[UIFont buttonFontSize]];
     appearance.cornerRadius = 2;
     appearance.shadowRadius = 8;
@@ -668,7 +671,7 @@ static SIAlertView *__si_alert_current_view;
     }
 //@ADD BY TEASON ENDING
 
-    CGFloat paddingLR = (self.positionStyle == SIALertViewPositionBottom) ? 25.0f : CONTENT_PADDING_LEFT ;
+    CGFloat paddingLR = kMY_CONTENT_PADDING_LEFT ;
     
     self.containerView.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.containerView.bounds cornerRadius:self.containerView.layer.cornerRadius].CGPath;
 
@@ -681,7 +684,7 @@ static SIAlertView *__si_alert_current_view;
 	}
     if (self.messageLabel) {
         if (y > CONTENT_PADDING_TOP) {
-            y += GAP;
+            y += GAP ;
         }
         self.messageLabel.text = self.message;
         CGFloat height = [self heightForMessageLabel];
@@ -698,7 +701,8 @@ static SIAlertView *__si_alert_current_view;
             button.frame = CGRectMake(paddingLR, y, width, BUTTON_HEIGHT);
             button = self.buttons[1];
             button.frame = CGRectMake(paddingLR + width + GAP, y, width, BUTTON_HEIGHT);
-        } else {
+        }
+        else {
             for (NSUInteger i = 0; i < self.buttons.count; i++) {
                 UIButton *button = self.buttons[i];
                 button.frame = CGRectMake(paddingLR, y, self.containerView.bounds.size.width - paddingLR * 2, BUTTON_HEIGHT);
@@ -751,16 +755,13 @@ static SIAlertView *__si_alert_current_view;
 - (CGFloat)heightForTitleLabel
 {
     if (self.titleLabel) {
-        CGSize size = [self.title sizeWithFont:self.titleLabel.font
-                                   minFontSize:
-#ifndef __IPHONE_6_0
-                       self.titleLabel.font.pointSize * self.titleLabel.minimumScaleFactor
-#else
-                       self.titleLabel.minimumFontSize
-#endif
-                                actualFontSize:nil
-                                      forWidth:CONTAINER_WIDTH - CONTENT_PADDING_LEFT * 2
-                                 lineBreakMode:self.titleLabel.lineBreakMode];
+        NSAttributedString *attributedText =
+        [[NSAttributedString alloc] initWithString:self.title
+                                        attributes:@{NSFontAttributeName:self.titleLabel.font}] ;
+        CGRect rect = [attributedText boundingRectWithSize:(CGSize){CONTAINER_WIDTH - kMY_CONTENT_PADDING_LEFT * 2, 200}
+                                                   options:NSStringDrawingUsesLineFragmentOrigin
+                                                   context:nil];
+        CGSize size = rect.size;
         return size.height;
     }
     return 0;
@@ -770,10 +771,13 @@ static SIAlertView *__si_alert_current_view;
 {
     CGFloat minHeight = MESSAGE_MIN_LINE_COUNT * self.messageLabel.font.lineHeight;
     if (self.messageLabel) {
-        CGFloat maxHeight = MESSAGE_MAX_LINE_COUNT * self.messageLabel.font.lineHeight;
-        CGSize size = [self.message sizeWithFont:self.messageLabel.font
-                               constrainedToSize:CGSizeMake(CONTAINER_WIDTH - CONTENT_PADDING_LEFT * 2, maxHeight)
-                                   lineBreakMode:self.messageLabel.lineBreakMode];
+        NSAttributedString *attributedText =
+        [[NSAttributedString alloc] initWithString:self.message
+                                        attributes:@{NSFontAttributeName:self.messageLabel.font}] ;
+        CGRect rect = [attributedText boundingRectWithSize:(CGSize){CONTAINER_WIDTH - kMY_CONTENT_PADDING_LEFT * 2, 200}
+                                                   options:NSStringDrawingUsesLineFragmentOrigin
+                                                   context:nil];
+        CGSize size = rect.size ;
         return MAX(minHeight, size.height);
     }
     return minHeight;

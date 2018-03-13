@@ -2,13 +2,18 @@
 
 #import <UIKit/UIKit.h>
 
-#define kColorDefaultBt           [UIColor lightGrayColor]
-#define kColorDestructiveBt       [UIColor blueColor]
-#define kColorCancelBt            [UIColor redColor]
+#define kColorDefaultBt                  RGB2UIColor(0xcccccc)
+#define kColorDestructiveBt              [UIColor blueColor]
+#define kColorCancelBt                   RGB2UIColor(0x5d74f1)
 
-#define kTitleColorDefaultBt           [UIColor whiteColor]
-#define kTitleColorDestructiveBt       [UIColor whiteColor]
-#define kTitleColorCancelBt            [UIColor whiteColor]
+#define kTitleColorDefaultBt             [UIColor whiteColor]
+#define kTitleColorDestructiveBt         [UIColor whiteColor]
+#define kTitleColorCancelBt              [UIColor whiteColor]
+
+#define kMainTitleFont                   [UIFont boldSystemFontOfSize:16]
+#define kSubTitleFont                    [UIFont systemFontOfSize:14]
+#define kMainSubTitleColor               RGB2UIColor(0x383838)
+
 
 extern NSString *const SIAlertViewWillShowNotification;
 extern NSString *const SIAlertViewDidShowNotification;
