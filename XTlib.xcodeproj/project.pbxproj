@@ -558,7 +558,6 @@
 		8F2BFE03203ED7260013394D /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				8FDE205420594EB7003B5398 /* XTSIAlert */,
 				8F2BFE04203ED7260013394D /* AttibutedLabel */,
 				8F2BFE11203ED7260013394D /* BarButton+badge */,
 				8F2BFE14203ED7260013394D /* Base64+MD5 */,
@@ -1045,6 +1044,7 @@
 		8F2BFF02203ED7380013394D /* UIs */ = {
 			isa = PBXGroup;
 			children = (
+				8FDE205420594EB7003B5398 /* XTSIAlert */,
 				8F2BFF03203ED7380013394D /* GradientBGView */,
 				8F2BFF06203ED7380013394D /* ParallaxHeaderView */,
 				8F2BFF0B203ED7380013394D /* PlaceHolderTextView */,
