@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+//////////////////////////////////////////////////////////////////////////////////////////
+
 @interface UIView (XTAddition)
 
 // tap self to hide keyboard
@@ -17,18 +19,19 @@
 
 @end
 
+//////////////////////////////////////////////////////////////////////////////////////////
 
 @interface UIView (CurrentController)
 
-- (UIViewController*)viewController ;
+- (UIViewController *)xt_viewController ;
 
-- (UINavigationController*)navigationController ;
+- (UINavigationController *)xt_navigationController ;
 
-- (NSString *)chainInfo ;
+- (NSString *)xt_chainInfo ;
 
 @end
 
-
+//////////////////////////////////////////////////////////////////////////////////////////
 
 @interface UIView (MakeScollView)
 
@@ -36,3 +39,5 @@
 - (UIScrollView *)xt_wrapperWithHorizontalScrollView ;
 
 @end
+
+//////////////////////////////////////////////////////////////////////////////////////////

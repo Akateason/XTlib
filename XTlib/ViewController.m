@@ -11,7 +11,7 @@
 #import "RootTableCell.h"
 #import "PlistUtil.h"
 #import "ScreenHeader.h"
-#import "UIViewController+Storyboard.h"
+#import "UIViewController+XTAddition.h"
 #import "SIAlertView.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>

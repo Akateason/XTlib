@@ -31,7 +31,7 @@
         self.time = [now xt_getTick] ;
         self.dateStr = [now xt_getStr] ;
         if ([sender isKindOfClass:[UIResponder class]]) {
-            self.tree = [sender chainInfo] ;
+            self.tree = [sender xt_chainInfo] ;
         }
         
         self.uploaded = 0 ;

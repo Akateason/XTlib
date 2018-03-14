@@ -10,7 +10,6 @@
 #import "SVProgressHUD.h"
 
 #import "UIButton+ExtendTouchRect.h"
-#import "UIViewController+Navigation.h"
 #import "Z8CollectionViewController.h"
 
 @interface Zample8Controller ()

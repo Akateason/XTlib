@@ -27,7 +27,7 @@
         NSDate *now = [NSDate date] ;
         self.time = [now xt_getTick] ;
         self.dateStr = [now xt_getStr] ;
-        self.tree = [ctrller.view chainInfo] ;
+        self.tree = [ctrller.view xt_chainInfo] ;
         self.uploaded = 0 ;
         self.kindOfKey = [UniqueKeyMaker makeUniqueKey:@[self.name,self.title,self.action]] ;
         self.UUID = [[ValetManager sharedInstance] UUID] ;

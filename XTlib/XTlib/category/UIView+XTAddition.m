@@ -11,8 +11,9 @@
 #import <Masonry/Masonry.h>
 #import "ScreenHeader.h"
 
-@implementation UIView (XTAddition)
+//////////////////////////////////////////////////////////////////////////////////////////
 
+@implementation UIView (XTAddition)
 
 /**
  清楚所有键盘等
@@ -41,52 +42,41 @@
 
 @end
 
-
+//////////////////////////////////////////////////////////////////////////////////////////
 
 @implementation UIView (CurrentController)
 
-- (UIViewController *)viewController
-{
-    for (UIView *next = [self superview] ; next ; next = next.superview)
-    {
+- (UIViewController *)xt_viewController {
+    for (UIView *next = [self superview] ; next ; next = next.superview) {
         UIResponder *nextResponder = [next nextResponder] ;
-        if ([nextResponder isKindOfClass:[UIViewController class]])
-        {
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
             return (UIViewController *)nextResponder ;
         }
     }
     return nil ;
 }
 
-- (UINavigationController *)navigationController
-{
-    for (UIView *next = [self superview] ; next ; next = next.superview)
-    {
+- (UINavigationController *)xt_navigationController {
+    for (UIView *next = [self superview] ; next ; next = next.superview) {
         UIResponder *nextResponder = [next nextResponder] ;
-        if ([nextResponder isKindOfClass:[UINavigationController class]])
-        {
+        if ([nextResponder isKindOfClass:[UINavigationController class]]) {
             return (UINavigationController *)nextResponder ;
         }
     }
     return nil ;
 }
 
-
 static NSString *const kSeperateLine = @"/" ;
 /**
  view chainInfo
  @return string  @"subview/superview/currentController"
  */
-- (NSString *)chainInfo
-
-{
+- (NSString *)xt_chainInfo {
     NSMutableString *tmpString = [@"" mutableCopy] ;
-    for (UIView *next = self ; next ; next = next.superview)
-    {
+    for (UIView *next = self ; next ; next = next.superview) {
         [tmpString appendFormat:@"%@%@",NSStringFromClass(next.class),kSeperateLine] ;
         UIResponder *nextResponder = [next nextResponder] ;
-        if ([nextResponder isKindOfClass:[UIViewController class]])
-        {
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
             [tmpString appendFormat:@"%@%@",NSStringFromClass(nextResponder.class),kSeperateLine] ;
             break ;
         }
@@ -96,6 +86,7 @@ static NSString *const kSeperateLine = @"/" ;
 
 @end
 
+//////////////////////////////////////////////////////////////////////////////////////////
 
 @implementation UIView (MakeScollView)
 
@@ -126,3 +117,8 @@ static NSString *const kSeperateLine = @"/" ;
 }
 
 @end
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+

@@ -78,6 +78,12 @@
 				<key>cname</key>
 				<string>FontAdaptVC</string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>Ctrl Help</string>
+				<key>cname</key>
+				<string>CtrlHelpVC</string>
+			</dict>
 		</array>
 	</dict>
 </array>

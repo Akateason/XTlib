@@ -2,7 +2,7 @@
 
 #import "SIAlertView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIColor+TPDExtension.h"
+
 
 NSString *const SIAlertViewWillShowNotification = @"SIAlertViewWillShowNotification";
 NSString *const SIAlertViewDidShowNotification = @"SIAlertViewDidShowNotification";

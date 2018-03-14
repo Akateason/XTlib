@@ -65,10 +65,7 @@ fprintf(stderr, "🏀🏀🏀🏀🏀\n");                                      
 #import "UIImageView+QNExtention.h"
 #import "UIView+Sizes.h"
 #import "UIView+XTAddition.h"
-#import "UIViewController+HowToUse.h"
-#import "UIViewController+TabbarHidden.h"
-#import "UIViewController+Storyboard.h"
-#import "UIViewController+Navigation.h"
+#import "UIViewController+XTAddition.h"
 #import "UIResponder+ChainHandler.h"
 #import "NSTimer+Addition.h"
 
