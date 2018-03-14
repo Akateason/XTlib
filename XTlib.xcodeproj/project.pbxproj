@@ -30,7 +30,6 @@
 		8F2BFE3C203ED7270013394D /* KeyBoardTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE23203ED7260013394D /* KeyBoardTopBar.m */; };
 		8F2BFE3D203ED7270013394D /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE26203ED7260013394D /* KxMenu.m */; };
 		8F2BFE3E203ED7270013394D /* NSObject+MKBlockTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE29203ED7260013394D /* NSObject+MKBlockTimer.m */; };
-		8F2BFE3F203ED7270013394D /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE2C203ED7260013394D /* SIAlertView.m */; };
 		8F2BFE40203ED7270013394D /* UIAlternativeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE2F203ED7260013394D /* UIAlternativeButton.m */; };
 		8F2BFE41203ED7270013394D /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE32203ED7260013394D /* UICollectionViewLeftAlignedLayout.m */; };
 		8F2BFE43203ED72E0013394D /* viewControllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F2BFE42203ED72E0013394D /* viewControllers.plist */; };
@@ -140,6 +139,7 @@
 		8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE204D205948D2003B5398 /* CtrlHelpVC.m */; };
 		8FDE205220594950003B5398 /* NibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205020594950003B5398 /* NibVC.m */; };
 		8FDE205320594950003B5398 /* NibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE205120594950003B5398 /* NibVC.xib */; };
+		8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205620594EE3003B5398 /* XTSIAlertView.m */; };
 		F9572C89FB657E8622F3EAB6 /* Pods_XTlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABB4C18C49B72CEDEA8791D /* Pods_XTlib.framework */; };
 /* End PBXBuildFile section */
 
@@ -209,8 +209,6 @@
 		8F2BFE26203ED7260013394D /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		8F2BFE28203ED7260013394D /* NSObject+MKBlockTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MKBlockTimer.h"; sourceTree = "<group>"; };
 		8F2BFE29203ED7260013394D /* NSObject+MKBlockTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MKBlockTimer.m"; sourceTree = "<group>"; };
-		8F2BFE2B203ED7260013394D /* SIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIAlertView.h; sourceTree = "<group>"; };
-		8F2BFE2C203ED7260013394D /* SIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAlertView.m; sourceTree = "<group>"; };
 		8F2BFE2E203ED7260013394D /* UIAlternativeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlternativeButton.h; sourceTree = "<group>"; };
 		8F2BFE2F203ED7260013394D /* UIAlternativeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlternativeButton.m; sourceTree = "<group>"; };
 		8F2BFE31203ED7260013394D /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
@@ -435,6 +433,8 @@
 		8FDE204F20594950003B5398 /* NibVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NibVC.h; sourceTree = "<group>"; };
 		8FDE205020594950003B5398 /* NibVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NibVC.m; sourceTree = "<group>"; };
 		8FDE205120594950003B5398 /* NibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NibVC.xib; sourceTree = "<group>"; };
+		8FDE205520594EE3003B5398 /* XTSIAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTSIAlertView.h; sourceTree = "<group>"; };
+		8FDE205620594EE3003B5398 /* XTSIAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTSIAlertView.m; sourceTree = "<group>"; };
 		BABB4C18C49B72CEDEA8791D /* Pods_XTlib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTlib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -558,6 +558,7 @@
 		8F2BFE03203ED7260013394D /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				8FDE205420594EB7003B5398 /* XTSIAlert */,
 				8F2BFE04203ED7260013394D /* AttibutedLabel */,
 				8F2BFE11203ED7260013394D /* BarButton+badge */,
 				8F2BFE14203ED7260013394D /* Base64+MD5 */,
@@ -568,7 +569,6 @@
 				8F2BFE21203ED7260013394D /* KeyBoardTopBar */,
 				8F2BFE24203ED7260013394D /* KxMenu */,
 				8F2BFE27203ED7260013394D /* MKBlockTimer */,
-				8F2BFE2A203ED7260013394D /* SIAlertView */,
 				8F2BFE2D203ED7260013394D /* UIAlternaiveButton */,
 				8F2BFE30203ED7260013394D /* UICollectionViewLeftAlignedLayout */,
 			);
@@ -699,15 +699,6 @@
 				8F2BFE29203ED7260013394D /* NSObject+MKBlockTimer.m */,
 			);
 			path = MKBlockTimer;
-			sourceTree = "<group>";
-		};
-		8F2BFE2A203ED7260013394D /* SIAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFE2B203ED7260013394D /* SIAlertView.h */,
-				8F2BFE2C203ED7260013394D /* SIAlertView.m */,
-			);
-			path = SIAlertView;
 			sourceTree = "<group>";
 		};
 		8F2BFE2D203ED7260013394D /* UIAlternaiveButton */ = {
@@ -1337,6 +1328,15 @@
 			path = controllerHelp;
 			sourceTree = "<group>";
 		};
+		8FDE205420594EB7003B5398 /* XTSIAlert */ = {
+			isa = PBXGroup;
+			children = (
+				8FDE205520594EE3003B5398 /* XTSIAlertView.h */,
+				8FDE205620594EE3003B5398 /* XTSIAlertView.m */,
+			);
+			path = XTSIAlert;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1624,7 +1624,6 @@
 				8F2BFFB7203ED7390013394D /* XTNetReloader.m in Sources */,
 				8F2BFF9D203ED7390013394D /* RootTableCell.m in Sources */,
 				8F2BFFA6203ED7390013394D /* ListEvent.m in Sources */,
-				8F2BFE3F203ED7270013394D /* SIAlertView.m in Sources */,
 				8F2BFFB6203ED7390013394D /* XTMultipleTables.m in Sources */,
 				8F2BFF5A203ED7390013394D /* FontAdaptVC.m in Sources */,
 				8F2BFE38203ED7270013394D /* UIBarButtonItem+Badge.m in Sources */,
@@ -1653,6 +1652,7 @@
 				8F2BFFA8203ED7390013394D /* XTStat.m in Sources */,
 				8F2BFF9B203ED7390013394D /* RootRefreshFooter.m in Sources */,
 				8F2BFF75203ED7390013394D /* Zample8Controller.m in Sources */,
+				8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */,
 				8FDE205220594950003B5398 /* NibVC.m in Sources */,
 				8F2BFF5E203ED7390013394D /* Z1CustomCell.m in Sources */,
 				8F2BFFA4203ED7390013394D /* CtrllerEvent.m in Sources */,

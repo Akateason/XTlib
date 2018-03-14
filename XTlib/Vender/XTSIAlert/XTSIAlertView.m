@@ -1,13 +1,19 @@
+//
+//  XTSIAlertView.m
+//  XTlib
+//
+//  Created by teason23 on 2018/3/14.
+//  Copyright © 2018年 teason23. All rights reserved.
+//
 
-
-#import "SIAlertView.h"
+#import "XTSIAlertView.h"
 #import <QuartzCore/QuartzCore.h>
 
 
-NSString *const SIAlertViewWillShowNotification = @"SIAlertViewWillShowNotification";
-NSString *const SIAlertViewDidShowNotification = @"SIAlertViewDidShowNotification";
-NSString *const SIAlertViewWillDismissNotification = @"SIAlertViewWillDismissNotification";
-NSString *const SIAlertViewDidDismissNotification = @"SIAlertViewDidDismissNotification";
+NSString *const XTSIAlertViewWillShowNotification = @"XTSIAlertViewWillShowNotification";
+NSString *const XTSIAlertViewDidShowNotification = @"XTSIAlertViewDidShowNotification";
+NSString *const XTSIAlertViewWillDismissNotification = @"XTSIAlertViewWillDismissNotification";
+NSString *const XTSIAlertViewDidDismissNotification = @"XTSIAlertViewDidDismissNotification";
 
 #define DEBUG_LAYOUT 0
 
@@ -20,20 +26,20 @@ NSString *const SIAlertViewDidDismissNotification = @"SIAlertViewDidDismissNotif
 #define CONTENT_PADDING_BOTTOM 10
 #define BUTTON_HEIGHT 44
 #define CONTAINER_WIDTH 300
-#define kMY_CONTENT_PADDING_LEFT        ( (self.positionStyle == SIALertViewPositionBottom) ? 25.0f : CONTENT_PADDING_LEFT )
+#define kMY_CONTENT_PADDING_LEFT        ( (self.positionStyle == XTSIAlertViewPositionBottom) ? 25.0f : CONTENT_PADDING_LEFT )
 
 
-const UIWindowLevel UIWindowLevelSIAlert = 1999.0;  // don't overlap system's alert
-const UIWindowLevel UIWindowLevelSIAlertBackground = 1998.0; // below the alert window
+const UIWindowLevel UIWindowLevelXTSIAlert = 1999.0;  // don't overlap system's alert
+const UIWindowLevel UIWindowLevelXTSIAlertBackground = 1998.0; // below the alert window
 
-@class SIAlertBackgroundWindow;
+@class XTSIAlertBackgroundWindow;
 
 static NSMutableArray *__si_alert_queue;
 static BOOL __si_alert_animating;
-static SIAlertBackgroundWindow *__si_alert_background_window;
-static SIAlertView *__si_alert_current_view;
+static XTSIAlertBackgroundWindow *__si_alert_background_window;
+static XTSIAlertView *__si_alert_current_view;
 
-@interface SIAlertView ()
+@interface XTSIAlertView () <CAAnimationDelegate>
 
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) UIWindow *alertWindow;
@@ -47,7 +53,7 @@ static SIAlertView *__si_alert_current_view;
 @property (nonatomic, assign, getter = isLayoutDirty) BOOL layoutDirty;
 
 + (NSMutableArray *)sharedQueue;
-+ (SIAlertView *)currentAlertView;
++ (XTSIAlertView *)currentAlertView;
 
 + (BOOL)isAnimating;
 + (void)setAnimating:(BOOL)animating;
@@ -63,86 +69,56 @@ static SIAlertView *__si_alert_current_view;
 
 #pragma mark - SIBackgroundWindow
 
-@interface SIAlertBackgroundWindow : UIWindow
+@interface XTSIAlertBackgroundWindow : UIWindow
 
 @end
 
-@interface SIAlertBackgroundWindow ()
+@interface XTSIAlertBackgroundWindow ()
 
-@property (nonatomic, assign) SIAlertViewBackgroundStyle style;
+@property (nonatomic, assign) XTSIAlertViewBackgroundStyle style;
 
 @end
 
-@implementation SIAlertBackgroundWindow
+@implementation XTSIAlertBackgroundWindow
 
-- (id)initWithFrame:(CGRect)frame andStyle:(SIAlertViewBackgroundStyle)style
+- (id)initWithFrame:(CGRect)frame andStyle:(XTSIAlertViewBackgroundStyle)style
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.style = style;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.opaque = NO;
-        self.windowLevel = UIWindowLevelSIAlertBackground;
-        self.backgroundColor = [UIColor colorWithWhite:0.3 alpha:.7] ;
+        self.windowLevel = UIWindowLevelXTSIAlertBackground;
+        self.backgroundColor = kBGBackColor ;
     }
     return self;
 }
 
-/*
-- (void)drawRect:(CGRect)rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    switch (self.style) {
-        case SIAlertViewBackgroundStyleGradient:
-        {
-            size_t locationsCount = 2;
-            CGFloat locations[2] = {0.0f, 1.0f};
-            CGFloat colors[8] = {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.75f};
-            CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-            CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, colors, locations, locationsCount);
-            CGColorSpaceRelease(colorSpace);
-            
-            CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
-            CGFloat radius = MIN(self.bounds.size.width, self.bounds.size.height) ;
-            CGContextDrawRadialGradient (context, gradient, center, 0, center, radius, kCGGradientDrawsAfterEndLocation);
-            CGGradientRelease(gradient);
-            break;
-        }
-        case SIAlertViewBackgroundStyleSolid:
-        {
-            [[UIColor colorWithWhite:0 alpha:0.5] set];
-            CGContextFillRect(context, self.bounds);
-            break;
-        }
-    }
-}
- */
-
 @end
 
-#pragma mark - SIAlertItem
+#pragma mark - XTSIAlertItem
 
-@interface SIAlertItem : NSObject
+@interface XTSIAlertItem : NSObject
 
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) SIAlertViewButtonType type;
-@property (nonatomic, copy) SIAlertViewHandler action;
+@property (nonatomic, assign) XTSIAlertViewButtonType type;
+@property (nonatomic, copy) XTSIAlertViewHandler action;
 
 @end
 
-@implementation SIAlertItem
+@implementation XTSIAlertItem
 
 @end
 
-#pragma mark - SIAlertViewController
+#pragma mark - XTSIAlertViewController
 
-@interface SIAlertViewController : UIViewController
+@interface XTSIAlertViewController : UIViewController
 
-@property (nonatomic, strong) SIAlertView *alertView;
+@property (nonatomic, strong) XTSIAlertView *alertView;
 
 @end
 
-@implementation SIAlertViewController
+@implementation XTSIAlertViewController
 
 #pragma mark - View life cycle
 
@@ -165,47 +141,61 @@ static SIAlertView *__si_alert_current_view;
 
 @end
 
-#pragma mark - SIAlert
+#pragma mark - XTSIAlert
 
-@implementation SIAlertView
+@implementation XTSIAlertView
+
++ (void)alertWithTitle:(NSString *)title
+              subTitle:(NSString *)subTitle
+         normalBtTitle:(NSString *)normalBtTitle
+                normal:(XTSIAlertViewHandler)normalHandler
+         cancelBtTitle:(NSString *)cancelBtTitle
+                cancel:(XTSIAlertViewHandler)cancelHandler
+{
+    XTSIAlertView *alert = [[XTSIAlertView alloc] initWithTitle:title andMessage:subTitle] ;
+    [alert addButtonWithTitle:normalBtTitle
+                         type:XTSIAlertViewButtonTypeDefault
+                      handler:normalHandler] ;
+    [alert addButtonWithTitle:cancelBtTitle
+                         type:XTSIAlertViewButtonTypeCancel
+                      handler:cancelHandler] ;
+    [alert show] ;
+}
+
+
 
 + (void)initialize
 {
-    if (self != [SIAlertView class])
-        return;
+    if (self != [XTSIAlertView class]) return ;
     
-    SIAlertView *appearance = [self appearance] ;
-    appearance.viewBackgroundColor = [UIColor whiteColor] ;
+    XTSIAlertView *appearance = [self appearance] ;
+    appearance.viewBackgroundColor = kAlertBgColor ;
     appearance.titleColor = kMainSubTitleColor ;
     appearance.messageColor = kMainSubTitleColor ;
     appearance.titleFont = kMainTitleFont ;
     appearance.messageFont = kSubTitleFont ;
     appearance.buttonFont = [UIFont systemFontOfSize:[UIFont buttonFontSize]];
-    appearance.cornerRadius = 2;
-    appearance.shadowRadius = 8;
+    appearance.cornerRadius = 2 ;
+    appearance.shadowRadius = 8 ;
 }
 
-- (id)init
-{
-	return [self initWithTitle:nil andMessage:nil];
+- (id)init {
+    return [self initWithTitle:nil andMessage:nil];
 }
 
-- (id)initWithTitle:(NSString *)title andMessage:(NSString *)message
-{
-	self = [super init];
-	if (self) {
-		_title = title;
+- (id)initWithTitle:(NSString *)title andMessage:(NSString *)message {
+    self = [super init];
+    if (self) {
+        _title = title;
         _message = message;
-		self.items = [[NSMutableArray alloc] init] ;
-        // ADD BY TEASON @20151013 BEGIN
+        self.items = [[NSMutableArray alloc] init] ;
+        
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSelf:)] ;
         [self addGestureRecognizer:tap] ;
-        // ADD BY TEASON @20151013 END
-	}
-	return self;
+    }
+    return self;
 }
 
-// ADD BY TEASON @20151013 BEGIN
 - (void)tapSelf:(UITapGestureRecognizer *)tap
 {
     if (self.items.count <= 2) return ;
@@ -213,7 +203,6 @@ static SIAlertView *__si_alert_current_view;
     NSLog(@"tap self click hidden ") ;
     [self dismissAnimated:YES] ;
 }
-// ADD BY TEASON @20151013 END
 
 
 #pragma mark - Class methods
@@ -221,17 +210,17 @@ static SIAlertView *__si_alert_current_view;
 + (NSMutableArray *)sharedQueue
 {
     if (!__si_alert_queue) {
-        __si_alert_queue = [NSMutableArray array];
+        __si_alert_queue = [NSMutableArray array] ;
     }
     return __si_alert_queue;
 }
 
-+ (SIAlertView *)currentAlertView
++ (XTSIAlertView *)currentAlertView
 {
     return __si_alert_current_view;
 }
 
-+ (void)setCurrentAlertView:(SIAlertView *)alertView
++ (void)setCurrentAlertView:(XTSIAlertView *)alertView
 {
     __si_alert_current_view = alertView;
 }
@@ -249,8 +238,8 @@ static SIAlertView *__si_alert_current_view;
 + (void)showBackground
 {
     if (!__si_alert_background_window) {
-        __si_alert_background_window = [[SIAlertBackgroundWindow alloc] initWithFrame:[UIScreen mainScreen].bounds
-                                                                             andStyle:[SIAlertView currentAlertView].backgroundStyle];
+        __si_alert_background_window = [[XTSIAlertBackgroundWindow alloc] initWithFrame:[UIScreen mainScreen].bounds
+                                                                               andStyle:[XTSIAlertView currentAlertView].backgroundStyle] ;
         [__si_alert_background_window makeKeyAndVisible];
         __si_alert_background_window.alpha = 0;
         [UIView animateWithDuration:0.3
@@ -282,34 +271,37 @@ static SIAlertView *__si_alert_current_view;
 - (void)setTitle:(NSString *)title
 {
     _title = title;
-	[self invaliadateLayout];
+    [self invaliadateLayout];
 }
 
 - (void)setMessage:(NSString *)message
 {
-	_message = message;
+    _message = message;
     [self invaliadateLayout];
 }
 
 
 #pragma mark - Public
 
-- (void)addButtonWithTitle:(NSString *)title type:(SIAlertViewButtonType)type handler:(SIAlertViewHandler)handler
+- (void)addButtonWithTitle:(NSString *)title type:(XTSIAlertViewButtonType)type handler:(XTSIAlertViewHandler)handler
 {
-    SIAlertItem *item = [[SIAlertItem alloc] init];
-	item.title = title;
-	item.type = type;
-	item.action = handler;
-	[self.items addObject:item];
+    XTSIAlertItem *item = [[XTSIAlertItem alloc] init];
+    item.title = title;
+    item.type = type;
+    item.action = handler;
+    [self.items addObject:item];
+    
+    
+    self.positionStyle = (self.items.count <= 2) ? XTSIAlertViewPositionMiddle : XTSIAlertViewPositionBottom ;
 }
 
 - (void)show
 {
-    if (![[SIAlertView sharedQueue] containsObject:self]) {
-        [[SIAlertView sharedQueue] addObject:self];
+    if (![[XTSIAlertView sharedQueue] containsObject:self]) {
+        [[XTSIAlertView sharedQueue] addObject:self];
     }
     
-    if ([SIAlertView isAnimating]) {
+    if ([XTSIAlertView isAnimating]) {
         return; // wait for next turn
     }
     
@@ -317,8 +309,8 @@ static SIAlertView *__si_alert_current_view;
         return;
     }
     
-    if ([SIAlertView currentAlertView].isVisible) {
-        SIAlertView *alert = [SIAlertView currentAlertView];
+    if ([XTSIAlertView currentAlertView].isVisible) {
+        XTSIAlertView *alert = [XTSIAlertView currentAlertView];
         [alert dismissAnimated:YES cleanup:NO];
         return;
     }
@@ -326,24 +318,24 @@ static SIAlertView *__si_alert_current_view;
     if (self.willShowHandler) {
         self.willShowHandler(self);
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:SIAlertViewWillShowNotification object:self userInfo:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:XTSIAlertViewWillShowNotification object:self userInfo:nil];
     
     self.visible = YES;
     
-    [SIAlertView setAnimating:YES];
-    [SIAlertView setCurrentAlertView:self];
+    [XTSIAlertView setAnimating:YES];
+    [XTSIAlertView setCurrentAlertView:self];
     
     // transition background
-    [SIAlertView showBackground];
+    [XTSIAlertView showBackground];
     
-    SIAlertViewController *viewController = [[SIAlertViewController alloc] initWithNibName:nil bundle:nil];
+    XTSIAlertViewController *viewController = [[XTSIAlertViewController alloc] initWithNibName:nil bundle:nil];
     viewController.alertView = self;
     
     if (!self.alertWindow) {
         UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         window.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         window.opaque = NO;
-        window.windowLevel = UIWindowLevelSIAlert;
+        window.windowLevel = UIWindowLevelXTSIAlert;
         window.rootViewController = viewController;
         self.alertWindow = window;
     }
@@ -355,12 +347,12 @@ static SIAlertView *__si_alert_current_view;
         if (self.didShowHandler) {
             self.didShowHandler(self);
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:SIAlertViewDidShowNotification object:self userInfo:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:XTSIAlertViewDidShowNotification object:self userInfo:nil];
         
-        [SIAlertView setAnimating:NO];
+        [XTSIAlertView setAnimating:NO];
         
-        NSInteger index = [[SIAlertView sharedQueue] indexOfObject:self];
-        if (index < [SIAlertView sharedQueue].count - 1) {
+        NSInteger index = [[XTSIAlertView sharedQueue] indexOfObject:self];
+        if (index < [XTSIAlertView sharedQueue].count - 1) {
             [self dismissAnimated:YES cleanup:NO]; // dismiss to show next alert view
         }
     }];
@@ -379,7 +371,7 @@ static SIAlertView *__si_alert_current_view;
         if (self.willDismissHandler) {
             self.willDismissHandler(self);
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:SIAlertViewWillDismissNotification object:self userInfo:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:XTSIAlertViewWillDismissNotification object:self userInfo:nil];
     }
     
     void (^dismissComplete)(void) = ^{
@@ -387,25 +379,25 @@ static SIAlertView *__si_alert_current_view;
         
         [self teardown];
         
-        [SIAlertView setCurrentAlertView:nil];
+        [XTSIAlertView setCurrentAlertView:nil];
         
-        SIAlertView *nextAlertView;
-        NSInteger index = [[SIAlertView sharedQueue] indexOfObject:self];
-        if (index != NSNotFound && index < [SIAlertView sharedQueue].count - 1) {
-            nextAlertView = [SIAlertView sharedQueue][index + 1];
+        XTSIAlertView *nextAlertView;
+        NSInteger index = [[XTSIAlertView sharedQueue] indexOfObject:self];
+        if (index != NSNotFound && index < [XTSIAlertView sharedQueue].count - 1) {
+            nextAlertView = [XTSIAlertView sharedQueue][index + 1];
         }
         
         if (cleanup) {
-            [[SIAlertView sharedQueue] removeObject:self];
+            [[XTSIAlertView sharedQueue] removeObject:self];
         }
         
-        [SIAlertView setAnimating:NO];
+        [XTSIAlertView setAnimating:NO];
         
         if (isVisible) {
             if (self.didDismissHandler) {
                 self.didDismissHandler(self);
             }
-            [[NSNotificationCenter defaultCenter] postNotificationName:SIAlertViewDidDismissNotification object:self userInfo:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:XTSIAlertViewDidDismissNotification object:self userInfo:nil];
         }
         
         // check if we should show next alert
@@ -417,26 +409,26 @@ static SIAlertView *__si_alert_current_view;
             [nextAlertView show];
         } else {
             // show last alert view
-            if ([SIAlertView sharedQueue].count > 0) {
-                SIAlertView *alert = [[SIAlertView sharedQueue] lastObject];
+            if ([XTSIAlertView sharedQueue].count > 0) {
+                XTSIAlertView *alert = [[XTSIAlertView sharedQueue] lastObject];
                 [alert show];
             }
         }
     };
     
     if (animated && isVisible) {
-        [SIAlertView setAnimating:YES];
+        [XTSIAlertView setAnimating:YES];
         [self transitionOutCompletion:dismissComplete];
         
-        if ([SIAlertView sharedQueue].count == 1) {
-            [SIAlertView hideBackgroundAnimated:YES];
+        if ([XTSIAlertView sharedQueue].count == 1) {
+            [XTSIAlertView hideBackgroundAnimated:YES];
         }
         
     } else {
         dismissComplete();
         
-        if ([SIAlertView sharedQueue].count == 0) {
-            [SIAlertView hideBackgroundAnimated:YES];
+        if ([XTSIAlertView sharedQueue].count == 0) {
+            [XTSIAlertView hideBackgroundAnimated:YES];
         }
     }
 }
@@ -446,7 +438,7 @@ static SIAlertView *__si_alert_current_view;
 - (void)transitionInCompletion:(void(^)(void))completion
 {
     switch (self.transitionStyle) {
-        case SIAlertViewTransitionStyleSlideFromBottom:
+        case XTSIAlertViewTransitionStyleSlideFromBottom:
         {
             CGRect rect = self.containerView.frame;
             CGRect originalRect = rect;
@@ -463,7 +455,7 @@ static SIAlertView *__si_alert_current_view;
                              }];
         }
             break;
-        case SIAlertViewTransitionStyleSlideFromTop:
+        case XTSIAlertViewTransitionStyleSlideFromTop:
         {
             CGRect rect = self.containerView.frame;
             CGRect originalRect = rect;
@@ -480,7 +472,7 @@ static SIAlertView *__si_alert_current_view;
                              }];
         }
             break;
-        case SIAlertViewTransitionStyleFade:
+        case XTSIAlertViewTransitionStyleFade:
         {
             self.containerView.alpha = 0;
             [UIView animateWithDuration:0.3
@@ -494,7 +486,7 @@ static SIAlertView *__si_alert_current_view;
                              }];
         }
             break;
-        case SIAlertViewTransitionStyleBounce:
+        case XTSIAlertViewTransitionStyleBounce:
         {
             CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
             animation.values = @[@(0.01), @(1.2), @(0.9), @(1)];
@@ -506,7 +498,7 @@ static SIAlertView *__si_alert_current_view;
             [self.containerView.layer addAnimation:animation forKey:@"bouce"];
         }
             break;
-        case SIAlertViewTransitionStyleDropDown:
+        case XTSIAlertViewTransitionStyleDropDown:
         {
             CGFloat y = self.containerView.center.y;
             CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.y"];
@@ -527,7 +519,7 @@ static SIAlertView *__si_alert_current_view;
 - (void)transitionOutCompletion:(void(^)(void))completion
 {
     switch (self.transitionStyle) {
-        case SIAlertViewTransitionStyleSlideFromBottom:
+        case XTSIAlertViewTransitionStyleSlideFromBottom:
         {
             CGRect rect = self.containerView.frame;
             rect.origin.y = self.bounds.size.height;
@@ -544,7 +536,7 @@ static SIAlertView *__si_alert_current_view;
                              }];
         }
             break;
-        case SIAlertViewTransitionStyleSlideFromTop:
+        case XTSIAlertViewTransitionStyleSlideFromTop:
         {
             CGRect rect = self.containerView.frame;
             rect.origin.y = -rect.size.height;
@@ -561,7 +553,7 @@ static SIAlertView *__si_alert_current_view;
                              }];
         }
             break;
-        case SIAlertViewTransitionStyleFade:
+        case XTSIAlertViewTransitionStyleFade:
         {
             [UIView animateWithDuration:0.25
                              animations:^{
@@ -574,7 +566,7 @@ static SIAlertView *__si_alert_current_view;
                              }];
         }
             break;
-        case SIAlertViewTransitionStyleBounce:
+        case XTSIAlertViewTransitionStyleBounce:
         {
             CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
             animation.values = @[@(1), @(1.2), @(0.01)];
@@ -588,7 +580,7 @@ static SIAlertView *__si_alert_current_view;
             self.containerView.transform = CGAffineTransformMakeScale(0.01, 0.01);
         }
             break;
-        case SIAlertViewTransitionStyleDropDown:
+        case XTSIAlertViewTransitionStyleDropDown:
         {
             CGPoint point = self.containerView.center;
             point.y += self.bounds.size.height;
@@ -643,16 +635,15 @@ static SIAlertView *__si_alert_current_view;
     
     CGFloat height = [self preferredHeight];
     CGFloat left = (self.bounds.size.width - CONTAINER_WIDTH) * 0.5;
-
-//@ADD BY TEASON BEGINING
+    
     CGFloat top = 0.0;
     switch (self.positionStyle) {
-        case SIAlertViewPositionMiddle:
+        case XTSIAlertViewPositionMiddle:
         {
             top = (self.bounds.size.height - height) * 0.5;
         }
             break;
-        case SIALertViewPositionBottom:
+        case XTSIAlertViewPositionBottom:
         {
             top = self.bounds.size.height - height  ;
         }
@@ -661,27 +652,24 @@ static SIAlertView *__si_alert_current_view;
             break;
     }
     
-//@ADD BY TEASON ENDING
     self.containerView.transform = CGAffineTransformIdentity;
     self.containerView.frame = CGRectMake(left, top, CONTAINER_WIDTH, height);
     
-//@ADD BY TEASON BEGINING
-    if (self.positionStyle == SIALertViewPositionBottom) {
+    if (self.positionStyle == XTSIAlertViewPositionBottom) {
         self.containerView.frame = CGRectMake(0, top, self.bounds.size.width, height);
     }
-//@ADD BY TEASON ENDING
-
+    
     CGFloat paddingLR = kMY_CONTENT_PADDING_LEFT ;
     
     self.containerView.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.containerView.bounds cornerRadius:self.containerView.layer.cornerRadius].CGPath;
-
+    
     CGFloat y = CONTENT_PADDING_TOP;
-	if (self.titleLabel) {
+    if (self.titleLabel) {
         self.titleLabel.text = self.title;
         CGFloat height = [self heightForTitleLabel];
         self.titleLabel.frame = CGRectMake(paddingLR, y, self.containerView.bounds.size.width - paddingLR * 2, height);
         y += height;
-	}
+    }
     if (self.messageLabel) {
         if (y > CONTENT_PADDING_TOP) {
             y += GAP ;
@@ -695,7 +683,7 @@ static SIAlertView *__si_alert_current_view;
         if (y > CONTENT_PADDING_TOP) {
             y += GAP;
         }
-        if (self.items.count == 2 && self.positionStyle == SIAlertViewPositionMiddle) {
+        if (self.items.count == 2 && self.positionStyle == XTSIAlertViewPositionMiddle) {
             CGFloat width = (self.containerView.bounds.size.width - paddingLR * 2 - GAP) * 0.5;
             UIButton *button = self.buttons[0];
             button.frame = CGRectMake(paddingLR, y, width, BUTTON_HEIGHT);
@@ -707,7 +695,7 @@ static SIAlertView *__si_alert_current_view;
                 UIButton *button = self.buttons[i];
                 button.frame = CGRectMake(paddingLR, y, self.containerView.bounds.size.width - paddingLR * 2, BUTTON_HEIGHT);
                 if (self.buttons.count > 1) {
-                    if (i == self.buttons.count - 1 && ((SIAlertItem *)self.items[i]).type == SIAlertViewButtonTypeCancel) {
+                    if (i == self.buttons.count - 1 && ((XTSIAlertItem *)self.items[i]).type == XTSIAlertViewButtonTypeCancel) {
                         CGRect rect = button.frame;
                         rect.origin.y += CANCEL_BUTTON_PADDING_TOP;
                         button.frame = rect;
@@ -721,10 +709,10 @@ static SIAlertView *__si_alert_current_view;
 
 - (CGFloat)preferredHeight
 {
-	CGFloat height = CONTENT_PADDING_TOP;
-	if (self.title) {
-		height += [self heightForTitleLabel];
-	}
+    CGFloat height = CONTENT_PADDING_TOP;
+    if (self.title) {
+        height += [self heightForTitleLabel];
+    }
     if (self.message) {
         if (height > CONTENT_PADDING_TOP) {
             height += GAP;
@@ -740,16 +728,14 @@ static SIAlertView *__si_alert_current_view;
             height += BUTTON_HEIGHT;
         } else {
             height += (BUTTON_HEIGHT + GAP) * self.items.count - GAP;
-            if (self.positionStyle == 1 && ((SIAlertItem *)[self.items lastObject]).type == SIAlertViewButtonTypeCancel) {
+            if (self.positionStyle == 1 && ((XTSIAlertItem *)[self.items lastObject]).type == XTSIAlertViewButtonTypeCancel) {
                 height += CANCEL_BUTTON_PADDING_TOP;
             }
         }
     }
     
-
-    
     height += CONTENT_PADDING_BOTTOM;
-	return height;
+    return height;
 }
 
 - (CGFloat)heightForTitleLabel
@@ -818,12 +804,12 @@ static SIAlertView *__si_alert_current_view;
 
 - (void)updateTitleLabel
 {
-	if (self.title) {
-		if (!self.titleLabel) {
-			self.titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
-			self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    if (self.title) {
+        if (!self.titleLabel) {
+            self.titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
+            self.titleLabel.textAlignment = NSTextAlignmentCenter;
             self.titleLabel.backgroundColor = [UIColor clearColor];
-			self.titleLabel.font = self.titleFont;
+            self.titleLabel.font = self.titleFont;
             self.titleLabel.textColor = self.titleColor;
             self.titleLabel.adjustsFontSizeToFitWidth = YES;
 #ifndef __IPHONE_6_0
@@ -831,16 +817,16 @@ static SIAlertView *__si_alert_current_view;
 #else
             self.titleLabel.minimumFontSize = self.titleLabel.font.pointSize * 0.75;
 #endif
-			[self.containerView addSubview:self.titleLabel];
+            [self.containerView addSubview:self.titleLabel];
 #if DEBUG_LAYOUT
             self.titleLabel.backgroundColor = [UIColor redColor];
 #endif
-		}
-		self.titleLabel.text = self.title;
-	} else {
-		[self.titleLabel removeFromSuperview];
-		self.titleLabel = nil;
-	}
+        }
+        self.titleLabel.text = self.title;
+    } else {
+        [self.titleLabel removeFromSuperview];
+        self.titleLabel = nil;
+    }
     [self invaliadateLayout];
 }
 
@@ -879,51 +865,41 @@ static SIAlertView *__si_alert_current_view;
 
 - (UIButton *)buttonForItemIndex:(NSUInteger)index
 {
-    SIAlertItem *item = self.items[index];
-	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-	button.tag = index;
-	button.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    XTSIAlertItem *item = self.items[index];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.tag = index;
+    button.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     button.titleLabel.font = self.buttonFont;
-	[button setTitle:item.title forState:UIControlStateNormal];
-//	UIImage *normalImage = nil;
-//	UIImage *highlightedImage = nil;
+    [button setTitle:item.title forState:UIControlStateNormal];
+    //    UIImage *normalImage = nil;
+    //    UIImage *highlightedImage = nil;
     UIColor *color ;
     
-	switch (item.type) {
-		case SIAlertViewButtonTypeCancel:
-//			normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-cancel"];
-//			highlightedImage = [UIImage imageNamed:@"SIAlertView.bundle/button-cancel-d"];
+    switch (item.type) {
+        case XTSIAlertViewButtonTypeCancel:
+            //            normalImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-cancel"];
+            //            highlightedImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-cancel-d"];
             color = kColorCancelBt ;
             [button setTitleColor:kTitleColorCancelBt forState:UIControlStateNormal] ;
-//            [button setTitleColor:[UIColor colorWithWhite:0.3 alpha:1] forState:UIControlStateNormal];
-//            [button setTitleColor:[UIColor colorWithWhite:0.3 alpha:0.8] forState:UIControlStateHighlighted];
-			break;
-		case SIAlertViewButtonTypeDestructive:
-//			normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-destructive"];
-//			highlightedImage = [UIImage imageNamed:@"SIAlertView.bundle/button-destructive-d"];
+            [button setTitleColor:kHIGHLIGHT_TitleColorCancelBt forState:UIControlStateHighlighted] ;
+            break;
+        case XTSIAlertViewButtonTypeDestructive:
+            //            normalImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-destructive"];
+            //            highlightedImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-destructive-d"];
             color = kColorDestructiveBt ;
             [button setTitleColor:kTitleColorDestructiveBt forState:UIControlStateNormal] ;
-//            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//            [button setTitleColor:[UIColor colorWithWhite:1 alpha:0.8] forState:UIControlStateHighlighted];
-			break;
-		case SIAlertViewButtonTypeDefault:
-		default:
-//			normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-default"];
-//			highlightedImage = [UIImage imageNamed:@"SIAlertView.bundle/button-default-d"];
+            [button setTitleColor:kHIGHLIGHT_TitleColorDestructiveBt forState:UIControlStateHighlighted] ;
+            break;
+        case XTSIAlertViewButtonTypeDefault:
+        default:
+            //            normalImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-default"];
+            //            highlightedImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-default-d"];
             color = kColorDefaultBt ;
             [button setTitleColor:kTitleColorDefaultBt forState:UIControlStateNormal] ;
-//            [button setTitleColor:[UIColor colorWithWhite:0.4 alpha:1] forState:UIControlStateNormal];
-//            [button setTitleColor:[UIColor colorWithWhite:0.4 alpha:0.8] forState:UIControlStateHighlighted];
-			break;
-	}
-//	CGFloat hInset = floorf(normalImage.size.width / 2);
-//	CGFloat vInset = floorf(normalImage.size.height / 2);
-//	UIEdgeInsets insets = UIEdgeInsetsMake(vInset, hInset, vInset, hInset);
-//	normalImage = [normalImage resizableImageWithCapInsets:insets];
-//	highlightedImage = [highlightedImage resizableImageWithCapInsets:insets];
-//    [button setBackgroundImage:normalImage forState:UIControlStateNormal];
-//    [button setBackgroundImage:highlightedImage forState:UIControlStateHighlighted];
-
+            [button setTitleColor:kHIGHLIGHT_TitleColorDefaultBt forState:UIControlStateHighlighted] ;
+            break;
+    }
+    
     [button setBackgroundColor:color] ;
     [button.layer setCornerRadius:2.0f] ;
     
@@ -936,12 +912,12 @@ static SIAlertView *__si_alert_current_view;
 
 - (void)buttonAction:(UIButton *)button
 {
-	[SIAlertView setAnimating:YES]; // set this flag to YES in order to prevent showing another alert in action block
-    SIAlertItem *item = self.items[button.tag];
-	if (item.action) {
-		item.action(self);
-	}
-	[self dismissAnimated:YES];
+    [XTSIAlertView setAnimating:YES]; // set this flag to YES in order to prevent showing another alert in action block
+    XTSIAlertItem *item = self.items[button.tag];
+    if (item.action) {
+        item.action(self);
+    }
+    [self dismissAnimated:YES];
 }
 
 #pragma mark - CAAnimation delegate
@@ -1033,3 +1009,7 @@ static SIAlertView *__si_alert_current_view;
 }
 
 @end
+
+
+
+

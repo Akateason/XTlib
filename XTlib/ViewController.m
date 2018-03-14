@@ -12,7 +12,7 @@
 #import "PlistUtil.h"
 #import "ScreenHeader.h"
 #import "UIViewController+XTAddition.h"
-#import "SIAlertView.h"
+#import "XTSIAlertView.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table ;
@@ -23,20 +23,37 @@
 @implementation ViewController
 
 #pragma mark -
+
+- (void)actionSheet {
+    XTSIAlertView *alert = [[XTSIAlertView alloc] initWithTitle:@"title" andMessage:@"subTitle"] ;
+    [alert addButtonWithTitle:@"this is normal"
+                         type:XTSIAlertViewButtonTypeDefault
+                      handler:nil] ;
+    [alert addButtonWithTitle:@"cancel"
+                         type:XTSIAlertViewButtonTypeCancel
+                      handler:nil] ;
+    [alert addButtonWithTitle:@"Destructive"
+                         type:XTSIAlertViewButtonTypeDestructive
+                      handler:nil] ;
+    [alert show] ;
+
+}
+
+
 - (void)viewDidLoad
 {
-    SIAlertView *alert = [[SIAlertView alloc] initWithTitle:@"" andMessage:@"dafafafaf"] ;
-    [alert addButtonWithTitle:@"yes"
-                         type:SIAlertViewButtonTypeDefault
-                      handler:nil] ;
-    [alert addButtonWithTitle:@"no"
-                         type:SIAlertViewButtonTypeDestructive
-                      handler:nil] ;
-//    alert.transitionStyle = SIAlertViewTransitionStyleFade ;
-//    [alert addButtonWithTitle:@"addd"
-//                         type:SIAlertViewButtonTypeCancel
-//                      handler:nil] ;
-    [alert show] ;
+    [XTSIAlertView alertWithTitle:@"alert"
+                         subTitle:@"custom it"
+                    normalBtTitle:@"OK"
+                           normal:^(XTSIAlertView *alertView) {
+                               [self actionSheet] ;
+                           }
+                    cancelBtTitle:@"Cancel"
+                           cancel:^(XTSIAlertView *alertView) {
+                               
+                           }] ;
+    
+    
     
     [super viewDidLoad] ;
     // Do any additional setup after loading the view, typically from a nib.

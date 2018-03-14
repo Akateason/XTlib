@@ -13,7 +13,7 @@
 //#import "ServerRequest.h"
 #import "SDImageCache.h"
 #import "XTFileManager.h"
-//#import "SIAlertView.h"
+//#import "XTSIAlertView.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
 #import "UIImage+AddFunction.h"
 #import "NotificationCenterHeader.h"
@@ -129,16 +129,16 @@ NSString *const APPSTORE_APPID          = @"123123123" ;
                 NSString *releaseNotes = [releaseInfo objectForKey:@"releaseNotes"] ;
                 
                 /*
-                SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"速报酱有新版本"
+                XTSIAlertView *alertView = [[XTSIAlertView alloc] initWithTitle:@"速报酱有新版本"
                                                                  andMessage:releaseNotes] ;
                 
                 [alertView addButtonWithTitle:@"不去"
-                                         type:SIAlertViewButtonTypeDefault
-                                      handler:^(SIAlertView *alertView) {
+                                         type:XTSIAlertViewButtonTypeDefault
+                                      handler:^(XTSIAlertView *alertView) {
                                       }] ;
                 [alertView addButtonWithTitle:@"去更新了"
-                                         type:SIAlertViewButtonTypeDestructive
-                                      handler:^(SIAlertView *alertView) {
+                                         type:XTSIAlertViewButtonTypeDestructive
+                                      handler:^(XTSIAlertView *alertView) {
                                           NSURL *url = [NSURL URLWithString:updateUrl];
                                           [[UIApplication sharedApplication]openURL:url];
                                       }] ;
