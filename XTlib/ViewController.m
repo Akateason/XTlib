@@ -29,11 +29,11 @@
     [alert addButtonWithTitle:@"this is normal"
                          type:XTSIAlertViewButtonTypeDefault
                       handler:nil] ;
-    [alert addButtonWithTitle:@"cancel"
-                         type:XTSIAlertViewButtonTypeCancel
-                      handler:nil] ;
     [alert addButtonWithTitle:@"Destructive"
                          type:XTSIAlertViewButtonTypeDestructive
+                      handler:nil] ;
+    [alert addButtonWithTitle:@"cancel"
+                         type:XTSIAlertViewButtonTypeCancel
                       handler:nil] ;
     [alert show] ;
 

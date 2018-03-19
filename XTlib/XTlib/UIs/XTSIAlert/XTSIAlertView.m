@@ -8,6 +8,7 @@
 
 #import "XTSIAlertView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ScreenHeader.h"
 
 
 NSString *const XTSIAlertViewWillShowNotification = @"XTSIAlertViewWillShowNotification";
@@ -19,8 +20,8 @@ NSString *const XTSIAlertViewDidDismissNotification = @"XTSIAlertViewDidDismissN
 
 #define MESSAGE_MIN_LINE_COUNT 1
 #define MESSAGE_MAX_LINE_COUNT 5
-#define GAP 10
-#define CANCEL_BUTTON_PADDING_TOP 5
+#define GAP 5
+#define CANCEL_BUTTON_PADDING_TOP 25
 #define CONTENT_PADDING_LEFT 10
 #define CONTENT_PADDING_TOP 15
 #define CONTENT_PADDING_BOTTOM 10
@@ -656,7 +657,7 @@ static XTSIAlertView *__si_alert_current_view;
     self.containerView.frame = CGRectMake(left, top, CONTAINER_WIDTH, height);
     
     if (self.positionStyle == XTSIAlertViewPositionBottom) {
-        self.containerView.frame = CGRectMake(0, top, self.bounds.size.width, height);
+        self.containerView.frame = CGRectMake(0, top - APP_SAFEAREA_TABBAR_FLEX, self.bounds.size.width, height);
     }
     
     CGFloat paddingLR = kMY_CONTENT_PADDING_LEFT ;
@@ -726,7 +727,8 @@ static XTSIAlertView *__si_alert_current_view;
         
         if (self.items.count <= 2 && self.positionStyle == 0) {
             height += BUTTON_HEIGHT;
-        } else {
+        }
+        else {
             height += (BUTTON_HEIGHT + GAP) * self.items.count - GAP;
             if (self.positionStyle == 1 && ((XTSIAlertItem *)[self.items lastObject]).type == XTSIAlertViewButtonTypeCancel) {
                 height += CANCEL_BUTTON_PADDING_TOP;
