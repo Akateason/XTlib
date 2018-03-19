@@ -48,4 +48,7 @@
 
 + (void)shutDownAppWithCtrller:(UIViewController *)ctrller ;
 
+#pragma mark - 设备名
+- (NSString *)getDeviceName ;
+
 @end
