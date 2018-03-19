@@ -7,6 +7,7 @@
 //
 
 #import "NibVC.h"
+#import "UIView+XTAddition.h"
 
 @interface NibVC ()
 
@@ -17,6 +18,12 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
     }] ;
+}
+
+- (IBAction)click:(UIView *)sender {
+    NSLog(@"my vc %@",sender.xt_viewController) ;
+    NSLog(@"my nav vc %@",sender.xt_navigationController) ;
+    NSLog(@"chain %@",[sender xt_chainInfo]) ;
 }
 
 - (void)viewDidLoad {

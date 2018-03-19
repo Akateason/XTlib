@@ -10,6 +10,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <Masonry/Masonry.h>
 #import "ScreenHeader.h"
+#import <objc/runtime.h>
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -44,26 +45,29 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+@interface UIView ()
+@property (strong, nonatomic, readwrite) UIViewController       *xt_viewController ;
+@property (strong, nonatomic, readwrite) UINavigationController *xt_navigationController ;
+@end 
+
 @implementation UIView (CurrentController)
+@dynamic xt_navigationController,xt_viewController ;
 
 - (UIViewController *)xt_viewController {
+    UIViewController *resultVC = nil ;
     for (UIView *next = [self superview] ; next ; next = next.superview) {
         UIResponder *nextResponder = [next nextResponder] ;
         if ([nextResponder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController *)nextResponder ;
+            resultVC = (UIViewController *)nextResponder ;
+            break ;
         }
     }
-    return nil ;
+    
+    return resultVC ;
 }
 
 - (UINavigationController *)xt_navigationController {
-    for (UIView *next = [self superview] ; next ; next = next.superview) {
-        UIResponder *nextResponder = [next nextResponder] ;
-        if ([nextResponder isKindOfClass:[UINavigationController class]]) {
-            return (UINavigationController *)nextResponder ;
-        }
-    }
-    return nil ;
+    return self.xt_viewController.navigationController ;
 }
 
 static NSString *const kSeperateLine = @"/" ;

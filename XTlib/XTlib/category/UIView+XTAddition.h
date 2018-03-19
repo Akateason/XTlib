@@ -22,10 +22,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 @interface UIView (CurrentController)
-
-- (UIViewController *)xt_viewController ;
-
-- (UINavigationController *)xt_navigationController ;
+@property (strong, nonatomic, readwrite) UIViewController       *xt_viewController ;
+@property (strong, nonatomic, readwrite) UINavigationController *xt_navigationController ;
 
 - (NSString *)xt_chainInfo ;
 

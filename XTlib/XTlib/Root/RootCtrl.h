@@ -12,7 +12,7 @@
 #import "YYModel.h"
 #import "SVProgressHUD.h"
 #import "XTlib.h"
-
+#import <ReactiveObjC/ReactiveObjC.h>
 
 
 @interface RootCtrl : UIViewController
