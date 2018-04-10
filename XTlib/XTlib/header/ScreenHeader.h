@@ -43,6 +43,17 @@
 #define XT_GET_INDEXPATH_(ROW,SECTION)          [NSIndexPath indexPathForRow:ROW inSection:SECTION]
 
 
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define SCREEN_MAX_LENGTH (MAX(APP_WIDTH, APP_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(APP_WIDTH, APP_HEIGHT))
+
+#define XT_IS_IPHONE_6              (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define XT_GREATER_THAN_IPHONE_6    (IS_IPHONE && SCREEN_MAX_LENGTH > 667.0)
+#define XT_LESS_THAN_IPHONE_6       (IS_IPHONE && SCREEN_MAX_LENGTH < 667.0)
+
 #endif /* ScreenHeader_h */
 
 

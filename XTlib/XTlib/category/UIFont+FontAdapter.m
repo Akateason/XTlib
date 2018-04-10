@@ -7,9 +7,7 @@
 
 #import "UIFont+FontAdapter.h"
 #import <objc/runtime.h>
-
-#define IS_IPHONE_6 ([[UIScreen mainScreen] bounds].size.height == 667.0f)
-#define IS_IPHONE_6_PLUS ([[UIScreen mainScreen] bounds].size.height == 736.0f)
+#import "ScreenHeader.h"
 
 // 这里设置iPhone6Plus放大的字号数（现在是放大3号，也就是iPhone4s和iPhone5上字体为15时，iPhone6上字号为18）
 #define IPHONE6PLUS_INCREMENT 0
@@ -19,10 +17,10 @@
 
 - (void)adjustFont:(CGFloat)fontSize {
     float tmpSize = 0. ;
-    if (IS_IPHONE_6) {
+    if (XT_IS_IPHONE_6) {
         tmpSize = fontSize ;
     }
-    else if (IS_IPHONE_6_PLUS){
+    else if (XT_GREATER_THAN_IPHONE_6){
         tmpSize = fontSize + IPHONE6PLUS_INCREMENT ;
     }
     else {
