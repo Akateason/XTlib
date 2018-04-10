@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AEE26206A285700DC5E7D /* GradientButton.m */; };
 		8F2BFDC9203ED6AB0013394D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDC8203ED6AB0013394D /* AppDelegate.m */; };
 		8F2BFDCC203ED6AB0013394D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDCB203ED6AB0013394D /* ViewController.m */; };
 		8F2BFDCF203ED6AB0013394D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F2BFDCD203ED6AB0013394D /* Main.storyboard */; };
@@ -163,6 +164,8 @@
 /* Begin PBXFileReference section */
 		2B53FF12910A82E667B63134 /* Pods-XTlib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTlib.release.xcconfig"; path = "Pods/Target Support Files/Pods-XTlib/Pods-XTlib.release.xcconfig"; sourceTree = "<group>"; };
 		393548A18FFA706486B3C132 /* Pods-XTlib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTlib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XTlib/Pods-XTlib.debug.xcconfig"; sourceTree = "<group>"; };
+		8F0AEE25206A285700DC5E7D /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
+		8F0AEE26206A285700DC5E7D /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
 		8F2BFDC4203ED6AB0013394D /* XTlib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTlib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2BFDC7203ED6AB0013394D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8F2BFDC8203ED6AB0013394D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -479,6 +482,15 @@
 				2B53FF12910A82E667B63134 /* Pods-XTlib.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8F0AEE24206A285700DC5E7D /* GradientButton */ = {
+			isa = PBXGroup;
+			children = (
+				8F0AEE25206A285700DC5E7D /* GradientButton.h */,
+				8F0AEE26206A285700DC5E7D /* GradientButton.m */,
+			);
+			path = GradientButton;
 			sourceTree = "<group>";
 		};
 		8F2BFDBB203ED6AB0013394D = {
@@ -1044,6 +1056,7 @@
 		8F2BFF02203ED7380013394D /* UIs */ = {
 			isa = PBXGroup;
 			children = (
+				8F0AEE24206A285700DC5E7D /* GradientButton */,
 				8FDE205420594EB7003B5398 /* XTSIAlert */,
 				8F2BFF03203ED7380013394D /* GradientBGView */,
 				8F2BFF06203ED7380013394D /* ParallaxHeaderView */,
@@ -1654,6 +1667,7 @@
 				8F2BFF75203ED7390013394D /* Zample8Controller.m in Sources */,
 				8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */,
 				8FDE205220594950003B5398 /* NibVC.m in Sources */,
+				8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */,
 				8F2BFF5E203ED7390013394D /* Z1CustomCell.m in Sources */,
 				8F2BFFA4203ED7390013394D /* CtrllerEvent.m in Sources */,
 				8F2BFF79203ED7390013394D /* Zample9Controller.m in Sources */,
