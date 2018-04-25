@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AEE26206A285700DC5E7D /* GradientButton.m */; };
+		8F2A141A20908DEC007F97B3 /* UILabel+Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A141920908DEC007F97B3 /* UILabel+Calculate.m */; };
 		8F2BFDC9203ED6AB0013394D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDC8203ED6AB0013394D /* AppDelegate.m */; };
 		8F2BFDCC203ED6AB0013394D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDCB203ED6AB0013394D /* ViewController.m */; };
 		8F2BFDCF203ED6AB0013394D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F2BFDCD203ED6AB0013394D /* Main.storyboard */; };
@@ -166,6 +167,8 @@
 		393548A18FFA706486B3C132 /* Pods-XTlib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTlib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XTlib/Pods-XTlib.debug.xcconfig"; sourceTree = "<group>"; };
 		8F0AEE25206A285700DC5E7D /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
 		8F0AEE26206A285700DC5E7D /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
+		8F2A141820908DEC007F97B3 /* UILabel+Calculate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Calculate.h"; sourceTree = "<group>"; };
+		8F2A141920908DEC007F97B3 /* UILabel+Calculate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Calculate.m"; sourceTree = "<group>"; };
 		8F2BFDC4203ED6AB0013394D /* XTlib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTlib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2BFDC7203ED6AB0013394D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8F2BFDC8203ED6AB0013394D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -937,6 +940,8 @@
 				8F2BFEAD203ED7380013394D /* UIView+XTAddition.m */,
 				8FDE20482059447D003B5398 /* UIViewController+XTAddition.h */,
 				8FDE20492059447D003B5398 /* UIViewController+XTAddition.m */,
+				8F2A141820908DEC007F97B3 /* UILabel+Calculate.h */,
+				8F2A141920908DEC007F97B3 /* UILabel+Calculate.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -1633,6 +1638,7 @@
 				8F2BFF78203ED7390013394D /* MySon.m in Sources */,
 				8F2BFFAA203ED7390013394D /* GradientBGView.m in Sources */,
 				8F2BFF5F203ED7390013394D /* Zample1Controller.m in Sources */,
+				8F2A141A20908DEC007F97B3 /* UILabel+Calculate.m in Sources */,
 				8F2BFFB3203ED7390013394D /* XTLoopScrollView.m in Sources */,
 				8F2BFFB7203ED7390013394D /* XTNetReloader.m in Sources */,
 				8F2BFF9D203ED7390013394D /* RootTableCell.m in Sources */,

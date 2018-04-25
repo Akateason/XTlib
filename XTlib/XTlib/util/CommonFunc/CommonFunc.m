@@ -11,7 +11,8 @@
 #import "DeviceSysHeader.h"
 #import "ShareDigit.h"
 //#import "ServerRequest.h"
-#import "SDImageCache.h"
+//#import "SDImageCache.h"
+#import <SDWebImage/SDImageCache.h>
 #import "XTFileManager.h"
 //#import "XTSIAlertView.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
