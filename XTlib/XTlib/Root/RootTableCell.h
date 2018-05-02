@@ -14,7 +14,16 @@
 @property (strong, nonatomic) NSIndexPath *indexPath ;
 @property (strong, nonatomic, readonly) id model ;
 
-// initial in pure code way
+// regist
++ (void)registerNibFromTable:(UITableView *)table ;
++ (void)registerClsFromTable:(UITableView *)table ;
+
+// fetch reuse in storyboard or nib
++ (instancetype)fetchFromTable:(UITableView *)table ;
++ (instancetype)fetchFromTable:(UITableView *)table
+                     indexPath:(NSIndexPath *)indexPath ;
+
+// fetch in pure code way
 + (instancetype)cellWithTable:(UITableView *)tableView ;
 
 #pragma mark - rewrite in sub cls
@@ -34,7 +43,8 @@
  *    }
  *
  */
-- (void)configure:(id)model indexPath:(NSIndexPath *)indexPath ;
+- (void)configure:(id)model
+        indexPath:(NSIndexPath *)indexPath ;
 - (void)configure:(id)model ;
 
 // height

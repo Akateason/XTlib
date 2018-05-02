@@ -16,6 +16,29 @@
 @implementation RootTableCell
 
 #pragma mark --
+#pragma mark - util
+
+// Register from table
++ (void)registerNibFromTable:(UITableView *)table {
+    NSString *clsName = NSStringFromClass([self class]) ;
+    [table registerNib:[UINib nibWithNibName:clsName bundle:nil] forCellReuseIdentifier:clsName] ;
+}
+
++ (void)registerClsFromTable:(UITableView *)table {
+    [table registerClass:[self class] forCellReuseIdentifier:NSStringFromClass([self class])] ;
+}
+
+// Fetch
++ (instancetype)fetchFromTable:(UITableView *)table {
+    return [table dequeueReusableCellWithIdentifier:NSStringFromClass([self class])] ;
+}
+
++ (instancetype)fetchFromTable:(UITableView *)table indexPath:(NSIndexPath *)indexPath {
+    return [table dequeueReusableCellWithIdentifier:NSStringFromClass([self class]) forIndexPath:indexPath] ;
+}
+
+
+#pragma mark --
 #pragma mark - initialization
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style
