@@ -34,7 +34,7 @@
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad] ;
     
     //这里就可以像平常一样访问视图属性并添加事件的绑定处理。
     [self.button addTarget:self action:@selector(handleClick:) forControlEvents:UIControlEventTouchUpInside] ;
