@@ -36,9 +36,7 @@
                          type:XTSIAlertViewButtonTypeCancel
                       handler:nil] ;
     [alert show] ;
-
 }
-
 
 - (void)viewDidLoad
 {

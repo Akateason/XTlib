@@ -53,6 +53,12 @@
 		<key>2. test</key>
 		<array>
 			<dict>
+				<key>title</key>
+				<string>protocol</string>
+				<key>cname</key>
+				<string>MPTestVC</string>
+			</dict>
+			<dict>
 				<key>cname</key>
 				<string>Zample7Controller</string>
 				<key>title</key>
