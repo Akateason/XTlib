@@ -14,6 +14,15 @@
 
 @implementation RootCtrl
 
+- (void)prepare {
+    // prepare when initial
+}
+
+- (void)prepareUI {
+    // prepare UI
+    self.view.backgroundColor = [UIColor whiteColor] ;
+}
+
 #pragma mark --
 #pragma mark - Life
 
@@ -58,23 +67,16 @@
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad] ;
-    [self myStatTitle] ;
+- (void)loadView {
+    [super loadView] ;
+    
     [self prepareUI] ;
 }
 
-- (void)prepare {
-    // prepare when initial
-}
-
-- (void)prepareUI {
-    // prepare UI
-    self.view.backgroundColor = [UIColor whiteColor] ;
-}
-
-- (void)loadView {
-    [super loadView] ;
+- (void)viewDidLoad {
+    [super viewDidLoad] ;
+    
+    [self myStatTitle] ;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
