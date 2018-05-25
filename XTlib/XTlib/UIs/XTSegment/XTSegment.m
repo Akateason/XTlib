@@ -14,11 +14,13 @@
 @property (nonatomic)           int             sumIndex ;
 @property (nonatomic)           CGFloat         btWidth ;
 @property (nonatomic,strong)    UIImageView     *imgSelectView ;
+@property (nonatomic)           CGFloat         wholeWid ;
 @end
 
 @implementation XTSegment
 
 #pragma mark - Initialization
+
 - (instancetype)initWithDataList:(NSArray *)datalist
                            imgBg:(UIImage *)imgBg
                           height:(CGFloat)height
@@ -26,21 +28,44 @@
                      selectColor:(UIColor *)selectColor
                             font:(UIFont *)font
 {
+    return [self initWithDataList:datalist imgBg:imgBg size:CGSizeMake(APP_WIDTH, height) normalColor:normalColor selectColor:selectColor font:font];
+}
+
+- (instancetype)initWithDataList:(NSArray *)datalist
+                           imgBg:(UIImage *)imgBg
+                            size:(CGSize)size
+                     normalColor:(UIColor *)normalColor
+                     selectColor:(UIColor *)selectColor
+                            font:(UIFont *)font
+{
     self = [super init] ;
     if (self)
     {
-        self.dataList = datalist ;
-        self.heightForSeg = height ;
-        self.imgBG_sel = imgBg ;
-        self.normalColor = normalColor ;
-        self.selectColor = selectColor ;
-        self.currentIndex = 0 ;
-        self.font = font ;
-        
-        [self setup] ;
+        [self setupWithDataList:datalist imgBg:imgBg size:size normalColor:normalColor selectColor:selectColor font:font] ;
     }
     return self;
 }
+
+- (void)setupWithDataList:(NSArray *)datalist
+                    imgBg:(UIImage *)imgBg
+                     size:(CGSize)size
+              normalColor:(UIColor *)normalColor
+              selectColor:(UIColor *)selectColor
+                     font:(UIFont *)font
+{
+    self.heightForSeg = size.height ;
+    self.wholeWid = size.width ;
+    
+    self.dataList = datalist ;
+    self.imgBG_sel = imgBg ;
+    self.normalColor = normalColor ;
+    self.selectColor = selectColor ;
+    self.currentIndex = 0 ;
+    self.font = font ;
+    
+    [self setup] ;
+}
+
 
 #pragma mark - Properties
 - (void)setDataList:(NSArray *)dataList
@@ -54,7 +79,7 @@
 {
     _sumIndex = sumIndex ;
     
-    self.btWidth = APPFRAME.size.width / sumIndex ;
+    self.btWidth = self.wholeWid / sumIndex ;
 }
 
 - (void)setImgBG_sel:(UIImage *)imgBG_sel
@@ -80,6 +105,12 @@
     return _imgSelectView ;
 }
 
+- (CGFloat)wholeWid {
+    if (!_wholeWid) {
+        _wholeWid = APP_WIDTH ;
+    }
+    return _wholeWid ;
+}
 
 #pragma mark - Setup
 - (void)setup
@@ -146,7 +177,9 @@
     self.currentIndex = index ;
     
     if (callback) {
-        [self.delegate clickSegmentWith:index] ;
+        if ([self.delegate respondsToSelector:@selector(clickSegmentWith:)]) {
+            [self.delegate clickSegmentWith:index] ;
+        }
     }
     
     [self changeButtonSelectInfo] ;
@@ -167,5 +200,7 @@
     // Drawing code
 }
 */
+
+
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol XTSegmentDelegate <NSObject>
+@optional
 - (void)clickSegmentWith:(int)index ;
 @end
 
@@ -29,6 +30,20 @@
                      normalColor:(UIColor *)normalColor
                      selectColor:(UIColor *)selectColor
                             font:(UIFont *)font ;
+
+- (instancetype)initWithDataList:(NSArray *)datalist
+                           imgBg:(UIImage *)imgBg
+                            size:(CGSize)size
+                     normalColor:(UIColor *)normalColor
+                     selectColor:(UIColor *)selectColor
+                            font:(UIFont *)font ;
+
+- (void)setupWithDataList:(NSArray *)datalist
+                    imgBg:(UIImage *)imgBg
+                     size:(CGSize)size
+              normalColor:(UIColor *)normalColor
+              selectColor:(UIColor *)selectColor
+                     font:(UIFont *)font ;
 
 - (void)moveToIndex:(int)index
            callBack:(BOOL)callback ;
