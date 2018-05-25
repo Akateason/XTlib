@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTlib"
-  s.version      = "1.0.5"
+  s.version      = "1.0.6"
   s.summary      = "XTlib,teason's lib"
 
   # This description is used to generate tags and improve search results.
@@ -140,7 +140,7 @@ Pod::Spec.new do |s|
   s.dependency "SDWebImage"
   s.dependency "SSZipArchive"
   s.dependency "MJRefresh"
-  s.dependency "Valet","2.4.2"
+  s.dependency "Valet"
   
   # ---------- subpec setting ----------- #
   #
