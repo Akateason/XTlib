@@ -67,13 +67,7 @@
     [param setObject:@(count)
               forKey:@"count"] ;
 
-    [XTCacheRequest cacheGET:@"https://api.douban.com/v2/movie/top250"
-                      header:nil
-                  parameters:param
-                         hud:YES
-                      policy:XTResponseCachePolicyAlwaysCache
-               timeoutIfNeed:0
-                  judgeResult:completion] ;
+    [XTCacheRequest cacheGET:@"https://api.douban.com/v2/movie/top250" header:nil parameters:param judgeResult:completion] ;    
 }
 
 

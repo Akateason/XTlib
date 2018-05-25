@@ -140,7 +140,7 @@ Pod::Spec.new do |s|
   s.dependency "SDWebImage"
   s.dependency "SSZipArchive"
   s.dependency "MJRefresh"
-  s.dependency "Valet"
+  s.dependency "Valet","2.4.2"
   
   # ---------- subpec setting ----------- #
   #

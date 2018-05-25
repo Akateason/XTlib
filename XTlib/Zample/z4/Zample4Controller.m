@@ -8,7 +8,7 @@
 
 #import "Zample4Controller.h"
 #import "XTColorFetcher.h"
-#import "UIColor+AllColors.h"
+#import <XTColor/UIColor+XTColors.h>
 #import "RootTableView.h"
 #import "XTColorCell.h"
 
@@ -26,13 +26,13 @@
     self.title = @"XTColorFetcher" ;
     
     self.list_datasource = @[
-                             [UIColor mainBlue] ,
-                             [UIColor text1] ,
-                             [UIColor lightYellow] ,
-                             [UIColor borderGray] ,
-                             [UIColor grayBg] ,
-                             [UIColor purple] ,
-                             [UIColor weixinGreen]
+                             [UIColor xt_red] ,
+                             [UIColor xt_sugarRed] ,
+                             [UIColor xt_facePink] ,
+                             [UIColor xt_champagne] ,
+                             [UIColor xt_bg_lightGray] ,
+                             [UIColor xt_bg_beachStorm] ,
+                             [UIColor xt_yellow]
                              ] ;
     
     self.table = ({
