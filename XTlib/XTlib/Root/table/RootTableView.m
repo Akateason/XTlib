@@ -121,6 +121,14 @@
     }
 }
 
+- (void)setHideAllRefreshers:(BOOL)hideAllRefreshers {
+    _hideAllRefreshers = hideAllRefreshers ;
+    if (hideAllRefreshers) {
+        self.mj_header = nil ;
+        self.mj_footer = nil ;
+    }
+}
+
 
 #pragma mark --
 #pragma mark - loading methods

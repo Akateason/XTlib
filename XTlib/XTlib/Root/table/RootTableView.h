@@ -1,6 +1,6 @@
 //
 //  RootTableView.h
-//  带上下拉刷新的tableView基类. 继承后带默认集成. 只需关注处理数据 .
+//  table in mjrefresh
 //
 //  Created by teason on 15/12/3.
 //  Copyright © 2015年 teason. All rights reserved.
@@ -32,6 +32,9 @@
  DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
  */
 @property (nonatomic) BOOL isAutomaticallyLoadMore ;
+// only table close mj header and footer
+@property (nonatomic) BOOL hideAllRefreshers ;
+
 /**
  PULL DOWN HEADER
  */
