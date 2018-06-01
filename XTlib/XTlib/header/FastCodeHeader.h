@@ -72,15 +72,16 @@ return __singleton__;                                                   \
 - (id)copyWithZone:(NSZone *)zone {                                         \
 return  __singleton__;                                                  \
 }                                                                           \
-+ (id)copyWithZone:(struct _NSZone *)zone {                                 \
-return  __singleton__;                                                  \
-}                                                                           \
-+ (id)mutableCopyWithZone:(struct _NSZone *)zone {                          \
-return __singleton__;                                                   \
-}                                                                           \
 - (id)mutableCopyWithZone:(NSZone *)zone {                                  \
 return __singleton__;                                                   \
 }                                                                           \
+
+//+ (id)copyWithZone:(struct _NSZone *)zone {                                 \
+//return  __singleton__;                                                  \
+//}                                                                           \
+//+ (id)mutableCopyWithZone:(struct _NSZone *)zone {                          \
+//return __singleton__;                                                   \
+//}                                                                           \
 //-----------------------------------------------------------------------------//
 
 

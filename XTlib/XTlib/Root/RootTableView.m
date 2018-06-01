@@ -103,9 +103,11 @@
 - (void)setIsShowRefreshDetail:(BOOL)isShowRefreshDetail {
     _isShowRefreshDetail = isShowRefreshDetail ;
     
-    ((RootRefreshHeader *)self.mj_header).lastUpdatedTimeLabel.hidden = !self.isShowRefreshDetail;
-    ((RootRefreshHeader *)self.mj_header).stateLabel.hidden = !self.isShowRefreshDetail ;
-    ((RootRefreshFooter *)self.mj_footer).stateLabel.hidden = !self.isShowRefreshDetail ;
+    if ([self.mj_header isKindOfClass:[RootRefreshHeader class]]) {
+        ((RootRefreshHeader *)self.mj_header).lastUpdatedTimeLabel.hidden = !self.isShowRefreshDetail;
+        ((RootRefreshHeader *)self.mj_header).stateLabel.hidden = !self.isShowRefreshDetail ;
+        ((RootRefreshFooter *)self.mj_footer).stateLabel.hidden = !self.isShowRefreshDetail ;
+    }
 }
 
 - (void)setIsAutomaticallyLoadMore:(BOOL)isAutomaticallyLoadMore {
