@@ -68,6 +68,8 @@
         }] ;
         tmplist ;
     }) ;
+    
+    UIRefreshControl *refreshC
 }
 
 

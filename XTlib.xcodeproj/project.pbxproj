@@ -502,6 +502,21 @@
 			path = GradientButton;
 			sourceTree = "<group>";
 		};
+		8F1511EA20C1AC4F00FF125C /* table */ = {
+			isa = PBXGroup;
+			children = (
+				8F2BFEDE203ED7380013394D /* RootRefreshFooter.h */,
+				8F2BFEDF203ED7380013394D /* RootRefreshFooter.m */,
+				8F2BFEE0203ED7380013394D /* RootRefreshHeader.h */,
+				8F2BFEE1203ED7380013394D /* RootRefreshHeader.m */,
+				8F2BFEE2203ED7380013394D /* RootTableCell.h */,
+				8F2BFEE3203ED7380013394D /* RootTableCell.m */,
+				8F2BFEE4203ED7380013394D /* RootTableView.h */,
+				8F2BFEE5203ED7380013394D /* RootTableView.m */,
+			);
+			path = table;
+			sourceTree = "<group>";
+		};
 		8F220D7620AAD2EF00CC6271 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,14 +1017,7 @@
 				8F2BFEDB203ED7380013394D /* RootCollectionView.m */,
 				8F2BFEDC203ED7380013394D /* RootCtrl.h */,
 				8F2BFEDD203ED7380013394D /* RootCtrl.m */,
-				8F2BFEDE203ED7380013394D /* RootRefreshFooter.h */,
-				8F2BFEDF203ED7380013394D /* RootRefreshFooter.m */,
-				8F2BFEE0203ED7380013394D /* RootRefreshHeader.h */,
-				8F2BFEE1203ED7380013394D /* RootRefreshHeader.m */,
-				8F2BFEE2203ED7380013394D /* RootTableCell.h */,
-				8F2BFEE3203ED7380013394D /* RootTableCell.m */,
-				8F2BFEE4203ED7380013394D /* RootTableView.h */,
-				8F2BFEE5203ED7380013394D /* RootTableView.m */,
+				8F1511EA20C1AC4F00FF125C /* table */,
 			);
 			path = Root;
 			sourceTree = "<group>";
