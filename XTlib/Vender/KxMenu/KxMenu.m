@@ -38,7 +38,7 @@
 
 #import "KxMenu.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIColor+HexString.h"
+#import <XTColor/XTColor.h>
 
 const CGFloat kArrowSize = 12.f;
 

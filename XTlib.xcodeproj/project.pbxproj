@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AEE26206A285700DC5E7D /* GradientButton.m */; };
+		8F1511FF20C2503500FF125C /* MPTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1511FD20C2503400FF125C /* MPTestView.m */; };
 		8F220D7920AAD31500CC6271 /* MPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F220D7820AAD31500CC6271 /* MPTestVC.m */; };
-		8F220D7C20AAD49100CC6271 /* MPTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F220D7B20AAD49100CC6271 /* MPTestView.m */; };
 		8F2A141A20908DEC007F97B3 /* UILabel+Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A141920908DEC007F97B3 /* UILabel+Calculate.m */; };
 		8F2BFDC9203ED6AB0013394D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDC8203ED6AB0013394D /* AppDelegate.m */; };
 		8F2BFDCC203ED6AB0013394D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDCB203ED6AB0013394D /* ViewController.m */; };
@@ -169,10 +169,10 @@
 		393548A18FFA706486B3C132 /* Pods-XTlib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTlib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XTlib/Pods-XTlib.debug.xcconfig"; sourceTree = "<group>"; };
 		8F0AEE25206A285700DC5E7D /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
 		8F0AEE26206A285700DC5E7D /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
+		8F1511FD20C2503400FF125C /* MPTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTestView.m; sourceTree = "<group>"; };
+		8F1511FE20C2503400FF125C /* MPTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTestView.h; sourceTree = "<group>"; };
 		8F220D7720AAD31500CC6271 /* MPTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPTestVC.h; sourceTree = "<group>"; };
 		8F220D7820AAD31500CC6271 /* MPTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPTestVC.m; sourceTree = "<group>"; };
-		8F220D7A20AAD49000CC6271 /* MPTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MPTestView.h; path = /Users/teason23/Desktop/xtc/XTlib/XTlib/Zample/Protocol/MPTestView.h; sourceTree = "<absolute>"; };
-		8F220D7B20AAD49100CC6271 /* MPTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MPTestView.m; path = /Users/teason23/Desktop/xtc/XTlib/XTlib/Zample/Protocol/MPTestView.m; sourceTree = "<absolute>"; };
 		8F2A141820908DEC007F97B3 /* UILabel+Calculate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Calculate.h"; sourceTree = "<group>"; };
 		8F2A141920908DEC007F97B3 /* UILabel+Calculate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Calculate.m"; sourceTree = "<group>"; };
 		8F2BFDC4203ED6AB0013394D /* XTlib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTlib.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -520,8 +520,8 @@
 		8F220D7620AAD2EF00CC6271 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				8F220D7A20AAD49000CC6271 /* MPTestView.h */,
-				8F220D7B20AAD49100CC6271 /* MPTestView.m */,
+				8F1511FE20C2503400FF125C /* MPTestView.h */,
+				8F1511FD20C2503400FF125C /* MPTestView.m */,
 				8F220D7720AAD31500CC6271 /* MPTestVC.h */,
 				8F220D7820AAD31500CC6271 /* MPTestVC.m */,
 			);
@@ -1670,7 +1670,6 @@
 				8F2BFF9D203ED7390013394D /* RootTableCell.m in Sources */,
 				8F2BFFA6203ED7390013394D /* ListEvent.m in Sources */,
 				8F2BFFB6203ED7390013394D /* XTMultipleTables.m in Sources */,
-				8F220D7C20AAD49100CC6271 /* MPTestView.m in Sources */,
 				8F2BFF5A203ED7390013394D /* FontAdaptVC.m in Sources */,
 				8F2BFE38203ED7270013394D /* UIBarButtonItem+Badge.m in Sources */,
 				8F2BFDD7203ED6AB0013394D /* main.m in Sources */,
@@ -1719,6 +1718,7 @@
 				8F2BFF69203ED7390013394D /* Zample4Controller.m in Sources */,
 				8F220D7920AAD31500CC6271 /* MPTestVC.m in Sources */,
 				8F2BFFB0203ED7390013394D /* XTBarrageView.m in Sources */,
+				8F1511FF20C2503500FF125C /* MPTestView.m in Sources */,
 				8F2BFFB5203ED7390013394D /* XTTableViewRootHandler.m in Sources */,
 				8F2BFE3D203ED7270013394D /* KxMenu.m in Sources */,
 				8F2BFFC3203ED7390013394D /* ValetManager.m in Sources */,

@@ -12,7 +12,7 @@
 
 @interface NSObject (Runtime)
 
-- (BOOL)addMethodWithClass:(Class)class
+- (BOOL)addMethodWithClass:(Class)cls
                   selector:(SEL)selector
                        imp:(IMP)imp
                      types:(const char *)types ;
@@ -22,16 +22,16 @@
 
 - (void)exchangeSEL1:(SEL)sel1
                 SEL2:(SEL)sel2
-           withClass:(Class)class ;
+           withClass:(Class)cls ;
 
 - (IMP)getIMPWithMethod:(Method)method ;
 
-- (Method)getInstanceMethodWithClass:(Class)class
+- (Method)getInstanceMethodWithClass:(Class)cls
                             selector:(SEL)selector ;
 
 - (BOOL)isContainSEL:(SEL)sel
-             inClass:(Class)class ;
+             inClass:(Class)cls ;
 
-- (void)logMethodList:(Class)class ;
+- (void)logMethodList:(Class)cls ;
 
 @end

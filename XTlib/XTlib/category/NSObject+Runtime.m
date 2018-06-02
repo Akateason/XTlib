@@ -10,12 +10,12 @@
 
 @implementation NSObject (Runtime)
 
-- (BOOL)addMethodWithClass:(Class)class
+- (BOOL)addMethodWithClass:(Class)cls
                   selector:(SEL)selector
                        imp:(IMP)imp
                      types:(const char *)types
 {
-    return class_addMethod(class,
+    return class_addMethod(cls,
                            selector,
                            imp,
                            types) ;
@@ -31,10 +31,10 @@
 
 - (void)exchangeSEL1:(SEL)sel1
                 SEL2:(SEL)sel2
-           withClass:(Class)class
+           withClass:(Class)cls
 {
-    Method firstMethod  = class_getInstanceMethod(class, sel1) ;
-    Method secondMethod = class_getInstanceMethod(class, sel2) ;
+    Method firstMethod  = class_getInstanceMethod(cls, sel1) ;
+    Method secondMethod = class_getInstanceMethod(cls, sel2) ;
     method_exchangeImplementations(firstMethod, secondMethod) ;
 }
 
@@ -43,17 +43,17 @@
     return method_getImplementation(method) ;
 }
 
-- (Method)getInstanceMethodWithClass:(Class)class
+- (Method)getInstanceMethodWithClass:(Class)cls
                             selector:(SEL)selector
 {
-    return class_getInstanceMethod(class, selector) ;
+    return class_getInstanceMethod(cls, selector) ;
 }
 
 - (BOOL)isContainSEL:(SEL)sel
-             inClass:(Class)class
+             inClass:(Class)cls
 {
     unsigned int count;
-    Method *methodList = class_copyMethodList(class,&count) ;
+    Method *methodList = class_copyMethodList(cls,&count) ;
     for (int i = 0; i < count; i++)
     {
         Method method = methodList[i];
@@ -65,10 +65,10 @@
     return NO ;
 }
 
-- (void)logMethodList:(Class)class
+- (void)logMethodList:(Class)cls
 {
     unsigned int count ;
-    Method *methodList = class_copyMethodList(class,&count) ;
+    Method *methodList = class_copyMethodList(cls,&count) ;
     for (int i = 0; i < count; i++) {
         Method method = methodList[i];
         NSLog(@"logMethodList : %s",sel_getName(method_getName(method))) ;
