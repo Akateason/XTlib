@@ -139,6 +139,8 @@
 		8F2BFFC5203ED7390013394D /* XTFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF52203ED7380013394D /* XTFileManager.m */; };
 		8F2BFFC6203ED7390013394D /* XTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF55203ED7380013394D /* XTJson.m */; };
 		8F2BFFC7203ED7390013394D /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF58203ED7380013394D /* XTVerification.m */; };
+		8FA9D3B420C7B6D5005AFEDF /* RootCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9D3B320C7B6D5005AFEDF /* RootCollectionCell.m */; };
+		8FA9D3B620C7BCAC005AFEDF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9D3B520C7BCAC005AFEDF /* Podfile */; };
 		8FDE204A2059447D003B5398 /* UIViewController+XTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE20492059447D003B5398 /* UIViewController+XTAddition.m */; };
 		8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE204D205948D2003B5398 /* CtrlHelpVC.m */; };
 		8FDE205220594950003B5398 /* NibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205020594950003B5398 /* NibVC.m */; };
@@ -438,6 +440,9 @@
 		8F2BFF57203ED7380013394D /* XTVerification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTVerification.h; sourceTree = "<group>"; };
 		8F2BFF58203ED7380013394D /* XTVerification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTVerification.m; sourceTree = "<group>"; };
 		8F2BFF59203ED7380013394D /* XTlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTlib.h; sourceTree = "<group>"; };
+		8FA9D3B220C7B6D4005AFEDF /* RootCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootCollectionCell.h; sourceTree = "<group>"; };
+		8FA9D3B320C7B6D5005AFEDF /* RootCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootCollectionCell.m; sourceTree = "<group>"; };
+		8FA9D3B520C7BCAC005AFEDF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8FDE20482059447D003B5398 /* UIViewController+XTAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XTAddition.h"; sourceTree = "<group>"; };
 		8FDE20492059447D003B5398 /* UIViewController+XTAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XTAddition.m"; sourceTree = "<group>"; };
 		8FDE204C205948D2003B5398 /* CtrlHelpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CtrlHelpVC.h; sourceTree = "<group>"; };
@@ -531,6 +536,7 @@
 		8F2BFDBB203ED6AB0013394D = {
 			isa = PBXGroup;
 			children = (
+				8FA9D3B520C7BCAC005AFEDF /* Podfile */,
 				8F2BFDC6203ED6AB0013394D /* XTlib */,
 				8F2BFDDF203ED6AB0013394D /* XTlibTests */,
 				8F2BFDEA203ED6AB0013394D /* XTlibUITests */,
@@ -1013,10 +1019,9 @@
 				8F2BFED7203ED7380013394D /* MyTextView.m */,
 				8F2BFED8203ED7380013394D /* MyWebController.h */,
 				8F2BFED9203ED7380013394D /* MyWebController.m */,
-				8F2BFEDA203ED7380013394D /* RootCollectionView.h */,
-				8F2BFEDB203ED7380013394D /* RootCollectionView.m */,
 				8F2BFEDC203ED7380013394D /* RootCtrl.h */,
 				8F2BFEDD203ED7380013394D /* RootCtrl.m */,
+				8FA9D3B120C7B6A7005AFEDF /* collection */,
 				8F1511EA20C1AC4F00FF125C /* table */,
 			);
 			path = Root;
@@ -1360,6 +1365,17 @@
 			path = XTVerification;
 			sourceTree = "<group>";
 		};
+		8FA9D3B120C7B6A7005AFEDF /* collection */ = {
+			isa = PBXGroup;
+			children = (
+				8F2BFEDA203ED7380013394D /* RootCollectionView.h */,
+				8F2BFEDB203ED7380013394D /* RootCollectionView.m */,
+				8FA9D3B220C7B6D4005AFEDF /* RootCollectionCell.h */,
+				8FA9D3B320C7B6D5005AFEDF /* RootCollectionCell.m */,
+			);
+			path = collection;
+			sourceTree = "<group>";
+		};
 		8FDE204B205948B0003B5398 /* controllerHelp */ = {
 			isa = PBXGroup;
 			children = (
@@ -1490,6 +1506,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FA9D3B620C7BCAC005AFEDF /* Podfile in Resources */,
 				8F2BFDD4203ED6AB0013394D /* LaunchScreen.storyboard in Resources */,
 				8F2BFE43203ED72E0013394D /* viewControllers.plist in Resources */,
 				8F2BFF73203ED7390013394D /* Z8CollectionViewCell.xib in Resources */,
@@ -1533,6 +1550,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/RxWebViewController/RxWebViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -1552,6 +1570,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxWebViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -1698,6 +1717,7 @@
 				8F2BFF9B203ED7390013394D /* RootRefreshFooter.m in Sources */,
 				8F2BFF75203ED7390013394D /* Zample8Controller.m in Sources */,
 				8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */,
+				8FA9D3B420C7B6D5005AFEDF /* RootCollectionCell.m in Sources */,
 				8FDE205220594950003B5398 /* NibVC.m in Sources */,
 				8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */,
 				8F2BFF5E203ED7390013394D /* Z1CustomCell.m in Sources */,

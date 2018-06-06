@@ -141,7 +141,8 @@ Pod::Spec.new do |s|
   s.dependency "SSZipArchive"
   s.dependency "MJRefresh"
   s.dependency "Valet", "2.4.2"
-  
+  s.dependency "RxWebViewController"
+
   # ---------- subpec setting ----------- #
   #
   #  

@@ -41,6 +41,8 @@ fprintf(stderr, "🏀🏀🏀🏀🏀\n");                                      
 #import "RootTableCell.h"
 #import "RootRefreshHeader.h"
 #import "RootRefreshFooter.h"
+#import "RootCollectionCell.h"
+#import "RootCollectionView.h"
 //#import "MyNavCtrller.h"
 //#import "MySearchBar.h"
 //#import "MyTabbar.h"
@@ -68,6 +70,7 @@ fprintf(stderr, "🏀🏀🏀🏀🏀\n");                                      
 #import "UIViewController+XTAddition.h"
 #import "UIResponder+ChainHandler.h"
 #import "NSTimer+Addition.h"
+#import "UILabel+Calculate.h"
 
 // DataBase
 #import "XTFMDB.h"

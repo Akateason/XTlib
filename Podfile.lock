@@ -23,6 +23,7 @@ PODS:
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
   - ReactiveObjC (3.1.0)
+  - RxWebViewController (0.0.2)
   - SDWebImage (4.4.0):
     - SDWebImage/Core (= 4.4.0)
   - SDWebImage/Core (4.4.0)
@@ -50,11 +51,12 @@ DEPENDENCIES:
   - Masonry
   - MJRefresh
   - ReactiveObjC
+  - RxWebViewController
   - SDWebImage
   - SSZipArchive
   - SVProgressHUD
   - UITableView+FDTemplateLayoutCell
-  - Valet
+  - Valet (= 2.4.2)
   - XTColor
   - XTFMDB
   - XTReq
@@ -69,6 +71,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  RxWebViewController: 79bcbf51aff13d93db9779404348b052ab0cd440
   SDWebImage: b534502786e43dde36dfcaee89356fe6df30e203
   SSZipArchive: 51a800ebb77f95a8329b6ced1faaff394b47f509
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
@@ -79,6 +82,6 @@ SPEC CHECKSUMS:
   XTReq: e407025d6ebaf2747f5f5f2d2e381ca715988036
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 4f82e33391c576c728cbfbe7c168eff19ba1abdd
+PODFILE CHECKSUM: 8a768d7a85931cd1a97bbf977a71a28c13032920
 
 COCOAPODS: 1.4.0
