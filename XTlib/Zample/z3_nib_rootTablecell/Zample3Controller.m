@@ -112,7 +112,7 @@ static const NSInteger kEveryCount = 10 ;
 {
     Movie *movie = self.list_datasource[indexPath.row] ;
     MyWebController *ctrller = [[MyWebController alloc] init] ;
-    ctrller.urlStr = movie.alt ;
+    ctrller.url = [NSURL URLWithString:movie.alt] ;
     ctrller.title = movie.title ;
     [self.navigationController pushViewController:ctrller animated:YES] ;
 }
