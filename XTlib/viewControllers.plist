@@ -90,6 +90,14 @@
 				<key>cname</key>
 				<string>CtrlHelpVC</string>
 			</dict>
+			<dict>
+				<key>cname</key>
+				<string>DesignableInspectableVC</string>
+				<key>title</key>
+				<string>storyDesignable</string>
+				<key>isStory</key>
+				<true/>
+			</dict>
 		</array>
 	</dict>
 </array>
