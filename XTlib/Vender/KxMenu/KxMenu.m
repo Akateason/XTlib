@@ -377,8 +377,8 @@ typedef enum {
 - (void)performAction:(id)sender
 {
     [self dismissMenu:YES];
-    
-    UIButton *button = (UIButton *)sender;
+
+    UIButton *button     = (UIButton *)sender;
     KxMenuItem *menuItem = _menuItems[button.tag];
     [menuItem performAction];
 }

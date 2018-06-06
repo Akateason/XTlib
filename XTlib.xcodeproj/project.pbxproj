@@ -619,11 +619,9 @@
 			children = (
 				8F2BFE04203ED7260013394D /* AttibutedLabel */,
 				8F2BFE11203ED7260013394D /* BarButton+badge */,
-				8F2BFE14203ED7260013394D /* Base64+MD5 */,
 				8F2BFE17203ED7260013394D /* CHTCollectionViewWaterfallLayout */,
 				8F2BFE1A203ED7260013394D /* Cover */,
 				8F2BFE1D203ED7260013394D /* CropImageView */,
-				8F2BFE20203ED7260013394D /* HWWeakerTimer */,
 				8F2BFE21203ED7260013394D /* KeyBoardTopBar */,
 				8F2BFE24203ED7260013394D /* KxMenu */,
 				8F2BFE27203ED7260013394D /* MKBlockTimer */,
@@ -675,29 +673,6 @@
 			path = "BarButton+badge";
 			sourceTree = "<group>";
 		};
-		8F2BFE14203ED7260013394D /* Base64+MD5 */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFE15203ED7260013394D /* Base64 */,
-				8F2BFE16203ED7260013394D /* MD5 */,
-			);
-			path = "Base64+MD5";
-			sourceTree = "<group>";
-		};
-		8F2BFE15203ED7260013394D /* Base64 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base64;
-			sourceTree = "<group>";
-		};
-		8F2BFE16203ED7260013394D /* MD5 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MD5;
-			sourceTree = "<group>";
-		};
 		8F2BFE17203ED7260013394D /* CHTCollectionViewWaterfallLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -723,13 +698,6 @@
 				8F2BFE1F203ED7260013394D /* KICropImageView.m */,
 			);
 			path = CropImageView;
-			sourceTree = "<group>";
-		};
-		8F2BFE20203ED7260013394D /* HWWeakerTimer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HWWeakerTimer;
 			sourceTree = "<group>";
 		};
 		8F2BFE21203ED7260013394D /* KeyBoardTopBar */ = {
