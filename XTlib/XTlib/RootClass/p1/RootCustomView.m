@@ -90,20 +90,56 @@ ASSOCIATED_CGRECT(xt_previousRect, setXt_previousRect)
 
 
 @implementation RootCustomView
+- (instancetype)initWithFrame:(CGRect)frame {
+    return [super initWithFrame:frame];
+}
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    return [super initWithCoder:aDecoder] ;
+}
 @end
 
 @implementation RootCustomImageView
+- (instancetype)initWithFrame:(CGRect)frame {
+    return [super initWithFrame:frame];
+}
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    return [super initWithCoder:aDecoder] ;
+}
 @end
 
 @implementation RootCustomButton
+- (instancetype)initWithFrame:(CGRect)frame {
+    return [super initWithFrame:frame];
+}
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    return [super initWithCoder:aDecoder] ;
+}
 @end
 
 @implementation RootCustomLabel
+- (instancetype)initWithFrame:(CGRect)frame {
+    return [super initWithFrame:frame];
+}
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    return [super initWithCoder:aDecoder] ;
+}
 @end
 
 @implementation RootCustomTextField
+- (instancetype)initWithFrame:(CGRect)frame {
+    return [super initWithFrame:frame];
+}
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    return [super initWithCoder:aDecoder] ;
+}
 @end
 
 @implementation RootCustomTextView
+- (instancetype)initWithFrame:(CGRect)frame {
+    return [super initWithFrame:frame];
+}
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    return [super initWithCoder:aDecoder] ;
+}
 @end
 

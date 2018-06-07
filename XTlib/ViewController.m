@@ -15,7 +15,7 @@
 #import "XTSIAlertView.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *table ;
+@property (weak, nonatomic) IBOutlet RootTableView *table ;
 @property (strong,nonatomic) NSArray *dataSource ;
 @property (strong,nonatomic) NSArray *sectionKeys ;
 @end
