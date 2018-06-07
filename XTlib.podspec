@@ -1,4 +1,4 @@
-#  Be sure to run `pod spec lint XTlib.podspec' to ensure this is a
+# Be sure to run `pod spec lint XTlib.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTlib"
-  s.version      = "1.0.10"
-  s.summary      = "XTlib,teason's lib"
+  s.version      = "1.1.0"
+  s.summary      = "a rapid develop lib for iOS"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
