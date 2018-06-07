@@ -20,12 +20,6 @@
 
 + (UIImage *)getSuBaoJiangWaterMask:(UIImage *)orgImage ;
 
-#pragma mark - sandbox
-
-+ (NSString *)getDocumentsPath ;
-
-+ (NSString *)getLibraryPath ;
-
 #pragma mark - current appname / version
 
 + (NSString *)getAppName ;

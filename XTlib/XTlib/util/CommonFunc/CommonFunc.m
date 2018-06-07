@@ -64,17 +64,6 @@ NSString *const APPSTORE_APPID          = @"123123123" ;
     return orgImage ;
 }
 
-
-#pragma mark -- sandbox
-
-+ (NSString *)getDocumentsPath {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] ;
-}
-
-+ (NSString *)getLibraryPath {
-    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] ;
-}
-
 #pragma mark -- version
 
 + (NSString *)getVersionStrOfMyAPP {
