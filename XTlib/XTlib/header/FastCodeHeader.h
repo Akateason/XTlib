@@ -10,6 +10,102 @@
 #define FastCodeHeader_h
 
 
+#import <objc/runtime.h>
+
+
+
+//-----------------------------------------------------------------------------//
+//
+// ASSOCIATED in category
+//
+// add id prop
+#define ASSOCIATED(propertyName, setter, type, objc_AssociationPolicy)\
+- (type)propertyName {\
+return objc_getAssociatedObject(self, _cmd);\
+}\
+\
+- (void)setter:(type)object\
+{\
+objc_setAssociatedObject(self, @selector(propertyName), object, objc_AssociationPolicy);\
+}
+
+// add BOOL prop
+#define ASSOCIATED_BOOL(propertyName, setter)\
+- (BOOL)propertyName {\
+NSNumber *value = objc_getAssociatedObject(self, _cmd); return value.boolValue;\
+}\
+\
+- (void)setter:(BOOL)object\
+{\
+objc_setAssociatedObject(self, @selector(propertyName), @(object), OBJC_ASSOCIATION_RETAIN_NONATOMIC);\
+}
+
+// add NSInteger prop
+#define ASSOCIATED_NSInteger(propertyName, setter)\
+- (NSInteger)propertyName {\
+NSNumber *value = objc_getAssociatedObject(self, _cmd); return value.integerValue;\
+}\
+\
+- (void)setter:(NSInteger)object\
+{\
+objc_setAssociatedObject(self, @selector(propertyName), @(object), OBJC_ASSOCIATION_RETAIN_NONATOMIC);\
+}
+
+// add float prop
+#define ASSOCIATED_float(propertyName, setter)\
+- (float)propertyName {\
+NSNumber *value = objc_getAssociatedObject(self, _cmd); return value.floatValue;\
+}\
+\
+- (void)setter:(float)object\
+{\
+objc_setAssociatedObject(self, @selector(propertyName), @(object), OBJC_ASSOCIATION_RETAIN_NONATOMIC);\
+}
+
+// add double prop
+#define ASSOCIATED_double(propertyName, setter)\
+- (double)propertyName {\
+NSNumber *value = objc_getAssociatedObject(self, _cmd); return value.doubleValue;\
+}\
+\
+- (void)setter:(double)object\
+{\
+objc_setAssociatedObject(self, @selector(propertyName), @(object), OBJC_ASSOCIATION_RETAIN_NONATOMIC);\
+}
+
+// add long long prop
+#define ASSOCIATED_longlong(propertyName, setter)\
+- (long long)propertyName {\
+NSNumber *value = objc_getAssociatedObject(self, _cmd); return value.longLongValue;\
+}\
+\
+- (void)setter:(long long)object\
+{\
+objc_setAssociatedObject(self, @selector(propertyName), @(object), OBJC_ASSOCIATION_RETAIN_NONATOMIC);\
+}
+
+// add CGPoint prop
+#define ASSOCIATED_CGPOINT(propertyName, setter)\
+- (CGPoint)propertyName {\
+NSValue *value = objc_getAssociatedObject(self, _cmd); return value.CGPointValue;\
+}\
+\
+- (void)setter:(CGPoint)object\
+{\
+objc_setAssociatedObject(self, @selector(propertyName), [NSValue valueWithCGPoint:object], OBJC_ASSOCIATION_RETAIN_NONATOMIC);\
+}
+
+// add CGRect prop
+#define ASSOCIATED_CGRECT(propertyName, setter)\
+- (CGRect)propertyName {\
+NSValue *value = objc_getAssociatedObject(self, _cmd); return value.CGRectValue;\
+}\
+\
+- (void)setter:(CGRect)object\
+{\
+objc_setAssociatedObject(self, @selector(propertyName), [NSValue valueWithCGRect:object], OBJC_ASSOCIATION_RETAIN_NONATOMIC);\
+}
+
 //-----------------------------------------------------------------------------//
 //
 // User Default

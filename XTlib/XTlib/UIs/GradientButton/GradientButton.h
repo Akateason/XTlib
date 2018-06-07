@@ -1,7 +1,7 @@
 //
 //  GradientButton.h
 //  SwiftCall
-//
+//可以删除了. 用RootCustomView替代.
 //  Created by teason23 on 2018/3/27.
 //  Copyright © 2018年 weyl. All rights reserved.
 // ---------------------------------------------------------------- //

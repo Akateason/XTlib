@@ -1,6 +1,6 @@
 //---------------------------------------------------------------------//
 //RxWebViewController  https://github.com/Roxasora/RxWebViewController
-//!!!务必先让navigation为RxWebViewNavigationViewController的子类!!!//
+//!!!务必先让navigation为RxWebViewNavigationViewController的子类!!!//(控制分布返回)
 //子类化 RxWebViewController 如果有必要
 //---------------------------------------------------------------------//
 

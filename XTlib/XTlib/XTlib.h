@@ -84,7 +84,6 @@ fprintf(stderr, "🏀🏀🏀🏀🏀\n");                                      
 
 // UIs
 #import "XTZoomPicture.h"
-#import "GradientBGView.h"
 #import "ParallaxHeaderView.h"
 #import "PlaceHolderTextView.h"
 //#import "XTBarrageItemView.h"

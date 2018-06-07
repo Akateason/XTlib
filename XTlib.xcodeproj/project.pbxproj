@@ -108,7 +108,6 @@
 		8F2BFFA7203ED7390013394D /* StatSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEFB203ED7380013394D /* StatSender.m */; };
 		8F2BFFA8203ED7390013394D /* XTStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEFD203ED7380013394D /* XTStat.m */; };
 		8F2BFFA9203ED7390013394D /* UniqueKeyMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF00203ED7380013394D /* UniqueKeyMaker.m */; };
-		8F2BFFAA203ED7390013394D /* GradientBGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF05203ED7380013394D /* GradientBGView.m */; };
 		8F2BFFAB203ED7390013394D /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF08203ED7380013394D /* ParallaxHeaderView.m */; };
 		8F2BFFAC203ED7390013394D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF0A203ED7380013394D /* UIImage+ImageEffects.m */; };
 		8F2BFFAD203ED7390013394D /* PlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF0D203ED7380013394D /* PlaceHolderTextView.m */; };
@@ -378,8 +377,6 @@
 		8F2BFEFF203ED7380013394D /* UniqueKeyMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniqueKeyMaker.h; sourceTree = "<group>"; };
 		8F2BFF00203ED7380013394D /* UniqueKeyMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniqueKeyMaker.m; sourceTree = "<group>"; };
 		8F2BFF01203ED7380013394D /* XTStatConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTStatConst.h; sourceTree = "<group>"; };
-		8F2BFF04203ED7380013394D /* GradientBGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientBGView.h; sourceTree = "<group>"; };
-		8F2BFF05203ED7380013394D /* GradientBGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientBGView.m; sourceTree = "<group>"; };
 		8F2BFF07203ED7380013394D /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
 		8F2BFF08203ED7380013394D /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
 		8F2BFF09203ED7380013394D /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -1058,7 +1055,6 @@
 			children = (
 				8F0AEE24206A285700DC5E7D /* GradientButton */,
 				8FDE205420594EB7003B5398 /* XTSIAlert */,
-				8F2BFF03203ED7380013394D /* GradientBGView */,
 				8F2BFF06203ED7380013394D /* ParallaxHeaderView */,
 				8F2BFF0B203ED7380013394D /* PlaceHolderTextView */,
 				8F2BFF0E203ED7380013394D /* XTBarrageView */,
@@ -1072,15 +1068,6 @@
 				8F2BFF2F203ED7380013394D /* XTZoomPicture */,
 			);
 			path = UIs;
-			sourceTree = "<group>";
-		};
-		8F2BFF03203ED7380013394D /* GradientBGView */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFF04203ED7380013394D /* GradientBGView.h */,
-				8F2BFF05203ED7380013394D /* GradientBGView.m */,
-			);
-			path = GradientBGView;
 			sourceTree = "<group>";
 		};
 		8F2BFF06203ED7380013394D /* ParallaxHeaderView */ = {
@@ -1653,7 +1640,6 @@
 				8F2BFF96203ED7390013394D /* MyTextField.m in Sources */,
 				8F2BFF88203ED7390013394D /* UIView+Sizes.m in Sources */,
 				8F2BFF78203ED7390013394D /* MySon.m in Sources */,
-				8F2BFFAA203ED7390013394D /* GradientBGView.m in Sources */,
 				8F2BFF5F203ED7390013394D /* Zample1Controller.m in Sources */,
 				8F2A141A20908DEC007F97B3 /* UILabel+Calculate.m in Sources */,
 				8F2BFFB3203ED7390013394D /* XTLoopScrollView.m in Sources */,

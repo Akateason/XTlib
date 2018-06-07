@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
+
 @class RootCollectionView ;
 
 @protocol RootCollectionViewDelegate <NSObject>
@@ -24,12 +26,12 @@
  REFRESH STYLE:
  DEFAULT IS `NO`  -> ONLY GIF IMAGES , SHOW WORDS WHEN IT BECOMES `YES`
  */
-@property (nonatomic) BOOL isShowRefreshDetail ;
+@property (nonatomic) IBInspectable BOOL isShowRefreshDetail ;
 /**
  is auto LOAD MORE:
  DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
  */
-@property (nonatomic) BOOL isAutomaticallyLoadMore ;
+@property (nonatomic) IBInspectable BOOL isAutomaticallyLoadMore ;
 /**
  PULL DOWN HEADER
  */
