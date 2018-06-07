@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AEE26206A285700DC5E7D /* GradientButton.m */; };
 		8F1511FF20C2503500FF125C /* MPTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1511FD20C2503400FF125C /* MPTestView.m */; };
+		8F19861E20C9632D0082662A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8F19861D20C9632D0082662A /* README.md */; };
 		8F220D7920AAD31500CC6271 /* MPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F220D7820AAD31500CC6271 /* MPTestVC.m */; };
 		8F2A141A20908DEC007F97B3 /* UILabel+Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A141920908DEC007F97B3 /* UILabel+Calculate.m */; };
 		8F2BFDC9203ED6AB0013394D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDC8203ED6AB0013394D /* AppDelegate.m */; };
@@ -173,6 +174,7 @@
 		8F0AEE26206A285700DC5E7D /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
 		8F1511FD20C2503400FF125C /* MPTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTestView.m; sourceTree = "<group>"; };
 		8F1511FE20C2503400FF125C /* MPTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTestView.h; sourceTree = "<group>"; };
+		8F19861D20C9632D0082662A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8F220D7720AAD31500CC6271 /* MPTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPTestVC.h; sourceTree = "<group>"; };
 		8F220D7820AAD31500CC6271 /* MPTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPTestVC.m; sourceTree = "<group>"; };
 		8F2A141820908DEC007F97B3 /* UILabel+Calculate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Calculate.h"; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				8FA9D3B520C7BCAC005AFEDF /* Podfile */,
+				8F19861D20C9632D0082662A /* README.md */,
 				8F2BFDC6203ED6AB0013394D /* XTlib */,
 				8F2BFDDF203ED6AB0013394D /* XTlibTests */,
 				8F2BFDEA203ED6AB0013394D /* XTlibUITests */,
@@ -1491,6 +1494,7 @@
 				8F2BFF70203ED7390013394D /* Z7LongView.xib in Resources */,
 				8F2BFDCF203ED6AB0013394D /* Main.storyboard in Resources */,
 				8FDE205320594950003B5398 /* NibVC.xib in Resources */,
+				8F19861E20C9632D0082662A /* README.md in Resources */,
 				8F2BFF66203ED7390013394D /* MovieCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
