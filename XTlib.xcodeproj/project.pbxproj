@@ -19,7 +19,6 @@
 		8F2BFDD7203ED6AB0013394D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDD6203ED6AB0013394D /* main.m */; };
 		8F2BFDE1203ED6AB0013394D /* XTlibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDE0203ED6AB0013394D /* XTlibTests.m */; };
 		8F2BFDEC203ED6AB0013394D /* XTlibUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDEB203ED6AB0013394D /* XTlibUITests.m */; };
-		8F2BFDFC203ED7100013394D /* Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDFB203ED7100013394D /* Algorithm.m */; };
 		8F2BFE01203ED71D0013394D /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFDFE203ED71C0013394D /* ServerRequest.m */; };
 		8F2BFE02203ED71D0013394D /* UserOnDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE00203ED71D0013394D /* UserOnDevice.m */; };
 		8F2BFE33203ED7270013394D /* WPAttributedStyleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE07203ED7260013394D /* WPAttributedStyleAction.m */; };
@@ -195,8 +194,6 @@
 		8F2BFDE7203ED6AB0013394D /* XTlibUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XTlibUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2BFDEB203ED6AB0013394D /* XTlibUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTlibUITests.m; sourceTree = "<group>"; };
 		8F2BFDED203ED6AB0013394D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F2BFDFA203ED7100013394D /* Algorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorithm.h; sourceTree = "<group>"; };
-		8F2BFDFB203ED7100013394D /* Algorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Algorithm.m; sourceTree = "<group>"; };
 		8F2BFDFD203ED71C0013394D /* UserOnDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserOnDevice.h; sourceTree = "<group>"; };
 		8F2BFDFE203ED71C0013394D /* ServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRequest.m; sourceTree = "<group>"; };
 		8F2BFDFF203ED71C0013394D /* ServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRequest.h; sourceTree = "<group>"; };
@@ -569,7 +566,6 @@
 				8F2BFE44203ED7380013394D /* Zample */,
 				8F2BFDC7203ED6AB0013394D /* AppDelegate.h */,
 				8F2BFDC8203ED6AB0013394D /* AppDelegate.m */,
-				8F2BFDF9203ED7100013394D /* Algorithm */,
 				8F2BFDCA203ED6AB0013394D /* ViewController.h */,
 				8F2BFDCB203ED6AB0013394D /* ViewController.m */,
 				8F2BFE42203ED72E0013394D /* viewControllers.plist */,
@@ -603,15 +599,6 @@
 				8F2BFDED203ED6AB0013394D /* Info.plist */,
 			);
 			path = XTlibUITests;
-			sourceTree = "<group>";
-		};
-		8F2BFDF9203ED7100013394D /* Algorithm */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFDFA203ED7100013394D /* Algorithm.h */,
-				8F2BFDFB203ED7100013394D /* Algorithm.m */,
-			);
-			path = Algorithm;
 			sourceTree = "<group>";
 		};
 		8F2BFE03203ED7260013394D /* Vender */ = {
@@ -1637,7 +1624,6 @@
 				8F2BFE35203ED7270013394D /* WPTappableLabel.m in Sources */,
 				8F2BFFA1203ED7390013394D /* UITableView+Stat.m in Sources */,
 				8F2BFFBC203ED7390013394D /* NSString+MD5.m in Sources */,
-				8F2BFDFC203ED7100013394D /* Algorithm.m in Sources */,
 				8F2BFF61203ED7390013394D /* DoubanTagsCell.m in Sources */,
 				8F2BFFB4203ED7390013394D /* CenterTableView.m in Sources */,
 				8F2BFFB2203ED7390013394D /* XTlineSpaceLabel.m in Sources */,
