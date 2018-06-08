@@ -20,6 +20,9 @@
 {
     [super viewDidLoad] ;
     // Do any additional setup after loading the view.
+//    UIScrollView *scroll = (UIScrollView *)[self.view xt_wrapperWithScrollView] ;
+//    self.view = scroll ;
+    
     
     UIView *addView = [[[NSBundle mainBundle] loadNibNamed:@"Z7LongView" owner:self options:nil] lastObject] ;
     UIScrollView* scroll = (UIScrollView *)[addView xt_wrapperWithScrollView] ;

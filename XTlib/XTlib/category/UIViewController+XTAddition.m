@@ -9,6 +9,7 @@
 #import "UIViewController+XTAddition.h"
 #import <objc/runtime.h>
 #import "ScreenHeader.h"
+#import <Masonry/Masonry.h>
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -50,6 +51,20 @@
         return vc;
     }
     return nil;
+}
+
+#pragma mark - wrapper in scrollview
+
+- (void)xt_letSelfViewInScrollView {
+    UIScrollView* scroll = [[UIScrollView alloc] init];
+    scroll.showsHorizontalScrollIndicator = NO;
+    scroll.showsVerticalScrollIndicator = NO;
+    scroll.bounces = YES;
+    [scroll addSubview:self.view];
+    [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.width.bottom.equalTo(scroll);
+    }] ;
+    self.view = scroll ;
 }
 
 @end
