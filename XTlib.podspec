@@ -132,9 +132,9 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   
-  s.dependency "XTFMDB"
-  s.dependency "XTReq"
-  s.dependency "XTColor"
+#  s.dependency "XTFMDB"
+#  s.dependency "XTReq"
+#  s.dependency "XTColor"
   s.dependency "ReactiveObjC"
   s.dependency "Masonry"
   s.dependency "SDWebImage"
