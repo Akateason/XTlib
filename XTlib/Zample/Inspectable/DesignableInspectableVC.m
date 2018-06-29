@@ -14,9 +14,38 @@
 
 @implementation DesignableInspectableVC
 
+- (IBAction)click:(id)sender {
+    
+//    [XTAnimation shakeRandomDirectionWithDuration:.5 AndWithView:_img1] ;
+//    [XTAnimation animationRevealFromBottom:_cView1 duration:1] ;
+    
+//    [XTAnimation animationFlipFromLeft:_img1 duration:1] ;
+//    [XTAnimation animationCurlUp:_cView1 duration:1] ;
+    
+//    [XTAnimation animationPushUp:_img1 duration:1] ;
+//    [XTAnimation animationMoveUp:_cView1 duration:1] ;
+    
+    [XTAnimation rotateForever:_img1 once:.3] ;
+    
+//    [XTAnimation cradle:_img1] ;
+//    [XTAnimation rotateAndEnlarge:_cView1] ;
+    
+//    [XTAnimation animationFlipFromTop:_img1 duration:1] ;
+//    [XTAnimation animationCubeFromLeft:_cView1 duration:1] ;
+
+//    [XTAnimation animationSuckEffect:_img1 duration:1] ;
+//    [XTAnimation animationRippleEffect:_cView1 duration:1] ;
+
+//    [XTAnimation animationCameraOpen:_img1 duration:1] ;
+//    [XTAnimation animationCameraClose:_cView1 duration:1] ;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

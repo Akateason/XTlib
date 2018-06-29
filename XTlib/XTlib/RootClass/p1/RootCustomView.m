@@ -19,8 +19,8 @@
 
 // public
 - (void)setXt_completeRound:(BOOL)xt_completeRound {
-    self.layer.cornerRadius = CGRectGetWidth(self.bounds) / 2.f ;
-    self.layer.masksToBounds = YES ;
+    self.layer.cornerRadius = xt_completeRound ? CGRectGetWidth(self.bounds) / 2.f : 0;
+    self.layer.masksToBounds = xt_completeRound ;
 }
 - (BOOL)xt_completeRound {
     return self.xt_completeRound ;

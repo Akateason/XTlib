@@ -9,5 +9,7 @@
 #import "RootCtrl.h"
 
 @interface DesignableInspectableVC : RootCtrl
+@property (weak, nonatomic) IBOutlet RootCustomView *cView1;
+@property (weak, nonatomic) IBOutlet RootCustomImageView *img1;
 
 @end
