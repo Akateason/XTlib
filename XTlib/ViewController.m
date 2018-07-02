@@ -40,17 +40,6 @@
 
 - (void)viewDidLoad
 {
-    [XTSIAlertView alertWithTitle:@"alert"
-                         subTitle:@"custom it"
-                    normalBtTitle:@"OK"
-                           normal:^(XTSIAlertView *alertView) {
-                               [self actionSheet] ;
-                           }
-                    cancelBtTitle:@"Cancel"
-                           cancel:^(XTSIAlertView *alertView) {
-                               
-                           }] ;
-    
     
     
     [super viewDidLoad] ;

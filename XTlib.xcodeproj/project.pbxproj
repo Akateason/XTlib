@@ -144,6 +144,7 @@
 		8FA9D3B620C7BCAC005AFEDF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9D3B520C7BCAC005AFEDF /* Podfile */; };
 		8FA9D3BC20C7E158005AFEDF /* RootCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9D3BB20C7E158005AFEDF /* RootCustomView.m */; };
 		8FA9D3C020C7E422005AFEDF /* DesignableInspectableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9D3BF20C7E422005AFEDF /* DesignableInspectableVC.m */; };
+		8FC8215320EA7DE90068AE5E /* AlertTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC8215220EA7DE90068AE5E /* AlertTestVC.m */; };
 		8FDE204A2059447D003B5398 /* UIViewController+XTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE20492059447D003B5398 /* UIViewController+XTAddition.m */; };
 		8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE204D205948D2003B5398 /* CtrlHelpVC.m */; };
 		8FDE205220594950003B5398 /* NibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205020594950003B5398 /* NibVC.m */; };
@@ -450,6 +451,8 @@
 		8FA9D3BB20C7E158005AFEDF /* RootCustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootCustomView.m; sourceTree = "<group>"; };
 		8FA9D3BE20C7E422005AFEDF /* DesignableInspectableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignableInspectableVC.h; sourceTree = "<group>"; };
 		8FA9D3BF20C7E422005AFEDF /* DesignableInspectableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignableInspectableVC.m; sourceTree = "<group>"; };
+		8FC8215120EA7DE90068AE5E /* AlertTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertTestVC.h; sourceTree = "<group>"; };
+		8FC8215220EA7DE90068AE5E /* AlertTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertTestVC.m; sourceTree = "<group>"; };
 		8FDE20482059447D003B5398 /* UIViewController+XTAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XTAddition.h"; sourceTree = "<group>"; };
 		8FDE20492059447D003B5398 /* UIViewController+XTAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XTAddition.m"; sourceTree = "<group>"; };
 		8FDE204C205948D2003B5398 /* CtrlHelpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CtrlHelpVC.h; sourceTree = "<group>"; };
@@ -568,6 +571,7 @@
 		8F2BFDC6203ED6AB0013394D /* XTlib */ = {
 			isa = PBXGroup;
 			children = (
+				8F2BFDCD203ED6AB0013394D /* Main.storyboard */,
 				8F2BFE8C203ED7380013394D /* XTlib */,
 				8F2BFE44203ED7380013394D /* Zample */,
 				8F2BFDC7203ED6AB0013394D /* AppDelegate.h */,
@@ -580,7 +584,6 @@
 				8F2BFDFD203ED71C0013394D /* UserOnDevice.h */,
 				8F2BFE00203ED71D0013394D /* UserOnDevice.m */,
 				8F2BFE03203ED7260013394D /* Vender */,
-				8F2BFDCD203ED6AB0013394D /* Main.storyboard */,
 				8F2BFDD0203ED6AB0013394D /* Assets.xcassets */,
 				8F2BFDD2203ED6AB0013394D /* LaunchScreen.storyboard */,
 				8F2BFDD5203ED6AB0013394D /* Info.plist */,
@@ -741,6 +744,7 @@
 		8F2BFE44203ED7380013394D /* Zample */ = {
 			isa = PBXGroup;
 			children = (
+				8FC8215020EA7DCB0068AE5E /* Alert */,
 				8FA9D3BD20C7E3EA005AFEDF /* Inspectable */,
 				8F220D7620AAD2EF00CC6271 /* Protocol */,
 				8FDE204B205948B0003B5398 /* controllerHelp */,
@@ -1363,6 +1367,15 @@
 			path = p1;
 			sourceTree = "<group>";
 		};
+		8FC8215020EA7DCB0068AE5E /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				8FC8215120EA7DE90068AE5E /* AlertTestVC.h */,
+				8FC8215220EA7DE90068AE5E /* AlertTestVC.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		8FDE204B205948B0003B5398 /* controllerHelp */ = {
 			isa = PBXGroup;
 			children = (
@@ -1718,6 +1731,7 @@
 				8F2BFE37203ED7270013394D /* NSString+WPAttributedMarkup.m in Sources */,
 				8F2BFF6D203ED7390013394D /* Z5DisplayController.m in Sources */,
 				8F2BFFB9203ED7390013394D /* XTStretchSegment.m in Sources */,
+				8FC8215320EA7DE90068AE5E /* AlertTestVC.m in Sources */,
 				8F2BFFA3203ED7390013394D /* ApplicationEvent.m in Sources */,
 				8F2BFF81203ED7390013394D /* NSTimer+Addition.m in Sources */,
 				8F2BFF92203ED7390013394D /* MyNavCtrller.m in Sources */,

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,7 +46,153 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="59"/>
+            <point key="canvasLocation" x="287" y="116"/>
+        </scene>
+        <!--Alert TestVC-->
+        <scene sceneID="qqt-ZH-Dc1">
+            <objects>
+                <viewController storyboardIdentifier="AlertTestVC" id="pH5-E8-GDI" customClass="AlertTestVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ojK-uE-Lgx"/>
+                        <viewControllerLayoutGuide type="bottom" id="YKt-4u-4J3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UwG-hC-XUt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vzd-fq-zQV">
+                                <rect key="frame" x="36" y="40" width="303" height="607"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnF-gx-BQP" customClass="RootCustomButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="152"/>
+                                        <color key="backgroundColor" red="1" green="0.73527388380000003" blue="0.58484790099999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="navite alert ">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="xt_completeRound" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="xt_borderWidth">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="xt_gradientPt0">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="xt_gradientPt1">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="xt_borderColor">
+                                                <color key="value" red="0.70322805662738452" green="0.8799991904145078" blue="0.30437704282725547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="n_alert:" destination="pH5-E8-GDI" eventType="touchUpInside" id="S9G-gx-axJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6S-4N-ctI" customClass="RootCustomButton">
+                                        <rect key="frame" x="0.0" y="152" width="303" height="151.5"/>
+                                        <color key="backgroundColor" red="1" green="0.73527388380000003" blue="0.58484790099999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="navite action sheet">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="xt_completeRound" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="xt_borderWidth">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="xt_gradientPt0">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="xt_gradientPt1">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="xt_borderColor">
+                                                <color key="value" red="0.70322805662738452" green="0.8799991904145078" blue="0.30437704282725547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="n_sheet:" destination="pH5-E8-GDI" eventType="touchUpInside" id="6V9-yD-RA4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-FT-uyX" customClass="RootCustomButton">
+                                        <rect key="frame" x="0.0" y="303.5" width="303" height="152"/>
+                                        <color key="backgroundColor" red="1" green="0.73527388380000003" blue="0.58484790099999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="custom alert">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="xt_completeRound" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="xt_borderWidth">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="xt_gradientPt0">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="xt_gradientPt1">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="xt_borderColor">
+                                                <color key="value" red="0.70322805662738452" green="0.8799991904145078" blue="0.30437704282725547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="c_alert:" destination="pH5-E8-GDI" eventType="touchUpInside" id="Nml-yM-8bT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3A0-vM-DT3" customClass="RootCustomButton">
+                                        <rect key="frame" x="0.0" y="455.5" width="303" height="151.5"/>
+                                        <color key="backgroundColor" red="1" green="0.73527388380000003" blue="0.58484790099999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="custom action sheet">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="xt_completeRound" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="xt_borderWidth">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="xt_gradientPt0">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="xt_gradientPt1">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="xt_borderColor">
+                                                <color key="value" red="0.70322805662738452" green="0.8799991904145078" blue="0.30437704282725547" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="c_sheet:" destination="pH5-E8-GDI" eventType="touchUpInside" id="5H6-Pg-jgw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YCz-FT-uyX" firstAttribute="top" secondItem="Y6S-4N-ctI" secondAttribute="bottom" id="9gV-Ft-BxS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y6S-4N-ctI" secondAttribute="trailing" id="IWu-ra-gsT"/>
+                                    <constraint firstItem="Y6S-4N-ctI" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="Szg-Ad-dKx"/>
+                                    <constraint firstItem="3A0-vM-DT3" firstAttribute="top" secondItem="YCz-FT-uyX" secondAttribute="bottom" id="VLj-5Q-HWA"/>
+                                    <constraint firstAttribute="trailing" secondItem="3A0-vM-DT3" secondAttribute="trailing" id="aR6-Zz-Ujh"/>
+                                    <constraint firstItem="3A0-vM-DT3" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="cK3-CN-v8E"/>
+                                    <constraint firstItem="Y6S-4N-ctI" firstAttribute="top" secondItem="pnF-gx-BQP" secondAttribute="bottom" id="k8v-Ms-fOE"/>
+                                    <constraint firstAttribute="trailing" secondItem="YCz-FT-uyX" secondAttribute="trailing" id="kGo-vI-jes"/>
+                                    <constraint firstItem="YCz-FT-uyX" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="md8-H6-8eD"/>
+                                    <constraint firstAttribute="trailing" secondItem="pnF-gx-BQP" secondAttribute="trailing" id="n8N-pi-Fsy"/>
+                                    <constraint firstItem="pnF-gx-BQP" firstAttribute="top" secondItem="vzd-fq-zQV" secondAttribute="top" id="oUM-aD-Oq6"/>
+                                    <constraint firstAttribute="bottom" secondItem="3A0-vM-DT3" secondAttribute="bottom" id="sju-CB-lR8"/>
+                                    <constraint firstItem="pnF-gx-BQP" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="w4G-w0-H4M"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vzd-fq-zQV" firstAttribute="leading" secondItem="UwG-hC-XUt" secondAttribute="leadingMargin" constant="20" id="4Ga-Ac-IgG"/>
+                            <constraint firstItem="vzd-fq-zQV" firstAttribute="top" secondItem="ojK-uE-Lgx" secondAttribute="bottom" constant="20" id="BAJ-ae-lnM"/>
+                            <constraint firstItem="YKt-4u-4J3" firstAttribute="top" secondItem="vzd-fq-zQV" secondAttribute="bottom" constant="20" id="EQf-nw-jeb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vzd-fq-zQV" secondAttribute="trailing" constant="20" id="PtA-JF-C0q"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bP3-IL-cMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1238" y="580"/>
         </scene>
         <!--Font AdaptVC-->
         <scene sceneID="Cnl-jT-egD">
@@ -93,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRG-8l-Dw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1831" y="-69"/>
+            <point key="canvasLocation" x="808" y="-319"/>
         </scene>
         <!--Designable InspectableVC-->
         <scene sceneID="bRp-qi-lFa">
@@ -273,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKG-nP-fqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1742" y="716"/>
+            <point key="canvasLocation" x="1239" y="-262"/>
         </scene>
         <!--Rx Web View Navigation View Controller-->
         <scene sceneID="sPg-zz-q4O">

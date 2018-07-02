@@ -17,8 +17,8 @@
                            cancelButtonTitle:(NSString *)cancelBtnTitle
                       destructiveButtonTitle:(NSString *)destructiveBtnTitle
                            otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
-                               CallBackBlock:(void(^)(NSInteger btnIndex))block
-{
+                               CallBackBlock:(void(^)(NSInteger btnIndex))block {
+    
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:alertControllerStyle] ;
     if (cancelBtnTitle.length) {
         UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:cancelBtnTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -42,6 +42,21 @@
         }] ;
     }
     [viewController presentViewController:alertController animated:YES completion:nil];
+}
+
+
++ (void)showAlertCntrollerWithAlertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
+                                             title:(NSString *)title
+                                           message:(NSString *)message
+                                 cancelButtonTitle:(NSString *)cancelBtnTitle
+                            destructiveButtonTitle:(NSString *)destructiveBtnTitle
+                                 otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
+                                     CallBackBlock:(void(^)(NSInteger btnIndex))block {
+    
+//    ((AppDelegate *)appDelegate).window.rootViewController
+    id appDelegate = [UIApplication sharedApplication].delegate ;
+    UIViewController *rootCtrller = [appDelegate valueForKeyPath:@"window.rootViewController"] ;
+    [self showAlertCntrollerWithViewController:rootCtrller alertControllerStyle:alertControllerStyle title:title message:message cancelButtonTitle:cancelBtnTitle destructiveButtonTitle:destructiveBtnTitle otherButtonTitles:otherBtnTitles CallBackBlock:block] ;
 }
 
 

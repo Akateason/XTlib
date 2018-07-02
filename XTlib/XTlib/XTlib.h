@@ -95,6 +95,7 @@ fprintf(stderr, "🏀🏀🏀🏀🏀\n");                                      
 #import "XTNetReloader.h"
 #import "XTSegment.h"
 #import "XTStretchSegment.h"
+#import "XTSIAlertView.h"
 
 // Util
 #import "NSString+MD5.h"

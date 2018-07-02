@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootTableView.h"
 
 IB_DESIGNABLE
 
@@ -18,12 +19,6 @@ IB_DESIGNABLE
 @optional
 - (void)collectionView:(RootCollectionView *)collection loadMore:(void(^)(void))endRefresh  ;
 @end
-
-typedef enum : NSUInteger {
-    XTRefreshType_default ,
-    XTRefreshType_gifImages
-} XTRefreshType ;
-
 
 @interface RootCollectionView : UICollectionView
 // refresh delegate

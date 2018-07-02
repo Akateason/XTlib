@@ -39,6 +39,9 @@
 //    [XTAnimation animationCameraOpen:_img1 duration:1] ;
 //    [XTAnimation animationCameraClose:_cView1 duration:1] ;
     
+    [UIAlertController showAlertCntrollerWithAlertControllerStyle:UIAlertControllerStyleActionSheet title:@"test" message:@"message" cancelButtonTitle:@"cancel" destructiveButtonTitle:@"destruce" otherButtonTitles:@[@"a",@"b",@"c"] CallBackBlock:^(NSInteger btnIndex) {
+        NSLog(@"%ld",(long)btnIndex) ;
+    }] ;
 }
 
 - (void)viewDidLoad {
