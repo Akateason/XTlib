@@ -19,4 +19,11 @@
                       destructiveButtonTitle:(NSString *)destructiveBtnTitle
                            otherButtonTitles:(NSString *)otherBtnTitles, ... ;
 
++ (void)showAlertCntrollerWithAlertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
+                                             title:(NSString *)title
+                                           message:(NSString *)message
+                                     CallBackBlock:(void(^)(NSInteger btnIndex))block
+                                 cancelButtonTitle:(NSString *)cancelBtnTitle
+                            destructiveButtonTitle:(NSString *)destructiveBtnTitle
+                                 otherButtonTitles:(NSString *)otherBtnTitles, ... ;
 @end
