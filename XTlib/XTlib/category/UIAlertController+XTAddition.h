@@ -14,16 +14,17 @@
                         alertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
                                        title:(NSString *)title
                                      message:(NSString *)message
-                               CallBackBlock:(void(^)(NSInteger btnIndex))block
+                           otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
                            cancelButtonTitle:(NSString *)cancelBtnTitle
                       destructiveButtonTitle:(NSString *)destructiveBtnTitle
-                           otherButtonTitles:(NSString *)otherBtnTitles, ... ;
+                               CallBackBlock:(void(^)(NSInteger btnIndex))block ;
 
-+ (void)showAlertCntrollerWithAlertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
-                                             title:(NSString *)title
-                                           message:(NSString *)message
-                                     CallBackBlock:(void(^)(NSInteger btnIndex))block
-                                 cancelButtonTitle:(NSString *)cancelBtnTitle
-                            destructiveButtonTitle:(NSString *)destructiveBtnTitle
-                                 otherButtonTitles:(NSString *)otherBtnTitles, ... ;
++ (void)showAlertCntrollerWithStyle:(UIAlertControllerStyle)alertControllerStyle
+                              title:(NSString *)title
+                            message:(NSString *)message
+                  otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
+                  cancelButtonTitle:(NSString *)cancelBtnTitle
+             destructiveButtonTitle:(NSString *)destructiveBtnTitle
+                      CallBackBlock:(void(^)(NSInteger btnIndex))block ;
+
 @end
