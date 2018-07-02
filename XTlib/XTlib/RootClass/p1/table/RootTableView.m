@@ -85,11 +85,20 @@
 }
 
 - (void)configureMJRefresh {
-    RootRefreshHeader *header = [RootRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
-    self.mj_header = header;
-    
-    RootRefreshFooter *footer = [RootRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
-    self.mj_footer = footer;
+    if (self.refreshType == RootTableViewRefreshType_default) {
+        MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
+        self.mj_header = header;
+
+        MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
+        self.mj_footer = footer;
+    }
+    else if (self.refreshType == RootTableViewRefreshType_gifImages) {
+        RootRefreshHeader *header = [RootRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
+        self.mj_header = header;
+        
+        RootRefreshFooter *footer = [RootRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
+        self.mj_footer = footer;
+    }
 }
 
 - (void)setDefaultPublicAPIs {
@@ -103,10 +112,10 @@
 - (void)setIsShowRefreshDetail:(BOOL)isShowRefreshDetail {
     _isShowRefreshDetail = isShowRefreshDetail ;
     
-    if ([self.mj_header isKindOfClass:[RootRefreshHeader class]]) {
-        ((RootRefreshHeader *)self.mj_header).lastUpdatedTimeLabel.hidden = !self.isShowRefreshDetail;
-        ((RootRefreshHeader *)self.mj_header).stateLabel.hidden = !self.isShowRefreshDetail ;
-        ((RootRefreshFooter *)self.mj_footer).stateLabel.hidden = !self.isShowRefreshDetail ;
+    if ([self.mj_header isKindOfClass:[MJRefreshStateHeader class]]) {
+        ((MJRefreshStateHeader *)self.mj_header).lastUpdatedTimeLabel.hidden = !self.isShowRefreshDetail;
+        ((MJRefreshStateHeader *)self.mj_header).stateLabel.hidden = !self.isShowRefreshDetail ;
+        ((MJRefreshBackStateFooter *)self.mj_footer).stateLabel.hidden = !self.isShowRefreshDetail ;
     }
 }
 
@@ -129,6 +138,11 @@
     }
 }
 
+- (void)setRefreshType:(RootTableViewRefreshType)refreshType {
+    _refreshType = refreshType ;
+    
+    [self configureMJRefresh] ;
+}
 
 #pragma mark --
 #pragma mark - loading methods

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MJRefresh.h"
 
+
 IB_DESIGNABLE
 
 @class RootTableView ;
@@ -20,7 +21,10 @@ IB_DESIGNABLE
 - (void)tableView:(RootTableView *)table loadMore:(void(^)(void))endRefresh  ;
 @end
 
-
+typedef enum : NSUInteger {
+    RootTableViewRefreshType_default ,
+    RootTableViewRefreshType_gifImages
+} RootTableViewRefreshType ;
 
 @interface RootTableView : UITableView
 // refresh delegate
@@ -37,6 +41,8 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable BOOL isAutomaticallyLoadMore ;
 // only table close mj header and footer
 @property (nonatomic) IBInspectable BOOL hideAllRefreshers ;
+// MJRefresh type
+@property (nonatomic) RootTableViewRefreshType refreshType ;
 
 /**
  PULL DOWN HEADER
