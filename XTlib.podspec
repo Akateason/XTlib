@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTlib"
-  s.version      = "1.1.6"
+  s.version      = "1.1.8"
   s.summary      = "a rapid develop lib for iOS"
 
   # This description is used to generate tags and improve search results.
