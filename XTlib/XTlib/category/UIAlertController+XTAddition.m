@@ -7,7 +7,6 @@
 //
 
 #import "UIAlertController+XTAddition.h"
-#import "AppDelegate.h"
 
 @implementation UIAlertController (XTAddition)
 
@@ -45,16 +44,5 @@
     [viewController presentViewController:alertController animated:YES completion:nil];
 }
 
-+ (void)showAlertCntrollerWithStyle:(UIAlertControllerStyle)alertControllerStyle
-                              title:(NSString *)title
-                            message:(NSString *)message
-                  otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
-                  cancelButtonTitle:(NSString *)cancelBtnTitle
-             destructiveButtonTitle:(NSString *)destructiveBtnTitle
-                      CallBackBlock:(void(^)(NSInteger btnIndex))block ;
-{
-    AppDelegate *aDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate ;
-    [self showAlertCntrollerWithViewController:aDelegate.window.rootViewController alertControllerStyle:alertControllerStyle title:title message:message otherButtonTitles:otherBtnTitles cancelButtonTitle:cancelBtnTitle destructiveButtonTitle:destructiveBtnTitle CallBackBlock:block] ;
-}
 
 @end
