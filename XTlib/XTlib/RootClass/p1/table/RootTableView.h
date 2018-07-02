@@ -22,9 +22,9 @@ IB_DESIGNABLE
 @end
 
 typedef enum : NSUInteger {
-    RootTableViewRefreshType_default ,
-    RootTableViewRefreshType_gifImages
-} RootTableViewRefreshType ;
+    XTRefreshType_default ,
+    XTRefreshType_gifImages
+} XTRefreshType ;
 
 @interface RootTableView : UITableView
 // refresh delegate
@@ -42,7 +42,7 @@ typedef enum : NSUInteger {
 // only table close mj header and footer
 @property (nonatomic) IBInspectable BOOL hideAllRefreshers ;
 // MJRefresh type
-@property (nonatomic) RootTableViewRefreshType refreshType ;
+@property (nonatomic) XTRefreshType refreshType ;
 
 /**
  PULL DOWN HEADER

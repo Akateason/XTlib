@@ -87,11 +87,20 @@
 }
 
 - (void)configureMJRefresh {
-    RootRefreshHeader *header = [RootRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
-    self.mj_header = header;
-    
-    RootRefreshFooter *footer = [RootRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
-    self.mj_footer = footer;
+    if (self.refreshType == XTRefreshType_default) {
+        MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
+        self.mj_header = header;
+        
+        MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
+        self.mj_footer = footer;
+    }
+    else if (self.refreshType == XTRefreshType_gifImages) {
+        RootRefreshHeader *header = [RootRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
+        self.mj_header = header;
+        
+        RootRefreshFooter *footer = [RootRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
+        self.mj_footer = footer;
+    }
 }
 
 - (void)setDefaultPublicAPIs {
@@ -105,9 +114,9 @@
 - (void)setIsShowRefreshDetail:(BOOL)isShowRefreshDetail {
     _isShowRefreshDetail = isShowRefreshDetail ;
     
-    ((RootRefreshHeader *)self.mj_header).lastUpdatedTimeLabel.hidden = !self.isShowRefreshDetail;
-    ((RootRefreshHeader *)self.mj_header).stateLabel.hidden = !self.isShowRefreshDetail ;
-    ((RootRefreshFooter *)self.mj_footer).stateLabel.hidden = !self.isShowRefreshDetail ;
+    ((MJRefreshStateHeader *)self.mj_header).lastUpdatedTimeLabel.hidden = !self.isShowRefreshDetail;
+    ((MJRefreshStateHeader *)self.mj_header).stateLabel.hidden = !self.isShowRefreshDetail ;
+    ((MJRefreshBackStateFooter *)self.mj_footer).stateLabel.hidden = !self.isShowRefreshDetail ;
 }
 
 - (void)setIsAutomaticallyLoadMore:(BOOL)isAutomaticallyLoadMore {
@@ -119,6 +128,12 @@
         autofooter.triggerAutomaticallyRefreshPercent = 0.55 ;
         self.mj_footer = autofooter;
     }
+}
+
+- (void)setRefreshType:(XTRefreshType)refreshType {
+    _refreshType = refreshType ;
+    
+    [self configureMJRefresh] ;
 }
 
 

@@ -19,6 +19,12 @@ IB_DESIGNABLE
 - (void)collectionView:(RootCollectionView *)collection loadMore:(void(^)(void))endRefresh  ;
 @end
 
+typedef enum : NSUInteger {
+    XTRefreshType_default ,
+    XTRefreshType_gifImages
+} XTRefreshType ;
+
+
 @interface RootCollectionView : UICollectionView
 // refresh delegate
 @property (nonatomic,weak) id <RootCollectionViewDelegate> xt_Delegate ;
@@ -32,6 +38,8 @@ IB_DESIGNABLE
  DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
  */
 @property (nonatomic) IBInspectable BOOL isAutomaticallyLoadMore ;
+// MJRefresh type
+@property (nonatomic) XTRefreshType refreshType ;
 /**
  PULL DOWN HEADER
  */

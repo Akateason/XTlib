@@ -85,14 +85,14 @@
 }
 
 - (void)configureMJRefresh {
-    if (self.refreshType == RootTableViewRefreshType_default) {
+    if (self.refreshType == XTRefreshType_default) {
         MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
         self.mj_header = header;
 
         MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
         self.mj_footer = footer;
     }
-    else if (self.refreshType == RootTableViewRefreshType_gifImages) {
+    else if (self.refreshType == XTRefreshType_gifImages) {
         RootRefreshHeader *header = [RootRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
         self.mj_header = header;
         
@@ -138,7 +138,7 @@
     }
 }
 
-- (void)setRefreshType:(RootTableViewRefreshType)refreshType {
+- (void)setRefreshType:(XTRefreshType)refreshType {
     _refreshType = refreshType ;
     
     [self configureMJRefresh] ;
