@@ -14,13 +14,12 @@
                         alertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
                                        title:(NSString *)title
                                      message:(NSString *)message
-                           otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
                            cancelButtonTitle:(NSString *)cancelBtnTitle
                       destructiveButtonTitle:(NSString *)destructiveBtnTitle
+                           otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
                                CallBackBlock:(void(^)(NSInteger btnIndex))block
 {
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:alertControllerStyle];
-    
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:alertControllerStyle] ;
     if (cancelBtnTitle.length) {
         UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:cancelBtnTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             block(0);
@@ -34,11 +33,12 @@
         [alertController addAction:destructiveAction];
     }
     if (otherBtnTitles.count) {
+        int oldIdx = (cancelBtnTitle != nil) + (destructiveBtnTitle != nil) ;
         [otherBtnTitles enumerateObjectsUsingBlock:^(NSString * _Nonnull otherTitleStr, NSUInteger idx, BOOL * _Nonnull stop) {
-            UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:otherTitleStr style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                block(2+idx) ;
+            UIAlertAction * otherAction = [UIAlertAction actionWithTitle:otherTitleStr style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                block(oldIdx + idx) ;
             }];
-            [alertController addAction:cancelAction];
+            [alertController addAction:otherAction] ;
         }] ;
     }
     [viewController presentViewController:alertController animated:YES completion:nil];
