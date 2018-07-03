@@ -140,6 +140,7 @@
 		8F2BFFC7203ED7390013394D /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF58203ED7380013394D /* XTVerification.m */; };
 		8F81E2A120D1208A00782A90 /* XTlib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E2A020D1208A00782A90 /* XTlib.podspec */; };
 		8F90244620EA1B40009A1B9C /* UIAlertController+XTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F90244520EA1B40009A1B9C /* UIAlertController+XTAddition.m */; };
+		8F90245420EB5D77009A1B9C /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F90245320EB5D76009A1B9C /* UILabel+Addition.m */; };
 		8FA9D3B420C7B6D5005AFEDF /* RootCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9D3B320C7B6D5005AFEDF /* RootCollectionCell.m */; };
 		8FA9D3B620C7BCAC005AFEDF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9D3B520C7BCAC005AFEDF /* Podfile */; };
 		8FA9D3BC20C7E158005AFEDF /* RootCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9D3BB20C7E158005AFEDF /* RootCustomView.m */; };
@@ -444,6 +445,8 @@
 		8F81E2A020D1208A00782A90 /* XTlib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XTlib.podspec; sourceTree = "<group>"; };
 		8F90244420EA1B40009A1B9C /* UIAlertController+XTAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+XTAddition.h"; sourceTree = "<group>"; };
 		8F90244520EA1B40009A1B9C /* UIAlertController+XTAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+XTAddition.m"; sourceTree = "<group>"; };
+		8F90245220EB5D76009A1B9C /* UILabel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Addition.h"; sourceTree = "<group>"; };
+		8F90245320EB5D76009A1B9C /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Addition.m"; sourceTree = "<group>"; };
 		8FA9D3B220C7B6D4005AFEDF /* RootCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootCollectionCell.h; sourceTree = "<group>"; };
 		8FA9D3B320C7B6D5005AFEDF /* RootCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootCollectionCell.m; sourceTree = "<group>"; };
 		8FA9D3B520C7BCAC005AFEDF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -951,6 +954,8 @@
 				8F2BFEAD203ED7380013394D /* UIView+XTAddition.m */,
 				8FDE20482059447D003B5398 /* UIViewController+XTAddition.h */,
 				8FDE20492059447D003B5398 /* UIViewController+XTAddition.m */,
+				8F90245220EB5D76009A1B9C /* UILabel+Addition.h */,
+				8F90245320EB5D76009A1B9C /* UILabel+Addition.m */,
 				8F2A141820908DEC007F97B3 /* UILabel+Calculate.h */,
 				8F2A141920908DEC007F97B3 /* UILabel+Calculate.m */,
 				8F90244420EA1B40009A1B9C /* UIAlertController+XTAddition.h */,
@@ -1696,6 +1701,7 @@
 				8F2BFFA5203ED7390013394D /* DevInfo.m in Sources */,
 				8F2BFE02203ED71D0013394D /* UserOnDevice.m in Sources */,
 				8F2BFF68203ED7390013394D /* Zample3Controller.m in Sources */,
+				8F90245420EB5D77009A1B9C /* UILabel+Addition.m in Sources */,
 				8F2BFF76203ED7390013394D /* Father.m in Sources */,
 				8F2BFF6A203ED7390013394D /* Model1.m in Sources */,
 				8F2BFF7F203ED7390013394D /* NSObject+Runtime.m in Sources */,

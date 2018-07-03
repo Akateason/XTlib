@@ -72,6 +72,7 @@ fprintf(stderr, "🏀🏀🏀🏀🏀\n");                                      
 #import "UIResponder+ChainHandler.h"
 #import "NSTimer+Addition.h"
 #import "UILabel+Calculate.h"
+#import "UILabel+Addition.h"
 #import "UIAlertController+XTAddition.h"
 
 // DataBase

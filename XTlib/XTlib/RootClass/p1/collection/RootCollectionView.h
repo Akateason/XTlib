@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RootTableView.h"
 
-IB_DESIGNABLE
+//IB_DESIGNABLE
 
 @class RootCollectionView ;
 

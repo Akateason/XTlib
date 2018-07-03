@@ -10,7 +10,7 @@
 #import "MJRefresh.h"
 
 
-IB_DESIGNABLE
+//IB_DESIGNABLE
 
 @class RootTableView ;
 
