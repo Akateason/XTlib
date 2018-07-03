@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "RootTableView.h"
 
-//IB_DESIGNABLE
-
 @class RootCollectionView ;
 
 @protocol RootCollectionViewDelegate <NSObject>
@@ -27,12 +25,12 @@
  REFRESH STYLE:
  DEFAULT IS `NO`  -> ONLY GIF IMAGES , SHOW WORDS WHEN IT BECOMES `YES`
  */
-@property (nonatomic) IBInspectable BOOL isShowRefreshDetail ;
+@property (nonatomic) BOOL isShowRefreshDetail ;
 /**
  is auto LOAD MORE:
  DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
  */
-@property (nonatomic) IBInspectable BOOL isAutomaticallyLoadMore ;
+@property (nonatomic) BOOL isAutomaticallyLoadMore ;
 // MJRefresh type
 @property (nonatomic) XTRefreshType refreshType ;
 /**
