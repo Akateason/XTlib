@@ -79,7 +79,7 @@ ASSOCIATED_CGRECT(xt_previousRect, setXt_previousRect)
             layer.frame = self.xt_previousRect ;
             
             self.xt_gradientLayer = layer ;
-            [self.layer addSublayer:layer] ;
+            [self.layer insertSublayer:self.xt_gradientLayer atIndex:0] ;
         }
         self.xt_gradientLayer.frame = self.xt_previousRect ;
     }
