@@ -17,11 +17,22 @@
 
 @implementation AppDelegate
 
+- (void)navStyle {
+//    UIImage *backButtonBackgroundImage = [UIImage imageNamed:@"backArrowBlack"] ;
+//    UINavigationBar *navigationBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[GBNavigationViewController class]]];
+//    [navigationBar setBackIndicatorImage:backButtonBackgroundImage] ;
+//    [navigationBar setBackIndicatorTransitionMaskImage:backButtonBackgroundImage] ;
+//
+//    UIBarButtonItem *buttonItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]] ;
+//    UIOffset offset ;
+//    offset.vertical = -.5 ;
+//    [buttonItem setBackButtonTitlePositionAdjustment:offset forBarMetrics:UIBarMetricsDefault] ;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    
+    // nav
+    [self navStyle] ;
     
     // SVPHUD style
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark] ;
