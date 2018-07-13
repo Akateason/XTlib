@@ -195,6 +195,7 @@ static NSString * const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey"
     rotationAnimation.duration = once ;
     rotationAnimation.cumulative = YES;
     rotationAnimation.repeatCount = MAXFLOAT;
+    rotationAnimation.removedOnCompletion = NO ;
     [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"] ;
 }
 
