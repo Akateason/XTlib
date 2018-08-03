@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+
+static NSString * const kTIME_STR_FORMAT_YYYYMMddHHmmss         = @"YYYYMMddHHmmss"      ;
+static NSString * const kTIME_STR_FORMAT_yyyyMMdd_CHINESE       = @"yyyy年MM月dd日"       ;
+static NSString * const kTIME_STR_FORMAT_yyyyMMdd_CHINESE_SPACE = @"yyyy 年 MM 月 dd 日"  ;
+static NSString * const kTIME_STR_FORMAT_YYYY_MM_dd_HH_mm_ss    = @"YYYY-MM-dd HH:mm:ss" ;
+static NSString * const kTIME_STR_FORMAT_YYYY_MM_dd_HH_mm       = @"YYYY-MM-dd HH:mm"    ;
+static NSString * const kTIME_STR_FORMAT_YYYY_MM_dd             = @"YYYY-MM-dd"          ;
+static NSString * const kTIME_STR_FORMAT_YYYYMMdd               = @"YYYYMMdd"            ;
+static NSString * const kTIME_STR_FORMAT_MM_dd_HH_mm            = @"MM-dd HH:mm"         ;
+static NSString * const kTIME_STR_FORMAT_MM_dd                  = @"MM-dd"               ;
+
 static NSString * const kTIME_STR_FORMAT_1   = @"YYYYMMddHHmmss"      ;
 static NSString * const kTIME_STR_FORMAT_2   = @"yyyy年MM月dd日"       ;
 static NSString * const kTIME_STR_FORMAT_3   = @"yyyy 年 MM 月 dd 日"  ;
@@ -16,6 +27,8 @@ static NSString * const kTIME_STR_FORMAT_5   = @"YYYY-MM-dd HH:mm"    ;
 static NSString * const kTIME_STR_FORMAT_6   = @"YYYY-MM-dd"          ;
 static NSString * const kTIME_STR_FORMAT_7   = @"MM-dd HH:mm"         ;
 static NSString * const kTIME_STR_FORMAT_8   = @"MM-dd"               ;
+
+
 static const float  kMillisecond             = 1000.0   ;
 static const float  kSecond                  = 1.0      ;
 #define kUnitConversion                      kSecond
