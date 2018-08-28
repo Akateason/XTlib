@@ -1352,8 +1352,8 @@
 				8FA9D3BB20C7E158005AFEDF /* RootCustomView.m */,
 				8F2BFEDC203ED7380013394D /* RootCtrl.h */,
 				8F2BFEDD203ED7380013394D /* RootCtrl.m */,
-				8FA9D3B120C7B6A7005AFEDF /* collection */,
 				8F1511EA20C1AC4F00FF125C /* table */,
+				8FA9D3B120C7B6A7005AFEDF /* collection */,
 			);
 			path = p1;
 			sourceTree = "<group>";
