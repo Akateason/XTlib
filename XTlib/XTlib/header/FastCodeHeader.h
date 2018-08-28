@@ -12,6 +12,13 @@
 
 #import <objc/runtime.h>
 
+//-----------------------------------------------------------------------------//
+//
+// Images
+//
+#define QiNiuIMAGE_WITH_PHONE_WID(STR,W)             [STR stringByAppendingString:[NSString stringWithFormat:@"?imageView/2/w/%@",@(W)]]
+// get scale 2x
+#define GET_IMAGE_SIZE_SCALE2x(_size_)               CGSizeMake(_size_.width * 2., _size_.height * 2.)
 
 
 //-----------------------------------------------------------------------------//

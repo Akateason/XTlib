@@ -324,16 +324,9 @@
 		8F2BFEAB203ED7380013394D /* UIView+Sizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Sizes.m"; sourceTree = "<group>"; };
 		8F2BFEAC203ED7380013394D /* UIView+XTAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XTAddition.h"; sourceTree = "<group>"; };
 		8F2BFEAD203ED7380013394D /* UIView+XTAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XTAddition.m"; sourceTree = "<group>"; };
-		8F2BFEC0203ED7380013394D /* ArchiveHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArchiveHeader.h; sourceTree = "<group>"; };
 		8F2BFEC1203ED7380013394D /* DeviceSysHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSysHeader.h; sourceTree = "<group>"; };
 		8F2BFEC2203ED7380013394D /* FastCodeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastCodeHeader.h; sourceTree = "<group>"; };
-		8F2BFEC3203ED7380013394D /* KeyChainHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChainHeader.h; sourceTree = "<group>"; };
-		8F2BFEC4203ED7380013394D /* NotificationCenterHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCenterHeader.h; sourceTree = "<group>"; };
-		8F2BFEC5203ED7380013394D /* PictureHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureHeader.h; sourceTree = "<group>"; };
-		8F2BFEC6203ED7380013394D /* PublicEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicEnum.h; sourceTree = "<group>"; };
 		8F2BFEC7203ED7380013394D /* ScreenHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenHeader.h; sourceTree = "<group>"; };
-		8F2BFEC8203ED7380013394D /* UrlRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlRequestHeader.h; sourceTree = "<group>"; };
-		8F2BFEC9203ED7380013394D /* WordsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsHeader.h; sourceTree = "<group>"; };
 		8F2BFECC203ED7380013394D /* MyNavCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavCtrller.h; sourceTree = "<group>"; };
 		8F2BFECD203ED7380013394D /* MyNavCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavCtrller.m; sourceTree = "<group>"; };
 		8F2BFECE203ED7380013394D /* MySearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySearchBar.h; sourceTree = "<group>"; };
@@ -967,16 +960,9 @@
 		8F2BFEBF203ED7380013394D /* header */ = {
 			isa = PBXGroup;
 			children = (
-				8F2BFEC0203ED7380013394D /* ArchiveHeader.h */,
 				8F2BFEC1203ED7380013394D /* DeviceSysHeader.h */,
 				8F2BFEC2203ED7380013394D /* FastCodeHeader.h */,
-				8F2BFEC3203ED7380013394D /* KeyChainHeader.h */,
-				8F2BFEC4203ED7380013394D /* NotificationCenterHeader.h */,
-				8F2BFEC5203ED7380013394D /* PictureHeader.h */,
-				8F2BFEC6203ED7380013394D /* PublicEnum.h */,
 				8F2BFEC7203ED7380013394D /* ScreenHeader.h */,
-				8F2BFEC8203ED7380013394D /* UrlRequestHeader.h */,
-				8F2BFEC9203ED7380013394D /* WordsHeader.h */,
 			);
 			path = header;
 			sourceTree = "<group>";

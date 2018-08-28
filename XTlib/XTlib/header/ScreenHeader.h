@@ -42,7 +42,6 @@
 // NSIndexPath
 #define XT_GET_INDEXPATH_(ROW,SECTION)          [NSIndexPath indexPathForRow:ROW inSection:SECTION]
 
-
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)

@@ -10,25 +10,14 @@
 #import "ScreenHeader.h"
 #import "DeviceSysHeader.h"
 #import "ShareDigit.h"
-//#import "ServerRequest.h"
-//#import "SDImageCache.h"
 #import <SDWebImage/SDImageCache.h>
 #import "XTFileManager.h"
-//#import "XTSIAlertView.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
 #import "UIImage+AddFunction.h"
-#import "NotificationCenterHeader.h"
 #import "sys/utsname.h"
 
 #define SCORE_STR_LOW       @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@"
 #define SCORE_STR_HIGH      @"itms-apps://itunes.apple.com/app/id%@"
-
-NSString *const PATH_TOKEN_SAVE         = @"Documents/tokenArchive.archive" ;
-NSString *const PATH_BIND_SAVE          = @"Documents/bindArchive.archive" ;
-NSString *const URL_QINIU_HEAD          = @"http://img.subaojiang.com/" ;
-
-NSString *const APPSTORE_APPID          = @"123123123" ;
-
 
 @implementation CommonFunc
 
@@ -80,73 +69,73 @@ NSString *const APPSTORE_APPID          = @"123123123" ;
 #pragma mark --
 #pragma mark - 自动更新版本
 
-+ (void)updateLatestVersion {
-//    if (!G_BOOL_OPEN_APPSTORE) return ;
-    
-    dispatch_queue_t queue = dispatch_queue_create("versionQueue", NULL) ;
-    dispatch_async(queue, ^{
-        [self checkVersionRequest] ;
-    }) ;
-}
+//+ (void)updateLatestVersion {
+////    if (!G_BOOL_OPEN_APPSTORE) return ;
+//    
+//    dispatch_queue_t queue = dispatch_queue_create("versionQueue", NULL) ;
+//    dispatch_async(queue, ^{
+//        [self checkVersionRequest] ;
+//    }) ;
+//}
 
-+ (void)checkVersionRequest {
-    NSString *versionString = [self getVersionStrOfMyAPP] ;
-    
-    NSString *strUrl = @"http://itunes.apple.com/lookup?id=999705868";
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:strUrl]];
-    [request setHTTPMethod:@"POST"];
-    NSHTTPURLResponse *urlResponse = nil;
-    NSError *error = nil;
-    NSData *recervedData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-    NSString *results = [[NSString alloc] initWithBytes:[recervedData bytes] length:[recervedData length] encoding:NSUTF8StringEncoding];
-//    NSLog(@"app : %@",results) ;
-    
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[results dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil] ;
-    
-    NSArray *infoArray = [dic objectForKey:@"results"];
-    if ([infoArray count])
-    {
-        NSDictionary *releaseInfo = [infoArray firstObject];
-        NSString *lastVersion = [releaseInfo objectForKey:@"version"];
-        
-        BOOL bNeedUpdate = ([versionString compare:lastVersion] == NSOrderedAscending) ;
-        
-        if ( bNeedUpdate )
-        {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSString *updateUrl = [releaseInfo objectForKey:@"trackViewUrl"] ;
-                NSString *releaseNotes = [releaseInfo objectForKey:@"releaseNotes"] ;
-                
-                /*
-                XTSIAlertView *alertView = [[XTSIAlertView alloc] initWithTitle:@"速报酱有新版本"
-                                                                 andMessage:releaseNotes] ;
-                
-                [alertView addButtonWithTitle:@"不去"
-                                         type:XTSIAlertViewButtonTypeDefault
-                                      handler:^(XTSIAlertView *alertView) {
-                                      }] ;
-                [alertView addButtonWithTitle:@"去更新了"
-                                         type:XTSIAlertViewButtonTypeDestructive
-                                      handler:^(XTSIAlertView *alertView) {
-                                          NSURL *url = [NSURL URLWithString:updateUrl];
-                                          [[UIApplication sharedApplication]openURL:url];
-                                      }] ;
-                [alertView show] ;
-                */
-            }) ;
-        }
-        else
-        {
-            NSLog(@"此版本为最新版本") ;
-        }
-    }
-}
+//+ (void)checkVersionRequest {
+//    NSString *versionString = [self getVersionStrOfMyAPP] ;
+//
+//    NSString *strUrl = @"http://itunes.apple.com/lookup?id=999705868";
+//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+//    [request setURL:[NSURL URLWithString:strUrl]];
+//    [request setHTTPMethod:@"POST"];
+//    NSHTTPURLResponse *urlResponse = nil;
+//    NSError *error = nil;
+//    NSData *recervedData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+//    NSString *results = [[NSString alloc] initWithBytes:[recervedData bytes] length:[recervedData length] encoding:NSUTF8StringEncoding];
+////    NSLog(@"app : %@",results) ;
+//
+//    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[results dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil] ;
+//
+//    NSArray *infoArray = [dic objectForKey:@"results"];
+//    if ([infoArray count])
+//    {
+//        NSDictionary *releaseInfo = [infoArray firstObject];
+//        NSString *lastVersion = [releaseInfo objectForKey:@"version"];
+//
+//        BOOL bNeedUpdate = ([versionString compare:lastVersion] == NSOrderedAscending) ;
+//
+//        if ( bNeedUpdate )
+//        {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                NSString *updateUrl = [releaseInfo objectForKey:@"trackViewUrl"] ;
+//                NSString *releaseNotes = [releaseInfo objectForKey:@"releaseNotes"] ;
+//
+//                /*
+//                XTSIAlertView *alertView = [[XTSIAlertView alloc] initWithTitle:@"速报酱有新版本"
+//                                                                 andMessage:releaseNotes] ;
+//
+//                [alertView addButtonWithTitle:@"不去"
+//                                         type:XTSIAlertViewButtonTypeDefault
+//                                      handler:^(XTSIAlertView *alertView) {
+//                                      }] ;
+//                [alertView addButtonWithTitle:@"去更新了"
+//                                         type:XTSIAlertViewButtonTypeDestructive
+//                                      handler:^(XTSIAlertView *alertView) {
+//                                          NSURL *url = [NSURL URLWithString:updateUrl];
+//                                          [[UIApplication sharedApplication]openURL:url];
+//                                      }] ;
+//                [alertView show] ;
+//                */
+//            }) ;
+//        }
+//        else
+//        {
+//            NSLog(@"此版本为最新版本") ;
+//        }
+//    }
+//}
 
 #pragma mark - give app a Score
 
-+ (void)scoringMyApp {
-    NSString *str = IS_IOS_VERSION(7.0) ? [NSString stringWithFormat:SCORE_STR_HIGH,APPSTORE_APPID] : [NSString stringWithFormat:SCORE_STR_LOW,APPSTORE_APPID] ;
++ (void)scoringMyAppWithAppStoreID:(NSString *)appstoreID {
+    NSString *str = IS_IOS_VERSION(7.0) ? [NSString stringWithFormat:SCORE_STR_HIGH,appstoreID] : [NSString stringWithFormat:SCORE_STR_LOW,appstoreID] ;
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]] ;
 }
 

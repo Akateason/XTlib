@@ -28,11 +28,11 @@
 
 #pragma mark - update the latest version if neccessary .
 
-+ (void)updateLatestVersion ;
+//+ (void)updateLatestVersion ;
 
 #pragma mark - give app a Score
 
-+ (void)scoringMyApp ;
++ (void)scoringMyAppWithAppStoreID:(NSString *)appstoreID ;
 
 #pragma mark - CLLocation  get current location
 
