@@ -128,10 +128,8 @@
 		8F2BFFBB203ED7390013394D /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF36203ED7380013394D /* Base64.m */; };
 		8F2BFFBC203ED7390013394D /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF39203ED7380013394D /* NSString+MD5.m */; };
 		8F2BFFBD203ED7390013394D /* CommonFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF3C203ED7380013394D /* CommonFunc.m */; };
-		8F2BFFBE203ED7390013394D /* IsFirstTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF3F203ED7380013394D /* IsFirstTime.m */; };
 		8F2BFFBF203ED7390013394D /* PlistUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF42203ED7380013394D /* PlistUtil.m */; };
 		8F2BFFC0203ED7390013394D /* ScreenFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF45203ED7380013394D /* ScreenFit.m */; };
-		8F2BFFC1203ED7390013394D /* ShareDigit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF48203ED7380013394D /* ShareDigit.m */; };
 		8F2BFFC2203ED7390013394D /* XTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF4B203ED7380013394D /* XTAnimation.m */; };
 		8F2BFFC3203ED7390013394D /* ValetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF4E203ED7380013394D /* ValetManager.m */; };
 		8F2BFFC4203ED7390013394D /* XTArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF50203ED7380013394D /* XTArchive.m */; };
@@ -414,14 +412,10 @@
 		8F2BFF39203ED7380013394D /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		8F2BFF3B203ED7380013394D /* CommonFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunc.h; sourceTree = "<group>"; };
 		8F2BFF3C203ED7380013394D /* CommonFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunc.m; sourceTree = "<group>"; };
-		8F2BFF3E203ED7380013394D /* IsFirstTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsFirstTime.h; sourceTree = "<group>"; };
-		8F2BFF3F203ED7380013394D /* IsFirstTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsFirstTime.m; sourceTree = "<group>"; };
 		8F2BFF41203ED7380013394D /* PlistUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistUtil.h; sourceTree = "<group>"; };
 		8F2BFF42203ED7380013394D /* PlistUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistUtil.m; sourceTree = "<group>"; };
 		8F2BFF44203ED7380013394D /* ScreenFit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenFit.h; sourceTree = "<group>"; };
 		8F2BFF45203ED7380013394D /* ScreenFit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenFit.m; sourceTree = "<group>"; };
-		8F2BFF47203ED7380013394D /* ShareDigit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareDigit.h; sourceTree = "<group>"; };
-		8F2BFF48203ED7380013394D /* ShareDigit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareDigit.m; sourceTree = "<group>"; };
 		8F2BFF4A203ED7380013394D /* XTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAnimation.h; sourceTree = "<group>"; };
 		8F2BFF4B203ED7380013394D /* XTAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAnimation.m; sourceTree = "<group>"; };
 		8F2BFF4D203ED7380013394D /* ValetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValetManager.h; sourceTree = "<group>"; };
@@ -1180,10 +1174,8 @@
 			children = (
 				8F2BFF33203ED7380013394D /* Base64+MD5 */,
 				8F2BFF3A203ED7380013394D /* CommonFunc */,
-				8F2BFF3D203ED7380013394D /* IsFirstTime */,
 				8F2BFF40203ED7380013394D /* PlistUtil */,
 				8F2BFF43203ED7380013394D /* ScreenFit */,
-				8F2BFF46203ED7380013394D /* ShareDigit */,
 				8F2BFF49203ED7380013394D /* XTAnimation */,
 				8F2BFF4C203ED7380013394D /* XTFileManager */,
 				8F2BFF53203ED7380013394D /* XTJson */,
@@ -1228,15 +1220,6 @@
 			path = CommonFunc;
 			sourceTree = "<group>";
 		};
-		8F2BFF3D203ED7380013394D /* IsFirstTime */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFF3E203ED7380013394D /* IsFirstTime.h */,
-				8F2BFF3F203ED7380013394D /* IsFirstTime.m */,
-			);
-			path = IsFirstTime;
-			sourceTree = "<group>";
-		};
 		8F2BFF40203ED7380013394D /* PlistUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -1253,15 +1236,6 @@
 				8F2BFF45203ED7380013394D /* ScreenFit.m */,
 			);
 			path = ScreenFit;
-			sourceTree = "<group>";
-		};
-		8F2BFF46203ED7380013394D /* ShareDigit */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFF47203ED7380013394D /* ShareDigit.h */,
-				8F2BFF48203ED7380013394D /* ShareDigit.m */,
-			);
-			path = ShareDigit;
 			sourceTree = "<group>";
 		};
 		8F2BFF49203ED7380013394D /* XTAnimation */ = {
@@ -1661,7 +1635,6 @@
 				8F2BFF94203ED7390013394D /* MyTabbar.m in Sources */,
 				8F2BFF99203ED7390013394D /* RootCollectionView.m in Sources */,
 				8F2BFFAB203ED7390013394D /* ParallaxHeaderView.m in Sources */,
-				8F2BFFBE203ED7390013394D /* IsFirstTime.m in Sources */,
 				8F2BFF60203ED7390013394D /* DoubanTags.m in Sources */,
 				8F2BFE40203ED7270013394D /* UIAlternativeButton.m in Sources */,
 				8F2BFF84203ED7390013394D /* UIFont+FontAdapter.m in Sources */,
@@ -1715,7 +1688,6 @@
 				8F2BFF5E203ED7390013394D /* Z1CustomCell.m in Sources */,
 				8F2BFFA4203ED7390013394D /* CtrllerEvent.m in Sources */,
 				8F2BFF79203ED7390013394D /* Zample9Controller.m in Sources */,
-				8F2BFFC1203ED7390013394D /* ShareDigit.m in Sources */,
 				8F2BFFB1203ED7390013394D /* XTDrawerFlowLayout.m in Sources */,
 				8F2BFF63203ED7390013394D /* Images.m in Sources */,
 				8F2BFF5D203ED7390013394D /* XTColorCell.m in Sources */,

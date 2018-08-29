@@ -48,8 +48,7 @@ static const NSInteger kEveryCount = 10 ;
         view ;
     }) ;
     
-    [self.table registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil]
-     forCellReuseIdentifier:@"MovieCell"] ;
+    [MovieCell registerNibFromTable:self.table] ;
     [self.table loadNewInfoInBackGround:TRUE] ;
 }
 
@@ -98,7 +97,7 @@ static const NSInteger kEveryCount = 10 ;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"] ;
+    MovieCell *cell = [MovieCell fetchFromTable:tableView indexPath:indexPath] ;
     [cell configure:self.list_datasource[indexPath.row]] ;
     return cell ;
 }
