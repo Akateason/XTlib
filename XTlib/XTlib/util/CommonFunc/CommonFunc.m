@@ -9,7 +9,6 @@
 #import "CommonFunc.h"
 #import "ScreenHeader.h"
 #import "DeviceSysHeader.h"
-#import "ShareDigit.h"
 #import <SDWebImage/SDImageCache.h>
 #import "XTFileManager.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
