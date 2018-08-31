@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTlib"
-  s.version      = "1.2.6"
+  s.version      = "1.2.7"
   s.summary      = "a rapid develop lib for iOS"
 
   # This description is used to generate tags and improve search results.
@@ -88,11 +88,9 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-#  s.source_files = 'XTlib/XTlib/XTlib.h'
-#  s.public_header_files = 'XTlib/XTlib/XTlib.h',"XTlib/XTlib/header/*.h"
 
-   s.source_files  = "XTlib/XTlib","XTlib/XTlib/**/*.{h,m}","XTlib/XTlib/**/**/*.{h,m}"
-   s.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h" 
+s.source_files  = "XTlib/XTlib","XTlib/XTlib/**/*.{h,m}","XTlib/XTlib/**/**/*.{h,m}"
+s.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -145,42 +143,24 @@ Pod::Spec.new do |s|
 
   # ---------- subpec setting ----------- #
   #
-  #  
-#  s.subspec 'category' do |ss|
-#    ss.source_files = 'XTlib/XTlib/category/*.{h,m}'
-#    ss.public_header_files = 'XTlib/XTlib/category/*.h',"XTlib/XTlib/header/*.h"
-#  end
+  #
 
-#  s.subspec 'color' do |ss|
-#    ss.source_files = 'XTlib/XTlib/color/*.{h,m}'
-#    ss.public_header_files = 'XTlib/XTlib/color/*.h',"XTlib/XTlib/header/*.h"
-#    ss.resources = 'XTlib/XTlib/color/*.plist'
-#  end
+# 默认的使用模块
+s.default_subspec = 'FSLib'
+# 个个子模块的个自的源码路径
+s.subspec 'XTlib' do |base|
+base.source_files = 'XTlib/XTlib/Base/**/*'
+end
 
-#  s.subspec 'header' do |ss|
-#    ss.source_files = 'XTlib/XTlib/header/*.{h,m}'
-#    ss.public_header_files = 'XTlib/XTlib/header/*.h' 
-#  end
+# A a 一定要不一样，是别名，添加好暴露的头文件
+s.subspec 'A' do |a|
+a.source_files = 'XTlib/XTlib/Components/**/*'
 
-#  s.subspec 'Root' do |ss|
-#    ss.source_files = 'XTlib/XTlib/Root/*.{h,m}'
-#    ss.public_header_files = 'XTlib/XTlib/Root/*.h',"XTlib/XTlib/header/*.h"
-#  end
+end
 
-#  s.subspec 'Stat' do |ss|
-#    ss.source_files = 'XTlib/XTlib/Stat/*.{h,m}','XTlib/XTlib/Stat/**/*.{h,m}'
-#    ss.public_header_files = 'XTlib/XTlib/Stat/*.h','XTlib/XTlib/Stat/**/*.h',"XTlib/XTlib/header/*.h"
-#  end
 
-#  s.subspec 'UIs' do |ss|
-#    ss.source_files = 'XTlib/XTlib/UIs/*.{h,m}','XTlib/XTlib/UIs/**/*.{h,m}'
-#    ss.public_header_files = 'XTlib/XTlib/UIs/*.h','XTlib/XTlib/UIs/**/*.h',"XTlib/XTlib/header/*.h"
-#  end
 
-#  s.subspec 'util' do |ss|
-#    ss.source_files = 'XTlib/XTlib/util/**/*.{h,m}'
-#    ss.public_header_files = 'XTlib/XTlib/util/**/*.h',"XTlib/XTlib/header/*.h"
-#  end
+
 
 
 
