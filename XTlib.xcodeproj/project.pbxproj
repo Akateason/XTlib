@@ -1136,15 +1136,6 @@
 			path = CommonFunc;
 			sourceTree = "<group>";
 		};
-		8F2BFF43203ED7380013394D /* ScreenFit */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFF44203ED7380013394D /* ScreenFit.h */,
-				8F2BFF45203ED7380013394D /* ScreenFit.m */,
-			);
-			path = ScreenFit;
-			sourceTree = "<group>";
-		};
 		8F2BFF49203ED7380013394D /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -1338,7 +1329,8 @@
 		8FCB886F21391B1800492AB0 /* Adapt */ = {
 			isa = PBXGroup;
 			children = (
-				8F2BFF43203ED7380013394D /* ScreenFit */,
+				8F2BFF44203ED7380013394D /* ScreenFit.h */,
+				8F2BFF45203ED7380013394D /* ScreenFit.m */,
 				8F2BFEA2203ED7380013394D /* UIFont+FontAdapter.h */,
 				8F2BFEA3203ED7380013394D /* UIFont+FontAdapter.m */,
 			);
