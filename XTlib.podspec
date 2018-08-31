@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "XTlib"
-  s.version      = "1.2.15"
+  s.version      = "1.2.16"
   s.summary      = "a rapid develop lib for iOS"
   s.description  = "XTlib. a rapid develop lib for iOS ."
   s.homepage     = "https://github.com/Akateason/XTlib"
@@ -27,11 +27,11 @@ Pod::Spec.new do |s|
 
 
 # 默认的使用模块
-s.default_subspec = 'FSLib'
+s.default_subspec = 'base'
 # 个个子模块的个自的源码路径
-s.subspec 'FSLib' do |fsLib|
-fsLib.source_files = "XTlib/XTlib","XTlib/XTlib/**/*.{h,m}","XTlib/XTlib/**/**/*.{h,m}"
-fsLib.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h"
+s.subspec 'base' do |base|
+base.source_files = "XTlib/XTlib/Base","XTlib/XTlib/Base/**/*.{h,m}","XTlib/XTlib/Base/**/**/*.{h,m}"
+base.public_header_files = "XTlib/XTlib/Base/*.h","XTlib/XTlib/Base/header/*.h","XTlib/XTlib/Base/**/**/*.h"
 end
 
 
