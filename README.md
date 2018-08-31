@@ -4,18 +4,18 @@
 pod 'XTlib'
 
 
-* base(Requred)
-    Utils
-        Foundation            
-        UIkit                     
-        Store
-        Security
-    Network -> [XTReq](https://github.com/Akateason/XTReq).
-    Database -> [XTFMDB](https://github.com/Akateason/XTFMDB).
-    Stat
+### base(Requred)
+ 1. Utils
+ * Foundation            
+ * UIkit                     
+ * Store
+ * Security
+ 2. Network -> [XTReq](https://github.com/Akateason/XTReq)
+ 3. Database -> [XTFMDB](https://github.com/Akateason/XTFMDB)
+ 4. Stat
 
-* components(Optional)
-    Animations
-    Custom UIs
-    Pay
+### components(Optional)
+* Animations
+* Custom UIs
+* Pay
 
