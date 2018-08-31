@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTlib"
-  s.version      = "1.2.10"
+  s.version      = "1.2.11"
   s.summary      = "a rapid develop lib for iOS"
 
   # This description is used to generate tags and improve search results.
@@ -156,7 +156,7 @@ end
 # A a 一定要不一样，是别名，添加好暴露的头文件
 s.subspec 'A' do |a|
 a.source_files = 'XTlib/XTlib/Components/**/*'
-a.public_header_files = "XTlib/XTlib/Components/**/*/*.h"
+a.public_header_files = "XTlib/XTlib/Components/**/*/*.h","XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h"
 
 end
 
