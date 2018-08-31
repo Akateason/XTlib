@@ -893,62 +893,11 @@
 		8F2BFE8C203ED7380013394D /* XTlib */ = {
 			isa = PBXGroup;
 			children = (
-				8F2BFE8D203ED7380013394D /* category */,
-				8F2BFEBF203ED7380013394D /* header */,
-				8F2BFECB203ED7380013394D /* RootClass */,
-				8F2BFEE6203ED7380013394D /* Stat */,
-				8F2BFF02203ED7380013394D /* UIs */,
-				8F2BFF32203ED7380013394D /* util */,
 				8F2BFF59203ED7380013394D /* XTlib.h */,
+				8FCB8867213919B000492AB0 /* Base(Requred) */,
+				8FCB887121391C8B00492AB0 /* Components(Optional) */,
 			);
 			path = XTlib;
-			sourceTree = "<group>";
-		};
-		8F2BFE8D203ED7380013394D /* category */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFE8E203ED7380013394D /* ALAssetsLibrary+CustomPhotoAlbum.h */,
-				8F2BFE8F203ED7380013394D /* ALAssetsLibrary+CustomPhotoAlbum.m */,
-				8F2BFE90203ED7380013394D /* NSDate+NSCalendar.h */,
-				8F2BFE91203ED7380013394D /* NSDate+NSCalendar.m */,
-				8F2BFE92203ED7380013394D /* NSDate+XTTick.h */,
-				8F2BFE93203ED7380013394D /* NSDate+XTTick.m */,
-				8F2BFE94203ED7380013394D /* NSNumber+Round.h */,
-				8F2BFE95203ED7380013394D /* NSNumber+Round.m */,
-				8F2BFE96203ED7380013394D /* NSObject+Reflection.h */,
-				8F2BFE97203ED7380013394D /* NSObject+Reflection.m */,
-				8F2BFE98203ED7380013394D /* NSObject+Runtime.h */,
-				8F2BFE99203ED7380013394D /* NSObject+Runtime.m */,
-				8F2BFE9A203ED7380013394D /* NSString+Extend.h */,
-				8F2BFE9B203ED7380013394D /* NSString+Extend.m */,
-				8F2BFE9C203ED7380013394D /* NSTimer+Addition.h */,
-				8F2BFE9D203ED7380013394D /* NSTimer+Addition.m */,
-				8F2BFE9E203ED7380013394D /* UIButton+Countdown.h */,
-				8F2BFE9F203ED7380013394D /* UIButton+Countdown.m */,
-				8F2BFEA0203ED7380013394D /* UIButton+ExtendTouchRect.h */,
-				8F2BFEA1203ED7380013394D /* UIButton+ExtendTouchRect.m */,
-				8F2BFEA2203ED7380013394D /* UIFont+FontAdapter.h */,
-				8F2BFEA3203ED7380013394D /* UIFont+FontAdapter.m */,
-				8F2BFEA4203ED7380013394D /* UIImage+AddFunction.h */,
-				8F2BFEA5203ED7380013394D /* UIImage+AddFunction.m */,
-				8F2BFEA6203ED7380013394D /* UIImageView+QNExtention.h */,
-				8F2BFEA7203ED7380013394D /* UIImageView+QNExtention.m */,
-				8F2BFEA8203ED7380013394D /* UIResponder+ChainHandler.h */,
-				8F2BFEA9203ED7380013394D /* UIResponder+ChainHandler.m */,
-				8F2BFEAA203ED7380013394D /* UIView+Sizes.h */,
-				8F2BFEAB203ED7380013394D /* UIView+Sizes.m */,
-				8F2BFEAC203ED7380013394D /* UIView+XTAddition.h */,
-				8F2BFEAD203ED7380013394D /* UIView+XTAddition.m */,
-				8FDE20482059447D003B5398 /* UIViewController+XTAddition.h */,
-				8FDE20492059447D003B5398 /* UIViewController+XTAddition.m */,
-				8F90245220EB5D76009A1B9C /* UILabel+Addition.h */,
-				8F90245320EB5D76009A1B9C /* UILabel+Addition.m */,
-				8F2A141820908DEC007F97B3 /* UILabel+Calculate.h */,
-				8F2A141920908DEC007F97B3 /* UILabel+Calculate.m */,
-				8F90244420EA1B40009A1B9C /* UIAlertController+XTAddition.h */,
-				8F90244520EA1B40009A1B9C /* UIAlertController+XTAddition.m */,
-			);
-			path = category;
 			sourceTree = "<group>";
 		};
 		8F2BFEBF203ED7380013394D /* header */ = {
@@ -959,15 +908,6 @@
 				8F2BFEC7203ED7380013394D /* ScreenHeader.h */,
 			);
 			path = header;
-			sourceTree = "<group>";
-		};
-		8F2BFECB203ED7380013394D /* RootClass */ = {
-			isa = PBXGroup;
-			children = (
-				8FA9D41D20C91FF7005AFEDF /* p1 */,
-				8FA9D41C20C91FDF005AFEDF /* p2 */,
-			);
-			path = RootClass;
 			sourceTree = "<group>";
 		};
 		8F2BFEE6203ED7380013394D /* Stat */ = {
@@ -1032,7 +972,7 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		8F2BFF02203ED7380013394D /* UIs */ = {
+		8F2BFF02203ED7380013394D /* Custom UIs */ = {
 			isa = PBXGroup;
 			children = (
 				8F0AEE24206A285700DC5E7D /* GradientButton */,
@@ -1049,7 +989,7 @@
 				8F2BFF2C203ED7380013394D /* XTStretchSegment */,
 				8F2BFF2F203ED7380013394D /* XTZoomPicture */,
 			);
-			path = UIs;
+			path = "Custom UIs";
 			sourceTree = "<group>";
 		};
 		8F2BFF06203ED7380013394D /* ParallaxHeaderView */ = {
@@ -1169,30 +1109,6 @@
 			path = XTZoomPicture;
 			sourceTree = "<group>";
 		};
-		8F2BFF32203ED7380013394D /* util */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFF33203ED7380013394D /* Base64+MD5 */,
-				8F2BFF3A203ED7380013394D /* CommonFunc */,
-				8F2BFF40203ED7380013394D /* PlistUtil */,
-				8F2BFF43203ED7380013394D /* ScreenFit */,
-				8F2BFF49203ED7380013394D /* XTAnimation */,
-				8F2BFF4C203ED7380013394D /* XTFileManager */,
-				8F2BFF53203ED7380013394D /* XTJson */,
-				8F2BFF56203ED7380013394D /* XTVerification */,
-			);
-			path = util;
-			sourceTree = "<group>";
-		};
-		8F2BFF33203ED7380013394D /* Base64+MD5 */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFF34203ED7380013394D /* Base64 */,
-				8F2BFF37203ED7380013394D /* MD5 */,
-			);
-			path = "Base64+MD5";
-			sourceTree = "<group>";
-		};
 		8F2BFF34203ED7380013394D /* Base64 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1220,15 +1136,6 @@
 			path = CommonFunc;
 			sourceTree = "<group>";
 		};
-		8F2BFF40203ED7380013394D /* PlistUtil */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFF41203ED7380013394D /* PlistUtil.h */,
-				8F2BFF42203ED7380013394D /* PlistUtil.m */,
-			);
-			path = PlistUtil;
-			sourceTree = "<group>";
-		};
 		8F2BFF43203ED7380013394D /* ScreenFit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1238,26 +1145,13 @@
 			path = ScreenFit;
 			sourceTree = "<group>";
 		};
-		8F2BFF49203ED7380013394D /* XTAnimation */ = {
+		8F2BFF49203ED7380013394D /* Animations */ = {
 			isa = PBXGroup;
 			children = (
 				8F2BFF4A203ED7380013394D /* XTAnimation.h */,
 				8F2BFF4B203ED7380013394D /* XTAnimation.m */,
 			);
-			path = XTAnimation;
-			sourceTree = "<group>";
-		};
-		8F2BFF4C203ED7380013394D /* XTFileManager */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFF4D203ED7380013394D /* ValetManager.h */,
-				8F2BFF4E203ED7380013394D /* ValetManager.m */,
-				8F2BFF4F203ED7380013394D /* XTArchive.h */,
-				8F2BFF50203ED7380013394D /* XTArchive.m */,
-				8F2BFF51203ED7380013394D /* XTFileManager.h */,
-				8F2BFF52203ED7380013394D /* XTFileManager.m */,
-			);
-			path = XTFileManager;
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		8F2BFF53203ED7380013394D /* XTJson */ = {
@@ -1298,9 +1192,127 @@
 			path = Inspectable;
 			sourceTree = "<group>";
 		};
-		8FA9D41C20C91FDF005AFEDF /* p2 */ = {
+		8FC8215020EA7DCB0068AE5E /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				8FC8215120EA7DE90068AE5E /* AlertTestVC.h */,
+				8FC8215220EA7DE90068AE5E /* AlertTestVC.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		8FCB8867213919B000492AB0 /* Base(Requred) */ = {
+			isa = PBXGroup;
+			children = (
+				8F2BFEBF203ED7380013394D /* header */,
+				8FCB8868213919D200492AB0 /* Utils */,
+				8F2BFEE6203ED7380013394D /* Stat */,
+			);
+			path = "Base(Requred)";
+			sourceTree = "<group>";
+		};
+		8FCB8868213919D200492AB0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8FCB8869213919DB00492AB0 /* Foundation */,
+				8FCB886A213919E700492AB0 /* UIkit */,
+				8FCB886C213919F200492AB0 /* Security */,
+				8FCB886B213919ED00492AB0 /* Store */,
+				8F2BFF3A203ED7380013394D /* CommonFunc */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8FCB8869213919DB00492AB0 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				8F2BFF53203ED7380013394D /* XTJson */,
+				8F2BFF56203ED7380013394D /* XTVerification */,
+				8F2BFE90203ED7380013394D /* NSDate+NSCalendar.h */,
+				8F2BFE91203ED7380013394D /* NSDate+NSCalendar.m */,
+				8F2BFE92203ED7380013394D /* NSDate+XTTick.h */,
+				8F2BFE93203ED7380013394D /* NSDate+XTTick.m */,
+				8F2BFE94203ED7380013394D /* NSNumber+Round.h */,
+				8F2BFE95203ED7380013394D /* NSNumber+Round.m */,
+				8F2BFE96203ED7380013394D /* NSObject+Reflection.h */,
+				8F2BFE97203ED7380013394D /* NSObject+Reflection.m */,
+				8F2BFE98203ED7380013394D /* NSObject+Runtime.h */,
+				8F2BFE99203ED7380013394D /* NSObject+Runtime.m */,
+				8F2BFE9A203ED7380013394D /* NSString+Extend.h */,
+				8F2BFE9B203ED7380013394D /* NSString+Extend.m */,
+				8F2BFE9C203ED7380013394D /* NSTimer+Addition.h */,
+				8F2BFE9D203ED7380013394D /* NSTimer+Addition.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		8FCB886A213919E700492AB0 /* UIkit */ = {
+			isa = PBXGroup;
+			children = (
+				8FCB886F21391B1800492AB0 /* Adapt */,
+				8FCB886E21391B1000492AB0 /* Controller */,
+				8FCB886D21391B0500492AB0 /* Views */,
+			);
+			path = UIkit;
+			sourceTree = "<group>";
+		};
+		8FCB886B213919ED00492AB0 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				8F2BFF41203ED7380013394D /* PlistUtil.h */,
+				8F2BFF42203ED7380013394D /* PlistUtil.m */,
+				8F2BFF4D203ED7380013394D /* ValetManager.h */,
+				8F2BFF4E203ED7380013394D /* ValetManager.m */,
+				8F2BFF4F203ED7380013394D /* XTArchive.h */,
+				8F2BFF50203ED7380013394D /* XTArchive.m */,
+				8F2BFF51203ED7380013394D /* XTFileManager.h */,
+				8F2BFF52203ED7380013394D /* XTFileManager.m */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		8FCB886C213919F200492AB0 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				8F2BFF34203ED7380013394D /* Base64 */,
+				8F2BFF37203ED7380013394D /* MD5 */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		8FCB886D21391B0500492AB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8FCB887021391BB000492AB0 /* Root */,
+				8F90245220EB5D76009A1B9C /* UILabel+Addition.h */,
+				8F90245320EB5D76009A1B9C /* UILabel+Addition.m */,
+				8F2A141820908DEC007F97B3 /* UILabel+Calculate.h */,
+				8F2A141920908DEC007F97B3 /* UILabel+Calculate.m */,
+				8F2BFEA4203ED7380013394D /* UIImage+AddFunction.h */,
+				8F2BFEA5203ED7380013394D /* UIImage+AddFunction.m */,
+				8F2BFEA6203ED7380013394D /* UIImageView+QNExtention.h */,
+				8F2BFEA7203ED7380013394D /* UIImageView+QNExtention.m */,
+				8F2BFEA8203ED7380013394D /* UIResponder+ChainHandler.h */,
+				8F2BFEA9203ED7380013394D /* UIResponder+ChainHandler.m */,
+				8F2BFEAA203ED7380013394D /* UIView+Sizes.h */,
+				8F2BFEAB203ED7380013394D /* UIView+Sizes.m */,
+				8F2BFEAC203ED7380013394D /* UIView+XTAddition.h */,
+				8F2BFEAD203ED7380013394D /* UIView+XTAddition.m */,
+				8F2BFEA0203ED7380013394D /* UIButton+ExtendTouchRect.h */,
+				8F2BFEA1203ED7380013394D /* UIButton+ExtendTouchRect.m */,
+				8F2BFE9E203ED7380013394D /* UIButton+Countdown.h */,
+				8F2BFE9F203ED7380013394D /* UIButton+Countdown.m */,
+				8F2BFE8E203ED7380013394D /* ALAssetsLibrary+CustomPhotoAlbum.h */,
+				8F2BFE8F203ED7380013394D /* ALAssetsLibrary+CustomPhotoAlbum.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8FCB886E21391B1000492AB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F2BFEDC203ED7380013394D /* RootCtrl.h */,
+				8F2BFEDD203ED7380013394D /* RootCtrl.m */,
 				8F2BFECC203ED7380013394D /* MyNavCtrller.h */,
 				8F2BFECD203ED7380013394D /* MyNavCtrller.m */,
 				8F2BFECE203ED7380013394D /* MySearchBar.h */,
@@ -1315,30 +1327,42 @@
 				8F2BFED7203ED7380013394D /* MyTextView.m */,
 				8F2BFED8203ED7380013394D /* MyWebController.h */,
 				8F2BFED9203ED7380013394D /* MyWebController.m */,
+				8F90244420EA1B40009A1B9C /* UIAlertController+XTAddition.h */,
+				8F90244520EA1B40009A1B9C /* UIAlertController+XTAddition.m */,
+				8FDE20482059447D003B5398 /* UIViewController+XTAddition.h */,
+				8FDE20492059447D003B5398 /* UIViewController+XTAddition.m */,
 			);
-			path = p2;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		8FA9D41D20C91FF7005AFEDF /* p1 */ = {
+		8FCB886F21391B1800492AB0 /* Adapt */ = {
 			isa = PBXGroup;
 			children = (
-				8FA9D3BA20C7E158005AFEDF /* RootCustomView.h */,
-				8FA9D3BB20C7E158005AFEDF /* RootCustomView.m */,
-				8F2BFEDC203ED7380013394D /* RootCtrl.h */,
-				8F2BFEDD203ED7380013394D /* RootCtrl.m */,
+				8F2BFF43203ED7380013394D /* ScreenFit */,
+				8F2BFEA2203ED7380013394D /* UIFont+FontAdapter.h */,
+				8F2BFEA3203ED7380013394D /* UIFont+FontAdapter.m */,
+			);
+			path = Adapt;
+			sourceTree = "<group>";
+		};
+		8FCB887021391BB000492AB0 /* Root */ = {
+			isa = PBXGroup;
+			children = (
 				8F1511EA20C1AC4F00FF125C /* table */,
 				8FA9D3B120C7B6A7005AFEDF /* collection */,
+				8FA9D3BA20C7E158005AFEDF /* RootCustomView.h */,
+				8FA9D3BB20C7E158005AFEDF /* RootCustomView.m */,
 			);
-			path = p1;
+			path = Root;
 			sourceTree = "<group>";
 		};
-		8FC8215020EA7DCB0068AE5E /* Alert */ = {
+		8FCB887121391C8B00492AB0 /* Components(Optional) */ = {
 			isa = PBXGroup;
 			children = (
-				8FC8215120EA7DE90068AE5E /* AlertTestVC.h */,
-				8FC8215220EA7DE90068AE5E /* AlertTestVC.m */,
+				8F2BFF49203ED7380013394D /* Animations */,
+				8F2BFF02203ED7380013394D /* Custom UIs */,
 			);
-			path = Alert;
+			path = "Components(Optional)";
 			sourceTree = "<group>";
 		};
 		8FDE204B205948B0003B5398 /* controllerHelp */ = {
