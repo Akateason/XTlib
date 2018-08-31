@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTlib"
-  s.version      = "1.2.12"
+  s.version      = "1.2.13"
   s.summary      = "a rapid develop lib for iOS"
 
   # This description is used to generate tags and improve search results.
@@ -148,17 +148,11 @@ s.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/
 # 默认的使用模块
 s.default_subspec = 'XTlib'
 # 个个子模块的个自的源码路径
-s.subspec 'XTlib' do |base|
+s.subspec 'base1' do |base|
 base.source_files = 'XTlib/Base/**/*'
 base.public_header_files = "XTlib/*.h","XTlib/header/*.h","XTlib/**/**/*.h"
 end
 
-# A a 一定要不一样，是别名，添加好暴露的头文件
-s.subspec 'A' do |a|
-a.source_files = 'XTlib/Components/**/*'
-a.public_header_files = "XTlib/Components/**/*/*.h","XTlib/*.h","XTlib/header/*.h","XTlib/**/**/*.h"
-
-end
 
 
 
