@@ -972,7 +972,7 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		8F2BFF02203ED7380013394D /* Custom UIs */ = {
+		8F2BFF02203ED7380013394D /* CustomUIs */ = {
 			isa = PBXGroup;
 			children = (
 				8F0AEE24206A285700DC5E7D /* GradientButton */,
@@ -989,7 +989,7 @@
 				8F2BFF2C203ED7380013394D /* XTStretchSegment */,
 				8F2BFF2F203ED7380013394D /* XTZoomPicture */,
 			);
-			path = "Custom UIs";
+			path = CustomUIs;
 			sourceTree = "<group>";
 		};
 		8F2BFF06203ED7380013394D /* ParallaxHeaderView */ = {
@@ -1352,7 +1352,7 @@
 			isa = PBXGroup;
 			children = (
 				8F2BFF49203ED7380013394D /* Animations */,
-				8F2BFF02203ED7380013394D /* Custom UIs */,
+				8F2BFF02203ED7380013394D /* CustomUIs */,
 			);
 			path = Components;
 			sourceTree = "<group>";
