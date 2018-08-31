@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTlib"
-  s.version      = "1.2.13"
+  s.version      = "1.2.14"
   s.summary      = "a rapid develop lib for iOS"
 
   # This description is used to generate tags and improve search results.
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "XTlib"
+  s.description  = "XTlib. a rapid develop lib for iOS ."
 
   s.homepage     = "https://github.com/Akateason/XTlib"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
