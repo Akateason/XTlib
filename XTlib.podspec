@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XTlib"
-  s.version      = "1.2.8"
+  s.version      = "1.2.9"
   s.summary      = "a rapid develop lib for iOS"
 
   # This description is used to generate tags and improve search results.
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "XTlib is an O.O.P API for iOS Objective-C development.  Root / Category / Header / Database / Color / Network / UIs / Util"
+  s.description  = "XTlib"
 
   s.homepage     = "https://github.com/Akateason/XTlib"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -150,6 +150,7 @@ s.default_subspec = 'XTlib'
 # 个个子模块的个自的源码路径
 s.subspec 'XTlib' do |base|
 base.source_files = 'XTlib/XTlib/Base/**/*'
+base.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h"
 end
 
 # A a 一定要不一样，是别名，添加好暴露的头文件
