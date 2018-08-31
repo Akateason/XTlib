@@ -91,17 +91,20 @@ fprintf(stderr, "🏀🏀🏀🏀🏀\n");                                      
 //#import "XTStretchSegment.h"
 //#import "XTSIAlertView.h"
 
+// Animation
+//#import "XTAnimation.h"
+
 // Util
 #import "NSString+MD5.h"
 #import "Base64.h"
 #import "PlistUtil.h"
 #import "CommonFunc.h"
-#import "XTAnimation.h"
 #import "XTFileManager.h"
 #import "XTArchive.h"
 #import "ValetManager.h"
 #import "XTJson.h"
 #import "XTVerification.h"
+
 
 
 #endif /* XTlib_h */
