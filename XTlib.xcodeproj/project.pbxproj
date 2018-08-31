@@ -894,8 +894,8 @@
 			isa = PBXGroup;
 			children = (
 				8F2BFF59203ED7380013394D /* XTlib.h */,
-				8FCB8867213919B000492AB0 /* Base(Requred) */,
-				8FCB887121391C8B00492AB0 /* Components(Optional) */,
+				8FCB8867213919B000492AB0 /* Base */,
+				8FCB887121391C8B00492AB0 /* Components */,
 			);
 			path = XTlib;
 			sourceTree = "<group>";
@@ -1201,14 +1201,14 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
-		8FCB8867213919B000492AB0 /* Base(Requred) */ = {
+		8FCB8867213919B000492AB0 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				8F2BFEBF203ED7380013394D /* header */,
 				8FCB8868213919D200492AB0 /* Utils */,
 				8F2BFEE6203ED7380013394D /* Stat */,
 			);
-			path = "Base(Requred)";
+			path = Base;
 			sourceTree = "<group>";
 		};
 		8FCB8868213919D200492AB0 /* Utils */ = {
@@ -1356,13 +1356,13 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
-		8FCB887121391C8B00492AB0 /* Components(Optional) */ = {
+		8FCB887121391C8B00492AB0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				8F2BFF49203ED7380013394D /* Animations */,
 				8F2BFF02203ED7380013394D /* Custom UIs */,
 			);
-			path = "Components(Optional)";
+			path = Components;
 			sourceTree = "<group>";
 		};
 		8FDE204B205948B0003B5398 /* controllerHelp */ = {
