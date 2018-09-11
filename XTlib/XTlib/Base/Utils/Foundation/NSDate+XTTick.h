@@ -18,6 +18,7 @@ static NSString * const kTIME_STR_FORMAT_YYYY_MM_dd             = @"YYYY-MM-dd" 
 static NSString * const kTIME_STR_FORMAT_YYYYMMdd               = @"YYYYMMdd"            ;
 static NSString * const kTIME_STR_FORMAT_MM_dd_HH_mm            = @"MM-dd HH:mm"         ;
 static NSString * const kTIME_STR_FORMAT_MM_dd                  = @"MM-dd"               ;
+static NSString * const kTIME_STR_FORMAT_ISO8601                = @"yyyy-MM-dd'T'HH:mm:ss.SSSZZZ" ;
 
 static NSString * const kTIME_STR_FORMAT_1   = @"YYYYMMddHHmmss"      ;
 static NSString * const kTIME_STR_FORMAT_2   = @"yyyy年MM月dd日"       ;
