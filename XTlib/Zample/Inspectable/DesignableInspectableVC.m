@@ -7,6 +7,7 @@
 //
 
 #import "DesignableInspectableVC.h"
+#import "XTAnimation.h"
 
 @interface DesignableInspectableVC ()
 

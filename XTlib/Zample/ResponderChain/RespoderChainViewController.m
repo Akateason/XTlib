@@ -10,6 +10,7 @@
 #import "UIResponder+ChainHandler.h"
 #import "RCSubView.h"
 #import "XTColorFetcher.h"
+#import "XTlib.h"
 
 @interface RespoderChainViewController ()
 @property (strong,nonatomic) RCSubView *rcSubView ;

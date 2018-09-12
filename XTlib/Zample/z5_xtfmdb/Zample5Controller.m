@@ -14,7 +14,7 @@
 #import "NSDate+XTTick.h"
 #import "NSObject+Reflection.h"
 #import "UIImage+AddFunction.h"
-
+#import "XTlib.h"
 #import "Z5DisplayController.h"
 
 @interface Zample5Controller ()

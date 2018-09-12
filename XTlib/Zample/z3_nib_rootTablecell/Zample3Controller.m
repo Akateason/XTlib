@@ -12,7 +12,7 @@
 #import "Images.h"
 #import "MovieCell.h"
 #import "MyWebController.h"
-
+#import "XTlib.h"
 #import "ServerRequest.h"
 
 static const NSInteger kEveryCount = 10 ;

@@ -11,6 +11,7 @@
 #import <XTColor/UIColor+XTColors.h>
 #import "RootTableView.h"
 #import "XTColorCell.h"
+#import "XTlib.h"
 
 @interface Zample4Controller () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) RootTableView *table ;

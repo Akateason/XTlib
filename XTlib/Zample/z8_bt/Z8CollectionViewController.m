@@ -8,6 +8,7 @@
 
 #import "Z8CollectionViewController.h"
 #import "Z8CollectionViewCell.h"
+#import "XTlib.h"
 
 @interface Z8CollectionViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic,strong) UICollectionView *collectionView ;

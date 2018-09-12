@@ -8,6 +8,7 @@
 
 #import "CtrlHelpVC.h"
 #import "NibVC.h"
+#import "XTlib.h"
 
 @interface CtrlHelpVC ()
 

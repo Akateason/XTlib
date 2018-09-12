@@ -11,6 +11,7 @@
 
 #import "UIButton+ExtendTouchRect.h"
 #import "Z8CollectionViewController.h"
+#import "XTlib.h"
 
 @interface Zample8Controller ()
 

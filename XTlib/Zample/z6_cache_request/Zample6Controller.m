@@ -13,7 +13,7 @@
 #import "MovieCell.h"
 
 #import "ServerRequest.h"
-
+#import "XTlib.h"
 
 @interface Zample6Controller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
 

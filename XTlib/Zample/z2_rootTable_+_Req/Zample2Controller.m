@@ -13,7 +13,7 @@
 #import "DoubanTagsCell.h"
 
 #import "ServerRequest.h"
-
+#import "XTlib.h"
 
 @interface Zample2Controller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
 @property (nonatomic,strong) RootTableView *table ;
