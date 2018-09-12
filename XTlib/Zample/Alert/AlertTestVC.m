@@ -54,6 +54,12 @@
     [alert show] ;
 }
 
+- (IBAction)textfieldAlert:(id)sender {
+    [UIAlertController xt_showTextFieldAlertWithTitle:@"title" subtitle:@"subtitle" cancel:@"cancel" commit:@"ok" placeHolder:@"please input ..." callback:^(NSString *text) {
+        
+        NSLog(@"%@",text) ;
+    }] ;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

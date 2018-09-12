@@ -108,7 +108,7 @@
                                 <rect key="frame" x="36" y="40" width="303" height="607"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnF-gx-BQP" customClass="RootCustomButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="152"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="121.5"/>
                                         <color key="backgroundColor" red="1" green="0.73527388380000003" blue="0.58484790099999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="navite alert ">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -133,7 +133,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6S-4N-ctI" customClass="RootCustomButton">
-                                        <rect key="frame" x="0.0" y="152" width="303" height="151.5"/>
+                                        <rect key="frame" x="0.0" y="121.5" width="303" height="121.5"/>
                                         <color key="backgroundColor" red="1" green="0.73527388380000003" blue="0.58484790099999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="navite action sheet">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,7 +158,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-FT-uyX" customClass="RootCustomButton">
-                                        <rect key="frame" x="0.0" y="303.5" width="303" height="152"/>
+                                        <rect key="frame" x="0.0" y="243" width="303" height="121"/>
                                         <color key="backgroundColor" red="1" green="0.73527388380000003" blue="0.58484790099999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="custom alert">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -183,7 +183,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3A0-vM-DT3" customClass="RootCustomButton">
-                                        <rect key="frame" x="0.0" y="455.5" width="303" height="151.5"/>
+                                        <rect key="frame" x="0.0" y="364" width="303" height="121.5"/>
                                         <color key="backgroundColor" red="1" green="0.73527388380000003" blue="0.58484790099999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="custom action sheet">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -207,21 +207,49 @@
                                             <action selector="c_sheet:" destination="pH5-E8-GDI" eventType="touchUpInside" id="5H6-Pg-jgw"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qg-dV-3uj" customClass="RootCustomButton">
+                                        <rect key="frame" x="69" y="485.5" width="165" height="121.5"/>
+                                        <color key="backgroundColor" red="1" green="0.73527388380000003" blue="0.58484790099999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="textfield alert">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="xt_completeRound" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="xt_borderWidth">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="xt_gradientPt0">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="xt_gradientPt1">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="xt_borderColor">
+                                                <color key="value" red="0.70322805659999998" green="0.87999919039999996" blue="0.3043770428" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="textfieldAlert:" destination="pH5-E8-GDI" eventType="touchUpInside" id="rS1-Au-pFY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="YCz-FT-uyX" firstAttribute="top" secondItem="Y6S-4N-ctI" secondAttribute="bottom" id="9gV-Ft-BxS"/>
-                                    <constraint firstAttribute="trailing" secondItem="Y6S-4N-ctI" secondAttribute="trailing" id="IWu-ra-gsT"/>
-                                    <constraint firstItem="Y6S-4N-ctI" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="Szg-Ad-dKx"/>
-                                    <constraint firstItem="3A0-vM-DT3" firstAttribute="top" secondItem="YCz-FT-uyX" secondAttribute="bottom" id="VLj-5Q-HWA"/>
-                                    <constraint firstAttribute="trailing" secondItem="3A0-vM-DT3" secondAttribute="trailing" id="aR6-Zz-Ujh"/>
-                                    <constraint firstItem="3A0-vM-DT3" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="cK3-CN-v8E"/>
-                                    <constraint firstItem="Y6S-4N-ctI" firstAttribute="top" secondItem="pnF-gx-BQP" secondAttribute="bottom" id="k8v-Ms-fOE"/>
-                                    <constraint firstAttribute="trailing" secondItem="YCz-FT-uyX" secondAttribute="trailing" id="kGo-vI-jes"/>
-                                    <constraint firstItem="YCz-FT-uyX" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="md8-H6-8eD"/>
-                                    <constraint firstAttribute="trailing" secondItem="pnF-gx-BQP" secondAttribute="trailing" id="n8N-pi-Fsy"/>
-                                    <constraint firstItem="pnF-gx-BQP" firstAttribute="top" secondItem="vzd-fq-zQV" secondAttribute="top" id="oUM-aD-Oq6"/>
-                                    <constraint firstAttribute="bottom" secondItem="3A0-vM-DT3" secondAttribute="bottom" id="sju-CB-lR8"/>
-                                    <constraint firstItem="pnF-gx-BQP" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="w4G-w0-H4M"/>
+                                    <constraint firstItem="YCz-FT-uyX" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="1oz-4u-ZCU"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Qg-dV-3uj" secondAttribute="bottom" id="2QS-d3-eyr"/>
+                                    <constraint firstAttribute="trailing" secondItem="3A0-vM-DT3" secondAttribute="trailing" id="9lb-Jy-NS3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y6S-4N-ctI" secondAttribute="trailing" id="Kfc-av-kWK"/>
+                                    <constraint firstItem="9Qg-dV-3uj" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="LRW-e0-JNa"/>
+                                    <constraint firstAttribute="trailing" secondItem="YCz-FT-uyX" secondAttribute="trailing" id="LbS-Si-WMt"/>
+                                    <constraint firstItem="Y6S-4N-ctI" firstAttribute="top" secondItem="pnF-gx-BQP" secondAttribute="bottom" id="SVi-HX-ZUN"/>
+                                    <constraint firstItem="Y6S-4N-ctI" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="Sda-bs-OR9"/>
+                                    <constraint firstItem="pnF-gx-BQP" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="T7K-6C-3cY"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Qg-dV-3uj" secondAttribute="trailing" id="V2O-92-925"/>
+                                    <constraint firstItem="3A0-vM-DT3" firstAttribute="leading" secondItem="vzd-fq-zQV" secondAttribute="leading" id="as0-W0-dWC"/>
+                                    <constraint firstItem="pnF-gx-BQP" firstAttribute="top" secondItem="vzd-fq-zQV" secondAttribute="top" id="bdg-lN-DGc"/>
+                                    <constraint firstItem="3A0-vM-DT3" firstAttribute="top" secondItem="YCz-FT-uyX" secondAttribute="bottom" id="jCe-sD-rRm"/>
+                                    <constraint firstItem="YCz-FT-uyX" firstAttribute="top" secondItem="Y6S-4N-ctI" secondAttribute="bottom" id="lpf-mB-Mek"/>
+                                    <constraint firstItem="9Qg-dV-3uj" firstAttribute="top" secondItem="3A0-vM-DT3" secondAttribute="bottom" id="tSk-uY-BAX"/>
+                                    <constraint firstAttribute="trailing" secondItem="pnF-gx-BQP" secondAttribute="trailing" id="tsQ-a5-ome"/>
                                 </constraints>
                             </stackView>
                         </subviews>

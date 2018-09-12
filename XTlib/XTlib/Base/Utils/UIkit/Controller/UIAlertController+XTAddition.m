@@ -59,5 +59,42 @@
     [self showAlertCntrollerWithViewController:rootCtrller alertControllerStyle:alertControllerStyle title:title message:message cancelButtonTitle:cancelBtnTitle destructiveButtonTitle:destructiveBtnTitle otherButtonTitles:otherBtnTitles CallBackBlock:block] ;
 }
 
++ (void)xt_showTextFieldAlertWithTitle:(NSString *)title
+                              subtitle:(NSString *)subTitle
+                                cancel:(NSString *)cancelStr
+                                commit:(NSString *)commitStr
+                           placeHolder:(NSString *)placeHolderStr
+                              callback:(void(^)(NSString *text))textBlock {
+    
+    id appDelegate = [UIApplication sharedApplication].delegate ;
+    UIViewController *rootCtrller = [appDelegate valueForKeyPath:@"window.rootViewController"] ;
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:subTitle
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    if (cancelStr.length) {
+        UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:cancelStr style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alert addAction:cancelAction];
+    }
+    
+    if (commitStr.length) {
+        UIAlertAction *submit = [UIAlertAction actionWithTitle:commitStr style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            
+            if (alert.textFields.count > 0) {
+                UITextField *textField = [alert.textFields firstObject] ;
+                if (textBlock) textBlock(textField.text) ;
+            }
+        }];
+        [alert addAction:submit];
+    }
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = placeHolderStr ; // if needs
+    }];
+    
+    [rootCtrller presentViewController:alert animated:YES completion:nil];
+}
 
 @end

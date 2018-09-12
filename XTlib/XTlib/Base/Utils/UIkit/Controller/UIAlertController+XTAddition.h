@@ -27,4 +27,10 @@
                                  otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
                                      CallBackBlock:(void(^)(NSInteger btnIndex))block ;
 
++ (void)xt_showTextFieldAlertWithTitle:(NSString *)title
+                              subtitle:(NSString *)subTitle
+                                cancel:(NSString *)cancelStr
+                                commit:(NSString *)commitStr
+                           placeHolder:(NSString *)placeHolderStr
+                              callback:(void(^)(NSString *text))textBlock ;
 @end
