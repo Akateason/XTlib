@@ -98,14 +98,22 @@
 				<key>isStory</key>
 				<true/>
 			</dict>
-            <dict>
-                <key>cname</key>
-                <string>AlertTestVC</string>
-                <key>title</key>
-                <string>Alert</string>
-                <key>isStory</key>
-                <true/>
-            </dict>
+			<dict>
+				<key>cname</key>
+				<string>AlertTestVC</string>
+				<key>title</key>
+				<string>Alert</string>
+				<key>isStory</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>cname</key>
+				<string>TestDemoVC</string>
+				<key>title</key>
+				<string>test</string>
+				<key>isStory</key>
+				<true/>
+			</dict>
 		</array>
 	</dict>
 </array>
