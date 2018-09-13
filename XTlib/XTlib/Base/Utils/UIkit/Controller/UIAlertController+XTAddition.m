@@ -26,14 +26,9 @@
         }];
         [alertController addAction:cancelAction];
     }
-    if (destructiveBtnTitle.length) {
-        UIAlertAction * destructiveAction = [UIAlertAction actionWithTitle:destructiveBtnTitle style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-            block(1);
-        }];
-        [alertController addAction:destructiveAction];
-    }
+    
     if (otherBtnTitles.count) {
-        int oldIdx = (cancelBtnTitle != nil) + (destructiveBtnTitle != nil) ;
+        int oldIdx = (cancelBtnTitle != nil) ;
         [otherBtnTitles enumerateObjectsUsingBlock:^(NSString * _Nonnull otherTitleStr, NSUInteger idx, BOOL * _Nonnull stop) {
             UIAlertAction * otherAction = [UIAlertAction actionWithTitle:otherTitleStr style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 block(oldIdx + idx) ;
@@ -41,17 +36,24 @@
             [alertController addAction:otherAction] ;
         }] ;
     }
+    
+    if (destructiveBtnTitle.length) {
+        UIAlertAction * destructiveAction = [UIAlertAction actionWithTitle:destructiveBtnTitle style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            block( otherBtnTitles.count + (cancelBtnTitle != nil) ) ;
+        }];
+        [alertController addAction:destructiveAction];
+    }
+    
     [viewController presentViewController:alertController animated:YES completion:nil];
 }
 
-
-+ (void)showAlertCntrollerWithAlertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
-                                             title:(NSString *)title
-                                           message:(NSString *)message
-                                 cancelButtonTitle:(NSString *)cancelBtnTitle
-                            destructiveButtonTitle:(NSString *)destructiveBtnTitle
-                                 otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
-                                     CallBackBlock:(void(^)(NSInteger btnIndex))block {
++ (void)xt_showAlertCntrollerWithAlertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
+                                                title:(NSString *)title
+                                              message:(NSString *)message
+                                    cancelButtonTitle:(NSString *)cancelBtnTitle
+                               destructiveButtonTitle:(NSString *)destructiveBtnTitle
+                                    otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
+                                        callBackBlock:(void(^)(NSInteger btnIndex))block {
     
 //    ((AppDelegate *)appDelegate).window.rootViewController
     id appDelegate = [UIApplication sharedApplication].delegate ;
@@ -98,3 +100,6 @@
 }
 
 @end
+
+
+

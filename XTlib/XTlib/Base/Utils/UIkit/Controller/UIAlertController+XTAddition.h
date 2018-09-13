@@ -10,22 +10,13 @@
 
 @interface UIAlertController (XTAddition)
 
-+ (void)showAlertCntrollerWithViewController:(UIViewController *)viewController
-                        alertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
-                                       title:(NSString *)title
-                                     message:(NSString *)message
-                           cancelButtonTitle:(NSString *)cancelBtnTitle
-                      destructiveButtonTitle:(NSString *)destructiveBtnTitle
-                           otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
-                               CallBackBlock:(void(^)(NSInteger btnIndex))block ;
-
-+ (void)showAlertCntrollerWithAlertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
-                                             title:(NSString *)title
-                                           message:(NSString *)message
-                                 cancelButtonTitle:(NSString *)cancelBtnTitle
-                            destructiveButtonTitle:(NSString *)destructiveBtnTitle
-                                 otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
-                                     CallBackBlock:(void(^)(NSInteger btnIndex))block ;
++ (void)xt_showAlertCntrollerWithAlertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
+                                                title:(NSString *)title
+                                              message:(NSString *)message
+                                    cancelButtonTitle:(NSString *)cancelBtnTitle
+                               destructiveButtonTitle:(NSString *)destructiveBtnTitle
+                                    otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
+                                        callBackBlock:(void(^)(NSInteger btnIndex))block ;
 
 + (void)xt_showTextFieldAlertWithTitle:(NSString *)title
                               subtitle:(NSString *)subTitle

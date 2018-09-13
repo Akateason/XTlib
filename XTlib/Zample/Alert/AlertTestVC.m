@@ -17,13 +17,13 @@
 @implementation AlertTestVC
 
 - (IBAction)n_alert:(id)sender {
-    [UIAlertController showAlertCntrollerWithAlertControllerStyle:UIAlertControllerStyleAlert title:@"alert" message:@"aa" cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:@[@"ok"] CallBackBlock:^(NSInteger btnIndex) {
+    [UIAlertController xt_showAlertCntrollerWithAlertControllerStyle:UIAlertControllerStyleAlert title:@"alert" message:@"aa" cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:@[@"ok"] callBackBlock:^(NSInteger btnIndex) {
         
     }] ;
 }
 
 - (IBAction)n_sheet:(id)sender {
-    [UIAlertController showAlertCntrollerWithAlertControllerStyle:UIAlertControllerStyleAlert title:@"sheet" message:@"aa12313" cancelButtonTitle:@"cancel" destructiveButtonTitle:@"des" otherButtonTitles:@[@"ok",@"41"] CallBackBlock:^(NSInteger btnIndex) {
+    [UIAlertController xt_showAlertCntrollerWithAlertControllerStyle:UIAlertControllerStyleAlert title:@"sheet" message:@"aa12313" cancelButtonTitle:@"cancel" destructiveButtonTitle:@"des" otherButtonTitles:@[@"ok",@"41"] callBackBlock:^(NSInteger btnIndex) {
         
     }] ;
 }
