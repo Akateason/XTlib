@@ -35,7 +35,7 @@ PODS:
   - XTFMDB (1.5.0):
     - FMDB
     - YYModel
-  - XTReq (1.1.3):
+  - XTReq (1.1.4):
     - AFNetworking
     - SVProgressHUD
     - XTFMDB
@@ -100,7 +100,7 @@ SPEC CHECKSUMS:
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
   XTColor: 77dc1fb053ad58e6821d7de84fabbec361402d94
   XTFMDB: ea6aafd008968bc3a28e7378449df3a992b15e6b
-  XTReq: 7147d545187bb5ba1ce9bb6a5f5a78e05bb657b9
+  XTReq: 5be27deeaf716c9f05751ff8901737b58cf6ae10
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 8a768d7a85931cd1a97bbf977a71a28c13032920

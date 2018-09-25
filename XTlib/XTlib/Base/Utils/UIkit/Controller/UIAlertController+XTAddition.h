@@ -10,6 +10,22 @@
 
 @interface UIAlertController (XTAddition)
 
+
+/**
+ normal alert - from ctrller
+ */
++ (void)xt_showAlertCntrollerWithViewController:(UIViewController *)viewController
+                           alertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
+                                          title:(NSString *)title
+                                        message:(NSString *)message
+                              cancelButtonTitle:(NSString *)cancelBtnTitle
+                         destructiveButtonTitle:(NSString *)destructiveBtnTitle
+                              otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
+                                  CallBackBlock:(void(^)(NSInteger btnIndex))block ;
+
+/**
+ normal alert - any ctrller
+ */
 + (void)xt_showAlertCntrollerWithAlertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
                                                 title:(NSString *)title
                                               message:(NSString *)message
@@ -18,6 +34,9 @@
                                     otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
                                         callBackBlock:(void(^)(NSInteger btnIndex))block ;
 
+/**
+ textfield alert
+ */
 + (void)xt_showTextFieldAlertWithTitle:(NSString *)title
                               subtitle:(NSString *)subTitle
                                 cancel:(NSString *)cancelStr

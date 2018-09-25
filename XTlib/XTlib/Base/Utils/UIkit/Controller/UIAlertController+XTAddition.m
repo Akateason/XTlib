@@ -7,17 +7,18 @@
 //
 
 #import "UIAlertController+XTAddition.h"
+#import "UIViewController+XTAddition.h"
 
 @implementation UIAlertController (XTAddition)
 
-+ (void)showAlertCntrollerWithViewController:(UIViewController *)viewController
-                        alertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
-                                       title:(NSString *)title
-                                     message:(NSString *)message
-                           cancelButtonTitle:(NSString *)cancelBtnTitle
-                      destructiveButtonTitle:(NSString *)destructiveBtnTitle
-                           otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
-                               CallBackBlock:(void(^)(NSInteger btnIndex))block {
++ (void)xt_showAlertCntrollerWithViewController:(UIViewController *)viewController
+                           alertControllerStyle:(UIAlertControllerStyle)alertControllerStyle
+                                          title:(NSString *)title
+                                        message:(NSString *)message
+                              cancelButtonTitle:(NSString *)cancelBtnTitle
+                         destructiveButtonTitle:(NSString *)destructiveBtnTitle
+                              otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
+                                  CallBackBlock:(void(^)(NSInteger btnIndex))block {
     
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:alertControllerStyle] ;
     if (cancelBtnTitle.length) {
@@ -55,10 +56,8 @@
                                     otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
                                         callBackBlock:(void(^)(NSInteger btnIndex))block {
     
-//    ((AppDelegate *)appDelegate).window.rootViewController
-    id appDelegate = [UIApplication sharedApplication].delegate ;
-    UIViewController *rootCtrller = [appDelegate valueForKeyPath:@"window.rootViewController"] ;
-    [self showAlertCntrollerWithViewController:rootCtrller alertControllerStyle:alertControllerStyle title:title message:message cancelButtonTitle:cancelBtnTitle destructiveButtonTitle:destructiveBtnTitle otherButtonTitles:otherBtnTitles CallBackBlock:block] ;
+    UIViewController *rootCtrller = [UIViewController xt_topViewController] ;
+    [self xt_showAlertCntrollerWithViewController:rootCtrller alertControllerStyle:alertControllerStyle title:title message:message cancelButtonTitle:cancelBtnTitle destructiveButtonTitle:destructiveBtnTitle otherButtonTitles:otherBtnTitles CallBackBlock:block] ;
 }
 
 + (void)xt_showTextFieldAlertWithTitle:(NSString *)title
@@ -68,8 +67,7 @@
                            placeHolder:(NSString *)placeHolderStr
                               callback:(void(^)(NSString *text))textBlock {
     
-    id appDelegate = [UIApplication sharedApplication].delegate ;
-    UIViewController *rootCtrller = [appDelegate valueForKeyPath:@"window.rootViewController"] ;
+    UIViewController *rootCtrller = [UIViewController xt_topViewController] ;
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
                                                                    message:subTitle
