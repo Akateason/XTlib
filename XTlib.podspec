@@ -40,8 +40,6 @@ base.dependency "XTStat"
 end
 
 s.subspec 'Animations' do |a|
-#a.source_files = "XTlib/XTlib/Components/Animations","XTlib/XTlib/Base/header","XTlib/XTlib/Base/Utils/UIkit/Adapt"
-#a.public_header_files="XTlib/XTlib/Components/Animations/*.h","XTlib/XTlib/Base/header/*.h","XTlib/XTlib/Base/Utils/UIkit/Adapt/*.h"
 a.source_files = "XTlib/XTlib/Components/Animations"
 a.public_header_files="XTlib/XTlib/Components/Animations/*.h"
 a.dependency "XTlib/util"
