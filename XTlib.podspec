@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "XTlib"
-  s.version      = "1.3.8"
+  s.version      = "1.3.9"
   s.summary      = "a rapid develop lib for iOS"
   s.description  = "XTlib. a rapid develop lib for iOS ."
   s.homepage     = "https://github.com/Akateason/XTlib"
@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.dependency "XTFMDB"
   s.dependency "XTReq"
   s.dependency "XTColor"
+# s.dependency "XTStat"
   s.dependency "ReactiveObjC"
   s.dependency "Masonry"
   s.dependency "SDWebImage"
@@ -28,27 +29,21 @@ Pod::Spec.new do |s|
 
 s.default_subspec = 'base'
 
-s.subspec 'util' do |util|
-util.source_files = "XTlib/XTlib","XTlib/XTlib/Base","XTlib/XTlib/Base/**/*.{h,m}","XTlib/XTlib/Base/**/**/*.{h,m}"
-util.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/Base/*.h","XTlib/XTlib/Base/header/*.h","XTlib/XTlib/Base/**/**/*.h"
-end
-
 s.subspec 'base' do |base|
 base.source_files = "XTlib/XTlib","XTlib/XTlib/Base","XTlib/XTlib/Base/**/*.{h,m}","XTlib/XTlib/Base/**/**/*.{h,m}"
 base.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/Base/*.h","XTlib/XTlib/Base/header/*.h","XTlib/XTlib/Base/**/**/*.h"
-base.dependency "XTStat"
 end
 
 s.subspec 'Animations' do |a|
 a.source_files = "XTlib/XTlib/Components/Animations"
 a.public_header_files="XTlib/XTlib/Components/Animations/*.h"
-a.dependency "XTlib/util"
+a.dependency "XTlib/base"
 end
 
 s.subspec 'CustomUIs' do |c|
 c.source_files = "XTlib/XTlib/Components/CustomUIs","XTlib/XTlib/Components/CustomUIs/**/*.{h,m}"
 c.public_header_files="XTlib/XTlib/Components/CustomUIs/*.h","XTlib/XTlib/Components/CustomUIs/**/*.h"
-c.dependency "XTlib/util"
+c.dependency "XTlib/base"
 
 end
 
