@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "XTlib"
-  s.version      = "1.3.7"
+  s.version      = "1.3.8"
   s.summary      = "a rapid develop lib for iOS"
   s.description  = "XTlib. a rapid develop lib for iOS ."
   s.homepage     = "https://github.com/Akateason/XTlib"
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
 # s.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h"
 
 
-s.default_subspec = 'base','util'
+s.default_subspec = 'base'
 
 s.subspec 'util' do |util|
 util.source_files = "XTlib/XTlib","XTlib/XTlib/Base","XTlib/XTlib/Base/**/*.{h,m}","XTlib/XTlib/Base/**/**/*.{h,m}"
@@ -40,13 +40,16 @@ base.dependency "XTStat"
 end
 
 s.subspec 'Animations' do |a|
-a.source_files = "XTlib/XTlib/Components/Animations","XTlib/XTlib/Base/header","XTlib/XTlib/Base/Utils/UIkit/Adapt"
-a.public_header_files="XTlib/XTlib/Components/Animations/*.h","XTlib/XTlib/Base/header/*.h","XTlib/XTlib/Base/Utils/UIkit/Adapt/*.h"
+#a.source_files = "XTlib/XTlib/Components/Animations","XTlib/XTlib/Base/header","XTlib/XTlib/Base/Utils/UIkit/Adapt"
+#a.public_header_files="XTlib/XTlib/Components/Animations/*.h","XTlib/XTlib/Base/header/*.h","XTlib/XTlib/Base/Utils/UIkit/Adapt/*.h"
+a.source_files = "XTlib/XTlib/Components/Animations"
+a.public_header_files="XTlib/XTlib/Components/Animations/*.h"
+a.dependency "XTlib/util"
 end
 
 s.subspec 'CustomUIs' do |c|
-c.source_files = "XTlib/XTlib/Components/CustomUIs","XTlib/XTlib/Base/header","XTlib/XTlib/Base/Utils/UIkit/Adapt","XTlib/XTlib/Components/CustomUIs/**/*.{h,m}"
-c.public_header_files="XTlib/XTlib/Components/CustomUIs/*.h","XTlib/XTlib/Base/header/*.h","XTlib/XTlib/Base/Utils/UIkit/Adapt/*.h","XTlib/XTlib/Components/CustomUIs/**/*.h"
+c.source_files = "XTlib/XTlib/Components/CustomUIs","XTlib/XTlib/Components/CustomUIs/**/*.{h,m}"
+c.public_header_files="XTlib/XTlib/Components/CustomUIs/*.h","XTlib/XTlib/Components/CustomUIs/**/*.h"
 c.dependency "XTlib/util"
 
 end
