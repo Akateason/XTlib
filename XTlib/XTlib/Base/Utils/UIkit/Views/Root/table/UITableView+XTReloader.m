@@ -137,7 +137,7 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
 }
 
 - (void)setXt_Delegate:(id<UITableViewXTReloaderDelegate>)xt_Delegate {
-    objc_setAssociatedObject(self, @selector(setXt_Delegate:), xt_Delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC) ;
+    objc_setAssociatedObject(self, @selector(xt_Delegate), xt_Delegate, OBJC_ASSOCIATION_ASSIGN) ;
 }
 
 - (BOOL)xt_isShowRefreshDetail {
@@ -146,7 +146,7 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
 }
 
 - (void)setXt_isShowRefreshDetail:(BOOL)xt_isShowRefreshDetail {
-    objc_setAssociatedObject(self, @selector(setXt_isShowRefreshDetail:), @(xt_isShowRefreshDetail), OBJC_ASSOCIATION_RETAIN_NONATOMIC) ;
+    objc_setAssociatedObject(self, @selector(xt_isShowRefreshDetail), @(xt_isShowRefreshDetail), OBJC_ASSOCIATION_RETAIN_NONATOMIC) ;
     
     if ([self.mj_header isKindOfClass:[MJRefreshStateHeader class]]) {
         ((MJRefreshStateHeader *)self.mj_header).lastUpdatedTimeLabel.hidden = !self.xt_isShowRefreshDetail;
@@ -161,7 +161,7 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
 }
 
 - (void)setXt_isAutomaticallyLoadMore:(BOOL)xt_isAutomaticallyLoadMore {
-    objc_setAssociatedObject(self, @selector(setXt_isAutomaticallyLoadMore:), @(xt_isAutomaticallyLoadMore), OBJC_ASSOCIATION_RETAIN_NONATOMIC) ;
+    objc_setAssociatedObject(self, @selector(xt_isAutomaticallyLoadMore), @(xt_isAutomaticallyLoadMore), OBJC_ASSOCIATION_RETAIN_NONATOMIC) ;
 
     if (xt_isAutomaticallyLoadMore) {
         self.mj_footer = nil ;
@@ -178,7 +178,7 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
 }
 
 - (void)setXt_hideAllRefreshers:(BOOL)xt_hideAllRefreshers {
-    objc_setAssociatedObject(self, @selector(setXt_hideAllRefreshers:), @(xt_hideAllRefreshers), OBJC_ASSOCIATION_RETAIN_NONATOMIC) ;
+    objc_setAssociatedObject(self, @selector(xt_hideAllRefreshers), @(xt_hideAllRefreshers), OBJC_ASSOCIATION_RETAIN_NONATOMIC) ;
     
     if (xt_hideAllRefreshers) {
         self.mj_header = nil ;
@@ -192,7 +192,7 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
 }
 
 - (void)setXt_refreshType:(XTRefreshType)xt_refreshType {
-    objc_setAssociatedObject(self, @selector(setXt_refreshType:), @(xt_refreshType), OBJC_ASSOCIATION_RETAIN_NONATOMIC) ;
+    objc_setAssociatedObject(self, @selector(xt_refreshType), @(xt_refreshType), OBJC_ASSOCIATION_RETAIN_NONATOMIC) ;
     
     [self configureMJRefresh] ;
 }
