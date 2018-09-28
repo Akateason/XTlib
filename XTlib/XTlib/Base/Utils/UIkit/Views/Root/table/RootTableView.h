@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MJRefresh.h"
-
+#import "UITableView+XTReloader.h"
 
 @class RootTableView ;
 
@@ -18,11 +18,6 @@
 @optional
 - (void)tableView:(RootTableView *)table loadMore:(void(^)(void))endRefresh  ;
 @end
-
-typedef enum : NSUInteger {
-    XTRefreshType_default ,
-    XTRefreshType_gifImages
-} XTRefreshType ;
 
 @interface RootTableView : UITableView
 // refresh delegate

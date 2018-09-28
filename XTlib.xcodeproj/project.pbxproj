@@ -128,6 +128,7 @@
 		8F6400782148B2030094024A /* TestDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6400772148B2030094024A /* TestDemoVC.m */; };
 		8F81E2A120D1208A00782A90 /* XTlib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E2A020D1208A00782A90 /* XTlib.podspec */; };
 		8F891786215DCD1700572B0A /* btBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F891785215DCD1700572B0A /* btBase.png */; };
+		8F891795215E303C00572B0A /* UITableView+XTReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F891794215E303C00572B0A /* UITableView+XTReloader.m */; };
 		8F90244620EA1B40009A1B9C /* UIAlertController+XTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F90244520EA1B40009A1B9C /* UIAlertController+XTAddition.m */; };
 		8F90245420EB5D77009A1B9C /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F90245320EB5D76009A1B9C /* UILabel+Addition.m */; };
 		8FA9D3B420C7B6D5005AFEDF /* RootCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9D3B320C7B6D5005AFEDF /* RootCollectionCell.m */; };
@@ -401,6 +402,8 @@
 		8F6400772148B2030094024A /* TestDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDemoVC.m; sourceTree = "<group>"; };
 		8F81E2A020D1208A00782A90 /* XTlib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XTlib.podspec; sourceTree = "<group>"; };
 		8F891785215DCD1700572B0A /* btBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btBase.png; sourceTree = "<group>"; };
+		8F891793215E303C00572B0A /* UITableView+XTReloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+XTReloader.h"; sourceTree = "<group>"; };
+		8F891794215E303C00572B0A /* UITableView+XTReloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+XTReloader.m"; sourceTree = "<group>"; };
 		8F90244420EA1B40009A1B9C /* UIAlertController+XTAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+XTAddition.h"; sourceTree = "<group>"; };
 		8F90244520EA1B40009A1B9C /* UIAlertController+XTAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+XTAddition.m"; sourceTree = "<group>"; };
 		8F90245220EB5D76009A1B9C /* UILabel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Addition.h"; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 				8F2BFEE3203ED7380013394D /* RootTableCell.m */,
 				8F2BFEE4203ED7380013394D /* RootTableView.h */,
 				8F2BFEE5203ED7380013394D /* RootTableView.m */,
+				8F891793215E303C00572B0A /* UITableView+XTReloader.h */,
+				8F891794215E303C00572B0A /* UITableView+XTReloader.m */,
 			);
 			path = table;
 			sourceTree = "<group>";
@@ -1626,6 +1631,7 @@
 				8F2BFF7E203ED7390013394D /* NSObject+Reflection.m in Sources */,
 				8F2BFDC9203ED6AB0013394D /* AppDelegate.m in Sources */,
 				8F2BFE01203ED71D0013394D /* ServerRequest.m in Sources */,
+				8F891795215E303C00572B0A /* UITableView+XTReloader.m in Sources */,
 				8F2BFFAD203ED7390013394D /* PlaceHolderTextView.m in Sources */,
 				8F2BFF77203ED7390013394D /* Mother.m in Sources */,
 				8F2BFF85203ED7390013394D /* UIImage+AddFunction.m in Sources */,

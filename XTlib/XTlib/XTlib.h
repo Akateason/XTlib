@@ -30,6 +30,7 @@ fprintf(stderr, "🏀🏀🏀🏀🏀\n");                                      
 #import "FastCodeHeader.h"
 
 // Root
+#import "UITableView+XTReloader.h"
 #import "RootTableView.h"
 #import "RootTableCell.h"
 #import "RootRefreshHeader.h"

@@ -17,8 +17,8 @@
 
 static const NSInteger kEveryCount = 10 ;
 
-@interface Zample3Controller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
-@property (nonatomic,strong) RootTableView *table ;
+@interface Zample3Controller () <UITableViewDelegate,UITableViewDataSource,UITableViewXTReloaderDelegate>
+@property (nonatomic,strong) UITableView *table ;
 @property (nonatomic,strong) NSArray *list_datasource ;
 @end
 
@@ -35,12 +35,12 @@ static const NSInteger kEveryCount = 10 ;
     self.list_datasource = @[] ;
     
     self.table = ({
-        RootTableView *view = [[RootTableView alloc] initWithFrame:self.view.bounds
+        UITableView *view = [[RootTableView alloc] initWithFrame:self.view.bounds
                                                              style:0] ;
         view.delegate           = self  ;
         view.dataSource         = self  ;
         view.xt_Delegate        = self  ;
-        view.isShowRefreshDetail  = TRUE  ;
+        view.xt_isShowRefreshDetail  = TRUE  ;
         [self.view addSubview:view] ;
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0)) ;
@@ -49,7 +49,7 @@ static const NSInteger kEveryCount = 10 ;
     }) ;
     
     [MovieCell registerNibFromTable:self.table] ;
-    [self.table loadNewInfoInBackGround:TRUE] ;
+    [self.table xt_loadNewInfoInBackGround:TRUE] ;
 }
 
 
