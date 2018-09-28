@@ -26,6 +26,7 @@
 
 - (instancetype)initWithDataList:(NSArray *)datalist
                            imgBg:(UIImage *)imgBg
+                        imgColor:(UIColor *)imgColor
                           height:(CGFloat)height
                      normalColor:(UIColor *)normalColor
                      selectColor:(UIColor *)selectColor
@@ -33,6 +34,7 @@
 
 - (instancetype)initWithDataList:(NSArray *)datalist
                            imgBg:(UIImage *)imgBg
+                        imgColor:(UIColor *)imgColor
                             size:(CGSize)size
                      normalColor:(UIColor *)normalColor
                      selectColor:(UIColor *)selectColor
@@ -40,6 +42,7 @@
 
 - (void)setupWithDataList:(NSArray *)datalist
                     imgBg:(UIImage *)imgBg
+                 imgColor:(UIColor *)imgColor
                      size:(CGSize)size
               normalColor:(UIColor *)normalColor
               selectColor:(UIColor *)selectColor

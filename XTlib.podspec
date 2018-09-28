@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "XTlib"
-  s.version      = "1.3.9"
+  s.version      = "1.4.0"
   s.summary      = "a rapid develop lib for iOS"
   s.description  = "XTlib. a rapid develop lib for iOS ."
   s.homepage     = "https://github.com/Akateason/XTlib"
@@ -43,8 +43,8 @@ end
 s.subspec 'CustomUIs' do |c|
 c.source_files = "XTlib/XTlib/Components/CustomUIs","XTlib/XTlib/Components/CustomUIs/**/*.{h,m}"
 c.public_header_files="XTlib/XTlib/Components/CustomUIs/*.h","XTlib/XTlib/Components/CustomUIs/**/*.h"
+c.resources = "XTlib/XTlib/Components/CustomUIs/**/*.png"
 c.dependency "XTlib/base"
-
 end
 
 

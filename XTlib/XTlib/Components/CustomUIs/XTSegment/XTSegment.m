@@ -9,6 +9,7 @@
 #define TAGS_TEASEGMENT_BT              987520
 #import "XTSegment.h"
 #import "ScreenHeader.h"
+#import "UIImage+AddFunction.h"
 
 @interface XTSegment ()
 @property (nonatomic)           int             sumIndex ;
@@ -23,40 +24,44 @@
 
 - (instancetype)initWithDataList:(NSArray *)datalist
                            imgBg:(UIImage *)imgBg
+                        imgColor:(UIColor *)imgColor
                           height:(CGFloat)height
                      normalColor:(UIColor *)normalColor
                      selectColor:(UIColor *)selectColor
-                            font:(UIFont *)font
-{
-    return [self initWithDataList:datalist imgBg:imgBg size:CGSizeMake(APP_WIDTH, height) normalColor:normalColor selectColor:selectColor font:font];
+                            font:(UIFont *)font {
+    
+    return [self initWithDataList:datalist imgBg:imgBg imgColor:imgColor size:CGSizeMake(APP_WIDTH, height) normalColor:normalColor selectColor:selectColor font:font];
 }
 
 - (instancetype)initWithDataList:(NSArray *)datalist
                            imgBg:(UIImage *)imgBg
+                        imgColor:(UIColor *)imgColor
                             size:(CGSize)size
                      normalColor:(UIColor *)normalColor
                      selectColor:(UIColor *)selectColor
-                            font:(UIFont *)font
-{
+                            font:(UIFont *)font {
+    
     self = [super init] ;
-    if (self)
-    {
-        [self setupWithDataList:datalist imgBg:imgBg size:size normalColor:normalColor selectColor:selectColor font:font] ;
+    if (self) {
+        [self setupWithDataList:datalist imgBg:imgBg imgColor:imgColor size:size normalColor:normalColor selectColor:selectColor font:font] ;
     }
     return self;
 }
 
 - (void)setupWithDataList:(NSArray *)datalist
                     imgBg:(UIImage *)imgBg
+                 imgColor:(UIColor *)imgColor
                      size:(CGSize)size
               normalColor:(UIColor *)normalColor
               selectColor:(UIColor *)selectColor
-                     font:(UIFont *)font
-{
+                     font:(UIFont *)font {
+    
     self.heightForSeg = size.height ;
     self.wholeWid = size.width ;
     
     self.dataList = datalist ;
+    imgBg = imgBg ?: [UIImage imageNamed:@"btBase"] ;
+    imgBg = [imgBg imageWithTintColor:imgColor ?: selectColor] ;
     self.imgBG_sel = imgBg ;
     self.normalColor = normalColor ;
     self.selectColor = selectColor ;
@@ -66,38 +71,32 @@
     [self setup] ;
 }
 
-
 #pragma mark - Properties
-- (void)setDataList:(NSArray *)dataList
-{
+
+- (void)setDataList:(NSArray *)dataList {
     _dataList = dataList ;
     
     self.sumIndex = (int)[dataList count] ;
 }
 
-- (void)setSumIndex:(int)sumIndex
-{
+- (void)setSumIndex:(int)sumIndex {
     _sumIndex = sumIndex ;
     
     self.btWidth = self.wholeWid / sumIndex ;
 }
 
-- (void)setImgBG_sel:(UIImage *)imgBG_sel
-{
+- (void)setImgBG_sel:(UIImage *)imgBG_sel {
     _imgBG_sel = imgBG_sel ;
     
     self.imgSelectView.image = imgBG_sel ;
 }
 
-- (UIImageView *)imgSelectView
-{
-    if (!_imgSelectView)
-    {
+- (UIImageView *)imgSelectView {
+    if (!_imgSelectView) {
         CGRect imgFrame = CGRectZero ;
         imgFrame.size = CGSizeMake(self.btWidth, self.heightForSeg) ;
         _imgSelectView = [[UIImageView alloc] initWithFrame:imgFrame] ;
-        if (![_imgSelectView superview])
-        {
+        if (![_imgSelectView superview]) {
             [self addSubview:_imgSelectView] ;
         }
     }
@@ -113,14 +112,13 @@
 }
 
 #pragma mark - Setup
-- (void)setup
-{
+
+- (void)setup {
     // h
     CGRect myFrame = self.frame ;
     myFrame.size.height = self.heightForSeg ;
     // bt
-    for (int i = 0; i < self.sumIndex; i++)
-    {
+    for (int i = 0; i < self.sumIndex; i++) {
         UIButton *bt = [[UIButton alloc] init] ;
         bt.tag = TAGS_TEASEGMENT_BT + i ;
         [bt setTitle:self.dataList[i] forState:UIControlStateNormal] ;
@@ -143,16 +141,13 @@
     [self changeButtonSelectInfo] ;
 }
 
-- (void)changeButtonSelectInfo
-{
+- (void)changeButtonSelectInfo {
     for (UIView *subview in [self subviews]) {
-        if ([subview isKindOfClass:[UIButton class]])
-        {
+        if ([subview isKindOfClass:[UIButton class]]) {
             UIButton *bt = (UIButton *)subview ;
             bt.selected = NO ;
             bt.userInteractionEnabled = YES ;
-            if (bt.tag - TAGS_TEASEGMENT_BT == self.currentIndex)
-            {
+            if (bt.tag - TAGS_TEASEGMENT_BT == self.currentIndex) {
                 bt.selected = YES ;
                 bt.userInteractionEnabled = NO ;
             }
@@ -160,10 +155,9 @@
     }
 }
 
-
 #pragma mark - Action
-- (void)btSelectedAction:(id)sender
-{
+
+- (void)btSelectedAction:(id)sender {
     UIButton *bt = sender ;
     int indexSelected = (int)(bt.tag - TAGS_TEASEGMENT_BT) ;
 
@@ -171,9 +165,10 @@
 }
 
 #pragma mark - Public
+
 - (void)moveToIndex:(int)index
-           callBack:(BOOL)callback
-{
+           callBack:(BOOL)callback {
+    
     self.currentIndex = index ;
     
     if (callback) {
@@ -190,17 +185,5 @@
         _imgSelectView.frame = rect ;
     }] ;
 }
-
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
-
 
 @end

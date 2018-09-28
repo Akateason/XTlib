@@ -127,6 +127,7 @@
 		8F2BFFC7203ED7390013394D /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF58203ED7380013394D /* XTVerification.m */; };
 		8F6400782148B2030094024A /* TestDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6400772148B2030094024A /* TestDemoVC.m */; };
 		8F81E2A120D1208A00782A90 /* XTlib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E2A020D1208A00782A90 /* XTlib.podspec */; };
+		8F891786215DCD1700572B0A /* btBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F891785215DCD1700572B0A /* btBase.png */; };
 		8F90244620EA1B40009A1B9C /* UIAlertController+XTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F90244520EA1B40009A1B9C /* UIAlertController+XTAddition.m */; };
 		8F90245420EB5D77009A1B9C /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F90245320EB5D76009A1B9C /* UILabel+Addition.m */; };
 		8FA9D3B420C7B6D5005AFEDF /* RootCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9D3B320C7B6D5005AFEDF /* RootCollectionCell.m */; };
@@ -399,6 +400,7 @@
 		8F6400762148B2030094024A /* TestDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDemoVC.h; sourceTree = "<group>"; };
 		8F6400772148B2030094024A /* TestDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDemoVC.m; sourceTree = "<group>"; };
 		8F81E2A020D1208A00782A90 /* XTlib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XTlib.podspec; sourceTree = "<group>"; };
+		8F891785215DCD1700572B0A /* btBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btBase.png; sourceTree = "<group>"; };
 		8F90244420EA1B40009A1B9C /* UIAlertController+XTAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+XTAddition.h"; sourceTree = "<group>"; };
 		8F90244520EA1B40009A1B9C /* UIAlertController+XTAddition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+XTAddition.m"; sourceTree = "<group>"; };
 		8F90245220EB5D76009A1B9C /* UILabel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Addition.h"; sourceTree = "<group>"; };
@@ -993,6 +995,7 @@
 		8F2BFF29203ED7380013394D /* XTSegment */ = {
 			isa = PBXGroup;
 			children = (
+				8F891785215DCD1700572B0A /* btBase.png */,
 				8F2BFF2A203ED7380013394D /* XTSegment.h */,
 				8F2BFF2B203ED7380013394D /* XTSegment.m */,
 			);
@@ -1411,6 +1414,7 @@
 				8F2BFF6C203ED7390013394D /* Z5DisplayCell.xib in Resources */,
 				8F2BFF70203ED7390013394D /* Z7LongView.xib in Resources */,
 				8F2BFDCF203ED6AB0013394D /* Main.storyboard in Resources */,
+				8F891786215DCD1700572B0A /* btBase.png in Resources */,
 				8FDE205320594950003B5398 /* NibVC.xib in Resources */,
 				8F19861E20C9632D0082662A /* README.md in Resources */,
 				8F2BFF66203ED7390013394D /* MovieCell.xib in Resources */,
