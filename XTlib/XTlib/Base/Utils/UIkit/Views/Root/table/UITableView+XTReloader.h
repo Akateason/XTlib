@@ -42,19 +42,27 @@ typedef enum : NSUInteger {
 @property (nonatomic) XTRefreshType xt_refreshType ;
 
 /**
+ setup add mj header footer
+ */
+- (void)xt_setup ;
+
+/**
  PULL DOWN HEADER
  */
 - (void)xt_loadNewInfo ;
+
 /**
  PULL DOWN HEADER
  @param isBackGround    pull header in backgound or not .
  */
 - (void)xt_loadNewInfoInBackGround:(BOOL)isBackGround ;
+
 /**
  prepareStyle
  u can rewrite in subclass if needed
  */
 - (void)xt_prepareStyle ;
+
 /**
  endRefresh header and footer if needed .
  */

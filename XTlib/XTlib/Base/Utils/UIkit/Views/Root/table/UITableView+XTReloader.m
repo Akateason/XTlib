@@ -12,66 +12,9 @@
 
 @implementation UITableView (XTReloader)
 
-static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class class) {
-    Method originalMethod = class_getInstanceMethod(class, originalSelector) ;
-    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector) ;
-    BOOL didAddMethod =
-    class_addMethod(class,
-                    originalSelector,
-                    method_getImplementation(swizzledMethod),
-                    method_getTypeEncoding(swizzledMethod)) ;
-    
-    if (didAddMethod) {
-        class_replaceMethod(class,
-                            swizzledSelector,
-                            method_getImplementation(originalMethod),
-                            method_getTypeEncoding(originalMethod)) ;
-    }
-    else {
-        method_exchangeImplementations(originalMethod, swizzledMethod) ;
-    }
-}
-
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        ExchangedMethod(@selector(initWithCoder:), @selector(myInitWithCoder:), class) ;
-        ExchangedMethod(@selector(initWithFrame:style:), @selector(myInitWithFrame:style:), class) ;
-        ExchangedMethod(@selector(initWithFrame:), @selector(myInitWithFrame:), class) ;
-    });
-
-}
-
 #pragma mark --
-#pragma mark - Initialization
 
-- (instancetype)myInitWithFrame:(CGRect)frame
-                          style:(UITableViewStyle)style {
-    [self myInitWithFrame:frame style:style] ;
-    if (self) {
-        [self setup] ;
-    }
-    return self ;
-}
-
-- (instancetype)myInitWithCoder:(NSCoder *)coder {
-    [self myInitWithCoder:coder] ;
-    if (self) {
-        [self setup] ;
-    }
-    return self;
-}
-
-- (instancetype)myInitWithFrame:(CGRect)frame {
-    [self myInitWithFrame:frame] ;
-    if (self) {
-        [self setup] ;
-    }
-    return self;
-}
-
-- (void)setup {
+- (void)xt_setup {
     self.estimatedRowHeight = 0 ;
     self.estimatedSectionHeaderHeight = 0 ;
     self.estimatedSectionFooterHeight = 0 ;
