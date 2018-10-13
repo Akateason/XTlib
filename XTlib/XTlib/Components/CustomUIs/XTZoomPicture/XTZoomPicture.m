@@ -10,36 +10,41 @@
 
 #import "XTZoomPicture.h"
 
-@interface XTZoomPicture ()
-@property (nonatomic, strong) UIImageView *imageView ;
+@interface XTZoomPicture () <UIScrollViewDelegate>
+@property (nonatomic) float flexOfSide ;
 @end
 
 @implementation XTZoomPicture
 
 #pragma mark --
 #pragma mark - Initial
+
 - (id)initWithFrame:(CGRect)frame
           backImage:(UIImage *)backImage
-{
+                max:(float)max
+                min:(float)min
+               flex:(float)flex {
     self = [super initWithFrame:frame];
     if (self) {
+        self.maximumZoomScale = max ;
+        self.minimumZoomScale = min ;
+        self.flexOfSide = flex ;
         [self setup] ;
         self.backImage = backImage ;
     }
-    return self;
+    return self ;
 }
 
 - (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setup] ;
-    }
-    return self;
+          backImage:(UIImage *)backImage {
+    return [self initWithFrame:frame backImage:backImage max:2 min:1 flex:0] ;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (id)initWithFrame:(CGRect)frame {
+    return [self initWithFrame:frame backImage:nil max:2 min:1 flex:0] ;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
         [self setup] ;
@@ -47,25 +52,20 @@
     return self;
 }
 
-- (void)setup
-{
+- (void)setup {
     [self srollviewConfigure] ;
     [self imageView] ;
     [self setupGesture] ;
     self.delegate = self;
 }
 
-- (void)srollviewConfigure
-{
-    self.maximumZoomScale = MAX_ZOOM;
-    self.minimumZoomScale = MIN_ZOOM;
+- (void)srollviewConfigure {
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator   = NO;
     self.backgroundColor = [UIColor blackColor] ;
 }
 
-- (void)setupGesture
-{
+- (void)setupGesture {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     [self addGestureRecognizer:tap];
     
@@ -77,17 +77,14 @@
 
 #pragma mark --
 #pragma mark - Property
-- (void)setBackImage:(UIImage *)backImage
-{
+- (void)setBackImage:(UIImage *)backImage {
     _backImage = backImage ;
     
     self.imageView.image = backImage ;
 }
 
-- (UIImageView *)imageView
-{
-    if (!_imageView)
-    {
+- (UIImageView *)imageView {
+    if (!_imageView) {
         _imageView = [[UIImageView alloc] init] ;
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
         _imageView.backgroundColor = [UIColor blackColor] ;
@@ -102,41 +99,34 @@
 }
 
 #pragma mark --
-- (void)resetToOrigin
-{
+- (void)resetToOrigin {
     [self setZoomScale:1 animated:NO] ;
     self.imageView.frame = [self originFrame] ;
 }
 
-- (CGRect)originFrame
-{
+- (CGRect)originFrame {
     CGRect myRect = self.bounds ;
-    float flex = FLEX_SIDE ;
+    float flex = self.flexOfSide ;
     return  CGRectMake(0 + flex, 0 + flex, myRect.size.width - flex * 2, myRect.size.height - flex * 2) ;
 }
 
 #pragma mark --
 #pragma mark - UIScrollView Delegate
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.imageView;
 }
 
 #pragma mark - Touch Actions
-- (void)tap:(UITapGestureRecognizer *)tapGetrue
-{
+- (void)tap:(UITapGestureRecognizer *)tapGetrue {
     [self resetToOrigin] ;
     [self removeFromSuperview] ;
 }
 
-- (void)doubleTap:(UITapGestureRecognizer *)tapGesture
-{
-    if (self.zoomScale >= MAX_ZOOM)
-    {
+- (void)doubleTap:(UITapGestureRecognizer *)tapGesture {
+    if (self.zoomScale >= self.maximumZoomScale) {
         [self setZoomScale:1 animated:YES] ;
     }
-    else
-    {
+    else {
         CGPoint point = [tapGesture locationInView:self] ;
         [self zoomToRect:CGRectMake(point.x - SIDE_ZOOMTORECT / 2, point.y - SIDE_ZOOMTORECT / 2, SIDE_ZOOMTORECT, SIDE_ZOOMTORECT) animated:YES] ;
     }

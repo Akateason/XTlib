@@ -6,19 +6,18 @@
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
-#define MAX_ZOOM    2.0
-#define MIN_ZOOM    1.0
-#define FLEX_SIDE   5.0
-
 #import <UIKit/UIKit.h>
 
-@interface XTZoomPicture : UIScrollView <UIScrollViewDelegate>
+@interface XTZoomPicture : UIScrollView
 
-@property (nonatomic,strong) UIImage *backImage ;
+@property (nonatomic, strong) UIImageView *imageView ;
+@property (nonatomic, strong) UIImage     *backImage ;
 
 - (id)initWithFrame:(CGRect)frame
           backImage:(UIImage *)backImage ;
+
 - (id)initWithFrame:(CGRect)frame ;
+
 - (void)resetToOrigin ;
 
 @end
