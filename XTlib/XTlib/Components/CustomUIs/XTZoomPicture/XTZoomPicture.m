@@ -10,20 +10,24 @@
 
 #import "XTZoomPicture.h"
 
+typedef void(^BlkTapped)(void);
+
 @interface XTZoomPicture () <UIScrollViewDelegate>
-@property (nonatomic) float flexOfSide ;
+@property (nonatomic)       float       flexOfSide ;
+@property (copy, nonatomic) BlkTapped   blkTapped ;
 @end
 
 @implementation XTZoomPicture
 
-#pragma mark --
 #pragma mark - Initial
 
 - (id)initWithFrame:(CGRect)frame
           backImage:(UIImage *)backImage
                 max:(float)max
                 min:(float)min
-               flex:(float)flex {
+               flex:(float)flex
+             tapped:(void(^)(void))tapped {
+    
     self = [super initWithFrame:frame];
     if (self) {
         self.maximumZoomScale = max ;
@@ -31,22 +35,26 @@
         self.flexOfSide = flex ;
         [self setup] ;
         self.backImage = backImage ;
+        self.blkTapped = tapped ;
     }
     return self ;
 }
 
 - (id)initWithFrame:(CGRect)frame
           backImage:(UIImage *)backImage {
-    return [self initWithFrame:frame backImage:backImage max:2 min:1 flex:0] ;
+    return [self initWithFrame:frame backImage:backImage max:2 min:1 flex:0 tapped:nil] ;
 }
 
 - (id)initWithFrame:(CGRect)frame {
-    return [self initWithFrame:frame backImage:nil max:2 min:1 flex:0] ;
+    return [self initWithFrame:frame backImage:nil max:2 min:1 flex:0 tapped:nil] ;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
+        self.maximumZoomScale = 2 ;
+        self.minimumZoomScale = 1 ;
+        self.flexOfSide = 0 ;
         [self setup] ;
     }
     return self;
@@ -75,8 +83,8 @@
     [tap requireGestureRecognizerToFail:doubleTap] ;
 }
 
-#pragma mark --
 #pragma mark - Property
+
 - (void)setBackImage:(UIImage *)backImage {
     _backImage = backImage ;
     
@@ -98,7 +106,8 @@
     return _imageView ;
 }
 
-#pragma mark --
+#pragma mark -
+
 - (void)resetToOrigin {
     [self setZoomScale:1 animated:NO] ;
     self.imageView.frame = [self originFrame] ;
@@ -110,16 +119,22 @@
     return  CGRectMake(0 + flex, 0 + flex, myRect.size.width - flex * 2, myRect.size.height - flex * 2) ;
 }
 
-#pragma mark --
 #pragma mark - UIScrollView Delegate
+
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.imageView;
 }
 
 #pragma mark - Touch Actions
+
 - (void)tap:(UITapGestureRecognizer *)tapGetrue {
-    [self resetToOrigin] ;
-    [self removeFromSuperview] ;
+    if (self.blkTapped) {
+        self.blkTapped() ;
+    }
+    else {
+        [self resetToOrigin] ;
+        [self removeFromSuperview] ;
+    }
 }
 
 - (void)doubleTap:(UITapGestureRecognizer *)tapGesture {

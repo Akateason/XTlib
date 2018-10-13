@@ -14,9 +14,11 @@
 @property (nonatomic, strong) UIImage     *backImage ;
 
 - (id)initWithFrame:(CGRect)frame
-          backImage:(UIImage *)backImage ;
-
-- (id)initWithFrame:(CGRect)frame ;
+          backImage:(UIImage *)backImage
+                max:(float)max
+                min:(float)min
+               flex:(float)flex
+             tapped:(void(^)(void))tapped ;
 
 - (void)resetToOrigin ;
 
