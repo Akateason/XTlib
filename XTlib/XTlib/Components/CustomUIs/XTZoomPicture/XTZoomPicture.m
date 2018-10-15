@@ -110,7 +110,7 @@ typedef void(^BlkTapped)(void);
 
 - (void)resetToOrigin {
     [self setZoomScale:1 animated:NO] ;
-    self.imageView.frame = [self originFrame] ;
+//    self.imageView.frame = [self originFrame] ;
 }
 
 - (CGRect)originFrame {
