@@ -18,11 +18,16 @@
 #pragma mark - new from Story or NIB
 
 + (instancetype)getCtrllerFromStory:(NSString *)storyboard
-               controllerIdentifier:(NSString *)identifier
-{
-    UIStoryboard *story = [UIStoryboard storyboardWithName:storyboard bundle:nil] ;
+                             bundle:(NSBundle *)bundle
+               controllerIdentifier:(NSString *)identifier {
+    UIStoryboard *story = [UIStoryboard storyboardWithName:storyboard bundle:bundle] ;
     UIViewController *ctrller = [story instantiateViewControllerWithIdentifier:identifier] ;
     return ctrller ;
+}
+
++ (instancetype)getCtrllerFromStory:(NSString *)storyboard
+               controllerIdentifier:(NSString *)identifier {
+    return [self getCtrllerFromStory:storyboard bundle:nil controllerIdentifier:identifier] ;
 }
 
 + (instancetype)getCtrllerFromNIB {

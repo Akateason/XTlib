@@ -13,7 +13,12 @@
 @interface UIViewController (XTAddition)
 
 + (instancetype)getCtrllerFromStory:(NSString *)storyboard
+                             bundle:(NSBundle *)bundle
                controllerIdentifier:(NSString *)identifier ;
+
++ (instancetype)getCtrllerFromStory:(NSString *)storyboard
+               controllerIdentifier:(NSString *)identifier ;
+
 + (instancetype)getCtrllerFromNIB ;
 
 + (UIViewController *)xt_topViewController ;
