@@ -10,7 +10,10 @@
 #import "MJRefresh.h"
 #import "UITableView+XTReloader.h"
 
+
 @class RootTableView ;
+
+__attribute__((deprecated("Class RootTableView is deprecated , use UITableView+XTReloader instead!!!")))
 
 @protocol RootTableViewDelegate <NSObject>
 @required

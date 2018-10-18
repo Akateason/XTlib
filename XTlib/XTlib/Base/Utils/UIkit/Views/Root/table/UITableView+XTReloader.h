@@ -4,7 +4,7 @@
 //
 //  Created by teason23 on 2018/9/28.
 //  Copyright © 2018年 teason23. All rights reserved.
-//
+//  encapsulation of MJRefresh and CYLTableViewPlaceHolder .
 
 #import <UIKit/UIKit.h>
 #import "MJRefresh.h"

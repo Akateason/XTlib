@@ -24,6 +24,7 @@ pod 'IQKeyboardManager'
 pod 'LxDBAnything'
 pod 'UITableView+FDTemplateLayoutCell'
 pod 'RxWebViewController'
+pod 'CYLTableViewPlaceHolder'
 
 # pod 'iCarousel'
 # pod 'BlocksKit'

@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "XTlib"
-  s.version      = "1.4.7"
+  s.version      = "1.4.8"
   s.summary      = "a rapid develop lib for iOS"
   s.description  = "XTlib. a rapid develop lib for iOS ."
   s.homepage     = "https://github.com/Akateason/XTlib"
@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
   s.dependency "MJRefresh"
   s.dependency "Valet", "2.4.2"
   s.dependency "RxWebViewController"
+  s.dependency "CYLTableViewPlaceHolder"
 
 # s.source_files  = "XTlib/XTlib","XTlib/XTlib/**/*.{h,m}","XTlib/XTlib/**/**/*.{h,m}"
 # s.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/header/*.h","XTlib/XTlib/**/**/*.h"

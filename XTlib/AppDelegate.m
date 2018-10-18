@@ -40,7 +40,9 @@
     [SVProgressHUD setMaximumDismissTimeInterval:2.] ;
     
     // SQLite
-    [[XTFMDBBase sharedInstance] configureDB:@"teason"] ; // app did launch .
+    [XTFMDBBase sharedInstance].isDebugMode = YES ;
+    NSString *path = XT_DOCUMENTS_PATH_TRAIL_(@"teason") ;
+    [[XTFMDBBase sharedInstance] configureDBWithPath:path] ;
     [[XTFMDBBase sharedInstance] dbUpgradeTable:Model1.class
                                       paramsAdd:@[@"a1",@"a2",@"a3"]
                                         version:2] ;
@@ -51,7 +53,8 @@
     
     
     // request cache TB
-    [XTCacheRequest configXTCacheReqWhenAppDidLaunchWithDBName:@"teason"] ;
+    [XTReqSessionManager shareInstance].isDebug = YES ;
+    [XTCacheRequest configXTCacheReqWhenAppDidLaunchWithDBPath:path] ;
     
     // stat
     //    [[XTStat new] prepare] ;
