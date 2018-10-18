@@ -135,6 +135,7 @@
 		8FA9D3B620C7BCAC005AFEDF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9D3B520C7BCAC005AFEDF /* Podfile */; };
 		8FA9D3BC20C7E158005AFEDF /* RootCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9D3BB20C7E158005AFEDF /* RootCustomView.m */; };
 		8FA9D3C020C7E422005AFEDF /* DesignableInspectableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9D3BF20C7E422005AFEDF /* DesignableInspectableVC.m */; };
+		8FC5F2D921785CAF009B4042 /* XTlibConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5F2D821785CAF009B4042 /* XTlibConfig.m */; };
 		8FC8215320EA7DE90068AE5E /* AlertTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC8215220EA7DE90068AE5E /* AlertTestVC.m */; };
 		8FDE204A2059447D003B5398 /* UIViewController+XTAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE20492059447D003B5398 /* UIViewController+XTAddition.m */; };
 		8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE204D205948D2003B5398 /* CtrlHelpVC.m */; };
@@ -415,6 +416,9 @@
 		8FA9D3BB20C7E158005AFEDF /* RootCustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootCustomView.m; sourceTree = "<group>"; };
 		8FA9D3BE20C7E422005AFEDF /* DesignableInspectableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignableInspectableVC.h; sourceTree = "<group>"; };
 		8FA9D3BF20C7E422005AFEDF /* DesignableInspectableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignableInspectableVC.m; sourceTree = "<group>"; };
+		8FC5F2D721785CAF009B4042 /* XTlibConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTlibConfig.h; sourceTree = "<group>"; };
+		8FC5F2D821785CAF009B4042 /* XTlibConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTlibConfig.m; sourceTree = "<group>"; };
+		8FC5F2DA21785D06009B4042 /* XTlibConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTlibConst.h; sourceTree = "<group>"; };
 		8FC8215120EA7DE90068AE5E /* AlertTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertTestVC.h; sourceTree = "<group>"; };
 		8FC8215220EA7DE90068AE5E /* AlertTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertTestVC.m; sourceTree = "<group>"; };
 		8FDE20482059447D003B5398 /* UIViewController+XTAddition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XTAddition.h"; sourceTree = "<group>"; };
@@ -880,6 +884,9 @@
 		8F2BFEBF203ED7380013394D /* header */ = {
 			isa = PBXGroup;
 			children = (
+				8FC5F2D721785CAF009B4042 /* XTlibConfig.h */,
+				8FC5F2D821785CAF009B4042 /* XTlibConfig.m */,
+				8FC5F2DA21785D06009B4042 /* XTlibConst.h */,
 				8F2BFEC1203ED7380013394D /* DeviceSysHeader.h */,
 				8F2BFEC2203ED7380013394D /* FastCodeHeader.h */,
 				8F2BFEC7203ED7380013394D /* ScreenHeader.h */,
@@ -1633,6 +1640,7 @@
 				8F2BFF7E203ED7390013394D /* NSObject+Reflection.m in Sources */,
 				8F2BFDC9203ED6AB0013394D /* AppDelegate.m in Sources */,
 				8F2BFE01203ED71D0013394D /* ServerRequest.m in Sources */,
+				8FC5F2D921785CAF009B4042 /* XTlibConfig.m in Sources */,
 				8F891795215E303C00572B0A /* UITableView+XTReloader.m in Sources */,
 				8F2BFFAD203ED7390013394D /* PlaceHolderTextView.m in Sources */,
 				8F2BFF77203ED7390013394D /* Mother.m in Sources */,

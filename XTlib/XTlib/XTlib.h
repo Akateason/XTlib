@@ -9,25 +9,11 @@
 #ifndef XTlib_h
 #define XTlib_h
 
-#define xt_DEBUG    1
-
-#if xt_DEBUG
-#define NSLog(format, ...) do {                                             \
-fprintf(stderr, "<%s : %d> %s\n",                                           \
-[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
-__LINE__, __func__);                                                        \
-(NSLog)((format), ##__VA_ARGS__);                                           \
-fprintf(stderr, "🏀🏀🏀🏀🏀\n");                                           \
-} while (0)
-
-#else
-#   define NSLog(...)
-#endif
-
 // header
 #import "ScreenHeader.h"
 #import "DeviceSysHeader.h"
 #import "FastCodeHeader.h"
+#import "XTlibConst.h"
 
 // Root
 #import "UITableView+XTReloader.h"
