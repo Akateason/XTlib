@@ -6,8 +6,8 @@ inhibit_all_warnings!
 
 target 'XTlib' do
 
-pod 'XTFMDB'
-pod 'XTReq'
+    pod 'XTFMDB'
+    pod 'XTReq'
 pod 'XTColor'
 pod 'AFNetworking'
 pod 'YYModel'
