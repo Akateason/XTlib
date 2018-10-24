@@ -8,10 +8,9 @@
 
 #import "Z5DisplayCell.h"
 #import "Model1.h"
+#import "XTFMDB.h"
 
 @implementation Z5DisplayCell
-
-
 
 // set model
 - (void)configure:(id)model

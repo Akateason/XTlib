@@ -48,11 +48,11 @@ static float const kBtFlex = 5 ;
     
     [self layoutUI] ;
     
-    id res = [Model1 anyFuncWithSql:@"SELECT count(*) FROM Model1"] ;
-    int count = [Model1 count] ;
-    double max = [Model1 maxOf:@"floatVal"] ;
-    double min = [Model1 minOf:@"age"] ;
-    double sum = [Model1 sumOf:@"age"] ;
+    id res = [Model1 xt_anyFuncWithSql:@"SELECT count(*) FROM Model1"] ;
+    int count = [Model1 xt_count] ;
+    double max = [Model1 xt_maxOf:@"floatVal"] ;
+    double min = [Model1 xt_minOf:@"age"] ;
+    double sum = [Model1 xt_sumOf:@"age"] ;
     
 
 }
@@ -271,9 +271,7 @@ static float const kBtFlex = 5 ;
     UIImage *image = [UIImage imageNamed:@"kobe"] ;
     image = [UIImage thumbnailWithImage:image size:CGSizeMake(100, 100)] ;
     m1.cover = UIImagePNGRepresentation(image) ;
-//    [m1 xt_insert] ;
-    [m1 insert] ;
-    
+    [m1 xt_insert] ;
     
     [self display] ;
 }
@@ -287,8 +285,8 @@ static float const kBtFlex = 5 ;
     m1.tick = [NSDate xt_getNowTick] ;
     m1.title = [NSString stringWithFormat:@"我就改你 r%d",arc4random()%99] ;
     
-//    [m1 xt_update] ;
-    [m1 update] ;
+    [m1 xt_update] ;
+    
     
     [self display] ;
 }
@@ -322,14 +320,12 @@ static float const kBtFlex = 5 ;
         [list addObject:m1] ;
     }
     
-//    [Model1 xt_insertList:list] ;
-    [Model1 insertList:list] ;
+    [Model1 xt_insertList:list] ;
     
     [self display] ;
 }
 
-- (void)updateListAction
-{
+- (void)updateListAction {
     NSArray *getlist = [Model1 xt_selectWhere:@"age > 5"] ;
     NSMutableArray *tmplist = [@[] mutableCopy] ;
     for (int i = 0 ; i < getlist.count ; i++)
@@ -339,8 +335,7 @@ static float const kBtFlex = 5 ;
         [tmplist addObject:model] ;
     }
     
-//    [Model1 xt_updateList:tmplist] ;
-    [Model1 updateList:tmplist] ;
+    [Model1 xt_updateListByPkid:tmplist] ;
     
     [self display] ;
 }
@@ -351,16 +346,13 @@ static float const kBtFlex = 5 ;
     NSLog(@"m : %@",[model yy_modelToJSONObject]) ;
 }
 
-- (void)AlterAddAction
-{
-    [Model1 alterAddColumn:@"adddddddddd"
-                      type:@"INTEGER default 0 NOT NULL"] ;
-
+- (void)AlterAddAction {
+    [[XTFMDBBase sharedInstance] dbUpgradeTable:Model1.class paramsAdd:@[@"adddddddddd"] version:2] ;
 }
 
 #pragma mark --
-- (void)display
-{
+
+- (void)display {
     [self.navigationController pushViewController:[Z5DisplayController new]
                                          animated:YES] ;
 }
