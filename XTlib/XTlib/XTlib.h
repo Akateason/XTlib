@@ -17,6 +17,7 @@
 
 // Root
 #import "UITableView+XTReloader.h"
+#import "UITableViewCell+XT.h"
 #import "RootTableView.h"
 #import "RootTableCell.h"
 #import "RootRefreshHeader.h"
@@ -40,7 +41,7 @@
 #import "NSDate+XTTick.h"
 #import "NSDate+NSCalendar.h"
 #import "NSObject+Reflection.h"
-#import "NSObject+Runtime.h"
+#import "NSObject+XTRuntime.h"
 #import "NSString+Extend.h"
 #import "UIButton+Countdown.h"
 #import "UIButton+ExtendTouchRect.h"

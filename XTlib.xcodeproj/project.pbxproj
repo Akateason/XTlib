@@ -74,7 +74,6 @@
 		8F2BFF7C203ED7390013394D /* NSDate+XTTick.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE93203ED7380013394D /* NSDate+XTTick.m */; };
 		8F2BFF7D203ED7390013394D /* NSNumber+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE95203ED7380013394D /* NSNumber+Round.m */; };
 		8F2BFF7E203ED7390013394D /* NSObject+Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE97203ED7380013394D /* NSObject+Reflection.m */; };
-		8F2BFF7F203ED7390013394D /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE99203ED7380013394D /* NSObject+Runtime.m */; };
 		8F2BFF80203ED7390013394D /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE9B203ED7380013394D /* NSString+Extend.m */; };
 		8F2BFF81203ED7390013394D /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE9D203ED7380013394D /* NSTimer+Addition.m */; };
 		8F2BFF82203ED7390013394D /* UIButton+Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE9F203ED7380013394D /* UIButton+Countdown.m */; };
@@ -126,6 +125,8 @@
 		8F2BFFC6203ED7390013394D /* XTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF55203ED7380013394D /* XTJson.m */; };
 		8F2BFFC7203ED7390013394D /* XTVerification.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF58203ED7380013394D /* XTVerification.m */; };
 		8F6400782148B2030094024A /* TestDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6400772148B2030094024A /* TestDemoVC.m */; };
+		8F7C72BF2189A1260062000C /* UITableViewCell+XT.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72BE2189A1260062000C /* UITableViewCell+XT.m */; };
+		8F7C72C22189A5F30062000C /* NSObject+XTRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C72C12189A5F30062000C /* NSObject+XTRuntime.m */; };
 		8F81E2A120D1208A00782A90 /* XTlib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E2A020D1208A00782A90 /* XTlib.podspec */; };
 		8F891786215DCD1700572B0A /* btBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F891785215DCD1700572B0A /* btBase.png */; };
 		8F891795215E303C00572B0A /* UITableView+XTReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F891794215E303C00572B0A /* UITableView+XTReloader.m */; };
@@ -293,8 +294,6 @@
 		8F2BFE95203ED7380013394D /* NSNumber+Round.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Round.m"; sourceTree = "<group>"; };
 		8F2BFE96203ED7380013394D /* NSObject+Reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Reflection.h"; sourceTree = "<group>"; };
 		8F2BFE97203ED7380013394D /* NSObject+Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Reflection.m"; sourceTree = "<group>"; };
-		8F2BFE98203ED7380013394D /* NSObject+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
-		8F2BFE99203ED7380013394D /* NSObject+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
 		8F2BFE9A203ED7380013394D /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
 		8F2BFE9B203ED7380013394D /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
 		8F2BFE9C203ED7380013394D /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
@@ -401,6 +400,10 @@
 		8F2BFF59203ED7380013394D /* XTlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTlib.h; sourceTree = "<group>"; };
 		8F6400762148B2030094024A /* TestDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDemoVC.h; sourceTree = "<group>"; };
 		8F6400772148B2030094024A /* TestDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDemoVC.m; sourceTree = "<group>"; };
+		8F7C72BD2189A1260062000C /* UITableViewCell+XT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+XT.h"; sourceTree = "<group>"; };
+		8F7C72BE2189A1260062000C /* UITableViewCell+XT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+XT.m"; sourceTree = "<group>"; };
+		8F7C72C02189A5F30062000C /* NSObject+XTRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+XTRuntime.h"; sourceTree = "<group>"; };
+		8F7C72C12189A5F30062000C /* NSObject+XTRuntime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XTRuntime.m"; sourceTree = "<group>"; };
 		8F81E2A020D1208A00782A90 /* XTlib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XTlib.podspec; sourceTree = "<group>"; };
 		8F891785215DCD1700572B0A /* btBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btBase.png; sourceTree = "<group>"; };
 		8F891793215E303C00572B0A /* UITableView+XTReloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+XTReloader.h"; sourceTree = "<group>"; };
@@ -496,6 +499,8 @@
 				8F2BFEE3203ED7380013394D /* RootTableCell.m */,
 				8F2BFEE4203ED7380013394D /* RootTableView.h */,
 				8F2BFEE5203ED7380013394D /* RootTableView.m */,
+				8F7C72BD2189A1260062000C /* UITableViewCell+XT.h */,
+				8F7C72BE2189A1260062000C /* UITableViewCell+XT.m */,
 				8F891793215E303C00572B0A /* UITableView+XTReloader.h */,
 				8F891794215E303C00572B0A /* UITableView+XTReloader.m */,
 			);
@@ -1158,8 +1163,8 @@
 				8F2BFE95203ED7380013394D /* NSNumber+Round.m */,
 				8F2BFE96203ED7380013394D /* NSObject+Reflection.h */,
 				8F2BFE97203ED7380013394D /* NSObject+Reflection.m */,
-				8F2BFE98203ED7380013394D /* NSObject+Runtime.h */,
-				8F2BFE99203ED7380013394D /* NSObject+Runtime.m */,
+				8F7C72C02189A5F30062000C /* NSObject+XTRuntime.h */,
+				8F7C72C12189A5F30062000C /* NSObject+XTRuntime.m */,
 				8F2BFE9A203ED7380013394D /* NSString+Extend.h */,
 				8F2BFE9B203ED7380013394D /* NSString+Extend.m */,
 				8F2BFE9C203ED7380013394D /* NSTimer+Addition.h */,
@@ -1559,6 +1564,7 @@
 				8F2BFFBB203ED7390013394D /* Base64.m in Sources */,
 				8F2BFE33203ED7270013394D /* WPAttributedStyleAction.m in Sources */,
 				8F2BFFAF203ED7390013394D /* XTBarrageItemView.m in Sources */,
+				8F7C72C22189A5F30062000C /* NSObject+XTRuntime.m in Sources */,
 				8F2BFE34203ED7270013394D /* WPHotspotLabel.m in Sources */,
 				8F2BFF72203ED7390013394D /* Z8CollectionViewCell.m in Sources */,
 				8F2BFFC5203ED7390013394D /* XTFileManager.m in Sources */,
@@ -1568,6 +1574,7 @@
 				8F2BFF99203ED7390013394D /* RootCollectionView.m in Sources */,
 				8F2BFFAB203ED7390013394D /* ParallaxHeaderView.m in Sources */,
 				8F2BFF60203ED7390013394D /* DoubanTags.m in Sources */,
+				8F7C72BF2189A1260062000C /* UITableViewCell+XT.m in Sources */,
 				8F2BFE40203ED7270013394D /* UIAlternativeButton.m in Sources */,
 				8F2BFF84203ED7390013394D /* UIFont+FontAdapter.m in Sources */,
 				8F2BFFC6203ED7390013394D /* XTJson.m in Sources */,
@@ -1593,7 +1600,6 @@
 				8F90245420EB5D77009A1B9C /* UILabel+Addition.m in Sources */,
 				8F2BFF76203ED7390013394D /* Father.m in Sources */,
 				8F2BFF6A203ED7390013394D /* Model1.m in Sources */,
-				8F2BFF7F203ED7390013394D /* NSObject+Runtime.m in Sources */,
 				8F2BFF89203ED7390013394D /* UIView+XTAddition.m in Sources */,
 				8F2BFFC7203ED7390013394D /* XTVerification.m in Sources */,
 				8F2BFFAC203ED7390013394D /* UIImage+ImageEffects.m in Sources */,

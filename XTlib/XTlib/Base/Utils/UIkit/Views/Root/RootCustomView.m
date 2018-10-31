@@ -7,7 +7,7 @@
 //
 
 #import "RootCustomView.h"
-#import "NSObject+Runtime.h"
+#import "NSObject+XTRuntime.h"
 #import "FastCodeHeader.h"
 
 @interface UIView ()
