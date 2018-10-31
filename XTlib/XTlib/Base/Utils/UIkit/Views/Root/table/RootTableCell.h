@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Masonry.h"
 
+__attribute__((deprecated("Class RootTableCell is deprecated , use UITableViewCell+XT instead!!!")))
+
 @interface RootTableCell : UITableViewCell
 
 @property (strong, nonatomic) NSIndexPath *indexPath ;
