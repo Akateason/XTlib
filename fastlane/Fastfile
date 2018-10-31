@@ -19,7 +19,7 @@ lane :release_pod do |options|
   end
   add_git_tag(tag: target_version)
   push_git_tags
-  pod_lib_lint(allow_warnings: true, use_libraries: true)
+  pod_lib_lint(allow_warnings: true, use_libraries: true, sources: ['https://github.com/CocoaPods/Specs.git'])
   if target_repo
     pod_push(path: spec_path, repo: target_repo, allow_warnings: true, use_libraries: true)
     UI.message("Release lib #{target_project} new version #{target_version} to repo #{target_repo} Successfully! 🎉 ")
