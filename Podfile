@@ -2,13 +2,18 @@
 platform :ios, '8.0'
 
 use_frameworks!
-inhibit_all_warnings!
+# inhibit_all_warnings!
 
 target 'XTlib' do
 
-pod 'XTFMDB', :path => '../XTFMDB/'
-pod 'XTReq', :path => '../XTReq/'
-pod 'XTColor',:path => '../XTColor/'
+    #pod 'XTFMDB', :path => '../XTFMDB/'
+    #pod 'XTReq', :path => '../XTReq/'
+    #pod 'XTColor',:path => '../XTColor/'
+
+pod 'XTFMDB'
+pod 'XTReq'
+pod 'XTColor'
+
 
 pod 'AFNetworking'
 pod 'YYModel'

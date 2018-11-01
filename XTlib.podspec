@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "XTlib"
-  s.version      = "1.5.7"
+  s.version      = "1.5.8"
   s.summary      = "a rapid develop lib for iOS"
   s.description  = "XTlib. a rapid develop lib for iOS ."
   s.homepage     = "https://github.com/Akateason/XTlib"
