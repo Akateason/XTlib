@@ -13,6 +13,7 @@
 
 @end
 
+
 @implementation XTlibTests
 
 - (void)setUp {
@@ -28,8 +29,6 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    
-    
 }
 
 - (void)testPerformanceExample {

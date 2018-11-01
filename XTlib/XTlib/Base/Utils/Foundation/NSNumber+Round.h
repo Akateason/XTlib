@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface NSNumber (Round)
-- (NSNumber*)xt_doRoundWithDigit:(NSUInteger)digit ;
+- (NSNumber *)xt_doRoundWithDigit:(NSUInteger)digit;
 @end

@@ -8,8 +8,9 @@
 
 #import "XTlibConfig.h"
 
+
 @implementation XTlibConfig
-XT_SINGLETON_M(XTlibConfig)
+XT_SINGLETON_M(XTlibConfig);
 
 
 @end

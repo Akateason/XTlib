@@ -8,18 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface XTZoomPicture : UIScrollView
 
-@property (nonatomic, strong) UIImageView *imageView ;
-@property (nonatomic, strong) UIImage     *backImage ;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIImage *backImage;
 
 - (id)initWithFrame:(CGRect)frame
           backImage:(UIImage *)backImage
                 max:(float)max
                 min:(float)min
                flex:(float)flex
-             tapped:(void(^)(void))tapped ;
+             tapped:(void (^)(void))tapped;
 
-- (void)resetToOrigin ;
+- (void)resetToOrigin;
 
 @end

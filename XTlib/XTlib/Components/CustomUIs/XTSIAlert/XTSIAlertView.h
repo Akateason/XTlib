@@ -10,24 +10,24 @@
 #import <XTColor/XTColor.h>
 
 // bt bg color
-#define kColorDefaultBt                     UIColorHex(@"EDE5E2")
-#define kColorDestructiveBt                 UIColorHex(@"EA3556")
-#define kColorCancelBt                      UIColorHex(@"61D2D6")
+#define kColorDefaultBt UIColorHex(@"EDE5E2")
+#define kColorDestructiveBt UIColorHex(@"EA3556")
+#define kColorCancelBt UIColorHex(@"61D2D6")
 // bt title color
-#define kTitleColorDefaultBt                UIColorHex(@"808080")
-#define kTitleColorDestructiveBt            [UIColor whiteColor]
-#define kTitleColorCancelBt                 [UIColor whiteColor]
+#define kTitleColorDefaultBt UIColorHex(@"808080")
+#define kTitleColorDestructiveBt [UIColor whiteColor]
+#define kTitleColorCancelBt [UIColor whiteColor]
 // bt title color hightlight
-#define kHIGHLIGHT_TitleColorDefaultBt             [UIColor whiteColor]
-#define kHIGHLIGHT_TitleColorDestructiveBt         [UIColor whiteColor]
-#define kHIGHLIGHT_TitleColorCancelBt              [UIColor whiteColor]
+#define kHIGHLIGHT_TitleColorDefaultBt [UIColor whiteColor]
+#define kHIGHLIGHT_TitleColorDestructiveBt [UIColor whiteColor]
+#define kHIGHLIGHT_TitleColorCancelBt [UIColor whiteColor]
 // title color
-#define kMainTitleFont                   [UIFont boldSystemFontOfSize:16]
-#define kSubTitleFont                    [UIFont systemFontOfSize:14]
-#define kMainSubTitleColor               [UIColor blackColor]
+#define kMainTitleFont [UIFont boldSystemFontOfSize:16]
+#define kSubTitleFont [UIFont systemFontOfSize:14]
+#define kMainSubTitleColor [UIColor blackColor]
 // bg color
-#define kBGBackColor                     [UIColor colorWithWhite:0.3 alpha:.7]
-#define kAlertBgColor                    [UIColor whiteColor]
+#define kBGBackColor [UIColor colorWithWhite:0.3 alpha:.7]
+#define kAlertBgColor [UIColor whiteColor]
 
 extern NSString *const XTSIAlertViewWillShowNotification;
 extern NSString *const XTSIAlertViewDidShowNotification;
@@ -54,12 +54,13 @@ typedef NS_ENUM(NSInteger, XTSIAlertViewTransitionStyle) {
 };
 
 typedef NS_ENUM(NSInteger, XTSIAlertPositionStyle) {
-    XTSIAlertViewPositionMiddle = 0 ,
+    XTSIAlertViewPositionMiddle = 0,
     XTSIAlertViewPositionBottom
-} ;
+};
 
 @class XTSIAlertView;
-typedef void(^XTSIAlertViewHandler)(XTSIAlertView *alertView);
+typedef void (^XTSIAlertViewHandler)(XTSIAlertView *alertView);
+
 
 @interface XTSIAlertView : UIView
 
@@ -68,7 +69,7 @@ typedef void(^XTSIAlertViewHandler)(XTSIAlertView *alertView);
 
 @property (nonatomic, assign) XTSIAlertViewTransitionStyle transitionStyle; // default is XTSIAlertViewTransitionStyleSlideFromBottom
 @property (nonatomic, assign) XTSIAlertViewBackgroundStyle backgroundStyle; // default is XTSIAlertViewButtonTypeGradient
-@property (nonatomic, assign) XTSIAlertPositionStyle positionStyle ; // default is middle ; @ADD BY TEASON
+@property (nonatomic, assign) XTSIAlertPositionStyle positionStyle;         // default is middle ; @ADD BY TEASON
 
 
 @property (nonatomic, copy) XTSIAlertViewHandler willShowHandler;
@@ -76,7 +77,7 @@ typedef void(^XTSIAlertViewHandler)(XTSIAlertView *alertView);
 @property (nonatomic, copy) XTSIAlertViewHandler willDismissHandler;
 @property (nonatomic, copy) XTSIAlertViewHandler didDismissHandler;
 
-@property (nonatomic, readonly, getter = isVisible) BOOL visible;
+@property (nonatomic, readonly, getter=isVisible) BOOL visible;
 
 @property (nonatomic, strong) UIColor *viewBackgroundColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *titleColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
@@ -96,13 +97,12 @@ typedef void(^XTSIAlertViewHandler)(XTSIAlertView *alertView);
          normalBtTitle:(NSString *)normalBtTitle
                 normal:(XTSIAlertViewHandler)normalHandler
          cancelBtTitle:(NSString *)cancelBtTitle
-                cancel:(XTSIAlertViewHandler)cancelHandler ;
+                cancel:(XTSIAlertViewHandler)cancelHandler;
 
-- (id)initWithTitle:(NSString *)title andMessage:(NSString *)message ;
-- (void)addButtonWithTitle:(NSString *)title type:(XTSIAlertViewButtonType)type handler:(XTSIAlertViewHandler)handler ;
+- (id)initWithTitle:(NSString *)title andMessage:(NSString *)message;
+- (void)addButtonWithTitle:(NSString *)title type:(XTSIAlertViewButtonType)type handler:(XTSIAlertViewHandler)handler;
 
 - (void)show;
 - (void)dismissAnimated:(BOOL)animated;
 
 @end
-

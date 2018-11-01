@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface PlistUtil : NSObject
 
-+ (NSDictionary *)dictionaryWithPlist:(NSString *)plistName ;
++ (NSDictionary *)dictionaryWithPlist:(NSString *)plistName;
 
-+ (NSArray *)arrayWithPlist:(NSString *)plistName ;
++ (NSArray *)arrayWithPlist:(NSString *)plistName;
 
 @end

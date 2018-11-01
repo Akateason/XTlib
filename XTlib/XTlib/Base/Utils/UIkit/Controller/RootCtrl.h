@@ -16,9 +16,9 @@
 
 @interface RootCtrl : UIViewController
 
-@property (copy, nonatomic) NSString *myStatTitle ; // title for stat if needed.
+@property (copy, nonatomic) NSString *myStatTitle; // title for stat if needed.
 
-- (void)prepare ;
-- (void)prepareUI ;
+- (void)prepare;
+- (void)prepareUI;
 
 @end

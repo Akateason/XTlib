@@ -11,98 +11,104 @@
 #import "FastCodeHeader.h"
 #import "NSObject+XTRuntime.h"
 
+
 @interface UITableViewCell ()
-@property (strong, nonatomic, readwrite) id xt_model ;
+@property (strong, nonatomic, readwrite) id xt_model;
 @end
+
 
 @implementation UITableViewCell (XT)
 
-ASSOCIATED(xt_model, setXt_model, id, OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-ASSOCIATED(xt_indexPath, setXt_indexPath, NSIndexPath *, OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+ASSOCIATED(xt_model, setXt_model, id, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+ASSOCIATED(xt_indexPath, setXt_indexPath, NSIndexPath *, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
 + (void)load {
-    [self xt_swizzleMethod:@selector(initWithStyle:reuseIdentifier:) withMethod:@selector(xt_initWithStyle:reuseIdentifier:)] ;
-    [self xt_swizzleMethod:@selector(awakeFromNib) withMethod:@selector(xt_awakeFromNib)] ;
+    [self xt_swizzleMethod:@selector(initWithStyle:reuseIdentifier:) withMethod:@selector(xt_initWithStyle:reuseIdentifier:)];
+    [self xt_swizzleMethod:@selector(awakeFromNib) withMethod:@selector(xt_awakeFromNib)];
 }
 
 - (instancetype)xt_initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    [self xt_initWithStyle:style reuseIdentifier:reuseIdentifier] ;
-    
-    [self xt_prepareUI] ;
-    return self ;
+    [self xt_initWithStyle:style reuseIdentifier:reuseIdentifier];
+
+    [self xt_prepareUI];
+    return self;
 }
 
 - (void)xt_awakeFromNib {
-    [self xt_awakeFromNib] ;
-    
-    [self xt_prepareUI] ;
+    [self xt_awakeFromNib];
+
+    [self xt_prepareUI];
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - util
 
 // Register from table
 + (void)xt_registerNibFromTable:(UITableView *)table {
-    NSString *clsName = NSStringFromClass([self class]) ;
-    [table registerNib:[UINib nibWithNibName:clsName bundle:nil] forCellReuseIdentifier:clsName] ;
+    NSString *clsName = NSStringFromClass([self class]);
+    [table registerNib:[UINib nibWithNibName:clsName bundle:nil] forCellReuseIdentifier:clsName];
 }
 
 + (void)xt_registerClsFromTable:(UITableView *)table {
-    [table registerClass:[self class] forCellReuseIdentifier:NSStringFromClass([self class])] ;
+    [table registerClass:[self class] forCellReuseIdentifier:NSStringFromClass([self class])];
 }
 
 // Fetch
 + (instancetype)xt_fetchFromTable:(UITableView *)table {
-    return [table dequeueReusableCellWithIdentifier:NSStringFromClass([self class])] ;
+    return [table dequeueReusableCellWithIdentifier:NSStringFromClass([self class])];
 }
 
 + (instancetype)xt_fetchFromTable:(UITableView *)table indexPath:(NSIndexPath *)indexPath {
-    return [table dequeueReusableCellWithIdentifier:NSStringFromClass([self class]) forIndexPath:indexPath] ;
+    return [table dequeueReusableCellWithIdentifier:NSStringFromClass([self class]) forIndexPath:indexPath];
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - get cell
 
 + (instancetype)xt_cellWithTable:(UITableView *)tableView {
     @autoreleasepool {
-        const char *charClsName = object_getClassName(self) ;
-        NSString *strClsName = [NSString stringWithUTF8String:charClsName] ;
-        Class cellCls = objc_getRequiredClass(charClsName) ;
+        const char *charClsName = object_getClassName(self);
+        NSString *strClsName    = [NSString stringWithUTF8String:charClsName];
+        Class cellCls           = objc_getRequiredClass(charClsName);
         //  polymorphic
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:strClsName] ;
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:strClsName];
         if (!cell) {
             cell = [[cellCls alloc] initWithStyle:UITableViewCellStyleDefault
-                                  reuseIdentifier:strClsName] ; // use cls name as reuseIdentifier
+                                  reuseIdentifier:strClsName]; // use cls name as reuseIdentifier
         }
-        return cell ;
+        return cell;
     }
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - prepare UI
 
 - (void)xt_prepareUI {
-    self.selectionStyle = UITableViewCellSelectionStyleNone ;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - configure
 
 - (void)xt_configure:(id)model {
     [self xt_configure:model
-             indexPath:nil] ;
+             indexPath:nil];
 }
 
 - (void)xt_configure:(id)model
            indexPath:(NSIndexPath *)indexPath {
-    self.xt_model = model ;
-    self.xt_indexPath = indexPath ;
+    self.xt_model     = model;
+    self.xt_indexPath = indexPath;
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - height
 
-+ (CGFloat)xt_cellHeight { return 44. ; }
-+ (CGFloat)xt_cellHeightForModel:(id)model { return 44. ; }
++ (CGFloat)xt_cellHeight {
+    return 44.;
+}
++ (CGFloat)xt_cellHeightForModel:(id)model {
+    return 44.;
+}
 
 @end

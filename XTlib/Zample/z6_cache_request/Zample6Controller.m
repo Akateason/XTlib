@@ -15,113 +15,90 @@
 #import "ServerRequest.h"
 #import "XTlib.h"
 
-@interface Zample6Controller () <UITableViewDelegate,UITableViewDataSource,RootTableViewDelegate>
 
-@property (nonatomic,strong) RootTableView *table ;
-@property (nonatomic,strong) NSArray *list_datasource ;
+@interface Zample6Controller () <UITableViewDelegate, UITableViewDataSource, RootTableViewDelegate>
+
+@property (nonatomic, strong) RootTableView *table;
+@property (nonatomic, strong) NSArray *list_datasource;
 
 @end
 
+
 @implementation Zample6Controller
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad] ;
+- (void)viewDidLoad {
+    [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.title = @"cache request response" ;
-    
-    self.list_datasource = @[] ;
-    
+
+    self.title = @"cache request response";
+
+    self.list_datasource = @[];
+
     self.table = ({
         RootTableView *view = [[RootTableView alloc] initWithFrame:APPFRAME
-                                                             style:0] ;
-        view.delegate           = self  ;
-        view.dataSource         = self  ;
-        view.xt_Delegate        = self  ;
-        view.isShowRefreshDetail  = TRUE  ;
-        [self.view addSubview:view] ;
+                                                             style:0];
+        view.delegate            = self;
+        view.dataSource          = self;
+        view.xt_Delegate         = self;
+        view.isShowRefreshDetail = TRUE;
+        [self.view addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(self.view) ;
-        }] ;
-        view ;
-    }) ;
-    
+            make.edges.mas_equalTo(self.view);
+        }];
+        view;
+    });
+
     [self.table registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil]
-     forCellReuseIdentifier:@"MovieCell"] ;
-    [self.table loadNewInfoInBackGround:TRUE] ;
+        forCellReuseIdentifier:@"MovieCell"];
+    [self.table loadNewInfoInBackGround:TRUE];
 }
 
 
-static const NSInteger kEveryCount = 10 ;
+static const NSInteger kEveryCount = 10;
 
 #pragma mark - RootTableViewDelegate
 
-- (void)tableView:(RootTableView *)table loadNew:(void (^)(void))endRefresh
-{
+- (void)tableView:(RootTableView *)table loadNew:(void (^)(void))endRefresh {
     [ServerRequest zample6_GetMovieListWithStart:0
                                            count:kEveryCount
                                       completion:^XTReqSaveJudgment(id json) {
-                                          NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]] ;
-                                          if (!tmplist) return XTReqSaveJudgment_NotSave ;
-                                          self.list_datasource = tmplist ;
-                                          endRefresh() ;
-                                          return XTReqSaveJudgment_willSave ;
-                                      }] ;
+                                          NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]];
+                                          if (!tmplist) return XTReqSaveJudgment_NotSave;
+                                          self.list_datasource = tmplist;
+                                          endRefresh();
+                                          return XTReqSaveJudgment_willSave;
+                                      }];
 }
 
-- (void)tableView:(RootTableView *)table loadMore:(void (^)(void))endRefresh
-{
+- (void)tableView:(RootTableView *)table loadMore:(void (^)(void))endRefresh {
     [ServerRequest zample6_GetMovieListWithStart:self.list_datasource.count
                                            count:kEveryCount
                                       completion:^XTReqSaveJudgment(id json) {
-                                          NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]] ;
-                                          if (!tmplist) return XTReqSaveJudgment_NotSave ;
-                                          NSMutableArray *list = [self.list_datasource mutableCopy] ;
-                                          self.list_datasource = [list arrayByAddingObjectsFromArray:tmplist] ;
-                                          endRefresh() ;
-                                          return XTReqSaveJudgment_willSave ;
-                                      }] ;
+                                          NSArray *tmplist = [NSArray yy_modelArrayWithClass:[Movie class] json:json[@"subjects"]];
+                                          if (!tmplist) return XTReqSaveJudgment_NotSave;
+                                          NSMutableArray *list = [self.list_datasource mutableCopy];
+                                          self.list_datasource = [list arrayByAddingObjectsFromArray:tmplist];
+                                          endRefresh();
+                                          return XTReqSaveJudgment_willSave;
+                                      }];
 }
 
 
 #pragma mark - UITableView
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.list_datasource.count ;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.list_datasource.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"] ;
-    [cell configure:self.list_datasource[indexPath.row]] ;
-    return cell ;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
+    [cell configure:self.list_datasource[indexPath.row]];
+    return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [MovieCell cellHeight] ;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [MovieCell cellHeight];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning {

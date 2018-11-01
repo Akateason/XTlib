@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface Images : NSObject
-@property (nonatomic,copy) NSString *small ;
-@property (nonatomic,copy) NSString *medium ;
-@property (nonatomic,copy) NSString *large ;
+@property (nonatomic, copy) NSString *small;
+@property (nonatomic, copy) NSString *medium;
+@property (nonatomic, copy) NSString *large;
 @end

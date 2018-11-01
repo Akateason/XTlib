@@ -11,83 +11,81 @@
 
 
 @interface RootCollectionCell ()
-@property (strong, nonatomic, readwrite) id model ;
+@property (strong, nonatomic, readwrite) id model;
 @end
+
 
 @implementation RootCollectionCell
 
-#pragma mark --
+#pragma mark--
 #pragma mark - initialization
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self prepareUI] ;
+        [self prepareUI];
     }
     return self;
 }
 
 - (void)awakeFromNib {
-    [super awakeFromNib] ;
-    [self prepareUI] ;
+    [super awakeFromNib];
+    [self prepareUI];
 }
 
-- (void)dealloc {}
+- (void)dealloc {
+}
 
 
-#pragma mark --
+#pragma mark--
 #pragma mark - regist
 + (void)registerNibFromCollection:(UICollectionView *)collection {
-    NSString *clsName = NSStringFromClass([self class]) ;
-    [collection registerNib:[UINib nibWithNibName:clsName bundle:nil] forCellWithReuseIdentifier:clsName] ;
+    NSString *clsName = NSStringFromClass([self class]);
+    [collection registerNib:[UINib nibWithNibName:clsName bundle:nil] forCellWithReuseIdentifier:clsName];
 }
 
 + (void)registerClsFromCollection:(UICollectionView *)collection {
-    [collection registerClass:[self class] forCellWithReuseIdentifier:NSStringFromClass([self class])] ;
+    [collection registerClass:[self class] forCellWithReuseIdentifier:NSStringFromClass([self class])];
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - fetch reuse same name
 + (instancetype)fetchFromCollection:(UICollectionView *)collection
-                          indexPath:(NSIndexPath *)indexPath
-{
-    return [collection dequeueReusableCellWithReuseIdentifier:NSStringFromClass([self class]) forIndexPath:indexPath] ;
+                          indexPath:(NSIndexPath *)indexPath {
+    return [collection dequeueReusableCellWithReuseIdentifier:NSStringFromClass([self class]) forIndexPath:indexPath];
 }
 
 #pragma mark - rewrite in sub cls
 
-#pragma mark --
+#pragma mark--
 #pragma mark - prepare UI
 
 - (void)prepareUI {
-    
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - configure
 
 - (void)configure:(id)model {
     [self configure:model
-          indexPath:nil] ;
+          indexPath:nil];
 }
 
 - (void)configure:(id)model
-        indexPath:(NSIndexPath *)indexPath
-{
-    _model = model ;
-    _indexPath = indexPath ;
+        indexPath:(NSIndexPath *)indexPath {
+    _model     = model;
+    _indexPath = indexPath;
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - size
 
 + (CGSize)cellSize {
-    return CGSizeMake(50, 50) ;
+    return CGSizeMake(50, 50);
 }
 
 + (CGSize)cellSizeForModel:(id)model {
-    return CGSizeMake(50, 50) ;
+    return CGSizeMake(50, 50);
 }
 
 

@@ -8,44 +8,43 @@
 
 #import "Z1CustomCell.h"
 
+
 @interface Z1CustomCell ()
-@property (nonatomic,strong) UIView *v1 ;
-@property (nonatomic,strong) UIView *v2 ;
+@property (nonatomic, strong) UIView *v1;
+@property (nonatomic, strong) UIView *v2;
 @end
 
 
 @implementation Z1CustomCell
 
-- (void)prepareUI
-{
+- (void)prepareUI {
     self.v1 = ({
-        UIView *view = [UIView new] ;
-        view.backgroundColor = [UIColor yellowColor] ;
-        [self addSubview:view] ;
+        UIView *view         = [UIView new];
+        view.backgroundColor = [UIColor yellowColor];
+        [self addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(20, 20)) ;
-            make.top.right.equalTo(self) ;
-        }] ;
-        view ;
-    }) ;
-    
+            make.size.mas_equalTo(CGSizeMake(20, 20));
+            make.top.right.equalTo(self);
+        }];
+        view;
+    });
+
     self.v2 = ({
-        UIView *view = [UIView new] ;
-        view.backgroundColor = [UIColor blueColor] ;
-        [self addSubview:view] ;
+        UIView *view         = [UIView new];
+        view.backgroundColor = [UIColor blueColor];
+        [self addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(@3) ;
-            make.left.right.bottom.equalTo(self) ;
-        }] ;
-        view ;
-    }) ;
+            make.height.equalTo(@3);
+            make.left.right.bottom.equalTo(self);
+        }];
+        view;
+    });
 }
 
-- (void)configure:(id)model
-{
-    NSString *str = model ;
-    
-    self.textLabel.text = str ;
+- (void)configure:(id)model {
+    NSString *str = model;
+
+    self.textLabel.text = str;
 }
 
 /*

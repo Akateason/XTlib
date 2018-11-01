@@ -11,26 +11,27 @@
 
 __attribute__((deprecated("Class RootTableCell is deprecated , use UITableViewCell+XT instead!!!")))
 
+
 @interface RootTableCell : UITableViewCell
 
-@property (strong, nonatomic) NSIndexPath *indexPath ;
-@property (strong, nonatomic, readonly) id model ;
+                           @property(strong, nonatomic) NSIndexPath *indexPath;
+@property (strong, nonatomic, readonly) id model;
 
 // regist
-+ (void)registerNibFromTable:(UITableView *)table ;
-+ (void)registerClsFromTable:(UITableView *)table ;
++ (void)registerNibFromTable:(UITableView *)table;
++ (void)registerClsFromTable:(UITableView *)table;
 
 // fetch reuse in storyboard or nib
-+ (instancetype)fetchFromTable:(UITableView *)table ;
++ (instancetype)fetchFromTable:(UITableView *)table;
 + (instancetype)fetchFromTable:(UITableView *)table
-                     indexPath:(NSIndexPath *)indexPath ;
+                     indexPath:(NSIndexPath *)indexPath;
 
 // fetch in pure code way
-+ (instancetype)cellWithTable:(UITableView *)tableView ;
++ (instancetype)cellWithTable:(UITableView *)tableView;
 
 #pragma mark - rewrite in sub cls
 // UI and Layout
-- (void)prepareUI ;
+- (void)prepareUI;
 
 /**
  * set model rewrite in subclass
@@ -46,11 +47,11 @@ __attribute__((deprecated("Class RootTableCell is deprecated , use UITableViewCe
  *
  */
 - (void)configure:(id)model
-        indexPath:(NSIndexPath *)indexPath ;
-- (void)configure:(id)model ;
+        indexPath:(NSIndexPath *)indexPath;
+- (void)configure:(id)model;
 
 // height
-+ (CGFloat)cellHeight ;
-+ (CGFloat)cellHeightForModel:(id)model ;
++ (CGFloat)cellHeight;
++ (CGFloat)cellHeightForModel:(id)model;
 
 @end

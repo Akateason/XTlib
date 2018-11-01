@@ -10,10 +10,10 @@
 /**
  *  Enumerated structure to define direction in which items can be rendered.
  */
-typedef NS_ENUM (NSUInteger, CHTCollectionViewWaterfallLayoutItemRenderDirection) {
-  CHTCollectionViewWaterfallLayoutItemRenderDirectionShortestFirst,
-  CHTCollectionViewWaterfallLayoutItemRenderDirectionLeftToRight,
-  CHTCollectionViewWaterfallLayoutItemRenderDirectionRightToLeft
+typedef NS_ENUM(NSUInteger, CHTCollectionViewWaterfallLayoutItemRenderDirection) {
+    CHTCollectionViewWaterfallLayoutItemRenderDirectionShortestFirst,
+    CHTCollectionViewWaterfallLayoutItemRenderDirectionLeftToRight,
+    CHTCollectionViewWaterfallLayoutItemRenderDirectionRightToLeft
 };
 
 /**

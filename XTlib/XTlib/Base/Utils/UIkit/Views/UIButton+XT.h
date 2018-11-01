@@ -10,17 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface UIButton (XT)
 
 @end
 
-static const float kDefaultEnlargeFlex = 25. ;
+static const float kDefaultEnlargeFlex = 25.;
+
 
 @interface UIButton (ExtendTouchRect)
-@property (assign, nonatomic) UIEdgeInsets touchExtendInset ;
+@property (assign, nonatomic) UIEdgeInsets touchExtendInset;
 
 // enlarge e.g. UIEdgeInsetsMake(-15, -15, -15, -15) ;
-- (void)xt_enlargeButtonsTouchArea ;
+- (void)xt_enlargeButtonsTouchArea;
 @end
 
 
@@ -38,19 +40,21 @@ static const float kDefaultEnlargeFlex = 25. ;
                    title:(NSString *)title
           countDownTitle:(NSString *)subTitle
                mainColor:(UIColor *)mColor
-              countColor:(UIColor *)color ;
+              countColor:(UIColor *)color;
 @end
 
 
 typedef NS_ENUM(NSInteger, XTBtImagePosition) {
-    XTBtImagePositionLeft = 0,              //图片在左，文字在右，默认
-    XTBtImagePositionRight = 1,             //图片在右，文字在左
-    XTBtImagePositionTop = 2,               //图片在上，文字在下
-    XTBtImagePositionBottom = 3,            //图片在下，文字在上
+    XTBtImagePositionLeft   = 0, //图片在左，文字在右，默认
+    XTBtImagePositionRight  = 1, //图片在右，文字在左
+    XTBtImagePositionTop    = 2, //图片在上，文字在下
+    XTBtImagePositionBottom = 3, //图片在下，文字在上
 };
+
+
 @interface UIButton (XTImagePosition)
 - (void)xt_setImagePosition:(XTBtImagePosition)postion
-                    spacing:(CGFloat)spacing ;
+                    spacing:(CGFloat)spacing;
 @end
 
 

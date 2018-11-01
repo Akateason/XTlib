@@ -8,6 +8,7 @@
 
 #import "RootTableCell.h"
 
+
 @interface XTColorCell : RootTableCell
 
 @end

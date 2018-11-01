@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UIAlertController (XTAddition)
 
 
@@ -21,7 +22,7 @@
                               cancelButtonTitle:(NSString *)cancelBtnTitle
                          destructiveButtonTitle:(NSString *)destructiveBtnTitle
                               otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
-                                  CallBackBlock:(void(^)(NSInteger btnIndex))block ;
+                                  CallBackBlock:(void (^)(NSInteger btnIndex))block;
 
 /**
  normal alert - any ctrller
@@ -32,7 +33,7 @@
                                     cancelButtonTitle:(NSString *)cancelBtnTitle
                                destructiveButtonTitle:(NSString *)destructiveBtnTitle
                                     otherButtonTitles:(NSArray<NSString *> *)otherBtnTitles
-                                        callBackBlock:(void(^)(NSInteger btnIndex))block ;
+                                        callBackBlock:(void (^)(NSInteger btnIndex))block;
 
 /**
  textfield alert
@@ -42,5 +43,5 @@
                                 cancel:(NSString *)cancelStr
                                 commit:(NSString *)commitStr
                            placeHolder:(NSString *)placeHolderStr
-                              callback:(void(^)(NSString *text))textBlock ;
+                              callback:(void (^)(NSString *text))textBlock;
 @end

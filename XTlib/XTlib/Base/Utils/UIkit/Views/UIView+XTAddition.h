@@ -8,43 +8,36 @@
 
 #import <UIKit/UIKit.h>
 
-//////////////////////////////////////////////////////////////////////////////////////////
 
 @interface UIView (XTAddition)
 
 // tap self to hide keyboard
-- (void)xt_resignAllResponderWhenTapThis ;
+- (void)xt_resignAllResponderWhenTapThis;
 
-+ (UIWindow *)xt_topWindow ;
++ (UIWindow *)xt_topWindow;
 
 @end
 
-//////////////////////////////////////////////////////////////////////////////////////////
 
 @interface UIView (CurrentController)
-@property (strong, nonatomic, readwrite) UIViewController       *xt_viewController ;
-@property (strong, nonatomic, readwrite) UINavigationController *xt_navigationController ;
+@property (strong, nonatomic, readwrite) UIViewController *xt_viewController;
+@property (strong, nonatomic, readwrite) UINavigationController *xt_navigationController;
 
-- (NSString *)xt_chainInfo ;
+- (NSString *)xt_chainInfo;
 
 @end
 
-//////////////////////////////////////////////////////////////////////////////////////////
 
 @interface UIView (MakeScollView)
 
-- (UIScrollView *)xt_wrapperWithScrollView ;
-- (UIScrollView *)xt_wrapperWithHorizontalScrollView ;
+- (UIScrollView *)xt_wrapperWithScrollView;
+- (UIScrollView *)xt_wrapperWithHorizontalScrollView;
 
 @end
-
-//////////////////////////////////////////////////////////////////////////////////////////
 
 
 @interface UIView (XTNib)
 
-+ (instancetype)xt_newFromNib ;
++ (instancetype)xt_newFromNib;
 
 @end
-
-//////////////////////////////////////////////////////////////////////////////////////////

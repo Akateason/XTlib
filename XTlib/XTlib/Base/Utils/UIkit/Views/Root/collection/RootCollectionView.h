@@ -9,51 +9,52 @@
 #import <UIKit/UIKit.h>
 #import "RootTableView.h"
 
-@class RootCollectionView ;
+@class RootCollectionView;
 
 @protocol RootCollectionViewDelegate <NSObject>
 @required
-- (void)collectionView:(RootCollectionView *)collection loadNew:(void(^)(void))endRefresh   ;
+- (void)collectionView:(RootCollectionView *)collection loadNew:(void (^)(void))endRefresh;
 @optional
-- (void)collectionView:(RootCollectionView *)collection loadMore:(void(^)(void))endRefresh  ;
+- (void)collectionView:(RootCollectionView *)collection loadMore:(void (^)(void))endRefresh;
 @end
+
 
 @interface RootCollectionView : UICollectionView
 // refresh delegate
-@property (nonatomic,weak) id <RootCollectionViewDelegate> xt_Delegate ;
+@property (nonatomic, weak) id<RootCollectionViewDelegate> xt_Delegate;
 /**
  REFRESH STYLE:
  DEFAULT IS `NO`  -> ONLY GIF IMAGES , SHOW WORDS WHEN IT BECOMES `YES`
  */
-@property (nonatomic) BOOL isShowRefreshDetail ;
+@property (nonatomic) BOOL isShowRefreshDetail;
 /**
  is auto LOAD MORE:
  DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
  */
-@property (nonatomic) BOOL isAutomaticallyLoadMore ;
+@property (nonatomic) BOOL isAutomaticallyLoadMore;
 // MJRefresh type
-@property (nonatomic) XTRefreshType refreshType ;
+@property (nonatomic) XTRefreshType refreshType;
 /**
  PULL DOWN HEADER
  */
-- (void)loadNewInfo ;
+- (void)loadNewInfo;
 /**
  PULL DOWN HEADER
  @param isBackGround    pull header in backgound or not .
  */
-- (void)loadNewInfoInBackGround:(BOOL)isBackGround ;
+- (void)loadNewInfoInBackGround:(BOOL)isBackGround;
 /**
  prepareStyle
  u can rewrite in subclass if needed
  */
-- (void)prepareStyle ;
+- (void)prepareStyle;
 /**
  endRefresh header and footer if needed .
  */
-- (void)endHeaderAndFooterRefresh ;
+- (void)endHeaderAndFooterRefresh;
 /**
  get current IndexPath in center .
  */
-- (NSIndexPath *)currentIndexPath ;
+- (NSIndexPath *)currentIndexPath;
 
 @end

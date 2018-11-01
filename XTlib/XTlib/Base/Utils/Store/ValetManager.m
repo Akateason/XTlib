@@ -10,35 +10,37 @@
 #import <Valet/Valet.h>
 #import <UIKit/UIDevice.h>
 
+
 @interface ValetManager ()
-@property (strong,nonatomic) VALValet *myValet ;
+@property (strong, nonatomic) VALValet *myValet;
 @end
+
 
 @implementation ValetManager
 
-XT_SINGLETON_M(ValetManager)
+XT_SINGLETON_M(ValetManager);
 
 // configure
 - (void)setup {
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary] ;
-    NSString *appName = [infoDictionary objectForKey:@"CFBundleName"] ;
-    self.myValet = [[VALValet alloc] initWithIdentifier:appName
-                                          accessibility:VALAccessibilityWhenUnlocked] ;
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *appName            = [infoDictionary objectForKey:@"CFBundleName"];
+    self.myValet                 = [[VALValet alloc] initWithIdentifier:appName
+                                          accessibility:VALAccessibilityWhenUnlocked];
 }
 
 /**
  uname and pwd
  */
 - (BOOL)saveUserName:(NSString *)name pwd:(NSString *)pwd {
-    return [self.myValet setString:pwd forKey:name] ;
+    return [self.myValet setString:pwd forKey:name];
 }
 
 - (NSString *)getPwdWithUname:(NSString *)name {
-    return [self.myValet stringForKey:name] ;
+    return [self.myValet stringForKey:name];
 }
 
 - (BOOL)removePwdWithUname:(NSString *)name {
-    return [self.myValet removeObjectForKey:name] ;
+    return [self.myValet removeObjectForKey:name];
 }
 
 
@@ -48,10 +50,10 @@ XT_SINGLETON_M(ValetManager)
  @return bool success
  */
 - (BOOL)prepareUUID {
-    if ([self.myValet containsObjectForKey:@"UUID"]) return YES ;
-    NSString *uuid = [UIDevice currentDevice].identifierForVendor.UUIDString ;
-    NSLog(@"uuid : %@",uuid) ;
-    return [self.myValet setString:uuid forKey:@"UUID"] ;
+    if ([self.myValet containsObjectForKey:@"UUID"]) return YES;
+    NSString *uuid = [UIDevice currentDevice].identifierForVendor.UUIDString;
+    NSLog(@"uuid : %@", uuid);
+    return [self.myValet setString:uuid forKey:@"UUID"];
 }
 
 
@@ -59,7 +61,7 @@ XT_SINGLETON_M(ValetManager)
  get unique UUID
  */
 - (NSString *)UUID {
-    return [self.myValet stringForKey:@"UUID"] ;
+    return [self.myValet stringForKey:@"UUID"];
 }
 
 @end

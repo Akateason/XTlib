@@ -12,52 +12,53 @@
 #import "XTColorFetcher.h"
 #import "XTlib.h"
 
+
 @interface RespoderChainViewController ()
-@property (strong,nonatomic) RCSubView *rcSubView ;
+@property (strong, nonatomic) RCSubView *rcSubView;
 @end
+
 
 @implementation RespoderChainViewController
 
 - (BOOL)receiveHandleChain:(NSString *)identifier
                       info:(id)info
-                    sender:(id)sender
-{
+                    sender:(id)sender {
     if ([identifier isEqualToString:@"a"]) {
-        self.title = info ;
-        ((RCSubView *)sender).backgroundColor = [[XTColorFetcher sharedInstance] randomColor] ;
+        self.title                            = info;
+        ((RCSubView *)sender).backgroundColor = [[XTColorFetcher sharedInstance] randomColor];
     }
-    return NO ;
+    return NO;
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad] ;
+    [super viewDidLoad];
     // Do any additional setup after loading the view.
-    int flex = 10 ;
+    int flex = 10;
     for (int i = 1; i <= 20; i++) {
-        UIView *aView = [UIView new] ;
-        aView.backgroundColor = [[XTColorFetcher sharedInstance] randomColor] ;
-        [[self onWhichView] addSubview:aView] ;
+        UIView *aView         = [UIView new];
+        aView.backgroundColor = [[XTColorFetcher sharedInstance] randomColor];
+        [[self onWhichView] addSubview:aView];
         [aView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(APP_WIDTH - flex * i, APP_HEIGHT - flex * i)) ;
-            make.center.equalTo(self.view) ;
-        }] ;
-        
+            make.size.mas_equalTo(CGSizeMake(APP_WIDTH - flex * i, APP_HEIGHT - flex * i));
+            make.center.equalTo(self.view);
+        }];
+
         if (i == 20) {
             self.rcSubView = ({
-                RCSubView *view = [[RCSubView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)] ;
-                [aView addSubview:view] ;
+                RCSubView *view = [[RCSubView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+                [aView addSubview:view];
                 [view mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.center.equalTo(aView) ;
-                    make.size.mas_equalTo(CGSizeMake(100, 100)) ;
-                }] ;
-                view ;
-            }) ;
+                    make.center.equalTo(aView);
+                    make.size.mas_equalTo(CGSizeMake(100, 100));
+                }];
+                view;
+            });
         }
     }
 }
 
 - (UIView *)onWhichView {
-    return ![self.view subviews].count ? self.view : [[self.view subviews] lastObject] ;
+    return ![self.view subviews].count ? self.view : [[self.view subviews] lastObject];
 }
 
 - (void)didReceiveMemoryWarning {

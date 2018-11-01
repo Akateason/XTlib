@@ -7,9 +7,8 @@
 //
 
 
-
-
 #import <MJRefresh/MJRefresh.h>
+
 
 @interface RootRefreshFooter : MJRefreshBackGifFooter
 

@@ -8,26 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UITableViewCell (XT)
 
-@property (strong, nonatomic) NSIndexPath *xt_indexPath ;
-@property (strong, nonatomic, readonly) id xt_model ;
+@property (strong, nonatomic) NSIndexPath *xt_indexPath;
+@property (strong, nonatomic, readonly) id xt_model;
 
 // regist
-+ (void)xt_registerNibFromTable:(UITableView *)table ;
-+ (void)xt_registerClsFromTable:(UITableView *)table ;
++ (void)xt_registerNibFromTable:(UITableView *)table;
++ (void)xt_registerClsFromTable:(UITableView *)table;
 
 // fetch reuse in storyboard or nib
-+ (instancetype)xt_fetchFromTable:(UITableView *)table ;
++ (instancetype)xt_fetchFromTable:(UITableView *)table;
 + (instancetype)xt_fetchFromTable:(UITableView *)table
-                        indexPath:(NSIndexPath *)indexPath ;
+                        indexPath:(NSIndexPath *)indexPath;
 
 // fetch in pure code way
-+ (instancetype)xt_cellWithTable:(UITableView *)tableView ;
++ (instancetype)xt_cellWithTable:(UITableView *)tableView;
 
 #pragma mark - rewrite in sub cls
 // UI and Layout
-- (void)xt_prepareUI ;
+- (void)xt_prepareUI;
 
 /**
  * set model rewrite in subclass
@@ -43,12 +44,11 @@
  *
  */
 - (void)xt_configure:(id)model
-           indexPath:(NSIndexPath *)indexPath ;
-- (void)xt_configure:(id)model ;
+           indexPath:(NSIndexPath *)indexPath;
+- (void)xt_configure:(id)model;
 
 // height
-+ (CGFloat)xt_cellHeight ;
-+ (CGFloat)xt_cellHeightForModel:(id)model ;
++ (CGFloat)xt_cellHeight;
++ (CGFloat)xt_cellHeightForModel:(id)model;
 
 @end
-

@@ -10,31 +10,30 @@
 #import "ReactiveObjC.h"
 #import "UIView+XTAddition.h"
 
+
 @interface Zample7Controller ()
 
 @end
 
+
 @implementation Zample7Controller
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad] ;
+- (void)viewDidLoad {
+    [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    UIScrollView *scroll = (UIScrollView *)[self.view xt_wrapperWithScrollView] ;
-//    self.view = scroll ;
-    
-    
-    UIView *addView = [[[NSBundle mainBundle] loadNibNamed:@"Z7LongView" owner:self options:nil] lastObject] ;
-    UIScrollView* scroll = (UIScrollView *)[addView xt_wrapperWithScrollView] ;
-    [self.view addSubview:scroll] ;
+    //    UIScrollView *scroll = (UIScrollView *)[self.view xt_wrapperWithScrollView] ;
+    //    self.view = scroll ;
+
+
+    UIView *addView      = [[[NSBundle mainBundle] loadNibNamed:@"Z7LongView" owner:self options:nil] lastObject];
+    UIScrollView *scroll = (UIScrollView *)[addView xt_wrapperWithScrollView];
+    [self.view addSubview:scroll];
     [scroll mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.bottom.equalTo(self.view);
-    }] ;
-    
+    }];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

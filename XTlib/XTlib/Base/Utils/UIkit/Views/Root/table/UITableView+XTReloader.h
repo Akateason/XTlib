@@ -13,60 +13,61 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol UITableViewXTReloaderDelegate <NSObject>
 @required
-- (void)tableView:(UITableView *)table loadNew:(void(^)(void))endRefresh   ;
+- (void)tableView:(UITableView *)table loadNew:(void (^)(void))endRefresh;
 @optional
-- (void)tableView:(UITableView *)table loadMore:(void(^)(void))endRefresh  ;
+- (void)tableView:(UITableView *)table loadMore:(void (^)(void))endRefresh;
 @end
 
 typedef enum : NSUInteger {
-    XTRefreshType_default ,
+    XTRefreshType_default,
     XTRefreshType_gifImages
-} XTRefreshType ;
+} XTRefreshType;
+
 
 @interface UITableView (XTReloader)
 // refresh delegate
-@property (nonatomic,weak) id <UITableViewXTReloaderDelegate> xt_Delegate ;
+@property (nonatomic, weak) id<UITableViewXTReloaderDelegate> xt_Delegate;
 /**
  REFRESH STYLE:
  DEFAULT IS `NO`  -> ONLY GIF IMAGES , SHOW WORDS WHEN IT BECOMES `YES`
  */
-@property (nonatomic) BOOL xt_isShowRefreshDetail ;
+@property (nonatomic) BOOL xt_isShowRefreshDetail;
 /**
  is auto LOAD MORE:
  DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
  */
-@property (nonatomic) BOOL xt_isAutomaticallyLoadMore ;
+@property (nonatomic) BOOL xt_isAutomaticallyLoadMore;
 // only table close mj header and footer
-@property (nonatomic) BOOL xt_hideAllRefreshers ;
+@property (nonatomic) BOOL xt_hideAllRefreshers;
 // MJRefresh type
-@property (nonatomic) XTRefreshType xt_refreshType ;
+@property (nonatomic) XTRefreshType xt_refreshType;
 
 /**
  setup add mj header footer
  */
-- (void)xt_setup ;
+- (void)xt_setup;
 
 /**
  PULL DOWN HEADER
  */
-- (void)xt_loadNewInfo ;
+- (void)xt_loadNewInfo;
 
 /**
  PULL DOWN HEADER
  @param isBackGround    pull header in backgound or not .
  */
-- (void)xt_loadNewInfoInBackGround:(BOOL)isBackGround ;
+- (void)xt_loadNewInfoInBackGround:(BOOL)isBackGround;
 
 /**
  prepareStyle
  u can rewrite in subclass if needed
  */
-- (void)xt_prepareStyle ;
+- (void)xt_prepareStyle;
 
 /**
  endRefresh header and footer if needed .
  */
-- (void)xt_endHeaderAndFooterRefresh ;
+- (void)xt_endHeaderAndFooterRefresh;
 
 @end
 

@@ -9,19 +9,21 @@
 #import "Zample9Controller.h"
 #import "MySon.h"
 
+
 @interface Zample9Controller ()
 
 @end
+
 
 @implementation Zample9Controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.title = @"NSProxy" ;
-    MySon *son = [MySon sonProxy] ;
-    [son playBasketballLike:@"jordan"] ;
-    [son buyClothesWithSize:ClothesSizeLarge] ;
+    //    self.title = @"NSProxy" ;
+    MySon *son = [MySon sonProxy];
+    [son playBasketballLike:@"jordan"];
+    [son buyClothesWithSize:ClothesSizeLarge];
 }
 
 - (void)didReceiveMemoryWarning {

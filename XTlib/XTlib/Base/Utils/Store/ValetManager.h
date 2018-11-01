@@ -11,30 +11,31 @@
 #import <Foundation/Foundation.h>
 #import "FastCodeHeader.h"
 
+
 @interface ValetManager : NSObject
 
-XT_SINGLETON_H(ValetManager)
+XT_SINGLETON_H(ValetManager);
 
 // configure first time in app launch
-- (void)setup ;
+- (void)setup;
 
 /**
  uname and pwd
  */
-- (BOOL)saveUserName:(NSString *)name pwd:(NSString *)pwd ;
-- (NSString *)getPwdWithUname:(NSString *)name ;
-- (BOOL)removePwdWithUname:(NSString *)name ;
+- (BOOL)saveUserName:(NSString *)name pwd:(NSString *)pwd;
+- (NSString *)getPwdWithUname:(NSString *)name;
+- (BOOL)removePwdWithUname:(NSString *)name;
 
 /**
  prepareUUID
  prepare get unique UUID in Keychain when app did launching .
  @return bool success
  */
-- (BOOL)prepareUUID ;
+- (BOOL)prepareUUID;
 
 /**
  get unique UUID
  */
-- (NSString *)UUID ;
+- (NSString *)UUID;
 
 @end

@@ -8,8 +8,8 @@
 
 #import "RootTableView.h"
 
-@interface CenterTableView : RootTableView
 
+@interface CenterTableView : RootTableView
 
 
 @end

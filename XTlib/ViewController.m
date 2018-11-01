@@ -14,114 +14,95 @@
 #import "UIViewController+XTAddition.h"
 #import "XTSIAlertView.h"
 
-@interface ViewController () <UITableViewDataSource,UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet RootTableView *table ;
-@property (strong,nonatomic) NSArray *dataSource ;
-@property (strong,nonatomic) NSArray *sectionKeys ;
+
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet RootTableView *table;
+@property (strong, nonatomic) NSArray *dataSource;
+@property (strong, nonatomic) NSArray *sectionKeys;
 @end
+
 
 @implementation ViewController
 
 #pragma mark -
 
 - (void)actionSheet {
-    XTSIAlertView *alert = [[XTSIAlertView alloc] initWithTitle:@"title" andMessage:@"subTitle"] ;
+    XTSIAlertView *alert = [[XTSIAlertView alloc] initWithTitle:@"title" andMessage:@"subTitle"];
     [alert addButtonWithTitle:@"this is normal"
                          type:XTSIAlertViewButtonTypeDefault
-                      handler:nil] ;
+                      handler:nil];
     [alert addButtonWithTitle:@"Destructive"
                          type:XTSIAlertViewButtonTypeDestructive
-                      handler:nil] ;
+                      handler:nil];
     [alert addButtonWithTitle:@"cancel"
                          type:XTSIAlertViewButtonTypeCancel
-                      handler:nil] ;
-    [alert show] ;
+                      handler:nil];
+    [alert show];
 }
 
-- (void)viewDidLoad
-{
-    
-    
-    [super viewDidLoad] ;
+- (void)viewDidLoad {
+    [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.table.dataSource   = self ;
-    self.table.delegate     = self ;
-    self.dataSource = ({
-        NSArray *list = [PlistUtil arrayWithPlist:@"viewControllers"] ;
-        list ;
-    }) ;
+    self.table.dataSource = self;
+    self.table.delegate   = self;
+    self.dataSource       = ({
+        NSArray *list = [PlistUtil arrayWithPlist:@"viewControllers"];
+        list;
+    });
     self.sectionKeys = ({
-        NSMutableArray *tmplist = [@[] mutableCopy] ;
-        [_dataSource enumerateObjectsUsingBlock:^(NSDictionary *dic, NSUInteger idx, BOOL * _Nonnull stop) {
-            [tmplist addObject:[[dic allKeys] firstObject]] ;
-        }] ;
-        tmplist ;
-    }) ;
-        
-    
+        NSMutableArray *tmplist = [@[] mutableCopy];
+        [_dataSource enumerateObjectsUsingBlock:^(NSDictionary *dic, NSUInteger idx, BOOL *_Nonnull stop) {
+            [tmplist addObject:[[dic allKeys] firstObject]];
+        }];
+        tmplist;
+    });
 }
-
 
 
 #pragma mark - UITableView
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return self.dataSource.count ;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.dataSource.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    
-    return (int)((NSArray *)(self.dataSource[section])[self.sectionKeys[section]]).count ;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return (int)((NSArray *)(self.dataSource[section])[self.sectionKeys[section]]).count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    RootTableCell *cell = [RootTableCell cellWithTable:tableView] ;
-    NSDictionary *dic = [((NSArray *)(self.dataSource[indexPath.section])[self.sectionKeys[indexPath.section]]) objectAtIndex:indexPath.row] ;
-    cell.textLabel.text = dic[@"title"] ;
-    return cell ;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    RootTableCell *cell = [RootTableCell cellWithTable:tableView];
+    NSDictionary *dic   = [((NSArray *)(self.dataSource[indexPath.section])[self.sectionKeys[indexPath.section]]) objectAtIndex:indexPath.row];
+    cell.textLabel.text = dic[@"title"];
+    return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSDictionary *dic = [(NSArray *)(self.dataSource[indexPath.section])[self.sectionKeys[indexPath.section]] objectAtIndex:indexPath.row] ;
-    NSString *clsName = dic[@"cname"] ;
-    Class ctrllerCls = objc_getRequiredClass([clsName UTF8String]) ;
-    UIViewController *ctrller ;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *dic = [(NSArray *)(self.dataSource[indexPath.section])[self.sectionKeys[indexPath.section]] objectAtIndex:indexPath.row];
+    NSString *clsName = dic[@"cname"];
+    Class ctrllerCls  = objc_getRequiredClass([clsName UTF8String]);
+    UIViewController *ctrller;
     if ([dic[@"isStory"] boolValue] == YES) {
-        ctrller = [self.class getCtrllerFromStory:@"Main" controllerIdentifier:clsName] ;
+        ctrller = [self.class getCtrllerFromStory:@"Main" controllerIdentifier:clsName];
     }
     else {
-        ctrller = [[ctrllerCls alloc] init] ;
+        ctrller = [[ctrllerCls alloc] init];
     }
-    ctrller.title = dic[@"title"] ;
-    [self.navigationController pushViewController:ctrller animated:YES] ;
+    ctrller.title = dic[@"title"];
+    [self.navigationController pushViewController:ctrller animated:YES];
 }
 
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UITableViewHeaderFooterView *head = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:@"head"] ;
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UITableViewHeaderFooterView *head = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:@"head"];
     if (!head) {
-        head = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, 44)] ;
+        head = [[UITableViewHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, 44)];
     }
-    head.textLabel.text = self.sectionKeys[section] ;
-    return head ;
+    head.textLabel.text = self.sectionKeys[section];
+    return head;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 44 ;
+    return 44;
 }
-
-
-
-
-
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning {

@@ -10,8 +10,9 @@
 #import "Father.h"
 #import "Mother.h"
 
-@interface MySon : NSProxy <BasketballFatherProtocol,MotherBuyClothesProtocol>
 
-+ (instancetype)sonProxy ;
+@interface MySon : NSProxy <BasketballFatherProtocol, MotherBuyClothesProtocol>
+
++ (instancetype)sonProxy;
 
 @end

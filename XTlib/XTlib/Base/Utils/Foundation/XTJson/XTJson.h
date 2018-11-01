@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface XTJson : NSObject
 
-+ (id)getJsonWithStr:(NSString *)jsonStr ;
-+ (NSString *)getStrWithJson:(id)jsonObj ;
++ (id)getJsonWithStr:(NSString *)jsonStr;
++ (NSString *)getStrWithJson:(id)jsonObj;
 
 @end

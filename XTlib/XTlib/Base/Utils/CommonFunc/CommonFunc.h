@@ -9,22 +9,23 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+
 @interface CommonFunc : NSObject
 
 #pragma mark - save images to library
 
 + (void)saveImageToLibrary:(UIImage *)savedImage
-                 albumName:(NSString *)name ;
+                 albumName:(NSString *)name;
 
 #pragma mark - water mask SubaoJiang
 
-+ (UIImage *)getSuBaoJiangWaterMask:(UIImage *)orgImage ;
++ (UIImage *)getSuBaoJiangWaterMask:(UIImage *)orgImage;
 
 #pragma mark - current appname / version
 
-+ (NSString *)getAppName ;
++ (NSString *)getAppName;
 
-+ (NSString *)getVersionStrOfMyAPP ;
++ (NSString *)getVersionStrOfMyAPP;
 
 #pragma mark - update the latest version if neccessary .
 
@@ -32,17 +33,17 @@
 
 #pragma mark - give app a Score
 
-+ (void)scoringMyAppWithAppStoreID:(NSString *)appstoreID ;
++ (void)scoringMyAppWithAppStoreID:(NSString *)appstoreID;
 
 #pragma mark - CLLocation  get current location
 
-+ (CLLocationCoordinate2D)getLocation ;
++ (CLLocationCoordinate2D)getLocation;
 
 #pragma mark - 关闭应用
 
-+ (void)shutDownAppWithCtrller:(UIViewController *)ctrller ;
++ (void)shutDownAppWithCtrller:(UIViewController *)ctrller;
 
 #pragma mark - 设备名
-- (NSString *)getDeviceName ;
+- (NSString *)getDeviceName;
 
 @end

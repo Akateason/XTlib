@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface XTlineSpaceLabel : UILabel
 
-@property(nonatomic) long linesSpacing ;
+@property (nonatomic) long linesSpacing;
 
 + (int)getAttributedStringHeightWidthValue:(int)width
                                    content:(NSString *)content
-                                attributes:(NSDictionary *)attribute ;
+                                attributes:(NSDictionary *)attribute;
 
 @end

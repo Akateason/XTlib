@@ -10,6 +10,7 @@
 
 #define FLEX_WIDTHS 5.0f
 
+
 @implementation FlywordLabel
 
 /*
@@ -23,13 +24,11 @@
 
 // HIDE BY @TEA 20150609
 
-- (void)drawTextInRect:(CGRect)rect
-{
-    UIEdgeInsets insets = {0,FLEX_WIDTHS, 0, FLEX_WIDTHS};
-    
+- (void)drawTextInRect:(CGRect)rect {
+    UIEdgeInsets insets = {0, FLEX_WIDTHS, 0, FLEX_WIDTHS};
+
     [super drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];
 }
-
 
 
 @end

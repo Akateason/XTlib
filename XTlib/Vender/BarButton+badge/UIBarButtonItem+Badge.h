@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UIBarButtonItem (Badge)
 
 @property (strong, nonatomic) UILabel *badge;

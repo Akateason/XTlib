@@ -16,14 +16,14 @@
 #pragma mark - Preset Animation
 
 // shake
-+ (void)shakeRandomDirectionWithDuration:(NSTimeInterval)duration AndWithView:(UIView *)view ;
++ (void)shakeRandomDirectionWithDuration:(NSTimeInterval)duration AndWithView:(UIView *)view;
 
 // rotate forever
-+ (void)rotateForever:(UIView *)view once:(CGFloat)once ;
++ (void)rotateForever:(UIView *)view once:(CGFloat)once;
 // rotate and enlarge
 + (void)rotateAndEnlarge:(UIView *)view;
 // cradle
-+ (void)cradle:(UIView *)theView ;
++ (void)cradle:(UIView *)theView;
 
 // reveal
 + (void)animationRevealFromBottom:(UIView *)view duration:(CGFloat)duration;

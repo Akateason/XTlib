@@ -9,20 +9,21 @@
 
 #define ITEMTAG 1543
 
-static const CGFloat speed_Max      = 150.0 ;
-static const CGFloat speed_Min      = 100.0 ;
-static const CGFloat seperateTime   = 0.3 ;
-static const CGFloat basicSpeed     = 15.0 ;
+static const CGFloat speed_Max    = 150.0;
+static const CGFloat speed_Min    = 100.0;
+static const CGFloat seperateTime = 0.3;
+static const CGFloat basicSpeed   = 15.0;
+
 
 @interface XTBarrageView ()
 @property (nonatomic, weak) NSTimer *timer;
 @end
 
-@implementation XTBarrageView
-{
-//    UIImageView *_avatarView;
-//    UIImageView *_giftView;
-    NSInteger    _curIndex;
+
+@implementation XTBarrageView {
+    //    UIImageView *_avatarView;
+    //    UIImageView *_giftView;
+    NSInteger _curIndex;
 }
 
 /*
@@ -149,5 +150,5 @@ static const CGFloat basicSpeed     = 15.0 ;
 }
 
  */
- 
+
 @end

@@ -8,9 +8,11 @@
 
 #import "RootCtrl.h"
 
+
 @interface RootCtrl ()
 
 @end
+
 
 @implementation RootCtrl
 
@@ -20,41 +22,40 @@
 
 - (void)prepareUI {
     // prepare UI
-    self.view.backgroundColor = [UIColor whiteColor] ;
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - Life
 
 - (void)dealloc {
     NSString *title = self.navigationItem.title;
     if (title) {
-        NSLog(@"xt_dealloc desc : %@\ntitle : %@\n -----",self.description,title) ;
+        NSLog(@"xt_dealloc desc : %@\ntitle : %@\n -----", self.description, title);
     }
     else {
-        NSLog(@"xt_dealloc title : %@\n -----",self.description) ;
+        NSLog(@"xt_dealloc title : %@\n -----", self.description);
     }
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning] ;
+    [super didReceiveMemoryWarning];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil
-                           bundle:nibBundleOrNil] ;
+                           bundle:nibBundleOrNil];
     if (self) {
-        [self prepare] ;
+        [self prepare];
     }
-    return self ;
+    return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        [self prepare] ;
+        [self prepare];
     }
     return self;
 }
@@ -62,49 +63,45 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self prepare] ;
+        [self prepare];
     }
     return self;
 }
 
 - (void)loadView {
-    [super loadView] ;
-    
-    [self prepareUI] ;
+    [super loadView];
+
+    [self prepareUI];
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad] ;
-    
-    [self myStatTitle] ;
+    [super viewDidLoad];
+
+    [self myStatTitle];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated] ;
+    [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated] ;
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated] ;
+    [super viewDidAppear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated] ;
+    [super viewDidDisappear:animated];
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - prop
 
 - (NSString *)myStatTitle {
-    if (!_myStatTitle) _myStatTitle = self.title ;
-    return _myStatTitle ;
+    if (!_myStatTitle) _myStatTitle = self.title;
+    return _myStatTitle;
 }
 
 @end
-
-
-
-

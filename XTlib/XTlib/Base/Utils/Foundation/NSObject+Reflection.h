@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface NSObject (Reflection)
 
 - (NSString *)className;
@@ -18,20 +19,20 @@
 
 - (NSDictionary *)propertyDictionary;
 
-- (NSArray*)propertyKeys;
+- (NSArray *)propertyKeys;
 + (NSArray *)propertyKeys;
 
 - (NSArray *)propertiesInfo;
 + (NSArray *)propertiesInfo;
-+ (NSDictionary *)propertiesInfoDict ;
-+ (NSString *)iosTypeWithPropName:(NSString *)name ;
++ (NSDictionary *)propertiesInfoDict;
++ (NSString *)iosTypeWithPropName:(NSString *)name;
 
 + (NSArray *)propertiesWithCodeFormat;
 
-- (NSArray*)methodList;
-+ (NSArray*)methodList;
+- (NSArray *)methodList;
++ (NSArray *)methodList;
 
-- (NSArray*)methodListInfo;
+- (NSArray *)methodListInfo;
 
 //创建并返回一个指向所有已注册类的指针列表
 + (NSArray *)registedClassList;
@@ -42,9 +43,9 @@
 + (NSDictionary *)protocolList;
 
 
-- (BOOL)hasPropertyForKey:(NSString*)key;
-- (BOOL)hasIvarForKey:(NSString*)key;
+- (BOOL)hasPropertyForKey:(NSString *)key;
+- (BOOL)hasIvarForKey:(NSString *)key;
 
-+ (NSString *)decodeType:(const char *)cString ;
++ (NSString *)decodeType:(const char *)cString;
 
 @end

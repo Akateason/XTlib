@@ -10,36 +10,40 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+
 @interface UIViewController (XTAddition)
 
 + (instancetype)getCtrllerFromStory:(NSString *)storyboard
                              bundle:(NSBundle *)bundle
-               controllerIdentifier:(NSString *)identifier ;
+               controllerIdentifier:(NSString *)identifier;
 
 + (instancetype)getCtrllerFromStory:(NSString *)storyboard
-               controllerIdentifier:(NSString *)identifier ;
+               controllerIdentifier:(NSString *)identifier;
 
-+ (instancetype)getCtrllerFromNIB ;
++ (instancetype)getCtrllerFromNIB;
 
-+ (UIViewController *)xt_topViewController ;
++ (UIViewController *)xt_topViewController;
 
-- (void)xt_letSelfViewInScrollView ;
+- (void)xt_letSelfViewInScrollView;
 
 @end
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-typedef void(^NavigationBackButtonOnClick)(void) ;
+typedef void (^NavigationBackButtonOnClick)(void);
+
+
 @interface UIViewController (Navigation)
-@property (nonatomic,copy) NavigationBackButtonOnClick navigationDidClickBackButton ;
+@property (nonatomic, copy) NavigationBackButtonOnClick navigationDidClickBackButton;
 @end
 
 //////////////////////////////////////////////////////////////////////////////////////////
+
 
 @interface UIViewController (TabbarHidden)
-- (void)makeTabBarHidden:(BOOL)hide ;
+- (void)makeTabBarHidden:(BOOL)hide;
 - (void)makeTabBarHidden:(BOOL)hide
-                animated:(BOOL)animated ;
+                animated:(BOOL)animated;
 @end
 
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @protocol BasketballFatherProtocol <NSObject>
-- (void)playBasketballLike:(NSString *)ballerName ;
+- (void)playBasketballLike:(NSString *)ballerName;
 @end
+
 
 @interface Father : NSObject
 

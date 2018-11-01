@@ -8,48 +8,47 @@
 
 #import "XTFileManager.h"
 
+
 @implementation XTFileManager
 
 + (BOOL)isFileExist:(NSString *)filePath {
-    return [[NSFileManager defaultManager] fileExistsAtPath:filePath] ;
+    return [[NSFileManager defaultManager] fileExistsAtPath:filePath];
 }
 
 + (long long)getFileSize:(NSString *)filePath {
-    NSFileManager* manager = [NSFileManager defaultManager] ;
-    if ([manager fileExistsAtPath:filePath]) return [[manager attributesOfItemAtPath:filePath error:nil] fileSize] ;
+    NSFileManager *manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:filePath]) return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
     return 0;
 }
 
 + (BOOL)deleteFile:(NSString *)filePath {
-    return [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil] ;
+    return [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
 }
 
 + (void)savePicture:(UIImage *)picture
-             atPath:(NSString *)filePath
-{
-    NSData *data = UIImageJPEGRepresentation(picture,1) ;
+             atPath:(NSString *)filePath {
+    NSData *data = UIImageJPEGRepresentation(picture, 1);
     [[NSFileManager defaultManager] createFileAtPath:filePath
                                             contents:data
-                                          attributes:nil] ;
+                                          attributes:nil];
 }
 
 + (void)createFolder:(NSString *)folderPath {
-    BOOL isDirectory = NO ;
-    NSFileManager *fileManager = [NSFileManager defaultManager] ;
-    BOOL existed = [fileManager fileExistsAtPath:folderPath
-                                     isDirectory:&isDirectory] ;
-    if ( !(isDirectory == YES && existed == YES) ) {
+    BOOL isDirectory           = NO;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL existed               = [fileManager fileExistsAtPath:folderPath
+                                     isDirectory:&isDirectory];
+    if (!(isDirectory == YES && existed == YES)) {
         [fileManager createDirectoryAtPath:folderPath
                withIntermediateDirectories:YES
                                 attributes:nil
-                                     error:nil] ;
+                                     error:nil];
     }
 }
 
 + (void)moveFileFromPath:(NSString *)fromPath
-                  toPath:(NSString *)toPath
-{
-    [[NSFileManager defaultManager] moveItemAtPath:fromPath toPath:toPath error:nil] ;
+                  toPath:(NSString *)toPath {
+    [[NSFileManager defaultManager] moveItemAtPath:fromPath toPath:toPath error:nil];
 }
 
 @end

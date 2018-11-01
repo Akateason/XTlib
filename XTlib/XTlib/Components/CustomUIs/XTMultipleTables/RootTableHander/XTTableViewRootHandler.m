@@ -8,92 +8,72 @@
 
 #import "XTTableViewRootHandler.h"
 
-@interface XTTableViewRootHandler () <UITableViewDataSource,UITableViewDelegate>
+
+@interface XTTableViewRootHandler () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
+
 @implementation XTTableViewRootHandler
 
-#pragma mark --
+#pragma mark--
 #pragma mark - Initialization
-- (instancetype)initWithTable:(UITableView *)table
-{
+- (instancetype)initWithTable:(UITableView *)table {
     self = [super init];
     if (self) {
-        [self handleTableDatasourceAndDelegate:table] ;
+        [self handleTableDatasourceAndDelegate:table];
     }
     return self;
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - Public
-- (void)handleTableDatasourceAndDelegate:(UITableView *)table
-{
-// set datasource and delegate .
-    table.dataSource = self ;
-    table.delegate = self ;
-// needs layout
-    [table setNeedsLayout] ;
+- (void)handleTableDatasourceAndDelegate:(UITableView *)table {
+    // set datasource and delegate .
+    table.dataSource = self;
+    table.delegate   = self;
+    // needs layout
+    [table setNeedsLayout];
 }
 
-- (void)refreshOffsetYWithTable:(UITableView *)table
-{
-    CGPoint offset = table.contentOffset ;
-    offset.y = self.offsetY ;
-    table.contentOffset = offset ;
+- (void)refreshOffsetYWithTable:(UITableView *)table {
+    CGPoint offset      = table.contentOffset;
+    offset.y            = self.offsetY;
+    table.contentOffset = offset;
 }
 
-- (void)table:(UITableView *)table IsFromCenter:(BOOL)isFromCenter
-{
+- (void)table:(UITableView *)table IsFromCenter:(BOOL)isFromCenter {
     //1. do sth . only center table will do .
-    
+
     //2. do sth  left right table will do .
-    
 }
 
-- (void)centerHandlerRefreshing
-{
-    
+- (void)centerHandlerRefreshing {
 }
 
 
 #pragma mark - root table view delegate
-- (void)loadNewData
-{
-    
+- (void)loadNewData {
 }
 
-- (void)loadMoreData
-{
-    
+- (void)loadMoreData {
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 0 ;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return [UITableViewCell new] ;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [UITableViewCell new];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 0.0f ;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 0.0f;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
-
 
 
 @end
-
-
-
-
-

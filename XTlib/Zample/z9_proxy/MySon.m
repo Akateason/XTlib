@@ -9,32 +9,34 @@
 #import "MySon.h"
 #import <objc/runtime.h>
 
+
 @interface MySon () {
-    Father                  *_father ;
-    Mother                  *_mother ;
-    NSMutableDictionary     *_methodsMap ;
+    Father *_father;
+    Mother *_mother;
+    NSMutableDictionary *_methodsMap;
 }
 @end
+
 
 @implementation MySon
 
 #pragma mark - class method
 
 + (instancetype)sonProxy {
-    return [[MySon alloc] init] ;
+    return [[MySon alloc] init];
 }
 
 #pragma mark - init
 
 - (instancetype)init {
-    _methodsMap = [NSMutableDictionary dictionary] ;
-    _father = [[Father alloc] init] ;
-    _mother = [[Mother alloc] init] ;
-    
+    _methodsMap = [NSMutableDictionary dictionary];
+    _father     = [[Father alloc] init];
+    _mother     = [[Mother alloc] init];
+
     //映射target及其对应方法名
     [self _registerMethodsWithTarget:_father];
     [self _registerMethodsWithTarget:_mother];
-    
+
     return self;
 }
 
@@ -43,10 +45,10 @@
     unsigned int numberOfMethods = 0;
     //获取target方法列表
     Method *method_list = class_copyMethodList([target class], &numberOfMethods);
-    for (int i = 0; i < numberOfMethods; i ++) {
+    for (int i = 0; i < numberOfMethods; i++) {
         //获取方法名并存入字典
-        Method temp_method = method_list[i];
-        SEL temp_sel = method_getName(temp_method);
+        Method temp_method           = method_list[i];
+        SEL temp_sel                 = method_getName(temp_method);
         const char *temp_method_name = sel_getName(temp_sel);
         [_methodsMap setObject:target forKey:[NSString stringWithUTF8String:temp_method_name]];
     }
@@ -71,7 +73,7 @@
     }
 }
 
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)sel{
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)sel {
     //获取选择子方法名
     NSString *methodName = NSStringFromSelector(sel);
     //在字典中查找对应的target

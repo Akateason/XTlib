@@ -7,15 +7,17 @@
 //
 #import "MyNavCtrller.h"
 
+
 @interface MyNavCtrller ()
 
 @end
+
 
 @implementation MyNavCtrller
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.viewControllers.count > 0) {
-        viewController.hidesBottomBarWhenPushed = YES ;
+        viewController.hidesBottomBarWhenPushed = YES;
     }
     [super pushViewController:viewController animated:animated];
 }

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UIImage (ImageEffects)
 
 - (UIImage *)applySubtleEffect;

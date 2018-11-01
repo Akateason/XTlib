@@ -9,21 +9,22 @@
 
 #import <UIKit/UIkit.h>
 
+
 @interface XTFileManager : NSObject
 
-+ (BOOL)isFileExist:(NSString *)filePath ;
++ (BOOL)isFileExist:(NSString *)filePath;
 
 // file or folder size
-+ (long long)getFileSize:(NSString *)filePath ;
++ (long long)getFileSize:(NSString *)filePath;
 
-+ (BOOL)deleteFile:(NSString *)filePath ;
++ (BOOL)deleteFile:(NSString *)filePath;
 
 + (void)savePicture:(UIImage *)picture
-             atPath:(NSString *)filePath ;
+             atPath:(NSString *)filePath;
 
-+ (void)createFolder:(NSString *)folderPath ;
++ (void)createFolder:(NSString *)folderPath;
 
 + (void)moveFileFromPath:(NSString *)fromPath
-                  toPath:(NSString *)toPath ;
+                  toPath:(NSString *)toPath;
 
 @end

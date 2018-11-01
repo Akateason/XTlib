@@ -8,20 +8,19 @@
 
 #import "Model1.h"
 
+
 @implementation Model1
 
-+ (NSDictionary *)modelPropertiesSqliteKeywords
-{
++ (NSDictionary *)modelPropertiesSqliteKeywords {
     return @{
-                @"title" : @"UNIQUE"
-             } ;
+        @"title" : @"UNIQUE"
+    };
 }
 
-+ (NSArray *)ignoreProperties
-{
++ (NSArray *)ignoreProperties {
     return @[
-                @"abcabc"
-             ] ;
+        @"abcabc"
+    ];
 }
 
 @end

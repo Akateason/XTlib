@@ -8,29 +8,28 @@
 
 #import "CenterTableView.h"
 
+
 @interface CenterTableView ()
 
 @end
 
+
 @implementation CenterTableView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self)
-    {
-        self.separatorStyle = 0 ;
-//        self.backgroundColor = [UIColor clearColor] ;
+    if (self) {
+        self.separatorStyle = 0;
+        //        self.backgroundColor = [UIColor clearColor] ;
     }
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        self.separatorStyle = 0 ;
-//        self.backgroundColor = [UIColor clearColor] ;
+        self.separatorStyle = 0;
+        //        self.backgroundColor = [UIColor clearColor] ;
     }
     return self;
 }

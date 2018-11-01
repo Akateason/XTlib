@@ -7,9 +7,10 @@
 //
 
 
-#define RESIZE_TABBAR_ITEM          self.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+#define RESIZE_TABBAR_ITEM self.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
 
 #import <UIKit/UIKit.h>
+
 
 @interface MyNavCtrller : UINavigationController
 

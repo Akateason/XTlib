@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface NSMutableString (TagReplace)
 
--(void)replaceAllTagsIntoArray:(NSMutableArray*)array;
+- (void)replaceAllTagsIntoArray:(NSMutableArray *)array;
 
 @end

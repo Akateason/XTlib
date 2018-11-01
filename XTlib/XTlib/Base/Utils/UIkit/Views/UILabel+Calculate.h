@@ -8,18 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UILabel (Calculate)
 
 + (CGFloat)getLabelHeightWithText:(NSString *)text
                             width:(CGFloat)width
-                             font:(CGFloat)font ;
+                             font:(CGFloat)font;
 
 + (CGFloat)getLabelWidthWithText:(NSString *)text
                           height:(CGFloat)height
-                            font:(CGFloat)font ;
+                            font:(CGFloat)font;
 
-- (CGFloat)caculateHeightWithWidth:(CGFloat)width ;
+- (CGFloat)caculateHeightWithWidth:(CGFloat)width;
 
-- (CGFloat)caculateWidthWithHeight:(CGFloat)height ;
+- (CGFloat)caculateWidthWithHeight:(CGFloat)height;
 
 @end

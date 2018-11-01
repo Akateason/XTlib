@@ -9,6 +9,7 @@
 #import "MyTextView.h"
 #import "ScreenHeader.h"
 
+
 @implementation MyTextView
 
 /*
@@ -19,26 +20,23 @@
 }
 */
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
-    if (self)
-    {
-        float      width        = 1.0f ;
-        self.layer.borderWidth  = width ;
-        self.layer.cornerRadius = G_CORNER_RADIUS  ;
+    if (self) {
+        float width             = 1.0f;
+        self.layer.borderWidth  = width;
+        self.layer.cornerRadius = G_CORNER_RADIUS;
         self.autocorrectionType = UITextAutocorrectionTypeNo;
-        self.font = [UIFont systemFontOfSize:12.0f] ;
+        self.font               = [UIFont systemFontOfSize:12.0f];
     }
     return self;
 }
 
 
-- (void)anyStyle
-{
-//    self.layer.borderColor = COLOR_BACKGROUND.CGColor ;
-    self.layer.borderWidth = 0.0f ;
-    self.font              = [UIFont systemFontOfSize:12.0f] ;
+- (void)anyStyle {
+    //    self.layer.borderColor = COLOR_BACKGROUND.CGColor ;
+    self.layer.borderWidth = 0.0f;
+    self.font              = [UIFont systemFontOfSize:12.0f];
 }
 
 

@@ -10,9 +10,11 @@
 #import "NibVC.h"
 #import "XTlib.h"
 
+
 @interface CtrlHelpVC ()
 
 @end
+
 
 @implementation CtrlHelpVC
 
@@ -20,25 +22,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    self.view.backgroundColor = [UIColor redColor] ;
-    
-    NSLog(@"my nav vc %@",self.view.xt_navigationController) ;
-    
-    NibVC *aVC = [NibVC getCtrllerFromNIB] ;
-    [self presentViewController:aVC animated:YES completion:nil] ;
-    
-    
-    UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom] ;
-    bt.backgroundColor = [UIColor whiteColor] ;
-    [self.view addSubview:bt] ;
+    self.view.backgroundColor = [UIColor redColor];
+
+    NSLog(@"my nav vc %@", self.view.xt_navigationController);
+
+    NibVC *aVC = [NibVC getCtrllerFromNIB];
+    [self presentViewController:aVC animated:YES completion:nil];
+
+
+    UIButton *bt       = [UIButton buttonWithType:UIButtonTypeCustom];
+    bt.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:bt];
     [bt mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(100, 40)) ;
-        make.left.bottom.equalTo(self.view) ;
-    }] ;
+        make.size.mas_equalTo(CGSizeMake(100, 40));
+        make.left.bottom.equalTo(self.view);
+    }];
     [[bt rac_signalForControlEvents:UIControlEventTouchUpInside]
-     subscribeNext:^(__kindof UIControl * _Nullable x) {
-         [self.navigationController pushViewController:aVC animated:YES] ;
-     }] ;
+        subscribeNext:^(__kindof UIControl *_Nullable x) {
+            [self.navigationController pushViewController:aVC animated:YES];
+        }];
 }
 
 - (void)didReceiveMemoryWarning {

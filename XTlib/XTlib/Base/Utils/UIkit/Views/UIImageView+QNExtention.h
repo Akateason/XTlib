@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UIImageView (QNExtention)
 
-- (void)photoFromQiNiu:(NSString *)imgUrl ;
+- (void)photoFromQiNiu:(NSString *)imgUrl;
 
 @end

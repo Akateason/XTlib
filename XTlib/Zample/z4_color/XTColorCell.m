@@ -8,10 +8,11 @@
 
 #import "XTColorCell.h"
 
+
 @implementation XTColorCell
 
 - (void)configure:(UIColor *)model {
-    self.backgroundColor = model ;
+    self.backgroundColor = model;
 }
 
 - (void)awakeFromNib {

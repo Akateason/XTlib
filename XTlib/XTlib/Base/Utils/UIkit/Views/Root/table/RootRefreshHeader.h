@@ -8,8 +8,9 @@
 
 #import <MJRefresh/MJRefresh.h>
 
-extern NSString *const kTABLE_HEADER_IMAGES     ;
-extern float const kTABLE_HEADER_IMAGES_COUNT   ;
+extern NSString *const kTABLE_HEADER_IMAGES;
+extern float const kTABLE_HEADER_IMAGES_COUNT;
+
 
 @interface RootRefreshHeader : MJRefreshGifHeader
 

@@ -10,54 +10,46 @@
 #import "Z1CustomCell.h"
 #import "XTlib.h"
 
-@interface Zample1Controller () <UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong) UITableView *table ;
+
+@interface Zample1Controller () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) UITableView *table;
 @end
+
 
 @implementation Zample1Controller
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.title = @"inherit 'RootTableCell'" ;
-    
+
+    self.title = @"inherit 'RootTableCell'";
+
     self.table = ({
-        UITableView *view = [[UITableView alloc] initWithFrame:APPFRAME style:0] ;
-        view.delegate   = self ;
-        view.dataSource = self ;
-        [self.view addSubview:view] ;
+        UITableView *view = [[UITableView alloc] initWithFrame:APPFRAME style:0];
+        view.delegate     = self;
+        view.dataSource   = self;
+        [self.view addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0)) ;
-        }] ;
-        view ;
-    }) ;
+            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        }];
+        view;
+    });
 }
 
 
 #pragma mark - UITableView
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 10 ;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Z1CustomCell *cell = [Z1CustomCell cellWithTable:tableView] ;
-    [cell configure:[NSString stringWithFormat:@"Z1 : %ld",indexPath.row + 1]] ;
-    return cell ;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Z1CustomCell *cell = [Z1CustomCell cellWithTable:tableView];
+    [cell configure:[NSString stringWithFormat:@"Z1 : %ld", indexPath.row + 1]];
+    return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
-
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning {

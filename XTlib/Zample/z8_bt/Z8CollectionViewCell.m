@@ -8,12 +8,13 @@
 
 #import "Z8CollectionViewCell.h"
 
+
 @implementation Z8CollectionViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    self.backgroundColor = [UIColor whiteColor] ;
+    self.backgroundColor = [UIColor whiteColor];
 }
 
 @end

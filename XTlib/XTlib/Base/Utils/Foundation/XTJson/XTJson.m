@@ -8,44 +8,45 @@
 
 #import "XTJson.h"
 
+
 @implementation XTJson
 
 + (id)getJsonWithStr:(NSString *)jsonStr {
-    if (!jsonStr) return nil ;
-    NSError *error ;
+    if (!jsonStr) return nil;
+    NSError *error;
     id jsonObj = [NSJSONSerialization JSONObjectWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]
                                                  options:0
-                                                   error:&error] ;
+                                                   error:&error];
     if (!jsonObj) {
-        NSLog(@"error : %@",error) ;
-        return nil ;
+        NSLog(@"error : %@", error);
+        return nil;
     }
     else {
-        return jsonObj ;
+        return jsonObj;
     }
 }
 
 + (NSString *)getStrWithJson:(id)jsonObj {
-    if (!jsonObj) return nil ;
-    NSString *jsonStr ;
+    if (!jsonObj) return nil;
+    NSString *jsonStr;
     if ([NSJSONSerialization isValidJSONObject:jsonObj]) {
-        NSError *error ;
+        NSError *error;
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonObj
                                                            options:0
-                                                             error:&error] ;
+                                                             error:&error];
         jsonStr = [[NSString alloc] initWithData:jsonData
-                                        encoding:NSUTF8StringEncoding] ;
+                                        encoding:NSUTF8StringEncoding];
         if (!jsonStr) {
-            NSLog(@"error : %@",error) ;
-            return nil ;
+            NSLog(@"error : %@", error);
+            return nil;
         }
         else {
-            return jsonStr ;
+            return jsonStr;
         }
     }
     else {
-        NSLog(@"IS NOT KIND OF JSON OBJECT") ;
-        return nil ;
+        NSLog(@"IS NOT KIND OF JSON OBJECT");
+        return nil;
     }
 }
 

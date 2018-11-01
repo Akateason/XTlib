@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UIResponder (ChainHandler)
 
-- (void)sendChainHandler:(NSString *)identifier info:(id)info ;
-- (void)sendChainHandler:(NSString *)identifier info:(id)info sender:(id)sender ;
+- (void)sendChainHandler:(NSString *)identifier info:(id)info;
+- (void)sendChainHandler:(NSString *)identifier info:(id)info sender:(id)sender;
 
-- (BOOL)receiveHandleChain:(NSString *)identifier info:(id)info sender:(id)sender ;
+- (BOOL)receiveHandleChain:(NSString *)identifier info:(id)info sender:(id)sender;
 
 @end

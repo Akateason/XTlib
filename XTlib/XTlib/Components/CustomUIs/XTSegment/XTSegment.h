@@ -10,19 +10,20 @@
 
 @protocol XTSegmentDelegate <NSObject>
 @optional
-- (void)clickSegmentWith:(int)index ;
+- (void)clickSegmentWith:(int)index;
 @end
+
 
 @interface XTSegment : UIView
 
-@property (nonatomic,weak)   id <XTSegmentDelegate> delegate ;
-@property (nonatomic)        int     currentIndex ;
-@property (nonatomic,strong) NSArray *dataList ;
-@property (nonatomic,strong) UIImage *imgBG_sel ;
-@property (nonatomic,strong) UIColor *normalColor ;
-@property (nonatomic,strong) UIColor *selectColor ;
-@property (nonatomic)        CGFloat heightForSeg ;
-@property (nonatomic,strong) UIFont  *font ;
+@property (nonatomic, weak) id<XTSegmentDelegate> delegate;
+@property (nonatomic) int currentIndex;
+@property (nonatomic, strong) NSArray *dataList;
+@property (nonatomic, strong) UIImage *imgBG_sel;
+@property (nonatomic, strong) UIColor *normalColor;
+@property (nonatomic, strong) UIColor *selectColor;
+@property (nonatomic) CGFloat heightForSeg;
+@property (nonatomic, strong) UIFont *font;
 
 - (instancetype)initWithDataList:(NSArray *)datalist
                            imgBg:(UIImage *)imgBg
@@ -30,7 +31,7 @@
                           height:(CGFloat)height
                      normalColor:(UIColor *)normalColor
                      selectColor:(UIColor *)selectColor
-                            font:(UIFont *)font ;
+                            font:(UIFont *)font;
 
 - (instancetype)initWithDataList:(NSArray *)datalist
                            imgBg:(UIImage *)imgBg
@@ -38,7 +39,7 @@
                             size:(CGSize)size
                      normalColor:(UIColor *)normalColor
                      selectColor:(UIColor *)selectColor
-                            font:(UIFont *)font ;
+                            font:(UIFont *)font;
 
 - (void)setupWithDataList:(NSArray *)datalist
                     imgBg:(UIImage *)imgBg
@@ -46,9 +47,9 @@
                      size:(CGSize)size
               normalColor:(UIColor *)normalColor
               selectColor:(UIColor *)selectColor
-                     font:(UIFont *)font ;
+                     font:(UIFont *)font;
 
 - (void)moveToIndex:(int)index
-           callBack:(BOOL)callback ;
+           callBack:(BOOL)callback;
 
 @end

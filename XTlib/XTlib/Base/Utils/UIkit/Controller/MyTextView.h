@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface MyTextView : UITextView
 
-- (void)anyStyle ;
+- (void)anyStyle;
 
 @end

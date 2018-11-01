@@ -11,16 +11,16 @@
 #import "MPTestView.h"
 
 
-
 @interface MPTestVC () <MPTestViewProtocol>
 
 @end
+
 
 @implementation MPTestVC
 
 //重写loadView来完成视视图的构建。
 - (void)loadView {
-    self.view = [[MPTestView alloc] initWithFrame:[UIScreen mainScreen].bounds] ;
+    self.view = [[MPTestView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 }
 
 //这个部分是实现的关键，来将控制器对视图属性协议的访问分发到布局视图中去。
@@ -29,19 +29,19 @@
     if (omd.name != NULL) {
         return self.view;
     }
-    
-    return [super forwardingTargetForSelector:aSelector] ;
+
+    return [super forwardingTargetForSelector:aSelector];
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad] ;
-    
+    [super viewDidLoad];
+
     //这里就可以像平常一样访问视图属性并添加事件的绑定处理。
-    [self.button addTarget:self action:@selector(handleClick:) forControlEvents:UIControlEventTouchUpInside] ;
+    [self.button addTarget:self action:@selector(handleClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)handleClick:(UIButton *)sender {
-    NSLog(@"%ld tag",(long)sender.tag) ;
+    NSLog(@"%ld tag", (long)sender.tag);
 }
 
 - (void)didReceiveMemoryWarning {

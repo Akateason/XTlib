@@ -9,56 +9,48 @@
 #import "MySearchBar.h"
 #import "UIImage+AddFunction.h"
 
+
 @implementation MySearchBar
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
-        
     }
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         // Initialization code
-       [self setMyStyle] ;
+        [self setMyStyle];
     }
-    
+
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
-    if (self)
-    {
-        [self setMyStyle] ;
+    if (self) {
+        [self setMyStyle];
     }
     return self;
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [super layoutSubviews];
 }
 
 
-- (void)setMyStyle
-{
-    
-    self.searchBarStyle     = UISearchBarStyleMinimal ; //UISearchBarStyleProminent       ;
-    
-//    self.tintColor          = COLOR_MAIN            ;   //光标和取消文字的颜色
-    
-    self.barTintColor = [UIColor blackColor] ;//[UIColor clearColor] ;
-    
-    UIImage *img = [UIImage imageWithColor:[UIColor clearColor] size:CGSizeMake(320, 40)] ;
-    [self setBackgroundImage:img forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault] ;
+- (void)setMyStyle {
+    self.searchBarStyle = UISearchBarStyleMinimal; //UISearchBarStyleProminent       ;
+
+    //    self.tintColor          = COLOR_MAIN            ;   //光标和取消文字的颜色
+
+    self.barTintColor = [UIColor blackColor]; //[UIColor clearColor] ;
+
+    UIImage *img = [UIImage imageWithColor:[UIColor clearColor] size:CGSizeMake(320, 40)];
+    [self setBackgroundImage:img forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
 }
 
 

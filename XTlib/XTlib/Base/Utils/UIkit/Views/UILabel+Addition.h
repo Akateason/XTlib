@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UILabel (Addition)
 
 - (UILabel *)xt_withDigitalAttributedText:(NSString *)text
                               normalColor:(UIColor *)nc
                                normalFont:(UIFont *)nf
                            highlightColor:(UIColor *)hc
-                            highlightFont:(UIFont *)hf ;
+                            highlightFont:(UIFont *)hf;
 
 @end

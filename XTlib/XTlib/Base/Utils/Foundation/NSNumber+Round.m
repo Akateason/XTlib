@@ -8,16 +8,16 @@
 
 #import "NSNumber+Round.h"
 
+
 @implementation NSNumber (Round)
 
-- (NSNumber*)xt_doRoundWithDigit:(NSUInteger)digit
-{
-    NSNumber *result = nil;
+- (NSNumber *)xt_doRoundWithDigit:(NSUInteger)digit {
+    NSNumber *result             = nil;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
     [formatter setMaximumFractionDigits:digit];
     [formatter setMinimumFractionDigits:digit];
-    result = [NSNumber numberWithFloat:[[formatter stringFromNumber:self] floatValue]] ;
+    result = [NSNumber numberWithFloat:[[formatter stringFromNumber:self] floatValue]];
     return result;
 }
 

@@ -7,23 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-@class XTTableDataDelegate ;
+@class XTTableDataDelegate;
 
 @protocol XTMultipleTablesDelegate <NSObject>
 
-- (void)moveToIndexCallBack:(int)index ;
+- (void)moveToIndexCallBack:(int)index;
 
 @end
 
+
 @interface XTMultipleTables : UIScrollView
 
-@property (nonatomic, weak) id <XTMultipleTablesDelegate> xtDelegate ;
-@property (nonatomic,readonly) int currentIndex ;
+@property (nonatomic, weak) id<XTMultipleTablesDelegate> xtDelegate;
+@property (nonatomic, readonly) int currentIndex;
 
-- (void)xtMultipleTableMoveToTheIndex:(int)indexToMove ;
-- (void)pulldownCenterTableIfNeeded ;
+- (void)xtMultipleTableMoveToTheIndex:(int)indexToMove;
+- (void)pulldownCenterTableIfNeeded;
 
 - (instancetype)initWithFrame:(CGRect)frame
-                     handlers:(NSArray *)handlersList ;
+                     handlers:(NSArray *)handlersList;
 
 @end

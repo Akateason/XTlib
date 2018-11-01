@@ -9,14 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-
-
 @interface XTNetReloader : UIView
 
 + (void)showInView:(UIView *)viewWillShow
-       doReRefresh:(void(^)(void))doReRefreshBlock ;
+       doReRefresh:(void (^)(void))doReRefreshBlock;
 
-+ (void)dismiss ;
++ (void)dismiss;
 
 @end
-

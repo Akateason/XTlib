@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface DoubanTags : NSObject
-@property (nonatomic)           NSInteger   count   ;
-@property (nonatomic,strong)    NSString    *name   ;
-@property (nonatomic,strong)    NSString    *title  ;
+@property (nonatomic) NSInteger count;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *title;
 @end

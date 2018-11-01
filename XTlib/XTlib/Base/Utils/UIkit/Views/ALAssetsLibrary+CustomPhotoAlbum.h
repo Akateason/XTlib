@@ -10,16 +10,17 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef void(^SaveImageCompletion)(NSError* error) ;
+typedef void (^SaveImageCompletion)(NSError *error);
+
 
 @interface ALAssetsLibrary (CustomPhotoAlbum)
 
-- (void)saveImage:(UIImage*)image
-          toAlbum:(NSString*)albumName
-  completionBlock:(SaveImageCompletion)completionBlock ;
+- (void)saveImage:(UIImage *)image
+          toAlbum:(NSString *)albumName
+  completionBlock:(SaveImageCompletion)completionBlock;
 
-- (void)addAssetURL:(NSURL*)assetURL
-            toAlbum:(NSString*)albumName
-    completionBlock:(SaveImageCompletion)completionBlock ;
+- (void)addAssetURL:(NSURL *)assetURL
+            toAlbum:(NSString *)albumName
+    completionBlock:(SaveImageCompletion)completionBlock;
 
 @end

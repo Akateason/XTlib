@@ -13,25 +13,26 @@
 #define IPHONE6PLUS_INCREMENT 0
 #define IPHONE6BLOW_REDUCE 2
 
+
 @implementation UIFont (FontAdapter)
 
 - (void)adjustFont:(CGFloat)fontSize {
-    float tmpSize = 0. ;
+    float tmpSize = 0.;
     if (XT_IS_IPHONE_6) {
-        tmpSize = fontSize ;
+        tmpSize = fontSize;
     }
-    else if (XT_GREATER_THAN_IPHONE_6){
-        tmpSize = fontSize + IPHONE6PLUS_INCREMENT ;
+    else if (XT_GREATER_THAN_IPHONE_6) {
+        tmpSize = fontSize + IPHONE6PLUS_INCREMENT;
     }
     else {
         if (fontSize <= 12) {
-            tmpSize = fontSize ;
+            tmpSize = fontSize;
         }
         else {
-            tmpSize = fontSize - IPHONE6BLOW_REDUCE ;
+            tmpSize = fontSize - IPHONE6BLOW_REDUCE;
         }
     }
-    [self fontWithSize:tmpSize] ;
+    [self fontWithSize:tmpSize];
 }
 
 @end
@@ -41,11 +42,11 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
     Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
     BOOL didAddMethod =
-    class_addMethod(class,
-                    originalSelector,
-                    method_getImplementation(swizzledMethod),
-                    method_getTypeEncoding(swizzledMethod));
-    
+        class_addMethod(class,
+                        originalSelector,
+                        method_getImplementation(swizzledMethod),
+                        method_getTypeEncoding(swizzledMethod));
+
     if (didAddMethod) {
         class_replaceMethod(class,
                             swizzledSelector,
@@ -57,29 +58,31 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
     }
 }
 
+
 @implementation UILabel (FontAdapter)
 
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         Class class = [self class];
-        ExchangedMethod(@selector(initWithCoder:), @selector(myInitWithCoder:), class) ;
+        ExchangedMethod(@selector(initWithCoder:), @selector(myInitWithCoder:), class);
     });
 }
 
-- (id)myInitWithCoder:(NSCoder*)aDecode {
-    [self myInitWithCoder:aDecode] ;
+- (id)myInitWithCoder:(NSCoder *)aDecode {
+    [self myInitWithCoder:aDecode];
     if (self) {
         // 部分不像改变字体的 把tag值设置成333跳过
-        if (self.tag != 333){
+        if (self.tag != 333) {
             CGFloat fontSize = self.font.pointSize;
-            [self.font adjustFont:fontSize] ;
+            [self.font adjustFont:fontSize];
         }
     }
     return self;
 }
 
 @end
+
 
 @implementation UIButton (FontAdapter)
 
@@ -91,19 +94,20 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
     });
 }
 
-- (id)myInitWithCoder:(NSCoder*)aDecode {
+- (id)myInitWithCoder:(NSCoder *)aDecode {
     [self myInitWithCoder:aDecode];
     if (self) {
         //部分不想改变字体的 把tag值设置成333跳过
-        if(self.tag != 333){
+        if (self.tag != 333) {
             CGFloat fontSize = self.titleLabel.font.pointSize;
-            [self.titleLabel.font adjustFont:fontSize] ;
+            [self.titleLabel.font adjustFont:fontSize];
         }
     }
     return self;
 }
 
 @end
+
 
 @implementation UITextField (FontAdapter)
 
@@ -115,13 +119,13 @@ static void ExchangedMethod(SEL originalSelector, SEL swizzledSelector, Class cl
     });
 }
 
-- (id)myInitWithCoder:(NSCoder*)aDecode {
+- (id)myInitWithCoder:(NSCoder *)aDecode {
     [self myInitWithCoder:aDecode];
     if (self) {
         //部分不想改变字体的 把tag值设置成333跳过
         if (self.tag != 333) {
-            CGFloat fontSize = self.font.pointSize ;
-            [self.font adjustFont:fontSize] ;
+            CGFloat fontSize = self.font.pointSize;
+            [self.font adjustFont:fontSize];
         }
     }
     return self;

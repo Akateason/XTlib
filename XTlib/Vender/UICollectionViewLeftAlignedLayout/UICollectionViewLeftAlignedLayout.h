@@ -26,6 +26,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UICollectionViewLeftAlignedLayout : UICollectionViewFlowLayout
 
 @end

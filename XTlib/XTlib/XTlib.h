@@ -93,5 +93,4 @@
 #import "XTVerification.h"
 
 
-
 #endif /* XTlib_h */

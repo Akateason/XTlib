@@ -5,9 +5,8 @@
 #import "NSString+Extend.h"
 
 
-@implementation XTBarrageItemView
-{
-//    THLabel *_contentLabel;
+@implementation XTBarrageItemView {
+    //    THLabel *_contentLabel;
 }
 
 /*

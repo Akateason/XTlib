@@ -8,8 +8,10 @@
 
 #import "Mother.h"
 
+
 @interface Mother () <MotherBuyClothesProtocol>
 @end
+
 
 @implementation Mother
 
@@ -28,7 +30,7 @@
         default:
             break;
     }
-    NSLog(@"bought some clothes of %@",sizeStr);
+    NSLog(@"bought some clothes of %@", sizeStr);
 }
 
 @end

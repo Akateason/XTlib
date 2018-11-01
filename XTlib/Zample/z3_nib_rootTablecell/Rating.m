@@ -8,6 +8,7 @@
 
 #import "Rating.h"
 
+
 @implementation Rating
 
 @end

@@ -8,29 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface NSString (Extend)
 /**
  *  URLEncode Decode
  */
-- (NSString *)URLEncodedString ;
-- (NSString *)URLDecodedString ;
+- (NSString *)URLEncodedString;
+- (NSString *)URLDecodedString;
 
 // 去除空格.
-- (NSString *)minusSpaceStr ;
+- (NSString *)minusSpaceStr;
 // 去掉换行
-- (NSString *)minusReturnStr ;
+- (NSString *)minusReturnStr;
 // 转义单引号  '  -> \'
-- (NSString *)encodeTransferredMeaningForSingleQuotes ;
+- (NSString *)encodeTransferredMeaningForSingleQuotes;
 // 转义单引号  \' -> '
-- (NSString *)decodeTransferredMeaningForSingleQuotes ;
+- (NSString *)decodeTransferredMeaningForSingleQuotes;
 // 去掉小数点后面的0
-+ (NSString *)changeFloat:(NSString *)stringFloat ;
++ (NSString *)changeFloat:(NSString *)stringFloat;
 // 数组切换','字符串(逗号分隔)
-+ (NSString *)getCommaStringWithArray:(NSArray *)array ;
-+ (NSArray *)getArrayFromCommaString:(NSString *)commaStr ;
++ (NSString *)getCommaStringWithArray:(NSArray *)array;
++ (NSArray *)getArrayFromCommaString:(NSString *)commaStr;
 // 随机字符串
-+ (NSString *)getUniqueString ;
-+ (NSString *)getUniqueStringWithLength:(int)length ;
-+ (NSString *)getRandomStrWithLength:(int)length ;
++ (NSString *)getUniqueString;
++ (NSString *)getUniqueStringWithLength:(int)length;
++ (NSString *)getRandomStrWithLength:(int)length;
 
 @end

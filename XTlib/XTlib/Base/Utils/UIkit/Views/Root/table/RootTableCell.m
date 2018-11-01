@@ -9,103 +9,108 @@
 #import "RootTableCell.h"
 #import <objc/runtime.h>
 
+
 @interface RootTableCell ()
-@property (strong, nonatomic, readwrite) id model ;
+@property (strong, nonatomic, readwrite) id model;
 @end
+
 
 @implementation RootTableCell
 
-#pragma mark --
+#pragma mark--
 #pragma mark - util
 
 // Register from table
 + (void)registerNibFromTable:(UITableView *)table {
-    NSString *clsName = NSStringFromClass([self class]) ;
-    [table registerNib:[UINib nibWithNibName:clsName bundle:nil] forCellReuseIdentifier:clsName] ;
+    NSString *clsName = NSStringFromClass([self class]);
+    [table registerNib:[UINib nibWithNibName:clsName bundle:nil] forCellReuseIdentifier:clsName];
 }
 
 + (void)registerClsFromTable:(UITableView *)table {
-    [table registerClass:[self class] forCellReuseIdentifier:NSStringFromClass([self class])] ;
+    [table registerClass:[self class] forCellReuseIdentifier:NSStringFromClass([self class])];
 }
 
 // Fetch
 + (instancetype)fetchFromTable:(UITableView *)table {
-    return [table dequeueReusableCellWithIdentifier:NSStringFromClass([self class])] ;
+    return [table dequeueReusableCellWithIdentifier:NSStringFromClass([self class])];
 }
 
 + (instancetype)fetchFromTable:(UITableView *)table indexPath:(NSIndexPath *)indexPath {
-    return [table dequeueReusableCellWithIdentifier:NSStringFromClass([self class]) forIndexPath:indexPath] ;
+    return [table dequeueReusableCellWithIdentifier:NSStringFromClass([self class]) forIndexPath:indexPath];
 }
 
 
-#pragma mark --
+#pragma mark--
 #pragma mark - initialization
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style
-              reuseIdentifier:(nullable NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier] ;
+              reuseIdentifier:(nullable NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self prepareUI] ;
+        [self prepareUI];
     }
     return self;
 }
 
 - (void)awakeFromNib {
-    [super awakeFromNib] ;
-    [self prepareUI] ;
+    [super awakeFromNib];
+    [self prepareUI];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
 
-- (void)dealloc {}
+- (void)dealloc {
+}
 
-#pragma mark --
+#pragma mark--
 #pragma mark - get cell
 
 + (instancetype)cellWithTable:(UITableView *)tableView {
     @autoreleasepool {
-        const char *charClsName = object_getClassName(self) ;
-        NSString *strClsName = [NSString stringWithUTF8String:charClsName] ;
-        Class cellCls = objc_getRequiredClass(charClsName) ;
+        const char *charClsName = object_getClassName(self);
+        NSString *strClsName    = [NSString stringWithUTF8String:charClsName];
+        Class cellCls           = objc_getRequiredClass(charClsName);
         //  polymorphic
-        RootTableCell *cell = [tableView dequeueReusableCellWithIdentifier:strClsName] ;
+        RootTableCell *cell = [tableView dequeueReusableCellWithIdentifier:strClsName];
         if (!cell) {
             cell = [[cellCls alloc] initWithStyle:UITableViewCellStyleDefault
-                                  reuseIdentifier:strClsName] ; // use cls name as reuseIdentifier
+                                  reuseIdentifier:strClsName]; // use cls name as reuseIdentifier
         }
-        return cell ;
+        return cell;
     }
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - prepare UI
 
 - (void)prepareUI {
-    self.selectionStyle = UITableViewCellSelectionStyleNone ;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - configure
 
 - (void)configure:(id)model {
     [self configure:model
-          indexPath:nil] ;
+          indexPath:nil];
 }
 
 - (void)configure:(id)model
-        indexPath:(NSIndexPath *)indexPath
-{
-    _model = model ;
-    _indexPath = indexPath ;
+        indexPath:(NSIndexPath *)indexPath {
+    _model     = model;
+    _indexPath = indexPath;
 }
 
-#pragma mark --
+#pragma mark--
 #pragma mark - height
 
-+ (CGFloat)cellHeight { return 44. ; }
-+ (CGFloat)cellHeightForModel:(id)model { return 44. ; }
++ (CGFloat)cellHeight {
+    return 44.;
+}
++ (CGFloat)cellHeightForModel:(id)model {
+    return 44.;
+}
 
 @end

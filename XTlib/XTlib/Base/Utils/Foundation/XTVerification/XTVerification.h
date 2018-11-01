@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface XTVerification : NSObject
 //邮箱
 + (BOOL)validateEmail:(NSString *)email;
@@ -38,11 +39,11 @@
 
 
 //真实姓名
-+ (BOOL)validateRealname:(NSString *)realName ;
++ (BOOL)validateRealname:(NSString *)realName;
 
 
 //身份证号
-+ (BOOL)validateIdentityCard: (NSString *)identityCard;
++ (BOOL)validateIdentityCard:(NSString *)identityCard;
 
 
 @end

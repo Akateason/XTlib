@@ -8,6 +8,7 @@
 
 #import "RootTableCell.h"
 
+
 @interface DoubanTagsCell : RootTableCell
 
 @end

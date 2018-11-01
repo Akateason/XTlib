@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface NSDate (NSCalendar)
 
 - (int)getYear;
@@ -17,6 +18,6 @@
 - (int)getMinute;
 - (int)getSecond;
 + (int)daysInMonth:(int)imonth
-              year:(int)year ;
+              year:(int)year;
 
 @end

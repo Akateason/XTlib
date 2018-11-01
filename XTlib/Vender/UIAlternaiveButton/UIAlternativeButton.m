@@ -13,13 +13,14 @@
  */
 static CGFloat margin = 3.0;
 
+
 @implementation UIAlternativeButton
 
 #pragma mark - NSObject UIKit Additions
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView.contentMode   = UIViewContentModeScaleAspectFit;
     self.imageView.clipsToBounds = YES;
 }
 
@@ -27,7 +28,7 @@ static CGFloat margin = 3.0;
     self = [super init];
     if (self) {
         _imageViewRadius = 0.0;
-        _imageViewWidth = 44.0;
+        _imageViewWidth  = 44.0;
     }
     return self;
 }
@@ -36,7 +37,7 @@ static CGFloat margin = 3.0;
     self = [super initWithCoder:coder];
     if (self) {
         _imageViewRadius = 0.0;
-        _imageViewWidth = 44.0;
+        _imageViewWidth  = 44.0;
     }
     return self;
 }
@@ -45,7 +46,7 @@ static CGFloat margin = 3.0;
     self = [super initWithFrame:frame];
     if (self) {
         _imageViewRadius = 0.0;
-        _imageViewWidth = 44.0;
+        _imageViewWidth  = 44.0;
     }
     return self;
 }
@@ -63,22 +64,22 @@ static CGFloat margin = 3.0;
 
 - (CGSize)intrinsicContentSize {
     [self.titleLabel sizeToFit];
-    CGFloat titleLabelWidth = CGRectGetWidth(self.titleLabel.frame) + margin * 2; // margin from both sides.
-    CGFloat imageViewWidth = CGRectGetWidth(self.imageView.frame) + margin * 2; // margin from both sides.
-    CGFloat height = CGRectGetHeight(self.imageView.frame) + CGRectGetHeight(self.titleLabel.frame) + margin * 3; // margin from top and bottom and distance between `imageView` and `titleLabel`.
+    CGFloat titleLabelWidth = CGRectGetWidth(self.titleLabel.frame) + margin * 2;                                          // margin from both sides.
+    CGFloat imageViewWidth  = CGRectGetWidth(self.imageView.frame) + margin * 2;                                           // margin from both sides.
+    CGFloat height          = CGRectGetHeight(self.imageView.frame) + CGRectGetHeight(self.titleLabel.frame) + margin * 3; // margin from top and bottom and distance between `imageView` and `titleLabel`.
     return CGSizeMake(MAX(titleLabelWidth, imageViewWidth), height);
 }
 
 #pragma mark - Setter
 
 - (void)setImageViewRadius:(CGFloat)imageViewRadius {
-    _imageViewRadius = imageViewRadius;
+    _imageViewRadius                  = imageViewRadius;
     self.imageView.layer.cornerRadius = imageViewRadius;
 }
 
 - (void)setImageViewWidth:(CGFloat)imageViewWidth {
     _imageViewWidth = imageViewWidth;
-//    self.imageView.layer.cornerRadius = imageViewWidth / 2.0;
+    //    self.imageView.layer.cornerRadius = imageViewWidth / 2.0;
     [self setNeedsLayout];
     [self invalidateIntrinsicContentSize];
 }

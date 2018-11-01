@@ -9,47 +9,46 @@
 #import "DesignableInspectableVC.h"
 #import "XTAnimation.h"
 
+
 @interface DesignableInspectableVC ()
 
 @end
 
+
 @implementation DesignableInspectableVC
 
 - (IBAction)click:(id)sender {
-    
-//    [XTAnimation shakeRandomDirectionWithDuration:.5 AndWithView:_img1] ;
-//    [XTAnimation animationRevealFromBottom:_cView1 duration:1] ;
-    
-//    [XTAnimation animationFlipFromLeft:_img1 duration:1] ;
-//    [XTAnimation animationCurlUp:_cView1 duration:1] ;
-    
-//    [XTAnimation animationPushUp:_img1 duration:1] ;
-//    [XTAnimation animationMoveUp:_cView1 duration:1] ;
-    
-    [XTAnimation rotateForever:_img1 once:.3] ;
-    
-//    [XTAnimation cradle:_img1] ;
-//    [XTAnimation rotateAndEnlarge:_cView1] ;
-    
-//    [XTAnimation animationFlipFromTop:_img1 duration:1] ;
-//    [XTAnimation animationCubeFromLeft:_cView1 duration:1] ;
+    //    [XTAnimation shakeRandomDirectionWithDuration:.5 AndWithView:_img1] ;
+    //    [XTAnimation animationRevealFromBottom:_cView1 duration:1] ;
 
-//    [XTAnimation animationSuckEffect:_img1 duration:1] ;
-//    [XTAnimation animationRippleEffect:_cView1 duration:1] ;
+    //    [XTAnimation animationFlipFromLeft:_img1 duration:1] ;
+    //    [XTAnimation animationCurlUp:_cView1 duration:1] ;
 
-//    [XTAnimation animationCameraOpen:_img1 duration:1] ;
-//    [XTAnimation animationCameraClose:_cView1 duration:1] ;
-    
-    [UIAlertController xt_showAlertCntrollerWithAlertControllerStyle:UIAlertControllerStyleActionSheet title:@"test" message:@"message" cancelButtonTitle:@"cancel" destructiveButtonTitle:@"destruce" otherButtonTitles:@[@"a",@"b",@"c"] callBackBlock:^(NSInteger btnIndex) {
-        NSLog(@"%ld",(long)btnIndex) ;
-    }] ;
+    //    [XTAnimation animationPushUp:_img1 duration:1] ;
+    //    [XTAnimation animationMoveUp:_cView1 duration:1] ;
+
+    [XTAnimation rotateForever:_img1 once:.3];
+
+    //    [XTAnimation cradle:_img1] ;
+    //    [XTAnimation rotateAndEnlarge:_cView1] ;
+
+    //    [XTAnimation animationFlipFromTop:_img1 duration:1] ;
+    //    [XTAnimation animationCubeFromLeft:_cView1 duration:1] ;
+
+    //    [XTAnimation animationSuckEffect:_img1 duration:1] ;
+    //    [XTAnimation animationRippleEffect:_cView1 duration:1] ;
+
+    //    [XTAnimation animationCameraOpen:_img1 duration:1] ;
+    //    [XTAnimation animationCameraClose:_cView1 duration:1] ;
+
+    [UIAlertController xt_showAlertCntrollerWithAlertControllerStyle:UIAlertControllerStyleActionSheet title:@"test" message:@"message" cancelButtonTitle:@"cancel" destructiveButtonTitle:@"destruce" otherButtonTitles:@[ @"a", @"b", @"c" ] callBackBlock:^(NSInteger btnIndex) {
+        NSLog(@"%ld", (long)btnIndex);
+    }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-
 }
 
 - (void)didReceiveMemoryWarning {

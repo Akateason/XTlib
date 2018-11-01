@@ -11,58 +11,60 @@
 #import "XTlib.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
+
 @interface AppDelegate ()
 
 @end
 
+
 @implementation AppDelegate
 
 - (void)navStyle {
-//    UIImage *backButtonBackgroundImage = [UIImage imageNamed:@"backArrowBlack"] ;
-//    UINavigationBar *navigationBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[GBNavigationViewController class]]];
-//    [navigationBar setBackIndicatorImage:backButtonBackgroundImage] ;
-//    [navigationBar setBackIndicatorTransitionMaskImage:backButtonBackgroundImage] ;
-//
-//    UIBarButtonItem *buttonItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]] ;
-//    UIOffset offset ;
-//    offset.vertical = -.5 ;
-//    [buttonItem setBackButtonTitlePositionAdjustment:offset forBarMetrics:UIBarMetricsDefault] ;
+    //    UIImage *backButtonBackgroundImage = [UIImage imageNamed:@"backArrowBlack"] ;
+    //    UINavigationBar *navigationBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[GBNavigationViewController class]]];
+    //    [navigationBar setBackIndicatorImage:backButtonBackgroundImage] ;
+    //    [navigationBar setBackIndicatorTransitionMaskImage:backButtonBackgroundImage] ;
+    //
+    //    UIBarButtonItem *buttonItem = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]] ;
+    //    UIOffset offset ;
+    //    offset.vertical = -.5 ;
+    //    [buttonItem setBackButtonTitlePositionAdjustment:offset forBarMetrics:UIBarMetricsDefault] ;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [XTlibConfig sharedInstance].isDebug = YES ;
-    
+    [XTlibConfig sharedInstance].isDebug = YES;
+
     // nav
-    [self navStyle] ;
-    
+    [self navStyle];
+
     // SVPHUD style
-    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark] ;
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear] ; //set mask to block usersTaps
-    [SVProgressHUD setMaximumDismissTimeInterval:2.] ;
-    
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear]; //set mask to block usersTaps
+    [SVProgressHUD setMaximumDismissTimeInterval:2.];
+
     // SQLite
-    [XTFMDBBase sharedInstance].isDebugMode = YES ;
-    NSString *path = XT_DOCUMENTS_PATH_TRAIL_(@"teason") ;
-    [[XTFMDBBase sharedInstance] configureDBWithPath:path] ;
+    [XTFMDBBase sharedInstance].isDebugMode = YES;
+    NSString *path                          = XT_DOCUMENTS_PATH_TRAIL_(@"teason");
+    [[XTFMDBBase sharedInstance] configureDBWithPath:path];
     [[XTFMDBBase sharedInstance] dbUpgradeTable:Model1.class
-                                      paramsAdd:@[@"a1",@"a2",@"a3"]
-                                        version:2] ;
-    
+                                      paramsAdd:@[ @"a1", @"a2", @"a3" ]
+                                        version:2];
+
     [[XTFMDBBase sharedInstance] dbUpgradeTable:Model1.class
-                                      paramsAdd:@[@"b1",@"b2",@"b3"]
-                                        version:3] ;
-    
-    
+                                      paramsAdd:@[ @"b1", @"b2", @"b3" ]
+                                        version:3];
+
+
     // request cache TB
-    [XTReqSessionManager shareInstance].isDebug = YES ;
-    [XTCacheRequest configXTCacheReqWhenAppDidLaunchWithDBPath:path] ;
-    
+    [XTReqSessionManager shareInstance].isDebug = YES;
+    [XTCacheRequest configXTCacheReqWhenAppDidLaunchWithDBPath:path];
+
     // stat
     //    [[XTStat new] prepare] ;
-    
+
     //
-    [self testFunc] ;
+    [self testFunc];
 
     return YES;
 }
@@ -72,8 +74,6 @@
     //    [[ValetManager sharedInstance] setup] ;
     //    [[ValetManager sharedInstance] saveUserName:@"xtc" pwd:@"324234daaa"] ;
     //    [[ValetManager sharedInstance] UUID] ;
-    
-    
 }
 
 

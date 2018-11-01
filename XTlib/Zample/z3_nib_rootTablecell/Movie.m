@@ -8,9 +8,9 @@
 
 #import "Movie.h"
 
+
 @implementation Movie
-+ (NSDictionary *)modelCustomPropertyMapper
-{
-    return @{@"id" : @"idMovie"} ;
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{ @"id" : @"idMovie" };
 }
 @end

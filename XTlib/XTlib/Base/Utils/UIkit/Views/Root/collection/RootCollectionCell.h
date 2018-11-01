@@ -9,24 +9,25 @@
 #import <UIKit/UIKit.h>
 #import "Masonry.h"
 
+
 @interface RootCollectionCell : UICollectionViewCell
 
-@property (strong, nonatomic) NSIndexPath *indexPath ;
-@property (strong, nonatomic, readonly) id model ;
+@property (strong, nonatomic) NSIndexPath *indexPath;
+@property (strong, nonatomic, readonly) id model;
 
-#pragma mark - 
+#pragma mark -
 // regist
-+ (void)registerNibFromCollection:(UICollectionView *)collection ;
-+ (void)registerClsFromCollection:(UICollectionView *)collection ;
++ (void)registerNibFromCollection:(UICollectionView *)collection;
++ (void)registerClsFromCollection:(UICollectionView *)collection;
 
 // fetch reuse same name in pure code or storyboard or xib .
 + (instancetype)fetchFromCollection:(UICollectionView *)collection
-                          indexPath:(NSIndexPath *)indexPath ;
+                          indexPath:(NSIndexPath *)indexPath;
 
 
 #pragma mark - rewrite in sub cls
 // UI and Layout
-- (void)prepareUI ;
+- (void)prepareUI;
 
 /**
  * set model rewrite in subclass
@@ -42,11 +43,11 @@
  *
  */
 - (void)configure:(id)model
-        indexPath:(NSIndexPath *)indexPath ;
-- (void)configure:(id)model ;
+        indexPath:(NSIndexPath *)indexPath;
+- (void)configure:(id)model;
 
 // height
-+ (CGSize)cellSize ;
-+ (CGSize)cellSizeForModel:(id)model ;
++ (CGSize)cellSize;
++ (CGSize)cellSizeForModel:(id)model;
 
 @end

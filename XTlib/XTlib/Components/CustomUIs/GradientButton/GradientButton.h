@@ -21,10 +21,11 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface GradientButton : UIButton
 
-- (void)addColors:(NSArray *)colors ;
+- (void)addColors:(NSArray *)colors;
 
-- (void)addColors:(NSArray *)colors bounds:(CGRect)bounds ;
+- (void)addColors:(NSArray *)colors bounds:(CGRect)bounds;
 
 @end

@@ -34,6 +34,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface KxMenuItem : NSObject
 
 @property (readwrite, nonatomic, strong) UIImage *image;
@@ -43,25 +44,26 @@
 @property (readwrite, nonatomic, strong) UIColor *foreColor;
 @property (readwrite, nonatomic) NSTextAlignment alignment;
 
-+ (instancetype) menuItem:(NSString *) title
-                    image:(UIImage *) image
-                   target:(id)target
-                   action:(SEL) action;
++ (instancetype)menuItem:(NSString *)title
+                   image:(UIImage *)image
+                  target:(id)target
+                  action:(SEL)action;
 
 @end
 
+
 @interface KxMenu : NSObject
 
-+ (void) showMenuInView:(UIView *)view
-               fromRect:(CGRect)rect
-              menuItems:(NSArray *)menuItems;
++ (void)showMenuInView:(UIView *)view
+              fromRect:(CGRect)rect
+             menuItems:(NSArray *)menuItems;
 
-+ (void) dismissMenu;
++ (void)dismissMenu;
 
-+ (UIColor *) tintColor;
-+ (void) setTintColor: (UIColor *) tintColor;
++ (UIColor *)tintColor;
++ (void)setTintColor:(UIColor *)tintColor;
 
-+ (UIFont *) titleFont;
-+ (void) setTitleFont: (UIFont *) titleFont;
++ (UIFont *)titleFont;
++ (void)setTitleFont:(UIFont *)titleFont;
 
 @end

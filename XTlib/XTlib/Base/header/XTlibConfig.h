@@ -11,10 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XTlibConfig : NSObject
-XT_SINGLETON_H(XTlibConfig)
 
-@property (nonatomic) BOOL  isDebug ;
+@interface XTlibConfig : NSObject
+XT_SINGLETON_H(XTlibConfig);
+
+@property (nonatomic) BOOL isDebug;
 
 @end
 

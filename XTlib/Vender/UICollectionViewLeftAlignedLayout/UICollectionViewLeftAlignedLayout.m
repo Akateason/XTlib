@@ -20,57 +20,59 @@
 
 #import "UICollectionViewLeftAlignedLayout.h"
 
+
 @interface UICollectionViewLayoutAttributes (LeftAligned)
 
 - (void)leftAlignFrameWithSectionInset:(UIEdgeInsets)sectionInset;
 
 @end
 
+
 @implementation UICollectionViewLayoutAttributes (LeftAligned)
 
-- (void)leftAlignFrameWithSectionInset:(UIEdgeInsets)sectionInset
-{
-    CGRect frame = self.frame;
+- (void)leftAlignFrameWithSectionInset:(UIEdgeInsets)sectionInset {
+    CGRect frame   = self.frame;
     frame.origin.x = sectionInset.left;
-    self.frame = frame;
+    self.frame     = frame;
 }
 
 @end
 
 #pragma mark -
 
+
 @implementation UICollectionViewLeftAlignedLayout
 
 #pragma mark - UICollectionViewLayout
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
-    NSArray* attributesToReturn = [super layoutAttributesForElementsInRect:rect];
-    for (UICollectionViewLayoutAttributes* attributes in attributesToReturn) {
+    NSArray *attributesToReturn = [super layoutAttributesForElementsInRect:rect];
+    for (UICollectionViewLayoutAttributes *attributes in attributesToReturn) {
         if (nil == attributes.representedElementKind) {
-            NSIndexPath* indexPath = attributes.indexPath;
-            attributes.frame = [self layoutAttributesForItemAtIndexPath:indexPath].frame;
+            NSIndexPath *indexPath = attributes.indexPath;
+            attributes.frame       = [self layoutAttributesForItemAtIndexPath:indexPath].frame;
         }
     }
     return attributesToReturn;
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewLayoutAttributes* currentItemAttributes = [super layoutAttributesForItemAtIndexPath:indexPath];
-    UIEdgeInsets sectionInset = [self evaluatedSectionInsetForItemAtIndex:indexPath.section];
+    UICollectionViewLayoutAttributes *currentItemAttributes = [super layoutAttributesForItemAtIndexPath:indexPath];
+    UIEdgeInsets sectionInset                               = [self evaluatedSectionInsetForItemAtIndex:indexPath.section];
 
     BOOL isFirstItemInSection = indexPath.item == 0;
-    CGFloat layoutWidth = CGRectGetWidth(self.collectionView.frame) - sectionInset.left - sectionInset.right;
+    CGFloat layoutWidth       = CGRectGetWidth(self.collectionView.frame) - sectionInset.left - sectionInset.right;
 
     if (isFirstItemInSection) {
         [currentItemAttributes leftAlignFrameWithSectionInset:sectionInset];
         return currentItemAttributes;
     }
 
-    NSIndexPath* previousIndexPath = [NSIndexPath indexPathForItem:indexPath.item-1 inSection:indexPath.section];
-    CGRect previousFrame = [self layoutAttributesForItemAtIndexPath:previousIndexPath].frame;
+    NSIndexPath *previousIndexPath  = [NSIndexPath indexPathForItem:indexPath.item - 1 inSection:indexPath.section];
+    CGRect previousFrame            = [self layoutAttributesForItemAtIndexPath:previousIndexPath].frame;
     CGFloat previousFrameRightPoint = previousFrame.origin.x + previousFrame.size.width;
-    CGRect currentFrame = currentItemAttributes.frame;
-    CGRect strecthedCurrentFrame = CGRectMake(sectionInset.left,
+    CGRect currentFrame             = currentItemAttributes.frame;
+    CGRect strecthedCurrentFrame    = CGRectMake(sectionInset.left,
                                               currentFrame.origin.y,
                                               layoutWidth,
                                               currentFrame.size.height);
@@ -84,30 +86,30 @@
         return currentItemAttributes;
     }
 
-    CGRect frame = currentItemAttributes.frame;
-    frame.origin.x = previousFrameRightPoint + [self evaluatedMinimumInteritemSpacingForItemAtIndex:indexPath.row];
+    CGRect frame                = currentItemAttributes.frame;
+    frame.origin.x              = previousFrameRightPoint + [self evaluatedMinimumInteritemSpacingForItemAtIndex:indexPath.row];
     currentItemAttributes.frame = frame;
     return currentItemAttributes;
 }
 
-- (CGFloat)evaluatedMinimumInteritemSpacingForItemAtIndex:(NSInteger)index
-{
+- (CGFloat)evaluatedMinimumInteritemSpacingForItemAtIndex:(NSInteger)index {
     if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:minimumInteritemSpacingForSectionAtIndex:)]) {
         id<UICollectionViewDelegateLeftAlignedLayout> delegate = (id<UICollectionViewDelegateLeftAlignedLayout>)self.collectionView.delegate;
 
         return [delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:index];
-    } else {
+    }
+    else {
         return self.minimumInteritemSpacing;
     }
 }
 
-- (UIEdgeInsets)evaluatedSectionInsetForItemAtIndex:(NSInteger)index
-{
+- (UIEdgeInsets)evaluatedSectionInsetForItemAtIndex:(NSInteger)index {
     if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
         id<UICollectionViewDelegateLeftAlignedLayout> delegate = (id<UICollectionViewDelegateLeftAlignedLayout>)self.collectionView.delegate;
 
         return [delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:index];
-    } else {
+    }
+    else {
         return self.sectionInset;
     }
 }

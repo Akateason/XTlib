@@ -10,35 +10,37 @@
 #import "Z8CollectionViewCell.h"
 #import "XTlib.h"
 
-@interface Z8CollectionViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
-@property (nonatomic,strong) UICollectionView *collectionView ;
+
+@interface Z8CollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (nonatomic, strong) UICollectionView *collectionView;
 @end
+
 
 @implementation Z8CollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [SVProgressHUD showInfoWithStatus:@"点到了"] ;
 
-    self.view.backgroundColor = [UIColor whiteColor] ;
-    
+    [SVProgressHUD showInfoWithStatus:@"点到了"];
+
+    self.view.backgroundColor = [UIColor whiteColor];
+
     self.collectionView = ({
-        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init] ;
-        UICollectionView *view = [[UICollectionView alloc] initWithFrame:APPFRAME
-                                                    collectionViewLayout:layout] ;
-        [self.view addSubview:view] ;
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        UICollectionView *view             = [[UICollectionView alloc] initWithFrame:APPFRAME
+                                                    collectionViewLayout:layout];
+        [self.view addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.view) ;
-        }] ;
-        view.backgroundColor = [UIColor brownColor] ;
-        view.dataSource = self ;
-        view.delegate = self ;
-        view ;
-    }) ;
-    
+            make.edges.equalTo(self.view);
+        }];
+        view.backgroundColor = [UIColor brownColor];
+        view.dataSource      = self;
+        view.delegate        = self;
+        view;
+    });
+
     [self.collectionView registerNib:[UINib nibWithNibName:@"Z8CollectionViewCell" bundle:nil]
-          forCellWithReuseIdentifier:@"Z8CollectionViewCell"] ;
+          forCellWithReuseIdentifier:@"Z8CollectionViewCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,21 +48,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return 10 ;
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 10;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    Z8CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Z8CollectionViewCell" forIndexPath:indexPath] ;
-    return cell ;
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    Z8CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Z8CollectionViewCell" forIndexPath:indexPath];
+    return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 /*

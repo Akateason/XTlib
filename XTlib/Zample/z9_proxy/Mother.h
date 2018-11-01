@@ -8,15 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM (NSInteger, ClothesSize){
+typedef NS_ENUM(NSInteger, ClothesSize) {
     ClothesSizeSmall = 0,
     ClothesSizeMedium,
     ClothesSizeLarge
 };
 
 @protocol MotherBuyClothesProtocol <NSObject>
-- (void)buyClothesWithSize:(ClothesSize)size ;
+- (void)buyClothesWithSize:(ClothesSize)size;
 @end
+
 
 @interface Mother : NSObject
 

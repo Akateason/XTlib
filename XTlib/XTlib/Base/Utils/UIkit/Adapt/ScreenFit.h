@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "FastCodeHeader.h"
 
+
 @interface ScreenFit : NSObject
-XT_SINGLETON_H(ScreenFit)
-- (float)getScreenHeightscale ;
-- (float)getScreenWidthscale  ;
+XT_SINGLETON_H(ScreenFit);
+- (float)getScreenHeightscale;
+- (float)getScreenWidthscale;
 @end

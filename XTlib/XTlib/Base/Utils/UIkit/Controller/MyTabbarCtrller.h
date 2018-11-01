@@ -10,12 +10,13 @@
 
 @protocol MyTabbarCtrllerDelegate <NSObject>
 
-- (void)doubleTapedHomePage ;
+- (void)doubleTapedHomePage;
 
 @end
 
+
 @interface MyTabbarCtrller : UITabBarController <UITabBarControllerDelegate>
 
-@property (nonatomic,weak) id <MyTabbarCtrllerDelegate> homePageDelegate ;
+@property (nonatomic, weak) id<MyTabbarCtrllerDelegate> homePageDelegate;
 
 @end

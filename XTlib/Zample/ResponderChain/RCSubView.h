@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface RCSubView : UIView
-@property (strong,nonatomic) UIButton *button ;
+@property (strong, nonatomic) UIButton *button;
 @end

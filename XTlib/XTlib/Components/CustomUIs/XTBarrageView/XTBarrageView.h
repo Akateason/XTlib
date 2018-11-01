@@ -2,6 +2,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface XTBarrageView : UIView
 
 /**
@@ -9,7 +10,7 @@
  *  key "avatar" is NSString or UIImage or ImageUrl
  *  key "content" is NSString
  */
-@property (strong, nonatomic)NSArray *dataArray;
+@property (strong, nonatomic) NSArray *dataArray;
 
 - (void)start;
 - (void)stop;

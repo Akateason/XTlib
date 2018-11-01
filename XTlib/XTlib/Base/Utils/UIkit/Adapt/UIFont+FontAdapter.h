@@ -10,15 +10,19 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UIFont (FontAdapter)
-- (void)adjustFont:(CGFloat)fontSize ;
+- (void)adjustFont:(CGFloat)fontSize;
 @end
+
 
 @interface UILabel (FontAdapter)
 @end
 
+
 @interface UIButton (FontAdapter)
 @end
+
 
 @interface UITextField (FontAdapter)
 @end

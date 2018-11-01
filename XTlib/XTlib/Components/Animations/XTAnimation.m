@@ -9,27 +9,28 @@
 #import "XTAnimation.h"
 #import "ScreenHeader.h"
 
+
 @implementation XTAnimation
 
-static NSString * const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
+static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
 + (void)shakeRandomDirectionWithDuration:(NSTimeInterval)duration AndWithView:(UIView *)view {
-    int randomNum = arc4random()%100 ;
+    int randomNum = arc4random() % 100;
     if (randomNum >= 50) {
-        CAKeyframeAnimation * animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
-        CGFloat currentTx = view.transform.tx;
-        animation.duration = duration;
-        animation.values = @[ @(currentTx), @(currentTx + 8), @(currentTx-6), @(currentTx + 6), @(currentTx - 3), @(currentTx + 3), @(currentTx) ];
-        animation.keyTimes = @[ @(0), @(0.225), @(0.425), @(0.6), @(0.75), @(0.875), @(1) ];
-        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
+        CGFloat currentTx              = view.transform.tx;
+        animation.duration             = duration;
+        animation.values               = @[ @(currentTx), @(currentTx + 8), @(currentTx - 6), @(currentTx + 6), @(currentTx - 3), @(currentTx + 3), @(currentTx) ];
+        animation.keyTimes             = @[ @(0), @(0.225), @(0.425), @(0.6), @(0.75), @(0.875), @(1) ];
+        animation.timingFunction       = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         [view.layer addAnimation:animation forKey:kAFViewShakerAnimationKey];
     }
     else {
-        CAKeyframeAnimation * animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
-        CGFloat currentTy = view.transform.ty;
-        animation.duration = duration;
-        animation.values = @[ @(currentTy), @(currentTy + 8), @(currentTy-6), @(currentTy + 6), @(currentTy - 3), @(currentTy + 3), @(currentTy) ];
-        animation.keyTimes = @[ @(0), @(0.225), @(0.425), @(0.6), @(0.75), @(0.875), @(1) ];
-        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
+        CGFloat currentTy              = view.transform.ty;
+        animation.duration             = duration;
+        animation.values               = @[ @(currentTy), @(currentTy + 8), @(currentTy - 6), @(currentTy + 6), @(currentTy - 3), @(currentTy + 3), @(currentTy) ];
+        animation.keyTimes             = @[ @(0), @(0.225), @(0.425), @(0.6), @(0.75), @(0.875), @(1) ];
+        animation.timingFunction       = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         [view.layer addAnimation:animation forKey:kAFViewShakerAnimationKey];
     }
 }
@@ -160,11 +161,11 @@ static NSString * const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey"
 }
 
 + (void)animationMoveDown:(UIView *)view duration:(CFTimeInterval)duration {
-    CATransition *transition = [CATransition animation];
-    transition.duration =duration;
+    CATransition *transition  = [CATransition animation];
+    transition.duration       = duration;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionReveal;
-    transition.subtype = kCATransitionFromBottom;
+    transition.type           = kCATransitionReveal;
+    transition.subtype        = kCATransitionFromBottom;
     [view.layer addAnimation:transition forKey:nil];
 }
 
@@ -189,44 +190,44 @@ static NSString * const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey"
 }
 
 + (void)rotateForever:(UIView *)view once:(CGFloat)once {
-    CABasicAnimation* rotationAnimation;
-    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotationAnimation.toValue = [NSNumber numberWithFloat:M_PI * 2.0] ;
-    rotationAnimation.duration = once ;
-    rotationAnimation.cumulative = YES;
-    rotationAnimation.repeatCount = MAXFLOAT;
-    rotationAnimation.removedOnCompletion = NO ;
-    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"] ;
+    CABasicAnimation *rotationAnimation;
+    rotationAnimation                     = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue             = [NSNumber numberWithFloat:M_PI * 2.0];
+    rotationAnimation.duration            = once;
+    rotationAnimation.cumulative          = YES;
+    rotationAnimation.repeatCount         = MAXFLOAT;
+    rotationAnimation.removedOnCompletion = NO;
+    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
 }
 
 + (void)rotateAndEnlarge:(UIView *)view {
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotationAnimation.toValue = [NSNumber numberWithFloat:(2 * M_PI) * 2];
-    rotationAnimation.duration = 0.55f;
-    rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    scaleAnimation.fromValue = [NSNumber numberWithFloat:0.0];
-    scaleAnimation.toValue = [NSNumber numberWithFloat:1.0];
-    scaleAnimation.duration = 0.55f;
-    scaleAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    
-    CAAnimationGroup *animationGroup = [CAAnimationGroup animation] ;
-    animationGroup.duration = 0.55f;
-    animationGroup.repeatCount = 1;
-    animationGroup.animations =[NSArray arrayWithObjects:rotationAnimation, scaleAnimation, nil];
+    rotationAnimation.toValue           = [NSNumber numberWithFloat:(2 * M_PI) * 2];
+    rotationAnimation.duration          = 0.55f;
+    rotationAnimation.timingFunction    = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    CABasicAnimation *scaleAnimation    = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    scaleAnimation.fromValue            = [NSNumber numberWithFloat:0.0];
+    scaleAnimation.toValue              = [NSNumber numberWithFloat:1.0];
+    scaleAnimation.duration             = 0.55f;
+    scaleAnimation.timingFunction       = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+
+    CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
+    animationGroup.duration          = 0.55f;
+    animationGroup.repeatCount       = 1;
+    animationGroup.animations        = [NSArray arrayWithObjects:rotationAnimation, scaleAnimation, nil];
     [view.layer addAnimation:animationGroup forKey:@"animationGroup"];
 }
 
 + (void)cradle:(UIView *)theView {
-    CAKeyframeAnimation * animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
-    float tempAngle = 0 * ( M_PI / 2 ) ;
-    animation.duration = 10.0f ;
-    float flex = 0.2 * ( M_PI / 2 ) ;
-    animation.values = @[ @(tempAngle), @(tempAngle - flex), @(tempAngle),@(tempAngle + flex), @(tempAngle) ];
-    animation.keyTimes = @[ @(0), @(0.25),@(0.5), @(0.75), @(1) ];
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    animation.repeatCount = FLT_MAX ;
-    [theView.layer addAnimation:animation forKey:@"turnRoundBackWithView"] ;
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation.z"];
+    float tempAngle                = 0 * (M_PI / 2);
+    animation.duration             = 10.0f;
+    float flex                     = 0.2 * (M_PI / 2);
+    animation.values               = @[ @(tempAngle), @(tempAngle - flex), @(tempAngle), @(tempAngle + flex), @(tempAngle) ];
+    animation.keyTimes             = @[ @(0), @(0.25), @(0.5), @(0.75), @(1) ];
+    animation.timingFunction       = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    animation.repeatCount          = FLT_MAX;
+    [theView.layer addAnimation:animation forKey:@"turnRoundBackWithView"];
 }
 
 #pragma mark - Private API

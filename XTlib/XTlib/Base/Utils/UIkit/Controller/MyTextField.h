@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface MyTextField : UITextField
 
-- (void)anyStyle ;
+- (void)anyStyle;
 
 @end
