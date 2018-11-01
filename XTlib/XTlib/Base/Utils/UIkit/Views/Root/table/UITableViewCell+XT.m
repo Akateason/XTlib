@@ -22,6 +22,7 @@ ASSOCIATED(xt_indexPath, setXt_indexPath, NSIndexPath *, OBJC_ASSOCIATION_RETAIN
 
 + (void)load {
     [self xt_swizzleMethod:@selector(initWithStyle:reuseIdentifier:) withMethod:@selector(xt_initWithStyle:reuseIdentifier:)] ;
+    [self xt_swizzleMethod:@selector(awakeFromNib) withMethod:@selector(xt_awakeFromNib)] ;
 }
 
 - (instancetype)xt_initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -29,6 +30,12 @@ ASSOCIATED(xt_indexPath, setXt_indexPath, NSIndexPath *, OBJC_ASSOCIATION_RETAIN
     
     [self xt_prepareUI] ;
     return self ;
+}
+
+- (void)xt_awakeFromNib {
+    [self xt_awakeFromNib] ;
+    
+    [self xt_prepareUI] ;
 }
 
 #pragma mark --

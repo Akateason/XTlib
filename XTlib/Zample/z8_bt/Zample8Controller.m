@@ -9,7 +9,7 @@
 #import "Zample8Controller.h"
 #import "SVProgressHUD.h"
 
-#import "UIButton+ExtendTouchRect.h"
+#import "UIButton+XT.h"
 #import "Z8CollectionViewController.h"
 #import "XTlib.h"
 
