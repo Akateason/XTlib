@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Masonry.h"
-#import "YYModel.h"
-#import "SVProgressHUD.h"
-#import <ReactiveObjC/ReactiveObjC.h>
-
+@import Masonry;
+@import YYModel;
+@import SVProgressHUD;
+@import ReactiveObjC;
 
 @interface RootCtrl : UIViewController
 

@@ -401,7 +401,7 @@
 		8F7C72BE2189A1260062000C /* UITableViewCell+XT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+XT.m"; sourceTree = "<group>"; };
 		8F7C72C02189A5F30062000C /* NSObject+XTRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+XTRuntime.h"; sourceTree = "<group>"; };
 		8F7C72C12189A5F30062000C /* NSObject+XTRuntime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XTRuntime.m"; sourceTree = "<group>"; };
-		8F81E2A020D1208A00782A90 /* XTlib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XTlib.podspec; sourceTree = "<group>"; };
+		8F81E2A020D1208A00782A90 /* XTlib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XTlib.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8F891785215DCD1700572B0A /* btBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btBase.png; sourceTree = "<group>"; };
 		8F891793215E303C00572B0A /* UITableView+XTReloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+XTReloader.h"; sourceTree = "<group>"; };
 		8F891794215E303C00572B0A /* UITableView+XTReloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+XTReloader.m"; sourceTree = "<group>"; };

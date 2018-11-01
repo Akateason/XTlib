@@ -7,7 +7,7 @@
 //  encapsulation of MJRefresh and CYLTableViewPlaceHolder .
 
 #import <UIKit/UIKit.h>
-#import "MJRefresh.h"
+@import MJRefresh ;
 
 NS_ASSUME_NONNULL_BEGIN
 

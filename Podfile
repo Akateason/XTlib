@@ -6,9 +6,10 @@ inhibit_all_warnings!
 
 target 'XTlib' do
 
-    pod 'XTFMDB'
-    pod 'XTReq'
-pod 'XTColor'
+pod 'XTFMDB', :path => '../XTFMDB/'
+pod 'XTReq', :path => '../XTReq/'
+pod 'XTColor',:path => '../XTColor/'
+
 pod 'AFNetworking'
 pod 'YYModel'
 pod 'ReactiveObjC'

@@ -5,7 +5,7 @@
 //---------------------------------------------------------------------//
 
 //#import "RootCtrl.h"
-#import "RxWebViewController.h"
+@import RxWebViewController ;
 
 
 @interface MyWebController : RxWebViewController

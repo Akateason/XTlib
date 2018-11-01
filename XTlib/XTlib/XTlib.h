@@ -56,13 +56,13 @@
 #import "UIAlertController+XTAddition.h"
 
 // DataBase
-#import "XTFMDB.h"
+@import XTFMDB ;
 
 // Color
-#import "XTColor.h"
+@import XTColor ;
 
 // Request
-#import "XTReq.h"
+@import XTReq ;
 
 // UIs
 //#import "XTZoomPicture.h"
