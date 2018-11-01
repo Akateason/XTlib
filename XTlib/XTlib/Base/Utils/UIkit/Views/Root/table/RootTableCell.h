@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@import Masonry ;
+#import <Masonry/Masonry.h>
 
 __attribute__((deprecated("Class RootTableCell is deprecated , use UITableViewCell+XT instead!!!")))
 
