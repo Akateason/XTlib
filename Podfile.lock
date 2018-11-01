@@ -175,10 +175,10 @@ PODS:
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
   - XTColor (1.0.3)
-  - XTFMDB (2.0.2):
+  - XTFMDB (2.0.3):
     - FMDB
     - YYModel
-  - XTReq (1.3.1):
+  - XTReq (1.3.2):
     - AFNetworking
     - SVProgressHUD
     - XTFMDB (> 2.0.0)
@@ -250,8 +250,8 @@ SPEC CHECKSUMS:
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
   XTColor: 20a00ebf30244cc0d4afa1025deb52715cdd1bd9
-  XTFMDB: 801cc5d6c6964857b1df016ad1d77813930b7164
-  XTReq: 7219d94a25709048a685befc0b2f73aa525e5ac4
+  XTFMDB: b30e1136947bccf0e32b0811833f7886c82a47dc
+  XTReq: 3428687434737ec642ea2ea6614a40699ade5e74
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 48219500fcae3f2fa2aea27b7ac8fccde118591d
