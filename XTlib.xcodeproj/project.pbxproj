@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AEE26206A285700DC5E7D /* GradientButton.m */; };
+		8F0BA806218A9B0900D692AF /* UIButton+XT.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0BA805218A9B0900D692AF /* UIButton+XT.m */; };
 		8F1511FF20C2503500FF125C /* MPTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1511FD20C2503400FF125C /* MPTestView.m */; };
 		8F19861E20C9632D0082662A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8F19861D20C9632D0082662A /* README.md */; };
 		8F220D7920AAD31500CC6271 /* MPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F220D7820AAD31500CC6271 /* MPTestVC.m */; };
@@ -76,8 +77,6 @@
 		8F2BFF7E203ED7390013394D /* NSObject+Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE97203ED7380013394D /* NSObject+Reflection.m */; };
 		8F2BFF80203ED7390013394D /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE9B203ED7380013394D /* NSString+Extend.m */; };
 		8F2BFF81203ED7390013394D /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE9D203ED7380013394D /* NSTimer+Addition.m */; };
-		8F2BFF82203ED7390013394D /* UIButton+Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE9F203ED7380013394D /* UIButton+Countdown.m */; };
-		8F2BFF83203ED7390013394D /* UIButton+ExtendTouchRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEA1203ED7380013394D /* UIButton+ExtendTouchRect.m */; };
 		8F2BFF84203ED7390013394D /* UIFont+FontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEA3203ED7380013394D /* UIFont+FontAdapter.m */; };
 		8F2BFF85203ED7390013394D /* UIImage+AddFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEA5203ED7380013394D /* UIImage+AddFunction.m */; };
 		8F2BFF86203ED7390013394D /* UIImageView+QNExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFEA7203ED7380013394D /* UIImageView+QNExtention.m */; };
@@ -168,6 +167,8 @@
 		393548A18FFA706486B3C132 /* Pods-XTlib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTlib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XTlib/Pods-XTlib.debug.xcconfig"; sourceTree = "<group>"; };
 		8F0AEE25206A285700DC5E7D /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
 		8F0AEE26206A285700DC5E7D /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
+		8F0BA804218A9B0900D692AF /* UIButton+XT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+XT.h"; sourceTree = "<group>"; };
+		8F0BA805218A9B0900D692AF /* UIButton+XT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+XT.m"; sourceTree = "<group>"; };
 		8F1511FD20C2503400FF125C /* MPTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTestView.m; sourceTree = "<group>"; };
 		8F1511FE20C2503400FF125C /* MPTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTestView.h; sourceTree = "<group>"; };
 		8F19861D20C9632D0082662A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -298,10 +299,6 @@
 		8F2BFE9B203ED7380013394D /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
 		8F2BFE9C203ED7380013394D /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
 		8F2BFE9D203ED7380013394D /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
-		8F2BFE9E203ED7380013394D /* UIButton+Countdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Countdown.h"; sourceTree = "<group>"; };
-		8F2BFE9F203ED7380013394D /* UIButton+Countdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Countdown.m"; sourceTree = "<group>"; };
-		8F2BFEA0203ED7380013394D /* UIButton+ExtendTouchRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ExtendTouchRect.h"; sourceTree = "<group>"; };
-		8F2BFEA1203ED7380013394D /* UIButton+ExtendTouchRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ExtendTouchRect.m"; sourceTree = "<group>"; };
 		8F2BFEA2203ED7380013394D /* UIFont+FontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontAdapter.h"; sourceTree = "<group>"; };
 		8F2BFEA3203ED7380013394D /* UIFont+FontAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontAdapter.m"; sourceTree = "<group>"; };
 		8F2BFEA4203ED7380013394D /* UIImage+AddFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AddFunction.h"; sourceTree = "<group>"; };
@@ -1225,12 +1222,10 @@
 				8F2BFEAB203ED7380013394D /* UIView+Sizes.m */,
 				8F2BFEAC203ED7380013394D /* UIView+XTAddition.h */,
 				8F2BFEAD203ED7380013394D /* UIView+XTAddition.m */,
-				8F2BFEA0203ED7380013394D /* UIButton+ExtendTouchRect.h */,
-				8F2BFEA1203ED7380013394D /* UIButton+ExtendTouchRect.m */,
-				8F2BFE9E203ED7380013394D /* UIButton+Countdown.h */,
-				8F2BFE9F203ED7380013394D /* UIButton+Countdown.m */,
 				8F2BFE8E203ED7380013394D /* ALAssetsLibrary+CustomPhotoAlbum.h */,
 				8F2BFE8F203ED7380013394D /* ALAssetsLibrary+CustomPhotoAlbum.m */,
+				8F0BA804218A9B0900D692AF /* UIButton+XT.h */,
+				8F0BA805218A9B0900D692AF /* UIButton+XT.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1563,6 +1558,7 @@
 				8FDE204A2059447D003B5398 /* UIViewController+XTAddition.m in Sources */,
 				8F2BFFBB203ED7390013394D /* Base64.m in Sources */,
 				8F2BFE33203ED7270013394D /* WPAttributedStyleAction.m in Sources */,
+				8F0BA806218A9B0900D692AF /* UIButton+XT.m in Sources */,
 				8F2BFFAF203ED7390013394D /* XTBarrageItemView.m in Sources */,
 				8F7C72C22189A5F30062000C /* NSObject+XTRuntime.m in Sources */,
 				8F2BFE34203ED7270013394D /* WPHotspotLabel.m in Sources */,
@@ -1610,7 +1606,6 @@
 				8F2BFF80203ED7390013394D /* NSString+Extend.m in Sources */,
 				8F2BFF95203ED7390013394D /* MyTabbarCtrller.m in Sources */,
 				8F2BFF7D203ED7390013394D /* NSNumber+Round.m in Sources */,
-				8F2BFF82203ED7390013394D /* UIButton+Countdown.m in Sources */,
 				8F2BFFBA203ED7390013394D /* XTZoomPicture.m in Sources */,
 				8F2BFF9B203ED7390013394D /* RootRefreshFooter.m in Sources */,
 				8F2BFF75203ED7390013394D /* Zample8Controller.m in Sources */,
@@ -1642,7 +1637,6 @@
 				8F2BFF7A203ED7390013394D /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				8F2BFE3E203ED7270013394D /* NSObject+MKBlockTimer.m in Sources */,
 				8F90244620EA1B40009A1B9C /* UIAlertController+XTAddition.m in Sources */,
-				8F2BFF83203ED7390013394D /* UIButton+ExtendTouchRect.m in Sources */,
 				8F2BFF7E203ED7390013394D /* NSObject+Reflection.m in Sources */,
 				8F2BFDC9203ED6AB0013394D /* AppDelegate.m in Sources */,
 				8F2BFE01203ED71D0013394D /* ServerRequest.m in Sources */,
