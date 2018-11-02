@@ -45,9 +45,14 @@ ASSOCIATED(xt_indexPath, setXt_indexPath, NSIndexPath *, OBJC_ASSOCIATION_RETAIN
 
 // Register from table
 + (void)xt_registerNibFromTable:(UITableView *)table {
-    NSString *clsName = NSStringFromClass([self class]);
-    [table registerNib:[UINib nibWithNibName:clsName bundle:nil] forCellReuseIdentifier:clsName];
+    [self xt_registerNibFromTable:table bundleOrNil:nil] ;
 }
+
++ (void)xt_registerNibFromTable:(UITableView *)table bundleOrNil:(NSBundle *)bundle {
+    NSString *clsName = NSStringFromClass([self class]);
+    [table registerNib:[UINib nibWithNibName:clsName bundle:bundle] forCellReuseIdentifier:clsName];
+}
+
 
 + (void)xt_registerClsFromTable:(UITableView *)table {
     [table registerClass:[self class] forCellReuseIdentifier:NSStringFromClass([self class])];
