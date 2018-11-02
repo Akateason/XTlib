@@ -126,7 +126,7 @@ static NSString *const kSeperateLine = @"/";
 @implementation UIView (XTNib)
 
 + (instancetype)xt_newFromNib {
-    return [self xt_newFromNib:[NSBundle mainBundle]] ;
+    return [self xt_newFromNibByBundle:[NSBundle mainBundle]] ;
 }
 
 + (instancetype)xt_newFromNibByBundle:(NSBundle *)bundle {
