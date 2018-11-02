@@ -130,6 +130,8 @@ static NSString *const kSeperateLine = @"/";
 }
 
 + (instancetype)xt_newFromNibByBundle:(NSBundle *)bundle {
-    return [[bundle loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] lastObject];
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([self class]) bundle:bundle] ;
+    return [[nib instantiateWithOwner:nil options:nil] firstObject] ;
 }
+
 @end
