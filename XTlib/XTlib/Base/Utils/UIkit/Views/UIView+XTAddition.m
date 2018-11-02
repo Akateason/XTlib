@@ -126,7 +126,10 @@ static NSString *const kSeperateLine = @"/";
 @implementation UIView (XTNib)
 
 + (instancetype)xt_newFromNib {
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] lastObject];
+    return [self xt_newFromNib:[NSBundle mainBundle]] ;
 }
 
++ (instancetype)xt_newFromNibByBundle:(NSBundle *)bundle {
+    return [[bundle loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] lastObject];
+}
 @end
