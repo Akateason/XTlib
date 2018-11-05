@@ -17,18 +17,15 @@
                       fail:(void (^)(void))fail {
     int random       = arc4random() % 100;
     NSString *urlStr = [NSString stringWithFormat:@"https://api.douban.com/v2/book/%@", @(1220562 + random)];
-    [XTRequest GETWithUrl:urlStr
-        parameters:nil
-        success:^(id json) {
-            if (success) {
-                success(json);
-            }
+    [XTRequest reqWithUrl:urlStr mode:XTRequestMode_GET_MODE header:nil parameters:nil rawBody:nil hud:NO success:^(id json, NSURLResponse *response) {
+        if (success) {
+            success(json);
         }
-        fail:^{
-            if (fail) {
-                fail();
-            }
-        }];
+    } fail:^(NSError *error) {
+        if (fail) {
+            fail();
+        }
+    }] ;
 }
 
 
@@ -37,19 +34,18 @@
                               success:(void (^)(id json))success
                                  fail:(void (^)(void))fail {
     XT_GET_PARAM
-        [param setObject:@(start)
+    [param setObject:@(start)
                   forKey:@"start"];
     [param setObject:@(count)
               forKey:@"count"];
 
-    [XTRequest GETWithUrl:@"https://api.douban.com/v2/movie/top250"
-        parameters:param
-        success:^(id json) {
-            if (success) success(json);
-        }
-        fail:^{
-            if (fail) fail();
-        }];
+    [XTRequest reqWithUrl:@"https://api.douban.com/v2/movie/top250" mode:XTRequestMode_GET_MODE header:nil parameters:param rawBody:nil hud:NO success:^(id json, NSURLResponse *response) {
+        if (success) success(json);
+
+    } fail:^(NSError *error) {
+        if (fail) fail();
+
+    }];
 }
 
 
@@ -57,12 +53,14 @@
                                 count:(NSInteger)count
                            completion:(XTReqSaveJudgment (^)(id json))completion {
     XT_GET_PARAM
-        [param setObject:@(start)
+    [param setObject:@(start)
                   forKey:@"start"];
     [param setObject:@(count)
               forKey:@"count"];
-
-    [XTCacheRequest cacheGET:@"https://api.douban.com/v2/movie/top250" header:nil parameters:param judgeResult:completion];
+    
+    [XTCacheRequest cachedReq:XTRequestMode_GET_MODE url:@"https://api.douban.com/v2/movie/top250" hud:NO header:nil param:param body:nil policy:XTReqPolicy_NeverCache_WaitReturn overTimeIfNeed:0 completion:^(BOOL isNewest, id json) {
+        completion(json) ;
+    }] ;
 }
 
 
@@ -70,18 +68,13 @@
                 success:(void (^)(id json))success
                    fail:(void (^)(void))fail {
     NSString *urlStr = [NSString stringWithFormat:@"https://api.douban.com/v2/book/%@", @(bookID)];
-    [XTRequest GETWithUrl:urlStr
-        parameters:nil
-        success:^(id json) {
-            if (success) {
-                success(json);
-            }
-        }
-        fail:^{
-            if (fail) {
-                fail();
-            }
-        }];
+    [XTRequest reqWithUrl:urlStr mode:XTRequestMode_GET_MODE header:nil parameters:nil rawBody:nil hud:NO success:^(id json, NSURLResponse *response) {
+        if (success) success(json);
+        
+    } fail:^(NSError *error) {
+        if (fail) fail();
+        
+    }];
 }
 
 
