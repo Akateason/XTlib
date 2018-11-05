@@ -31,22 +31,22 @@ Pod::Spec.new do |s|
 
 s.default_subspec = 'base'
 
-s.subspec 'util' do |util|
-util.source_files = "XTlib/XTlib","XTlib/XTlib/Base","XTlib/XTlib/Base/**/*.{h,m}","XTlib/XTlib/Base/**/**/*.{h,m}"
-util.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/Base/*.h","XTlib/XTlib/Base/header/*.h","XTlib/XTlib/Base/**/**/*.h"
-util.dependency "XTColor"
-util.dependency "ReactiveObjC"
-util.dependency "Masonry"
-util.dependency "SDWebImage"
-util.dependency "SSZipArchive"
-util.dependency "MJRefresh"
-util.dependency "Valet", "2.4.2"
-util.dependency "RxWebViewController"
-util.dependency "CYLTableViewPlaceHolder"
-util.dependency "FTPopOverMenu"
-util.dependency "YYModel"
-util.dependency "SVProgressHUD"
-end
+# s.subspec 'util' do |util|
+# util.source_files = "XTlib/XTlib","XTlib/XTlib/Base","XTlib/XTlib/Base/**/*.{h,m}","XTlib/XTlib/# Base/**/**/*.{h,m}"
+# util.public_header_files = "XTlib/XTlib/*.h","XTlib/XTlib/Base/*.h","XTlib/XTlib/Base/# header/*.h","XTlib/XTlib/Base/**/**/*.h"
+# util.dependency "XTColor"
+# util.dependency "ReactiveObjC"
+# util.dependency "Masonry"
+# util.dependency "SDWebImage"
+# util.dependency "SSZipArchive"
+# util.dependency "MJRefresh"
+# util.dependency "Valet", "2.4.2"
+# util.dependency "RxWebViewController"
+# util.dependency "CYLTableViewPlaceHolder"
+# util.dependency "FTPopOverMenu"
+# util.dependency "YYModel"
+# util.dependency "SVProgressHUD"
+# end
 
 s.subspec 'base' do |base|
     base.source_files = "XTlib/XTlib","XTlib/XTlib/Base","XTlib/XTlib/Base/**/*.{h,m}","XTlib/XTlib/Base/**/**/*.{h,m}"
