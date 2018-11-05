@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "XTlib"
-  s.version      = "1.5.13"
+  s.version      = "1.5.14"
   s.summary      = "a rapid develop lib for iOS"
   s.description  = "XTlib. a rapid develop lib for iOS ."
   s.homepage     = "https://github.com/Akateason/XTlib"
@@ -45,7 +45,7 @@ util.dependency "RxWebViewController"
 util.dependency "CYLTableViewPlaceHolder"
 util.dependency "FTPopOverMenu"
 util.dependency "YYModel"
-util.dependency  "SVProgressHUD"
+util.dependency "SVProgressHUD"
 end
 
 s.subspec 'base' do |base|
@@ -64,6 +64,7 @@ s.subspec 'base' do |base|
     base.dependency "CYLTableViewPlaceHolder"
     base.dependency "FTPopOverMenu"
     base.dependency "YYModel"
+    base.dependency "SVProgressHUD"
 end
 
 
