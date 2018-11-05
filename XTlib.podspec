@@ -44,6 +44,7 @@ util.dependency "Valet", "2.4.2"
 util.dependency "RxWebViewController"
 util.dependency "CYLTableViewPlaceHolder"
 util.dependency "FTPopOverMenu"
+util.dependency "YYModel"
 end
 
 s.subspec 'base' do |base|
@@ -61,6 +62,7 @@ s.subspec 'base' do |base|
     base.dependency "RxWebViewController"
     base.dependency "CYLTableViewPlaceHolder"
     base.dependency "FTPopOverMenu"
+    base.dependency "YYModel"
 end
 
 
