@@ -45,6 +45,7 @@ util.dependency "RxWebViewController"
 util.dependency "CYLTableViewPlaceHolder"
 util.dependency "FTPopOverMenu"
 util.dependency "YYModel"
+util.dependency  "SVProgressHUD"
 end
 
 s.subspec 'base' do |base|
