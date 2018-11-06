@@ -25,7 +25,7 @@
         if (fail) {
             fail();
         }
-    }] ;
+    }];
 }
 
 
@@ -34,7 +34,7 @@
                               success:(void (^)(id json))success
                                  fail:(void (^)(void))fail {
     XT_GET_PARAM
-    [param setObject:@(start)
+        [param setObject:@(start)
                   forKey:@"start"];
     [param setObject:@(count)
               forKey:@"count"];
@@ -53,14 +53,14 @@
                                 count:(NSInteger)count
                            completion:(XTReqSaveJudgment (^)(id json))completion {
     XT_GET_PARAM
-    [param setObject:@(start)
+        [param setObject:@(start)
                   forKey:@"start"];
     [param setObject:@(count)
               forKey:@"count"];
-    
+
     [XTCacheRequest cachedReq:XTRequestMode_GET_MODE url:@"https://api.douban.com/v2/movie/top250" hud:NO header:nil param:param body:nil policy:XTReqPolicy_NeverCache_WaitReturn overTimeIfNeed:0 completion:^(BOOL isNewest, id json) {
-        completion(json) ;
-    }] ;
+        completion(json);
+    }];
 }
 
 
@@ -70,10 +70,10 @@
     NSString *urlStr = [NSString stringWithFormat:@"https://api.douban.com/v2/book/%@", @(bookID)];
     [XTRequest reqWithUrl:urlStr mode:XTRequestMode_GET_MODE header:nil parameters:nil rawBody:nil hud:NO success:^(id json, NSURLResponse *response) {
         if (success) success(json);
-        
+
     } fail:^(NSError *error) {
         if (fail) fail();
-        
+
     }];
 }
 

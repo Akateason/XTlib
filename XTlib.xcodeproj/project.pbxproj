@@ -142,6 +142,8 @@
 		8FDE205220594950003B5398 /* NibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205020594950003B5398 /* NibVC.m */; };
 		8FDE205320594950003B5398 /* NibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE205120594950003B5398 /* NibVC.xib */; };
 		8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205620594EE3003B5398 /* XTSIAlertView.m */; };
+		8FEC13962191480100855A10 /* NSArray+XT.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEC13952191480100855A10 /* NSArray+XT.m */; };
+		8FEC13992191793000855A10 /* NSDictionary+XT.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEC13982191793000855A10 /* NSDictionary+XT.m */; };
 		F9572C89FB657E8622F3EAB6 /* Pods_XTlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABB4C18C49B72CEDEA8791D /* Pods_XTlib.framework */; };
 /* End PBXBuildFile section */
 
@@ -430,6 +432,10 @@
 		8FDE205120594950003B5398 /* NibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NibVC.xib; sourceTree = "<group>"; };
 		8FDE205520594EE3003B5398 /* XTSIAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTSIAlertView.h; sourceTree = "<group>"; };
 		8FDE205620594EE3003B5398 /* XTSIAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTSIAlertView.m; sourceTree = "<group>"; };
+		8FEC13942191480100855A10 /* NSArray+XT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+XT.h"; sourceTree = "<group>"; };
+		8FEC13952191480100855A10 /* NSArray+XT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XT.m"; sourceTree = "<group>"; };
+		8FEC13972191793000855A10 /* NSDictionary+XT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+XT.h"; sourceTree = "<group>"; };
+		8FEC13982191793000855A10 /* NSDictionary+XT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+XT.m"; sourceTree = "<group>"; };
 		BABB4C18C49B72CEDEA8791D /* Pods_XTlib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTlib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1166,6 +1172,10 @@
 				8F2BFE9B203ED7380013394D /* NSString+Extend.m */,
 				8F2BFE9C203ED7380013394D /* NSTimer+Addition.h */,
 				8F2BFE9D203ED7380013394D /* NSTimer+Addition.m */,
+				8FEC13972191793000855A10 /* NSDictionary+XT.h */,
+				8FEC13982191793000855A10 /* NSDictionary+XT.m */,
+				8FEC13942191480100855A10 /* NSArray+XT.h */,
+				8FEC13952191480100855A10 /* NSArray+XT.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1611,6 +1621,7 @@
 				8F2BFF75203ED7390013394D /* Zample8Controller.m in Sources */,
 				8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */,
 				8FA9D3B420C7B6D5005AFEDF /* RootCollectionCell.m in Sources */,
+				8FEC13962191480100855A10 /* NSArray+XT.m in Sources */,
 				8FDE205220594950003B5398 /* NibVC.m in Sources */,
 				8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */,
 				8F2BFF5E203ED7390013394D /* Z1CustomCell.m in Sources */,
@@ -1622,6 +1633,7 @@
 				8F2BFE37203ED7270013394D /* NSString+WPAttributedMarkup.m in Sources */,
 				8F2BFF6D203ED7390013394D /* Z5DisplayController.m in Sources */,
 				8F2BFFB9203ED7390013394D /* XTStretchSegment.m in Sources */,
+				8FEC13992191793000855A10 /* NSDictionary+XT.m in Sources */,
 				8FC8215320EA7DE90068AE5E /* AlertTestVC.m in Sources */,
 				8F2BFF81203ED7390013394D /* NSTimer+Addition.m in Sources */,
 				8F2BFF92203ED7390013394D /* MyNavCtrller.m in Sources */,

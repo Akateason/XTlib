@@ -17,7 +17,7 @@
 // regist
 + (void)xt_registerNibFromTable:(UITableView *)table;
 + (void)xt_registerNibFromTable:(UITableView *)table
-                    bundleOrNil:(NSBundle *)bundle ;
+                    bundleOrNil:(NSBundle *)bundle;
 
 + (void)xt_registerClsFromTable:(UITableView *)table;
 

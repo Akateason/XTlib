@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:NSDictionary+XT.m">
+   </FileRef>
+   <FileRef
       location = "group:XTlib.xcodeproj">
    </FileRef>
    <FileRef

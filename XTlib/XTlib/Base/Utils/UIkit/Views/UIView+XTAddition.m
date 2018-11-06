@@ -33,11 +33,9 @@
     NSArray *windows = [UIApplication sharedApplication].windows;
     for (UIWindow *window in [windows reverseObjectEnumerator]) {
         if ([window isKindOfClass:[UIWindow class]] &&
-            CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds))
-            ;
-        ;
-        ;
-        return window;
+            CGRectEqualToRect(window.bounds, [UIScreen mainScreen].bounds)) {
+            return window;
+        }
     }
     return nil;
 }
@@ -126,12 +124,12 @@ static NSString *const kSeperateLine = @"/";
 @implementation UIView (XTNib)
 
 + (instancetype)xt_newFromNib {
-    return [self xt_newFromNibByBundle:[NSBundle mainBundle]] ;
+    return [self xt_newFromNibByBundle:[NSBundle mainBundle]];
 }
 
 + (instancetype)xt_newFromNibByBundle:(NSBundle *)bundle {
-    UINib *nib = [UINib nibWithNibName:NSStringFromClass([self class]) bundle:bundle] ;
-    return [[nib instantiateWithOwner:nil options:nil] firstObject] ;
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([self class]) bundle:bundle];
+    return [[nib instantiateWithOwner:nil options:nil] firstObject];
 }
 
 @end

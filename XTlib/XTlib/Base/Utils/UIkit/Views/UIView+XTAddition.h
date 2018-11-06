@@ -39,6 +39,6 @@
 @interface UIView (XTNib)
 
 + (instancetype)xt_newFromNib;
-+ (instancetype)xt_newFromNibByBundle:(NSBundle *)bundle ;
++ (instancetype)xt_newFromNibByBundle:(NSBundle *)bundle;
 
 @end
