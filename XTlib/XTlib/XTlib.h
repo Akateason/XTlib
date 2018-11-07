@@ -54,6 +54,8 @@
 #import "UILabel+Calculate.h"
 #import "UILabel+Addition.h"
 #import "UIAlertController+XTAddition.h"
+#import "NSArray+XT.h"
+#import "NSDictionary+XT.h"
 
 // DataBase
 #import <XTFMDB/XTFMDB.h>
