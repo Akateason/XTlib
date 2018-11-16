@@ -17,7 +17,7 @@
                       fail:(void (^)(void))fail {
     int random       = arc4random() % 100;
     NSString *urlStr = [NSString stringWithFormat:@"https://api.douban.com/v2/book/%@", @(1220562 + random)];
-    
+
     [XTRequest reqWithUrl:urlStr mode:XTRequestMode_GET_MODE header:nil parameters:nil rawBody:nil hud:NO success:^(id json, NSURLResponse *response) {
         if (success) {
             success(json);
@@ -26,7 +26,7 @@
         if (fail) {
             fail();
         }
-    }] ;
+    }];
 }
 
 
