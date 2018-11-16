@@ -18,7 +18,7 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - IQKeyboardManager (6.2.0)
+  - FTPopOverMenu (2.0.1)
   - JKCategories (1.8):
     - JKCategories/CoreData (= 1.8)
     - JKCategories/CoreLocation (= 1.8)
@@ -174,11 +174,24 @@ PODS:
   - SVProgressHUD (2.2.5)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
+  - XTBase (0.0.2):
+    - CYLTableViewPlaceHolder
+    - FTPopOverMenu
+    - Masonry
+    - MJRefresh
+    - ReactiveObjC
+    - RxWebViewController
+    - SDWebImage
+    - SSZipArchive
+    - SVProgressHUD
+    - "UITableView+FDTemplateLayoutCell"
+    - Valet (= 2.4.2)
+    - YYModel
   - XTColor (1.0.3)
-  - XTFMDB (2.0.3):
+  - XTFMDB (2.0.5):
     - FMDB
     - YYModel
-  - XTReq (2.0.0):
+  - XTReq (2.0.4):
     - AFNetworking
     - SVProgressHUD
     - XTFMDB (> 2.0.0)
@@ -186,32 +199,19 @@ PODS:
   - YYModel (1.0.4)
 
 DEPENDENCIES:
-  - AFNetworking
-  - CYLTableViewPlaceHolder
-  - FMDB
-  - IQKeyboardManager
   - JKCategories
   - LxDBAnything
-  - Masonry
-  - MJRefresh
-  - ReactiveObjC
-  - RxWebViewController
-  - SDWebImage
-  - SSZipArchive
-  - SVProgressHUD
-  - "UITableView+FDTemplateLayoutCell"
-  - Valet (= 2.4.2)
+  - XTBase
   - XTColor
   - XTFMDB
   - XTReq
-  - YYModel
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - CYLTableViewPlaceHolder
     - FMDB
-    - IQKeyboardManager
+    - FTPopOverMenu
     - JKCategories
     - LxDBAnything
     - Masonry
@@ -223,6 +223,7 @@ SPEC REPOS:
     - SVProgressHUD
     - "UITableView+FDTemplateLayoutCell"
     - Valet
+    - XTBase
     - XTColor
     - XTFMDB
     - XTReq
@@ -232,7 +233,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CYLTableViewPlaceHolder: 678e070180a24e2f241adc7830d5d7f5e2abbaa5
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  FTPopOverMenu: 7b076d7b3ae615f575c22b7ce85258a56370b99e
   JKCategories: b62b30694ebe6d9fe5520b54ba250015dabd6dae
   LxDBAnything: 154a2ad1ae32e70355d886b5443260543bb60c71
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -244,11 +245,12 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
+  XTBase: cf503a3a2b25d5b979c84efb7938a55af142bcdc
   XTColor: 77dc1fb053ad58e6821d7de84fabbec361402d94
-  XTFMDB: e90ad2deda58b2b1105002d3d746a19243f7bd41
-  XTReq: 1f7439b385056d8c3ec3fa4f198a46f2d29519bd
+  XTFMDB: c22446d1eeb347974fb579bd9284c9b48a6d4410
+  XTReq: 4585e45a443cd4a07d0df3fa7745074edc1d2be6
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: d8f01721290a1f1060570ab33ecd377e2af2ab01
+PODFILE CHECKSUM: 48d1d399bdce7d7a77f13124bee79fc435c3be35
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

@@ -14,6 +14,7 @@
 #import "MyWebController.h"
 #import "XTlib.h"
 #import "ServerRequest.h"
+#import <XTBase/MyWebController.h>
 
 static const NSInteger kEveryCount = 10;
 

@@ -37,13 +37,13 @@
 
     // 方法2
     [XTRequest downLoadFileWithSavePath:XT_DOCUMENTS_PATH_TRAIL_(@"test2") fromUrlString:urlStr header:@{ @"Cookie" : @"shimo_dev_sid=s%3A1F6uUxbCD4mk4a4yQ1GWn66kUliPiVp7.%2FfsvAGZzTpviU%2BXQTJKYVjXMi96UhY5ZVOMN%2FeGbSks" } downLoadProgress:^(float progressVal) {
-
-    } success:^(id response, id dataFile) {
+        
+    } success:^(NSURLResponse *response, id dataFile) {
         UIImage *image         = [UIImage imageWithData:dataFile];
         _bottomImageView.image = image;
-    } fail:^(NSError *error){
-
-    }];
+    } failure:^(NSURLSessionDownloadTask *task, NSError *error) {
+        
+    }] ;            
 }
 
 
