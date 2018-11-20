@@ -6,7 +6,7 @@
 //  Copyright © 2016年 teason. All rights reserved.
 //
 
-#import "RootTableView.h"
+#import <XTBase/RootTableView.h>
 
 
 @interface CenterTableView : RootTableView
