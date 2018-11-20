@@ -174,7 +174,7 @@ PODS:
   - SVProgressHUD (2.2.5)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (0.0.2):
+  - XTBase (0.0.3):
     - CYLTableViewPlaceHolder
     - FTPopOverMenu
     - Masonry
@@ -245,12 +245,12 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: cf503a3a2b25d5b979c84efb7938a55af142bcdc
+  XTBase: a4ad32eadf3863466920ec9f5c03654baf17accf
   XTColor: 77dc1fb053ad58e6821d7de84fabbec361402d94
   XTFMDB: c22446d1eeb347974fb579bd9284c9b48a6d4410
   XTReq: 4585e45a443cd4a07d0df3fa7745074edc1d2be6
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 48d1d399bdce7d7a77f13124bee79fc435c3be35
+PODFILE CHECKSUM: 5c31aafc4e5e43f6954cd1d2345e418e92ed0b83
 
 COCOAPODS: 1.5.3
