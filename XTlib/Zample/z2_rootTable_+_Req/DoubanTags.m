@@ -7,8 +7,14 @@
 //
 
 #import "DoubanTags.h"
+#import <XTBase/XTBase.h>
 
 
 @implementation DoubanTags
+
+XT_encodeWithCoderRuntimeCls(DoubanTags);
+
+XT_initWithCoderRuntimeCls(DoubanTags);
+
 
 @end
