@@ -174,7 +174,7 @@ PODS:
   - SVProgressHUD (2.2.5)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (0.0.3):
+  - XTBase (0.0.5):
     - CYLTableViewPlaceHolder
     - FTPopOverMenu
     - Masonry
@@ -201,7 +201,7 @@ PODS:
 DEPENDENCIES:
   - JKCategories
   - LxDBAnything
-  - XTBase (from `../XTBase/`)
+  - XTBase
   - XTColor (from `../XTColor/`)
   - XTFMDB (from `../XTFMDB/`)
   - XTReq (from `../XTReq/`)
@@ -223,11 +223,10 @@ SPEC REPOS:
     - SVProgressHUD
     - "UITableView+FDTemplateLayoutCell"
     - Valet
+    - XTBase
     - YYModel
 
 EXTERNAL SOURCES:
-  XTBase:
-    :path: "../XTBase/"
   XTColor:
     :path: "../XTColor/"
   XTFMDB:
@@ -251,12 +250,12 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: f97d00ea8549bf9feca868c3cd1894bc6c02ef62
+  XTBase: 4c028fbd193f728b9669ffc63569686930f62459
   XTColor: 20a00ebf30244cc0d4afa1025deb52715cdd1bd9
   XTFMDB: 0906c2f6221a746ebe4a3b3d3f0c35ee9acf2b17
   XTReq: cba319f0eeb53ccc0e16c933a02bab7a026f9a38
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 2af1bbf8da4bfc4b4b664a1aad58a596aaa2e779
+PODFILE CHECKSUM: 764fd0c3cb2f81e0065b9654db1524c4b01989af
 
 COCOAPODS: 1.5.3
