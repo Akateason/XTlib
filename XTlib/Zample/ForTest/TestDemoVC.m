@@ -31,7 +31,6 @@
 
     NSOperationQueue *queue           = [[NSOperationQueue alloc] init];
     queue.maxConcurrentOperationCount = 10;
-
     for (int i = 0; i < 200; i++) {
         NSNumber *number = [NSNumber numberWithInt:i];
         [queue addOperationWithBlock:^{
