@@ -35,6 +35,8 @@
     // Override point for customization after application launch.
     [XTlibConfig sharedInstance].isDebug = YES;
 
+    NSLog(@"525252343") ;
+    
     // nav
     [self navStyle];
 
