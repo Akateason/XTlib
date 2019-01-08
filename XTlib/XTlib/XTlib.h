@@ -12,7 +12,6 @@
 
 // Base
 #import <XTBase/XTBase.h>
-#import <XTBase/RootCtrl.h>
 
 // UIs
 //#import "XTZoomPicture.h"

@@ -172,9 +172,10 @@ PODS:
   - SDWebImage/Core (4.4.3)
   - SSZipArchive (2.1.4)
   - SVProgressHUD (2.2.5)
+  - UIFontWDCustomLoader (0.1.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (0.0.11):
+  - XTBase (0.1.4):
     - CYLTableViewPlaceHolder
     - FTPopOverMenu
     - Masonry
@@ -184,6 +185,7 @@ PODS:
     - SDWebImage
     - SSZipArchive
     - SVProgressHUD
+    - UIFontWDCustomLoader
     - "UITableView+FDTemplateLayoutCell"
     - Valet (= 2.4.2)
     - YYModel
@@ -221,6 +223,7 @@ SPEC REPOS:
     - SDWebImage
     - SSZipArchive
     - SVProgressHUD
+    - UIFontWDCustomLoader
     - "UITableView+FDTemplateLayoutCell"
     - Valet
     - YYModel
@@ -249,9 +252,10 @@ SPEC CHECKSUMS:
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  UIFontWDCustomLoader: 233f0f83e543b8f24a6299d7fc773be9d704fe22
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: dff7b0973e0ce20afc038008021c1a85f11a7aa9
+  XTBase: 17333d377d6c83a2fdd5840b7ced4f12f473d0ba
   XTColor: 20a00ebf30244cc0d4afa1025deb52715cdd1bd9
   XTFMDB: 0906c2f6221a746ebe4a3b3d3f0c35ee9acf2b17
   XTReq: 0c1764a088745d0fcbfb4d092bfc4eed22b40ef0
