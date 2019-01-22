@@ -59,7 +59,7 @@
     self.wholeWid     = size.width;
 
     self.dataList     = datalist;
-    imgBg             = imgBg ?: [UIImage imageNamed:@"btBase"];
+    imgBg             = imgBg ?: [UIImage imageNamed:@"btBase" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil];
     imgBg             = [imgBg imageWithTintColor:imgColor ?: selectColor];
     self.imgBG_sel    = imgBg;
     self.normalColor  = normalColor;
