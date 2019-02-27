@@ -92,6 +92,17 @@
 		8FA9D3B620C7BCAC005AFEDF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9D3B520C7BCAC005AFEDF /* Podfile */; };
 		8FA9D3C020C7E422005AFEDF /* DesignableInspectableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9D3BF20C7E422005AFEDF /* DesignableInspectableVC.m */; };
 		8FC8215320EA7DE90068AE5E /* AlertTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC8215220EA7DE90068AE5E /* AlertTestVC.m */; };
+		8FD71E0C2225553200B5420F /* XTPAConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E0B2225553200B5420F /* XTPAConfig.m */; };
+		8FD71E0F2225555E00B5420F /* XTPhotoAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E0E2225555E00B5420F /* XTPhotoAlbumVC.m */; };
+		8FD71E122225561000B5420F /* XTPAPreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E112225561000B5420F /* XTPAPreviewVC.m */; };
+		8FD71E152225562900B5420F /* XTPACameraGroupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E142225562900B5420F /* XTPACameraGroupVC.m */; };
+		8FD71E182225564100B5420F /* XTPACropImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E172225564100B5420F /* XTPACropImageVC.m */; };
+		8FD71E1C2226386F00B5420F /* XTPACameraGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E1A2226386F00B5420F /* XTPACameraGroupCell.m */; };
+		8FD71E1D2226386F00B5420F /* XTPACameraGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD71E1B2226386F00B5420F /* XTPACameraGroupCell.xib */; };
+		8FD71E2122263A6D00B5420F /* XTPAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E1F22263A6D00B5420F /* XTPAlbumCell.m */; };
+		8FD71E2222263A6D00B5420F /* XTPAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD71E2022263A6D00B5420F /* XTPAlbumCell.xib */; };
+		8FD71E2522266E6A00B5420F /* XTPATitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E2422266E6A00B5420F /* XTPATitleView.m */; };
+		8FD71E292226749400B5420F /* TestAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E282226749400B5420F /* TestAlbumVC.m */; };
 		8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE204D205948D2003B5398 /* CtrlHelpVC.m */; };
 		8FDE205220594950003B5398 /* NibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205020594950003B5398 /* NibVC.m */; };
 		8FDE205320594950003B5398 /* NibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE205120594950003B5398 /* NibVC.xib */; };
@@ -281,6 +292,26 @@
 		8FA9D3BF20C7E422005AFEDF /* DesignableInspectableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignableInspectableVC.m; sourceTree = "<group>"; };
 		8FC8215120EA7DE90068AE5E /* AlertTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertTestVC.h; sourceTree = "<group>"; };
 		8FC8215220EA7DE90068AE5E /* AlertTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertTestVC.m; sourceTree = "<group>"; };
+		8FD71E0A2225553200B5420F /* XTPAConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPAConfig.h; sourceTree = "<group>"; };
+		8FD71E0B2225553200B5420F /* XTPAConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPAConfig.m; sourceTree = "<group>"; };
+		8FD71E0D2225555E00B5420F /* XTPhotoAlbumVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPhotoAlbumVC.h; sourceTree = "<group>"; };
+		8FD71E0E2225555E00B5420F /* XTPhotoAlbumVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPhotoAlbumVC.m; sourceTree = "<group>"; };
+		8FD71E102225561000B5420F /* XTPAPreviewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPAPreviewVC.h; sourceTree = "<group>"; };
+		8FD71E112225561000B5420F /* XTPAPreviewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPAPreviewVC.m; sourceTree = "<group>"; };
+		8FD71E132225562900B5420F /* XTPACameraGroupVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPACameraGroupVC.h; sourceTree = "<group>"; };
+		8FD71E142225562900B5420F /* XTPACameraGroupVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPACameraGroupVC.m; sourceTree = "<group>"; };
+		8FD71E162225564100B5420F /* XTPACropImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPACropImageVC.h; sourceTree = "<group>"; };
+		8FD71E172225564100B5420F /* XTPACropImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPACropImageVC.m; sourceTree = "<group>"; };
+		8FD71E192226386F00B5420F /* XTPACameraGroupCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPACameraGroupCell.h; sourceTree = "<group>"; };
+		8FD71E1A2226386F00B5420F /* XTPACameraGroupCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPACameraGroupCell.m; sourceTree = "<group>"; };
+		8FD71E1B2226386F00B5420F /* XTPACameraGroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTPACameraGroupCell.xib; sourceTree = "<group>"; };
+		8FD71E1E22263A6D00B5420F /* XTPAlbumCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPAlbumCell.h; sourceTree = "<group>"; };
+		8FD71E1F22263A6D00B5420F /* XTPAlbumCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPAlbumCell.m; sourceTree = "<group>"; };
+		8FD71E2022263A6D00B5420F /* XTPAlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTPAlbumCell.xib; sourceTree = "<group>"; };
+		8FD71E2322266E6A00B5420F /* XTPATitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPATitleView.h; sourceTree = "<group>"; };
+		8FD71E2422266E6A00B5420F /* XTPATitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPATitleView.m; sourceTree = "<group>"; };
+		8FD71E272226749400B5420F /* TestAlbumVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAlbumVC.h; sourceTree = "<group>"; };
+		8FD71E282226749400B5420F /* TestAlbumVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAlbumVC.m; sourceTree = "<group>"; };
 		8FDE204C205948D2003B5398 /* CtrlHelpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CtrlHelpVC.h; sourceTree = "<group>"; };
 		8FDE204D205948D2003B5398 /* CtrlHelpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CtrlHelpVC.m; sourceTree = "<group>"; };
 		8FDE204F20594950003B5398 /* NibVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NibVC.h; sourceTree = "<group>"; };
@@ -555,6 +586,7 @@
 		8F2BFE44203ED7380013394D /* Zample */ = {
 			isa = PBXGroup;
 			children = (
+				8FD71E262226746300B5420F /* AlbumPicker */,
 				8F6400752148B1D50094024A /* ForTest */,
 				8FC8215020EA7DCB0068AE5E /* Alert */,
 				8FA9D3BD20C7E3EA005AFEDF /* Inspectable */,
@@ -724,6 +756,7 @@
 		8F2BFF02203ED7380013394D /* CustomUIs */ = {
 			isa = PBXGroup;
 			children = (
+				8FD71E052225541100B5420F /* XTPhotoAlbum */,
 				8F0AEE24206A285700DC5E7D /* GradientButton */,
 				8FDE205420594EB7003B5398 /* XTSIAlert */,
 				8F2BFF06203ED7380013394D /* ParallaxHeaderView */,
@@ -906,6 +939,72 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		8FD71E052225541100B5420F /* XTPhotoAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				8FD71E0A2225553200B5420F /* XTPAConfig.h */,
+				8FD71E0B2225553200B5420F /* XTPAConfig.m */,
+				8FD71E062225549700B5420F /* album */,
+				8FD71E08222554AD00B5420F /* preview */,
+				8FD71E07222554A000B5420F /* cameraGroup */,
+				8FD71E09222554BD00B5420F /* crop */,
+			);
+			path = XTPhotoAlbum;
+			sourceTree = "<group>";
+		};
+		8FD71E062225549700B5420F /* album */ = {
+			isa = PBXGroup;
+			children = (
+				8FD71E0D2225555E00B5420F /* XTPhotoAlbumVC.h */,
+				8FD71E0E2225555E00B5420F /* XTPhotoAlbumVC.m */,
+				8FD71E2322266E6A00B5420F /* XTPATitleView.h */,
+				8FD71E2422266E6A00B5420F /* XTPATitleView.m */,
+				8FD71E1E22263A6D00B5420F /* XTPAlbumCell.h */,
+				8FD71E1F22263A6D00B5420F /* XTPAlbumCell.m */,
+				8FD71E2022263A6D00B5420F /* XTPAlbumCell.xib */,
+			);
+			path = album;
+			sourceTree = "<group>";
+		};
+		8FD71E07222554A000B5420F /* cameraGroup */ = {
+			isa = PBXGroup;
+			children = (
+				8FD71E132225562900B5420F /* XTPACameraGroupVC.h */,
+				8FD71E142225562900B5420F /* XTPACameraGroupVC.m */,
+				8FD71E192226386F00B5420F /* XTPACameraGroupCell.h */,
+				8FD71E1A2226386F00B5420F /* XTPACameraGroupCell.m */,
+				8FD71E1B2226386F00B5420F /* XTPACameraGroupCell.xib */,
+			);
+			path = cameraGroup;
+			sourceTree = "<group>";
+		};
+		8FD71E08222554AD00B5420F /* preview */ = {
+			isa = PBXGroup;
+			children = (
+				8FD71E102225561000B5420F /* XTPAPreviewVC.h */,
+				8FD71E112225561000B5420F /* XTPAPreviewVC.m */,
+			);
+			path = preview;
+			sourceTree = "<group>";
+		};
+		8FD71E09222554BD00B5420F /* crop */ = {
+			isa = PBXGroup;
+			children = (
+				8FD71E162225564100B5420F /* XTPACropImageVC.h */,
+				8FD71E172225564100B5420F /* XTPACropImageVC.m */,
+			);
+			path = crop;
+			sourceTree = "<group>";
+		};
+		8FD71E262226746300B5420F /* AlbumPicker */ = {
+			isa = PBXGroup;
+			children = (
+				8FD71E272226749400B5420F /* TestAlbumVC.h */,
+				8FD71E282226749400B5420F /* TestAlbumVC.m */,
+			);
+			path = AlbumPicker;
+			sourceTree = "<group>";
+		};
 		8FDE204B205948B0003B5398 /* controllerHelp */ = {
 			isa = PBXGroup;
 			children = (
@@ -1036,12 +1135,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FA9D3B620C7BCAC005AFEDF /* Podfile in Resources */,
+				8FD71E1D2226386F00B5420F /* XTPACameraGroupCell.xib in Resources */,
 				8F2BFDD4203ED6AB0013394D /* LaunchScreen.storyboard in Resources */,
 				8F2BFE43203ED72E0013394D /* viewControllers.plist in Resources */,
 				8F2BFF73203ED7390013394D /* Z8CollectionViewCell.xib in Resources */,
 				8F81E2A120D1208A00782A90 /* XTlib.podspec in Resources */,
 				8F2BFDD1203ED6AB0013394D /* Assets.xcassets in Resources */,
 				8F2BFF6C203ED7390013394D /* Z5DisplayCell.xib in Resources */,
+				8FD71E2222263A6D00B5420F /* XTPAlbumCell.xib in Resources */,
 				8F2BFF70203ED7390013394D /* Z7LongView.xib in Resources */,
 				8F2BFDCF203ED6AB0013394D /* Main.storyboard in Resources */,
 				8F891786215DCD1700572B0A /* btBase.png in Resources */,
@@ -1154,20 +1255,25 @@
 				8F2BFF62203ED7390013394D /* Zample2Controller.m in Sources */,
 				8F2BFF65203ED7390013394D /* MovieCell.m in Sources */,
 				8F2BFF6F203ED7390013394D /* Zample6Controller.m in Sources */,
+				8FD71E122225561000B5420F /* XTPAPreviewVC.m in Sources */,
 				8F2BFF64203ED7390013394D /* Movie.m in Sources */,
 				8F2BFE41203ED7270013394D /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				8F2BFE36203ED7270013394D /* NSMutableString+TagReplace.m in Sources */,
 				8F2BFF74203ED7390013394D /* Z8CollectionViewController.m in Sources */,
+				8FD71E2122263A6D00B5420F /* XTPAlbumCell.m in Sources */,
 				8F2BFDCC203ED6AB0013394D /* ViewController.m in Sources */,
 				8F2BFE3A203ED7270013394D /* XHPathCover.m in Sources */,
 				8F2BFF71203ED7390013394D /* Zample7Controller.m in Sources */,
 				8F2BFE3C203ED7270013394D /* KeyBoardTopBar.m in Sources */,
 				8F6400782148B2030094024A /* TestDemoVC.m in Sources */,
+				8FD71E292226749400B5420F /* TestAlbumVC.m in Sources */,
 				8F2BFF5C203ED7390013394D /* RespoderChainViewController.m in Sources */,
 				8F2BFE35203ED7270013394D /* WPTappableLabel.m in Sources */,
 				8F2BFF61203ED7390013394D /* DoubanTagsCell.m in Sources */,
 				8F2BFFB4203ED7390013394D /* CenterTableView.m in Sources */,
+				8FD71E1C2226386F00B5420F /* XTPACameraGroupCell.m in Sources */,
 				8F80A41321ABF7F300FA720C /* TestSon.m in Sources */,
+				8FD71E0F2225555E00B5420F /* XTPhotoAlbumVC.m in Sources */,
 				8F2BFFB2203ED7390013394D /* XTlineSpaceLabel.m in Sources */,
 				8F2BFE33203ED7270013394D /* WPAttributedStyleAction.m in Sources */,
 				8F2BFFAF203ED7390013394D /* XTBarrageItemView.m in Sources */,
@@ -1181,6 +1287,7 @@
 				8F2BFF6B203ED7390013394D /* Z5DisplayCell.m in Sources */,
 				8F2BFF5B203ED7390013394D /* RCSubView.m in Sources */,
 				8F2BFF78203ED7390013394D /* MySon.m in Sources */,
+				8FD71E2522266E6A00B5420F /* XTPATitleView.m in Sources */,
 				8F2BFF5F203ED7390013394D /* Zample1Controller.m in Sources */,
 				8F2BFFB3203ED7390013394D /* XTLoopScrollView.m in Sources */,
 				8F2BFFB7203ED7390013394D /* XTNetReloader.m in Sources */,
@@ -1189,6 +1296,7 @@
 				8F2BFE38203ED7270013394D /* UIBarButtonItem+Badge.m in Sources */,
 				8F2BFDD7203ED6AB0013394D /* main.m in Sources */,
 				8F2BFE02203ED71D0013394D /* UserOnDevice.m in Sources */,
+				8FD71E182225564100B5420F /* XTPACropImageVC.m in Sources */,
 				8F2BFF68203ED7390013394D /* Zample3Controller.m in Sources */,
 				8F2BFF76203ED7390013394D /* Father.m in Sources */,
 				8F2BFF6A203ED7390013394D /* Model1.m in Sources */,
@@ -1209,9 +1317,11 @@
 				8F2BFE37203ED7270013394D /* NSString+WPAttributedMarkup.m in Sources */,
 				8F2BFF6D203ED7390013394D /* Z5DisplayController.m in Sources */,
 				8F2BFFB9203ED7390013394D /* XTStretchSegment.m in Sources */,
+				8FD71E152225562900B5420F /* XTPACameraGroupVC.m in Sources */,
 				8FC8215320EA7DE90068AE5E /* AlertTestVC.m in Sources */,
 				8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */,
 				8F2BFF69203ED7390013394D /* Zample4Controller.m in Sources */,
+				8FD71E0C2225553200B5420F /* XTPAConfig.m in Sources */,
 				8F220D7920AAD31500CC6271 /* MPTestVC.m in Sources */,
 				8F2BFFB0203ED7390013394D /* XTBarrageView.m in Sources */,
 				8F1511FF20C2503500FF125C /* MPTestView.m in Sources */,

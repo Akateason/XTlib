@@ -114,6 +114,14 @@
 				<key>isStory</key>
 				<true/>
 			</dict>
+			<dict>
+				<key>cname</key>
+				<string>TestAlbumVC</string>
+				<key>title</key>
+				<string>Album</string>
+				<key>isStory</key>
+				<true/>
+			</dict>
 		</array>
 	</dict>
 </array>
