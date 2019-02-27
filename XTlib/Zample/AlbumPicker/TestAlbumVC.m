@@ -9,9 +9,11 @@
 #import "TestAlbumVC.h"
 
 #import "XTPhotoAlbumVC.h"
+#import "XTCameraHandler.h"
+
 
 @interface TestAlbumVC ()
-
+@property (strong, nonatomic) XTCameraHandler *handler ;
 @end
 
 @implementation TestAlbumVC
@@ -29,7 +31,12 @@
 }
 
 - (IBAction)cameraOnClick:(id)sender {
-    
+    XTCameraHandler *handler = [[XTCameraHandler alloc] init] ;
+    [handler openCameraFromController:self takePhoto:^(UIImage *imageResult) {
+        
+        
+    }] ;
+    self.handler = handler ;
 }
 
 - (IBAction)sheetOnClick:(id)sender {
