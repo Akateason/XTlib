@@ -8,9 +8,11 @@
 
 #import "XTPACropImageVC.h"
 
+
 @interface XTPACropImageVC ()
 
 @end
+
 
 @implementation XTPACropImageVC
 

@@ -11,11 +11,13 @@
 #import <UIKit/UIKit.h>
 #import "XTlib.h"
 
-typedef void(^BlkGetCameraPhoto)(UIImage * _Nullable imageResult) ;
+typedef void (^BlkGetCameraPhoto)(UIImage *_Nullable imageResult);
 
 NS_ASSUME_NONNULL_BEGIN
+
+
 @interface XTCameraHandler : NSObject
-- (void)openCameraFromController:(UIViewController *)controller takePhoto:(BlkGetCameraPhoto)blk ;
+- (void)openCameraFromController:(UIViewController *)controller takePhoto:(BlkGetCameraPhoto)blk;
 @end
 
 NS_ASSUME_NONNULL_END

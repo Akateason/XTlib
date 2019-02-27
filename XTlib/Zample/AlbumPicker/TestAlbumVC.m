@@ -13,41 +13,39 @@
 
 
 @interface TestAlbumVC ()
-@property (strong, nonatomic) XTCameraHandler *handler ;
+@property (strong, nonatomic) XTCameraHandler *handler;
 @end
+
 
 @implementation TestAlbumVC
 
 - (IBAction)albumOnClick:(id)sender {
-    XTPAConfig *config = [[XTPAConfig alloc] init] ;
-    config.albumSelectedMaxCount = 10 ;
-    
+    XTPAConfig *config           = [[XTPAConfig alloc] init];
+    config.albumSelectedMaxCount = 10;
+
     [XTPhotoAlbumVC openAlbumWithConfig:config
                             fromCtrller:self
-                              getResult:^(NSArray<UIImage *> * _Nonnull imageList, NSArray<PHAsset *> * _Nonnull assetList) {
-        
-        
-    }] ;
+                              getResult:^(NSArray<UIImage *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList){
+
+
+                              }];
 }
 
 - (IBAction)cameraOnClick:(id)sender {
-    XTCameraHandler *handler = [[XTCameraHandler alloc] init] ;
-    [handler openCameraFromController:self takePhoto:^(UIImage *imageResult) {
-        
-        
-    }] ;
-    self.handler = handler ;
+    XTCameraHandler *handler = [[XTCameraHandler alloc] init];
+    [handler openCameraFromController:self takePhoto:^(UIImage *imageResult){
+
+
+    }];
+    self.handler = handler;
 }
 
 - (IBAction)sheetOnClick:(id)sender {
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
 }
 
 /*

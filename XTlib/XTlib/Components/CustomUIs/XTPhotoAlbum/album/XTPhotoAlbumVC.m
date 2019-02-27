@@ -14,27 +14,27 @@
 #import "XTPATitleView.h"
 
 
+@interface XTPhotoAlbumVC () <CHTCollectionViewDelegateWaterfallLayout, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, XTPACameraGroupVCDelegate>
+@property (strong, nonatomic) UICollectionView *collectionView;
+@property (nonatomic, strong) XTPACameraGroupVC *groupCtrller;
+@property (strong, nonatomic) XTPATitleView *btTitleView;
 
-@interface XTPhotoAlbumVC () <CHTCollectionViewDelegateWaterfallLayout,UICollectionViewDataSource,UICollectionViewDelegate,UINavigationControllerDelegate,XTPACameraGroupVCDelegate>
-@property (strong, nonatomic) UICollectionView         *collectionView ;
-@property (nonatomic, strong) XTPACameraGroupVC        *groupCtrller ;
-@property (strong, nonatomic) XTPATitleView            *btTitleView ;
+@property (strong, nonatomic) PHImageManager *manager;
+@property (strong, nonatomic) PHFetchResult *allPhotos;
+@property (nonatomic, strong) NSMutableArray *choosenImageList;
 
-@property (strong, nonatomic) PHImageManager           *manager ;
-@property (strong, nonatomic) PHFetchResult            *allPhotos ;
-@property (nonatomic, strong) NSMutableArray           *choosenImageList ;
-
-@property (strong, nonatomic) XTPAConfig               *configuration ;
-@property (copy, nonatomic) albumPickerGetImageListBlock blkGetResult ;
-@property (strong, nonatomic) UIBarButtonItem          *commitItem ;
+@property (strong, nonatomic) XTPAConfig *configuration;
+@property (copy, nonatomic) albumPickerGetImageListBlock blkGetResult;
+@property (strong, nonatomic) UIBarButtonItem *commitItem;
 @end
+
 
 @implementation XTPhotoAlbumVC
 
 - (instancetype)initWithConfig:(XTPAConfig *)config {
     self = [super init];
     if (self) {
-        _configuration = config ;
+        _configuration = config;
     }
     return self;
 }
@@ -42,29 +42,27 @@
 + (instancetype)openAlbumWithConfig:(XTPAConfig *)configuration
                         fromCtrller:(UIViewController *)fromVC
                           getResult:(albumPickerGetImageListBlock)resultBlk {
-    
-    XTPhotoAlbumVC *albumVC = [[XTPhotoAlbumVC alloc] initWithConfig:configuration] ;
-    albumVC.blkGetResult = resultBlk ;
-    [fromVC.navigationController pushViewController:albumVC animated:YES] ;
-    return albumVC ;
+    XTPhotoAlbumVC *albumVC = [[XTPhotoAlbumVC alloc] initWithConfig:configuration];
+    albumVC.blkGetResult    = resultBlk;
+    [fromVC.navigationController pushViewController:albumVC animated:YES];
+    return albumVC;
 }
 
 - (void)exportResult {
-    
-    if (self.configuration.albumSelectedMaxCount > 20) [SVProgressHUD show] ;
-    
+    if (self.configuration.albumSelectedMaxCount > 20) [SVProgressHUD show];
+
     // result assets
-    NSMutableArray *resultAssets = [@[] mutableCopy] ;
+    NSMutableArray *resultAssets = [@[] mutableCopy];
     for (NSNumber *number in self.choosenImageList) {
-        PHAsset *photoAsset = self.allPhotos[[number intValue]] ;
-        [resultAssets addObject:photoAsset] ;
+        PHAsset *photoAsset = self.allPhotos[[number intValue]];
+        [resultAssets addObject:photoAsset];
     }
-    
+
     // result images
-    NSMutableArray *images = [NSMutableArray arrayWithCapacity:[resultAssets count]];
-    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init] ;
-    options.resizeMode = PHImageRequestOptionsResizeModeFast;
-    options.synchronous = YES ;
+    NSMutableArray *images         = [NSMutableArray arrayWithCapacity:[resultAssets count]];
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    options.resizeMode             = PHImageRequestOptionsResizeModeFast;
+    options.synchronous            = YES;
     for (PHAsset *asset in resultAssets) {
         [self.manager requestImageForAsset:asset
                                 targetSize:PHImageManagerMaximumSize
@@ -72,12 +70,12 @@
                                    options:options
                              resultHandler:^void(UIImage *image, NSDictionary *info) {
                                  [images addObject:image];
-                             }] ;
+                             }];
     }
-    
-    if (self.configuration.albumSelectedMaxCount > 20) [SVProgressHUD dismiss] ;
-    
-    self.blkGetResult(images, resultAssets) ;
+
+    if (self.configuration.albumSelectedMaxCount > 20) [SVProgressHUD dismiss];
+
+    self.blkGetResult(images, resultAssets);
 }
 
 
@@ -85,33 +83,33 @@
 
 - (PHImageManager *)manager {
     if (!_manager) {
-        _manager = [PHImageManager defaultManager] ;
+        _manager = [PHImageManager defaultManager];
     }
-    return _manager ;
+    return _manager;
 }
 
 - (XTPACameraGroupVC *)groupCtrller {
     if (!_groupCtrller) {
-        _groupCtrller = [[XTPACameraGroupVC alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, APP_HEIGHT - APP_NAVIGATIONBAR_HEIGHT - APP_STATUSBAR_HEIGHT)] ;
-        _groupCtrller.delegate = self ;
+        _groupCtrller          = [[XTPACameraGroupVC alloc] initWithFrame:CGRectMake(0, 0, APP_WIDTH, APP_HEIGHT - APP_NAVIGATIONBAR_HEIGHT - APP_STATUSBAR_HEIGHT)];
+        _groupCtrller.delegate = self;
     }
-    return _groupCtrller ;
+    return _groupCtrller;
 }
 
 - (NSMutableArray *)choosenImageList {
     if (!_choosenImageList) {
-        _choosenImageList = [@[] mutableCopy] ;
+        _choosenImageList = [@[] mutableCopy];
     }
-    return _choosenImageList ;
+    return _choosenImageList;
 }
 
-- (XTPATitleView *)btTitleView{
-    if(!_btTitleView){
+- (XTPATitleView *)btTitleView {
+    if (!_btTitleView) {
         _btTitleView = ({
-            XTPATitleView * object = [[XTPATitleView alloc]init];
-            [object setTitleColor:self.configuration.tintColor forState:0] ;
-            [object addTarget:self action:@selector(btTitleOnClick) forControlEvents:UIControlEventTouchUpInside] ;
-            self.navigationItem.titleView = object ;
+            XTPATitleView *object = [[XTPATitleView alloc] init];
+            [object setTitleColor:self.configuration.tintColor forState:0];
+            [object addTarget:self action:@selector(btTitleOnClick) forControlEvents:UIControlEventTouchUpInside];
+            self.navigationItem.titleView = object;
             object;
         });
     }
@@ -119,48 +117,48 @@
 }
 
 - (void)btTitleOnClick {
-    [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view] ;
+    [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view];
 }
 
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
-        int kCOLUMN_NUMBER = self.configuration.albumColumnCount ;
-        float kCOLUMN_FLEX = self.configuration.albumItemFlex ;
-        
-        CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init] ;
-        layout.columnCount = kCOLUMN_NUMBER ;
-        layout.sectionInset = UIEdgeInsetsMake(kCOLUMN_FLEX, kCOLUMN_FLEX, kCOLUMN_FLEX, kCOLUMN_FLEX) ;
-        layout.minimumColumnSpacing = kCOLUMN_FLEX ;
-        layout.minimumInteritemSpacing = kCOLUMN_FLEX ;
-        
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout] ;
-        UINib *nib = [UINib nibWithNibName:identifierAlbumnCell bundle:[NSBundle bundleForClass:XTPAlbumCell.class]] ;
+        int kCOLUMN_NUMBER = self.configuration.albumColumnCount;
+        float kCOLUMN_FLEX = self.configuration.albumItemFlex;
+
+        CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
+        layout.columnCount                       = kCOLUMN_NUMBER;
+        layout.sectionInset                      = UIEdgeInsetsMake(kCOLUMN_FLEX, kCOLUMN_FLEX, kCOLUMN_FLEX, kCOLUMN_FLEX);
+        layout.minimumColumnSpacing              = kCOLUMN_FLEX;
+        layout.minimumInteritemSpacing           = kCOLUMN_FLEX;
+
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        UINib *nib      = [UINib nibWithNibName:identifierAlbumnCell bundle:[NSBundle bundleForClass:XTPAlbumCell.class]];
         [_collectionView registerNib:nib
-          forCellWithReuseIdentifier:identifierAlbumnCell] ;
-        
-        _collectionView.delegate = self ;
-        _collectionView.dataSource = self ;
-        _collectionView.backgroundColor = [UIColor whiteColor] ;
+            forCellWithReuseIdentifier:identifierAlbumnCell];
+
+        _collectionView.delegate        = self;
+        _collectionView.dataSource      = self;
+        _collectionView.backgroundColor = [UIColor whiteColor];
         if (![_collectionView superview]) {
-            [self.view addSubview:_collectionView] ;
+            [self.view addSubview:_collectionView];
             [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.left.right.equalTo(self.view) ;
-                make.bottom.equalTo(self.view) ;
-            }] ;
+                make.top.left.right.equalTo(self.view);
+                make.bottom.equalTo(self.view);
+            }];
         }
     }
-    
-    return _collectionView ;
+
+    return _collectionView;
 }
 
-- (UIBarButtonItem *)commitItem{
-    if(!_commitItem){
+- (UIBarButtonItem *)commitItem {
+    if (!_commitItem) {
         _commitItem = ({
-            UIBarButtonItem * object = [[UIBarButtonItem alloc] initWithTitle:@"确定(0)"
-                                                                        style:(UIBarButtonItemStylePlain)
-                                                                       target:self
-                                                                       action:@selector(commitOnClick)];
-            object.tintColor = self.configuration.tintColor ;
+            UIBarButtonItem *object = [[UIBarButtonItem alloc] initWithTitle:@"确定(0)"
+                                                                       style:(UIBarButtonItemStylePlain)
+                                                                      target:self
+                                                                      action:@selector(commitOnClick)];
+            object.tintColor = self.configuration.tintColor;
             object;
         });
     }
@@ -168,167 +166,166 @@
 }
 
 - (void)commitOnClick {
-    [self exportResult] ;
+    [self exportResult];
 }
 
 #pragma mark - life
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self collectionView] ;
-    
-    if (!self.configuration.isSingleChoosenMode) self.navigationItem.rightBarButtonItem = self.commitItem ;    
-    
-    [self.btTitleView setTitle:@"相机胶卷" forState:0] ;
-    [self.btTitleView xt_setImagePosition:XTBtImagePositionRight spacing:6] ;
-    
+
+    [self collectionView];
+
+    if (!self.configuration.isSingleChoosenMode) self.navigationItem.rightBarButtonItem = self.commitItem;
+
+    [self.btTitleView setTitle:@"相机胶卷" forState:0];
+    [self.btTitleView xt_setImagePosition:XTBtImagePositionRight spacing:6];
+
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         if (status == PHAuthorizationStatusAuthorized) {
             // 用户同意授权
-            [self firstLoadAllPhotos] ;
+            [self firstLoadAllPhotos];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.collectionView reloadData] ;
-            }) ;
+                [self.collectionView reloadData];
+            });
         }
         else {
             // 用户拒绝授权
         }
-    }] ;
-    
-    [self firstLoadAllPhotos] ;
+    }];
+
+    [self firstLoadAllPhotos];
 }
 
 - (void)firstLoadAllPhotos {
-    if (self.allPhotos.count) return ;
-    
-    PHFetchOptions *allPhotosOptions = [[PHFetchOptions alloc] init] ;
+    if (self.allPhotos.count) return;
+
+    PHFetchOptions *allPhotosOptions = [[PHFetchOptions alloc] init];
     // 只取图片
-    allPhotosOptions.predicate = [NSPredicate predicateWithFormat:@"mediaType == %d",PHAssetMediaTypeImage] ;
+    allPhotosOptions.predicate = [NSPredicate predicateWithFormat:@"mediaType == %d", PHAssetMediaTypeImage];
     // 按时间排序
-    allPhotosOptions.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]] ;
+    allPhotosOptions.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO] ];
     // 获取图片
-    PHFetchResult *allPhotos = [PHAsset fetchAssetsWithOptions:allPhotosOptions] ;
-    self.allPhotos = allPhotos ;
+    PHFetchResult *allPhotos = [PHAsset fetchAssetsWithOptions:allPhotosOptions];
+    self.allPhotos           = allPhotos;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
 
 #pragma mark - Function .
 
 - (void)showImgAssetsInGroup:(PHAssetCollection *)group {
-    PHFetchOptions *options = [[PHFetchOptions alloc] init] ;
-    options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]] ;
-    
+    PHFetchOptions *options = [[PHFetchOptions alloc] init];
+    options.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO] ];
+
     PHFetchResult *fetchResult = [PHAsset fetchAssetsInAssetCollection:group options:options];
-    self.allPhotos = fetchResult ;
+    self.allPhotos             = fetchResult;
 }
 
 - (CGSize)getAlbumCellSize {
-    float collectionSlider = ( APPFRAME.size.width - self.configuration.albumItemFlex * ((float)self.configuration.albumColumnCount + 1) ) / (float)self.configuration.albumColumnCount ;
-    return CGSizeMake(collectionSlider, collectionSlider) ;
+    float collectionSlider = (APPFRAME.size.width - self.configuration.albumItemFlex * ((float)self.configuration.albumColumnCount + 1)) / (float)self.configuration.albumColumnCount;
+    return CGSizeMake(collectionSlider, collectionSlider);
 }
 
 #pragma mark - Multy Picture selected
 
 - (BOOL)thisPhotoIsSelectedWithRow:(NSInteger)row {
-    __block BOOL bHas = NO ;
-    [self.choosenImageList enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL * _Nonnull stop) {
-        int selectedRow = [self.choosenImageList[idx] intValue] ;
+    __block BOOL bHas = NO;
+    [self.choosenImageList enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL *_Nonnull stop) {
+        int selectedRow = [self.choosenImageList[idx] intValue];
         if (selectedRow == row) {
-            bHas = YES ;
-            *stop = YES  ;
+            bHas  = YES;
+            *stop = YES;
         }
-    }] ;
-    return bHas ;
+    }];
+    return bHas;
 }
 
 #pragma mark - collection dataSourse
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1 ;
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.allPhotos.count ;
+    return self.allPhotos.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger row = indexPath.row ;
-    XTPAlbumCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierAlbumnCell forIndexPath:indexPath] ;
-    cell.picSelected = [self thisPhotoIsSelectedWithRow:row] ;
-    cell.isSingleChoosenMode = self.configuration.isSingleChoosenMode ;
-    return cell ;
+    NSInteger row            = indexPath.row;
+    XTPAlbumCell *cell       = [collectionView dequeueReusableCellWithReuseIdentifier:identifierAlbumnCell forIndexPath:indexPath];
+    cell.picSelected         = [self thisPhotoIsSelectedWithRow:row];
+    cell.isSingleChoosenMode = self.configuration.isSingleChoosenMode;
+    return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(XTPAlbumCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger row = indexPath.row ;
-    PHAsset *photo = [self.allPhotos objectAtIndex:row] ;
+    NSInteger row  = indexPath.row;
+    PHAsset *photo = [self.allPhotos objectAtIndex:row];
     [self.manager requestImageForAsset:photo
                             targetSize:[self getAlbumCellSize]
                            contentMode:PHImageContentModeAspectFill
                                options:nil
                          resultHandler:^(UIImage *result, NSDictionary *info) {
                              if (result) {
-                                 cell.img.image = result ;
+                                 cell.img.image = result;
                              }
-                         }] ;
+                         }];
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [self getAlbumCellSize] ;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return [self getAlbumCellSize];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger row = indexPath.row ;
+    NSInteger row = indexPath.row;
     if (self.configuration.isSingleChoosenMode) {
-        NSNumber *numRow = [NSNumber numberWithInteger:row] ;
-        [self.choosenImageList addObject:numRow] ;
-        [self exportResult] ;
+        NSNumber *numRow = [NSNumber numberWithInteger:row];
+        [self.choosenImageList addObject:numRow];
+        [self exportResult];
     }
     else {
-        [self multyPhotosChoosenWithIndexPath:indexPath] ;
+        [self multyPhotosChoosenWithIndexPath:indexPath];
     }
 }
 
 - (void)multyPhotosChoosenWithIndexPath:(NSIndexPath *)indexPath {
-    NSInteger row = indexPath.row ;
-    NSNumber *numRow = [NSNumber numberWithInteger:row] ;
-    
+    NSInteger row    = indexPath.row;
+    NSNumber *numRow = [NSNumber numberWithInteger:row];
+
     if ([self thisPhotoIsSelectedWithRow:row]) {
-        [self.choosenImageList removeObject:numRow] ;
+        [self.choosenImageList removeObject:numRow];
     }
     else {
-        int maxCount = self.configuration.albumSelectedMaxCount ;
+        int maxCount = self.configuration.albumSelectedMaxCount;
         if (self.choosenImageList.count >= maxCount) {
-            [SVProgressHUD showErrorWithStatus:@"超过最大图片数"] ;
-            NSLog(@"%d 超过最大图片数",maxCount) ;
-            return ;
+            [SVProgressHUD showErrorWithStatus:@"超过最大图片数"];
+            NSLog(@"%d 超过最大图片数", maxCount);
+            return;
         }
-        [self.choosenImageList addObject:numRow] ;
+        [self.choosenImageList addObject:numRow];
     }
-    [self.collectionView reloadItemsAtIndexPaths:@[indexPath]] ;
-    
+    [self.collectionView reloadItemsAtIndexPaths:@[ indexPath ]];
+
     if (!self.configuration.isSingleChoosenMode) {
-        self.commitItem.title = STR_FORMAT(@"确定(%lu)",(unsigned long)self.choosenImageList.count) ;
+        self.commitItem.title = STR_FORMAT(@"确定(%lu)", (unsigned long)self.choosenImageList.count);
     }
 }
 
 #pragma mark - CameraGroupCtrllerDelegate
 
 - (void)selectAlbumnGroup:(PHAssetCollection *)collection {
-    [self.choosenImageList removeAllObjects] ;
-    
-    [self showImgAssetsInGroup:collection] ;
-    
+    [self.choosenImageList removeAllObjects];
+
+    [self showImgAssetsInGroup:collection];
+
     if (self.groupCtrller.view.superview) {
-        [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view] ;
-        [self.collectionView reloadData] ;
-        [self.btTitleView setTitle:collection.localizedTitle forState:0] ;
-        [self.btTitleView xt_setImagePosition:XTBtImagePositionRight spacing:6] ;
+        [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view];
+        [self.collectionView reloadData];
+        [self.btTitleView setTitle:collection.localizedTitle forState:0];
+        [self.btTitleView xt_setImagePosition:XTBtImagePositionRight spacing:6];
     }
 }
 

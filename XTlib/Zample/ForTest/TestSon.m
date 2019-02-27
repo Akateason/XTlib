@@ -8,10 +8,10 @@
 
 #import "TestSon.h"
 
+
 @implementation TestSon
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         NSLog(@"[self class] %@", NSStringFromClass([self class]));

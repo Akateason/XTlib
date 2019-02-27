@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^albumPickerGetImageListBlock)(NSArray <UIImage *> *imageList, NSArray <PHAsset *> *assetList) ;
+typedef void (^albumPickerGetImageListBlock)(NSArray<UIImage *> *imageList, NSArray<PHAsset *> *assetList);
 
 
 @interface XTPhotoAlbumVC : RootCtrl
@@ -20,7 +20,7 @@ typedef void(^albumPickerGetImageListBlock)(NSArray <UIImage *> *imageList, NSAr
 
 + (instancetype)openAlbumWithConfig:(XTPAConfig *)configuration
                         fromCtrller:(UIViewController *)fromVC
-                          getResult:(albumPickerGetImageListBlock)resultBlk ;
+                          getResult:(albumPickerGetImageListBlock)resultBlk;
 
 @end
 

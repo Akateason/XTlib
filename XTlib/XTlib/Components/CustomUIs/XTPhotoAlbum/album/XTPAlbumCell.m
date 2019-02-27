@@ -10,27 +10,28 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "XTlib.h"
 
+
 @implementation XTPAlbumCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    _img.contentMode = UIViewContentModeScaleAspectFill ;
-    _img_picSelect.hidden = NO ;
+    _img.contentMode      = UIViewContentModeScaleAspectFill;
+    _img_picSelect.hidden = NO;
 }
 
 #pragma mark - Prop
 
 - (void)setPicSelected:(BOOL)picSelected {
-    _picSelected = picSelected ;
-    
-    NSString *imgStr = picSelected ? @"ab_selected" : @"ab_select" ;
-    _img_picSelect.image = [UIImage imageNamed:imgStr inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] ;
+    _picSelected = picSelected;
+
+    NSString *imgStr     = picSelected ? @"ab_selected" : @"ab_select";
+    _img_picSelect.image = [UIImage imageNamed:imgStr inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil];
 }
 
 - (void)setIsSingleChoosenMode:(BOOL)isSingleChoosenMode {
-    _isSingleChoosenMode = isSingleChoosenMode ;
-    
-    self.img_picSelect.hidden = isSingleChoosenMode ;
+    _isSingleChoosenMode = isSingleChoosenMode;
+
+    self.img_picSelect.hidden = isSingleChoosenMode;
 }
 
 @end

@@ -12,11 +12,13 @@
 #import <Photos/Photos.h>
 #import "XTlib.h"
 
-@interface XTPACameraGroupVC () <UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,strong) NSMutableArray *groupList ;
-@property (nonatomic,strong) UITableView *table ;
+
+@interface XTPACameraGroupVC () <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) NSMutableArray *groupList;
+@property (nonatomic, strong) UITableView *table;
 
 @end
+
 
 @implementation XTPACameraGroupVC
 
@@ -24,51 +26,51 @@
 
 - (void)cameraGroupAnimation:(BOOL)inOrOut onView:(UIView *)view {
     if (inOrOut) {
-        [view addSubview:self.view] ;
+        [view addSubview:self.view];
         [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(view).offset(APP_STATUSBAR_HEIGHT + APP_NAVIGATIONBAR_HEIGHT) ;
-            make.left.right.bottom.equalTo(view) ;
-        }] ;
-        
-        float transformY = - self.view.frame.size.height ;
-        self.view.transform = CGAffineTransformMakeTranslation(0, transformY) ;
+            make.top.equalTo(view).offset(APP_STATUSBAR_HEIGHT + APP_NAVIGATIONBAR_HEIGHT);
+            make.left.right.bottom.equalTo(view);
+        }];
+
+        float transformY    = -self.view.frame.size.height;
+        self.view.transform = CGAffineTransformMakeTranslation(0, transformY);
         [UIView animateWithDuration:0.5
                          animations:^{
-                             self.view.transform = CGAffineTransformIdentity ;
-                         }] ;
+                             self.view.transform = CGAffineTransformIdentity;
+                         }];
     }
     else {
         [UIView animateWithDuration:0.5
-                         animations:^{
-                             float transformY = - self.view.frame.size.height ;
-                             self.view.transform = CGAffineTransformMakeTranslation(0, transformY) ;
-                         }
-                         completion:^(BOOL finished) {
-                             if (finished) {
-                                 [self.view removeFromSuperview] ;
-                             }
-                         }] ;
+            animations:^{
+                float transformY    = -self.view.frame.size.height;
+                self.view.transform = CGAffineTransformMakeTranslation(0, transformY);
+            }
+            completion:^(BOOL finished) {
+                if (finished) {
+                    [self.view removeFromSuperview];
+                }
+            }];
     }
 }
 
 #pragma mark - life
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    self = [super init] ;
+    self = [super init];
     if (self) {
-        self.view.frame = frame ;
-        [self table] ;
-        
-        PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAny options:nil] ;
+        self.view.frame = frame;
+        [self table];
+
+        PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
         for (NSInteger i = 0; i < smartAlbums.count; i++) {
             PHCollection *collection = smartAlbums[i];
             if ([collection isKindOfClass:[PHAssetCollection class]]) {
                 PHAssetCollection *assetCollection = (PHAssetCollection *)collection;
-                PHFetchResult *fetchResult = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
+                PHFetchResult *fetchResult         = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
                 if (fetchResult.count) {
-                    [self.groupList addObject:assetCollection] ;
+                    [self.groupList addObject:assetCollection];
                 }
-                [_table reloadData] ;
+                [_table reloadData];
             }
         }
     }
@@ -77,56 +79,56 @@
 
 - (NSMutableArray *)groupList {
     if (!_groupList) {
-        _groupList = [@[] mutableCopy] ;
+        _groupList = [@[] mutableCopy];
     }
-    return _groupList ;
+    return _groupList;
 }
 
 - (UITableView *)table {
     if (!_table) {
-        _table = [[UITableView alloc] initWithFrame:self.view.bounds] ;
-        _table.delegate = self ;
-        _table.dataSource = self ;
-        _table.separatorStyle = 0 ;
-        [_table registerNib:[UINib nibWithNibName:identifierCameraGroupCell bundle:nil] forCellReuseIdentifier:identifierCameraGroupCell] ;
+        _table                = [[UITableView alloc] initWithFrame:self.view.bounds];
+        _table.delegate       = self;
+        _table.dataSource     = self;
+        _table.separatorStyle = 0;
+        [_table registerNib:[UINib nibWithNibName:identifierCameraGroupCell bundle:nil] forCellReuseIdentifier:identifierCameraGroupCell];
         if (!_table.superview) {
-            [self.view addSubview:_table] ;
+            [self.view addSubview:_table];
         }
     }
-    return _table ;
+    return _table;
 }
 
 
-#pragma mark --
+#pragma mark--
 #pragma mark - table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1 ;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.groupList.count ;
+    return self.groupList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    XTPACameraGroupCell * cell = [tableView dequeueReusableCellWithIdentifier:identifierCameraGroupCell] ;
+    XTPACameraGroupCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCameraGroupCell];
     if (!cell) {
-        cell = [tableView dequeueReusableCellWithIdentifier:identifierCameraGroupCell] ;
+        cell = [tableView dequeueReusableCellWithIdentifier:identifierCameraGroupCell];
     }
-    cell.group = self.groupList[indexPath.row] ;
-    return cell ;
+    cell.group = self.groupList[indexPath.row];
+    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 78.0f ;
+    return 78.0f;
 }
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.navigationController popViewControllerAnimated:YES] ;
+    [self.navigationController popViewControllerAnimated:YES];
     if (self.delegate && [self.delegate respondsToSelector:@selector(selectAlbumnGroup:)]) {
-        [self.delegate selectAlbumnGroup:self.groupList[indexPath.row]] ;
+        [self.delegate selectAlbumnGroup:self.groupList[indexPath.row]];
     }
 }
 

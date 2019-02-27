@@ -35,12 +35,12 @@
     // Override point for customization after application launch.
     [XTlibConfig sharedInstance].isDebug = YES;
 
-    NSLog(@"525252343") ;
-    
-    UIColorHex(@"332211") ;
-    UIColorRGB(65, 70, 75) ;
-    UIColorRGBA(65, 70, 75,.35) ;
-    
+    NSLog(@"525252343");
+
+    UIColorHex(@"332211");
+    UIColorRGB(65, 70, 75);
+    UIColorRGBA(65, 70, 75, .35);
+
     // nav
     [self navStyle];
 

@@ -10,10 +10,11 @@
 #import <Photos/Photos.h>
 
 NS_ASSUME_NONNULL_BEGIN
-static NSString *identifierCameraGroupCell = @"XTPACameraGroupCell" ;
+static NSString *identifierCameraGroupCell = @"XTPACameraGroupCell";
+
 
 @interface XTPACameraGroupCell : UITableViewCell
-@property (nonatomic,strong) PHAssetCollection *group ;
+@property (nonatomic, strong) PHAssetCollection *group;
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *lb;
 

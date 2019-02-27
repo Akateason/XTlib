@@ -12,13 +12,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface XTPAConfig : NSObject
 
-@property (nonatomic) int albumSelectedMaxCount ; // default 5 .
-@property (nonatomic) int albumColumnCount ; // default 4 .
-@property (nonatomic) float albumItemFlex ; // flex of album cell items .
-@property (readonly, nonatomic) BOOL isSingleChoosenMode ; // single image picker when maxcount is 1 .
-@property (strong, nonatomic) UIColor *tintColor ;
+@property (nonatomic) int albumSelectedMaxCount;          // default 5 .
+@property (nonatomic) int albumColumnCount;               // default 4 .
+@property (nonatomic) float albumItemFlex;                // flex of album cell items .
+@property (readonly, nonatomic) BOOL isSingleChoosenMode; // single image picker when maxcount is 1 .
+@property (strong, nonatomic) UIColor *tintColor;
 
 @end
 
