@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-static NSString     *identifierAlbumnCell   = @"AlbumnCell" ;
+static NSString     *identifierAlbumnCell   = @"XTPAlbumCell" ;
 
 @interface XTPAlbumCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *img;

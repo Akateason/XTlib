@@ -154,7 +154,7 @@
     [self choosenImageList] ;
     
     [self.btTitleView setTitle:@"相机胶卷" forState:0] ;
-//    [self.btTitleView xt_setImagePosition:XTBtImagePositionRight spacing:6] ;
+    [self.btTitleView xt_setImagePosition:XTBtImagePositionRight spacing:6] ;
     
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         if (status == PHAuthorizationStatusAuthorized) {
@@ -291,7 +291,7 @@
         [self.groupCtrller cameraGroupAnimation:!self.groupCtrller.view.superview onView:self.view] ;
         [self.collectionView reloadData] ;
         [self.btTitleView setTitle:collection.localizedTitle forState:0] ;
-//        [self.btTitleView xt_setImagePosition:XTBtImagePositionRight spacing:6] ;
+        [self.btTitleView xt_setImagePosition:XTBtImagePositionRight spacing:6] ;
     }
 }
 

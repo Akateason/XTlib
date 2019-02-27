@@ -16,6 +16,8 @@
     if (self) {
         self.titleLabel.font = [UIFont systemFontOfSize:18] ;
         self.translatesAutoresizingMaskIntoConstraints = false ;
+        [self setImage:[UIImage imageNamed:@"ab_t_icon"
+                                  inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] forState:0] ;
     }
     return self;
 }
@@ -24,11 +26,7 @@
     return CGSizeMake(200, 40);
 }
 
-- (void)setTitle:(NSString *)title forState:(UIControlState)state {
-    
-    NSString *tmpTitle = [@"▼ " stringByAppendingString:title] ;
-    [super setTitle:tmpTitle forState:state] ;
-}
+
 
 
 @end

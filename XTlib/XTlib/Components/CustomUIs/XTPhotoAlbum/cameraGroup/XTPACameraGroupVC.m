@@ -10,6 +10,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "XTPACameraGroupCell.h"
 #import <Photos/Photos.h>
+#import "XTlib.h"
 
 @interface XTPACameraGroupVC () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NSMutableArray *groupList ;
@@ -24,6 +25,11 @@
 - (void)cameraGroupAnimation:(BOOL)inOrOut onView:(UIView *)view {
     if (inOrOut) {
         [view addSubview:self.view] ;
+        [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(view).offset(APP_STATUSBAR_HEIGHT + APP_NAVIGATIONBAR_HEIGHT) ;
+            make.left.right.bottom.equalTo(view) ;
+        }] ;
+        
         float transformY = - self.view.frame.size.height ;
         self.view.transform = CGAffineTransformMakeTranslation(0, transformY) ;
         [UIView animateWithDuration:0.5

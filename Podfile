@@ -16,6 +16,7 @@ target 'XTlib' do
 
     pod 'JKCategories'
     pod 'LxDBAnything'
+    pod 'FDFullscreenPopGesture'
     #pod 'iCarousel'
     #pod 'BlocksKit'
     #pod 'Bugly'

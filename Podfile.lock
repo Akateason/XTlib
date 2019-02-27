@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - CYLTableViewPlaceHolder (1.0.9)
+  - FDFullscreenPopGesture (1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
@@ -175,7 +176,7 @@ PODS:
   - UIFontWDCustomLoader (0.1.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (0.1.6):
+  - XTBase (0.1.7):
     - CYLTableViewPlaceHolder
     - FTPopOverMenu
     - Masonry
@@ -201,6 +202,7 @@ PODS:
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - FDFullscreenPopGesture
   - JKCategories
   - LxDBAnything
   - XTBase (from `../XTBase/`)
@@ -212,6 +214,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - CYLTableViewPlaceHolder
+    - FDFullscreenPopGesture
     - FMDB
     - FTPopOverMenu
     - JKCategories
@@ -241,6 +244,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CYLTableViewPlaceHolder: 678e070180a24e2f241adc7830d5d7f5e2abbaa5
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FTPopOverMenu: 8aa89de66e72b53db3e7eeab42243d393237768f
   JKCategories: b62b30694ebe6d9fe5520b54ba250015dabd6dae
@@ -255,12 +259,12 @@ SPEC CHECKSUMS:
   UIFontWDCustomLoader: 233f0f83e543b8f24a6299d7fc773be9d704fe22
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: 04bea92d981fb9a8bf2324642f6470f27ee8c708
+  XTBase: d0a23cc1a688b9020f42c0e305eaaad0b76529c2
   XTColor: 213c841e62134d206ecfc67dfed2c57875240fbe
   XTFMDB: 0906c2f6221a746ebe4a3b3d3f0c35ee9acf2b17
   XTReq: 0c1764a088745d0fcbfb4d092bfc4eed22b40ef0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: ad3246d409f763c95c62a386afcc6060a8a8ffa5
+PODFILE CHECKSUM: 37ad4933ecb047d7a091cd54643166ce785349c0
 
 COCOAPODS: 1.5.3
