@@ -103,6 +103,9 @@
 		8FD71E2222263A6D00B5420F /* XTPAlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD71E2022263A6D00B5420F /* XTPAlbumCell.xib */; };
 		8FD71E2522266E6A00B5420F /* XTPATitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E2422266E6A00B5420F /* XTPATitleView.m */; };
 		8FD71E292226749400B5420F /* TestAlbumVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD71E282226749400B5420F /* TestAlbumVC.m */; };
+		8FD71E2E2226791200B5420F /* ab_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD71E2B2226791200B5420F /* ab_select@2x.png */; };
+		8FD71E2F2226791200B5420F /* ab_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD71E2C2226791200B5420F /* ab_selected@2x.png */; };
+		8FD71E302226791200B5420F /* ab_t_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD71E2D2226791200B5420F /* ab_t_icon@2x.png */; };
 		8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE204D205948D2003B5398 /* CtrlHelpVC.m */; };
 		8FDE205220594950003B5398 /* NibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205020594950003B5398 /* NibVC.m */; };
 		8FDE205320594950003B5398 /* NibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE205120594950003B5398 /* NibVC.xib */; };
@@ -312,6 +315,9 @@
 		8FD71E2422266E6A00B5420F /* XTPATitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTPATitleView.m; sourceTree = "<group>"; };
 		8FD71E272226749400B5420F /* TestAlbumVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAlbumVC.h; sourceTree = "<group>"; };
 		8FD71E282226749400B5420F /* TestAlbumVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAlbumVC.m; sourceTree = "<group>"; };
+		8FD71E2B2226791200B5420F /* ab_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ab_select@2x.png"; sourceTree = "<group>"; };
+		8FD71E2C2226791200B5420F /* ab_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ab_selected@2x.png"; sourceTree = "<group>"; };
+		8FD71E2D2226791200B5420F /* ab_t_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ab_t_icon@2x.png"; sourceTree = "<group>"; };
 		8FDE204C205948D2003B5398 /* CtrlHelpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CtrlHelpVC.h; sourceTree = "<group>"; };
 		8FDE204D205948D2003B5398 /* CtrlHelpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CtrlHelpVC.m; sourceTree = "<group>"; };
 		8FDE204F20594950003B5398 /* NibVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NibVC.h; sourceTree = "<group>"; };
@@ -942,6 +948,7 @@
 		8FD71E052225541100B5420F /* XTPhotoAlbum */ = {
 			isa = PBXGroup;
 			children = (
+				8FD71E2A222678C800B5420F /* source */,
 				8FD71E0A2225553200B5420F /* XTPAConfig.h */,
 				8FD71E0B2225553200B5420F /* XTPAConfig.m */,
 				8FD71E062225549700B5420F /* album */,
@@ -1003,6 +1010,16 @@
 				8FD71E282226749400B5420F /* TestAlbumVC.m */,
 			);
 			path = AlbumPicker;
+			sourceTree = "<group>";
+		};
+		8FD71E2A222678C800B5420F /* source */ = {
+			isa = PBXGroup;
+			children = (
+				8FD71E2B2226791200B5420F /* ab_select@2x.png */,
+				8FD71E2C2226791200B5420F /* ab_selected@2x.png */,
+				8FD71E2D2226791200B5420F /* ab_t_icon@2x.png */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 		8FDE204B205948B0003B5398 /* controllerHelp */ = {
@@ -1141,7 +1158,9 @@
 				8F2BFF73203ED7390013394D /* Z8CollectionViewCell.xib in Resources */,
 				8F81E2A120D1208A00782A90 /* XTlib.podspec in Resources */,
 				8F2BFDD1203ED6AB0013394D /* Assets.xcassets in Resources */,
+				8FD71E2F2226791200B5420F /* ab_selected@2x.png in Resources */,
 				8F2BFF6C203ED7390013394D /* Z5DisplayCell.xib in Resources */,
+				8FD71E302226791200B5420F /* ab_t_icon@2x.png in Resources */,
 				8FD71E2222263A6D00B5420F /* XTPAlbumCell.xib in Resources */,
 				8F2BFF70203ED7390013394D /* Z7LongView.xib in Resources */,
 				8F2BFDCF203ED6AB0013394D /* Main.storyboard in Resources */,
@@ -1149,6 +1168,7 @@
 				8FDE205320594950003B5398 /* NibVC.xib in Resources */,
 				8F19861E20C9632D0082662A /* README.md in Resources */,
 				8F2BFF66203ED7390013394D /* MovieCell.xib in Resources */,
+				8FD71E2E2226791200B5420F /* ab_select@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
