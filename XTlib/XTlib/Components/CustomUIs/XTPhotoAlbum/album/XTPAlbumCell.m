@@ -27,5 +27,10 @@
     _img_picSelect.image = [UIImage imageNamed:imgStr inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] ;
 }
 
+- (void)setIsSingleChoosenMode:(BOOL)isSingleChoosenMode {
+    _isSingleChoosenMode = isSingleChoosenMode ;
+    
+    self.img_picSelect.hidden = isSingleChoosenMode ;
+}
 
 @end

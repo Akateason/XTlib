@@ -16,35 +16,43 @@
 
 
 @interface XTPhotoAlbumVC () <CHTCollectionViewDelegateWaterfallLayout,UICollectionViewDataSource,UICollectionViewDelegate,UINavigationControllerDelegate,XTPACameraGroupVCDelegate>
-
-@property (nonatomic, strong) NSMutableArray           *choosenImageList ;
-@property (strong, nonatomic) PHFetchResult            *allPhotos ;
-@property (strong, nonatomic) PHImageManager           *manager ;
-
-@property (copy, nonatomic) albumPickerGetImageListBlock blkGetResult ;
-@property (strong, nonatomic) XTPAConfig *configuration ;
-
 @property (strong, nonatomic) UICollectionView         *collectionView ;
 @property (nonatomic, strong) XTPACameraGroupVC        *groupCtrller ;
-@property (strong, nonatomic) XTPATitleView *btTitleView ;
+@property (strong, nonatomic) XTPATitleView            *btTitleView ;
 
+@property (strong, nonatomic) PHImageManager           *manager ;
+@property (strong, nonatomic) PHFetchResult            *allPhotos ;
+@property (nonatomic, strong) NSMutableArray           *choosenImageList ;
 
+@property (strong, nonatomic) XTPAConfig               *configuration ;
+@property (copy, nonatomic) albumPickerGetImageListBlock blkGetResult ;
+@property (strong, nonatomic) UIBarButtonItem          *commitItem ;
 @end
 
 @implementation XTPhotoAlbumVC
+
+- (instancetype)initWithConfig:(XTPAConfig *)config {
+    self = [super init];
+    if (self) {
+        _configuration = config ;
+    }
+    return self;
+}
 
 + (instancetype)openAlbumWithConfig:(XTPAConfig *)configuration
                         fromCtrller:(UIViewController *)fromVC
                           getResult:(albumPickerGetImageListBlock)resultBlk {
     
-    XTPhotoAlbumVC *albumVC = [[XTPhotoAlbumVC alloc] init] ;
-    albumVC.configuration = configuration ;
+    XTPhotoAlbumVC *albumVC = [[XTPhotoAlbumVC alloc] initWithConfig:configuration] ;
     albumVC.blkGetResult = resultBlk ;
     [fromVC.navigationController pushViewController:albumVC animated:YES] ;
     return albumVC ;
 }
 
 - (void)exportResult {
+    
+    if (self.configuration.albumSelectedMaxCount > 20) [SVProgressHUD show] ;
+    
     // result assets
     NSMutableArray *resultAssets = [@[] mutableCopy] ;
     for (NSNumber *number in self.choosenImageList) {
@@ -57,7 +65,6 @@
     PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init] ;
     options.resizeMode = PHImageRequestOptionsResizeModeFast;
     options.synchronous = YES ;
-    
     for (PHAsset *asset in resultAssets) {
         [self.manager requestImageForAsset:asset
                                 targetSize:PHImageManagerMaximumSize
@@ -68,11 +75,13 @@
                              }] ;
     }
     
+    if (self.configuration.albumSelectedMaxCount > 20) [SVProgressHUD dismiss] ;
+    
     self.blkGetResult(images, resultAssets) ;
 }
 
 
-#pragma mark - Properties
+#pragma mark - props
 
 - (PHImageManager *)manager {
     if (!_manager) {
@@ -125,7 +134,6 @@
         layout.minimumInteritemSpacing = kCOLUMN_FLEX ;
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout] ;
-        
         UINib *nib = [UINib nibWithNibName:identifierAlbumnCell bundle:[NSBundle bundleForClass:XTPAlbumCell.class]] ;
         [_collectionView registerNib:nib
           forCellWithReuseIdentifier:identifierAlbumnCell] ;
@@ -145,13 +153,32 @@
     return _collectionView ;
 }
 
+- (UIBarButtonItem *)commitItem{
+    if(!_commitItem){
+        _commitItem = ({
+            UIBarButtonItem * object = [[UIBarButtonItem alloc] initWithTitle:@"确定(0)"
+                                                                        style:(UIBarButtonItemStylePlain)
+                                                                       target:self
+                                                                       action:@selector(commitOnClick)];
+            object.tintColor = self.configuration.tintColor ;
+            object;
+        });
+    }
+    return _commitItem;
+}
+
+- (void)commitOnClick {
+    [self exportResult] ;
+}
+
 #pragma mark - life
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     [self collectionView] ;
-    [self choosenImageList] ;
+    
+    if (!self.configuration.isSingleChoosenMode) self.navigationItem.rightBarButtonItem = self.commitItem ;    
     
     [self.btTitleView setTitle:@"相机胶卷" forState:0] ;
     [self.btTitleView xt_setImagePosition:XTBtImagePositionRight spacing:6] ;
@@ -190,7 +217,6 @@
     
 }
 
-#pragma mark --
 #pragma mark - Function .
 
 - (void)showImgAssetsInGroup:(PHAssetCollection *)group {
@@ -206,7 +232,6 @@
     return CGSizeMake(collectionSlider, collectionSlider) ;
 }
 
-
 #pragma mark - Multy Picture selected
 
 - (BOOL)thisPhotoIsSelectedWithRow:(NSInteger)row {
@@ -221,7 +246,6 @@
     return bHas ;
 }
 
-#pragma mark --
 #pragma mark - collection dataSourse
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -236,6 +260,7 @@
     NSInteger row = indexPath.row ;
     XTPAlbumCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierAlbumnCell forIndexPath:indexPath] ;
     cell.picSelected = [self thisPhotoIsSelectedWithRow:row] ;
+    cell.isSingleChoosenMode = self.configuration.isSingleChoosenMode ;
     return cell ;
 }
 
@@ -258,11 +283,21 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    XTPAlbumCell *cell = (XTPAlbumCell *)[collectionView cellForItemAtIndexPath:indexPath] ;
-    
+    NSInteger row = indexPath.row ;
+    if (self.configuration.isSingleChoosenMode) {
+        NSNumber *numRow = [NSNumber numberWithInteger:row] ;
+        [self.choosenImageList addObject:numRow] ;
+        [self exportResult] ;
+    }
+    else {
+        [self multyPhotosChoosenWithIndexPath:indexPath] ;
+    }
+}
+
+- (void)multyPhotosChoosenWithIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row ;
     NSNumber *numRow = [NSNumber numberWithInteger:row] ;
-    NSLog(@"ROW : %@",numRow) ;
+    
     if ([self thisPhotoIsSelectedWithRow:row]) {
         [self.choosenImageList removeObject:numRow] ;
     }
@@ -275,11 +310,13 @@
         }
         [self.choosenImageList addObject:numRow] ;
     }
-    
     [self.collectionView reloadItemsAtIndexPaths:@[indexPath]] ;
+    
+    if (!self.configuration.isSingleChoosenMode) {
+        self.commitItem.title = STR_FORMAT(@"确定(%lu)",(unsigned long)self.choosenImageList.count) ;
+    }
 }
 
-#pragma mark --
 #pragma mark - CameraGroupCtrllerDelegate
 
 - (void)selectAlbumnGroup:(PHAssetCollection *)collection {
@@ -294,8 +331,5 @@
         [self.btTitleView xt_setImagePosition:XTBtImagePositionRight spacing:6] ;
     }
 }
-
-
-
 
 @end

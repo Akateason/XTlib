@@ -59,10 +59,6 @@
         self.view.frame = frame ;
         [self table] ;
         
-        //        PHFetchOptions *options = [[PHFetchOptions alloc] init];
-        // 按时间排序
-        //        options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:NO]] ;
-        
         PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAny options:nil] ;
         for (NSInteger i = 0; i < smartAlbums.count; i++) {
             PHCollection *collection = smartAlbums[i];

@@ -15,11 +15,9 @@ static NSString     *identifierAlbumnCell   = @"XTPAlbumCell" ;
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UIImageView *img_picSelect;
 
-
-
 //Attrs
-@property (nonatomic) BOOL                       picSelected ;   // only in multyType
-
+@property (nonatomic) BOOL                       isSingleChoosenMode ; // single choosen or multy choosen .
+@property (nonatomic) BOOL                       picSelected ;   // only in multy choosen .
 @end
 
 NS_ASSUME_NONNULL_END

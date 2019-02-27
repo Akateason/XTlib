@@ -18,6 +18,7 @@
 
 - (IBAction)albumOnClick:(id)sender {
     XTPAConfig *config = [[XTPAConfig alloc] init] ;
+    config.albumSelectedMaxCount = 10 ;
     
     [XTPhotoAlbumVC openAlbumWithConfig:config
                             fromCtrller:self
