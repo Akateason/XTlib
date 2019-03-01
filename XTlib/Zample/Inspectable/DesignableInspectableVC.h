@@ -7,7 +7,7 @@
 //
 
 #import "RootCtrl.h"
-#import "XTlib.h"
+#import <XTBase/XTBase.h>
 
 
 @interface DesignableInspectableVC : RootCtrl

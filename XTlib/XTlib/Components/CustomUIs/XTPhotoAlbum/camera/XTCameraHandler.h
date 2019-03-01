@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "XTlib.h"
+#import <XTBase/XTBase.h>
 
 typedef void (^BlkGetCameraPhoto)(UIImage *_Nullable imageResult);
 

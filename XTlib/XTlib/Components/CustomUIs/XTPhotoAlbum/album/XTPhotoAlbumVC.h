@@ -12,14 +12,30 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^albumPickerGetImageListBlock)(NSArray<UIImage *> *imageList, NSArray<PHAsset *> *assetList);
+@class XTPhotoAlbumVC;
+
+typedef void (^albumPickerGetImageListBlock)(NSArray<UIImage *> *imageList, NSArray<PHAsset *> *assetList, XTPhotoAlbumVC *albumVC);
 
 
 @interface XTPhotoAlbumVC : RootCtrl
 
 
+/**
+ open album default
+ *** this ctrller present into a navigationCtrller . ***
+ */
 + (instancetype)openAlbumWithConfig:(XTPAConfig *)configuration
                         fromCtrller:(UIViewController *)fromVC
+                          getResult:(albumPickerGetImageListBlock)resultBlk;
+
+
+/**
+ open album with pop Animation
+ *** this ctrller present into a navigationCtrller . ***
+ */
++ (instancetype)openAlbumWithConfig:(XTPAConfig *)configuration
+                        fromCtrller:(UIViewController *)fromVC
+                        willDismiss:(BOOL)willDismiss
                           getResult:(albumPickerGetImageListBlock)resultBlk;
 
 @end

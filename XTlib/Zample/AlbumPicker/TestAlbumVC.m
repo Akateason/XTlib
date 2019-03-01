@@ -11,7 +11,7 @@
 #import "XTPhotoAlbumVC.h"
 #import "XTCameraHandler.h"
 #import "XTPACropImageVC.h"
-#import "XTlib.h"
+#import <XTBase/XTBase.h>
 
 
 @interface TestAlbumVC ()
@@ -23,11 +23,11 @@
 
 - (IBAction)albumOnClick:(id)sender {
     XTPAConfig *config           = [[XTPAConfig alloc] init];
-    config.albumSelectedMaxCount = 1;
+    config.albumSelectedMaxCount = 3;
 
     [XTPhotoAlbumVC openAlbumWithConfig:config
                             fromCtrller:self
-                              getResult:^(NSArray<UIImage *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList){
+                              getResult:^(NSArray<UIImage *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList, XTPhotoAlbumVC *vc){
 
 
                               }];
@@ -62,7 +62,49 @@
 }
 
 - (IBAction)groupOperate:(id)sender {
+    [UIAlertController xt_showAlertCntrollerWithAlertControllerStyle:(UIAlertControllerStyleActionSheet) title:nil message:nil cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:@[ @"album+crop", @"camera+crop" ] callBackBlock:^(NSInteger btnIndex) {
+
+        switch (btnIndex) {
+            case 1: [self albumAddCrop]; break;
+            case 2: [self cameraAddCrop]; break;
+            default:
+                break;
+        }
+
+    }];
 }
+
+
+- (void)albumAddCrop {
+    XTPAConfig *config           = [[XTPAConfig alloc] init];
+    config.albumSelectedMaxCount = 1;
+
+    //    @weakify(self)
+    [XTPhotoAlbumVC openAlbumWithConfig:config fromCtrller:self willDismiss:NO getResult:^(NSArray<UIImage *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList, XTPhotoAlbumVC *vc) {
+
+        //        @strongify(self)
+        @weakify(vc)
+            [XTPACropImageVC showFromCtrller:vc imageOrigin:imageList.firstObject croppedImageCallback:^(UIImage *_Nonnull image) {
+                @strongify(vc)
+                    [vc dismissViewControllerAnimated:YES completion:nil];
+
+
+            }];
+    }];
+}
+
+- (void)cameraAddCrop {
+    @weakify(self)
+        XTCameraHandler *handler = [[XTCameraHandler alloc] init];
+    [handler openCameraFromController:self takePhoto:^(UIImage *imageResult) {
+        @strongify(self)
+            [XTPACropImageVC showFromCtrller:self imageOrigin:imageResult croppedImageCallback:^(UIImage *_Nonnull image){
+
+            }];
+    }];
+    self.handler = handler;
+}
+
 
 #pragma mark -
 

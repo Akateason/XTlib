@@ -8,7 +8,7 @@
 
 #import "AlertTestVC.h"
 #import "XTSIAlertView.h"
-#import "XTlib.h"
+#import <XTBase/XTBase.h>
 
 
 @interface AlertTestVC ()

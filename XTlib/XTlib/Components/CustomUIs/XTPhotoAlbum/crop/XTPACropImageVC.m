@@ -21,9 +21,9 @@
     // Do any additional setup after loading the view.
 }
 
-//- (void)dealloc {
-//    NSLog(@"XTPACropImageVC dealloc") ;
-//}
+- (void)dealloc {
+    NSLog(@"XTPACropImageVC dealloc");
+}
 
 + (void)showFromCtrller:(UIViewController *)fromCtrller
             imageOrigin:(UIImage *)image

@@ -10,7 +10,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "XTPACameraGroupCell.h"
 #import <Photos/Photos.h>
-#import "XTlib.h"
+#import <XTBase/XTBase.h>
 
 
 @interface XTPACameraGroupVC () <UITableViewDataSource, UITableViewDelegate>

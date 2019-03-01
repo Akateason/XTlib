@@ -7,7 +7,7 @@
 //
 
 #import "XTPACameraGroupCell.h"
-#import "XTlib.h"
+#import <XTBase/XTBase.h>
 
 
 @implementation XTPACameraGroupCell

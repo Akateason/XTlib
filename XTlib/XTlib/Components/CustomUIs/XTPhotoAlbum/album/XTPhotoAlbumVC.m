@@ -10,7 +10,7 @@
 #import "CHTCollectionViewWaterfallLayout.h"
 #import "XTPACameraGroupVC.h"
 #import "XTPAlbumCell.h"
-#import "XTlib.h"
+#import <XTBase/XTBase.h>
 #import "XTPATitleView.h"
 
 
@@ -22,6 +22,7 @@
 @property (strong, nonatomic) PHImageManager *manager;
 @property (strong, nonatomic) PHFetchResult *allPhotos;
 @property (nonatomic, strong) NSMutableArray *choosenImageList;
+@property (nonatomic) BOOL willDismiss;
 
 @property (strong, nonatomic) XTPAConfig *configuration;
 @property (copy, nonatomic) albumPickerGetImageListBlock blkGetResult;
@@ -42,9 +43,18 @@
 + (instancetype)openAlbumWithConfig:(XTPAConfig *)configuration
                         fromCtrller:(UIViewController *)fromVC
                           getResult:(albumPickerGetImageListBlock)resultBlk {
-    XTPhotoAlbumVC *albumVC = [[XTPhotoAlbumVC alloc] initWithConfig:configuration];
-    albumVC.blkGetResult    = resultBlk;
-    [fromVC.navigationController pushViewController:albumVC animated:YES];
+    return [self openAlbumWithConfig:configuration fromCtrller:fromVC willDismiss:YES getResult:resultBlk];
+}
+
++ (instancetype)openAlbumWithConfig:(XTPAConfig *)configuration
+                        fromCtrller:(UIViewController *)fromVC
+                        willDismiss:(BOOL)willDismiss
+                          getResult:(albumPickerGetImageListBlock)resultBlk {
+    XTPhotoAlbumVC *albumVC       = [[XTPhotoAlbumVC alloc] initWithConfig:configuration];
+    albumVC.willDismiss           = willDismiss;
+    albumVC.blkGetResult          = resultBlk;
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:albumVC];
+    [fromVC presentViewController:navVC animated:YES completion:nil];
     return albumVC;
 }
 
@@ -75,7 +85,10 @@
 
     if (self.configuration.albumSelectedMaxCount > 20) [SVProgressHUD dismiss];
 
-    self.blkGetResult(images, resultAssets);
+    if (self.willDismiss) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    }
+    self.blkGetResult(images, resultAssets, self);
 }
 
 
