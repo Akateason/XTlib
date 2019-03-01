@@ -7,11 +7,18 @@
 //
 
 #import <XTBase/XTBase.h>
+#import <RSKImageCropper/RSKImageCropper.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^BlkImageDidCropFinish)(UIImage *image);
 
-@interface XTPACropImageVC : RootCtrl
+
+@interface XTPACropImageVC : RSKImageCropViewController
+
++ (void)showFromCtrller:(UIViewController *)fromCtrller
+            imageOrigin:(UIImage *)image
+   croppedImageCallback:(BlkImageDidCropFinish)blk;
 
 @end
 

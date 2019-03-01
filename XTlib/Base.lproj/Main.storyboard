@@ -293,7 +293,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CZ-2u-hzf">
-                                        <rect key="frame" x="0.0" y="213.5" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="142.5" width="275" height="40"/>
                                         <color key="backgroundColor" red="0.45098039220000002" green="0.63529411759999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="gTc-DY-POr"/>
@@ -306,7 +306,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmN-tA-CZt">
-                                        <rect key="frame" x="0.0" y="427" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="284.5" width="275" height="40"/>
                                         <color key="backgroundColor" red="0.45098039220000002" green="0.63529411759999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="U2B-xB-70u"/>
@@ -316,6 +316,19 @@
                                         </state>
                                         <connections>
                                             <action selector="sheetOnClick:" destination="tAh-tY-NFL" eventType="touchUpInside" id="50I-wi-0cx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-wS-le6">
+                                        <rect key="frame" x="0.0" y="427" width="275" height="40"/>
+                                        <color key="backgroundColor" red="0.45098039220000002" green="0.63529411759999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="UBW-8S-x05"/>
+                                        </constraints>
+                                        <state key="normal" title="crop">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cropOnClick:" destination="tAh-tY-NFL" eventType="touchUpInside" id="S2Q-ZC-7vC"/>
                                         </connections>
                                     </button>
                                 </subviews>

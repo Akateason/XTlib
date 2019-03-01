@@ -20,5 +20,6 @@ target 'XTlib' do
     #pod 'iCarousel'
     #pod 'BlocksKit'
     #pod 'Bugly'
+    pod 'RSKImageCropper'
 
 end

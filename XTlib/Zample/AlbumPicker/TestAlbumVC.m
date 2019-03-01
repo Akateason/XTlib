@@ -10,9 +10,10 @@
 
 #import "XTPhotoAlbumVC.h"
 #import "XTCameraHandler.h"
+#import "XTPACropImageVC.h"
 
 
-@interface TestAlbumVC ()
+@interface TestAlbumVC () <RSKImageCropViewControllerDelegate, RSKImageCropViewControllerDataSource>
 @property (strong, nonatomic) XTCameraHandler *handler;
 @end
 
@@ -42,6 +43,17 @@
 
 - (IBAction)sheetOnClick:(id)sender {
 }
+
+- (IBAction)cropOnClick:(id)sender {
+    UIImage *image = [UIImage imageNamed:@"test2"];
+
+    [XTPACropImageVC showFromCtrller:self imageOrigin:image croppedImageCallback:^(UIImage *_Nonnull image){
+
+    }];
+}
+
+
+#pragma mark -
 
 - (void)viewDidLoad {
     [super viewDidLoad];

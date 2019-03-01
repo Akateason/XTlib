@@ -167,6 +167,7 @@ PODS:
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.7)
   - ReactiveObjC (3.1.0)
+  - RSKImageCropper (2.2.1)
   - RxWebViewController (0.0.2)
   - SDWebImage (4.4.3):
     - SDWebImage/Core (= 4.4.3)
@@ -205,6 +206,7 @@ DEPENDENCIES:
   - FDFullscreenPopGesture
   - JKCategories
   - LxDBAnything
+  - RSKImageCropper
   - XTBase (from `../XTBase/`)
   - XTColor (from `../XTColor/`)
   - XTFMDB (from `../XTFMDB/`)
@@ -222,6 +224,7 @@ SPEC REPOS:
     - Masonry
     - MJRefresh
     - ReactiveObjC
+    - RSKImageCropper
     - RxWebViewController
     - SDWebImage
     - SSZipArchive
@@ -252,6 +255,7 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  RSKImageCropper: 98296ad26b41753f796b6898d015509598f13d97
   RxWebViewController: 79bcbf51aff13d93db9779404348b052ab0cd440
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
@@ -265,6 +269,6 @@ SPEC CHECKSUMS:
   XTReq: 0c1764a088745d0fcbfb4d092bfc4eed22b40ef0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 37ad4933ecb047d7a091cd54643166ce785349c0
+PODFILE CHECKSUM: 109d746fcd3be0ed0441d8c60fc8ad34656aa0b6
 
 COCOAPODS: 1.5.3
