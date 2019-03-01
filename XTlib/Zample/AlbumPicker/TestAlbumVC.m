@@ -11,9 +11,9 @@
 #import "XTPhotoAlbumVC.h"
 #import "XTCameraHandler.h"
 #import "XTPACropImageVC.h"
+#import "XTlib.h"
 
-
-@interface TestAlbumVC () <RSKImageCropViewControllerDelegate, RSKImageCropViewControllerDataSource>
+@interface TestAlbumVC ()
 @property (strong, nonatomic) XTCameraHandler *handler;
 @end
 
@@ -22,36 +22,47 @@
 
 - (IBAction)albumOnClick:(id)sender {
     XTPAConfig *config           = [[XTPAConfig alloc] init];
-    config.albumSelectedMaxCount = 10;
+    config.albumSelectedMaxCount = 1;
 
     [XTPhotoAlbumVC openAlbumWithConfig:config
                             fromCtrller:self
                               getResult:^(NSArray<UIImage *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList){
-
-
-                              }];
+                                  
+                                  
+                              }] ;
 }
 
 - (IBAction)cameraOnClick:(id)sender {
     XTCameraHandler *handler = [[XTCameraHandler alloc] init];
     [handler openCameraFromController:self takePhoto:^(UIImage *imageResult){
-
-
+        
+        
     }];
     self.handler = handler;
 }
 
 - (IBAction)sheetOnClick:(id)sender {
+    [UIAlertController xt_showAlertCntrollerWithAlertControllerStyle:(UIAlertControllerStyleActionSheet) title:nil message:nil cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@[@"照相",@"相册"] callBackBlock:^(NSInteger btnIndex) {
+        
+        if (btnIndex == 1) {
+            [self cameraOnClick:nil] ;
+        }
+        else if (btnIndex == 2) {
+            [self albumOnClick:nil] ;
+        }
+    }] ;
 }
 
 - (IBAction)cropOnClick:(id)sender {
     UIImage *image = [UIImage imageNamed:@"test2"];
-
     [XTPACropImageVC showFromCtrller:self imageOrigin:image croppedImageCallback:^(UIImage *_Nonnull image){
-
-    }];
+        
+    }] ;
 }
 
+- (IBAction)groupOperate:(id)sender {
+    
+}
 
 #pragma mark -
 
