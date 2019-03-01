@@ -21,5 +21,5 @@ target 'XTlib' do
     #pod 'BlocksKit'
     #pod 'Bugly'
     pod 'RSKImageCropper'
-
+    
 end

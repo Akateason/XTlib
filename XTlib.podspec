@@ -25,6 +25,7 @@ s.default_subspec = 'base'
         base.dependency "FDFullscreenPopGesture"
         base.dependency "IQKeyboardManager"
         base.dependency "BlocksKit"
+        base.dependency "RSKImageCropper"
     end
 
     s.subspec 'Animations' do |a|
