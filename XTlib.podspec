@@ -25,8 +25,7 @@ s.default_subspec = 'base'
         base.dependency "FDFullscreenPopGesture"
         base.dependency "IQKeyboardManager"
         base.dependency "BlocksKit"
-        base.dependency "RSKImageCropper"
-        base.dependency "CHTCollectionViewWaterfallLayout"
+        
     end
 
     s.subspec 'Animations' do |a|
@@ -38,8 +37,10 @@ s.default_subspec = 'base'
     s.subspec 'CustomUIs' do |c|
     c.source_files = "XTlib/XTlib/Components/CustomUIs","XTlib/XTlib/Components/CustomUIs/**/*.{h,m}"
     c.public_header_files="XTlib/XTlib/Components/CustomUIs/*.h","XTlib/XTlib/Components/CustomUIs/**/*.h"
-    c.resources = "XTlib/XTlib/Components/CustomUIs/**/*.png"
+    c.resources = "XTlib/XTlib/Components/CustomUIs/**/*.png","XTlib/XTlib/Components/CustomUIs/**/**/*.png"
     c.dependency "XTlib/base"
+    c.dependency "RSKImageCropper"
+    c.dependency "CHTCollectionViewWaterfallLayout"
     end
 
 end
