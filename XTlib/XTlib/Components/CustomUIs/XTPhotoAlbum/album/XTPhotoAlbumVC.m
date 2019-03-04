@@ -184,8 +184,16 @@
 
 #pragma mark - life
 
+- (void)cancel {
+    [self dismissViewControllerAnimated:YES completion:^{
+        self.blkGetResult(nil, nil, self);
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:(UIBarButtonItemStylePlain) target:self action:@selector(cancel)];
 
     [self collectionView];
 

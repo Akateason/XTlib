@@ -83,6 +83,8 @@
     [XTPhotoAlbumVC openAlbumWithConfig:config fromCtrller:self willDismiss:NO getResult:^(NSArray<UIImage *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList, XTPhotoAlbumVC *vc) {
 
         //        @strongify(self)
+        if (!imageList) return;
+
         @weakify(vc)
             [XTPACropImageVC showFromCtrller:vc imageOrigin:imageList.firstObject croppedImageCallback:^(UIImage *_Nonnull image) {
                 @strongify(vc)
@@ -97,6 +99,8 @@
     @weakify(self)
         XTCameraHandler *handler = [[XTCameraHandler alloc] init];
     [handler openCameraFromController:self takePhoto:^(UIImage *imageResult) {
+        if (!imageResult) return;
+
         @strongify(self)
             [XTPACropImageVC showFromCtrller:self imageOrigin:imageResult croppedImageCallback:^(UIImage *_Nonnull image){
 

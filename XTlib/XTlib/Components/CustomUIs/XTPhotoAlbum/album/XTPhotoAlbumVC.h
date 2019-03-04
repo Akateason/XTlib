@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class XTPhotoAlbumVC;
 
-typedef void (^albumPickerGetImageListBlock)(NSArray<UIImage *> *imageList, NSArray<PHAsset *> *assetList, XTPhotoAlbumVC *albumVC);
+typedef void (^albumPickerGetImageListBlock)(NSArray<UIImage *> *_Nullable imageList, NSArray<PHAsset *> *_Nullable assetList, XTPhotoAlbumVC *albumVC);
 
 
 @interface XTPhotoAlbumVC : RootCtrl
