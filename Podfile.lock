@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - CHTCollectionViewWaterfallLayout (0.9.7):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.7)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
   - CYLTableViewPlaceHolder (1.0.9)
   - FDFullscreenPopGesture (1.1)
   - FMDB (2.7.5):
@@ -203,6 +206,7 @@ PODS:
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - CHTCollectionViewWaterfallLayout
   - FDFullscreenPopGesture
   - JKCategories
   - LxDBAnything
@@ -215,6 +219,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - CHTCollectionViewWaterfallLayout
     - CYLTableViewPlaceHolder
     - FDFullscreenPopGesture
     - FMDB
@@ -246,6 +251,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
   CYLTableViewPlaceHolder: 678e070180a24e2f241adc7830d5d7f5e2abbaa5
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
@@ -269,6 +275,6 @@ SPEC CHECKSUMS:
   XTReq: 0c1764a088745d0fcbfb4d092bfc4eed22b40ef0
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 109d746fcd3be0ed0441d8c60fc8ad34656aa0b6
+PODFILE CHECKSUM: 22e4e198e970a4fe6b1be44899480eb36f1b4ca3
 
 COCOAPODS: 1.5.3

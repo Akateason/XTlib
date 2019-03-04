@@ -26,6 +26,7 @@ s.default_subspec = 'base'
         base.dependency "IQKeyboardManager"
         base.dependency "BlocksKit"
         base.dependency "RSKImageCropper"
+        base.dependency "CHTCollectionViewWaterfallLayout"
     end
 
     s.subspec 'Animations' do |a|

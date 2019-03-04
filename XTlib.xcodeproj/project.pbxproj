@@ -27,13 +27,7 @@
 		8F2BFE36203ED7270013394D /* NSMutableString+TagReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE0E203ED7260013394D /* NSMutableString+TagReplace.m */; };
 		8F2BFE37203ED7270013394D /* NSString+WPAttributedMarkup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE10203ED7260013394D /* NSString+WPAttributedMarkup.m */; };
 		8F2BFE38203ED7270013394D /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE13203ED7260013394D /* UIBarButtonItem+Badge.m */; };
-		8F2BFE39203ED7270013394D /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE19203ED7260013394D /* CHTCollectionViewWaterfallLayout.m */; };
-		8F2BFE3A203ED7270013394D /* XHPathCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE1C203ED7260013394D /* XHPathCover.m */; };
-		8F2BFE3B203ED7270013394D /* KICropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE1F203ED7260013394D /* KICropImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		8F2BFE3C203ED7270013394D /* KeyBoardTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE23203ED7260013394D /* KeyBoardTopBar.m */; };
-		8F2BFE3D203ED7270013394D /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE26203ED7260013394D /* KxMenu.m */; };
 		8F2BFE3E203ED7270013394D /* NSObject+MKBlockTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE29203ED7260013394D /* NSObject+MKBlockTimer.m */; };
-		8F2BFE40203ED7270013394D /* UIAlternativeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE2F203ED7260013394D /* UIAlternativeButton.m */; };
 		8F2BFE41203ED7270013394D /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE32203ED7260013394D /* UICollectionViewLeftAlignedLayout.m */; };
 		8F2BFE43203ED72E0013394D /* viewControllers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F2BFE42203ED72E0013394D /* viewControllers.plist */; };
 		8F2BFF5A203ED7390013394D /* FontAdaptVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFE47203ED7380013394D /* FontAdaptVC.m */; };
@@ -172,20 +166,8 @@
 		8F2BFE10203ED7260013394D /* NSString+WPAttributedMarkup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WPAttributedMarkup.m"; sourceTree = "<group>"; };
 		8F2BFE12203ED7260013394D /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
 		8F2BFE13203ED7260013394D /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
-		8F2BFE18203ED7260013394D /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
-		8F2BFE19203ED7260013394D /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
-		8F2BFE1B203ED7260013394D /* XHPathCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPathCover.h; sourceTree = "<group>"; };
-		8F2BFE1C203ED7260013394D /* XHPathCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPathCover.m; sourceTree = "<group>"; };
-		8F2BFE1E203ED7260013394D /* KICropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KICropImageView.h; sourceTree = "<group>"; };
-		8F2BFE1F203ED7260013394D /* KICropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KICropImageView.m; sourceTree = "<group>"; };
-		8F2BFE22203ED7260013394D /* KeyBoardTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyBoardTopBar.h; sourceTree = "<group>"; };
-		8F2BFE23203ED7260013394D /* KeyBoardTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBoardTopBar.m; sourceTree = "<group>"; };
-		8F2BFE25203ED7260013394D /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
-		8F2BFE26203ED7260013394D /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		8F2BFE28203ED7260013394D /* NSObject+MKBlockTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MKBlockTimer.h"; sourceTree = "<group>"; };
 		8F2BFE29203ED7260013394D /* NSObject+MKBlockTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MKBlockTimer.m"; sourceTree = "<group>"; };
-		8F2BFE2E203ED7260013394D /* UIAlternativeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlternativeButton.h; sourceTree = "<group>"; };
-		8F2BFE2F203ED7260013394D /* UIAlternativeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlternativeButton.m; sourceTree = "<group>"; };
 		8F2BFE31203ED7260013394D /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
 		8F2BFE32203ED7260013394D /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
 		8F2BFE42203ED72E0013394D /* viewControllers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = viewControllers.plist; sourceTree = "<group>"; };
@@ -463,13 +445,7 @@
 			children = (
 				8F2BFE04203ED7260013394D /* AttibutedLabel */,
 				8F2BFE11203ED7260013394D /* BarButton+badge */,
-				8F2BFE17203ED7260013394D /* CHTCollectionViewWaterfallLayout */,
-				8F2BFE1A203ED7260013394D /* Cover */,
-				8F2BFE1D203ED7260013394D /* CropImageView */,
-				8F2BFE21203ED7260013394D /* KeyBoardTopBar */,
-				8F2BFE24203ED7260013394D /* KxMenu */,
 				8F2BFE27203ED7260013394D /* MKBlockTimer */,
-				8F2BFE2D203ED7260013394D /* UIAlternaiveButton */,
 				8F2BFE30203ED7260013394D /* UICollectionViewLeftAlignedLayout */,
 			);
 			path = Vender;
@@ -517,51 +493,6 @@
 			path = "BarButton+badge";
 			sourceTree = "<group>";
 		};
-		8F2BFE17203ED7260013394D /* CHTCollectionViewWaterfallLayout */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFE18203ED7260013394D /* CHTCollectionViewWaterfallLayout.h */,
-				8F2BFE19203ED7260013394D /* CHTCollectionViewWaterfallLayout.m */,
-			);
-			path = CHTCollectionViewWaterfallLayout;
-			sourceTree = "<group>";
-		};
-		8F2BFE1A203ED7260013394D /* Cover */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFE1B203ED7260013394D /* XHPathCover.h */,
-				8F2BFE1C203ED7260013394D /* XHPathCover.m */,
-			);
-			path = Cover;
-			sourceTree = "<group>";
-		};
-		8F2BFE1D203ED7260013394D /* CropImageView */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFE1E203ED7260013394D /* KICropImageView.h */,
-				8F2BFE1F203ED7260013394D /* KICropImageView.m */,
-			);
-			path = CropImageView;
-			sourceTree = "<group>";
-		};
-		8F2BFE21203ED7260013394D /* KeyBoardTopBar */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFE22203ED7260013394D /* KeyBoardTopBar.h */,
-				8F2BFE23203ED7260013394D /* KeyBoardTopBar.m */,
-			);
-			path = KeyBoardTopBar;
-			sourceTree = "<group>";
-		};
-		8F2BFE24203ED7260013394D /* KxMenu */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFE25203ED7260013394D /* KxMenu.h */,
-				8F2BFE26203ED7260013394D /* KxMenu.m */,
-			);
-			path = KxMenu;
-			sourceTree = "<group>";
-		};
 		8F2BFE27203ED7260013394D /* MKBlockTimer */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,15 +500,6 @@
 				8F2BFE29203ED7260013394D /* NSObject+MKBlockTimer.m */,
 			);
 			path = MKBlockTimer;
-			sourceTree = "<group>";
-		};
-		8F2BFE2D203ED7260013394D /* UIAlternaiveButton */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFE2E203ED7260013394D /* UIAlternativeButton.h */,
-				8F2BFE2F203ED7260013394D /* UIAlternativeButton.m */,
-			);
-			path = UIAlternaiveButton;
 			sourceTree = "<group>";
 		};
 		8F2BFE30203ED7260013394D /* UICollectionViewLeftAlignedLayout */ = {
@@ -1197,6 +1119,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-XTlib/Pods-XTlib-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/CYLTableViewPlaceHolder/CYLTableViewPlaceHolder.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
@@ -1222,6 +1145,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHTCollectionViewWaterfallLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTableViewPlaceHolder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
@@ -1275,7 +1199,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F2BFF6E203ED7390013394D /* Zample5Controller.m in Sources */,
-				8F2BFE3B203ED7270013394D /* KICropImageView.m in Sources */,
 				8F2BFF62203ED7390013394D /* Zample2Controller.m in Sources */,
 				8F2BFF65203ED7390013394D /* MovieCell.m in Sources */,
 				8F2BFF6F203ED7390013394D /* Zample6Controller.m in Sources */,
@@ -1285,10 +1208,8 @@
 				8F2BFF74203ED7390013394D /* Z8CollectionViewController.m in Sources */,
 				8FD71E2122263A6D00B5420F /* XTPAlbumCell.m in Sources */,
 				8F2BFDCC203ED6AB0013394D /* ViewController.m in Sources */,
-				8F2BFE3A203ED7270013394D /* XHPathCover.m in Sources */,
 				8F2BFF71203ED7390013394D /* Zample7Controller.m in Sources */,
 				8FD71E3422268C4000B5420F /* XTCameraHandler.m in Sources */,
-				8F2BFE3C203ED7270013394D /* KeyBoardTopBar.m in Sources */,
 				8F6400782148B2030094024A /* TestDemoVC.m in Sources */,
 				8FD71E292226749400B5420F /* TestAlbumVC.m in Sources */,
 				8F2BFF5C203ED7390013394D /* RespoderChainViewController.m in Sources */,
@@ -1306,7 +1227,6 @@
 				8F2BFFAE203ED7390013394D /* FlywordLabel.m in Sources */,
 				8F2BFFAB203ED7390013394D /* ParallaxHeaderView.m in Sources */,
 				8F2BFF60203ED7390013394D /* DoubanTags.m in Sources */,
-				8F2BFE40203ED7270013394D /* UIAlternativeButton.m in Sources */,
 				8F2BFFB8203ED7390013394D /* XTSegment.m in Sources */,
 				8F2BFF6B203ED7390013394D /* Z5DisplayCell.m in Sources */,
 				8F2BFF5B203ED7390013394D /* RCSubView.m in Sources */,
@@ -1327,7 +1247,6 @@
 				8F2BFFAC203ED7390013394D /* UIImage+ImageEffects.m in Sources */,
 				8F2BFF67203ED7390013394D /* Rating.m in Sources */,
 				8F2BFFC2203ED7390013394D /* XTAnimation.m in Sources */,
-				8F2BFE39203ED7270013394D /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				8F2BFFBA203ED7390013394D /* XTZoomPicture.m in Sources */,
 				8F2BFF75203ED7390013394D /* Zample8Controller.m in Sources */,
 				8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */,
@@ -1350,7 +1269,6 @@
 				8F2BFFB0203ED7390013394D /* XTBarrageView.m in Sources */,
 				8F1511FF20C2503500FF125C /* MPTestView.m in Sources */,
 				8F2BFFB5203ED7390013394D /* XTTableViewRootHandler.m in Sources */,
-				8F2BFE3D203ED7270013394D /* KxMenu.m in Sources */,
 				8F2BFE3E203ED7270013394D /* NSObject+MKBlockTimer.m in Sources */,
 				8F2BFDC9203ED6AB0013394D /* AppDelegate.m in Sources */,
 				8F2BFE01203ED71D0013394D /* ServerRequest.m in Sources */,
