@@ -46,8 +46,8 @@
 + (void)animationPushRight:(UIView *)view duration:(CGFloat)duration;
 
 // move
-+ (void)animationMoveUp:(UIView *)view duration:(CFTimeInterval)duration;
-+ (void)animationMoveDown:(UIView *)view duration:(CFTimeInterval)duration;
++ (void)animationMoveUp:(UIView *)view duration:(CGFloat)duration;
++ (void)animationMoveDown:(UIView *)view duration:(CGFloat)duration;
 + (void)animationMoveLeft:(UIView *)view duration:(CGFloat)duration;
 + (void)animationMoveRight:(UIView *)view duration:(CGFloat)duration;
 

@@ -150,7 +150,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationMoveUp:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationMoveUp:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -160,7 +160,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationMoveDown:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationMoveDown:(UIView *)view duration:(CGFloat)duration {
     CATransition *transition  = [CATransition animation];
     transition.duration       = duration;
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
@@ -169,7 +169,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:transition forKey:nil];
 }
 
-+ (void)animationMoveLeft:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationMoveLeft:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -179,7 +179,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationMoveRight:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationMoveRight:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -232,7 +232,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
 
 #pragma mark - Private API
 
-+ (void)animationFlipFromTop:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationFlipFromTop:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -242,7 +242,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationFlipFromBottom:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationFlipFromBottom:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -252,7 +252,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationCubeFromLeft:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationCubeFromLeft:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -262,7 +262,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationCubeFromRight:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationCubeFromRight:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -272,7 +272,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationCubeFromTop:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationCubeFromTop:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -282,7 +282,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationCubeFromBottom:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationCubeFromBottom:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -292,7 +292,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationSuckEffect:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationSuckEffect:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -301,7 +301,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationRippleEffect:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationRippleEffect:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -310,7 +310,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationCameraOpen:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationCameraOpen:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
@@ -320,7 +320,7 @@ static NSString *const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey";
     [view.layer addAnimation:animation forKey:nil];
 }
 
-+ (void)animationCameraClose:(UIView *)view duration:(CFTimeInterval)duration {
++ (void)animationCameraClose:(UIView *)view duration:(CGFloat)duration {
     CATransition *animation = [CATransition animation];
     [animation setDuration:duration];
     [animation setFillMode:kCAFillModeForwards];
