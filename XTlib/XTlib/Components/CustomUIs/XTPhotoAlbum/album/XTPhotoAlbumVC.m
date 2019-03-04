@@ -7,7 +7,7 @@
 //
 
 #import "XTPhotoAlbumVC.h"
-#import "CHTCollectionViewWaterfallLayout.h"
+#import <CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.h>
 #import "XTPACameraGroupVC.h"
 #import "XTPAlbumCell.h"
 #import <XTBase/XTBase.h>
