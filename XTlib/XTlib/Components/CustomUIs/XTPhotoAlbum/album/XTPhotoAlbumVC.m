@@ -79,7 +79,7 @@
                                contentMode:PHImageContentModeDefault
                                    options:options
                              resultHandler:^void(UIImage *image, NSDictionary *info) {
-                                 [images addObject:image];
+                                 if (image) [images addObject:image];
                              }];
     }
 

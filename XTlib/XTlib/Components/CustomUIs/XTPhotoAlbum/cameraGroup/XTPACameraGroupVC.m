@@ -90,7 +90,7 @@
         _table.delegate       = self;
         _table.dataSource     = self;
         _table.separatorStyle = 0;
-        [_table registerNib:[UINib nibWithNibName:identifierCameraGroupCell bundle:nil] forCellReuseIdentifier:identifierCameraGroupCell];
+        [_table registerNib:[UINib nibWithNibName:identifierCameraGroupCell bundle:[NSBundle bundleForClass:self.class]] forCellReuseIdentifier:identifierCameraGroupCell];
         if (!_table.superview) {
             [self.view addSubview:_table];
         }
