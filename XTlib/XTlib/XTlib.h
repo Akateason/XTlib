@@ -26,7 +26,7 @@
 //#import "XTSegment.h"
 //#import "XTStretchSegment.h"
 //#import "XTSIAlertView.h"
-//#import "XTCameraHandler.h"
+//#import "XTPhotoAlbum.h"
 
 // Animation
 //#import "XTAnimation.h"

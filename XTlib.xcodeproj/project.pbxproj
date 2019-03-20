@@ -268,6 +268,7 @@
 		8F2BFF59203ED7380013394D /* XTlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTlib.h; sourceTree = "<group>"; };
 		8F6400762148B2030094024A /* TestDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDemoVC.h; sourceTree = "<group>"; };
 		8F6400772148B2030094024A /* TestDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDemoVC.m; sourceTree = "<group>"; };
+		8F7A84402241EC660099E905 /* XTPhotoAlbum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPhotoAlbum.h; sourceTree = "<group>"; };
 		8F80A41121ABF7F300FA720C /* TestSon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSon.h; sourceTree = "<group>"; };
 		8F80A41221ABF7F300FA720C /* TestSon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSon.m; sourceTree = "<group>"; };
 		8F81E2A020D1208A00782A90 /* XTlib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XTlib.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -870,6 +871,7 @@
 		8FD71E052225541100B5420F /* XTPhotoAlbum */ = {
 			isa = PBXGroup;
 			children = (
+				8F7A84402241EC660099E905 /* XTPhotoAlbum.h */,
 				8FD71E2A222678C800B5420F /* source */,
 				8FD71E0A2225553200B5420F /* XTPAConfig.h */,
 				8FD71E0B2225553200B5420F /* XTPAConfig.m */,
