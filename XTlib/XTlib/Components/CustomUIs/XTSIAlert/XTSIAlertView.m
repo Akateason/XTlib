@@ -151,6 +151,27 @@ static XTSIAlertView *__si_alert_current_view;
 
 @implementation XTSIAlertView
 
+- (UIColor *)normalButtonColor {
+    if (!_normalButtonColor) {
+        _normalButtonColor = kColorDefaultBt;
+    }
+    return _normalButtonColor;
+}
+
+- (UIColor *)destructiveButtonColor {
+    if (!_destructiveButtonColor) {
+        _destructiveButtonColor = kColorDestructiveBt;
+    }
+    return _destructiveButtonColor;
+}
+
+- (UIColor *)cancelButtonColor {
+    if (!_cancelButtonColor) {
+        _cancelButtonColor = kColorCancelBt;
+    }
+    return _cancelButtonColor;
+}
+
 + (void)alertWithTitle:(NSString *)title
               subTitle:(NSString *)subTitle
          normalBtTitle:(NSString *)normalBtTitle
@@ -832,14 +853,14 @@ static XTSIAlertView *__si_alert_current_view;
         case XTSIAlertViewButtonTypeCancel:
             //            normalImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-cancel"];
             //            highlightedImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-cancel-d"];
-            color = kColorCancelBt;
+            color = self.cancelButtonColor;
             [button setTitleColor:kTitleColorCancelBt forState:UIControlStateNormal];
             [button setTitleColor:kHIGHLIGHT_TitleColorCancelBt forState:UIControlStateHighlighted];
             break;
         case XTSIAlertViewButtonTypeDestructive:
             //            normalImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-destructive"];
             //            highlightedImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-destructive-d"];
-            color = kColorDestructiveBt;
+            color = self.destructiveButtonColor;
             [button setTitleColor:kTitleColorDestructiveBt forState:UIControlStateNormal];
             [button setTitleColor:kHIGHLIGHT_TitleColorDestructiveBt forState:UIControlStateHighlighted];
             break;
@@ -847,7 +868,7 @@ static XTSIAlertView *__si_alert_current_view;
         default:
             //            normalImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-default"];
             //            highlightedImage = [UIImage imageNamed:@"XTSIAlertView.bundle/button-default-d"];
-            color = kColorDefaultBt;
+            color = self.normalButtonColor;
             [button setTitleColor:kTitleColorDefaultBt forState:UIControlStateNormal];
             [button setTitleColor:kHIGHLIGHT_TitleColorDefaultBt forState:UIControlStateHighlighted];
             break;

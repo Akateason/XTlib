@@ -79,6 +79,10 @@ typedef void (^XTSIAlertViewHandler)(XTSIAlertView *alertView);
 
 @property (nonatomic, readonly, getter=isVisible) BOOL visible;
 
+@property (strong, nonatomic) UIColor *normalButtonColor;
+@property (strong, nonatomic) UIColor *destructiveButtonColor;
+@property (strong, nonatomic) UIColor *cancelButtonColor;
+
 @property (nonatomic, strong) UIColor *viewBackgroundColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *titleColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *messageColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
