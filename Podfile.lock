@@ -180,7 +180,7 @@ PODS:
   - UIFontWDCustomLoader (0.1.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (1.0.0):
+  - XTBase (1.0.1):
     - CYLTableViewPlaceHolder
     - FTPopOverMenu
     - Masonry
@@ -269,7 +269,7 @@ SPEC CHECKSUMS:
   UIFontWDCustomLoader: 233f0f83e543b8f24a6299d7fc773be9d704fe22
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: 86bea58527b2e259804967afde9f22d6b758f0cc
+  XTBase: cd3359ca014559613ef33160c7dac38d93144ae6
   XTColor: 0151b3b61e3b1de2dc29fcdb4a0a22758c8a38df
   XTFMDB: c22446d1eeb347974fb579bd9284c9b48a6d4410
   XTReq: f5added0278758ca358f62a3de30a118f1b6d94a
