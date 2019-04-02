@@ -225,9 +225,8 @@
     allPhotosOptions.predicate               = [NSPredicate predicateWithFormat:@"mediaType == %d", PHAssetMediaTypeImage];
     allPhotosOptions.sortDescriptors         = @[ [NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO] ];
     allPhotosOptions.includeAssetSourceTypes = PHAssetSourceTypeUserLibrary;
-
-    PHFetchResult *allPhotos = [PHAsset fetchAssetsWithOptions:allPhotosOptions];
-    self.allPhotos           = allPhotos;
+    PHFetchResult *allPhotos                 = [PHAsset fetchAssetsWithOptions:allPhotosOptions];
+    self.allPhotos                           = allPhotos;
 }
 
 - (void)didReceiveMemoryWarning {

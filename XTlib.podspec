@@ -23,7 +23,7 @@ s.default_subspec = 'base'
         base.dependency "XTColor"
         
         base.dependency "FDFullscreenPopGesture"
-        base.dependency "IQKeyboardManager"
+        #base.dependency "IQKeyboardManager"
         base.dependency "BlocksKit"
         
     end
