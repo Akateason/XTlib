@@ -37,9 +37,9 @@ typedef void (^BlkLoadComplete)(void);
              tapped:(void (^)(void))tapped {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setup];
         self.backImage = backImage;
         self.blkTapped = tapped;
+        [self setup];
     }
     return self;
 }
@@ -51,9 +51,9 @@ typedef void (^BlkLoadComplete)(void);
     self = [super initWithFrame:frame];
     if (self) {
         self.urlStr = urlString;
-        [self setup];
         self.blkTapped       = tapped;
         self.blkLoadComplete = loadComplete;
+        [self setup];
     }
     return self;
 }
@@ -74,8 +74,8 @@ typedef void (^BlkLoadComplete)(void);
     if (!self.backImage) {
         UIActivityIndicatorView *aiView   = [UIActivityIndicatorView new];
         aiView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
-        aiView.center                     = self.center;
-        [self.xt_viewController.view.window addSubview:aiView];
+        aiView.center                     = self.center ;
+        [self.imageView addSubview:aiView] ;
         [aiView startAnimating];
 
         @weakify(self)
