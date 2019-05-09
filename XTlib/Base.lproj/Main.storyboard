@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fCu-Zp-wFs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fCu-Zp-wFs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -294,7 +294,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CZ-2u-hzf">
-                                        <rect key="frame" x="0.0" y="107" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="61.5" width="275" height="40"/>
                                         <color key="backgroundColor" red="0.45098039220000002" green="0.63529411759999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="gTc-DY-POr"/>
@@ -307,7 +307,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AmN-tA-CZt">
-                                        <rect key="frame" x="0.0" y="213.5" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="123.5" width="275" height="40"/>
                                         <color key="backgroundColor" red="0.45098039220000002" green="0.63529411759999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="U2B-xB-70u"/>
@@ -320,7 +320,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-wS-le6">
-                                        <rect key="frame" x="0.0" y="320.5" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="185" width="275" height="40"/>
                                         <color key="backgroundColor" red="0.45098039220000002" green="0.63529411759999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="UBW-8S-x05"/>
@@ -333,7 +333,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWd-cH-Aqh">
-                                        <rect key="frame" x="0.0" y="427" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="247" width="275" height="40"/>
                                         <color key="backgroundColor" red="0.45098039220000002" green="0.63529411759999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="xuP-GA-BSx"/>
@@ -343,6 +343,27 @@
                                         </state>
                                         <connections>
                                             <action selector="groupOperate:" destination="tAh-tY-NFL" eventType="touchUpInside" id="zRA-gC-mkT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NO-gy-oWk">
+                                        <rect key="frame" x="0.0" y="313.5" width="275" height="30"/>
+                                        <state key="normal" title="preview_local"/>
+                                        <connections>
+                                            <action selector="previewLocal:" destination="tAh-tY-NFL" eventType="touchUpInside" id="J4z-1A-YZY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-pY-PRu">
+                                        <rect key="frame" x="0.0" y="375.5" width="275" height="30"/>
+                                        <state key="normal" title="preview_online"/>
+                                        <connections>
+                                            <action selector="previewOnline:" destination="tAh-tY-NFL" eventType="touchUpInside" id="c8e-Mb-kT1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5q-wh-HeD">
+                                        <rect key="frame" x="0.0" y="437" width="275" height="30"/>
+                                        <state key="normal" title="preview_list"/>
+                                        <connections>
+                                            <action selector="previewList:" destination="tAh-tY-NFL" eventType="touchUpInside" id="tes-SW-PX0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -609,6 +630,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="test" width="1020" height="537"/>
+        <image name="test" width="510" height="268.5"/>
     </resources>
 </document>

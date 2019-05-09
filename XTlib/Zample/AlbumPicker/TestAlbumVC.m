@@ -13,6 +13,8 @@
 #import "XTPACropImageVC.h"
 #import <XTBase/XTBase.h>
 
+#import "XTZoomPicture.h"
+
 
 @interface TestAlbumVC ()
 @property (strong, nonatomic) XTCameraHandler *handler;
@@ -108,6 +110,31 @@
     }];
     self.handler = handler;
 }
+
+// image previewer
+- (IBAction)previewLocal:(id)sender {
+    
+    __block XTZoomPicture *zoomPic = [[XTZoomPicture alloc] initWithFrame:APPFRAME backImage:[UIImage imageNamed:@"WechatIMG125"] tapped:^{
+        
+        [zoomPic removeFromSuperview] ;
+    }] ;
+    
+    [self.view.window addSubview:zoomPic] ;
+}
+
+- (IBAction)previewOnline:(id)sender {
+}
+
+- (IBAction)previewList:(id)sender {
+}
+
+
+
+
+
+
+
+
 
 
 #pragma mark -

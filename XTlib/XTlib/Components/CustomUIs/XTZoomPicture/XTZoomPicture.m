@@ -9,13 +9,18 @@
 #define SIDE_ZOOMTORECT 80.0
 
 #import "XTZoomPicture.h"
+#import <XTBase/XTBase.h>
+#import <XTBase/UIView+Sizes.h>
 
-typedef void (^BlkTapped)(void);
+typedef void (^BlkTapped)(void) ;
 
 
 @interface XTZoomPicture () <UIScrollViewDelegate>
-@property (nonatomic) float flexOfSide;
-@property (copy, nonatomic) BlkTapped blkTapped;
+@property (copy, nonatomic) BlkTapped blkTapped ;
+@property (nonatomic) float imgWidth ;
+@property (nonatomic) float imgHeight ;
+@property (nonatomic) float imgRate_H_W ; // h / w
+
 @end
 
 
@@ -24,16 +29,11 @@ typedef void (^BlkTapped)(void);
 #pragma mark - Initial
 
 - (id)initWithFrame:(CGRect)frame
-          backImage:(UIImage *)backImage
-                max:(float)max
-                min:(float)min
-               flex:(float)flex
+          backImage:(UIImage *)backImage               
              tapped:(void (^)(void))tapped {
+    
     self = [super initWithFrame:frame];
     if (self) {
-        self.maximumZoomScale = max;
-        self.minimumZoomScale = min;
-        self.flexOfSide       = flex;
         [self setup];
         self.backImage = backImage;
         self.blkTapped = tapped;
@@ -41,37 +41,31 @@ typedef void (^BlkTapped)(void);
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-          backImage:(UIImage *)backImage {
-    return [self initWithFrame:frame backImage:backImage max:2 min:1 flex:0 tapped:nil];
-}
-
-- (id)initWithFrame:(CGRect)frame {
-    return [self initWithFrame:frame backImage:nil max:2 min:1 flex:0 tapped:nil];
-}
-
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        self.maximumZoomScale = 2;
-        self.minimumZoomScale = 1;
-        self.flexOfSide       = 0;
         [self setup];
     }
     return self;
 }
 
 - (void)setup {
-    [self srollviewConfigure];
-    [self imageView];
-    [self setupGesture];
-    self.delegate = self;
+    [self srollviewConfigure] ;
+    [self imageView] ;
+    [self setupGesture] ;
+    self.delegate = self ;
 }
 
 - (void)srollviewConfigure {
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator   = NO;
-    self.backgroundColor                = [UIColor blackColor];
+    self.backgroundColor                = [UIColor blackColor] ;
+    self.multipleTouchEnabled = YES;
+    self.scrollsToTop = NO;
+    self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight ;
+    self.delaysContentTouches = NO;
+    self.canCancelContentTouches = YES;
+    self.alwaysBounceVertical = NO;
 }
 
 - (void)setupGesture {
@@ -89,7 +83,18 @@ typedef void (^BlkTapped)(void);
 - (void)setBackImage:(UIImage *)backImage {
     _backImage = backImage;
 
-    self.imageView.image = backImage;
+    self.imageView.image = backImage ;
+    _imgWidth = backImage.size.width ;
+    _imgHeight = backImage.size.height ;
+    _imgRate_H_W = _imgHeight / _imgWidth ;
+    
+    if (_imgRate_H_W <= 1) {
+        self.maximumZoomScale = 2.5 ;
+    }
+    else { // 竖 长图处理
+        self.maximumZoomScale = self.width / (self.height / _imgHeight * _imgWidth) ;
+    }
+    self.minimumZoomScale = 1 ;
 }
 
 - (UIImageView *)imageView {
@@ -97,27 +102,36 @@ typedef void (^BlkTapped)(void);
         _imageView                 = [[UIImageView alloc] init];
         _imageView.contentMode     = UIViewContentModeScaleAspectFit;
         _imageView.backgroundColor = [UIColor blackColor];
-        _imageView.frame           = [self originFrame];
-
-        if (![_imageView superview]) {
-            [self addSubview:_imageView];
-        }
+        [self resetToOrigin] ;
+        if (![_imageView superview]) [self addSubview:_imageView];
     }
-
     return _imageView;
 }
 
 #pragma mark -
 
 - (void)resetToOrigin {
-    [self setZoomScale:1 animated:NO];
-    //    self.imageView.frame = [self originFrame] ;
-}
-
-- (CGRect)originFrame {
-    CGRect myRect = self.bounds;
-    float flex    = self.flexOfSide;
-    return CGRectMake(0 + flex, 0 + flex, myRect.size.width - flex * 2, myRect.size.height - flex * 2);
+    _imageView.frame = self.bounds ;
+    
+    if (self.imgHeight / self.imgWidth > self.height / self.width) {
+        float height = floor(self.imgHeight / (self.imgWidth / self.width));
+        _imageView.height = height ;
+    }
+    else {
+        CGFloat height = self.imgHeight / self.imgWidth * self.width ;
+        if (height < 1 || isnan(height)) height = self.height ;
+        height = floor(height) ;
+        _imageView.height = height ;
+        _imageView.centerY = self.height / 2 ;
+    }
+    
+    if (CGRectGetHeight(_imageView.frame) > CGRectGetHeight(self.frame)) {
+        _imageView.frame = CGRectMake(_imageView.frame.origin.x, _imageView.frame.origin.y, _imageView.frame.size.width, CGRectGetHeight(self.frame)) ;
+    }
+    
+    self.contentSize = CGSizeMake(self.width, MAX(_imageView.height, self.height));
+    [self scrollRectToVisible:self.bounds animated:NO];
+    self.alwaysBounceVertical = _imageView.height <= self.height ? NO : YES ;
 }
 
 #pragma mark - UIScrollView Delegate
@@ -126,6 +140,25 @@ typedef void (^BlkTapped)(void);
     return self.imageView;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    float midSelf = self.width / 2. ;
+    float realImageWid = (self.height / _imgHeight * _imgWidth) ;
+    float midDeta = (self.width - realImageWid) / 2 ;
+    
+    if (self.zoomScale >= self.maximumZoomScale) {
+        scrollView.mj_offsetX = midDeta * self.zoomScale ;
+        return ;
+    }
+    
+    if (scrollView.mj_offsetX > midDeta * self.zoomScale) {
+        scrollView.mj_offsetX = midDeta * self.zoomScale ;
+    }
+    else if (scrollView.mj_offsetX < ( midSelf + realImageWid / 2 ) * self.zoomScale - self.width ) {
+        scrollView.mj_offsetX = ( midSelf + realImageWid / 2 ) * self.zoomScale - self.width ;
+    }
+}
+
+
 #pragma mark - Touch Actions
 
 - (void)tap:(UITapGestureRecognizer *)tapGetrue {
@@ -133,19 +166,27 @@ typedef void (^BlkTapped)(void);
         self.blkTapped();
     }
     else {
-        [self resetToOrigin];
-        [self removeFromSuperview];
+        [self resetToOrigin] ;
+        [self removeFromSuperview] ;
     }
 }
 
 - (void)doubleTap:(UITapGestureRecognizer *)tapGesture {
     if (self.zoomScale >= self.maximumZoomScale) {
-        [self setZoomScale:1 animated:YES];
+        [self setZoomScale:1 animated:YES] ;
+        [self resetToOrigin] ;
     }
     else {
-        CGPoint point = [tapGesture locationInView:self];
-        [self zoomToRect:CGRectMake(point.x - SIDE_ZOOMTORECT / 2, point.y - SIDE_ZOOMTORECT / 2, SIDE_ZOOMTORECT, SIDE_ZOOMTORECT) animated:YES];
+        if (_imgRate_H_W <= 1) {
+            CGPoint point = [tapGesture locationInView:self] ;
+            [self zoomToRect:CGRectMake(point.x - SIDE_ZOOMTORECT / 2, point.y - SIDE_ZOOMTORECT / 2, SIDE_ZOOMTORECT, SIDE_ZOOMTORECT) animated:YES] ;
+        }
+        else {
+            [self setZoomScale:self.maximumZoomScale] ;
+            self.mj_offsetY = 0 ;
+        }
     }
 }
 
 @end
+
