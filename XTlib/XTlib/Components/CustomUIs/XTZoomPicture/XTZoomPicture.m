@@ -20,7 +20,9 @@ typedef void (^BlkTapped)(void);
 @property (nonatomic) float imgWidth;
 @property (nonatomic) float imgHeight;
 @property (nonatomic) float imgRate_H_W; // h / w
-
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIImage *backImage;
+@property (copy, nonatomic) NSString *urlStr;
 @end
 
 
@@ -40,6 +42,18 @@ typedef void (^BlkTapped)(void);
     return self;
 }
 
+- (id)initWithFrame:(CGRect)frame
+           imageUrl:(NSString *)urlString
+             tapped:(void (^)(void))tapped {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.urlStr = urlString;
+        [self setup];
+        self.blkTapped = tapped;
+    }
+    return self;
+}
+
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
@@ -53,6 +67,21 @@ typedef void (^BlkTapped)(void);
     [self imageView];
     [self setupGesture];
     self.delegate = self;
+    if (!self.backImage) {
+        UIActivityIndicatorView *aiView   = [UIActivityIndicatorView new];
+        aiView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+        aiView.center                     = self.center;
+        [self.xt_viewController.view.window addSubview:aiView];
+        [aiView startAnimating];
+
+        @weakify(self)
+            [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.urlStr] completed:^(UIImage *_Nullable image, NSError *_Nullable error, SDImageCacheType cacheType, NSURL *_Nullable imageURL) {
+                @strongify(self)
+                    self.backImage = image;
+                [aiView stopAnimating];
+                [aiView removeFromSuperview];
+            }];
+    }
 }
 
 - (void)srollviewConfigure {
@@ -140,6 +169,8 @@ typedef void (^BlkTapped)(void);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (_imgRate_H_W <= 1) return;
+
     float midSelf      = self.width / 2.;
     float realImageWid = (self.height / _imgHeight * _imgWidth);
     float midDeta      = (self.width - realImageWid) / 2;
@@ -156,7 +187,6 @@ typedef void (^BlkTapped)(void);
         scrollView.mj_offsetX = (midSelf + realImageWid / 2) * self.zoomScale - self.width;
     }
 }
-
 
 #pragma mark - Touch Actions
 

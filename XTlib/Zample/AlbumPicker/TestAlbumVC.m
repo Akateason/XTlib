@@ -113,8 +113,10 @@
 
 // image previewer
 - (IBAction)previewLocal:(id)sender {
-    __block XTZoomPicture *zoomPic = [[XTZoomPicture alloc] initWithFrame:APPFRAME backImage:[UIImage imageNamed:@"WechatIMG125"] tapped:^{
+    UIImage *image = [UIImage imageNamed:@"WechatIMG125"];
+    //    UIImage *image = [UIImage imageNamed:@"test"] ;
 
+    __block XTZoomPicture *zoomPic = [[XTZoomPicture alloc] initWithFrame:APPFRAME backImage:image tapped:^{
         [zoomPic removeFromSuperview];
     }];
 
@@ -122,6 +124,11 @@
 }
 
 - (IBAction)previewOnline:(id)sender {
+    __block XTZoomPicture *zoomPic = [[XTZoomPicture alloc] initWithFrame:APPFRAME imageUrl:@"https://i.loli.net/2019/03/04/5c7c9d9a12d67.gif" tapped:^{
+        [zoomPic removeFromSuperview];
+    }];
+
+    [self.view.window addSubview:zoomPic];
 }
 
 - (IBAction)previewList:(id)sender {
