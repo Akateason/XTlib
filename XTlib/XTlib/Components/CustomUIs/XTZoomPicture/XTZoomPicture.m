@@ -50,7 +50,7 @@ typedef void (^BlkLoadComplete)(void);
        loadComplete:(void (^)(void))loadComplete {
     self = [super initWithFrame:frame];
     if (self) {
-        self.urlStr = urlString;
+        self.urlStr          = urlString;
         self.blkTapped       = tapped;
         self.blkLoadComplete = loadComplete;
         [self setup];
@@ -74,8 +74,8 @@ typedef void (^BlkLoadComplete)(void);
     if (!self.backImage) {
         UIActivityIndicatorView *aiView   = [UIActivityIndicatorView new];
         aiView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
-        aiView.center                     = self.center ;
-        [self.imageView addSubview:aiView] ;
+        aiView.center                     = self.center;
+        [self.imageView addSubview:aiView];
         [aiView startAnimating];
 
         @weakify(self)
