@@ -113,13 +113,12 @@
 
 // image previewer
 - (IBAction)previewLocal:(id)sender {
-    
     __block XTZoomPicture *zoomPic = [[XTZoomPicture alloc] initWithFrame:APPFRAME backImage:[UIImage imageNamed:@"WechatIMG125"] tapped:^{
-        
-        [zoomPic removeFromSuperview] ;
-    }] ;
-    
-    [self.view.window addSubview:zoomPic] ;
+
+        [zoomPic removeFromSuperview];
+    }];
+
+    [self.view.window addSubview:zoomPic];
 }
 
 - (IBAction)previewOnline:(id)sender {
@@ -127,14 +126,6 @@
 
 - (IBAction)previewList:(id)sender {
 }
-
-
-
-
-
-
-
-
 
 
 #pragma mark -

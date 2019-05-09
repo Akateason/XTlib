@@ -57,8 +57,8 @@
 }
 
 - (IBAction)textfieldAlert:(id)sender {
-    [UIAlertController xt_showTextFieldAlertWithTitle:@"title" subtitle:@"subtitle" cancel:@"cancel" commit:@"ok" placeHolder:@"please input ..." callback:^(BOOL isConfirm, NSString *text) {
-        
+    [UIAlertController xt_showTextFieldAlertWithTitle:@"title" subtitle:@"subtitle" cancel:@"cancel" commit:@"ok" placeHolder:@"please input ..." callback:^(BOOL isConfirm, NSString *text){
+
     }];
 }
 

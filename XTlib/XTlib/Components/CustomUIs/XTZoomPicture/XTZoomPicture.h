@@ -15,9 +15,9 @@
 @property (nonatomic, strong) UIImage *backImage;
 
 - (id)initWithFrame:(CGRect)frame
-          backImage:(UIImage *)backImage               
-             tapped:(void (^)(void))tapped ;
+          backImage:(UIImage *)backImage
+             tapped:(void (^)(void))tapped;
 
-- (void)resetToOrigin ;
+- (void)resetToOrigin;
 
 @end
