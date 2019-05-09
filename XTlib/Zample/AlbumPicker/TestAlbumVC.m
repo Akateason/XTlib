@@ -126,6 +126,8 @@
 - (IBAction)previewOnline:(id)sender {
     __block XTZoomPicture *zoomPic = [[XTZoomPicture alloc] initWithFrame:APPFRAME imageUrl:@"https://i.loli.net/2019/03/04/5c7c9d9a12d67.gif" tapped:^{
         [zoomPic removeFromSuperview];
+    } loadComplete:^{
+
     }];
 
     [self.view.window addSubview:zoomPic];

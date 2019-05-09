@@ -17,7 +17,8 @@
 
 - (id)initWithFrame:(CGRect)frame
            imageUrl:(NSString *)urlString
-             tapped:(void (^)(void))tapped;
+             tapped:(void (^)(void))tapped
+       loadComplete:(void (^)(void))loadComplete;
 
 
 - (void)resetToOrigin;

@@ -13,10 +13,12 @@
 #import <XTBase/UIView+Sizes.h>
 
 typedef void (^BlkTapped)(void);
+typedef void (^BlkLoadComplete)(void);
 
 
 @interface XTZoomPicture () <UIScrollViewDelegate>
 @property (copy, nonatomic) BlkTapped blkTapped;
+@property (copy, nonatomic) BlkLoadComplete blkLoadComplete;
 @property (nonatomic) float imgWidth;
 @property (nonatomic) float imgHeight;
 @property (nonatomic) float imgRate_H_W; // h / w
@@ -44,12 +46,14 @@ typedef void (^BlkTapped)(void);
 
 - (id)initWithFrame:(CGRect)frame
            imageUrl:(NSString *)urlString
-             tapped:(void (^)(void))tapped {
+             tapped:(void (^)(void))tapped
+       loadComplete:(void (^)(void))loadComplete {
     self = [super initWithFrame:frame];
     if (self) {
         self.urlStr = urlString;
         [self setup];
-        self.blkTapped = tapped;
+        self.blkTapped       = tapped;
+        self.blkLoadComplete = loadComplete;
     }
     return self;
 }
@@ -80,6 +84,8 @@ typedef void (^BlkTapped)(void);
                     self.backImage = image;
                 [aiView stopAnimating];
                 [aiView removeFromSuperview];
+
+                self.blkLoadComplete();
             }];
     }
 }
