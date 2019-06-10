@@ -10,6 +10,7 @@
 
 
 @interface XTZoomPicture : UIScrollView
+@property (nonatomic, strong) UIImageView *imageView;
 
 - (id)initWithFrame:(CGRect)frame
           backImage:(UIImage *)backImage

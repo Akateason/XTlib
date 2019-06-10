@@ -22,7 +22,7 @@ typedef void (^BlkLoadComplete)(void);
 @property (nonatomic) float imgWidth;
 @property (nonatomic) float imgHeight;
 @property (nonatomic) float imgRate_H_W; // h / w
-@property (nonatomic, strong) UIImageView *imageView;
+
 @property (nonatomic, strong) UIImage *backImage;
 @property (copy, nonatomic) NSString *urlStr;
 @end
