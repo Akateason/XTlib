@@ -13,10 +13,11 @@
 #import "ScreenHeader.h"
 #import "UIViewController+XTAddition.h"
 #import "XTSIAlertView.h"
+#import "XTlib/XTlib.h"
 
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet RootTableView *table;
+@property (weak, nonatomic) IBOutlet UITableView *table;
 @property (strong, nonatomic) NSArray *dataSource;
 @property (strong, nonatomic) NSArray *sectionKeys;
 @end
@@ -43,6 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.table xt_setup];
     self.table.dataSource = self;
     self.table.delegate   = self;
     self.dataSource       = ({

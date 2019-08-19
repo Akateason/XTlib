@@ -17,12 +17,10 @@ PODS:
   - CHTCollectionViewWaterfallLayout (0.9.7):
     - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.7)
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
-  - CYLTableViewPlaceHolder (1.0.9)
   - FDFullscreenPopGesture (1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - FTPopOverMenu (2.0.3)
   - JKCategories (1.8.1):
     - JKCategories/CoreData (= 1.8.1)
     - JKCategories/CoreLocation (= 1.8.1)
@@ -172,17 +170,15 @@ PODS:
   - ReactiveObjC (3.1.1)
   - RSKImageCropper (2.2.1)
   - RxWebViewController (0.0.2)
-  - SDWebImage (5.0.2):
-    - SDWebImage/Core (= 5.0.2)
-  - SDWebImage/Core (5.0.2)
-  - SSZipArchive (2.2.1)
+  - SDWebImage (5.1.0):
+    - SDWebImage/Core (= 5.1.0)
+  - SDWebImage/Core (5.1.0)
+  - SSZipArchive (2.2.2)
   - SVProgressHUD (2.2.5)
   - UIFontWDCustomLoader (0.1.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (1.1.3):
-    - CYLTableViewPlaceHolder
-    - FTPopOverMenu
+  - XTBase (1.1.5):
     - Masonry
     - MJRefresh
     - ReactiveObjC
@@ -210,7 +206,7 @@ DEPENDENCIES:
   - FDFullscreenPopGesture
   - JKCategories
   - LxDBAnything
-  - RSKImageCropper
+  - RSKImageCropper (= 2.2.1)
   - XTBase (from `../XTBase/`)
   - XTColor (from `../XTColor/`)
   - XTFMDB (from `../XTFMDB/`)
@@ -220,10 +216,8 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - CHTCollectionViewWaterfallLayout
-    - CYLTableViewPlaceHolder
     - FDFullscreenPopGesture
     - FMDB
-    - FTPopOverMenu
     - JKCategories
     - LxDBAnything
     - Masonry
@@ -252,10 +246,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
-  CYLTableViewPlaceHolder: 678e070180a24e2f241adc7830d5d7f5e2abbaa5
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  FTPopOverMenu: 8aa89de66e72b53db3e7eeab42243d393237768f
   JKCategories: d5fecfa4f790685ea20daea319f74a8701d4c3ab
   LxDBAnything: 154a2ad1ae32e70355d886b5443260543bb60c71
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -263,18 +255,18 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RSKImageCropper: 98296ad26b41753f796b6898d015509598f13d97
   RxWebViewController: 79bcbf51aff13d93db9779404348b052ab0cd440
-  SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
-  SSZipArchive: 8e859da2520142e09166bc9161967db296e9d02f
+  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
+  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIFontWDCustomLoader: 233f0f83e543b8f24a6299d7fc773be9d704fe22
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: ab52c886a6b9b055da20a472bb39ce9118e5189b
+  XTBase: 105ed7c34e8b0b0219f54a1ee61baf31cbed4d58
   XTColor: 0151b3b61e3b1de2dc29fcdb4a0a22758c8a38df
   XTFMDB: 0891f3355697ebbc3d75f373bcda34329f2d5d94
   XTReq: f5added0278758ca358f62a3de30a118f1b6d94a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 22e4e198e970a4fe6b1be44899480eb36f1b4ca3
+PODFILE CHECKSUM: 0e892b2d1e1138157a96ada6984bf7f1bdbc4d9f
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5
