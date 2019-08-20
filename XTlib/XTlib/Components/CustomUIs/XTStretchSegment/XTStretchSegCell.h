@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XTStretchSegCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *lbTitle ;
 
+@interface XTStretchSegCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lbTitle;
 
 
 @end

@@ -9,6 +9,7 @@
 #import "XTStretchSegCell.h"
 #import <XTBase/XTBase.h>
 
+
 @implementation XTStretchSegCell
 
 - (void)awakeFromNib {
@@ -17,9 +18,7 @@
 }
 
 - (void)xt_configure:(id)model indexPath:(NSIndexPath *)indexPath {
-    [super xt_configure:model indexPath:indexPath] ;
-    
-    
+    [super xt_configure:model indexPath:indexPath];
 }
 
 
