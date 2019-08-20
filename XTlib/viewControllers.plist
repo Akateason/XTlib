@@ -47,6 +47,14 @@
 				<key>title</key>
 				<string>RespoderChain</string>
 			</dict>
+			<dict>
+				<key>cname</key>
+				<string>SegmentVC</string>
+				<key>title</key>
+				<string>segment</string>
+				<key>isStory</key>
+				<true/>
+			</dict>
 		</array>
 	</dict>
 	<dict>

@@ -88,6 +88,24 @@
             </objects>
             <point key="canvasLocation" x="278" y="936"/>
         </scene>
+        <!--SegmentVC-->
+        <scene sceneID="5Zp-V2-cTH">
+            <objects>
+                <viewController storyboardIdentifier="SegmentVC" id="Uf4-xV-y6S" customClass="SegmentVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Hz-n7-7bn"/>
+                        <viewControllerLayoutGuide type="bottom" id="YmZ-OK-bDe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sYy-oI-086">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="THd-gn-6DD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1257" y="1303"/>
+        </scene>
         <!--Alert TestVC-->
         <scene sceneID="qqt-ZH-Dc1">
             <objects>

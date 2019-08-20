@@ -10,7 +10,7 @@
 #import "Movie.h"
 #import "Images.h"
 #import "Rating.h"
-#import "UIImageView+WebCache.h"
+#import <XTBase/XTBase.h>
 
 
 @interface MovieCell ()

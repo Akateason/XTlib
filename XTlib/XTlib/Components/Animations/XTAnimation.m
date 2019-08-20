@@ -7,7 +7,7 @@
 //
 
 #import "XTAnimation.h"
-#import "ScreenHeader.h"
+#import <XTBase/XTBase.h>
 
 
 @implementation XTAnimation

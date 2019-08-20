@@ -7,9 +7,9 @@
 //
 
 #import "Zample4Controller.h"
-#import "XTColorFetcher.h"
+#import <XTBase/XTBase.h>
 #import <XTColor/UIColor+XTColors.h>
-#import "RootTableView.h"
+
 #import "XTColorCell.h"
 #import "XTlib.h"
 

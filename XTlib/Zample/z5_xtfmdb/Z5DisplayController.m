@@ -9,7 +9,7 @@
 #import "Z5DisplayController.h"
 #import "Z5DisplayCell.h"
 #import "Model1.h"
-#import "XTFMDB.h"
+#import <XTFMDB/XTFMDB.h>
 
 
 @interface Z5DisplayController () <UITableViewDataSource, UITableViewDelegate>

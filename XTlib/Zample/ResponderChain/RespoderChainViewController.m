@@ -7,9 +7,8 @@
 //
 
 #import "RespoderChainViewController.h"
-#import "UIResponder+ChainHandler.h"
+#import <XTBase/XTBase.h>
 #import "RCSubView.h"
-#import "XTColorFetcher.h"
 #import "XTlib.h"
 
 

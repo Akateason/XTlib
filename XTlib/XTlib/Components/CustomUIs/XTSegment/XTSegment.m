@@ -8,8 +8,7 @@
 
 #define TAGS_TEASEGMENT_BT 987520
 #import "XTSegment.h"
-#import "ScreenHeader.h"
-#import "UIImage+AddFunction.h"
+#import <XTBase/XTBase.h>
 
 
 @interface XTSegment ()

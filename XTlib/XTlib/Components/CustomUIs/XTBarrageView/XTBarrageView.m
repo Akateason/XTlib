@@ -1,7 +1,7 @@
 
 
 #import "XTBarrageView.h"
-#import "UIView+Sizes.h"
+#import <XTBase/XTBase.h>
 #import "XTBarrageItemView.h"
 //#import "ArticleComment.h"
 //#import "HWWeakTimer.h"

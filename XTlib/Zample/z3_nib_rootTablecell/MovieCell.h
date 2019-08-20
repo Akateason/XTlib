@@ -6,7 +6,8 @@
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
-#import "RootTableCell.h"
+
+#import <XTBase/RootTableCell.h>
 
 
 @interface MovieCell : RootTableCell

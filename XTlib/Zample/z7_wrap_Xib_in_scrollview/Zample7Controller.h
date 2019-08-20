@@ -6,7 +6,8 @@
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
-#import "RootCtrl.h"
+
+#import <XTBase/RootCtrl.h>
 
 
 @interface Zample7Controller : RootCtrl

@@ -7,7 +7,7 @@
 //
 
 #import "XTLoopScrollView.h"
-#import "NSTimer+Addition.h"
+#import <XTBase/XTBase.h>
 
 static int IMAGEVIEW_COUNT = 3;
 

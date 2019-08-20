@@ -7,9 +7,9 @@
 //
 
 #import "Zample8Controller.h"
-#import "SVProgressHUD.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
-#import "UIButton+XT.h"
+#import <XTBase/XTBase.h>
 #import "Z8CollectionViewController.h"
 #import "XTlib.h"
 

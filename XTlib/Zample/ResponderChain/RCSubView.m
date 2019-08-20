@@ -8,7 +8,7 @@
 
 #import "RCSubView.h"
 #import <Masonry/Masonry.h>
-#import "UIResponder+ChainHandler.h"
+#import <XTBase/XTBase.h>
 
 
 @implementation RCSubView

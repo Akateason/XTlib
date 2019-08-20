@@ -7,11 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "RootTableView.h"
-#import "RootTableCell.h"
-#import "PlistUtil.h"
-#import "ScreenHeader.h"
-#import "UIViewController+XTAddition.h"
+#import <XTBase/XTBase.h>
+
+
 #import "XTSIAlertView.h"
 #import "XTlib/XTlib.h"
 

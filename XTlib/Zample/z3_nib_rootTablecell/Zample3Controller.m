@@ -11,7 +11,7 @@
 #import "Rating.h"
 #import "Images.h"
 #import "MovieCell.h"
-#import "MyWebController.h"
+#import <XTBase/XTBase.h>
 #import "XTlib.h"
 #import "ServerRequest.h"
 #import <XTBase/MyWebController.h>

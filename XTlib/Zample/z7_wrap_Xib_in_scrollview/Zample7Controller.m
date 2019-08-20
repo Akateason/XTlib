@@ -7,8 +7,7 @@
 //
 
 #import "Zample7Controller.h"
-#import "ReactiveObjC.h"
-#import "UIView+XTAddition.h"
+#import <XTBase/XTBase.h>
 
 
 @interface Zample7Controller ()

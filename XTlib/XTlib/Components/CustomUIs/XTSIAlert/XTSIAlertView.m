@@ -8,7 +8,7 @@
 
 #import "XTSIAlertView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "ScreenHeader.h"
+#import <XTBase/XTBase.h>
 
 
 NSString *const XTSIAlertViewWillShowNotification    = @"XTSIAlertViewWillShowNotification";

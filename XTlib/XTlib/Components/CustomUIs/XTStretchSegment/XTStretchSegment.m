@@ -2,271 +2,206 @@
 //  XTStretchSegment.m
 //  XTMultipleTables
 //
-//  Created by TuTu on 15/12/11.
+//  Created by teason on 15/12/11.
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
 #import "XTStretchSegment.h"
+#import "XTStretchSegCell.h"
 
 
-static const float kWordsHeadNailFlexLength  = 10.0f;
-static const int kTopButtonTagBasic          = 5438;
-static const float kTopButtonFontSize        = 15.0;
 static const float kOverlayAnimationDuration = 0.25f;
-static const float kFlexOfTopButtonFontSize  = 5.f;
-
-#define ZoomType_DefaultColor [UIColor colorWithWhite:.92 alpha:1]
-#define ZoomType_SelectedColor [UIColor whiteColor]
-//#define ZoomType_DefaultColor   [UIColor xt_w_comment]
-//#define ZoomType_SelectedColor  [UIColor xt_w_red]
 
 
-@interface XTStretchSegment () {
-    CGRect m_overlayFrame;
-    bool m_hasSplitLine;
-}
-@property (nonatomic, strong) UIImageView *overlayView;
-@property (nonatomic) DisplayType_XTStretchSegment type;
-
+@interface XTStretchSegment () <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (nonatomic) NSInteger currentIndex;
+@property (nonatomic, strong) UIView *overlayView;
 @end
 
 
 @implementation XTStretchSegment
 
-#pragma mark - Initial
-- (instancetype)initWithFrame:(CGRect)frame
-                     dataList:(NSArray *)dataList {
-    return [self initWithFrame:frame
-                      dataList:dataList
-                  overlayImage:[UIImage imageNamed:@"btBase"]
-                 hasSpliteLine:false
-                          type:0];
+#pragma mark - Funcs
++ (instancetype)getNew {
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection             = UICollectionViewScrollDirectionHorizontal;
+    layout.sectionInset                = UIEdgeInsetsMake(0, 20, 0, 20);
+
+    XTStretchSegment *seg = [[XTStretchSegment alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+
+    return seg;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-                     dataList:(NSArray *)dataList
-                 overlayImage:(UIImage *)imgOverlay
-                hasSpliteLine:(bool)hasSplite
-                         type:(DisplayType_XTStretchSegment)type {
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.dataList          = dataList;
-        m_hasSplitLine         = hasSplite;
-        self.type              = type;
-        self.overlayView.image = type == TypeBaseLine ? imgOverlay : nil;
-        [self setup];
+- (void)moveToIndex:(NSInteger)idx {
+    self.currentIndex = idx;
+}
+- (NSInteger)getCurrentIdx {
+    return self.currentIndex;
+}
+
+- (void)setupTitleColor:(UIColor *)titleColor
+          selectedColor:(UIColor *)selectedColor
+            bigFontSize:(float)bigFontSize
+         normalFontSize:(float)normalFontSize
+            hasUserLine:(BOOL)hasUnderLine
+              lineSpace:(float)linespace
+             sideMargin:(float)sideMargin {
+    self.titleColor         = titleColor;
+    self.titleSelectedColor = selectedColor;
+    self.bigFontSize        = bigFontSize;
+    self.normalFontSize     = normalFontSize;
+    self.hasUnderLine       = hasUnderLine;
+    self.lineSpace          = linespace;
+    self.sideMargin         = sideMargin;
+}
+
+- (void)setupCollections {
+    [XTStretchSegCell xt_registerNibFromCollection:self];
+
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection             = UICollectionViewScrollDirectionHorizontal;
+    layout.minimumLineSpacing          = self.lineSpace;
+    layout.sectionInset                = UIEdgeInsetsMake(0, self.sideMargin, 0, self.sideMargin);
+    self.collectionViewLayout          = layout;
+    self.dataSource                    = self;
+    self.delegate                      = self;
+
+    _currentIndex                       = 0;
+    self.showsHorizontalScrollIndicator = NO;
+    self.backgroundColor                = [UIColor clearColor];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+        NSIndexPath *indexPath    = [NSIndexPath indexPathForRow:0 inSection:0];
+        XTStretchSegCell *fstCell = (XTStretchSegCell *)[self cellForItemAtIndexPath:indexPath];
+
+        if (self.hasUnderLine) {
+            CGPoint centerCell = [self convertPoint:fstCell.center toView:self];
+            //            NSLog(@"center : %@", @(centerCell)) ;
+
+            self.overlayView.center = centerCell;
+            [self addSubview:self.overlayView];
+        }
+    });
+}
+
+
+#pragma mark - props
+
+- (UIColor *)titleColor {
+    if (!_titleColor) {
+        _titleColor = [UIColor colorWithWhite:0 alpha:.8];
     }
-    return self;
+    return _titleColor;
 }
 
-- (CGSize)topButtonMaxSize {
-    return CGSizeMake(1000, self.frame.size.height);
+- (UIColor *)titleSelectedColor {
+    if (!_titleSelectedColor) {
+        _titleSelectedColor = [UIColor blackColor];
+    }
+    return _titleSelectedColor;
 }
 
-- (CGFloat)getButtonWidth:(NSString *)nameBt {
-    CGFloat wid = [nameBt boundingRectWithSize:[self topButtonMaxSize]
-                                       options:NSStringDrawingUsesLineFragmentOrigin
-                                    attributes:@{ NSFontAttributeName : [UIFont systemFontOfSize:kTopButtonFontSize] }
-                                       context:nil]
-                      .size.width;
-    wid += (kWordsHeadNailFlexLength * 2);
-    return wid;
+- (float)bigFontSize {
+    if (!_bigFontSize) {
+        _bigFontSize = 17.;
+    }
+    return _bigFontSize;
 }
 
-- (CGRect)getRectFromWhichButton:(int)index {
-    __block float sumOfPreLength = 0.0;
-    [self.dataNameList enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *_Nonnull stop) {
-
-        sumOfPreLength += [self getButtonWidth:name];
-
-        if (idx == index - 1) {
-            *stop = YES;
-        }
-    }];
-
-    sumOfPreLength = (!index) ? 0 : sumOfPreLength;
-
-    return CGRectMake(sumOfPreLength,
-                      0,
-                      [self getButtonWidth:self.dataNameList[index]],
-                      self.frame.size.height);
+- (float)normalFontSize {
+    if (!_normalFontSize) {
+        _normalFontSize = 14.;
+    }
+    return _normalFontSize;
 }
 
-- (void)drawBaseSpliteLine:(float)length {
-    UIView *baseline = [[UIView alloc] initWithFrame:CGRectMake(0,
-                                                                self.frame.size.height - 1,
-                                                                length,
-                                                                1)];
-    baseline.backgroundColor = [UIColor blackColor];
-    [self addSubview:baseline];
+- (float)lineSpace {
+    if (!_lineSpace) {
+        _lineSpace = 5.;
+    }
+    return _lineSpace;
 }
 
-#pragma mark - Property
-- (void)setDataList:(NSArray *)dataList {
-    _dataList = dataList;
-
-    NSMutableArray *templist = [[NSMutableArray alloc] init];
-    [dataList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *_Nonnull stop) {
-
-        NSString *name = obj;
-        //        NSString *name = [[obj allKeys] firstObject] ;
-        //        NSString *name = akind.name ;
-        [templist addObject:name];
-        if (idx == dataList.count - 1) {
-            self.dataNameList = templist;
-            *stop             = YES;
-        }
-    }];
+- (float)sideMargin {
+    if (!_sideMargin) {
+        _sideMargin = 20.;
+    }
+    return _sideMargin;
 }
 
-- (void)setDataNameList:(NSArray *)dataNameList {
-    _dataNameList = dataNameList;
+- (UIView *)overlayView {
+    if (!_overlayView) {
+        _overlayView = [self.xtSSDelegate overlayView];
+    }
+    return _overlayView;
 }
 
 - (void)setCurrentIndex:(NSInteger)currentIndex {
     _currentIndex = currentIndex;
 
-    if (self.type == TypeBaseLine) {
-        [self movingOverlay];
-    }
-    else if (self.type == TypeZoomTitle) {
-        [self zoomingTitle];
-    }
-}
+    // todo animation . move overlay .
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:currentIndex inSection:0];
 
-- (UIImageView *)overlayView {
-    if (!_overlayView) {
-        _overlayView = [[UIImageView alloc] init];
-        if (![_overlayView superview]) {
-            [self addSubview:_overlayView];
-        }
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self scrollToItemAtIndexPath:indexPath atScrollPosition:(UICollectionViewScrollPositionCenteredHorizontally) animated:YES];
+        [self reloadData];
 
-    return _overlayView;
-}
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
+            if (self.hasUnderLine) {
+                XTStretchSegCell *cell = (XTStretchSegCell *)[self cellForItemAtIndexPath:indexPath];
+                CGPoint centerCell     = [self convertPoint:cell.center toView:self];
+                //                NSLog(@"center : %@", @(centerCell)) ;
+                [UIView animateWithDuration:kOverlayAnimationDuration animations:^{
+                    self.overlayView.center = centerCell;
+                } completion:^(BOOL finished){
 
-#pragma mark - Setup
-- (void)setup {
-    [self setupButtonsAndSpilteLine];
-    [self setupDefaultOverlay];
-
-    self.currentIndex                   = 0;
-    self.showsHorizontalScrollIndicator = NO;
-    self.backgroundColor                = [UIColor clearColor];
-}
-
-- (void)setupButtonsAndSpilteLine {
-    __block CGFloat sumOflatestButtonsWidth = 0.0;
-
-    [_dataNameList enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *_Nonnull stop) {
-
-        UIButton *bt = [[UIButton alloc] init];
-        [bt setTitle:name forState:0];
-
-        if (self.type == TypeBaseLine) {
-            bt.titleLabel.font = [UIFont systemFontOfSize:kTopButtonFontSize];
-            [bt setTitleColor:ZoomType_DefaultColor forState:0];
-        }
-        else if (self.type == TypeZoomTitle) {
-            bt.titleLabel.font = [UIFont systemFontOfSize:kTopButtonFontSize - kFlexOfTopButtonFontSize];
-            [bt setTitleColor:ZoomType_DefaultColor forState:0];
-        }
-
-        bt.tag = kTopButtonTagBasic + idx;
-        [bt addTarget:self action:@selector(clickOnWhichButton:) forControlEvents:UIControlEventTouchUpInside];
-        CGRect btFrame      = CGRectZero;
-        btFrame.origin.x    = sumOflatestButtonsWidth;
-        btFrame.size.width  = [self getButtonWidth:name];
-        btFrame.size.height = self.frame.size.height;
-        bt.frame            = btFrame;
-        [self addSubview:bt];
-        sumOflatestButtonsWidth += btFrame.size.width;
-        if (_dataNameList.count - 1 == idx) {
-            self.contentSize = CGSizeMake(sumOflatestButtonsWidth, self.frame.size.height);
-            if (m_hasSplitLine) {
-                [self drawBaseSpliteLine:sumOflatestButtonsWidth];
+                }];
             }
-            *stop = YES;
-        }
-    }];
-}
 
-- (void)setupDefaultOverlay {
-    m_overlayFrame = [self getRectFromWhichButton:0];
-}
+        });
 
-- (void)clickOnWhichButton:(UIButton *)button {
-    //    NSLog(@"tag : %ld is selected",(long)button.tag) ;
-    int selectedIndex = (int)button.tag - kTopButtonTagBasic;
-    NSLog(@"selectedIndex : %d", selectedIndex);
-    if (_currentIndex == selectedIndex) return;
+    });
 
-    self.currentIndex = selectedIndex;
-    [self.xtDelegate xtStretchSegmentMoveToTheIndex:selectedIndex
-                                           dataItem:_dataList[selectedIndex]];
-}
-
-- (void)movingOverlay {
-    CGRect rectShouldMove = [self getRectFromWhichButton:(int)_currentIndex];
-    if (CGRectEqualToRect(rectShouldMove, self.overlayView.frame)) return;
-
-    [UIView animateWithDuration:kOverlayAnimationDuration
-                     animations:^{
-                         self.overlayView.frame = rectShouldMove;
-                         [self scrollRectToVisible:self.overlayView.frame animated:YES];
-                         [self resetButtonsColor];
-                     }
-                     completion:nil];
+    [self.xtSSDelegate stretchSegment:self didSelectedIdx:currentIndex];
 }
 
 
-- (void)zoomingTitle {
-    [UIView animateWithDuration:kOverlayAnimationDuration
-                     animations:^{
-                         [self resetButtonSizeAndColor];
-                     }];
+#pragma mark - UICollectionViewDataSource <NSObject>
 
-    [self movingOverlay];
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.xtSSDataSource stretchSegment_CountsOfDatasource];
 }
 
-- (void)resetButtonSizeAndColor {
-    for (UIView *sub in self.subviews) {
-        if ([sub isKindOfClass:[UIButton class]]) {
-            UIButton *button = (UIButton *)sub;
-            if (button.tag == kTopButtonTagBasic + _currentIndex) {
-                button.titleLabel.font = [UIFont systemFontOfSize:kTopButtonFontSize];
-                [button setTitleColor:ZoomType_SelectedColor forState:0];
-            }
-            else {
-                button.titleLabel.font = [UIFont systemFontOfSize:kTopButtonFontSize - kFlexOfTopButtonFontSize];
-                [button setTitleColor:ZoomType_DefaultColor forState:0];
-            }
-        }
-    }
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    XTStretchSegCell *cell = [XTStretchSegCell xt_fetchFromCollection:collectionView indexPath:indexPath];
+    cell.lbTitle.text      = [self.xtSSDataSource stretchSegment:self titleOfDataAtIndex:indexPath.row];
+    cell.lbTitle.font      = self.currentIndex == indexPath.row ? [UIFont systemFontOfSize:self.bigFontSize] : [UIFont systemFontOfSize:self.normalFontSize];
+    return cell;
 }
 
-- (void)resetButtonsColor {
-    for (UIView *sub in self.subviews) {
-        if ([sub isKindOfClass:[UIButton class]]) {
-            UIButton *button = (UIButton *)sub;
-            if (button.tag == kTopButtonTagBasic + _currentIndex) {
-                [button setTitleColor:ZoomType_SelectedColor forState:0];
-            }
-            else {
-                [button setTitleColor:ZoomType_DefaultColor forState:0];
-            }
-        }
-    }
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    self.currentIndex = indexPath.row;
 }
 
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake([self getButtonWidth:[self.xtSSDataSource stretchSegment:self titleOfDataAtIndex:indexPath.row] font:(self.currentIndex == indexPath.row) ?
+                                                                                                                          [UIFont systemFontOfSize:self.bigFontSize] :
+                                                                                                                          [UIFont systemFontOfSize:self.normalFontSize]],
+                      self.bounds.size.height);
 }
-*/
+
+- (CGSize)topButtonMaxSize {
+    return CGSizeMake(1000, 60);
+}
+- (CGFloat)getButtonWidth:(NSString *)nameString font:(UIFont *)font {
+    CGFloat wid = [nameString boundingRectWithSize:[self topButtonMaxSize]
+                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                        attributes:@{ NSFontAttributeName : font }
+                                           context:nil]
+                      .size.width;
+    return wid;
+}
 
 @end

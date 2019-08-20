@@ -8,7 +8,7 @@
 
 
 #import "Zample2Controller.h"
-#import "RootTableCell.h"
+#import <XTBase/XTBase.h>
 #import "DoubanTags.h"
 #import "DoubanTagsCell.h"
 

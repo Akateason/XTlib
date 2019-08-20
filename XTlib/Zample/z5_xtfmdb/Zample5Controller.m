@@ -9,11 +9,9 @@
 #import "Zample5Controller.h"
 
 #import <objc/runtime.h>
-#import "XTFMDB.h"
+#import <XTFMDB/XTFMDB.h>
 #import "Model1.h"
-#import "NSDate+XTTick.h"
-#import "NSObject+Reflection.h"
-#import "UIImage+AddFunction.h"
+#import <XTBase/XTBase.h>
 #import "XTlib.h"
 #import "Z5DisplayController.h"
 

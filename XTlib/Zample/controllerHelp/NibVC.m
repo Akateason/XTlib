@@ -7,7 +7,7 @@
 //
 
 #import "NibVC.h"
-#import "UIView+XTAddition.h"
+#import <XTBase/XTBase.h>
 
 
 @interface NibVC ()

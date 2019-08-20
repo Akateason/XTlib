@@ -8,7 +8,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "XTReq.h"
+#import <XTReq/XTReq.h>
 
 
 @interface ServerRequest : NSObject

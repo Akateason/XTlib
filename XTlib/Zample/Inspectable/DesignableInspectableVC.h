@@ -6,7 +6,7 @@
 //  Copyright © 2018年 teason23. All rights reserved.
 //
 
-#import "RootCtrl.h"
+#import <XTBase/XTBase.h>
 #import <XTBase/XTBase.h>
 
 

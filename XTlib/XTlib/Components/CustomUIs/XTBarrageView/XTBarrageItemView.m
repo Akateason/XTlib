@@ -1,8 +1,6 @@
 
 #import "XTBarrageItemView.h"
-#import "UIView+Sizes.h"
-//#import "THLabel.h"
-#import "NSString+Extend.h"
+#import <XTBase/XTBase.h>
 
 
 @implementation XTBarrageItemView {
