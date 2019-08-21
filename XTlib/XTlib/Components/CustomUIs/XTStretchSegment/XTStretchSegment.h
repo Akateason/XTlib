@@ -56,5 +56,5 @@
 // Func
 - (void)moveToIndex:(NSInteger)idx;
 - (NSInteger)getCurrentIdx;
-
+- (void)moveOverlayUI;
 @end
