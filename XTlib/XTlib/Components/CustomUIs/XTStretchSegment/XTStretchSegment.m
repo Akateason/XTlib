@@ -96,6 +96,13 @@ static const float kOverlayAnimationDuration = 0.25f;
     }];
 }
 
+- (void)setOverLayUI {
+    NSIndexPath *indexPath  = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
+    XTStretchSegCell *cell  = (XTStretchSegCell *)[self cellForItemAtIndexPath:indexPath];
+    CGPoint centerCell      = [self convertPoint:cell.center toView:self];
+    self.overlayView.center = centerCell;
+}
+
 
 #pragma mark - props
 

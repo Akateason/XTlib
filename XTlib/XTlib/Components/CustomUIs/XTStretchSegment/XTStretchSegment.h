@@ -57,4 +57,5 @@
 - (void)moveToIndex:(NSInteger)idx;
 - (NSInteger)getCurrentIdx;
 - (void)moveOverlayUI;
+- (void)setOverLayUI;
 @end
