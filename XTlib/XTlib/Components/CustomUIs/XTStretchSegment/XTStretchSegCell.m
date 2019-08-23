@@ -8,6 +8,7 @@
 
 #import "XTStretchSegCell.h"
 #import <XTBase/XTBase.h>
+#import "XTStretchSegment.h"
 
 
 @implementation XTStretchSegCell

@@ -10,12 +10,11 @@
 #import "XTStretchSegCell.h"
 
 
-static const float kOverlayAnimationDuration = 0.25f;
+static const float kOverlayAnimationDuration = .4f;
 
 
 @interface XTStretchSegment () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic) NSInteger currentIndex;
-@property (nonatomic, strong) UIView *overlayView;
 @end
 
 
@@ -45,14 +44,16 @@ static const float kOverlayAnimationDuration = 0.25f;
          normalFontSize:(float)normalFontSize
             hasUserLine:(BOOL)hasUnderLine
               lineSpace:(float)linespace
-             sideMargin:(float)sideMargin {
+         sideMarginLeft:(float)sideMarginLeft
+        sideMarginRight:(float)sideMarginRight {
     self.titleColor         = titleColor;
     self.titleSelectedColor = selectedColor;
     self.bigFontSize        = bigFontSize;
     self.normalFontSize     = normalFontSize;
     self.hasUnderLine       = hasUnderLine;
     self.lineSpace          = linespace;
-    self.sideMargin         = sideMargin;
+    self.sideMargin_left    = sideMarginLeft;
+    self.sideMargin_right   = sideMarginRight;
 }
 
 - (void)setupCollections {
@@ -61,7 +62,7 @@ static const float kOverlayAnimationDuration = 0.25f;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection             = UICollectionViewScrollDirectionHorizontal;
     layout.minimumLineSpacing          = self.lineSpace;
-    layout.sectionInset                = UIEdgeInsetsMake(0, self.sideMargin, 0, self.sideMargin);
+    layout.sectionInset                = UIEdgeInsetsMake(0, self.sideMargin_left, 0, self.sideMargin_right);
     self.collectionViewLayout          = layout;
     self.dataSource                    = self;
     self.delegate                      = self;
@@ -69,38 +70,6 @@ static const float kOverlayAnimationDuration = 0.25f;
     _currentIndex                       = 0;
     self.showsHorizontalScrollIndicator = NO;
     self.backgroundColor                = [UIColor clearColor];
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-
-        NSIndexPath *indexPath    = [NSIndexPath indexPathForRow:0 inSection:0];
-        XTStretchSegCell *fstCell = (XTStretchSegCell *)[self cellForItemAtIndexPath:indexPath];
-
-        if (self.hasUnderLine) {
-            CGPoint centerCell = [self convertPoint:fstCell.center toView:self];
-            //            NSLog(@"center : %@", @(centerCell)) ;
-
-            self.overlayView.center = centerCell;
-            [self addSubview:self.overlayView];
-        }
-    });
-}
-
-- (void)moveOverlayUI {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
-    XTStretchSegCell *cell = (XTStretchSegCell *)[self cellForItemAtIndexPath:indexPath];
-    CGPoint centerCell     = [self convertPoint:cell.center toView:self];
-    [UIView animateWithDuration:kOverlayAnimationDuration animations:^{
-        self.overlayView.center = centerCell;
-    } completion:^(BOOL finished){
-
-    }];
-}
-
-- (void)setOverLayUI {
-    NSIndexPath *indexPath  = [NSIndexPath indexPathForRow:self.currentIndex inSection:0];
-    XTStretchSegCell *cell  = (XTStretchSegCell *)[self cellForItemAtIndexPath:indexPath];
-    CGPoint centerCell      = [self convertPoint:cell.center toView:self];
-    self.overlayView.center = centerCell;
 }
 
 
@@ -141,18 +110,18 @@ static const float kOverlayAnimationDuration = 0.25f;
     return _lineSpace;
 }
 
-- (float)sideMargin {
-    if (!_sideMargin) {
-        _sideMargin = 20.;
+- (float)sideMargin_left {
+    if (!_sideMargin_left) {
+        _sideMargin_left = 20.;
     }
-    return _sideMargin;
+    return _sideMargin_left;
 }
 
-- (UIView *)overlayView {
-    if (!_overlayView) {
-        _overlayView = [self.xtSSDelegate overlayView];
+- (float)sideMargin_right {
+    if (!_sideMargin_right) {
+        _sideMargin_right = 20.;
     }
-    return _overlayView;
+    return _sideMargin_right;
 }
 
 - (void)setCurrentIndex:(NSInteger)currentIndex {
@@ -162,24 +131,8 @@ static const float kOverlayAnimationDuration = 0.25f;
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:currentIndex inSection:0];
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self scrollToItemAtIndexPath:indexPath atScrollPosition:(UICollectionViewScrollPositionCenteredHorizontally) animated:YES];
+        [self scrollToItemAtIndexPath:indexPath atScrollPosition:(UICollectionViewScrollPositionCenteredHorizontally) animated:NO];
         [self reloadData];
-
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-
-            if (self.hasUnderLine) {
-                XTStretchSegCell *cell = (XTStretchSegCell *)[self cellForItemAtIndexPath:indexPath];
-                CGPoint centerCell     = [self convertPoint:cell.center toView:self];
-                //                NSLog(@"center : %@", @(centerCell)) ;
-                [UIView animateWithDuration:kOverlayAnimationDuration animations:^{
-                    self.overlayView.center = centerCell;
-                } completion:^(BOOL finished){
-
-                }];
-            }
-
-        });
-
     });
 
     [self.xtSSDelegate stretchSegment:self didSelectedIdx:currentIndex];
@@ -196,6 +149,29 @@ static const float kOverlayAnimationDuration = 0.25f;
     XTStretchSegCell *cell = [XTStretchSegCell xt_fetchFromCollection:collectionView indexPath:indexPath];
     cell.lbTitle.text      = [self.xtSSDataSource stretchSegment:self titleOfDataAtIndex:indexPath.row];
     cell.lbTitle.font      = self.currentIndex == indexPath.row ? [UIFont systemFontOfSize:self.bigFontSize] : [UIFont systemFontOfSize:self.normalFontSize];
+
+    if (self.hasUnderLine) {
+        if (!cell.phView) {
+            UIView *ph = [self.xtSSDelegate overlayView];
+            [cell addSubview:ph];
+            [ph mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(cell);
+            }];
+            cell.phView = ph;
+        }
+
+        if (self.currentIndex == indexPath.row) {
+            cell.phView.transform = CGAffineTransformMakeScale(1.3, 1.3);
+            [UIView animateWithDuration:kOverlayAnimationDuration animations:^{
+                cell.phView.alpha     = 1;
+                cell.phView.transform = CGAffineTransformIdentity;
+            }];
+        }
+        else {
+            cell.phView.alpha = 0;
+        }
+    }
+
     return cell;
 }
 
@@ -221,5 +197,6 @@ static const float kOverlayAnimationDuration = 0.25f;
                       .size.width;
     return wid;
 }
+
 
 @end

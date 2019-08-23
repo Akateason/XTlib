@@ -32,11 +32,12 @@
 
 @property (strong, nonatomic) UIColor *titleColor;
 @property (strong, nonatomic) UIColor *titleSelectedColor;
-@property (nonatomic) float bigFontSize;    // 15
-@property (nonatomic) float normalFontSize; // 10
-@property (nonatomic) BOOL hasUnderLine;    // y
-@property (nonatomic) float lineSpace;      // 5
-@property (nonatomic) float sideMargin;     // 20
+@property (nonatomic) float bigFontSize;      // 15
+@property (nonatomic) float normalFontSize;   // 10
+@property (nonatomic) BOOL hasUnderLine;      // y
+@property (nonatomic) float lineSpace;        // 5
+@property (nonatomic) float sideMargin_left;  // 20
+@property (nonatomic) float sideMargin_right; // 20
 
 // 初始化 务必调用 2,3. 调用方式参考Demo中的SegmentVC.
 //1 initialization !!!!!!
@@ -48,7 +49,8 @@
          normalFontSize:(float)normalFontSize
             hasUserLine:(BOOL)hasUnderLine
               lineSpace:(float)linespace
-             sideMargin:(float)sideMargin;
+         sideMarginLeft:(float)sideMarginLeft
+        sideMarginRight:(float)sideMarginRight;
 //3 setup
 - (void)setupCollections;
 
@@ -56,6 +58,5 @@
 // Func
 - (void)moveToIndex:(NSInteger)idx;
 - (NSInteger)getCurrentIdx;
-- (void)moveOverlayUI;
-- (void)setOverLayUI;
+
 @end

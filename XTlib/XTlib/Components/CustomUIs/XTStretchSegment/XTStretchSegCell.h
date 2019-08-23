@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XTStretchSegCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *lbTitle;
 
-
+@property (strong, nonatomic) UIView *phView;
 @end
 
 NS_ASSUME_NONNULL_END

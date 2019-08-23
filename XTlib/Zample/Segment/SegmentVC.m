@@ -25,7 +25,7 @@
 
     self.datalist = @[ @"1aaaaaa", @"123", @"1234132", @"change", @"爱的色放", @"撒但是上手所双射手啊啊啊", @"欧尼", @"324阿斯蒂芬路口监控了" ];
 
-    [self.aSegment setupTitleColor:nil selectedColor:nil bigFontSize:20 normalFontSize:15 hasUserLine:YES lineSpace:20 sideMargin:20];
+    [self.aSegment setupTitleColor:nil selectedColor:nil bigFontSize:20 normalFontSize:15 hasUserLine:YES lineSpace:20 sideMarginLeft:20 sideMarginRight:90];
     [self.aSegment setupCollections];
 
     self.aSegment.backgroundColor = [UIColor brownColor];
