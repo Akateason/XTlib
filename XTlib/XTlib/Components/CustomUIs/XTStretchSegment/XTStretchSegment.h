@@ -25,6 +25,7 @@
 
 
 @interface XTStretchSegment : UICollectionView
+
 // UI delegate .
 @property (nonatomic, weak) id<XTStretchSegmentDelegate> xtSSDelegate;
 // UI datasource .
@@ -35,7 +36,7 @@
 @property (nonatomic) float bigFontSize;      // 15
 @property (nonatomic) float normalFontSize;   // 10
 @property (nonatomic) BOOL hasUnderLine;      // y
-@property (nonatomic) float lineSpace;        // 5
+@property (nonatomic) float cellSpace;        // 5
 @property (nonatomic) float sideMargin_left;  // 20
 @property (nonatomic) float sideMargin_right; // 20
 
@@ -48,15 +49,20 @@
             bigFontSize:(float)bigFontSize
          normalFontSize:(float)normalFontSize
             hasUserLine:(BOOL)hasUnderLine
-              lineSpace:(float)linespace
+              cellSpace:(float)cellSpace
          sideMarginLeft:(float)sideMarginLeft
         sideMarginRight:(float)sideMarginRight;
 //3 setup
 - (void)setupCollections;
 
-
 // Func
 - (void)moveToIndex:(NSInteger)idx;
 - (NSInteger)getCurrentIdx;
 
+@end
+
+
+@interface XTStretchSegmentHandler : NSObject
+XT_SINGLETON_H(XTStretchSegmentHandler);
+@property (nonatomic, weak) id<XTStretchSegmentDelegate> xtSSDelegate;
 @end

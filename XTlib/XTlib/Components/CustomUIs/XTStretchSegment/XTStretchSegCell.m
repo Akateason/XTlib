@@ -15,7 +15,14 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+
+    UIView *ph = [[XTStretchSegmentHandler sharedInstance].xtSSDelegate overlayView];
+    ph.alpha   = 0;
+    [self addSubview:ph];
+    [ph mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
+    self.phView = ph;
 }
 
 - (void)xt_configure:(id)model indexPath:(NSIndexPath *)indexPath {

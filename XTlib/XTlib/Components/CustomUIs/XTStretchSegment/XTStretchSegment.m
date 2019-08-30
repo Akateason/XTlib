@@ -10,7 +10,7 @@
 #import "XTStretchSegCell.h"
 
 
-static const float kOverlayAnimationDuration = .4f;
+static const float kOverlayAnimationDuration = .2f;
 
 
 @interface XTStretchSegment () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -27,7 +27,7 @@ static const float kOverlayAnimationDuration = .4f;
     layout.sectionInset                = UIEdgeInsetsMake(0, 20, 0, 20);
 
     XTStretchSegment *seg = [[XTStretchSegment alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-
+    [XTStretchSegmentHandler sharedInstance];
     return seg;
 }
 
@@ -43,7 +43,7 @@ static const float kOverlayAnimationDuration = .4f;
             bigFontSize:(float)bigFontSize
          normalFontSize:(float)normalFontSize
             hasUserLine:(BOOL)hasUnderLine
-              lineSpace:(float)linespace
+              cellSpace:(float)cellSpace
          sideMarginLeft:(float)sideMarginLeft
         sideMarginRight:(float)sideMarginRight {
     self.titleColor         = titleColor;
@@ -51,17 +51,15 @@ static const float kOverlayAnimationDuration = .4f;
     self.bigFontSize        = bigFontSize;
     self.normalFontSize     = normalFontSize;
     self.hasUnderLine       = hasUnderLine;
-    self.lineSpace          = linespace;
+    self.cellSpace          = cellSpace;
     self.sideMargin_left    = sideMarginLeft;
     self.sideMargin_right   = sideMarginRight;
 }
 
 - (void)setupCollections {
-    [XTStretchSegCell xt_registerNibFromCollection:self];
-
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection             = UICollectionViewScrollDirectionHorizontal;
-    layout.minimumLineSpacing          = self.lineSpace;
+    layout.minimumInteritemSpacing     = self.cellSpace;
     layout.sectionInset                = UIEdgeInsetsMake(0, self.sideMargin_left, 0, self.sideMargin_right);
     self.collectionViewLayout          = layout;
     self.dataSource                    = self;
@@ -70,8 +68,9 @@ static const float kOverlayAnimationDuration = .4f;
     _currentIndex                       = 0;
     self.showsHorizontalScrollIndicator = NO;
     self.backgroundColor                = [UIColor clearColor];
-}
 
+    [XTStretchSegCell xt_registerNibFromCollection:self];
+}
 
 #pragma mark - props
 
@@ -103,11 +102,11 @@ static const float kOverlayAnimationDuration = .4f;
     return _normalFontSize;
 }
 
-- (float)lineSpace {
-    if (!_lineSpace) {
-        _lineSpace = 5.;
+- (float)cellSpace {
+    if (!_cellSpace) {
+        _cellSpace = 5.;
     }
-    return _lineSpace;
+    return _cellSpace;
 }
 
 - (float)sideMargin_left {
@@ -127,17 +126,20 @@ static const float kOverlayAnimationDuration = .4f;
 - (void)setCurrentIndex:(NSInteger)currentIndex {
     _currentIndex = currentIndex;
 
-    // todo animation . move overlay .
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:currentIndex inSection:0];
-
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self scrollToItemAtIndexPath:indexPath atScrollPosition:(UICollectionViewScrollPositionCenteredHorizontally) animated:NO];
+        [self scrollToItemAtIndexPath:indexPath atScrollPosition:(UICollectionViewScrollPositionCenteredHorizontally) animated:YES];
         [self reloadData];
     });
 
     [self.xtSSDelegate stretchSegment:self didSelectedIdx:currentIndex];
 }
 
+- (void)setXtSSDelegate:(id<XTStretchSegmentDelegate>)xtSSDelegate {
+    _xtSSDelegate = xtSSDelegate;
+
+    [XTStretchSegmentHandler sharedInstance].xtSSDelegate = xtSSDelegate;
+}
 
 #pragma mark - UICollectionViewDataSource <NSObject>
 
@@ -149,31 +151,31 @@ static const float kOverlayAnimationDuration = .4f;
     XTStretchSegCell *cell = [XTStretchSegCell xt_fetchFromCollection:collectionView indexPath:indexPath];
     cell.lbTitle.text      = [self.xtSSDataSource stretchSegment:self titleOfDataAtIndex:indexPath.row];
     cell.lbTitle.font      = self.currentIndex == indexPath.row ? [UIFont systemFontOfSize:self.bigFontSize] : [UIFont systemFontOfSize:self.normalFontSize];
+    cell.lbTitle.textColor = self.currentIndex == indexPath.row ? self.titleSelectedColor : self.titleColor;
 
-    if (self.hasUnderLine) {
-        if (!cell.phView) {
-            UIView *ph = [self.xtSSDelegate overlayView];
-            [cell addSubview:ph];
-            [ph mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.equalTo(cell);
-            }];
-            cell.phView = ph;
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        if (self.hasUnderLine) {
+            if (self.currentIndex == indexPath.row) {
+                [UIView animateWithDuration:kOverlayAnimationDuration animations:^{
+                    cell.phView.alpha = 1;
+                } completion:^(BOOL finished){
+
+                }];
+            }
+            else {
+                cell.phView.alpha = 0;
+            }
         }
 
-        if (self.currentIndex == indexPath.row) {
-            cell.phView.transform = CGAffineTransformMakeScale(1.3, 1.3);
-            [UIView animateWithDuration:kOverlayAnimationDuration animations:^{
-                cell.phView.alpha     = 1;
-                cell.phView.transform = CGAffineTransformIdentity;
-            }];
-        }
-        else {
-            cell.phView.alpha = 0;
-        }
-    }
+    });
 
     return cell;
 }
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(XTStretchSegCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+}
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     self.currentIndex = indexPath.row;
@@ -199,4 +201,9 @@ static const float kOverlayAnimationDuration = .4f;
 }
 
 
+@end
+
+
+@implementation XTStretchSegmentHandler
+XT_SINGLETON_M(XTStretchSegmentHandler);
 @end
