@@ -45,7 +45,8 @@
         image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
-    self.blkPhoto(image);
+    XTImageItem *item = [[XTImageItem alloc] initWithImage:image info:info];
+    self.blkPhoto(item);
     [picker dismissViewControllerAnimated:YES completion:nil];
     picker.delegate = nil;
 }

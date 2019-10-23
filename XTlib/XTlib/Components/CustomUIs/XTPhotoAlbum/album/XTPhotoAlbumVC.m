@@ -79,7 +79,10 @@
                                contentMode:PHImageContentModeDefault
                                    options:options
                              resultHandler:^void(UIImage *image, NSDictionary *info) {
-                                 if (image) [images addObject:image];
+                                 if (image) {
+                                     XTImageItem *item = [[XTImageItem alloc] initWithImage:image info:info];
+                                     [images addObject:item];
+                                 }
                              }];
     }
 

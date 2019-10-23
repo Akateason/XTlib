@@ -15,6 +15,7 @@
 #import "XTlib.h"
 #import "ServerRequest.h"
 #import <XTBase/MyWebController.h>
+#import <SafariServices/SafariServices.h>
 
 static const NSInteger kEveryCount = 10;
 
@@ -106,11 +107,11 @@ static const NSInteger kEveryCount = 10;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Movie *movie             = self.list_datasource[indexPath.row];
-    MyWebController *ctrller = [[MyWebController alloc] init];
-    ctrller.url              = [NSURL URLWithString:movie.alt];
-    ctrller.title            = movie.title;
-    [self.navigationController pushViewController:ctrller animated:YES];
+    Movie *movie = self.list_datasource[indexPath.row];
+    //    MyWebController *ctrller = [[MyWebController alloc] init];
+    //    ctrller.url              = [NSURL URLWithString:movie.alt];
+    //    ctrller.title            = movie.title;
+    //    [self.navigationController pushViewController:ctrller animated:YES];
 }
 
 

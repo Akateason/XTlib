@@ -169,7 +169,6 @@ PODS:
   - MJRefresh (3.2.0)
   - ReactiveObjC (3.1.1)
   - RSKImageCropper (2.2.1)
-  - RxWebViewController (0.0.2)
   - SDWebImage (5.1.0):
     - SDWebImage/Core (= 5.1.0)
   - SDWebImage/Core (5.1.0)
@@ -178,11 +177,10 @@ PODS:
   - UIFontWDCustomLoader (0.1.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (1.1.7):
+  - XTBase (1.2.0):
     - Masonry
     - MJRefresh
     - ReactiveObjC
-    - RxWebViewController
     - SDWebImage
     - SSZipArchive
     - SVProgressHUD
@@ -224,7 +222,6 @@ SPEC REPOS:
     - MJRefresh
     - ReactiveObjC
     - RSKImageCropper
-    - RxWebViewController
     - SDWebImage
     - SSZipArchive
     - SVProgressHUD
@@ -254,14 +251,13 @@ SPEC CHECKSUMS:
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RSKImageCropper: 98296ad26b41753f796b6898d015509598f13d97
-  RxWebViewController: 79bcbf51aff13d93db9779404348b052ab0cd440
   SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIFontWDCustomLoader: 233f0f83e543b8f24a6299d7fc773be9d704fe22
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: 6dbe59887898f8e13bf928f3d8fb70e5e45002b8
+  XTBase: ad76cc9ee7e9aff99e0d16017bf2f6013a390d57
   XTColor: 0151b3b61e3b1de2dc29fcdb4a0a22758c8a38df
   XTFMDB: 0891f3355697ebbc3d75f373bcda34329f2d5d94
   XTReq: f5added0278758ca358f62a3de30a118f1b6d94a
