@@ -107,6 +107,7 @@
 		8FDE205220594950003B5398 /* NibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205020594950003B5398 /* NibVC.m */; };
 		8FDE205320594950003B5398 /* NibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE205120594950003B5398 /* NibVC.xib */; };
 		8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205620594EE3003B5398 /* XTSIAlertView.m */; };
+		8FF93DC92360405E00C6B5CD /* XTImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF93DC82360405E00C6B5CD /* XTImageItem.m */; };
 		F9572C89FB657E8622F3EAB6 /* Pods_XTlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABB4C18C49B72CEDEA8791D /* Pods_XTlib.framework */; };
 /* End PBXBuildFile section */
 
@@ -316,6 +317,8 @@
 		8FDE205120594950003B5398 /* NibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NibVC.xib; sourceTree = "<group>"; };
 		8FDE205520594EE3003B5398 /* XTSIAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTSIAlertView.h; sourceTree = "<group>"; };
 		8FDE205620594EE3003B5398 /* XTSIAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTSIAlertView.m; sourceTree = "<group>"; };
+		8FF93DC72360405E00C6B5CD /* XTImageItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTImageItem.h; sourceTree = "<group>"; };
+		8FF93DC82360405E00C6B5CD /* XTImageItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTImageItem.m; sourceTree = "<group>"; };
 		BABB4C18C49B72CEDEA8791D /* Pods_XTlib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTlib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -896,6 +899,8 @@
 				8FD71E2A222678C800B5420F /* source */,
 				8FD71E0A2225553200B5420F /* XTPAConfig.h */,
 				8FD71E0B2225553200B5420F /* XTPAConfig.m */,
+				8FF93DC72360405E00C6B5CD /* XTImageItem.h */,
+				8FF93DC82360405E00C6B5CD /* XTImageItem.m */,
 				8FD71E3122268C2100B5420F /* camera */,
 				8FD71E062225549700B5420F /* album */,
 				8FD71E07222554A000B5420F /* cameraGroup */,
@@ -1151,7 +1156,6 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
-				"${BUILT_PRODUCTS_DIR}/RxWebViewController/RxWebViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -1175,7 +1179,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxWebViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -1224,6 +1227,7 @@
 				8F2BFF6F203ED7390013394D /* Zample6Controller.m in Sources */,
 				8F2BFF64203ED7390013394D /* Movie.m in Sources */,
 				8F2BFE41203ED7270013394D /* UICollectionViewLeftAlignedLayout.m in Sources */,
+				8FF93DC92360405E00C6B5CD /* XTImageItem.m in Sources */,
 				8F2BFE36203ED7270013394D /* NSMutableString+TagReplace.m in Sources */,
 				8F2BFF74203ED7390013394D /* Z8CollectionViewController.m in Sources */,
 				8FD71E2122263A6D00B5420F /* XTPAlbumCell.m in Sources */,

@@ -10,8 +10,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <XTBase/XTBase.h>
+#import "XTImageItem.h"
 
-typedef void (^BlkGetCameraPhoto)(UIImage *_Nullable imageResult);
+typedef void (^BlkGetCameraPhoto)(XTImageItem *_Nullable imageResult);
 
 NS_ASSUME_NONNULL_BEGIN
 

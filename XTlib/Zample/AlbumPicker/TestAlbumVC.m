@@ -29,7 +29,7 @@
 
     [XTPhotoAlbumVC openAlbumWithConfig:config
                             fromCtrller:self
-                              getResult:^(NSArray<UIImage *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList, XTPhotoAlbumVC *vc){
+                              getResult:^(NSArray<XTImageItem *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList, XTPhotoAlbumVC *vc){
 
 
                               }];
@@ -37,7 +37,7 @@
 
 - (IBAction)cameraOnClick:(id)sender {
     XTCameraHandler *handler = [[XTCameraHandler alloc] init];
-    [handler openCameraFromController:self takePhoto:^(UIImage *imageResult){
+    [handler openCameraFromController:self takePhoto:^(XTImageItem *imageResult){
 
 
     }];
@@ -82,13 +82,13 @@
     config.albumSelectedMaxCount = 1;
 
     //    @weakify(self)
-    [XTPhotoAlbumVC openAlbumWithConfig:config fromCtrller:self willDismiss:NO getResult:^(NSArray<UIImage *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList, XTPhotoAlbumVC *vc) {
+    [XTPhotoAlbumVC openAlbumWithConfig:config fromCtrller:self willDismiss:NO getResult:^(NSArray<XTImageItem *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList, XTPhotoAlbumVC *vc) {
 
         //        @strongify(self)
         if (!imageList) return;
 
         @weakify(vc)
-            [XTPACropImageVC showFromCtrller:vc imageOrigin:imageList.firstObject croppedImageCallback:^(UIImage *_Nonnull image) {
+            [XTPACropImageVC showFromCtrller:vc imageOrigin:imageList.firstObject.image croppedImageCallback:^(UIImage *_Nonnull image) {
                 @strongify(vc)
                     [vc dismissViewControllerAnimated:YES completion:nil];
 
@@ -100,7 +100,7 @@
 - (void)cameraAddCrop {
     @weakify(self)
         XTCameraHandler *handler = [[XTCameraHandler alloc] init];
-    [handler openCameraFromController:self takePhoto:^(UIImage *imageResult) {
+    [handler openCameraFromController:self takePhoto:^(XTImageItem *imageResult) {
         if (!imageResult) return;
 
         @strongify(self)
