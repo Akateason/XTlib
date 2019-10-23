@@ -18,11 +18,13 @@ typedef enum : NSUInteger {
 
 @interface XTImageItem : NSObject
 @property (strong, nonatomic) UIImage           *image  ;
-//@property (strong, nonatomic) NSData            *data   ;
+@property (strong, nonatomic) NSData            *data   ;
 @property (nonatomic)         XTImageItem_type  imgType ;
 
 
-
+/// photokit init
+- (instancetype)initWithData:(NSData *)data info:(NSDictionary *)info ;
+/// camera init
 - (instancetype)initWithImage:(UIImage *)image info:(NSDictionary *)info ;
 
 + (XTImageItem_type)imageFormatForImageInfo:(NSDictionary *)info ;

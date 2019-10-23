@@ -10,7 +10,17 @@
 
 @implementation XTImageItem
 
-
+/// photokit init
+- (instancetype)initWithData:(NSData *)data info:(NSDictionary *)info
+{
+    self = [super init];
+    if (self) {
+        _imgType = [self.class imageFormatForImageInfo:info] ;
+        _data = data ;
+        _image = [UIImage imageWithData:data] ;
+    }
+    return self;
+}
 
 /// 只能从相机拍摄
 - (instancetype)initWithImage:(UIImage *)image info:(NSDictionary *)info

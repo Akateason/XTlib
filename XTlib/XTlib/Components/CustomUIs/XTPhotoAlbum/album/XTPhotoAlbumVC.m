@@ -74,16 +74,14 @@
     options.resizeMode             = PHImageRequestOptionsResizeModeFast;
     options.synchronous            = YES;
     for (PHAsset *asset in resultAssets) {
-        [self.manager requestImageForAsset:asset
-                                targetSize:PHImageManagerMaximumSize
-                               contentMode:PHImageContentModeDefault
-                                   options:options
-                             resultHandler:^void(UIImage *image, NSDictionary *info) {
-                                 if (image) {
-                                     XTImageItem *item = [[XTImageItem alloc] initWithImage:image info:info];
-                                     [images addObject:item];
-                                 }
-                             }];
+        [self.manager requestImageDataForAsset:asset options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+            
+            if (imageData) {
+                XTImageItem *item = [[XTImageItem alloc] initWithData:imageData info:info];
+                [images addObject:item];
+            }
+            
+        }] ;
     }
 
     if (self.configuration.albumSelectedMaxCount > 20) [SVProgressHUD dismiss];
