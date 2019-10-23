@@ -7,7 +7,6 @@
 //
 
 #import "XTImageItem.h"
-#import <CoreServices/CoreServices.h>
 
 @implementation XTImageItem
 
@@ -26,13 +25,13 @@
 
 + (XTImageItem_type)imageFormatForImageInfo:(NSDictionary *)info {
     NSString *key = info[@"PHImageFileUTIKey"] ;
-    if ([key isEqualToString:(__bridge NSString *)kUTTypeGIF]) {
+    if ([key isEqualToString:@"com.compuserve.gif"]) {
         return XTImageItem_type_gif ;
     }
-    else if ([key isEqualToString:(__bridge NSString *)kUTTypeJPEG] || [key isEqualToString:(__bridge NSString *)kUTTypeJPEG2000]) {
+    else if ([key isEqualToString:@"public.jpeg"] || [key isEqualToString:@"public.jpeg-2000"]) {
         return XTImageItem_type_jpeg ;
     }
-    else if ([key isEqualToString:(__bridge NSString *)kUTTypePNG]) {
+    else if ([key isEqualToString:@"public.png"]) {
         return XTImageItem_type_png ;
     }
 
