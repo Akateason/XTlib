@@ -21,6 +21,7 @@ s.default_subspec = 'base'
         base.dependency "XTFMDB",">2.0.0"
         base.dependency "XTReq",">1.3.0"
         base.dependency "XTColor"
+        base.dependency "XTTable"
         
         base.dependency "FDFullscreenPopGesture"
         #base.dependency "IQKeyboardManager"

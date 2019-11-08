@@ -5,57 +5,57 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: import_from_git" time="3.054557">
+      <testcase classname="fastlane.lanes" name="00: import_from_git" time="3.26486">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: git_pull" time="2.854577">
+      <testcase classname="fastlane.lanes" name="01: git_pull" time="2.868817">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: ensure_git_branch" time="0.012459">
+      <testcase classname="fastlane.lanes" name="02: ensure_git_branch" time="0.013928">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: version_bump_podspec" time="0.00329">
+      <testcase classname="fastlane.lanes" name="03: version_bump_podspec" time="0.003714">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: git_add" time="0.02533">
+      <testcase classname="fastlane.lanes" name="04: git_add" time="0.031386">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="05: git_commit" time="0.061263">
+      <testcase classname="fastlane.lanes" name="05: git_commit" time="0.07576">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="06: push_to_git_remote" time="7.482204">
+      <testcase classname="fastlane.lanes" name="06: push_to_git_remote" time="5.474966">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="07: git_tag_exists" time="0.011395">
+      <testcase classname="fastlane.lanes" name="07: git_tag_exists" time="0.01409">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="08: add_git_tag" time="0.015945">
+      <testcase classname="fastlane.lanes" name="08: add_git_tag" time="0.017946">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="09: push_git_tags" time="5.234818">
+      <testcase classname="fastlane.lanes" name="09: push_git_tags" time="5.118918">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="10: pod_push" time="491.737798">
+      <testcase classname="fastlane.lanes" name="10: pod_push" time="342.53759">
         
       </testcase>
     
