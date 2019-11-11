@@ -14,7 +14,7 @@
 #import <XTBase/XTBase.h>
 #import "XTlib.h"
 #import "Z5DisplayController.h"
-
+#import <XTTable/XTTable.h>
 
 @interface Zample5Controller ()
 

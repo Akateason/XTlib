@@ -9,7 +9,7 @@
 #import "Zample1Controller.h"
 #import "Z1CustomCell.h"
 #import "XTlib.h"
-
+#import <XTTable/XTTable.h>
 
 @interface Zample1Controller () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *table;

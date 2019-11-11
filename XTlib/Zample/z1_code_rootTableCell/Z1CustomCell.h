@@ -6,7 +6,7 @@
 //  Copyright © 2017年 teason. All rights reserved.
 //
 
-#import <XTBase/XTBase.h>
+#import <XTTable/XTTable.h>
 
 
 @interface Z1CustomCell : RootTableCell

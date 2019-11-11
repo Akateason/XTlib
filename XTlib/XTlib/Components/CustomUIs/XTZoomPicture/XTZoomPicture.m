@@ -11,6 +11,7 @@
 #import "XTZoomPicture.h"
 #import <XTBase/XTBase.h>
 #import <XTBase/UIView+Sizes.h>
+#import <XTTable/XTTable.h>
 
 typedef void (^BlkTapped)(void);
 typedef void (^BlkLoadComplete)(void);

@@ -197,6 +197,8 @@ PODS:
     - SVProgressHUD
     - XTFMDB (> 2.0.0)
     - YYModel
+  - XTTable (1.0.0):
+    - XTBase
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -209,6 +211,7 @@ DEPENDENCIES:
   - XTColor (from `../XTColor/`)
   - XTFMDB (from `../XTFMDB/`)
   - XTReq (from `../XTReq/`)
+  - XTTable
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -228,6 +231,7 @@ SPEC REPOS:
     - UIFontWDCustomLoader
     - "UITableView+FDTemplateLayoutCell"
     - Valet
+    - XTTable
     - YYModel
 
 EXTERNAL SOURCES:
@@ -261,8 +265,9 @@ SPEC CHECKSUMS:
   XTColor: 0151b3b61e3b1de2dc29fcdb4a0a22758c8a38df
   XTFMDB: 0891f3355697ebbc3d75f373bcda34329f2d5d94
   XTReq: f5added0278758ca358f62a3de30a118f1b6d94a
+  XTTable: 71154f0f7e883546d83a3b377f919369fc7d1ece
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 0e892b2d1e1138157a96ada6984bf7f1bdbc4d9f
+PODFILE CHECKSUM: 9b4392ff1ca60c9904fd285775d639b25194c08c
 
 COCOAPODS: 1.7.5

@@ -7,7 +7,7 @@
 //
 
 
-#import <XTBase/RootTableCell.h>
+#import <XTTable/XTTable.h>
 
 
 @interface MovieCell : RootTableCell

@@ -10,6 +10,7 @@ target 'XTlib' do
     pod 'XTFMDB', :path => '../XTFMDB/'
     pod 'XTReq', :path => '../XTReq/'
     pod 'XTColor',:path => '../XTColor/'
+    pod 'XTTable'
 
 #    pod 'XTBase'
 #    pod 'XTFMDB'

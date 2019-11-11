@@ -12,7 +12,7 @@
 
 #import "XTSIAlertView.h"
 #import "XTlib/XTlib.h"
-
+#import <XTTable/XTTable.h>
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;

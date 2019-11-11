@@ -14,7 +14,7 @@
 
 #import "ServerRequest.h"
 #import "XTlib.h"
-
+#import <XTTable/XTTable.h>
 
 @interface Zample2Controller () <UITableViewDelegate, UITableViewDataSource, RootTableViewDelegate>
 @property (nonatomic, strong) RootTableView *table;

@@ -8,7 +8,7 @@
 
 #import "XTStretchSegment.h"
 #import "XTStretchSegCell.h"
-
+#import <XTTable/XTCollection.h>
 
 static const float kOverlayAnimationDuration = .2f;
 

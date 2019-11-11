@@ -8,7 +8,7 @@
 
 #import <XTBase/XTBase.h>
 #import <XTFMDB/XTFMDB.h>
-
+#import <XTTable/XTTable.h>
 
 @interface Z5DisplayCell : RootTableCell
 @property (weak, nonatomic) IBOutlet UILabel *lb1;

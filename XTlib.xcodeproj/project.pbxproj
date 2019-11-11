@@ -1166,6 +1166,7 @@
 				"${BUILT_PRODUCTS_DIR}/XTColor/XTColor.framework",
 				"${BUILT_PRODUCTS_DIR}/XTFMDB/XTFMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/XTReq/XTReq.framework",
+				"${BUILT_PRODUCTS_DIR}/XTTable/XTTable.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1189,6 +1190,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTFMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTReq.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTTable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

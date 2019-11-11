@@ -10,7 +10,7 @@
 #import "Z5DisplayCell.h"
 #import "Model1.h"
 #import <XTFMDB/XTFMDB.h>
-
+#import <XTTable/XTTable.h>
 
 @interface Z5DisplayController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *table;

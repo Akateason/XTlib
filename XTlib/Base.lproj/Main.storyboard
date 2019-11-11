@@ -625,10 +625,10 @@
             </objects>
             <point key="canvasLocation" x="1239" y="-262"/>
         </scene>
-        <!--Rx Web View Navigation View Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="sPg-zz-q4O">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fCu-Zp-wFs" customClass="RxWebViewNavigationViewController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fCu-Zp-wFs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wxH-B0-gKS">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
