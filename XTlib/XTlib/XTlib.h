@@ -46,5 +46,8 @@
 // Request
 #import <XTReq/XTReq.h>
 
+// table collection
+#import <XTTable/XTTable.h>
+#import <XTTable/XTCollection.h>
 
 #endif /* XTlib_h */
