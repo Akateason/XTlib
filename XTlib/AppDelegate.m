@@ -33,7 +33,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [XTlibConfig sharedInstance].isDebug = YES;
+    [[XTlibConfig sharedInstance] defaultConfiguration] ;
 
     NSLog(@"525252343");
 
