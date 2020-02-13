@@ -44,10 +44,16 @@
     else if ([key isEqualToString:@"public.png"]) {
         return XTImageItem_type_png ;
     }
+    else if ([key isEqualToString:@"public.heic"]) {
+        return XTImageItem_type_heic ;
+    }
 
     return XTImageItem_type_jpeg ;
 }
 
++ (BOOL)imageIsHeicType:(NSDictionary *)info {
+    return XTImageItem_type_heic == [self imageFormatForImageInfo:info] ;
+}
 
 
 @end

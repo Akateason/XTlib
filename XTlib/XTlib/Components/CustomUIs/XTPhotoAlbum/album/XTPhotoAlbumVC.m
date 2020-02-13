@@ -77,7 +77,18 @@
         [self.manager requestImageDataForAsset:asset options:options resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
             
             if (imageData) {
-                XTImageItem *item = [[XTImageItem alloc] initWithData:imageData info:info];
+                XTImageItem *item ;
+                BOOL isHEIF = [XTImageItem imageIsHeicType:info] ;
+                if (isHEIF) {
+                    CIImage *ciImage = [CIImage imageWithData:imageData];
+                    CIContext *context = [CIContext context];
+                    NSData *jpgData = [context JPEGRepresentationOfImage:ciImage colorSpace:ciImage.colorSpace options:@{}];
+                    item = [[XTImageItem alloc] initWithData:jpgData info:info];
+                    item.imgType = XTImageItem_type_jpeg;
+                } else {
+                    item = [[XTImageItem alloc] initWithData:imageData info:info];
+                }
+                
                 [images addObject:item];
             }
             

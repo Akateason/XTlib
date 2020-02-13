@@ -38,17 +38,50 @@
 #pragma mark - imagePickerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    if (image.imageOrientation != UIImageOrientationUp) {
-        UIGraphicsBeginImageContext(image.size);
-        [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
-        image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+    
+    BOOL isHEIF = [XTImageItem imageIsHeicType:info];
+    if (isHEIF) {
+        if (@available(iOS 11.0, *)) {
+            PHAsset *asset = [info objectForKey:UIImagePickerControllerPHAsset] ;                        
+            [asset requestContentEditingInputWithOptions:nil completionHandler:^(PHContentEditingInput * _Nullable contentEditingInput, NSDictionary * _Nonnull info) {
+                if (contentEditingInput.fullSizeImageURL) {
+                    // heic to jpeg
+                    CIImage *ciImage = [CIImage imageWithContentsOfURL:contentEditingInput.fullSizeImageURL];
+                    CIContext *context = [CIContext context];
+                    NSData *jpgData = [context JPEGRepresentationOfImage:ciImage colorSpace:ciImage.colorSpace options:@{}];
+                    XTImageItem *item = [[XTImageItem alloc] initWithData:jpgData info:info] ;
+                    item.image = [UIImage imageWithData:jpgData] ;
+                    item.imgType = XTImageItem_type_jpeg ; // heic to jpeg
+                    self.blkPhoto(item);
+                    [picker dismissViewControllerAnimated:YES completion:nil];
+                    picker.delegate = nil;
+                    return;
+                }
+            }];
+        } else {
+            // Fallback on earlier versions
+        }
     }
-    XTImageItem *item = [[XTImageItem alloc] initWithImage:image info:info];
-    self.blkPhoto(item);
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    picker.delegate = nil;
+    else {
+        // Fallback on earlier versions
+        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        if (image.imageOrientation != UIImageOrientationUp) {
+            UIGraphicsBeginImageContext(image.size);
+            [image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
+            image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+        }
+        XTImageItem *item = [[XTImageItem alloc] initWithImage:image info:info];
+        item.data = UIImageJPEGRepresentation(image, 1.0);
+        self.blkPhoto(item);
+        [picker dismissViewControllerAnimated:YES completion:nil];
+        picker.delegate = nil;
+    }
+    
+    
+    
+    
+    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
