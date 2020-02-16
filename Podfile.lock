@@ -180,7 +180,7 @@ PODS:
   - UIFontWDCustomLoader (0.1.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (1.4.0):
+  - XTBase (1.4.1):
     - CocoaLumberjack (= 3.6.1)
     - Masonry
     - MJRefresh
@@ -222,6 +222,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CHTCollectionViewWaterfallLayout
+    - CocoaLumberjack
     - FDFullscreenPopGesture
     - FMDB
     - JKCategories
@@ -238,8 +239,6 @@ SPEC REPOS:
     - Valet
     - XTTable
     - YYModel
-  trunk:
-    - CocoaLumberjack
 
 EXTERNAL SOURCES:
   XTBase:
@@ -269,13 +268,13 @@ SPEC CHECKSUMS:
   UIFontWDCustomLoader: 233f0f83e543b8f24a6299d7fc773be9d704fe22
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: 3f2d618e001095dc1a80d4b6be1f7c764ebb6145
+  XTBase: 20c602163f6c63b03fa4a5a47bda63cb1cf289b6
   XTColor: 2f9cb9260812471c711e765677065edc81f96152
   XTFMDB: 0891f3355697ebbc3d75f373bcda34329f2d5d94
   XTReq: f5added0278758ca358f62a3de30a118f1b6d94a
   XTTable: 71154f0f7e883546d83a3b377f919369fc7d1ece
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 9b4392ff1ca60c9904fd285775d639b25194c08c
+PODFILE CHECKSUM: b82785b1ca0c1dee09c751bd80ae92b6c391ba0a
 
 COCOAPODS: 1.8.4
