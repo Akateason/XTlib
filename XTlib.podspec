@@ -22,11 +22,10 @@ s.default_subspec = 'base'
         base.dependency "XTReq",">1.3.0"
         base.dependency "XTColor"
         base.dependency "XTTable"
+        base.dependency "XTRouter"
+        base.dependency "XTIAP"
         
         base.dependency "FDFullscreenPopGesture"
-        #base.dependency "IQKeyboardManager"
-        base.dependency "BlocksKit"
-        
     end
 
     s.subspec 'Animations' do |a|

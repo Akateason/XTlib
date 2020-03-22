@@ -77,13 +77,15 @@
 		8F2BFFB7203ED7390013394D /* XTNetReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF28203ED7380013394D /* XTNetReloader.m */; };
 		8F2BFFB8203ED7390013394D /* XTSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF2B203ED7380013394D /* XTSegment.m */; };
 		8F2BFFB9203ED7390013394D /* XTStretchSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF2E203ED7380013394D /* XTStretchSegment.m */; };
-		8F2BFFBA203ED7390013394D /* XTZoomPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF31203ED7380013394D /* XTZoomPicture.m */; };
 		8F2BFFC2203ED7390013394D /* XTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF4B203ED7380013394D /* XTAnimation.m */; };
+		8F4F3F4024277CDD000AE977 /* SDWebImageManager+largeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F3A24277CDD000AE977 /* SDWebImageManager+largeImage.m */; };
+		8F4F3F43242780C2000AE977 /* XTLargeImageCompressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F41242780C2000AE977 /* XTLargeImageCompressUtil.m */; };
+		8F4F3F46242781CD000AE977 /* XTTiledLargeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F44242781CD000AE977 /* XTTiledLargeImageView.m */; };
+		8F4F3F4924278422000AE977 /* XTTiledLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F4824278422000AE977 /* XTTiledLayer.m */; };
 		8F6400782148B2030094024A /* TestDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6400772148B2030094024A /* TestDemoVC.m */; };
 		8F6E9B89230BA4FF0011D935 /* SegmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E9B88230BA4FF0011D935 /* SegmentVC.m */; };
 		8F6E9B8D230BCD270011D935 /* XTStretchSegCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E9B8B230BCD270011D935 /* XTStretchSegCell.m */; };
 		8F6E9B8E230BCD270011D935 /* XTStretchSegCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E9B8C230BCD270011D935 /* XTStretchSegCell.xib */; };
-		8F80A41321ABF7F300FA720C /* TestSon.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F80A41221ABF7F300FA720C /* TestSon.m */; };
 		8F81E2A120D1208A00782A90 /* XTlib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 8F81E2A020D1208A00782A90 /* XTlib.podspec */; };
 		8F891786215DCD1700572B0A /* btBase.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F891785215DCD1700572B0A /* btBase.png */; };
 		8FA9D3B620C7BCAC005AFEDF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9D3B520C7BCAC005AFEDF /* Podfile */; };
@@ -265,11 +267,17 @@
 		8F2BFF2B203ED7380013394D /* XTSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTSegment.m; sourceTree = "<group>"; };
 		8F2BFF2D203ED7380013394D /* XTStretchSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTStretchSegment.h; sourceTree = "<group>"; };
 		8F2BFF2E203ED7380013394D /* XTStretchSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTStretchSegment.m; sourceTree = "<group>"; };
-		8F2BFF30203ED7380013394D /* XTZoomPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTZoomPicture.h; sourceTree = "<group>"; };
-		8F2BFF31203ED7380013394D /* XTZoomPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTZoomPicture.m; sourceTree = "<group>"; };
 		8F2BFF4A203ED7380013394D /* XTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAnimation.h; sourceTree = "<group>"; };
 		8F2BFF4B203ED7380013394D /* XTAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAnimation.m; sourceTree = "<group>"; };
 		8F2BFF59203ED7380013394D /* XTlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTlib.h; sourceTree = "<group>"; };
+		8F4F3F3924277CDD000AE977 /* SDWebImageManager+largeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+largeImage.h"; sourceTree = "<group>"; };
+		8F4F3F3A24277CDD000AE977 /* SDWebImageManager+largeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+largeImage.m"; sourceTree = "<group>"; };
+		8F4F3F41242780C2000AE977 /* XTLargeImageCompressUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTLargeImageCompressUtil.m; sourceTree = "<group>"; };
+		8F4F3F42242780C2000AE977 /* XTLargeImageCompressUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTLargeImageCompressUtil.h; sourceTree = "<group>"; };
+		8F4F3F44242781CD000AE977 /* XTTiledLargeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTTiledLargeImageView.m; sourceTree = "<group>"; };
+		8F4F3F45242781CD000AE977 /* XTTiledLargeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTiledLargeImageView.h; sourceTree = "<group>"; };
+		8F4F3F4724278422000AE977 /* XTTiledLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTiledLayer.h; sourceTree = "<group>"; };
+		8F4F3F4824278422000AE977 /* XTTiledLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTTiledLayer.m; sourceTree = "<group>"; };
 		8F6400762148B2030094024A /* TestDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDemoVC.h; sourceTree = "<group>"; };
 		8F6400772148B2030094024A /* TestDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDemoVC.m; sourceTree = "<group>"; };
 		8F6E9B87230BA4FF0011D935 /* SegmentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegmentVC.h; sourceTree = "<group>"; };
@@ -278,8 +286,6 @@
 		8F6E9B8B230BCD270011D935 /* XTStretchSegCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTStretchSegCell.m; sourceTree = "<group>"; };
 		8F6E9B8C230BCD270011D935 /* XTStretchSegCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTStretchSegCell.xib; sourceTree = "<group>"; };
 		8F7A84402241EC660099E905 /* XTPhotoAlbum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTPhotoAlbum.h; sourceTree = "<group>"; };
-		8F80A41121ABF7F300FA720C /* TestSon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSon.h; sourceTree = "<group>"; };
-		8F80A41221ABF7F300FA720C /* TestSon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSon.m; sourceTree = "<group>"; };
 		8F81E2A020D1208A00782A90 /* XTlib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XTlib.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8F891785215DCD1700572B0A /* btBase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btBase.png; sourceTree = "<group>"; };
 		8FA9D3B520C7BCAC005AFEDF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -526,9 +532,9 @@
 		8F2BFE44203ED7380013394D /* Zample */ = {
 			isa = PBXGroup;
 			children = (
+				8F6400752148B1D50094024A /* ForTest */,
 				8F6E9B86230BA4C90011D935 /* Segment */,
 				8FD71E262226746300B5420F /* AlbumPicker */,
-				8F6400752148B1D50094024A /* ForTest */,
 				8FC8215020EA7DCB0068AE5E /* Alert */,
 				8FA9D3BD20C7E3EA005AFEDF /* Inspectable */,
 				8F220D7620AAD2EF00CC6271 /* Protocol */,
@@ -697,6 +703,7 @@
 		8F2BFF02203ED7380013394D /* CustomUIs */ = {
 			isa = PBXGroup;
 			children = (
+				8F4F3F2A24277CDD000AE977 /* LargeImage */,
 				8FD71E052225541100B5420F /* XTPhotoAlbum */,
 				8F0AEE24206A285700DC5E7D /* GradientButton */,
 				8FDE205420594EB7003B5398 /* XTSIAlert */,
@@ -710,7 +717,6 @@
 				8F2BFF26203ED7380013394D /* XTNetReloader */,
 				8F2BFF29203ED7380013394D /* XTSegment */,
 				8F2BFF2C203ED7380013394D /* XTStretchSegment */,
-				8F2BFF2F203ED7380013394D /* XTZoomPicture */,
 			);
 			path = CustomUIs;
 			sourceTree = "<group>";
@@ -827,15 +833,6 @@
 			path = XTStretchSegment;
 			sourceTree = "<group>";
 		};
-		8F2BFF2F203ED7380013394D /* XTZoomPicture */ = {
-			isa = PBXGroup;
-			children = (
-				8F2BFF30203ED7380013394D /* XTZoomPicture.h */,
-				8F2BFF31203ED7380013394D /* XTZoomPicture.m */,
-			);
-			path = XTZoomPicture;
-			sourceTree = "<group>";
-		};
 		8F2BFF49203ED7380013394D /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -845,13 +842,50 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		8F4F3F2A24277CDD000AE977 /* LargeImage */ = {
+			isa = PBXGroup;
+			children = (
+				8F4F3F2B24277CDD000AE977 /* Compress */,
+				8F4F3F2E24277CDD000AE977 /* Render */,
+				8F4F3F3824277CDD000AE977 /* SDWebImageExtension */,
+			);
+			path = LargeImage;
+			sourceTree = "<group>";
+		};
+		8F4F3F2B24277CDD000AE977 /* Compress */ = {
+			isa = PBXGroup;
+			children = (
+				8F4F3F42242780C2000AE977 /* XTLargeImageCompressUtil.h */,
+				8F4F3F41242780C2000AE977 /* XTLargeImageCompressUtil.m */,
+			);
+			path = Compress;
+			sourceTree = "<group>";
+		};
+		8F4F3F2E24277CDD000AE977 /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				8F4F3F45242781CD000AE977 /* XTTiledLargeImageView.h */,
+				8F4F3F44242781CD000AE977 /* XTTiledLargeImageView.m */,
+				8F4F3F4724278422000AE977 /* XTTiledLayer.h */,
+				8F4F3F4824278422000AE977 /* XTTiledLayer.m */,
+			);
+			path = Render;
+			sourceTree = "<group>";
+		};
+		8F4F3F3824277CDD000AE977 /* SDWebImageExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8F4F3F3924277CDD000AE977 /* SDWebImageManager+largeImage.h */,
+				8F4F3F3A24277CDD000AE977 /* SDWebImageManager+largeImage.m */,
+			);
+			path = SDWebImageExtension;
+			sourceTree = "<group>";
+		};
 		8F6400752148B1D50094024A /* ForTest */ = {
 			isa = PBXGroup;
 			children = (
 				8F6400762148B2030094024A /* TestDemoVC.h */,
 				8F6400772148B2030094024A /* TestDemoVC.m */,
-				8F80A41121ABF7F300FA720C /* TestSon.h */,
-				8F80A41221ABF7F300FA720C /* TestSon.m */,
 			);
 			path = ForTest;
 			sourceTree = "<group>";
@@ -1148,6 +1182,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-XTlib/Pods-XTlib-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
 				"${BUILT_PRODUCTS_DIR}/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
@@ -1158,6 +1193,7 @@
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImageWebPCoder/SDWebImageWebPCoder.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/UIFontWDCustomLoader/UIFontWDCustomLoader.framework",
@@ -1169,10 +1205,12 @@
 				"${BUILT_PRODUCTS_DIR}/XTReq/XTReq.framework",
 				"${BUILT_PRODUCTS_DIR}/XTTable/XTTable.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CHTCollectionViewWaterfallLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
@@ -1183,6 +1221,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageWebPCoder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIFontWDCustomLoader.framework",
@@ -1194,6 +1233,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTReq.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XTTable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1246,7 +1286,6 @@
 				8F2BFF61203ED7390013394D /* DoubanTagsCell.m in Sources */,
 				8F2BFFB4203ED7390013394D /* CenterTableView.m in Sources */,
 				8FD71E1C2226386F00B5420F /* XTPACameraGroupCell.m in Sources */,
-				8F80A41321ABF7F300FA720C /* TestSon.m in Sources */,
 				8FD71E0F2225555E00B5420F /* XTPhotoAlbumVC.m in Sources */,
 				8F2BFFB2203ED7390013394D /* XTlineSpaceLabel.m in Sources */,
 				8F2BFE33203ED7270013394D /* WPAttributedStyleAction.m in Sources */,
@@ -1255,7 +1294,9 @@
 				8F2BFF72203ED7390013394D /* Z8CollectionViewCell.m in Sources */,
 				8F2BFFAE203ED7390013394D /* FlywordLabel.m in Sources */,
 				8F2BFFAB203ED7390013394D /* ParallaxHeaderView.m in Sources */,
+				8F4F3F4024277CDD000AE977 /* SDWebImageManager+largeImage.m in Sources */,
 				8F2BFF60203ED7390013394D /* DoubanTags.m in Sources */,
+				8F4F3F4924278422000AE977 /* XTTiledLayer.m in Sources */,
 				8F2BFFB8203ED7390013394D /* XTSegment.m in Sources */,
 				8F2BFF6B203ED7390013394D /* Z5DisplayCell.m in Sources */,
 				8F2BFF5B203ED7390013394D /* RCSubView.m in Sources */,
@@ -1276,7 +1317,6 @@
 				8F2BFFAC203ED7390013394D /* UIImage+ImageEffects.m in Sources */,
 				8F2BFF67203ED7390013394D /* Rating.m in Sources */,
 				8F2BFFC2203ED7390013394D /* XTAnimation.m in Sources */,
-				8F2BFFBA203ED7390013394D /* XTZoomPicture.m in Sources */,
 				8F2BFF75203ED7390013394D /* Zample8Controller.m in Sources */,
 				8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */,
 				8FDE205220594950003B5398 /* NibVC.m in Sources */,
@@ -1290,6 +1330,8 @@
 				8F2BFE37203ED7270013394D /* NSString+WPAttributedMarkup.m in Sources */,
 				8F2BFF6D203ED7390013394D /* Z5DisplayController.m in Sources */,
 				8F2BFFB9203ED7390013394D /* XTStretchSegment.m in Sources */,
+				8F4F3F46242781CD000AE977 /* XTTiledLargeImageView.m in Sources */,
+				8F4F3F43242780C2000AE977 /* XTLargeImageCompressUtil.m in Sources */,
 				8FD71E152225562900B5420F /* XTPACameraGroupVC.m in Sources */,
 				8FC8215320EA7DE90068AE5E /* AlertTestVC.m in Sources */,
 				8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */,

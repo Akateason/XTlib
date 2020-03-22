@@ -3,7 +3,7 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>1. kit</key>
+		<key>1.</key>
 		<array>
 			<dict>
 				<key>cname</key>
@@ -58,7 +58,7 @@
 		</array>
 	</dict>
 	<dict>
-		<key>2. test</key>
+		<key>2.</key>
 		<array>
 			<dict>
 				<key>title</key>
@@ -116,20 +116,25 @@
 			</dict>
 			<dict>
 				<key>cname</key>
-				<string>TestDemoVC</string>
-				<key>title</key>
-				<string>test</string>
-				<key>isStory</key>
-				<true/>
-			</dict>
-			<dict>
-				<key>cname</key>
 				<string>TestAlbumVC</string>
 				<key>title</key>
 				<string>Album</string>
 				<key>isStory</key>
 				<true/>
 			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>3.</key>
+        <array>
+            <dict>
+                <key>cname</key>
+                <string>TestDemoVC</string>
+                <key>title</key>
+                <string>test</string>
+                <key>isStory</key>
+                <true/>
+            </dict>
 		</array>
 	</dict>
 </array>

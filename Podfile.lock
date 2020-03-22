@@ -14,9 +14,24 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - CHTCollectionViewWaterfallLayout (0.9.7):
-    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.7)
-  - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - CHTCollectionViewWaterfallLayout (0.9.8):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.8)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.8)
   - CocoaLumberjack (3.6.1):
     - CocoaLumberjack/Core (= 3.6.1)
   - CocoaLumberjack/Core (3.6.1)
@@ -167,20 +182,34 @@ PODS:
   - JKCategories/UIKit/UIWebView (1.8.2):
     - JKCategories/UIKit/UIColor
   - JKCategories/UIKit/UIWindow (1.8.2)
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
+    - libwebp/webp
+  - libwebp/mux (1.1.0):
+    - libwebp/demux
+  - libwebp/webp (1.1.0)
   - LxDBAnything (1.1.0)
   - Masonry (1.1.0)
   - MJRefresh (3.3.1)
   - ReactiveObjC (3.1.1)
-  - RSKImageCropper (2.2.1)
-  - SDWebImage (5.4.0):
-    - SDWebImage/Core (= 5.4.0)
-  - SDWebImage/Core (5.4.0)
+  - RSKImageCropper (2.2.3)
+  - SDWebImage (5.5.2):
+    - SDWebImage/Core (= 5.5.2)
+  - SDWebImage/Core (5.5.2)
+  - SDWebImage/MapKit (5.5.2):
+    - SDWebImage/Core
+  - SDWebImageWebPCoder (0.5.0):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.5)
   - SSZipArchive (2.2.2)
   - SVProgressHUD (2.2.5)
   - UIFontWDCustomLoader (0.1.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (1.4.1):
+  - XTBase (1.4.4):
     - CocoaLumberjack (= 3.6.1)
     - Masonry
     - MJRefresh
@@ -207,74 +236,77 @@ PODS:
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - BlocksKit
   - CHTCollectionViewWaterfallLayout
   - FDFullscreenPopGesture
   - JKCategories
   - LxDBAnything
-  - RSKImageCropper (= 2.2.1)
-  - XTBase (from `../XTBase/`)
-  - XTColor (from `../XTColor/`)
-  - XTFMDB (from `../XTFMDB/`)
-  - XTReq (from `../XTReq/`)
+  - RSKImageCropper
+  - SDWebImage/MapKit
+  - SDWebImageWebPCoder
+  - XTBase
+  - XTColor
+  - XTFMDB
+  - XTReq
   - XTTable
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - BlocksKit
     - CHTCollectionViewWaterfallLayout
     - CocoaLumberjack
     - FDFullscreenPopGesture
     - FMDB
     - JKCategories
+    - libwebp
     - LxDBAnything
     - Masonry
     - MJRefresh
     - ReactiveObjC
     - RSKImageCropper
     - SDWebImage
+    - SDWebImageWebPCoder
     - SSZipArchive
     - SVProgressHUD
     - UIFontWDCustomLoader
     - "UITableView+FDTemplateLayoutCell"
     - Valet
+    - XTBase
+    - XTColor
+    - XTFMDB
+    - XTReq
     - XTTable
     - YYModel
 
-EXTERNAL SOURCES:
-  XTBase:
-    :path: "../XTBase/"
-  XTColor:
-    :path: "../XTColor/"
-  XTFMDB:
-    :path: "../XTFMDB/"
-  XTReq:
-    :path: "../XTReq/"
-
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CHTCollectionViewWaterfallLayout: 5f241d2480ab4939aa0d1ad4981de9eef1fbe60d
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   JKCategories: 9dcef0d8be9ff22fdfebd86b83711ff11cd109dd
+  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   LxDBAnything: 154a2ad1ae32e70355d886b5443260543bb60c71
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  RSKImageCropper: 98296ad26b41753f796b6898d015509598f13d97
-  SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
+  RSKImageCropper: a446db0e8444a036b34f3c43db01b2373baa4b2a
+  SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
+  SDWebImageWebPCoder: e7ae855f058e3dcae99696920b6a5d134e9dcddf
   SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIFontWDCustomLoader: 233f0f83e543b8f24a6299d7fc773be9d704fe22
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: 20c602163f6c63b03fa4a5a47bda63cb1cf289b6
+  XTBase: ab6df355b34d48b6a80b1b5ba3c046600b8093a9
   XTColor: 2f9cb9260812471c711e765677065edc81f96152
   XTFMDB: 0891f3355697ebbc3d75f373bcda34329f2d5d94
   XTReq: f5added0278758ca358f62a3de30a118f1b6d94a
   XTTable: 71154f0f7e883546d83a3b377f919369fc7d1ece
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: b82785b1ca0c1dee09c751bd80ae92b6c391ba0a
+PODFILE CHECKSUM: 1cf8a9638ea99e72a5f7b61d996e91da6a66bbe1
 
 COCOAPODS: 1.8.4
