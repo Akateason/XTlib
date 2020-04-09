@@ -7,7 +7,7 @@
 //
 
 #import "SDWebImageManager.h"
-#import <SDWebImage.h>
+#import <SDWebImage/SDWebImage.h>
 
 @interface SDWebImageManager (largeImage)
 

@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.0):
+    - AFNetworking/NSURLSession (= 4.0.0)
+    - AFNetworking/Reachability (= 4.0.0)
+    - AFNetworking/Security (= 4.0.0)
+    - AFNetworking/Serialization (= 4.0.0)
+    - AFNetworking/UIKit (= 4.0.0)
+  - AFNetworking/NSURLSession (4.0.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.0)
+  - AFNetworking/Security (4.0.0)
+  - AFNetworking/Serialization (4.0.0)
+  - AFNetworking/UIKit (4.0.0):
     - AFNetworking/NSURLSession
   - CHTCollectionViewWaterfallLayout (0.9.8):
     - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.8)
@@ -209,13 +209,13 @@ PODS:
   - XTIAP (1.1.1):
     - XTBase
     - XTReq
-  - XTReq (3.2.0):
-    - AFNetworking
+  - XTReq (4.1.0):
+    - AFNetworking (= 4.0.0)
     - ReactiveObjC
     - SVProgressHUD
-    - XTFMDB (> 2.0.0)
+    - XTFMDB
     - YYModel
-  - XTRouter (1.1.0):
+  - XTRouter (1.2.1):
     - XTBase
     - XTFMDB
   - XTTable (1.0.0):
@@ -269,7 +269,7 @@ SPEC REPOS:
     - YYModel
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
   CHTCollectionViewWaterfallLayout: 5f241d2480ab4939aa0d1ad4981de9eef1fbe60d
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
@@ -292,11 +292,11 @@ SPEC CHECKSUMS:
   XTColor: 2f9cb9260812471c711e765677065edc81f96152
   XTFMDB: 0891f3355697ebbc3d75f373bcda34329f2d5d94
   XTIAP: 890fb3ebedefe6b4da331f416d486e02e6ea0c13
-  XTReq: 8f2962ad6540d9e2fc37344b049c0485341eb54b
-  XTRouter: 0a53b3da0ee8e9c537b468c3827974394eacf4e0
+  XTReq: 5e68e23c4fdbb1ca6bcb65cc205452d887162625
+  XTRouter: 389d1e740b1021f5218eacbb1da3fc7ebc3ca2bf
   XTTable: 71154f0f7e883546d83a3b377f919369fc7d1ece
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: f98a41855bbe519f24571e76aba3f673eac51d44
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

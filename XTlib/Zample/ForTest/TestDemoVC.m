@@ -9,8 +9,6 @@
 #import "TestDemoVC.h"
 #import <XTBase/XTBase.h>
 #import <SDWebImage/SDWebImage.h>
-#import <BlocksKit/UIView+BlocksKit.h>
-
 
 
 
@@ -27,7 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 @weakify(self)
-    [self.view bk_whenTapped:^{
+    [self.view xt_whenTapped:^{
         @strongify(self)
 
         

@@ -12,8 +12,8 @@
 #import "XTCameraHandler.h"
 #import "XTPACropImageVC.h"
 #import <XTBase/XTBase.h>
+#import <SDWebImage/SDWebImage.h>
 
-#import "XTZoomPicture.h"
 
 
 @interface TestAlbumVC ()
@@ -81,10 +81,10 @@
     XTPAConfig *config           = [[XTPAConfig alloc] init];
     config.albumSelectedMaxCount = 1;
 
-    //    @weakify(self)
+    
     [XTPhotoAlbumVC openAlbumWithConfig:config fromCtrller:self willDismiss:NO getResult:^(NSArray<XTImageItem *> *_Nonnull imageList, NSArray<PHAsset *> *_Nonnull assetList, XTPhotoAlbumVC *vc) {
 
-        //        @strongify(self)
+        
         if (!imageList) return;
 
         @weakify(vc)
@@ -114,26 +114,38 @@
 // image previewer
 - (IBAction)previewLocal:(id)sender {
     UIImage *image = [UIImage imageNamed:@"WechatIMG125"];
-    //    UIImage *image = [UIImage imageNamed:@"test"] ;
-
-    __block XTZoomPicture *zoomPic = [[XTZoomPicture alloc] initWithFrame:APPFRAME backImage:image tapped:^{
-        [zoomPic removeFromSuperview];
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:image];
+    [self.view.window addSubview:imgView];
+    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
     }];
-
-    [self.view.window addSubview:zoomPic];
+    @weakify(imgView)
+    [imgView xt_whenTapped:^{
+        @strongify(imgView)
+        [imgView removeFromSuperview];
+    }];
 }
 
 - (IBAction)previewOnline:(id)sender {
-    __block XTZoomPicture *zoomPic = [[XTZoomPicture alloc] initWithFrame:APPFRAME imageUrl:@"https://i.loli.net/2019/03/04/5c7c9d9a12d67.gif" tapped:^{
-        [zoomPic removeFromSuperview];
-    } loadComplete:^{
-
+    UIImageView *imgView = [[UIImageView alloc] init];
+    [self.view.window addSubview:imgView];
+    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
     }];
-
-    [self.view.window addSubview:zoomPic];
+    @weakify(imgView)
+    [imgView xt_whenTapped:^{
+        @strongify(imgView)
+        [imgView removeFromSuperview];
+    }];
+    
+    [imgView sd_setImageWithURL:[NSURL URLWithString:@"https://i.loli.net/2019/03/04/5c7c9d9a12d67.gif"]];
 }
 
 - (IBAction)previewList:(id)sender {
+    // TODO:
+    
+    
 }
 
 
@@ -143,15 +155,5 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
