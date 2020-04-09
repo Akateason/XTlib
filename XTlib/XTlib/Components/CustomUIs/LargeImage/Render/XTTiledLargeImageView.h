@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SDWebImageManager+largeImage.h"
-#import <UIImageView+WebCache.h>
-#import <NSData+ImageContentType.h>
+
+
 
 @interface XTTiledLargeImageView : UIView
 @property (strong, nonatomic)   UIImage   *image;
