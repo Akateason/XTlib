@@ -10,7 +10,7 @@
 #import <XTBase/XTBase.h>
 #import <SDWebImage/SDWebImage.h>
 #import "XTLargeImgScroll.h"
-
+#import "XTZoomPicture.h"
 
 @interface TestDemoVC ()
 
@@ -24,11 +24,16 @@
     // Do any additional setup after loading the view.
     
     
+    XTZoomPicture *zp = [XTZoomPicture new];
+    UIImage *image = [UIImage imageNamed:@"test2"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    zp.imageView = imageView;
+    zp.maximumZoomScale = 4.0;
     
-    XTLargeImgScroll *imgScroll = [[XTLargeImgScroll alloc] initWithFrame:self.view.bounds];
-    [imgScroll setupLargeImage:[UIImage imageNamed:@"test"]];
-    self.view = imgScroll;
+    self.view = zp;
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

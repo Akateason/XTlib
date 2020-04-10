@@ -15,217 +15,225 @@
 #import <XTBase/UIView+Sizes.h>
 #import <XTTable/XTTable.h>
 
-typedef void (^BlkTapped)(void);
-typedef void (^BlkLoadComplete)(void);
+
+static void *ScrollViewBoundsChangeNotificationContext = &ScrollViewBoundsChangeNotificationContext;
 
 
 @interface XTZoomPicture () <UIScrollViewDelegate>
-@property (copy, nonatomic) BlkTapped blkTapped;
-@property (copy, nonatomic) BlkLoadComplete blkLoadComplete;
-@property (nonatomic) float imgWidth;
-@property (nonatomic) float imgHeight;
-@property (nonatomic) float imgRate_H_W; // h / w
 
-@property (nonatomic, strong) UIImage *backImage;
-@property (copy, nonatomic) NSString *urlStr;
+@property (nonatomic, readonly) CGFloat imageAspectRatio;
+@property (nonatomic) CGRect initialImageFrame;
+@property (strong, nonatomic, readonly) UITapGestureRecognizer *tap;
+
 @end
-
 
 @implementation XTZoomPicture
 
-#pragma mark - Initial
-
-- (id)initWithFrame:(CGRect)frame
-          backImage:(UIImage *)backImage
-             tapped:(void (^)(void))tapped {
-    
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.backImage = backImage;
-        self.blkTapped = tapped;
-        [self setup];
-    }
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame
-           imageUrl:(NSString *)urlString
-             tapped:(void (^)(void))tapped
-       loadComplete:(void (^)(void))loadComplete {
-    
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.urlStr          = urlString;
-        self.blkTapped       = tapped;
-        self.blkLoadComplete = loadComplete;
-        [self setup];
-    }
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)coder {
-    self = [super initWithCoder:coder];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-
-- (void)setup {
-    [self srollviewConfigure];
-    [self imageView];
-    [self setupGesture];
-    self.delegate = self;
-    if (!self.backImage) {
-        UIActivityIndicatorView *aiView   = [UIActivityIndicatorView new];
-        aiView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
-        aiView.center                     = self.center;
-        [self.imageView addSubview:aiView];
-        [aiView startAnimating];
-
-        @weakify(self)
-            [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.urlStr] completed:^(UIImage *_Nullable image, NSError *_Nullable error, SDImageCacheType cacheType, NSURL *_Nullable imageURL) {
-                @strongify(self)
-                    self.backImage = image;
-                [aiView stopAnimating];
-                [aiView removeFromSuperview];
-
-                self.blkLoadComplete();
-            }];
-    }
-}
-
-- (void)srollviewConfigure {
-    self.showsHorizontalScrollIndicator = NO;
-    self.showsVerticalScrollIndicator   = NO;
-    self.backgroundColor                = [UIColor blackColor];
-    self.multipleTouchEnabled           = YES;
-    self.scrollsToTop                   = NO;
-    self.autoresizingMask               = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.delaysContentTouches           = NO;
-    self.canCancelContentTouches        = YES;
-    self.alwaysBounceVertical           = NO;
-}
-
-- (void)setupGesture {
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-    [self addGestureRecognizer:tap];
-
-    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
-    doubleTap.numberOfTapsRequired    = 2;
-    [self addGestureRecognizer:doubleTap];
-    [tap requireGestureRecognizerToFail:doubleTap];
-}
-
-#pragma mark - Property
-
-- (void)setBackImage:(UIImage *)backImage {
-    _backImage = backImage;
-
-    self.imageView.image = backImage;
-    _imgWidth            = backImage.size.width;
-    _imgHeight           = backImage.size.height;
-    _imgRate_H_W         = _imgHeight / _imgWidth;
-
-    if (_imgRate_H_W <= 1) {
-        self.maximumZoomScale = 2.5;
-    }
-    else { // 竖 长图处理
-        self.maximumZoomScale = self.width / (self.height / _imgHeight * _imgWidth);
-    }
-    self.minimumZoomScale = 1;
-}
-
-- (UIImageView *)imageView {
-    if (!_imageView) {
-        _imageView                 = [[UIImageView alloc] init];
-        _imageView.contentMode     = UIViewContentModeScaleAspectFit;
-        _imageView.backgroundColor = [UIColor blackColor];
-        [self resetToOrigin];
-        if (![_imageView superview]) [self addSubview:_imageView];
-    }
-    return _imageView;
-}
-
-#pragma mark -
-
-- (void)resetToOrigin {
-    _imageView.frame = self.bounds;
-
-    if (self.imgHeight / self.imgWidth > self.height / self.width) {
-        float height      = floor(self.imgHeight / (self.imgWidth / self.width));
-        _imageView.height = height;
-    }
-    else {
-        CGFloat height                          = self.imgHeight / self.imgWidth * self.width;
-        if (height < 1 || isnan(height)) height = self.height;
-        height                                  = floor(height);
-        _imageView.height                       = height;
-        _imageView.centerY                      = self.height / 2;
-    }
-
-    if (CGRectGetHeight(_imageView.frame) > CGRectGetHeight(self.frame)) {
-        _imageView.frame = CGRectMake(_imageView.frame.origin.x, _imageView.frame.origin.y, _imageView.frame.size.width, CGRectGetHeight(self.frame));
-    }
-
-    self.contentSize = CGSizeMake(self.width, MAX(_imageView.height, self.height));
-    [self scrollRectToVisible:self.bounds animated:NO];
-    self.alwaysBounceVertical = _imageView.height <= self.height ? NO : YES;
-}
-
-#pragma mark - UIScrollView Delegate
+@synthesize tap = _tap;
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.imageView;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (_imgRate_H_W <= 1) return;
+#pragma mark - Tap to Zoom
 
-    float midSelf      = self.width / 2.;
-    float realImageWid = (self.height / _imgHeight * _imgWidth);
-    float midDeta      = (self.width - realImageWid) / 2;
-
-    if (self.zoomScale >= self.maximumZoomScale) {
-        scrollView.mj_offsetX = midDeta * self.zoomScale;
-        return;
+- (UITapGestureRecognizer *)tap {
+    if (_tap == nil) {
+        _tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToZoom:)];
+        _tap.numberOfTapsRequired = 2;
     }
+    return _tap;
+}
 
-    if (scrollView.mj_offsetX > midDeta * self.zoomScale) {
-        scrollView.mj_offsetX = midDeta * self.zoomScale;
-    }
-    else if (scrollView.mj_offsetX < (midSelf + realImageWid / 2) * self.zoomScale - self.width) {
-        scrollView.mj_offsetX = (midSelf + realImageWid / 2) * self.zoomScale - self.width;
+- (void)tapToZoom:(UIGestureRecognizer *)gestureRecognizer {
+    if (self.zoomScale > self.minimumZoomScale) {
+        [self setZoomScale:self.minimumZoomScale animated:YES];
+    } else {
+        CGPoint tapLocation = [gestureRecognizer locationInView:self.imageView];
+        CGFloat zoomRectWidth = self.imageView.frame.size.width / self.maximumZoomScale;
+        CGFloat zoomRectHeight = self.imageView.frame.size.height / self.maximumZoomScale;
+        CGFloat zoomRectX = tapLocation.x - zoomRectWidth * 0.5;
+        CGFloat zoomRectY = tapLocation.y - zoomRectHeight * 0.5;
+        CGRect zoomRect = CGRectMake(zoomRectX, zoomRectY, zoomRectWidth, zoomRectHeight);
+        [self zoomToRect:zoomRect animated:YES];
     }
 }
 
-#pragma mark - Touch Actions
 
-- (void)tap:(UITapGestureRecognizer *)tapGetrue {
-    if (self.blkTapped) {
-        self.blkTapped();
+#pragma mark - Private Methods
+
+- (void)configure {
+    self.showsVerticalScrollIndicator = NO;
+    self.showsHorizontalScrollIndicator = NO;
+    [self startObservingBoundsChange];
+    self.delegate = self;
+}
+
+- (void)setImageView:(UIImageView *)imageView {
+    if (_imageView.superview == self) {
+        [_imageView removeGestureRecognizer:self.tap];
+        [_imageView removeFromSuperview];
     }
-    else {
-        [self resetToOrigin];
-        [self removeFromSuperview];
+    if (imageView) {
+        _imageView = imageView;
+        _initialImageFrame = CGRectNull;
+        _imageView.userInteractionEnabled = YES;
+        [_imageView addGestureRecognizer:self.tap];
+        [self addSubview:imageView];
     }
 }
 
-- (void)doubleTap:(UITapGestureRecognizer *)tapGesture {
-    if (self.zoomScale >= self.maximumZoomScale) {
-        [self setZoomScale:1 animated:YES];
-        [self resetToOrigin];
+- (CGFloat)imageAspectRatio {
+    if (self.imageView.image) {
+        return self.imageView.image.size.width / self.imageView.image.size.height;
+    }
+    return 1;
+}
+
+- (CGSize)rectSizeForAspectRatio: (CGFloat)ratio
+                    thatFitsSize: (CGSize)size
+{
+    CGFloat containerWidth = size.width;
+    CGFloat containerHeight = size.height;
+    CGFloat resultWidth = 0;
+    CGFloat resultHeight = 0;
+    
+    if ((ratio <= 0) || (containerHeight <= 0)) {
+        return size;
+    }
+    
+    if (containerWidth / containerHeight >= ratio) {
+        resultHeight = containerHeight;
+        resultWidth = containerHeight * ratio;
     }
     else {
-        if (_imgRate_H_W <= 1) {
-            CGPoint point = [tapGesture locationInView:self];
-            [self zoomToRect:CGRectMake(point.x - SIDE_ZOOMTORECT / 2, point.y - SIDE_ZOOMTORECT / 2, SIDE_ZOOMTORECT, SIDE_ZOOMTORECT) animated:YES];
-        }
-        else {
-            [self setZoomScale:self.maximumZoomScale];
-            self.mj_offsetY = 0;
+        resultWidth = containerWidth;
+        resultHeight = containerWidth / ratio;
+    }
+    
+    return CGSizeMake(resultWidth, resultHeight);
+}
+
+- (void)scaleImageForScrollViewTransitionFromBounds: (CGRect)oldBounds
+                                           toBounds: (CGRect)newBounds
+{
+    CGPoint oldContentOffset = CGPointMake(
+                                           oldBounds.origin.x,
+                                           oldBounds.origin.y
+                                           );
+    CGSize oldSize = oldBounds.size;
+    CGSize newSize = newBounds.size;
+    
+    CGSize containedImageSizeOld = [self rectSizeForAspectRatio: self.imageAspectRatio
+                                                   thatFitsSize: oldSize];
+    
+    CGSize containedImageSizeNew = [self rectSizeForAspectRatio: self.imageAspectRatio
+                                                   thatFitsSize: newSize];
+    
+    if (containedImageSizeOld.height <= 0) {
+        containedImageSizeOld = containedImageSizeNew;
+    }
+    
+    CGFloat orientationRatio = (
+                                containedImageSizeNew.height /
+                                containedImageSizeOld.height
+                                );
+    
+    CGAffineTransform t = CGAffineTransformMakeScale(
+                                                     orientationRatio,
+                                                     orientationRatio
+                                                     );
+    
+    self.imageView.frame = CGRectApplyAffineTransform(self.imageView.frame, t);
+    
+    self.contentSize = self.imageView.frame.size;
+    
+    CGFloat xOffset = (oldContentOffset.x + oldSize.width * 0.5) * orientationRatio - newSize.width * 0.5;
+    CGFloat yOffset = (oldContentOffset.y + oldSize.height * 0.5) * orientationRatio - newSize.height * 0.5;
+    
+    xOffset -= MAX(xOffset + newSize.width - self.contentSize.width, 0);
+    yOffset -= MAX(yOffset + newSize.height - self.contentSize.height, 0);
+    xOffset += MAX(-xOffset, 0);
+    yOffset += MAX(-yOffset, 0);
+    
+    self.contentOffset = CGPointMake(xOffset, yOffset);
+}
+
+- (void)setupInitialImageFrame {
+    if (self.imageView.image && CGRectEqualToRect(self.initialImageFrame, CGRectNull)) {
+        CGSize imageViewSize = [self rectSizeForAspectRatio:self.imageAspectRatio
+                                               thatFitsSize:self.bounds.size];
+        self.initialImageFrame = CGRectMake(0, 0, imageViewSize.width, imageViewSize.height);
+        self.imageView.frame = self.initialImageFrame;
+        self.contentSize = self.initialImageFrame.size;
+    }
+}
+
+#pragma mark - KVO
+
+- (void)startObservingBoundsChange {
+    [self addObserver:self
+           forKeyPath:@"bounds"
+              options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
+              context:ScrollViewBoundsChangeNotificationContext];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if (context == ScrollViewBoundsChangeNotificationContext) {
+        CGRect oldRect = ((NSValue *)change[NSKeyValueChangeOldKey]).CGRectValue;
+        CGRect newRect = ((NSValue *)change[NSKeyValueChangeNewKey]).CGRectValue;
+        if (! CGSizeEqualToSize(oldRect.size, newRect.size)) {
+            [self scaleImageForScrollViewTransitionFromBounds: oldRect
+                                                     toBounds: newRect];
         }
     }
+}
+
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"bounds"];
+}
+
+#pragma mark - UIScrollView
+
+- (void)setContentOffset:(CGPoint)contentOffset
+{
+    const CGSize contentSize = self.contentSize;
+    const CGSize scrollViewSize = self.bounds.size;
+    
+    if (contentSize.width < scrollViewSize.width)
+    {
+        contentOffset.x = - (scrollViewSize.width - contentSize.width) * 0.5;
+    }
+    
+    if (contentSize.height < scrollViewSize.height)
+    {
+        contentOffset.y = - (scrollViewSize.height - contentSize.height) * 0.5;
+    }
+    
+    [super setContentOffset:contentOffset];
+}
+
+#pragma mark - UIView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self configure];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self configure];
+    }
+    return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self setupInitialImageFrame];
 }
 
 @end

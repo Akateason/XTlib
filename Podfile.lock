@@ -24,6 +24,7 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - ISVImageScrollView (0.1.2)
   - JKCategories (1.9):
     - JKCategories/CoreData (= 1.9)
     - JKCategories/CoreLocation (= 1.9)
@@ -225,6 +226,7 @@ PODS:
 DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout
   - FDFullscreenPopGesture
+  - ISVImageScrollView
   - JKCategories
   - LxDBAnything
   - RSKImageCropper
@@ -245,6 +247,7 @@ SPEC REPOS:
     - CocoaLumberjack
     - FDFullscreenPopGesture
     - FMDB
+    - ISVImageScrollView
     - JKCategories
     - libwebp
     - LxDBAnything
@@ -274,6 +277,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  ISVImageScrollView: ba511d12a1661b40feb8921309c0854bf93ec749
   JKCategories: b5240c9f6cd6991cacced4bec47c3f508c7f3f7e
   libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   LxDBAnything: 154a2ad1ae32e70355d886b5443260543bb60c71
@@ -297,6 +301,6 @@ SPEC CHECKSUMS:
   XTTable: 71154f0f7e883546d83a3b377f919369fc7d1ece
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: f98a41855bbe519f24571e76aba3f673eac51d44
+PODFILE CHECKSUM: 66082a759c5374c8985ac08c37c5519e69a9b221
 
 COCOAPODS: 1.9.1
