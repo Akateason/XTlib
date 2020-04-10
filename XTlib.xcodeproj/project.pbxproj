@@ -110,6 +110,7 @@
 		8FDE205220594950003B5398 /* NibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205020594950003B5398 /* NibVC.m */; };
 		8FDE205320594950003B5398 /* NibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE205120594950003B5398 /* NibVC.xib */; };
 		8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205620594EE3003B5398 /* XTSIAlertView.m */; };
+		8FE4E71224404A80006C9F9E /* XTZoomPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE4E71024404A80006C9F9E /* XTZoomPicture.m */; };
 		8FF93DC92360405E00C6B5CD /* XTImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF93DC82360405E00C6B5CD /* XTImageItem.m */; };
 		F9572C89FB657E8622F3EAB6 /* Pods_XTlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABB4C18C49B72CEDEA8791D /* Pods_XTlib.framework */; };
 /* End PBXBuildFile section */
@@ -326,6 +327,8 @@
 		8FDE205120594950003B5398 /* NibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NibVC.xib; sourceTree = "<group>"; };
 		8FDE205520594EE3003B5398 /* XTSIAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTSIAlertView.h; sourceTree = "<group>"; };
 		8FDE205620594EE3003B5398 /* XTSIAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTSIAlertView.m; sourceTree = "<group>"; };
+		8FE4E71024404A80006C9F9E /* XTZoomPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTZoomPicture.m; sourceTree = "<group>"; };
+		8FE4E71124404A80006C9F9E /* XTZoomPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTZoomPicture.h; sourceTree = "<group>"; };
 		8FF93DC72360405E00C6B5CD /* XTImageItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTImageItem.h; sourceTree = "<group>"; };
 		8FF93DC82360405E00C6B5CD /* XTImageItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTImageItem.m; sourceTree = "<group>"; };
 		BABB4C18C49B72CEDEA8791D /* Pods_XTlib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTlib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -706,6 +709,7 @@
 		8F2BFF02203ED7380013394D /* CustomUIs */ = {
 			isa = PBXGroup;
 			children = (
+				8FE4E70F24404A80006C9F9E /* XTZoomPicture */,
 				8F4F3F2A24277CDD000AE977 /* LargeImage */,
 				8FD71E052225541100B5420F /* XTPhotoAlbum */,
 				8F0AEE24206A285700DC5E7D /* GradientButton */,
@@ -1032,6 +1036,15 @@
 			path = XTSIAlert;
 			sourceTree = "<group>";
 		};
+		8FE4E70F24404A80006C9F9E /* XTZoomPicture */ = {
+			isa = PBXGroup;
+			children = (
+				8FE4E71124404A80006C9F9E /* XTZoomPicture.h */,
+				8FE4E71024404A80006C9F9E /* XTZoomPicture.m */,
+			);
+			path = XTZoomPicture;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1327,6 +1340,7 @@
 				8F2BFFC2203ED7390013394D /* XTAnimation.m in Sources */,
 				8F2BFF75203ED7390013394D /* Zample8Controller.m in Sources */,
 				8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */,
+				8FE4E71224404A80006C9F9E /* XTZoomPicture.m in Sources */,
 				8FDE205220594950003B5398 /* NibVC.m in Sources */,
 				8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */,
 				8F2BFF5E203ED7390013394D /* Z1CustomCell.m in Sources */,

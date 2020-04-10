@@ -19,24 +19,6 @@
 // Base
 #import <XTBase/XTBase.h>
 
-// UIs
-//#import "XTZoomPicture.h"
-//#import "ParallaxHeaderView.h"
-//#import "PlaceHolderTextView.h"
-////#import "XTBarrageItemView.h"
-//#import "XTlineSpaceLabel.h"
-//#import "XTLoopScrollView.h"
-//#import "XTMultipleTables.h"
-//#import "XTTableViewRootHandler.h"
-//#import "XTNetReloader.h"
-//#import "XTSegment.h"
-//#import "XTStretchSegment.h"
-//#import "XTSIAlertView.h"
-//#import "XTPhotoAlbum.h"
-
-// Animation
-//#import "XTAnimation.h"
-
 // DataBase
 #import <XTFMDB/XTFMDB.h>
 

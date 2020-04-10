@@ -176,14 +176,14 @@ PODS:
   - MJRefresh (3.3.1)
   - ReactiveObjC (3.1.1)
   - RSKImageCropper (2.2.3)
-  - SDWebImage (5.6.1):
-    - SDWebImage/Core (= 5.6.1)
-  - SDWebImage/Core (5.6.1)
-  - SDWebImage/MapKit (5.6.1):
+  - SDWebImage (5.7.1):
+    - SDWebImage/Core (= 5.7.1)
+  - SDWebImage/Core (5.7.1)
+  - SDWebImage/MapKit (5.7.1):
     - SDWebImage/Core
-  - SDWebImageWebPCoder (0.5.0):
+  - SDWebImageWebPCoder (0.6.0):
     - libwebp (~> 1.0)
-    - SDWebImage/Core (~> 5.5)
+    - SDWebImage/Core (~> 5.7)
   - SSZipArchive (2.2.2)
   - SVProgressHUD (2.2.5)
   - UIFontWDCustomLoader (0.1.0)
@@ -203,13 +203,13 @@ PODS:
     - YYModel
   - XTColor (1.1.0):
     - XTBase
-  - XTFMDB (2.0.6):
+  - XTFMDB (2.1.0):
     - FMDB
     - YYModel
   - XTIAP (1.1.1):
     - XTBase
     - XTReq
-  - XTReq (4.1.0):
+  - XTReq (4.2.3):
     - AFNetworking (= 4.0.0)
     - ReactiveObjC
     - SVProgressHUD
@@ -281,8 +281,8 @@ SPEC CHECKSUMS:
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RSKImageCropper: a446db0e8444a036b34f3c43db01b2373baa4b2a
-  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
-  SDWebImageWebPCoder: e7ae855f058e3dcae99696920b6a5d134e9dcddf
+  SDWebImage: 5d4cf6afccd9ac1d2ee701ed0c4917cbb1b80536
+  SDWebImageWebPCoder: ff8ccd473fc8064c1600d0d6eb1ce8d60ea7c202
   SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIFontWDCustomLoader: 233f0f83e543b8f24a6299d7fc773be9d704fe22
@@ -290,9 +290,9 @@ SPEC CHECKSUMS:
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
   XTBase: a923c1bccae9415ea563f8260f154e1b329dafb0
   XTColor: 2f9cb9260812471c711e765677065edc81f96152
-  XTFMDB: 0891f3355697ebbc3d75f373bcda34329f2d5d94
+  XTFMDB: 887cd4674e50d8c303635c45d8004070c6f76196
   XTIAP: 890fb3ebedefe6b4da331f416d486e02e6ea0c13
-  XTReq: 5e68e23c4fdbb1ca6bcb65cc205452d887162625
+  XTReq: 521ce757e41f742b1513ee9c2dd7fb139a780e52
   XTRouter: 389d1e740b1021f5218eacbb1da3fc7ebc3ca2bf
   XTTable: 71154f0f7e883546d83a3b377f919369fc7d1ece
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
