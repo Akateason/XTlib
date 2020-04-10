@@ -6,7 +6,7 @@
 //  Copyright © 2020 shimo.im. All rights reserved.
 //
 
-#import "SDWebImageManager.h"
+
 #import <SDWebImage/SDWebImage.h>
 
 @interface SDWebImageManager (largeImage)

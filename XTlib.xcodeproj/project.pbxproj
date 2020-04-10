@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AEE26206A285700DC5E7D /* GradientButton.m */; };
+		8F0BC5D224403D69007F80E9 /* XTLargeImgScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0BC5D124403D69007F80E9 /* XTLargeImgScroll.m */; };
 		8F1511FF20C2503500FF125C /* MPTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1511FD20C2503400FF125C /* MPTestView.m */; };
 		8F19861E20C9632D0082662A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8F19861D20C9632D0082662A /* README.md */; };
 		8F220D7920AAD31500CC6271 /* MPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F220D7820AAD31500CC6271 /* MPTestVC.m */; };
@@ -135,6 +136,8 @@
 		393548A18FFA706486B3C132 /* Pods-XTlib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTlib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XTlib/Pods-XTlib.debug.xcconfig"; sourceTree = "<group>"; };
 		8F0AEE25206A285700DC5E7D /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
 		8F0AEE26206A285700DC5E7D /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
+		8F0BC5D024403D69007F80E9 /* XTLargeImgScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTLargeImgScroll.h; sourceTree = "<group>"; };
+		8F0BC5D124403D69007F80E9 /* XTLargeImgScroll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTLargeImgScroll.m; sourceTree = "<group>"; };
 		8F1511FD20C2503400FF125C /* MPTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTestView.m; sourceTree = "<group>"; };
 		8F1511FE20C2503400FF125C /* MPTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTestView.h; sourceTree = "<group>"; };
 		8F19861D20C9632D0082662A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -864,6 +867,8 @@
 		8F4F3F2E24277CDD000AE977 /* Render */ = {
 			isa = PBXGroup;
 			children = (
+				8F0BC5D024403D69007F80E9 /* XTLargeImgScroll.h */,
+				8F0BC5D124403D69007F80E9 /* XTLargeImgScroll.m */,
 				8F4F3F45242781CD000AE977 /* XTTiledLargeImageView.h */,
 				8F4F3F44242781CD000AE977 /* XTTiledLargeImageView.m */,
 				8F4F3F4724278422000AE977 /* XTTiledLayer.h */,
@@ -1294,6 +1299,7 @@
 				8F2BFFAF203ED7390013394D /* XTBarrageItemView.m in Sources */,
 				8F2BFE34203ED7270013394D /* WPHotspotLabel.m in Sources */,
 				8F2BFF72203ED7390013394D /* Z8CollectionViewCell.m in Sources */,
+				8F0BC5D224403D69007F80E9 /* XTLargeImgScroll.m in Sources */,
 				8F2BFFAE203ED7390013394D /* FlywordLabel.m in Sources */,
 				8F2BFFAB203ED7390013394D /* ParallaxHeaderView.m in Sources */,
 				8F4F3F4024277CDD000AE977 /* SDWebImageManager+largeImage.m in Sources */,

@@ -9,12 +9,10 @@
 #import "TestDemoVC.h"
 #import <XTBase/XTBase.h>
 #import <SDWebImage/SDWebImage.h>
-
+#import "XTLargeImgScroll.h"
 
 
 @interface TestDemoVC ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIImageView *bottomImageView;
 
 @end
 
@@ -24,38 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-@weakify(self)
-    [self.view xt_whenTapped:^{
-        @strongify(self)
-
-        
-        
-        
-    }];
     
-
     
-
-
     
+    XTLargeImgScroll *imgScroll = [[XTLargeImgScroll alloc] initWithFrame:self.view.bounds];
+    [imgScroll setupLargeImage:[UIImage imageNamed:@"test"]];
+    self.view = imgScroll;
 }
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
