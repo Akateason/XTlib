@@ -25,12 +25,23 @@
     
     
     XTZoomPicture *zp = [XTZoomPicture new];
-    UIImage *image = [UIImage imageNamed:@"test2"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    zp.imageView = imageView;
+//    UIImage *image =
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    zp.imageView.image = [UIImage imageNamed:@"test2"];
     zp.maximumZoomScale = 4.0;
     
     self.view = zp;
+    
+    [zp onTapped:^{
+        xt_LOG_DEBUG(@"tap");
+    }];
+    
+    [self.view xt_whenTouches:2 tapped:3 handler:^{
+        [zp reset];
+    }];
+    
+    
+    
 }
 
 

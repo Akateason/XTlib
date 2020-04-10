@@ -17,19 +17,17 @@
 
 
 static void *ScrollViewBoundsChangeNotificationContext = &ScrollViewBoundsChangeNotificationContext;
-
+typedef void(^BlkTapped)(void);
 
 @interface XTZoomPicture () <UIScrollViewDelegate>
 
 @property (nonatomic, readonly) CGFloat imageAspectRatio;
 @property (nonatomic) CGRect initialImageFrame;
-@property (strong, nonatomic, readonly) UITapGestureRecognizer *tap;
+@property (copy, nonatomic) BlkTapped blkTapped;
 
 @end
 
 @implementation XTZoomPicture
-
-@synthesize tap = _tap;
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.imageView;
@@ -37,15 +35,21 @@ static void *ScrollViewBoundsChangeNotificationContext = &ScrollViewBoundsChange
 
 #pragma mark - Tap to Zoom
 
-- (UITapGestureRecognizer *)tap {
-    if (_tap == nil) {
-        _tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToZoom:)];
-        _tap.numberOfTapsRequired = 2;
-    }
-    return _tap;
+- (void)setupGesture {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self addGestureRecognizer:tap];
+
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTap:)];
+    doubleTap.numberOfTapsRequired = 2;
+    [self addGestureRecognizer:doubleTap];
+    [tap requireGestureRecognizerToFail:doubleTap];
 }
 
-- (void)tapToZoom:(UIGestureRecognizer *)gestureRecognizer {
+- (void)tap:(UIGestureRecognizer *)gestureRecognizer {
+    if (self.blkTapped) self.blkTapped();
+}
+
+- (void)doubleTap:(UIGestureRecognizer *)gestureRecognizer {
     if (self.zoomScale > self.minimumZoomScale) {
         [self setZoomScale:self.minimumZoomScale animated:YES];
     } else {
@@ -63,24 +67,20 @@ static void *ScrollViewBoundsChangeNotificationContext = &ScrollViewBoundsChange
 #pragma mark - Private Methods
 
 - (void)configure {
+    _imageView = [UIImageView new];
+    _initialImageFrame = CGRectNull;
+    _imageView.userInteractionEnabled = YES;
+    self.userInteractionEnabled = YES;
+    [self addSubview:_imageView];
+    
+        
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
     [self startObservingBoundsChange];
     self.delegate = self;
-}
-
-- (void)setImageView:(UIImageView *)imageView {
-    if (_imageView.superview == self) {
-        [_imageView removeGestureRecognizer:self.tap];
-        [_imageView removeFromSuperview];
-    }
-    if (imageView) {
-        _imageView = imageView;
-        _initialImageFrame = CGRectNull;
-        _imageView.userInteractionEnabled = YES;
-        [_imageView addGestureRecognizer:self.tap];
-        [self addSubview:imageView];
-    }
+    self.maximumZoomScale = 4.0;
+    
+    [self setupGesture];
 }
 
 - (CGFloat)imageAspectRatio {
@@ -169,6 +169,14 @@ static void *ScrollViewBoundsChangeNotificationContext = &ScrollViewBoundsChange
     }
 }
 
+- (void)reset {    
+    self.zoomScale = 1;
+}
+
+- (void)onTapped:(void(^)(void))tapped {
+    self.blkTapped = tapped;
+}
+
 #pragma mark - KVO
 
 - (void)startObservingBoundsChange {
@@ -225,6 +233,14 @@ static void *ScrollViewBoundsChangeNotificationContext = &ScrollViewBoundsChange
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self configure];
+    }
+    return self;
+}
+
+- (instancetype)init {
+    self = [super init];
     if (self) {
         [self configure];
     }
