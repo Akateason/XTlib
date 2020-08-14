@@ -80,7 +80,6 @@
 		8F2BFFB9203ED7390013394D /* XTStretchSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF2E203ED7380013394D /* XTStretchSegment.m */; };
 		8F2BFFC2203ED7390013394D /* XTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF4B203ED7380013394D /* XTAnimation.m */; };
 		8F4F3F4024277CDD000AE977 /* SDWebImageManager+largeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F3A24277CDD000AE977 /* SDWebImageManager+largeImage.m */; };
-		8F4F3F43242780C2000AE977 /* XTLargeImageCompressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F41242780C2000AE977 /* XTLargeImageCompressUtil.m */; };
 		8F4F3F46242781CD000AE977 /* XTTiledLargeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F44242781CD000AE977 /* XTTiledLargeImageView.m */; };
 		8F4F3F4924278422000AE977 /* XTTiledLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F4824278422000AE977 /* XTTiledLayer.m */; };
 		8F6400782148B2030094024A /* TestDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6400772148B2030094024A /* TestDemoVC.m */; };
@@ -276,8 +275,6 @@
 		8F2BFF59203ED7380013394D /* XTlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTlib.h; sourceTree = "<group>"; };
 		8F4F3F3924277CDD000AE977 /* SDWebImageManager+largeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+largeImage.h"; sourceTree = "<group>"; };
 		8F4F3F3A24277CDD000AE977 /* SDWebImageManager+largeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+largeImage.m"; sourceTree = "<group>"; };
-		8F4F3F41242780C2000AE977 /* XTLargeImageCompressUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTLargeImageCompressUtil.m; sourceTree = "<group>"; };
-		8F4F3F42242780C2000AE977 /* XTLargeImageCompressUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTLargeImageCompressUtil.h; sourceTree = "<group>"; };
 		8F4F3F44242781CD000AE977 /* XTTiledLargeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTTiledLargeImageView.m; sourceTree = "<group>"; };
 		8F4F3F45242781CD000AE977 /* XTTiledLargeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTiledLargeImageView.h; sourceTree = "<group>"; };
 		8F4F3F4724278422000AE977 /* XTTiledLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTiledLayer.h; sourceTree = "<group>"; };
@@ -852,20 +849,10 @@
 		8F4F3F2A24277CDD000AE977 /* LargeImage */ = {
 			isa = PBXGroup;
 			children = (
-				8F4F3F2B24277CDD000AE977 /* Compress */,
 				8F4F3F2E24277CDD000AE977 /* Render */,
 				8F4F3F3824277CDD000AE977 /* SDWebImageExtension */,
 			);
 			path = LargeImage;
-			sourceTree = "<group>";
-		};
-		8F4F3F2B24277CDD000AE977 /* Compress */ = {
-			isa = PBXGroup;
-			children = (
-				8F4F3F42242780C2000AE977 /* XTLargeImageCompressUtil.h */,
-				8F4F3F41242780C2000AE977 /* XTLargeImageCompressUtil.m */,
-			);
-			path = Compress;
 			sourceTree = "<group>";
 		};
 		8F4F3F2E24277CDD000AE977 /* Render */ = {
@@ -1204,7 +1191,6 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
-				"${BUILT_PRODUCTS_DIR}/ISVImageScrollView/ISVImageScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/JKCategories/JKCategories.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -1234,7 +1220,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISVImageScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKCategories.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -1355,7 +1340,6 @@
 				8F2BFF6D203ED7390013394D /* Z5DisplayController.m in Sources */,
 				8F2BFFB9203ED7390013394D /* XTStretchSegment.m in Sources */,
 				8F4F3F46242781CD000AE977 /* XTTiledLargeImageView.m in Sources */,
-				8F4F3F43242780C2000AE977 /* XTLargeImageCompressUtil.m in Sources */,
 				8FD71E152225562900B5420F /* XTPACameraGroupVC.m in Sources */,
 				8FC8215320EA7DE90068AE5E /* AlertTestVC.m in Sources */,
 				8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */,

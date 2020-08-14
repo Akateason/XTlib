@@ -24,145 +24,144 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - ISVImageScrollView (0.1.2)
-  - JKCategories (1.9):
-    - JKCategories/CoreData (= 1.9)
-    - JKCategories/CoreLocation (= 1.9)
-    - JKCategories/Foundation (= 1.9)
-    - JKCategories/MapKit (= 1.9)
-    - JKCategories/QuartzCore (= 1.9)
-    - JKCategories/UIKit (= 1.9)
-  - JKCategories/CoreData (1.9):
-    - JKCategories/CoreData/NSFetchRequest (= 1.9)
-    - JKCategories/CoreData/NSManagedObject (= 1.9)
-    - JKCategories/CoreData/NSManagedObjectContext (= 1.9)
-  - JKCategories/CoreData/NSFetchRequest (1.9)
-  - JKCategories/CoreData/NSManagedObject (1.9):
+  - JKCategories (1.9.1):
+    - JKCategories/CoreData (= 1.9.1)
+    - JKCategories/CoreLocation (= 1.9.1)
+    - JKCategories/Foundation (= 1.9.1)
+    - JKCategories/MapKit (= 1.9.1)
+    - JKCategories/QuartzCore (= 1.9.1)
+    - JKCategories/UIKit (= 1.9.1)
+  - JKCategories/CoreData (1.9.1):
+    - JKCategories/CoreData/NSFetchRequest (= 1.9.1)
+    - JKCategories/CoreData/NSManagedObject (= 1.9.1)
+    - JKCategories/CoreData/NSManagedObjectContext (= 1.9.1)
+  - JKCategories/CoreData/NSFetchRequest (1.9.1)
+  - JKCategories/CoreData/NSManagedObject (1.9.1):
     - JKCategories/CoreData/NSManagedObjectContext
-  - JKCategories/CoreData/NSManagedObjectContext (1.9):
+  - JKCategories/CoreData/NSManagedObjectContext (1.9.1):
     - JKCategories/CoreData/NSFetchRequest
-  - JKCategories/CoreLocation (1.9):
-    - JKCategories/CoreLocation/CLLocation (= 1.9)
-  - JKCategories/CoreLocation/CLLocation (1.9)
-  - JKCategories/Foundation (1.9):
-    - JKCategories/Foundation/NSArray (= 1.9)
-    - JKCategories/Foundation/NSBundle (= 1.9)
-    - JKCategories/Foundation/NSData (= 1.9)
-    - JKCategories/Foundation/NSDate (= 1.9)
-    - JKCategories/Foundation/NSDateFormatter (= 1.9)
-    - JKCategories/Foundation/NSDictionary (= 1.9)
-    - JKCategories/Foundation/NSException (= 1.9)
-    - JKCategories/Foundation/NSFileHandle (= 1.9)
-    - JKCategories/Foundation/NSFileManager (= 1.9)
-    - JKCategories/Foundation/NSHTTPCookieStorage (= 1.9)
-    - JKCategories/Foundation/NSIndexPath (= 1.9)
-    - JKCategories/Foundation/NSInvocation (= 1.9)
-    - JKCategories/Foundation/NSNotificationCenter (= 1.9)
-    - JKCategories/Foundation/NSNumber (= 1.9)
-    - JKCategories/Foundation/NSObject (= 1.9)
-    - JKCategories/Foundation/NSRunLoop (= 1.9)
-    - JKCategories/Foundation/NSSet (= 1.9)
-    - JKCategories/Foundation/NSString (= 1.9)
-    - JKCategories/Foundation/NSTimer (= 1.9)
-    - JKCategories/Foundation/NSURL (= 1.9)
-    - JKCategories/Foundation/NSURLConnection (= 1.9)
-    - JKCategories/Foundation/NSURLRequest (= 1.9)
-    - JKCategories/Foundation/NSURLSession (= 1.9)
-    - JKCategories/Foundation/NSUserDefaults (= 1.9)
-  - JKCategories/Foundation/NSArray (1.9)
-  - JKCategories/Foundation/NSBundle (1.9)
-  - JKCategories/Foundation/NSData (1.9)
-  - JKCategories/Foundation/NSDate (1.9)
-  - JKCategories/Foundation/NSDateFormatter (1.9)
-  - JKCategories/Foundation/NSDictionary (1.9)
-  - JKCategories/Foundation/NSException (1.9)
-  - JKCategories/Foundation/NSFileHandle (1.9)
-  - JKCategories/Foundation/NSFileManager (1.9)
-  - JKCategories/Foundation/NSHTTPCookieStorage (1.9)
-  - JKCategories/Foundation/NSIndexPath (1.9)
-  - JKCategories/Foundation/NSInvocation (1.9)
-  - JKCategories/Foundation/NSNotificationCenter (1.9)
-  - JKCategories/Foundation/NSNumber (1.9)
-  - JKCategories/Foundation/NSObject (1.9)
-  - JKCategories/Foundation/NSRunLoop (1.9)
-  - JKCategories/Foundation/NSSet (1.9)
-  - JKCategories/Foundation/NSString (1.9):
+  - JKCategories/CoreLocation (1.9.1):
+    - JKCategories/CoreLocation/CLLocation (= 1.9.1)
+  - JKCategories/CoreLocation/CLLocation (1.9.1)
+  - JKCategories/Foundation (1.9.1):
+    - JKCategories/Foundation/NSArray (= 1.9.1)
+    - JKCategories/Foundation/NSBundle (= 1.9.1)
+    - JKCategories/Foundation/NSData (= 1.9.1)
+    - JKCategories/Foundation/NSDate (= 1.9.1)
+    - JKCategories/Foundation/NSDateFormatter (= 1.9.1)
+    - JKCategories/Foundation/NSDictionary (= 1.9.1)
+    - JKCategories/Foundation/NSException (= 1.9.1)
+    - JKCategories/Foundation/NSFileHandle (= 1.9.1)
+    - JKCategories/Foundation/NSFileManager (= 1.9.1)
+    - JKCategories/Foundation/NSHTTPCookieStorage (= 1.9.1)
+    - JKCategories/Foundation/NSIndexPath (= 1.9.1)
+    - JKCategories/Foundation/NSInvocation (= 1.9.1)
+    - JKCategories/Foundation/NSNotificationCenter (= 1.9.1)
+    - JKCategories/Foundation/NSNumber (= 1.9.1)
+    - JKCategories/Foundation/NSObject (= 1.9.1)
+    - JKCategories/Foundation/NSRunLoop (= 1.9.1)
+    - JKCategories/Foundation/NSSet (= 1.9.1)
+    - JKCategories/Foundation/NSString (= 1.9.1)
+    - JKCategories/Foundation/NSTimer (= 1.9.1)
+    - JKCategories/Foundation/NSURL (= 1.9.1)
+    - JKCategories/Foundation/NSURLConnection (= 1.9.1)
+    - JKCategories/Foundation/NSURLRequest (= 1.9.1)
+    - JKCategories/Foundation/NSURLSession (= 1.9.1)
+    - JKCategories/Foundation/NSUserDefaults (= 1.9.1)
+  - JKCategories/Foundation/NSArray (1.9.1)
+  - JKCategories/Foundation/NSBundle (1.9.1)
+  - JKCategories/Foundation/NSData (1.9.1)
+  - JKCategories/Foundation/NSDate (1.9.1)
+  - JKCategories/Foundation/NSDateFormatter (1.9.1)
+  - JKCategories/Foundation/NSDictionary (1.9.1)
+  - JKCategories/Foundation/NSException (1.9.1)
+  - JKCategories/Foundation/NSFileHandle (1.9.1)
+  - JKCategories/Foundation/NSFileManager (1.9.1)
+  - JKCategories/Foundation/NSHTTPCookieStorage (1.9.1)
+  - JKCategories/Foundation/NSIndexPath (1.9.1)
+  - JKCategories/Foundation/NSInvocation (1.9.1)
+  - JKCategories/Foundation/NSNotificationCenter (1.9.1)
+  - JKCategories/Foundation/NSNumber (1.9.1)
+  - JKCategories/Foundation/NSObject (1.9.1)
+  - JKCategories/Foundation/NSRunLoop (1.9.1)
+  - JKCategories/Foundation/NSSet (1.9.1)
+  - JKCategories/Foundation/NSString (1.9.1):
     - JKCategories/Foundation/NSData
-  - JKCategories/Foundation/NSTimer (1.9)
-  - JKCategories/Foundation/NSURL (1.9)
-  - JKCategories/Foundation/NSURLConnection (1.9)
-  - JKCategories/Foundation/NSURLRequest (1.9)
-  - JKCategories/Foundation/NSURLSession (1.9)
-  - JKCategories/Foundation/NSUserDefaults (1.9)
-  - JKCategories/MapKit (1.9):
-    - JKCategories/MapKit/MKMapView (= 1.9)
-  - JKCategories/MapKit/MKMapView (1.9)
-  - JKCategories/QuartzCore (1.9):
-    - JKCategories/QuartzCore/CAAnimation (= 1.9)
-    - JKCategories/QuartzCore/CALayer (= 1.9)
-    - JKCategories/QuartzCore/CAMediaTimingFunction (= 1.9)
-    - JKCategories/QuartzCore/CAShapeLayer (= 1.9)
-    - JKCategories/QuartzCore/CATransaction (= 1.9)
-  - JKCategories/QuartzCore/CAAnimation (1.9)
-  - JKCategories/QuartzCore/CALayer (1.9)
-  - JKCategories/QuartzCore/CAMediaTimingFunction (1.9)
-  - JKCategories/QuartzCore/CAShapeLayer (1.9)
-  - JKCategories/QuartzCore/CATransaction (1.9)
-  - JKCategories/UIKit (1.9):
-    - JKCategories/UIKit/UIApplication (= 1.9)
-    - JKCategories/UIKit/UIBarButtonItem (= 1.9)
-    - JKCategories/UIKit/UIBezierPath (= 1.9)
-    - JKCategories/UIKit/UIButton (= 1.9)
-    - JKCategories/UIKit/UIColor (= 1.9)
-    - JKCategories/UIKit/UIControl (= 1.9)
-    - JKCategories/UIKit/UIDevice (= 1.9)
-    - JKCategories/UIKit/UIFont (= 1.9)
-    - JKCategories/UIKit/UIImage (= 1.9)
-    - JKCategories/UIKit/UIImageView (= 1.9)
-    - JKCategories/UIKit/UILable (= 1.9)
-    - JKCategories/UIKit/UINavigationBar (= 1.9)
-    - JKCategories/UIKit/UINavigationController (= 1.9)
-    - JKCategories/UIKit/UINavigationItem (= 1.9)
-    - JKCategories/UIKit/UIPopoverController (= 1.9)
-    - JKCategories/UIKit/UIResponder (= 1.9)
-    - JKCategories/UIKit/UIScreen (= 1.9)
-    - JKCategories/UIKit/UIScrollView (= 1.9)
-    - JKCategories/UIKit/UISearchBar (= 1.9)
-    - JKCategories/UIKit/UISplitViewController (= 1.9)
-    - JKCategories/UIKit/UITableView (= 1.9)
-    - JKCategories/UIKit/UITableViewCell (= 1.9)
-    - JKCategories/UIKit/UITextField (= 1.9)
-    - JKCategories/UIKit/UITextView (= 1.9)
-    - JKCategories/UIKit/UIView (= 1.9)
-    - JKCategories/UIKit/UIViewController (= 1.9)
-    - JKCategories/UIKit/UIWindow (= 1.9)
-  - JKCategories/UIKit/UIApplication (1.9)
-  - JKCategories/UIKit/UIBarButtonItem (1.9)
-  - JKCategories/UIKit/UIBezierPath (1.9)
-  - JKCategories/UIKit/UIButton (1.9)
-  - JKCategories/UIKit/UIColor (1.9)
-  - JKCategories/UIKit/UIControl (1.9)
-  - JKCategories/UIKit/UIDevice (1.9)
-  - JKCategories/UIKit/UIFont (1.9)
-  - JKCategories/UIKit/UIImage (1.9)
-  - JKCategories/UIKit/UIImageView (1.9)
-  - JKCategories/UIKit/UILable (1.9)
-  - JKCategories/UIKit/UINavigationBar (1.9)
-  - JKCategories/UIKit/UINavigationController (1.9)
-  - JKCategories/UIKit/UINavigationItem (1.9)
-  - JKCategories/UIKit/UIPopoverController (1.9)
-  - JKCategories/UIKit/UIResponder (1.9)
-  - JKCategories/UIKit/UIScreen (1.9)
-  - JKCategories/UIKit/UIScrollView (1.9)
-  - JKCategories/UIKit/UISearchBar (1.9)
-  - JKCategories/UIKit/UISplitViewController (1.9)
-  - JKCategories/UIKit/UITableView (1.9)
-  - JKCategories/UIKit/UITableViewCell (1.9)
-  - JKCategories/UIKit/UITextField (1.9)
-  - JKCategories/UIKit/UITextView (1.9)
-  - JKCategories/UIKit/UIView (1.9)
-  - JKCategories/UIKit/UIViewController (1.9)
-  - JKCategories/UIKit/UIWindow (1.9)
+  - JKCategories/Foundation/NSTimer (1.9.1)
+  - JKCategories/Foundation/NSURL (1.9.1)
+  - JKCategories/Foundation/NSURLConnection (1.9.1)
+  - JKCategories/Foundation/NSURLRequest (1.9.1)
+  - JKCategories/Foundation/NSURLSession (1.9.1)
+  - JKCategories/Foundation/NSUserDefaults (1.9.1)
+  - JKCategories/MapKit (1.9.1):
+    - JKCategories/MapKit/MKMapView (= 1.9.1)
+  - JKCategories/MapKit/MKMapView (1.9.1)
+  - JKCategories/QuartzCore (1.9.1):
+    - JKCategories/QuartzCore/CAAnimation (= 1.9.1)
+    - JKCategories/QuartzCore/CALayer (= 1.9.1)
+    - JKCategories/QuartzCore/CAMediaTimingFunction (= 1.9.1)
+    - JKCategories/QuartzCore/CAShapeLayer (= 1.9.1)
+    - JKCategories/QuartzCore/CATransaction (= 1.9.1)
+  - JKCategories/QuartzCore/CAAnimation (1.9.1)
+  - JKCategories/QuartzCore/CALayer (1.9.1)
+  - JKCategories/QuartzCore/CAMediaTimingFunction (1.9.1)
+  - JKCategories/QuartzCore/CAShapeLayer (1.9.1)
+  - JKCategories/QuartzCore/CATransaction (1.9.1)
+  - JKCategories/UIKit (1.9.1):
+    - JKCategories/UIKit/UIApplication (= 1.9.1)
+    - JKCategories/UIKit/UIBarButtonItem (= 1.9.1)
+    - JKCategories/UIKit/UIBezierPath (= 1.9.1)
+    - JKCategories/UIKit/UIButton (= 1.9.1)
+    - JKCategories/UIKit/UIColor (= 1.9.1)
+    - JKCategories/UIKit/UIControl (= 1.9.1)
+    - JKCategories/UIKit/UIDevice (= 1.9.1)
+    - JKCategories/UIKit/UIFont (= 1.9.1)
+    - JKCategories/UIKit/UIImage (= 1.9.1)
+    - JKCategories/UIKit/UIImageView (= 1.9.1)
+    - JKCategories/UIKit/UILable (= 1.9.1)
+    - JKCategories/UIKit/UINavigationBar (= 1.9.1)
+    - JKCategories/UIKit/UINavigationController (= 1.9.1)
+    - JKCategories/UIKit/UINavigationItem (= 1.9.1)
+    - JKCategories/UIKit/UIPopoverController (= 1.9.1)
+    - JKCategories/UIKit/UIResponder (= 1.9.1)
+    - JKCategories/UIKit/UIScreen (= 1.9.1)
+    - JKCategories/UIKit/UIScrollView (= 1.9.1)
+    - JKCategories/UIKit/UISearchBar (= 1.9.1)
+    - JKCategories/UIKit/UISplitViewController (= 1.9.1)
+    - JKCategories/UIKit/UITableView (= 1.9.1)
+    - JKCategories/UIKit/UITableViewCell (= 1.9.1)
+    - JKCategories/UIKit/UITextField (= 1.9.1)
+    - JKCategories/UIKit/UITextView (= 1.9.1)
+    - JKCategories/UIKit/UIView (= 1.9.1)
+    - JKCategories/UIKit/UIViewController (= 1.9.1)
+    - JKCategories/UIKit/UIWindow (= 1.9.1)
+  - JKCategories/UIKit/UIApplication (1.9.1)
+  - JKCategories/UIKit/UIBarButtonItem (1.9.1)
+  - JKCategories/UIKit/UIBezierPath (1.9.1)
+  - JKCategories/UIKit/UIButton (1.9.1)
+  - JKCategories/UIKit/UIColor (1.9.1)
+  - JKCategories/UIKit/UIControl (1.9.1)
+  - JKCategories/UIKit/UIDevice (1.9.1)
+  - JKCategories/UIKit/UIFont (1.9.1)
+  - JKCategories/UIKit/UIImage (1.9.1)
+  - JKCategories/UIKit/UIImageView (1.9.1)
+  - JKCategories/UIKit/UILable (1.9.1)
+  - JKCategories/UIKit/UINavigationBar (1.9.1)
+  - JKCategories/UIKit/UINavigationController (1.9.1)
+  - JKCategories/UIKit/UINavigationItem (1.9.1)
+  - JKCategories/UIKit/UIPopoverController (1.9.1)
+  - JKCategories/UIKit/UIResponder (1.9.1)
+  - JKCategories/UIKit/UIScreen (1.9.1)
+  - JKCategories/UIKit/UIScrollView (1.9.1)
+  - JKCategories/UIKit/UISearchBar (1.9.1)
+  - JKCategories/UIKit/UISplitViewController (1.9.1)
+  - JKCategories/UIKit/UITableView (1.9.1)
+  - JKCategories/UIKit/UITableViewCell (1.9.1)
+  - JKCategories/UIKit/UITextField (1.9.1)
+  - JKCategories/UIKit/UITextView (1.9.1)
+  - JKCategories/UIKit/UIView (1.9.1)
+  - JKCategories/UIKit/UIViewController (1.9.1)
+  - JKCategories/UIKit/UIWindow (1.9.1)
   - libwebp (1.1.0):
     - libwebp/demux (= 1.1.0)
     - libwebp/mux (= 1.1.0)
@@ -174,23 +173,23 @@ PODS:
   - libwebp/webp (1.1.0)
   - LxDBAnything (1.1.0)
   - Masonry (1.1.0)
-  - MJRefresh (3.3.1)
+  - MJRefresh (3.5.0)
   - ReactiveObjC (3.1.1)
   - RSKImageCropper (2.2.3)
-  - SDWebImage (5.7.1):
-    - SDWebImage/Core (= 5.7.1)
-  - SDWebImage/Core (5.7.1)
-  - SDWebImage/MapKit (5.7.1):
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
+  - SDWebImage/MapKit (5.8.4):
     - SDWebImage/Core
-  - SDWebImageWebPCoder (0.6.0):
+  - SDWebImageWebPCoder (0.6.1):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.7)
-  - SSZipArchive (2.2.2)
+  - SSZipArchive (2.2.3)
   - SVProgressHUD (2.2.5)
   - UIFontWDCustomLoader (0.1.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (1.5.0):
+  - XTBase (1.7.0):
     - CocoaLumberjack (= 3.6.1)
     - Masonry
     - MJRefresh
@@ -204,13 +203,13 @@ PODS:
     - YYModel
   - XTColor (1.1.0):
     - XTBase
-  - XTFMDB (2.1.0):
+  - XTFMDB (2.1.1):
     - FMDB
     - YYModel
   - XTIAP (1.1.1):
     - XTBase
     - XTReq
-  - XTReq (4.2.3):
+  - XTReq (4.3.1):
     - AFNetworking (= 4.0.0)
     - ReactiveObjC
     - SVProgressHUD
@@ -226,7 +225,6 @@ PODS:
 DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout
   - FDFullscreenPopGesture
-  - ISVImageScrollView
   - JKCategories
   - LxDBAnything
   - RSKImageCropper
@@ -247,7 +245,6 @@ SPEC REPOS:
     - CocoaLumberjack
     - FDFullscreenPopGesture
     - FMDB
-    - ISVImageScrollView
     - JKCategories
     - libwebp
     - LxDBAnything
@@ -277,30 +274,29 @@ SPEC CHECKSUMS:
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  ISVImageScrollView: ba511d12a1661b40feb8921309c0854bf93ec749
-  JKCategories: b5240c9f6cd6991cacced4bec47c3f508c7f3f7e
+  JKCategories: 5bd36ff325c80652cc2e47b689bfc0e81c563d76
   libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   LxDBAnything: 154a2ad1ae32e70355d886b5443260543bb60c71
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RSKImageCropper: a446db0e8444a036b34f3c43db01b2373baa4b2a
-  SDWebImage: 5d4cf6afccd9ac1d2ee701ed0c4917cbb1b80536
-  SDWebImageWebPCoder: ff8ccd473fc8064c1600d0d6eb1ce8d60ea7c202
-  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIFontWDCustomLoader: 233f0f83e543b8f24a6299d7fc773be9d704fe22
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: a923c1bccae9415ea563f8260f154e1b329dafb0
+  XTBase: ac274979078b825624027379ec34d0a40cc80d8e
   XTColor: 2f9cb9260812471c711e765677065edc81f96152
-  XTFMDB: 887cd4674e50d8c303635c45d8004070c6f76196
+  XTFMDB: f2ba3d2fc8278840ce60e3daaa0b3afc4f120cbe
   XTIAP: 890fb3ebedefe6b4da331f416d486e02e6ea0c13
-  XTReq: 521ce757e41f742b1513ee9c2dd7fb139a780e52
+  XTReq: 19fea434deb7a5713e604051795ad274acf311aa
   XTRouter: 389d1e740b1021f5218eacbb1da3fc7ebc3ca2bf
   XTTable: 71154f0f7e883546d83a3b377f919369fc7d1ece
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 66082a759c5374c8985ac08c37c5519e69a9b221
+PODFILE CHECKSUM: aae608bdbb8b4d12d8f812e01a8b6c1c94ba132f
 
 COCOAPODS: 1.9.1

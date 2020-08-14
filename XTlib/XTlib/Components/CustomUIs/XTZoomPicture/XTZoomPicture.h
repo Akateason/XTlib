@@ -4,7 +4,7 @@
 //
 //  Created by teason on 15/12/3.
 //  Copyright © 2015年 teason. All rights reserved.
-// *** 处理小图片的缩放, 不适合大图渲染 *** //
+// *** 处理小图片的缩放, 不适合超大图渲染 *** //
 // 需要 setImageView
 
 #import <UIKit/UIKit.h>
