@@ -7,6 +7,7 @@
 //
 
 #import "HashDataVC.h"
+#import "Human.h"
 
 @interface HashDataVC ()
 
@@ -16,17 +17,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    Human *human_1 = [Human humanWithName:@"lilei"];
+    Human *human_2 = [Human humanWithName:@"hanmeimei"];
+    Human *human_3 = [Human humanWithName:@"lewis"];
+    Human *human_4 = [Human humanWithName:@"xiaohao"];
+    Human *human_5 = [Human humanWithName:@"beijing"];
+
+    id list = @[human_1,human_2,human_3,human_4,human_5];
+    NSLog(@"%@",list);
+
+    
+
+    
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

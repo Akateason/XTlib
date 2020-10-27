@@ -9,5 +9,16 @@
 #import "Human.h"
 
 @implementation Human
++ (instancetype) humanWithName:(NSString *)n {
+    Human *human = [[Human alloc] init];
+    human.name = n;
+    
+    return human;
+}
+
+
+- (void)dealloc {
+    self.name = nil;
+}
 
 @end
