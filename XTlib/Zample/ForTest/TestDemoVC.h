@@ -9,6 +9,6 @@
 #import <XTBase/XTBase.h>
 
 
-@interface TestDemoVC : RootCtrl
+@interface TestDemoVC : UIViewController
 
 @end

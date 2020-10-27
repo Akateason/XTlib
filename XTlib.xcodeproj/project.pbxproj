@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8F0AEE27206A285700DC5E7D /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0AEE26206A285700DC5E7D /* GradientButton.m */; };
-		8F0BC5D224403D69007F80E9 /* XTLargeImgScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0BC5D124403D69007F80E9 /* XTLargeImgScroll.m */; };
 		8F1511FF20C2503500FF125C /* MPTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1511FD20C2503400FF125C /* MPTestView.m */; };
 		8F19861E20C9632D0082662A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8F19861D20C9632D0082662A /* README.md */; };
 		8F220D7920AAD31500CC6271 /* MPTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F220D7820AAD31500CC6271 /* MPTestVC.m */; };
@@ -79,9 +78,14 @@
 		8F2BFFB8203ED7390013394D /* XTSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF2B203ED7380013394D /* XTSegment.m */; };
 		8F2BFFB9203ED7390013394D /* XTStretchSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF2E203ED7380013394D /* XTStretchSegment.m */; };
 		8F2BFFC2203ED7390013394D /* XTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BFF4B203ED7380013394D /* XTAnimation.m */; };
+		8F397DCA24F603A9008221B9 /* SHMTiledLargeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F397DBD24F603A8008221B9 /* SHMTiledLargeImageView.m */; };
+		8F397DCB24F603A9008221B9 /* SHMLargeImgScroll+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F397DBE24F603A8008221B9 /* SHMLargeImgScroll+Util.m */; };
+		8F397DCC24F603A9008221B9 /* SHMTiledLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F397DC024F603A8008221B9 /* SHMTiledLayer.m */; };
+		8F397DCD24F603A9008221B9 /* SHMTiledContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F397DC324F603A8008221B9 /* SHMTiledContainerView.m */; };
+		8F397DCE24F603A9008221B9 /* SHMLargeImgScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F397DC524F603A9008221B9 /* SHMLargeImgScroll.m */; };
+		8F397DCF24F603A9008221B9 /* SHMLargeImgScroll+Render.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F397DC624F603A9008221B9 /* SHMLargeImgScroll+Render.m */; };
+		8F397DD024F603A9008221B9 /* SHMLargeImgScroll+ScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F397DC924F603A9008221B9 /* SHMLargeImgScroll+ScrollView.m */; };
 		8F4F3F4024277CDD000AE977 /* SDWebImageManager+largeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F3A24277CDD000AE977 /* SDWebImageManager+largeImage.m */; };
-		8F4F3F46242781CD000AE977 /* XTTiledLargeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F44242781CD000AE977 /* XTTiledLargeImageView.m */; };
-		8F4F3F4924278422000AE977 /* XTTiledLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F3F4824278422000AE977 /* XTTiledLayer.m */; };
 		8F6400782148B2030094024A /* TestDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6400772148B2030094024A /* TestDemoVC.m */; };
 		8F6E9B89230BA4FF0011D935 /* SegmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E9B88230BA4FF0011D935 /* SegmentVC.m */; };
 		8F6E9B8D230BCD270011D935 /* XTStretchSegCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E9B8B230BCD270011D935 /* XTStretchSegCell.m */; };
@@ -136,8 +140,6 @@
 		393548A18FFA706486B3C132 /* Pods-XTlib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTlib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XTlib/Pods-XTlib.debug.xcconfig"; sourceTree = "<group>"; };
 		8F0AEE25206A285700DC5E7D /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
 		8F0AEE26206A285700DC5E7D /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
-		8F0BC5D024403D69007F80E9 /* XTLargeImgScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTLargeImgScroll.h; sourceTree = "<group>"; };
-		8F0BC5D124403D69007F80E9 /* XTLargeImgScroll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTLargeImgScroll.m; sourceTree = "<group>"; };
 		8F1511FD20C2503400FF125C /* MPTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTestView.m; sourceTree = "<group>"; };
 		8F1511FE20C2503400FF125C /* MPTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTestView.h; sourceTree = "<group>"; };
 		8F19861D20C9632D0082662A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -273,12 +275,22 @@
 		8F2BFF4A203ED7380013394D /* XTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAnimation.h; sourceTree = "<group>"; };
 		8F2BFF4B203ED7380013394D /* XTAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAnimation.m; sourceTree = "<group>"; };
 		8F2BFF59203ED7380013394D /* XTlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTlib.h; sourceTree = "<group>"; };
+		8F397DBC24F603A8008221B9 /* SHMLargeImgScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMLargeImgScroll.h; sourceTree = "<group>"; };
+		8F397DBD24F603A8008221B9 /* SHMTiledLargeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMTiledLargeImageView.m; sourceTree = "<group>"; };
+		8F397DBE24F603A8008221B9 /* SHMLargeImgScroll+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SHMLargeImgScroll+Util.m"; sourceTree = "<group>"; };
+		8F397DBF24F603A8008221B9 /* SHMTiledLargeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMTiledLargeImageView.h; sourceTree = "<group>"; };
+		8F397DC024F603A8008221B9 /* SHMTiledLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMTiledLayer.m; sourceTree = "<group>"; };
+		8F397DC124F603A8008221B9 /* SHMTiledLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMTiledLayer.h; sourceTree = "<group>"; };
+		8F397DC224F603A8008221B9 /* SHMLargeImgScroll+Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHMLargeImgScroll+Render.h"; sourceTree = "<group>"; };
+		8F397DC324F603A8008221B9 /* SHMTiledContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMTiledContainerView.m; sourceTree = "<group>"; };
+		8F397DC424F603A8008221B9 /* SHMLargeImgScroll+ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHMLargeImgScroll+ScrollView.h"; sourceTree = "<group>"; };
+		8F397DC524F603A9008221B9 /* SHMLargeImgScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHMLargeImgScroll.m; sourceTree = "<group>"; };
+		8F397DC624F603A9008221B9 /* SHMLargeImgScroll+Render.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SHMLargeImgScroll+Render.m"; sourceTree = "<group>"; };
+		8F397DC724F603A9008221B9 /* SHMLargeImgScroll+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SHMLargeImgScroll+Util.h"; sourceTree = "<group>"; };
+		8F397DC824F603A9008221B9 /* SHMTiledContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHMTiledContainerView.h; sourceTree = "<group>"; };
+		8F397DC924F603A9008221B9 /* SHMLargeImgScroll+ScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SHMLargeImgScroll+ScrollView.m"; sourceTree = "<group>"; };
 		8F4F3F3924277CDD000AE977 /* SDWebImageManager+largeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+largeImage.h"; sourceTree = "<group>"; };
 		8F4F3F3A24277CDD000AE977 /* SDWebImageManager+largeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+largeImage.m"; sourceTree = "<group>"; };
-		8F4F3F44242781CD000AE977 /* XTTiledLargeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTTiledLargeImageView.m; sourceTree = "<group>"; };
-		8F4F3F45242781CD000AE977 /* XTTiledLargeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTiledLargeImageView.h; sourceTree = "<group>"; };
-		8F4F3F4724278422000AE977 /* XTTiledLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTiledLayer.h; sourceTree = "<group>"; };
-		8F4F3F4824278422000AE977 /* XTTiledLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTTiledLayer.m; sourceTree = "<group>"; };
 		8F6400762148B2030094024A /* TestDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestDemoVC.h; sourceTree = "<group>"; };
 		8F6400772148B2030094024A /* TestDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestDemoVC.m; sourceTree = "<group>"; };
 		8F6E9B87230BA4FF0011D935 /* SegmentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegmentVC.h; sourceTree = "<group>"; };
@@ -858,12 +870,20 @@
 		8F4F3F2E24277CDD000AE977 /* Render */ = {
 			isa = PBXGroup;
 			children = (
-				8F0BC5D024403D69007F80E9 /* XTLargeImgScroll.h */,
-				8F0BC5D124403D69007F80E9 /* XTLargeImgScroll.m */,
-				8F4F3F45242781CD000AE977 /* XTTiledLargeImageView.h */,
-				8F4F3F44242781CD000AE977 /* XTTiledLargeImageView.m */,
-				8F4F3F4724278422000AE977 /* XTTiledLayer.h */,
-				8F4F3F4824278422000AE977 /* XTTiledLayer.m */,
+				8F397DBC24F603A8008221B9 /* SHMLargeImgScroll.h */,
+				8F397DC524F603A9008221B9 /* SHMLargeImgScroll.m */,
+				8F397DC224F603A8008221B9 /* SHMLargeImgScroll+Render.h */,
+				8F397DC624F603A9008221B9 /* SHMLargeImgScroll+Render.m */,
+				8F397DC424F603A8008221B9 /* SHMLargeImgScroll+ScrollView.h */,
+				8F397DC924F603A9008221B9 /* SHMLargeImgScroll+ScrollView.m */,
+				8F397DC724F603A9008221B9 /* SHMLargeImgScroll+Util.h */,
+				8F397DBE24F603A8008221B9 /* SHMLargeImgScroll+Util.m */,
+				8F397DC824F603A9008221B9 /* SHMTiledContainerView.h */,
+				8F397DC324F603A8008221B9 /* SHMTiledContainerView.m */,
+				8F397DBF24F603A8008221B9 /* SHMTiledLargeImageView.h */,
+				8F397DBD24F603A8008221B9 /* SHMTiledLargeImageView.m */,
+				8F397DC124F603A8008221B9 /* SHMTiledLayer.h */,
+				8F397DC024F603A8008221B9 /* SHMTiledLayer.m */,
 			);
 			path = Render;
 			sourceTree = "<group>";
@@ -1274,6 +1294,7 @@
 			files = (
 				8F2BFF6E203ED7390013394D /* Zample5Controller.m in Sources */,
 				8F2BFF62203ED7390013394D /* Zample2Controller.m in Sources */,
+				8F397DCD24F603A9008221B9 /* SHMTiledContainerView.m in Sources */,
 				8F2BFF65203ED7390013394D /* MovieCell.m in Sources */,
 				8F2BFF6F203ED7390013394D /* Zample6Controller.m in Sources */,
 				8F2BFF64203ED7390013394D /* Movie.m in Sources */,
@@ -1282,6 +1303,7 @@
 				8F2BFE36203ED7270013394D /* NSMutableString+TagReplace.m in Sources */,
 				8F2BFF74203ED7390013394D /* Z8CollectionViewController.m in Sources */,
 				8FD71E2122263A6D00B5420F /* XTPAlbumCell.m in Sources */,
+				8F397DCF24F603A9008221B9 /* SHMLargeImgScroll+Render.m in Sources */,
 				8F2BFDCC203ED6AB0013394D /* ViewController.m in Sources */,
 				8F2BFF71203ED7390013394D /* Zample7Controller.m in Sources */,
 				8FD71E3422268C4000B5420F /* XTCameraHandler.m in Sources */,
@@ -1299,14 +1321,13 @@
 				8F2BFFAF203ED7390013394D /* XTBarrageItemView.m in Sources */,
 				8F2BFE34203ED7270013394D /* WPHotspotLabel.m in Sources */,
 				8F2BFF72203ED7390013394D /* Z8CollectionViewCell.m in Sources */,
-				8F0BC5D224403D69007F80E9 /* XTLargeImgScroll.m in Sources */,
 				8F2BFFAE203ED7390013394D /* FlywordLabel.m in Sources */,
 				8F2BFFAB203ED7390013394D /* ParallaxHeaderView.m in Sources */,
 				8F4F3F4024277CDD000AE977 /* SDWebImageManager+largeImage.m in Sources */,
 				8F2BFF60203ED7390013394D /* DoubanTags.m in Sources */,
-				8F4F3F4924278422000AE977 /* XTTiledLayer.m in Sources */,
 				8F2BFFB8203ED7390013394D /* XTSegment.m in Sources */,
 				8F2BFF6B203ED7390013394D /* Z5DisplayCell.m in Sources */,
+				8F397DCA24F603A9008221B9 /* SHMTiledLargeImageView.m in Sources */,
 				8F2BFF5B203ED7390013394D /* RCSubView.m in Sources */,
 				8F2BFF78203ED7390013394D /* MySon.m in Sources */,
 				8FD71E2522266E6A00B5420F /* XTPATitleView.m in Sources */,
@@ -1318,6 +1339,7 @@
 				8F2BFE38203ED7270013394D /* UIBarButtonItem+Badge.m in Sources */,
 				8F2BFDD7203ED6AB0013394D /* main.m in Sources */,
 				8F2BFE02203ED71D0013394D /* UserOnDevice.m in Sources */,
+				8F397DCE24F603A9008221B9 /* SHMLargeImgScroll.m in Sources */,
 				8FD71E182225564100B5420F /* XTPACropImageVC.m in Sources */,
 				8F2BFF68203ED7390013394D /* Zample3Controller.m in Sources */,
 				8F2BFF76203ED7390013394D /* Father.m in Sources */,
@@ -1334,12 +1356,12 @@
 				8F2BFF79203ED7390013394D /* Zample9Controller.m in Sources */,
 				8F6E9B89230BA4FF0011D935 /* SegmentVC.m in Sources */,
 				8F2BFFB1203ED7390013394D /* XTDrawerFlowLayout.m in Sources */,
+				8F397DCC24F603A9008221B9 /* SHMTiledLayer.m in Sources */,
 				8F2BFF63203ED7390013394D /* Images.m in Sources */,
 				8F2BFF5D203ED7390013394D /* XTColorCell.m in Sources */,
 				8F2BFE37203ED7270013394D /* NSString+WPAttributedMarkup.m in Sources */,
 				8F2BFF6D203ED7390013394D /* Z5DisplayController.m in Sources */,
 				8F2BFFB9203ED7390013394D /* XTStretchSegment.m in Sources */,
-				8F4F3F46242781CD000AE977 /* XTTiledLargeImageView.m in Sources */,
 				8FD71E152225562900B5420F /* XTPACameraGroupVC.m in Sources */,
 				8FC8215320EA7DE90068AE5E /* AlertTestVC.m in Sources */,
 				8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */,
@@ -1348,11 +1370,13 @@
 				8F220D7920AAD31500CC6271 /* MPTestVC.m in Sources */,
 				8F2BFFB0203ED7390013394D /* XTBarrageView.m in Sources */,
 				8F1511FF20C2503500FF125C /* MPTestView.m in Sources */,
+				8F397DD024F603A9008221B9 /* SHMLargeImgScroll+ScrollView.m in Sources */,
 				8F2BFFB5203ED7390013394D /* XTTableViewRootHandler.m in Sources */,
 				8F2BFE3E203ED7270013394D /* NSObject+MKBlockTimer.m in Sources */,
 				8F2BFDC9203ED6AB0013394D /* AppDelegate.m in Sources */,
 				8F2BFE01203ED71D0013394D /* ServerRequest.m in Sources */,
 				8F2BFFAD203ED7390013394D /* PlaceHolderTextView.m in Sources */,
+				8F397DCB24F603A9008221B9 /* SHMLargeImgScroll+Util.m in Sources */,
 				8F2BFF77203ED7390013394D /* Mother.m in Sources */,
 				8FA9D3C020C7E422005AFEDF /* DesignableInspectableVC.m in Sources */,
 			);

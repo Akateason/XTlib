@@ -189,7 +189,7 @@ PODS:
   - UIFontWDCustomLoader (0.1.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
   - Valet (2.4.2)
-  - XTBase (1.7.0):
+  - XTBase (1.7.2):
     - CocoaLumberjack (= 3.6.1)
     - Masonry
     - MJRefresh
@@ -288,7 +288,7 @@ SPEC CHECKSUMS:
   UIFontWDCustomLoader: 233f0f83e543b8f24a6299d7fc773be9d704fe22
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   Valet: 14463ef24fab8fd5809044ecedb61484b799fdd6
-  XTBase: ac274979078b825624027379ec34d0a40cc80d8e
+  XTBase: d5a80b48cf09bd2d6beba41b8c6b49132b00123d
   XTColor: 2f9cb9260812471c711e765677065edc81f96152
   XTFMDB: f2ba3d2fc8278840ce60e3daaa0b3afc4f120cbe
   XTIAP: 890fb3ebedefe6b4da331f416d486e02e6ea0c13

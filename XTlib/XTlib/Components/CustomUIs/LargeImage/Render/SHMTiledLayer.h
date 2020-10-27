@@ -1,5 +1,5 @@
 //
-//  XTTiledLayer.h
+//  SHMTiledLayer.h
 //  owlLoadTest
 //
 //  Created by teason23 on 2020/2/23.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XTTiledLayer : CATiledLayer
+@interface SHMTiledLayer : CATiledLayer
 
 @end
 
