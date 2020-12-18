@@ -24,23 +24,24 @@
     // Do any additional setup after loading the view.
     
     
-    XTZoomPicture *zp = [XTZoomPicture new];
-//    UIImage *image =
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    zp.imageView.image = [UIImage imageNamed:@"test2"];
-    zp.maximumZoomScale = 4.0;
-    
-    self.view = zp;
-    
-    [zp onTapped:^{
-        xt_LOG_DEBUG(@"tap");
+    XTZoomPicture *zp = [[XTZoomPicture alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:zp];
+    [zp mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
     }];
+    zp.backgroundColor = [UIColor blueColor];
     
-    [self.view xt_whenTouches:2 tapped:3 handler:^{
+    [zp.imageView sd_setImageWithURL:[NSURL URLWithString:@"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2943767315,2930939798&fm=26&gp=0.jpg"]
+                    placeholderImage:nil
+                             options:(0)
+                            progress:nil
+                           completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        
+        
         [zp reset];
+        
+        
     }];
-    
-    
     
 }
 

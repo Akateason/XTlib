@@ -112,6 +112,8 @@
 		8FDE205720594EE3003B5398 /* XTSIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE205620594EE3003B5398 /* XTSIAlertView.m */; };
 		8FE4E71224404A80006C9F9E /* XTZoomPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE4E71024404A80006C9F9E /* XTZoomPicture.m */; };
 		8FF93DC92360405E00C6B5CD /* XTImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF93DC82360405E00C6B5CD /* XTImageItem.m */; };
+		8FFD6DBA2548727C00D34D96 /* HashDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD6DB92548727C00D34D96 /* HashDataVC.m */; };
+		8FFD6DE32548737900D34D96 /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFD6DE22548737900D34D96 /* Human.m */; };
 		F9572C89FB657E8622F3EAB6 /* Pods_XTlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BABB4C18C49B72CEDEA8791D /* Pods_XTlib.framework */; };
 /* End PBXBuildFile section */
 
@@ -331,6 +333,10 @@
 		8FE4E71124404A80006C9F9E /* XTZoomPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTZoomPicture.h; sourceTree = "<group>"; };
 		8FF93DC72360405E00C6B5CD /* XTImageItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTImageItem.h; sourceTree = "<group>"; };
 		8FF93DC82360405E00C6B5CD /* XTImageItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTImageItem.m; sourceTree = "<group>"; };
+		8FFD6DB82548727C00D34D96 /* HashDataVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HashDataVC.h; sourceTree = "<group>"; };
+		8FFD6DB92548727C00D34D96 /* HashDataVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HashDataVC.m; sourceTree = "<group>"; };
+		8FFD6DE12548737900D34D96 /* Human.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
+		8FFD6DE22548737900D34D96 /* Human.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Human.m; sourceTree = "<group>"; };
 		BABB4C18C49B72CEDEA8791D /* Pods_XTlib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTlib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -538,6 +544,7 @@
 		8F2BFE44203ED7380013394D /* Zample */ = {
 			isa = PBXGroup;
 			children = (
+				8FFD6DB72548724700D34D96 /* HashData */,
 				8F6400752148B1D50094024A /* ForTest */,
 				8F6E9B86230BA4C90011D935 /* Segment */,
 				8FD71E262226746300B5420F /* AlbumPicker */,
@@ -1045,6 +1052,25 @@
 			path = XTZoomPicture;
 			sourceTree = "<group>";
 		};
+		8FFD6DB72548724700D34D96 /* HashData */ = {
+			isa = PBXGroup;
+			children = (
+				8FFD6DB82548727C00D34D96 /* HashDataVC.h */,
+				8FFD6DB92548727C00D34D96 /* HashDataVC.m */,
+				8FFD6DE02548735900D34D96 /* datas */,
+			);
+			path = HashData;
+			sourceTree = "<group>";
+		};
+		8FFD6DE02548735900D34D96 /* datas */ = {
+			isa = PBXGroup;
+			children = (
+				8FFD6DE12548737900D34D96 /* Human.h */,
+				8FFD6DE22548737900D34D96 /* Human.m */,
+			);
+			path = datas;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1204,7 +1230,6 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
-				"${BUILT_PRODUCTS_DIR}/ISVImageScrollView/ISVImageScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/JKCategories/JKCategories.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -1234,7 +1259,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISVImageScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JKCategories.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -1330,6 +1354,7 @@
 				8F2BFFB7203ED7390013394D /* XTNetReloader.m in Sources */,
 				8F2BFFB6203ED7390013394D /* XTMultipleTables.m in Sources */,
 				8F2BFF5A203ED7390013394D /* FontAdaptVC.m in Sources */,
+				8FFD6DE32548737900D34D96 /* Human.m in Sources */,
 				8F2BFE38203ED7270013394D /* UIBarButtonItem+Badge.m in Sources */,
 				8F2BFDD7203ED6AB0013394D /* main.m in Sources */,
 				8F2BFE02203ED71D0013394D /* UserOnDevice.m in Sources */,
@@ -1360,6 +1385,7 @@
 				8FC8215320EA7DE90068AE5E /* AlertTestVC.m in Sources */,
 				8FDE204E205948D2003B5398 /* CtrlHelpVC.m in Sources */,
 				8F2BFF69203ED7390013394D /* Zample4Controller.m in Sources */,
+				8FFD6DBA2548727C00D34D96 /* HashDataVC.m in Sources */,
 				8FD71E0C2225553200B5420F /* XTPAConfig.m in Sources */,
 				8F220D7920AAD31500CC6271 /* MPTestVC.m in Sources */,
 				8F2BFFB0203ED7390013394D /* XTBarrageView.m in Sources */,
@@ -1541,7 +1567,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teason.XTlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1557,7 +1583,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teason.XTlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
