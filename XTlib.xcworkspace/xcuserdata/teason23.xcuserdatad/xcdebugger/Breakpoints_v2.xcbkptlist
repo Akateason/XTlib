@@ -151,7 +151,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C5A38610-B9E0-45C5-A6E0-132A5EB663F8 - 4d330c38cec77668"
+                  uuid = "C5A38610-B9E0-45C5-A6E0-132A5EB663F8 - 72e1373a7772b8e2"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -167,7 +167,7 @@
                   offsetFromSymbolStart = "94">
                </Location>
                <Location
-                  uuid = "C5A38610-B9E0-45C5-A6E0-132A5EB663F8 - 477ebe110826c9f8"
+                  uuid = "C5A38610-B9E0-45C5-A6E0-132A5EB663F8 - 78ac8513b19306bc"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -183,7 +183,7 @@
                   offsetFromSymbolStart = "44">
                </Location>
                <Location
-                  uuid = "C5A38610-B9E0-45C5-A6E0-132A5EB663F8 - fe17f5743615ecd2"
+                  uuid = "C5A38610-B9E0-45C5-A6E0-132A5EB663F8 - c1c5ce768fa02258"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -215,6 +215,38 @@
             startingLineNumber = "72"
             endingLineNumber = "72"
             landmarkName = "-tableView:loadNew:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96F8FD8F-89A3-4802-BF1D-936F95122C42"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XTlib/Zample/ForTest/TestDemoVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "249F6DFC-C4B7-4B3F-B2A9-EB92838E5355"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XTlib/XTlib/Components/CustomUIs/XTZoomPicture/XTZoomPicture.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-scaleImageForScrollViewTransitionFromBounds:toBounds:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

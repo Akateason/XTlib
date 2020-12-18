@@ -72,8 +72,7 @@ typedef void(^BlkTapped)(void);
     _imageView.userInteractionEnabled = YES;
     self.userInteractionEnabled = YES;
     [self addSubview:_imageView];
-    
-        
+            
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
     [self startObservingBoundsChange];
@@ -169,7 +168,8 @@ typedef void(^BlkTapped)(void);
     }
 }
 
-- (void)reset {    
+- (void)reset {
+    [self setupInitialImageFrame];
     self.zoomScale = 1;
 }
 
