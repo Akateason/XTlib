@@ -9,6 +9,7 @@
 #import "RCSubView.h"
 #import <Masonry/Masonry.h>
 #import <XTBase/XTBase.h>
+#import "RespoderChainViewController.h"
 
 
 @implementation RCSubView
@@ -33,17 +34,8 @@
 }
 
 - (void)btAction {
-    NSLog(@"tap");
-    [self sendChainHandler:@"a" info:[@(arc4random() % 100) stringValue] sender:self];
+    RespoderChainViewController *vc = (RespoderChainViewController *)[self xt_findNext:RespoderChainViewController.class];
+    [self xt_messageOnChain:XT_STR_FORMAT(@"name%ld",self.tag) param:@{@"aaal":@23432,@"bb":vc.stringOnlyInSuper}];
 }
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

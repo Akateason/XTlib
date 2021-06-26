@@ -10,5 +10,5 @@
 
 
 @interface RespoderChainViewController : RootCtrl
-
+@property (copy, nonatomic) NSString *stringOnlyInSuper;
 @end
