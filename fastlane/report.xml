@@ -5,57 +5,14 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: import_from_git" time="5.091991">
+      <testcase classname="fastlane.lanes" name="0: import_from_git" time="1.176435">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: git_pull" time="4.637555">
+      <testcase classname="fastlane.lanes" name="1: git_pull" time="39.294551">
         
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="02: ensure_git_branch" time="0.009484">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="03: version_bump_podspec" time="0.003768">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="04: git_add" time="0.031362">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="05: git_commit" time="0.079473">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="06: push_to_git_remote" time="6.553682">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="07: git_tag_exists" time="0.014839">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="08: add_git_tag" time="0.022402">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="09: push_git_tags" time="6.188171">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="10: pod_push" time="781.786915">
+          <failure message="/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/actions/actions_helper.rb:67:in `execute_action'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/runner.rb:255:in `block in execute_action'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/runner.rb:229:in `chdir'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/runner.rb:229:in `execute_action'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/runner.rb:157:in `trigger_action_by_name'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/fast_file.rb:159:in `method_missing'&#10;../../../../../../../var/folders/41/kz5m30dx189_z3pcxz76_tkr0000gn/T/fl_clone20220516-89495-16ipotw/fastlane-files/fastlane/Fastfile:10:in `block in parsing_binding'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/lane_manager.rb:47:in `cruise_lane'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/command_line_handler.rb:36:in `handle'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/commands_generator.rb:110:in `block (2 levels) in run'&#10;/Library/Ruby/Gems/2.6.0/gems/commander-4.6.0/lib/commander/command.rb:187:in `call'&#10;/Library/Ruby/Gems/2.6.0/gems/commander-4.6.0/lib/commander/command.rb:157:in `run'&#10;/Library/Ruby/Gems/2.6.0/gems/commander-4.6.0/lib/commander/runner.rb:444:in `run_active_command'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:124:in `run!'&#10;/Library/Ruby/Gems/2.6.0/gems/commander-4.6.0/lib/commander/delegates.rb:18:in `run!'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/commands_generator.rb:354:in `run'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/commands_generator.rb:43:in `start'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/fastlane/lib/fastlane/cli_tools_distributor.rb:122:in `take_off'&#10;/Library/Ruby/Gems/2.6.0/gems/fastlane-2.205.2/bin/fastlane:23:in `&lt;top (required)&gt;'&#10;/usr/local/bin/fastlane:23:in `load'&#10;/usr/local/bin/fastlane:23:in `&lt;main&gt;'&#10;&#10;Exit status of command 'git pull &amp;&amp; git fetch --tags' was 1 instead of 0.&#10;There is no tracking information for the current branch.&#10;Please specify which branch you want to merge with.&#10;See git-pull(1) for details.&#10;&#10;    git pull &lt;remote&gt; &lt;branch&gt;&#10;&#10;If you wish to set tracking information for this branch you can do so with:&#10;&#10;    git branch --set-upstream-to=&lt;remote&gt;/&lt;branch&gt; XTSpecs&#10;&#10;" />
         
       </testcase>
     
