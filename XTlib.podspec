@@ -7,7 +7,7 @@ s.description  = "XTlib. a rapid develop lib for iOS ."
 s.homepage     = "https://github.com/Akateason/XTlib"
 s.license      = { :type => "MIT", :file => "LICENSE" }
 s.author       = { "teason" => "akateason@qq.com" }
-s.platform     = :ios, "9.0"
+#s.platform     = :ios, "9.0"
 s.source       = { :git => "https://gitee.com/mamba24xtc/xtlib.git", :tag => s.version }
 
 
