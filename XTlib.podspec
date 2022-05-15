@@ -7,7 +7,7 @@ s.description  = "XTlib. a rapid develop lib for iOS ."
 s.homepage     = "https://github.com/Akateason/XTlib"
 s.license      = { :type => "MIT", :file => "LICENSE" }
 s.author       = { "teason" => "akateason@qq.com" }
-#s.platform     = :ios, "9.0"
+# s.platform     = :ios, "9.0"
 s.source       = { :git => "https://gitee.com/mamba24xtc/xtlib.git", :tag => s.version }
 
 
@@ -18,8 +18,8 @@ s.default_subspec = 'base'
         base.public_header_files = "XTlib/XTlib/*.h"
         
         base.dependency "XTBase"
-        base.dependency "XTFMDB",">2.0.0"
-        base.dependency "XTReq",">1.3.0"
+        base.dependency "XTFMDB"
+        base.dependency "XTReq"
         base.dependency "XTColor"
         base.dependency "XTTable"
         base.dependency "XTRouter"
