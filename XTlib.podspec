@@ -41,7 +41,6 @@ s.default_subspec = 'base'
     
     c.dependency "XTlib/base"
     c.dependency "RSKImageCropper"
-    c.dependency "CHTCollectionViewWaterfallLayout"
     c.dependency "CHTCollectionViewWaterfallLayout/ObjC"
     end
 

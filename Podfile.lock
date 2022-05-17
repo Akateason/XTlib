@@ -14,9 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1.1)
   - AFNetworking/UIKit (4.0.1.1):
     - AFNetworking/NSURLSession
-  - CHTCollectionViewWaterfallLayout (0.9.11):
-    - CHTCollectionViewWaterfallLayout/Swift (= 0.9.11)
-  - CHTCollectionViewWaterfallLayout/Swift (0.9.11)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.11)
   - CocoaLumberjack (3.6.1.1):
     - CocoaLumberjack/Core (= 3.6.1.1)
   - CocoaLumberjack/Core (3.6.1.1)
@@ -209,7 +207,7 @@ PODS:
   - YYModel (1.0.4.1)
 
 DEPENDENCIES:
-  - CHTCollectionViewWaterfallLayout
+  - CHTCollectionViewWaterfallLayout/ObjC
   - FDFullscreenPopGesture
   - JKCategories
   - LxDBAnything
@@ -284,6 +282,6 @@ SPEC CHECKSUMS:
   XTTable: 20119916d06069c661dd8241ee03539700d280e7
   YYModel: 4a41098da78c57a44b14a930db5ab59cdac522ae
 
-PODFILE CHECKSUM: 788501e2e3d8f73faad62abd453eacaa03cf8e0e
+PODFILE CHECKSUM: dd4267360a2e740147417f3dad3edddaf8035b6f
 
 COCOAPODS: 1.11.2

@@ -26,7 +26,6 @@ target 'XTlib' do
     pod 'FDFullscreenPopGesture'
     
     pod 'RSKImageCropper'
-    pod 'CHTCollectionViewWaterfallLayout'
     pod "CHTCollectionViewWaterfallLayout/ObjC"
 
     
